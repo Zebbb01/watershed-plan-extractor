@@ -5,3 +5,7 @@ export const VERSION = '1.0.0';
 export * from './schema';
 export * from './api';
 export * from './categories';
+export { runPipeline, type PipelineDeps, type Progress } from './pipeline';
+export { computeSummary, overviewSentence } from './summary';
+export { toTextItems, hasImageOps } from './pdf/convert';
+export { stableId } from './verify';
