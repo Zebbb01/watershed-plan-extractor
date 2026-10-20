@@ -1,26 +1,121 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+ * Design tokens. Colour by meaning: slate carries ~80% of every screen; the brand blue marks
+ * actions; positive = verified, warning = needs review, negative = rejected or failed.
+ * The six category colours identify data categories only (validated with the dataviz
+ * palette checker: CVD-safe adjacent pairs; always shown with a label).
+ */
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --color-primary-50: #eef5fd;
+  --color-primary-100: #d9e8fa;
+  --color-primary-200: #b7d3f6;
+  --color-primary-300: #86b6ef;
+  --color-primary-400: #5598e7;
+  --color-primary-500: #2a78d6;
+  --color-primary-600: #1d63b5;
+  --color-primary-700: #184f95;
+  --color-primary-800: #133f78;
+
+  --color-positive-50: #ecfdf3;
+  --color-positive-100: #d1fadf;
+  --color-positive-600: #0f8a4b;
+  --color-positive-700: #0b6b3a;
+
+  --color-warning-50: #fffaeb;
+  --color-warning-100: #fef0c7;
+  --color-warning-600: #b25e09;
+  --color-warning-700: #93470a;
+
+  --color-negative-50: #fef3f2;
+  --color-negative-100: #fee4e2;
+  --color-negative-600: #d92d20;
+  --color-negative-700: #b42318;
+
+  --color-cat-goals: #2a78d6;
+  --color-cat-bmps: #eb6834;
+  --color-cat-implementation: #1baf7a;
+  --color-cat-monitoring: #eda100;
+  --color-cat-outreach: #e87ba4;
+  --color-cat-areas: #6250d6;
+
+  --text-dense: 13px;
+  --text-dense--line-height: 20px;
+
+  --radius-control: 6px;
+  --radius-panel: 8px;
+
+  --shadow-overlay: 0 10px 28px -8px rgb(15 23 42 / 0.22), 0 2px 6px -2px rgb(15 23 42 / 0.12);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-slate-50);
+  color: var(--color-slate-900);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Numbers that get compared line up. */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Skeletons wait 200 ms so a fast load never flashes, then pulse slowly. */
+.skeleton {
+  background: var(--color-slate-200);
+  border-radius: 4px;
+  animation:
+    skeleton-in 120ms ease-out 200ms both,
+    skeleton-pulse 1.6s ease-in-out 320ms infinite;
+}
+@keyframes skeleton-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes skeleton-pulse {
+  50% { opacity: 0.55; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Highlight of a quote inside the rendered PDF page. */
+.evidence-mark {
+  background: rgb(253 224 71 / 0.55);
+  border-radius: 2px;
+}
+
+@media print {
+  body {
+    background: #fff;
+    font-size: 11px;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .print-break {
+    break-before: page;
+  }
+  tr {
+    break-inside: avoid;
+  }
+}
+.print-only {
+  display: none;
 }

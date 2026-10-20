@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { ExtractionResult } from '@app/backend';
-import { apiCall, startExtraction } from './run-extraction';
+import { apiCall, prepareFile } from './run-extraction';
 
 afterEach(() => vi.unstubAllGlobals());
 const signal = new AbortController().signal;
@@ -36,19 +36,21 @@ describe('apiCall', () => {
   });
 });
 
-describe('startExtraction', () => {
-  it('returns a stored result for the same file without running the pipeline again', async () => {
+describe('prepareFile', () => {
+  const file = new File([new TextEncoder().encode('%PDF-1.7 test')], 'plan.pdf', { type: 'application/pdf' });
+
+  it('returns a stored result for the same file and its sha256 id', async () => {
     const stored = { document: { id: 'cached' } } as unknown as ExtractionResult;
-    const run = vi.fn();
-    const file = new File([new TextEncoder().encode('%PDF-1.7 test')], 'plan.pdf', { type: 'application/pdf' });
-    const out = await startExtraction(file, () => {}, signal, {
-      load: async () => stored,
-      save: async () => {},
-      run,
-      open: async () => null,
-    });
-    expect(out.result).toBe(stored);
-    expect(out.fromCache).toBe(true);
-    expect(run).not.toHaveBeenCalled();
+    const open = vi.fn(async () => null);
+    const out = await prepareFile(file, { load: async () => stored, open });
+    expect(out.cached).toBe(stored);
+    expect(out.id).toMatch(/^[0-9a-f]{64}$/);
+  });
+
+  it('opens the PDF when nothing is stored', async () => {
+    const doc = { numPages: 11 };
+    const out = await prepareFile(file, { load: async () => null, open: async () => doc as never });
+    expect(out.cached).toBeNull();
+    expect(out.doc).toBe(doc);
   });
 });

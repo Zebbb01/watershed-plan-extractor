@@ -9,3 +9,4 @@ export { runPipeline, type PipelineDeps, type Progress } from './pipeline';
 export { computeSummary, overviewSentence } from './summary';
 export { toTextItems, hasImageOps } from './pdf/convert';
 export { stableId } from './verify';
+export { normalizeForMatch } from './text/normalize';
