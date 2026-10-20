@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { findQuote, normalizeForMatch, numbersIn } from './normalize';
+import { findQuote, normalizeForMatch, numbersIn, stem } from './normalize';
 
 describe('normalizeForMatch', () => {
   it('treats en dashes and hyphens alike', () => {
@@ -45,6 +45,21 @@ describe('findQuote', () => {
 
   it('rejects an unrelated sentence even when fuzzy is on', () => {
     expect(findQuote(page, 'Install twelve grade stabilization structures on Dry Creek', { fuzzy: true }).found).toBe(false);
+  });
+});
+
+describe('stem', () => {
+  it('maps word forms of one practice to one stem', () => {
+    expect(stem('reduction')).toBe(stem('reduce'));
+    expect(stem('Fencing')).toBe(stem('fence'));
+    expect(stem('terraces')).toBe(stem('Terrace'));
+    expect(stem('structures')).toBe(stem('structure'));
+    expect(stem('diversions')).toBe(stem('diversion'));
+  });
+
+  it('keeps short words whole', () => {
+    expect(stem('pond')).toBe('pond');
+    expect(stem('ponds')).toBe('pond');
   });
 });
 

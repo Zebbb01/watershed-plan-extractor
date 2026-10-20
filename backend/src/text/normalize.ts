@@ -80,6 +80,20 @@ export function findQuote(haystack: string, quote: string, opts: { fuzzy?: boole
   return { found: best >= FUZZY_MIN, score: best };
 }
 
+const SUFFIXES = ['ations', 'ation', 'tions', 'tion', 'ings', 'ing', 'ies', 'es', 'ed', 's', 'e'];
+
+/** A light English stemmer: enough to match "Fencing" with "Fence" and "reduction" with "reduce". */
+export function stem(word: string): string {
+  let w = word.toLowerCase();
+  for (const suffix of SUFFIXES) {
+    if (w.endsWith(suffix) && w.length - suffix.length >= 4) {
+      w = w.slice(0, -suffix.length) + (suffix === 'ies' ? 'y' : '');
+      break;
+    }
+  }
+  return w.endsWith('e') && w.length > 4 ? w.slice(0, -1) : w;
+}
+
 const NUMBER = /\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+(?:\.\d+)?/g;
 
 /** Every number written in `s`, thousands separators removed. */
