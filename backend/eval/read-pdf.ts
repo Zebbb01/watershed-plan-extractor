@@ -19,7 +19,6 @@ function openPdf(path: string): Promise<PDFDocumentProxy> {
   if (!doc) {
     doc = getDocument({
       data: new Uint8Array(readFileSync(path)),
-      isEvalSupported: false,
       standardFontDataUrl: STANDARD_FONTS,
       verbosity: 0,
     }).promise;
