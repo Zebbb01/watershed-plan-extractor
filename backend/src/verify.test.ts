@@ -165,3 +165,29 @@ describe('verifyUnit', () => {
     expect(verifyUnit(data, pages, []).rejected[0].reason).toBe('invalid');
   });
 });
+
+describe('verifyUnit on a milestone table', () => {
+  const tablePage = [{
+    n: 8,
+    source: 'text' as const,
+    markup:
+      '[TABLE — see image]\n| Coordinate with the MDEQ, NRCS, | Target priority | Months 1-2 |\n' +
+      '| MSWCC, USGS, and the Noxubee and | areas for BMPs |\nLowndes Co. Soil and Water Districts to',
+  }];
+  const activity = {
+    name: 'Coordinate with the MDEQ, NRCS, MSWCC, USGS, and the Noxubee and Lowndes Co. Soil and Water Districts',
+    text: 'Determine priority areas', kind: 'main' as const, parentName: null,
+    evidence: [{ page: 8, quote: 'Coordinate with the MDEQ, NRCS, MSWCC, USGS, and the Noxubee and Lowndes Co. Soil and Water Districts' }],
+    responsible: [], timeframe: 'Months 1-2', status: null, milestone: true,
+  };
+
+  it('accepts a quote split across table cells when the page image was sent, at medium confidence', () => {
+    const r = verifyUnit({ ...empty(), implementation: [activity] }, tablePage, [8]);
+    expect(r.items.implementation[0]).toMatchObject({ confidence: 'medium', source: 'table' });
+  });
+
+  it('does not accept the split quote on a page that is not a table', () => {
+    const r = verifyUnit({ ...empty(), implementation: [activity] }, tablePage, []);
+    expect(r.items.implementation).toEqual([]);
+  });
+});

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { findQuote, normalizeForMatch, numbersIn, stem } from './normalize';
+import { findQuote, findQuoteInOrder, normalizeForMatch, numbersIn, stem } from './normalize';
 
 describe('normalizeForMatch', () => {
   it('treats en dashes and hyphens alike', () => {
@@ -70,5 +70,24 @@ describe('numbersIn', () => {
 
   it('reads both ends of a range and ignores HUC-length codes as one number', () => {
     expect(numbersIn('77% to 97% in HUC 031601060307')).toEqual([77, 97, 31601060307]);
+  });
+});
+
+describe('findQuoteInOrder', () => {
+  const table =
+    'Coordinate with the MDEQ, NRCS, | Target priority | Months 1-2\n' +
+    'MSWCC, USGS, and the Noxubee and | areas for BMPs\n' +
+    'Lowndes Co. Soil and Water Districts to';
+
+  it('finds a quote whose words are split by other table cells', () => {
+    expect(findQuoteInOrder(table, 'Coordinate with the MDEQ, NRCS, MSWCC, USGS, and the Noxubee and Lowndes Co.')).toBe(true);
+  });
+
+  it('rejects the same words out of order', () => {
+    expect(findQuoteInOrder(table, 'Lowndes Co. Coordinate with the MDEQ, NRCS, MSWCC')).toBe(false);
+  });
+
+  it('rejects a quote with a word that is not there', () => {
+    expect(findQuoteInOrder(table, 'Coordinate with the EPA, NRCS, MSWCC, USGS')).toBe(false);
   });
 });

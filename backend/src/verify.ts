@@ -3,7 +3,7 @@ import type {
   ActivityItem, AreaItem, BmpItem, CategoryKey, Confidence, Evidence, GoalItem, LlmQuantityValue, MetricItem,
   OutreachItem, Quantity, Rejection, Source, UnitExtraction, UnitItems,
 } from './schema';
-import { findQuote, normalizeForMatch, numbersIn, stem } from './text/normalize';
+import { findQuote, findQuoteInOrder, normalizeForMatch, numbersIn, stem } from './text/normalize';
 import { parseQuantity, parseTimeframe } from './text/quantity';
 
 /*
@@ -66,6 +66,11 @@ function checkEvidence(ctx: Context, evidence: { page: number; quote: string }[]
         hit = { page: n, exact: r.score === 1 && page.source === 'text' && n === Math.round(e.page) };
         break;
       }
+    }
+    if (!hit) {
+      // On a table page whose image was sent, a cell's words may be split by neighbouring cells.
+      const n = candidates.find((c) => ctx.imagePages.has(c) && ctx.pages.has(c) && findQuoteInOrder(ctx.pages.get(c)!.text, quote));
+      if (n !== undefined) hit = { page: n, exact: false };
     }
     if (!hit) {
       // A quote may run over a page break.

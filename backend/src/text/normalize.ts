@@ -80,6 +80,30 @@ export function findQuote(haystack: string, quote: string, opts: { fuzzy?: boole
   return { found: best >= FUZZY_MIN, score: best };
 }
 
+const tokens = (s: string) => normalizeForMatch(s).split(/[^\p{L}\p{N}]+/u).filter(Boolean);
+
+/**
+ * For table pages, where a cell's text is interleaved with its neighbours' cells: every word
+ * of the quote, in order, within a short window. Used only where a page image shows the table.
+ */
+export function findQuoteInOrder(haystack: string, quote: string): boolean {
+  const h = tokens(haystack);
+  const q = tokens(quote);
+  if (q.length < 3) return false;
+  const maxSpan = Math.max(3 * q.length, q.length + 12);
+  for (let start = h.indexOf(q[0]); start !== -1; start = h.indexOf(q[0], start + 1)) {
+    let at = start;
+    let k = 1;
+    while (k < q.length && at - start < maxSpan) {
+      at++;
+      if (at >= h.length) break;
+      if (h[at] === q[k]) k++;
+    }
+    if (k === q.length && at - start < maxSpan) return true;
+  }
+  return false;
+}
+
 const SUFFIXES = ['ations', 'ation', 'tions', 'tion', 'ings', 'ing', 'ies', 'es', 'ed', 's', 'e'];
 
 /** A light English stemmer: enough to match "Fencing" with "Fence" and "reduction" with "reduce". */
