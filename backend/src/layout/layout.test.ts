@@ -107,6 +107,20 @@ describe('annotateDocument', () => {
     }
   });
 
+  it('recognises a running header whether a page reads it as text or as a table row', () => {
+    const costRows = ['Cover Crops', 'Diversion', 'Fencing', 'Terraces'].map((name, i) => [
+      item(name, 72, 400 + i * 14, { w: 80 }),
+      item('ac', 250, 400 + i * 14, { w: 12 }),
+      item(String(500 + i), 320, 400 + i * 14, { w: 20 }),
+      item('$55.86', 400, 400 + i * 14, { w: 30 }),
+      item('$27,930.00', 480, 400 + i * 14, { w: 50 }),
+    ]).flat();
+    const tablePage = (n: number) => raw(n, [...pageWith(n).items, ...costRows]);
+    const pages = annotateDocument([pageWith(1), pageWith(2), tablePage(3), tablePage(4), tablePage(5)].map(buildPageModel));
+    expect(pages[2].lines.find((l) => l.text.includes('Watershed Plan'))!.text).toContain('|');
+    for (const p of pages) expect(p.lines.find((l) => l.text.includes('Watershed Plan'))!.kind).toBe('admin');
+  });
+
   it('marks a table-of-contents page as admin-only', () => {
     const toc = raw(2, [
       item('TABLE OF CONTENTS', 72, 60, { h: 14, w: 150 }),

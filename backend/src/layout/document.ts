@@ -10,7 +10,8 @@ const ADMIN_SECTION = /^(acknowledge?ments?|references|literature cited|bibliogr
 const PAGE_NUMBER = /^(page\s+)?([0-9]{1,4}|[ivxlc]{1,7})(\s+of\s+\d+)?$/i;
 const TOC_LINE = /(\.{4,}|\s{3,}|…+)\s*\d{1,4}\s*$/;
 
-const repeatKey = (text: string) => text.toLowerCase().replace(/\d+/g, '#').replace(/\s+/g, ' ').trim();
+// A header read as a table row on some pages ("Plan | FY19") is the same header as plain text on others.
+const repeatKey = (text: string) => text.toLowerCase().replace(/\|/g, ' ').replace(/\d+/g, '#').replace(/\s+/g, ' ').trim();
 const inBand = (y: number, height: number | undefined) => height !== undefined && (y < height * 0.12 || y > height * 0.88);
 
 export function annotateDocument(pages: PageModel[]): PageModel[] {
