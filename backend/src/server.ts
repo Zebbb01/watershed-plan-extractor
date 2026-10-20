@@ -2,3 +2,4 @@
 export { createClient } from './llm/client';
 export { readEnv, LlmError, DEFAULT_MODELS, type LlmClient, type LlmEnv, type Provider } from './llm/provider';
 export { priceUsd } from './llm/prices';
+export { handleExtract, handleOcr } from './handlers';
