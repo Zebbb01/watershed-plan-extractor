@@ -1,0 +1,12 @@
+# Netlify builds the Next.js app in frontend/ from the npm workspace root,
+# so the shared backend package is installed and transpiled with it.
+[build]
+  command = "npm run build -w frontend"
+  publish = "frontend/.next"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NEXT_TELEMETRY_DISABLED = "1"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

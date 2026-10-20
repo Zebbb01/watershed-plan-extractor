@@ -1,0 +1,20 @@
+{
+  "name": "watershed-extractor",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Extracts goals, BMPs, implementation, monitoring, outreach and geographic data from watershed plan PDFs.",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w frontend",
+    "build": "npm run build -w frontend",
+    "test": "npm test --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "eval": "npm run eval -w backend --"
+  },
+  "engines": {
+    "node": ">=20.9"
+  }
+}

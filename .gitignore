@@ -1,0 +1,24 @@
+# dependencies
+node_modules/
+
+# builds
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+next-env.d.ts
+
+# secrets: only the example file is tracked
+.env*
+!.env.example
+
+# test documents are downloaded, never committed (see backend/eval/docs.json)
+backend/eval/pdfs/
+
+# local tooling
+.superpowers/
+.netlify/
+*.zip
+*.log
+.DS_Store
