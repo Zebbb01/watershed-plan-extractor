@@ -7,7 +7,9 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import type { PDFDocumentProxy } from 'pdfjs-dist';
 import { Popover, Tabs } from 'radix-ui';
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import type { SampleCard } from '@/components/home/home';
 import { buttonClass } from '@/components/ui/button';
+import samples from '@/data/samples.json';
 import { InfoHint } from '@/components/ui/info-hint';
 import { PopoverSelect } from '@/components/ui/popover-select';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -27,20 +29,14 @@ import { QualityTab } from './quality-tab';
 type Tab = 'overview' | CategoryKey | 'quality';
 const TABS: Tab[] = ['overview', ...CATEGORY_KEYS, 'quality'];
 
-interface SampleMeta {
-  slug: string;
-  pdf: string | null;
-  sourceUrl: string;
-}
-
-type Loaded = { status: 'loading' } | { status: 'missing' } | { status: 'ready'; result: ExtractionResult; sample: SampleMeta | null };
+type Loaded = { status: 'loading' } | { status: 'missing' } | { status: 'ready'; result: ExtractionResult; sample: SampleCard | null };
 
 async function load(id: string): Promise<Loaded> {
   if (id.startsWith('sample-')) {
     const slug = id.slice('sample-'.length);
-    const [res, index] = await Promise.all([fetch(`/samples/${slug}.json`), fetch('/samples/index.json')]);
-    if (!res.ok) return { status: 'missing' };
-    const meta = ((await index.json()) as SampleMeta[]).find((s) => s.slug === slug) ?? null;
+    const meta = (samples as SampleCard[]).find((s) => s.slug === slug) ?? null;
+    const res = meta ? await fetch(`/samples/${slug}.json`) : null;
+    if (!res?.ok) return { status: 'missing' };
     return { status: 'ready', result: await res.json(), sample: meta };
   }
   const result = session.result(id) ?? (await loadResult(id));

@@ -18,10 +18,13 @@ import { Processing, reduceProgress, type RunState } from './processing';
 export interface SampleCard {
   slug: string;
   title: string;
-  year: number;
+  year: number | null;
   pages: number;
   format: string;
   source: string;
+  /** shipped copy of the PDF, or null when it is too large to ship */
+  pdf: string | null;
+  sourceUrl: string;
 }
 
 type Phase =

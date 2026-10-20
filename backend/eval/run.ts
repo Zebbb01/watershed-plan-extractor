@@ -1,16 +1,14 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { parseArgs } from 'node:util';
-import { handleExtract, handleOcr } from '../src/handlers';
 import { createClient } from '../src/llm/client';
 import { readEnv } from '../src/llm/provider';
-import { runPipeline } from '../src/pipeline';
 import type { CategoryKey } from '../src/schema';
 import { CATEGORY_KEYS } from '../src/schema';
 import { DOCS, EVAL_DIR, pdfPath, type EvalDoc } from './doc-set';
 import { loadEnv } from './env';
 import { pageTexts } from './page-text';
-import { readPdfNode, renderPageJpeg } from './read-pdf';
+import { runDoc } from './run-doc';
 import { score, type DocScore, type GroundTruth } from './score';
 
 /*
@@ -80,16 +78,7 @@ for (const doc of docs) {
     continue;
   }
   process.stdout.write(`${doc.id} ... `);
-  const { pages, title } = await readPdfNode(path);
-  const result = await runPipeline(
-    { doc: { id: doc.id, fileName: doc.file, pages: pages.length, title: doc.title ?? title, year: Number(/\d{4}/.exec(doc.title)?.[0]) || null }, rawPages: pages },
-    {
-      extract: (req, signal) => handleExtract(req, client, AbortSignal.any([signal, AbortSignal.timeout(50_000)])),
-      ocr: (req, signal) => handleOcr(req, client, AbortSignal.any([signal, AbortSignal.timeout(50_000)])),
-      renderPage: (n) => renderPageJpeg(path, n),
-    },
-    { concurrency: Number(args.concurrency), provider: client.provider, model: client.model },
-  );
+  const { result, pages } = await runDoc(doc, client, Number(args.concurrency));
   writeFileSync(join(RESULTS, 'runs', `${doc.id}.${client.model}.json`), JSON.stringify(result, null, 1));
 
   const gtFile = join(EVAL_DIR, 'ground-truth', `${doc.id}.json`);
@@ -146,7 +135,11 @@ const out = {
 };
 const name = `${date}-${client.model}${args.label ? `-${args.label}` : ''}-${set}.json`;
 writeFileSync(join(RESULTS, name), JSON.stringify(out, null, 1));
-if (args.latest || set === 'all') writeFileSync(join(RESULTS, 'latest.json'), JSON.stringify(out, null, 1));
+if (args.latest || set === 'all') {
+  writeFileSync(join(RESULTS, 'latest.json'), JSON.stringify(out, null, 1));
+  // The site's Accuracy page imports this copy at build time.
+  writeFileSync(join(EVAL_DIR, '..', '..', 'frontend', 'src', 'data', 'accuracy.json'), `${JSON.stringify(out)}\n`);
+}
 
 console.log(`\n| Document | Set | Core F1 | Precision | Recall | Numbers | Verbatim violations | Time | Cost |`);
 console.log(`|---|---|---|---|---|---|---|---|---|`);
