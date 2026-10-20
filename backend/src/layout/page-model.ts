@@ -37,6 +37,17 @@ const CAPTION = /^(figure|fig\.|photo|map|image)\s*\d+[a-z]?\s*[.:-]/i;
 const NINE_ELEMENT = /^(element|key element)\s+[a-i]\b/i;
 const SMALL_WORDS = new Set(['a', 'an', 'the', 'and', 'or', 'of', 'to', 'in', 'for', 'on', 'at', 'by', 'with', 'from', '&']);
 
+/** Median of values weighted by how many characters carry them. */
+const weightedMedian = (pairs: [number, number][]) => {
+  const total = pairs.reduce((s, [, w]) => s + w, 0);
+  let acc = 0;
+  for (const [v, w] of [...pairs].sort((a, b) => a[0] - b[0])) {
+    acc += w;
+    if (acc >= total / 2) return v;
+  }
+  return 0;
+};
+
 const median = (xs: number[]) => {
   if (!xs.length) return 0;
   const s = [...xs].sort((a, b) => a - b);
@@ -153,8 +164,6 @@ export function buildPageModel(page: RawPage): PageModel {
   flags.multiColumn = groups.length > 1;
   const rows = groups.flatMap((g, i) => groupLines(g, i === asideIndex));
 
-  const bodySize = median(rows.filter((r) => r.text.length > 40).map((r) => r.size)) || median(rows.map((r) => r.size));
-  const margin = median(rows.filter((r) => !r.aside && r.text.length > 40).map((r) => Math.round(r.x))) || Math.min(...rows.map((r) => r.x));
 
   // A table is three numeric rows of three cells (cost tables) or five rows split by wide gaps
   // (milestone tables). On such a page every multi-cell row is read as a table row.
@@ -162,6 +171,21 @@ export function buildPageModel(page: RawPage): PageModel {
   const numericRows = multiCell.filter((r) => r.cells.length >= 3 && numericShare(r.cells) >= 0.3);
   flags.tableLike = numericRows.length >= 3 || multiCell.length >= 5;
   const tableSet = new Set(flags.tableLike ? multiCell : []);
+
+  // Body size and left margin come from prose rows only: a table set in smaller type must not
+  // make every prose line look like a heading.
+  const prose = rows.filter((r) => !r.aside && !tableSet.has(r) && r.text.length > 40);
+  const bodySize = weightedMedian(prose.map((r) => [r.size, r.text.length])) || median(rows.map((r) => r.size));
+  const margin = median(prose.map((r) => Math.round(r.x))) || Math.min(...rows.map((r) => r.x));
+
+  // Length of the run of same-size lines each row sits in: a paragraph in larger type is not a heading.
+  const runOf = new Map<RowLine, number>();
+  for (let i = 0; i < rows.length; ) {
+    let j = i + 1;
+    while (j < rows.length && Math.abs(rows[j].size - rows[i].size) < 0.5 && rows[j].aside === rows[i].aside) j++;
+    for (let k = i; k < j; k++) runOf.set(rows[k], j - i);
+    i = j;
+  }
 
   const lines: Line[] = rows.map((r) => {
     const base = { x: r.x, y: r.y, size: r.size, bold: false };
@@ -183,7 +207,7 @@ export function buildPageModel(page: RawPage): PageModel {
 
     const short = text.length <= 90 && !/[.;,]$/.test(text);
     const heading =
-      (r.size >= bodySize * 1.15 && text.length <= 120) ||
+      (r.size >= bodySize * 1.15 && short && (runOf.get(r) ?? 1) <= 2) ||
       NINE_ELEMENT.test(text) ||
       (short && /^[A-Z][A-Z0-9 &,/()'-]{4,}$/.test(text)) ||
       (short && listItem === 'numbered' && text.length <= 60 && isTitleish(text));

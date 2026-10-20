@@ -49,3 +49,10 @@ describe('layout on real pages', () => {
     expect(toc.flags.adminOnly).toBe(true);
   });
 });
+
+describe('body text size on a page that also has a table', () => {
+  it('keeps prose as prose on Bell Creek page 16', () => {
+    const line = model('bell-creek-2012-p16').lines.find((l) => l.text.startsWith('The designated beneficial uses'))!;
+    expect(line.kind).toBe('para');
+  });
+});
