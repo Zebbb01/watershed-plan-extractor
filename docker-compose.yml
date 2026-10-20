@@ -1,0 +1,12 @@
+# Runs the production build on http://localhost:3000.
+# Keys come from frontend/.env.local at run time (copy .env.example there first); the image holds none.
+services:
+  app:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    ports:
+      - "3000:3000"
+    env_file:
+      - frontend/.env.local
+    restart: unless-stopped

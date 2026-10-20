@@ -1,0 +1,10 @@
+# Keeps keys, local builds and test PDFs out of the Docker build context.
+**/node_modules
+**/.next
+**/.env*
+!.env.example
+backend/eval/pdfs
+.git
+.superpowers
+.netlify
+*.zip

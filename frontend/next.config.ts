@@ -5,6 +5,8 @@ const nextConfig: NextConfig = {
   // The shared engine is TypeScript source in the npm workspace; Next compiles it with the app.
   transpilePackages: ['@app/backend'],
   poweredByHeader: false,
+  // Docker builds a self-contained server in .next/standalone; next start and Netlify's adapter do not need the flag.
+  output: process.env.NEXT_STANDALONE === '1' ? 'standalone' : undefined,
   async headers() {
     return [{ source: '/:path*', headers: Object.entries(STATIC_SECURITY_HEADERS).map(([key, value]) => ({ key, value })) }];
   },
