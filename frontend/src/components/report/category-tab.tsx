@@ -17,29 +17,53 @@ export function matchesSearch(item: AnyItem, query: string): boolean {
   return [item.name, item.text, ...item.evidence.map((e) => e.quote)].some((s) => normalizeForMatch(s).includes(q));
 }
 
-/** One category as a dense table: filters on its own row, evidence one click away. */
+/** Which of the tab's states to show: nothing in the document is not the same as nothing left after filters. */
+export function tabState({ total, shown }: { total: number; shown: number }): 'none-in-document' | 'filtered-empty' | 'rows' {
+  if (total === 0) return 'none-in-document';
+  return shown === 0 ? 'filtered-empty' : 'rows';
+}
+
+/** "Goals" -> "goals" mid-sentence, while "BMPs" stays "BMPs". */
+export const categoryNoun = (label: string) => label.replace(/^[A-Z](?=[a-z])/, (c) => c.toLowerCase());
+
+/**
+ * One category as a dense table: filters on its own row, evidence one click away. `items` arrive
+ * already narrowed by the report's area filter; `total` is the category's size before it.
+ */
 export function CategoryTab({
   category,
   items,
+  total,
+  areaActive,
   search,
-  onClearSearch,
+  onClearFilters,
   onEvidence,
 }: {
   category: CategoryKey;
   items: AnyItem[];
+  total: number;
+  areaActive: boolean;
   search: string;
-  onClearSearch: () => void;
+  /** clears the report-level filters: search and area */
+  onClearFilters: () => void;
   onEvidence: (item: AnyItem) => void;
 }) {
   const def = categoryByKey(category);
   const ui = CATEGORY_UI[category];
+  const noun = categoryNoun(def.label);
   const [kind, setKind] = useState<KindFilter>('all');
   const [reviewOnly, setReviewOnly] = useState(false);
 
   const kinds = useMemo(() => new Set(items.map((i) => i.kind)), [items]);
   const reviewCount = items.filter((i) => i.needsReview).length;
   const rows = items.filter((i) => (kind === 'all' || i.kind === kind) && (!reviewOnly || i.needsReview) && matchesSearch(i, search));
-  const filtered = kind !== 'all' || reviewOnly || Boolean(search);
+  const filtered = kind !== 'all' || reviewOnly || Boolean(search) || areaActive;
+  const state = tabState({ total, shown: rows.length });
+  const clearFilters = () => {
+    setKind('all');
+    setReviewOnly(false);
+    onClearFilters();
+  };
 
   const columns: Column<AnyItem>[] = [
     ...def.columns.map((c, idx) => ({
@@ -83,11 +107,11 @@ export function CategoryTab({
     },
   ];
 
-  if (items.length === 0) {
+  if (state === 'none-in-document') {
     return (
       <div className="rounded-panel border border-slate-200 bg-white px-6 py-12 text-center">
         <ui.icon className="mx-auto size-6 text-slate-300" aria-hidden />
-        <p className="mt-2 text-[15px] font-semibold text-slate-900">No {def.label.toLowerCase()} found in this document</p>
+        <p className="mt-2 text-[15px] font-semibold text-slate-900">No {noun} found in this document</p>
         <p className="mt-1 text-[13px] text-slate-500">Nothing on its pages passed the checks for this category.</p>
       </div>
     );
@@ -116,22 +140,14 @@ export function CategoryTab({
           </Button>
         )}
         <span className="tabular ml-auto text-[12px] text-slate-500">
-          {rows.length} of {items.length}
+          {rows.length} of {total}
         </span>
       </div>
 
-      {rows.length === 0 ? (
+      {state === 'filtered-empty' ? (
         <div className="rounded-panel border border-slate-200 bg-white px-6 py-10 text-center">
-          <p className="text-[15px] font-semibold text-slate-900">No {def.label.toLowerCase()} match these filters</p>
-          <Button
-            variant="secondary"
-            className="mt-3"
-            onClick={() => {
-              setKind('all');
-              setReviewOnly(false);
-              onClearSearch();
-            }}
-          >
+          <p className="text-[15px] font-semibold text-slate-900">No {noun} match these filters</p>
+          <Button variant="secondary" className="mt-3" onClick={clearFilters}>
             Clear filters
           </Button>
         </div>
@@ -161,15 +177,7 @@ export function CategoryTab({
       {filtered && rows.length > 0 && (
         <p className="text-[12px] text-slate-500">
           Filtered.{' '}
-          <button
-            type="button"
-            className="font-medium text-primary-700 hover:underline"
-            onClick={() => {
-              setKind('all');
-              setReviewOnly(false);
-              onClearSearch();
-            }}
-          >
+          <button type="button" className="font-medium text-primary-700 hover:underline" onClick={clearFilters}>
             Clear filters
           </button>
         </p>

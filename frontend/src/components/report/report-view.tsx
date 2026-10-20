@@ -236,7 +236,18 @@ export function ReportView({ id }: { id: string }) {
 
           {CATEGORY_KEYS.map((k) => (
             <Tabs.Content key={k} value={k} className="mt-4 focus-visible:outline-none">
-              <CategoryTab category={k} items={itemsOf(k)} search={search} onClearSearch={() => setSearch('')} onEvidence={(item) => setEvidence({ item, category: k })} />
+              <CategoryTab
+                category={k}
+                items={itemsOf(k)}
+                total={(report[k] as AnyItem[]).length}
+                areaActive={Boolean(selectedArea)}
+                search={search}
+                onClearFilters={() => {
+                  setSearch('');
+                  setArea('all');
+                }}
+                onEvidence={(item) => setEvidence({ item, category: k })}
+              />
             </Tabs.Content>
           ))}
 
