@@ -1,0 +1,43 @@
+{
+  "doc": "buttahatchee-2004",
+  "scope": [3, 4, 20, 21],
+  "notes": "Scanned PDF with no text layer. Ground truth covers the goals-and-actions summary table (PDF pages 3-4) and sections 3.1-3.2 (PDF pages 20-21), read by Claude from page images; quotes are transcribed by eye, so the verbatim and quote checks do not apply. Only predictions whose evidence is on these pages are scored.",
+  "items": [
+    { "category": "goals", "name": "restore the quality of this watershed", "page": 20, "quote": "The overall goal for this watershed implementation plan is to restore the quality of this watershed", "kind": "main" },
+    { "category": "goals", "name": "Reduce the fecal coliform load to the listed water body so it will achieve the state's secondary contact recreation fecal coliform water quality standard within five years", "aliases": ["Reduce fecal coliform concentrations in Buttahatchee River in Mississippi to state standards", "Reduce the fecal coliform load"], "page": 20, "quote": "Reduce the fecal coliform load to the listed water body so it will achieve the state's secondary contact recreation fecal coliform water quality standard within five years", "kind": "main", "quantities": [{ "raw": "within five years", "value": 5 }] },
+    { "category": "goals", "name": "Maintain existing populations of threatened and endangered native mussel species in the watershed", "page": 20, "quote": "Maintain existing populations of threatened and endangered native mussel species in the watershed (i.e. no net decrease in population)", "kind": "main" },
+    { "category": "goals", "name": "Prevent loss of good quality habitat for threatened and endangered mussel species and their host fish species", "page": 20, "quote": "Prevent loss of good quality habitat for threatened and endangered mussel species and their host fish species", "kind": "main" },
+    { "category": "goals", "name": "Improve the quality of marginal or poor quality habitat for threatened and endangered mussel species and their host species", "page": 20, "quote": "Improve the quality of marginal or poor quality habitat for threatened and endangered mussel species and their host species", "kind": "main" },
+    { "category": "goals", "name": "Protect threatened and endangered mussel species present in Buttahatchee River", "page": 3, "quote": "Protect threatened and endangered mussel species present in Buttahatchee River", "kind": "main" },
+
+    { "category": "implementation", "name": "Develop interstate stream alliance", "page": 20, "quote": "Develop interstate stream alliance", "kind": "main" },
+    { "category": "implementation", "name": "Reduce fecal coliform loads to streams", "page": 21, "quote": "Reduce fecal coliform loads to streams", "kind": "main" },
+    { "category": "implementation", "name": "Reduce sediment loads to streams", "page": 21, "quote": "Reduce sediment loads to streams", "kind": "main" },
+    { "category": "implementation", "name": "Reduce nutrient loads to streams", "page": 21, "quote": "Reduce nutrient loads to streams", "kind": "main" },
+    { "category": "implementation", "name": "Manage point source discharges", "page": 21, "quote": "Manage point source discharges", "kind": "main" },
+    { "category": "implementation", "name": "Research threatened and endangered species", "page": 21, "quote": "Research threatened and endangered species", "kind": "main" },
+    { "category": "implementation", "name": "Reduce livestock access to streams", "page": 21, "quote": "Reduce livestock access to streams", "kind": "sub" },
+    { "category": "implementation", "name": "Locate failing septic systems", "page": 21, "quote": "Locate failing septic systems", "kind": "sub" },
+    { "category": "implementation", "name": "Fix failing septic systems", "page": 21, "quote": "Fix failing septic systems", "kind": "sub" },
+    { "category": "implementation", "name": "Agricultural BMPs", "page": 21, "quote": "Agricultural BMPs", "kind": "sub" },
+    { "category": "implementation", "name": "Inventory silviculture BMPs", "page": 21, "quote": "Inventory silviculture BMPs", "kind": "sub" },
+    { "category": "implementation", "name": "Geomorphological assessment", "aliases": ["Data gathering and evaluation, geomorphological assessment"], "page": 21, "quote": "Geomorphological assessment", "kind": "sub" },
+    { "category": "implementation", "name": "Initiate Phase I of Medallion Farmer Program", "page": 3, "quote": "Initiate Phase I of Medallion Farmer Program", "kind": "main" },
+    { "category": "implementation", "name": "Continue existing projects related to farmer education and implementation of BMPs", "page": 3, "quote": "Continue existing projects related to farmer education and implementation of BMPs", "kind": "main" },
+    { "category": "implementation", "name": "Buttahatchee River watershed nonpoint source pollution project", "page": 3, "quote": "Buttahatchee River watershed nonpoint source pollution project", "kind": "main" },
+    { "category": "implementation", "name": "Aerial survey to determine silviculture activity and develop sampling plan", "page": 3, "quote": "Aerial survey to determine silviculture activity and develop sampling plan", "kind": "main" },
+    { "category": "implementation", "name": "Evaluate potential risk to water quality from recently harvested forest tracts", "page": 3, "quote": "Evaluate potential risk to water quality from recently harvested forest tracts", "kind": "main" },
+    { "category": "implementation", "name": "Contact owners of forest tracts at-risk for water quality to inform them of risk and suggest BMPs", "page": 3, "quote": "Contact owners of forest tracts at-risk for water quality to inform them of risk and suggest BMPs", "kind": "main" },
+    { "category": "implementation", "name": "Partnership building", "page": 3, "quote": "Partnership building", "kind": "main" },
+
+    { "category": "monitoring", "name": "Mussel population survey", "page": 4, "quote": "Mussel population survey", "kind": "main" },
+    { "category": "monitoring", "name": "Water quality monitoring", "page": 4, "quote": "Water quality monitoring", "kind": "main" },
+
+    { "category": "geographicAreas", "name": "Buttahatchee River Watershed", "aliases": ["Buttahatchee River Basin"], "page": 20, "quote": "All references to the Buttahatchee River Watershed or Basin in this document refer", "kind": "main" },
+    { "category": "geographicAreas", "name": "Buttahatchee River", "page": 3, "quote": "Reduce fecal coliform concentrations in Buttahatchee River in Mississippi to state standards", "kind": "main" },
+    { "category": "geographicAreas", "name": "Mississippi", "page": 20, "quote": "covers only the portion of the watershed that is in Mississippi", "kind": "main" },
+    { "category": "geographicAreas", "name": "Alabama", "page": 20, "quote": "Watershed Implementation Plan for the Buttahatchee River Basin in Alabama", "kind": "main" },
+    { "category": "geographicAreas", "name": "Lowndes", "aliases": ["Lowndes County", "Lowndes and Monroe Counties"], "page": 3, "quote": "Lowndes and Monroe Counties", "kind": "main" },
+    { "category": "geographicAreas", "name": "Monroe", "aliases": ["Monroe County"], "page": 3, "quote": "Lowndes and Monroe Counties", "kind": "main" }
+  ]
+}

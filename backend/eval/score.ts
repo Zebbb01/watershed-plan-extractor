@@ -74,7 +74,12 @@ const prf = (gt: number, predicted: number, matched: number): Prf => {
   return { gt, predicted, matched, precision, recall, f1 };
 };
 
-const UNIT = (u: string | null | undefined) => normalizeForMatch(u ?? '').replace(/^acres?$/, 'ac').replace(/^(feet|foot)$/, 'ft');
+// Measures compare as written; counted things ("12 structures", "5 each", "2 demonstration farms") compare as counts.
+const MEASURES = new Set(["ac", "ft", "mi", "cu yd", "%", "usd", "mg/l", "ntu", "°f", "°c", "gal", "lb", "ton", "sq ft", "micromhos/cm"]);
+const UNIT = (u: string | null | undefined) => {
+  const n = normalizeForMatch(u ?? "").replace(/^acres?$/, "ac").replace(/^(feet|foot)$/, "ft");
+  return MEASURES.has(n) ? n : n ? "count" : "";
+};
 
 /** Every number an item reports, with its unit. */
 function valuesOf(category: CategoryKey, item: AnyItem): { value: number; unit: string | null }[] {
