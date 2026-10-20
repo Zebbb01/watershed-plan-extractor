@@ -68,5 +68,15 @@
     "role": "smoke",
     "format": "consultant-report",
     "pages": 647
+  },
+  {
+    "id": "columbia-vsp-2018",
+    "title": "Columbia County Voluntary Stewardship Program Work Plan (2018, Washington)",
+    "file": "Columbia_County_VSP_Work_Plan_2018.pdf",
+    "url": "https://cdn.prod.website-files.com/6317b91f3af3c057577c11d6/692f896d15ee08b17c77f50f_Columbia%20County_VSPWorkPlan_Final%208-22-18_web.pdf",
+    "sha256": "081d289349dbfdec09e6a5a7ede3050e2f90187e0d1eb2a5493556322d1820bc",
+    "role": "smoke",
+    "format": "wa-vsp",
+    "pages": 212
   }
 ]

@@ -27,6 +27,7 @@ The PDFs are pinned by SHA-256 in `backend/eval/docs.json`;
 | Fuller Creek – Town Creek 2022 | Nine key elements | 13 | Held out | {{GT_FULLER}} |
 | Tchoutacabouffa River 2007 | Community action plan | 22 | Held out | {{GT_TCHOU}} |
 | Ross Barnett Reservoir 2011 | Two-column consultant report, 61 MB | 647 | Smoke test (size) | none |
+| Columbia County, Washington, VSP Work Plan 2018 | Voluntary Stewardship Program work plan: goals, benchmarks, practices by county | 212 | Smoke test (another state's format) | none |
 
 Prompts and rules were tuned only on the tuning plans. The held-out plans were labelled
 after tuning ended and scored once, on the final settings, so their numbers estimate
