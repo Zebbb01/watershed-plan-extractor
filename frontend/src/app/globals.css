@@ -136,9 +136,19 @@ body {
 }
 
 @media print {
+  /*
+   * No top or bottom page margin: that leaves the browser no room for its own header and footer
+   * (date, web address, page count), so the report draws its own. The space at the top and
+   * bottom of every page is the report's padding, repeated on each page.
+   */
+  @page {
+    margin: 0 14mm;
+  }
   body {
     background: #fff;
     font-size: 11px;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
   }
   /* Netlify's free-plan badge is an iframe it adds to every page; it is no part of a report. */
   .no-print,
@@ -148,14 +158,35 @@ body {
   }
   .print-only {
     display: block !important;
+    padding: 14mm 0 18mm;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
   }
-  .print-break {
-    break-before: page;
+  /* Fixed elements print on every page. */
+  .print-footer {
+    position: fixed;
+    bottom: 7mm;
+    left: 0;
+    right: 0;
+    display: flex !important;
+  }
+  .print-cover {
+    break-after: page;
+  }
+  .print-section + .print-section {
+    margin-top: 10mm;
+  }
+  .print-keep {
+    break-after: avoid;
+  }
+  thead {
+    display: table-header-group;
   }
   tr {
     break-inside: avoid;
   }
 }
-.print-only {
+.print-only,
+.print-footer {
   display: none;
 }
