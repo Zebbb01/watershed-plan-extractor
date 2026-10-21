@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 import type { ExtractRequest } from '../api';
 import { CATEGORIES } from '../categories';
 import type { UnitExtraction } from '../schema';
-import { createAnthropicClient } from './anthropic';
+import { anthropicSdk, createAnthropicClient } from './anthropic';
 import { buildUserText, SYSTEM_PROMPT } from './prompt';
 import { priceUsd } from './prices';
 import { readEnv } from './provider';
@@ -27,10 +27,10 @@ describe('readEnv', () => {
     expect(readEnv({ ANTHROPIC_API_KEY: '', OPENAI_API_KEY: ' ' }).provider).toBeNull();
   });
 
-  it('defaults to Anthropic with Opus 5.5, low effort and the safety limits', () => {
+  it('defaults to Anthropic with Opus 5.5, no explicit effort and the safety limits', () => {
     expect(readEnv({ ANTHROPIC_API_KEY: 'k' })).toEqual({
       provider: 'anthropic', extractionModel: 'claude-opus-5-5', ocrModel: 'claude-opus-5-5',
-      effort: 'low', maxPages: 800, ratePerMin: 60,
+      effort: null, maxPages: 800, ratePerMin: 60,
     });
   });
 
@@ -53,7 +53,7 @@ describe('readEnv', () => {
       EXTRACTION_EFFORT: 'turbo', MAX_PAGES: '50', RATE_LIMIT_PER_MIN: '10',
     })).toEqual({
       provider: 'anthropic', extractionModel: 'claude-haiku-5-5', ocrModel: 'claude-sonnet-5-5',
-      effort: 'low', maxPages: 50, ratePerMin: 10,
+      effort: null, maxPages: 50, ratePerMin: 10,
     });
   });
 });
@@ -81,13 +81,18 @@ describe('priceUsd', () => {
     expect(priceUsd('claude-opus-5-5', 1_000_000, 100_000)).toBeCloseTo(6);
     expect(priceUsd('gpt-unknown', 1000, 1000)).toBeNull();
   });
+
+  it('prices cache reads at each model’s own rate', () => {
+    expect(priceUsd('claude-opus-5-5', 0, 0, 1_000_000)).toBeCloseTo(0.2);
+    expect(priceUsd('claude-haiku-5-5', 1_000_000, 100_000)).toBeCloseTo(0.15);
+  });
 });
 
 const empty: UnitExtraction = { goals: [], bmps: [], implementation: [], monitoring: [], outreach: [], geographicAreas: [] };
-const fakeSdk = (impl: () => Promise<unknown>) => ({ beta: { messages: { parse: impl } } }) as unknown as Anthropic;
+const fakeSdk = (impl: (body: Record<string, unknown>) => Promise<unknown>) => ({ beta: { messages: { parse: impl } } }) as unknown as Anthropic;
 
 describe('Anthropic adapter', () => {
-  const opts = { apiKey: 'k', extractionModel: 'claude-opus-5-5', ocrModel: 'claude-opus-5-5', effort: 'low' as const };
+  const opts = { apiKey: 'k', extractionModel: 'claude-opus-5-5', ocrModel: 'claude-opus-5-5', effort: 'low' as 'low' | 'high' | null };
 
   it('returns the parsed output and priced usage', async () => {
     const client = createAnthropicClient(opts, fakeSdk(async () => ({
@@ -117,6 +122,39 @@ describe('Anthropic adapter', () => {
       throw new Anthropic.APIUserAbortError();
     }));
     await expect(client.extract(request, new AbortController().signal)).rejects.toMatchObject({ code: 'TIMEOUT' });
+  });
+
+  it('leaves every retry to the pipeline', () => {
+    expect(anthropicSdk('k').maxRetries).toBe(0);
+  });
+
+  const capture = () => {
+    const bodies: Record<string, unknown>[] = [];
+    const sdk = fakeSdk(async (body) => {
+      bodies.push(body);
+      return { stop_reason: 'end_turn', parsed_output: empty, usage: { input_tokens: 1, output_tokens: 1 } };
+    });
+    return { bodies, sdk };
+  };
+  const signal = new AbortController().signal;
+
+  it('asks for the server-side refusal fallback only on Opus 5 models', async () => {
+    const { bodies, sdk } = capture();
+    await createAnthropicClient({ ...opts, extractionModel: 'claude-opus-5-5' }, sdk).extract(request, signal);
+    await createAnthropicClient({ ...opts, extractionModel: 'claude-haiku-5-5' }, sdk).extract(request, signal);
+    expect(bodies[0]).toMatchObject({ fallbacks: 'default', betas: ['server-side-fallback-2026-07-01'] });
+    expect(bodies[1]).not.toHaveProperty('fallbacks');
+    expect(bodies[1]).not.toHaveProperty('betas');
+  });
+
+  it('sends effort only to models that take it, unless it is set explicitly', async () => {
+    const { bodies, sdk } = capture();
+    await createAnthropicClient({ ...opts, effort: null, extractionModel: 'claude-sonnet-5-5' }, sdk).extract(request, signal);
+    await createAnthropicClient({ ...opts, effort: null, extractionModel: 'claude-haiku-4-5' }, sdk).extract(request, signal);
+    await createAnthropicClient({ ...opts, effort: 'high', extractionModel: 'claude-haiku-4-5' }, sdk).extract(request, signal);
+    expect(bodies[0].output_config).toMatchObject({ effort: 'low' });
+    expect(bodies[1].output_config).not.toHaveProperty('effort');
+    expect(bodies[2].output_config).toMatchObject({ effort: 'high' });
   });
 
   it('reports a refusal as UPSTREAM_ERROR', async () => {

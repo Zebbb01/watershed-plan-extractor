@@ -4,13 +4,13 @@ import type { ExtractRequest, OcrRequest, OcrResponse } from '../api';
 import { UnitExtractionSchema, type UnitExtraction, type Usage } from '../schema';
 import { priceUsd } from './prices';
 import { buildUserText, OCR_PROMPT, SYSTEM_PROMPT } from './prompt';
-import { LlmError, OcrSchema, type Effort, type LlmClient } from './provider';
+import { effortFor, LlmError, OcrSchema, type Effort, type LlmClient } from './provider';
 
 interface Options {
   apiKey: string;
   extractionModel: string;
   ocrModel: string;
-  effort: Effort;
+  effort: Effort | null;
 }
 
 type InputContent = OpenAI.Responses.ResponseInputContent;
@@ -35,8 +35,11 @@ function toLlmError(e: unknown): LlmError {
   return new LlmError('UPSTREAM_ERROR', 'The model call failed.');
 }
 
+/** The SDK client. It never retries on its own: the pipeline waits, splits or retries with the deadline in view. */
+export const openaiSdk = (apiKey: string) => new OpenAI({ apiKey, maxRetries: 0 });
+
 /** OpenAI through the official SDK (Responses API with structured output). */
-export function createOpenAIClient(opts: Options, sdk = new OpenAI({ apiKey: opts.apiKey, maxRetries: 1 })): LlmClient {
+export function createOpenAIClient(opts: Options, sdk = openaiSdk(opts.apiKey)): LlmClient {
   async function call<T>(
     model: string,
     instructions: string,
@@ -44,6 +47,7 @@ export function createOpenAIClient(opts: Options, sdk = new OpenAI({ apiKey: opt
     format: ReturnType<typeof zodTextFormat>,
     signal: AbortSignal,
   ): Promise<{ data: T; usage: Usage }> {
+    const effort = effortFor(model, opts.effort);
     try {
       const res = await sdk.responses.parse(
         {
@@ -52,7 +56,7 @@ export function createOpenAIClient(opts: Options, sdk = new OpenAI({ apiKey: opt
           input: [{ role: 'user', content }],
           text: { format },
           max_output_tokens: 16_000,
-          reasoning: { effort: opts.effort },
+          ...(effort ? { reasoning: { effort } } : {}),
         },
         { signal },
       );

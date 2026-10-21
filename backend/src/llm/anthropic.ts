@@ -4,13 +4,13 @@ import type { ExtractRequest, OcrRequest, OcrResponse } from '../api';
 import { UnitExtractionSchema, type UnitExtraction, type Usage } from '../schema';
 import { priceUsd } from './prices';
 import { buildUserText, OCR_PROMPT, SYSTEM_PROMPT } from './prompt';
-import { LlmError, OcrSchema, type Effort, type LlmClient } from './provider';
+import { effortFor, LlmError, OcrSchema, type Effort, type LlmClient } from './provider';
 
 interface Options {
   apiKey: string;
   extractionModel: string;
   ocrModel: string;
-  effort: Effort;
+  effort: Effort | null;
 }
 
 type Block = Anthropic.Beta.Messages.BetaContentBlockParam;
@@ -34,8 +34,14 @@ function toLlmError(e: unknown): LlmError {
   return new LlmError('UPSTREAM_ERROR', 'The model call failed.');
 }
 
-/** Claude through the official SDK: structured output, cached instructions, refusal fallback. */
-export function createAnthropicClient(opts: Options, sdk = new Anthropic({ apiKey: opts.apiKey, maxRetries: 1 })): LlmClient {
+/** The SDK client. It never retries on its own: the pipeline waits, splits or retries with the deadline in view. */
+export const anthropicSdk = (apiKey: string) => new Anthropic({ apiKey, maxRetries: 0 });
+
+// Server-side refusal fallback exists for the Opus 5 line; Haiku 5.5 rejects the field with a 400.
+const takesFallback = (model: string) => /^claude-opus-5/.test(model);
+
+/** Claude through the official SDK: structured output, cached instructions, refusal fallback where offered. */
+export function createAnthropicClient(opts: Options, sdk = anthropicSdk(opts.apiKey)): LlmClient {
   async function call<T>(
     model: string,
     system: string,
@@ -43,16 +49,16 @@ export function createAnthropicClient(opts: Options, sdk = new Anthropic({ apiKe
     format: ReturnType<typeof betaZodOutputFormat<never>>,
     signal: AbortSignal,
   ): Promise<{ data: T; usage: Usage }> {
+    const effort = effortFor(model, opts.effort);
     try {
       const res = await sdk.beta.messages.parse(
         {
           model,
           max_tokens: 16_000,
-          betas: ['server-side-fallback-2026-07-01'],
-          fallbacks: 'default',
+          ...(takesFallback(model) ? { betas: ['server-side-fallback-2026-07-01'], fallbacks: 'default' as const } : {}),
           system: [{ type: 'text', text: system, cache_control: { type: 'ephemeral' } }],
           messages: [{ role: 'user', content }],
-          output_config: { format, effort: opts.effort },
+          output_config: { format, ...(effort ? { effort } : {}) },
         },
         { signal },
       );

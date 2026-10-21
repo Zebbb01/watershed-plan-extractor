@@ -2,7 +2,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { parseArgs } from 'node:util';
 import { createClient } from '../src/llm/client';
-import { readEnv } from '../src/llm/provider';
+import { effortFor, readEnv } from '../src/llm/provider';
 import type { CategoryKey } from '../src/schema';
 import { CATEGORY_KEYS } from '../src/schema';
 import { DOCS, EVAL_DIR, pdfPath, type EvalDoc } from './doc-set';
@@ -128,7 +128,7 @@ const out = {
   provider: client.provider,
   model: client.model,
   ocrModel,
-  effort: cfg.effort,
+  effort: effortFor(client.model, cfg.effort) ?? 'none',
   set,
   docs: rows,
   aggregate: { dev: aggregate('dev'), heldout: aggregate('heldout'), all: aggregate('all') },

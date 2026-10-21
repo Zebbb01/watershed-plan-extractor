@@ -9,7 +9,8 @@ export interface LlmEnv {
   provider: Provider | null;
   extractionModel: string;
   ocrModel: string;
-  effort: Effort;
+  /** set only by EXTRACTION_EFFORT; otherwise each model gets effortFor()'s default */
+  effort: Effort | null;
   maxPages: number;
   ratePerMin: number;
 }
@@ -18,6 +19,12 @@ export const DEFAULT_MODELS: Record<Provider, string> = {
   anthropic: 'claude-opus-5-5',
   openai: 'gpt-6.1-sol',
 };
+
+// Models that accept an effort setting. Older ones (gpt-4.1, claude-haiku-4-5) reject the field.
+const TAKES_EFFORT = /^(claude-(opus|sonnet|haiku|fable|mythos)-[5-9]|claude-opus-4-[5-9]|claude-sonnet-4-6|gpt-[5-9]|o\d)/;
+
+/** The effort to send: an explicit EXTRACTION_EFFORT always, else "low" where the model takes one. */
+export const effortFor = (model: string, explicit: Effort | null): Effort | null => explicit ?? (TAKES_EFFORT.test(model) ? 'low' : null);
 
 /** A failure the pipeline knows how to react to (retry, wait, split the unit, or give up). */
 export class LlmError extends Error {
@@ -60,7 +67,7 @@ export function readEnv(env: Env = process.env): LlmEnv {
     provider,
     extractionModel: value(env, 'EXTRACTION_MODEL') ?? model,
     ocrModel: value(env, 'OCR_MODEL') ?? model,
-    effort: effort === 'medium' || effort === 'high' ? effort : 'low',
+    effort: effort === 'low' || effort === 'medium' || effort === 'high' ? effort : null,
     maxPages: positiveInt(value(env, 'MAX_PAGES'), 800),
     ratePerMin: positiveInt(value(env, 'RATE_LIMIT_PER_MIN'), 60),
   };
