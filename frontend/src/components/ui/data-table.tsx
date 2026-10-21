@@ -3,6 +3,7 @@
 import { ArrowDown, ArrowUp, ChevronRight } from 'lucide-react';
 import { Fragment, useMemo, useState, type ReactNode } from 'react';
 import { cn } from '@/lib/cn';
+import { cardClass } from './card';
 
 export interface Column<T> {
   key: string;
@@ -57,7 +58,7 @@ export function DataTable<T>({
 
   return (
     <>
-      <div className="hidden max-h-[calc(100vh-13rem)] overflow-auto rounded-panel border border-slate-200 bg-white sm:block">
+      <div className={`hidden max-h-[calc(100vh-13rem)] overflow-auto sm:block ${cardClass}`}>
         <table className="w-full border-collapse text-dense">
           <caption className="sr-only">{caption}</caption>
           <thead className="sticky top-0 z-10">
@@ -135,7 +136,7 @@ export function DataTable<T>({
           const key = rowKey(row);
           const expanded = open.has(key);
           return (
-            <li key={key} className="rounded-panel border border-slate-200 bg-white p-3">
+            <li key={key} className={`p-3 ${cardClass}`}>
               <dl className="space-y-1.5 text-dense">
                 {columns.map((c, i) => (
                   <div key={c.key} className={i === 0 ? 'text-[14px] font-medium text-slate-900' : 'flex justify-between gap-3'}>

@@ -1,8 +1,10 @@
 'use client';
 
 import type { ExtractionResult, Rejection, StructureLine } from '@app/backend';
-import { ChevronRight } from 'lucide-react';
-import { useMemo } from 'react';
+import { ChevronDown, ChevronRight, CircleX, FileX, GitCompareArrows, ScanText, ShieldCheck, TriangleAlert } from 'lucide-react';
+import { useMemo, useState } from 'react';
+import { buttonClass } from '@/components/ui/button';
+import { cardClass } from '@/components/ui/card';
 import { StatTile } from '@/components/ui/stat-tile';
 import { CATEGORY_UI } from '@/lib/categories-ui';
 import { cn } from '@/lib/cn';
@@ -33,8 +35,8 @@ const KIND_TAG: Record<StructureLine['kind'], string> = {
 
 function Section({ title, count, children }: { title: string; count?: number; children: React.ReactNode }) {
   return (
-    <section className="rounded-panel border border-slate-200 bg-white">
-      <h2 className="flex items-center justify-between border-b border-slate-200 px-4 py-2.5 text-[13px] font-semibold text-slate-900">
+    <section className={cardClass}>
+      <h2 className="flex items-center justify-between border-b border-slate-100 px-4 py-3 text-[14px] font-semibold text-slate-900">
         {title}
         {count !== undefined && <span className="tabular text-[12px] font-medium text-slate-500">{count}</span>}
       </h2>
@@ -52,16 +54,17 @@ export function QualityTab({ result }: { result: ExtractionResult }) {
     return [...m.entries()];
   }, [q.structure]);
   const seconds = Math.round(q.durationMs / 1000);
+  const [showStructure, setShowStructure] = useState(false);
 
   return (
     <div className="space-y-4">
       <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
-        <StatTile label="Passed the checks" value={`${Math.round(q.verifiedRate * 100)}%`} sub="of items the model proposed" />
-        <StatTile label="Rejected" value={q.rejected.length} sub="not shown as data" />
-        <StatTile label="Conflicts" value={q.conflicts.length} sub="flagged for review" />
-        <StatTile label="Scanned pages read" value={q.ocrPages.length} />
-        <StatTile label="Pages skipped" value={q.skippedPages.length} />
-        <StatTile label="Sections failed" value={q.failedUnits.length} />
+        <StatTile label="Passed the checks" icon={ShieldCheck} accent="#0f8a4b" value={`${Math.round(q.verifiedRate * 100)}%`} sub="of items the model proposed" />
+        <StatTile label="Rejected" icon={CircleX} value={q.rejected.length} sub="not shown as data" />
+        <StatTile label="Conflicts" icon={GitCompareArrows} accent={q.conflicts.length ? '#b25e09' : undefined} value={q.conflicts.length} sub="flagged for review" />
+        <StatTile label="Scanned pages read" icon={ScanText} accent="#1d63b5" value={q.ocrPages.length} />
+        <StatTile label="Pages skipped" icon={FileX} value={q.skippedPages.length} />
+        <StatTile label="Sections failed" icon={TriangleAlert} accent={q.failedUnits.length ? '#d92d20' : undefined} value={q.failedUnits.length} />
       </div>
 
       {q.failedUnits.length > 0 && (
@@ -158,30 +161,38 @@ export function QualityTab({ result }: { result: ExtractionResult }) {
       </div>
 
       <Section title="Document structure as read" count={byPage.length}>
-        <p className="mb-2 text-[13px] text-slate-500">How each page was understood before extraction: headings, list levels, table rows, captions and skipped lines.</p>
-        <ul className="divide-y divide-slate-100">
-          {byPage.map(([page, lines]) => (
-            <li key={page}>
-              <details className="group">
-                <summary className="flex cursor-pointer list-none items-center gap-2 py-1.5 text-[13px] text-slate-700 hover:text-slate-900">
-                  <ChevronRight className="size-3.5 text-slate-400 transition-transform group-open:rotate-90" aria-hidden />
-                  Page {page}
-                  <span className="text-slate-400">· {lines.length} lines</span>
-                </summary>
-                <ol className="mb-2 ml-5 space-y-0.5 text-[12px]">
-                  {lines.map((l, i) => (
-                    <li key={i} className={cn('flex gap-2', l.kind === 'admin' && 'text-slate-400 line-through')}>
-                      <span className="w-20 shrink-0 text-slate-400">{KIND_TAG[l.kind]}</span>
-                      <span className={cn('min-w-0', l.kind === 'heading' && 'font-semibold text-slate-900')} style={{ paddingLeft: l.level ? (l.level - 1) * 12 : 0 }}>
-                        {l.text}
-                      </span>
-                    </li>
-                  ))}
-                </ol>
-              </details>
-            </li>
-          ))}
-        </ul>
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <p className="text-[13px] text-slate-500">How each page was understood before extraction: headings, list levels, table rows and skipped lines.</p>
+          <button type="button" aria-expanded={showStructure} onClick={() => setShowStructure(!showStructure)} className={buttonClass('secondary', 'sm')}>
+            <ChevronDown className={cn('size-3.5 transition-transform', showStructure && 'rotate-180')} aria-hidden />
+            {showStructure ? 'Hide pages' : `Show ${byPage.length} pages`}
+          </button>
+        </div>
+        {showStructure && (
+          <ul className="mt-2 divide-y divide-slate-100">
+            {byPage.map(([page, lines]) => (
+              <li key={page}>
+                <details className="group">
+                  <summary className="flex cursor-pointer list-none items-center gap-2 py-1.5 text-[13px] text-slate-700 hover:text-slate-900">
+                    <ChevronRight className="size-3.5 text-slate-400 transition-transform group-open:rotate-90" aria-hidden />
+                    Page {page}
+                    <span className="text-slate-400">· {lines.length} lines</span>
+                  </summary>
+                  <ol className="mb-2 ml-5 max-h-80 space-y-0.5 overflow-y-auto text-[12px]">
+                    {lines.map((l, i) => (
+                      <li key={i} className={cn('flex gap-2', l.kind === 'admin' && 'text-slate-400 line-through')}>
+                        <span className="w-20 shrink-0 text-slate-400">{KIND_TAG[l.kind]}</span>
+                        <span className={cn('min-w-0', l.kind === 'heading' && 'font-semibold text-slate-900')} style={{ paddingLeft: l.level ? (l.level - 1) * 12 : 0 }}>
+                          {l.text}
+                        </span>
+                      </li>
+                    ))}
+                  </ol>
+                </details>
+              </li>
+            ))}
+          </ul>
+        )}
       </Section>
     </div>
   );

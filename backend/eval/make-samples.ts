@@ -2,7 +2,7 @@ import { copyFileSync, existsSync, mkdirSync, readFileSync, statSync, writeFileS
 import { join } from 'node:path';
 import { parseArgs } from 'node:util';
 import { createClient } from '../src/llm/client';
-import type { ExtractionResult } from '../src/schema';
+import { CATEGORY_KEYS, type ExtractionResult } from '../src/schema';
 import { docById, EVAL_DIR, pdfPath } from './doc-set';
 import { loadEnv } from './env';
 import { runDoc } from './run-doc';
@@ -52,6 +52,7 @@ for (const id of SAMPLES) {
     source: 'MDEQ',
     pdf: ship ? `/samples/${id}.pdf` : null,
     sourceUrl: doc.url,
+    counts: Object.fromEntries(CATEGORY_KEYS.map((k) => [k, result.report[k].length])),
   });
 }
 writeFileSync(join(frontend, 'src', 'data', 'samples.json'), JSON.stringify(index, null, 2) + '\n');

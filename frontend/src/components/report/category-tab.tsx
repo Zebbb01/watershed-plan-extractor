@@ -1,10 +1,11 @@
 'use client';
 
 import { categoryByKey, normalizeForMatch, type AnyItem, type CategoryKey } from '@app/backend';
-import { TriangleAlert } from 'lucide-react';
+import { SearchX, TriangleAlert } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { cardClass } from '@/components/ui/card';
 import { DataTable, type Column } from '@/components/ui/data-table';
 import { Segmented } from '@/components/ui/segmented';
 import { CATEGORY_UI } from '@/lib/categories-ui';
@@ -109,9 +110,11 @@ export function CategoryTab({
 
   if (state === 'none-in-document') {
     return (
-      <div className="rounded-panel border border-slate-200 bg-white px-6 py-12 text-center">
-        <ui.icon className="mx-auto size-6 text-slate-300" aria-hidden />
-        <p className="mt-2 text-[15px] font-semibold text-slate-900">No {noun} found in this document</p>
+      <div className={`${cardClass} px-6 py-12 text-center`}>
+        <span className="mx-auto grid size-12 place-items-center rounded-full" style={{ background: `${ui.color}1f`, color: ui.color }}>
+          <ui.icon className="size-5" aria-hidden />
+        </span>
+        <p className="mt-3 text-[15px] font-semibold text-slate-900">No {noun} found in this document</p>
         <p className="mt-1 text-[13px] text-slate-500">Nothing on its pages passed the checks for this category.</p>
       </div>
     );
@@ -145,8 +148,11 @@ export function CategoryTab({
       </div>
 
       {state === 'filtered-empty' ? (
-        <div className="rounded-panel border border-slate-200 bg-white px-6 py-10 text-center">
-          <p className="text-[15px] font-semibold text-slate-900">No {noun} match these filters</p>
+        <div className={`${cardClass} px-6 py-10 text-center`}>
+          <span className="mx-auto grid size-12 place-items-center rounded-full bg-slate-100 text-slate-500">
+            <SearchX className="size-5" aria-hidden />
+          </span>
+          <p className="mt-3 text-[15px] font-semibold text-slate-900">No {noun} match these filters</p>
           <Button variant="secondary" className="mt-3" onClick={clearFilters}>
             Clear filters
           </Button>

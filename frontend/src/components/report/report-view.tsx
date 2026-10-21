@@ -1,15 +1,17 @@
 'use client';
 
-import { CATEGORY_KEYS, normalizeForMatch, overviewSentence, type AnyItem, type CategoryKey, type ExtractionResult } from '@app/backend';
-import { ArrowLeft, Download, FileJson, FileSpreadsheet, MapPin, Printer, Search, TriangleAlert, X } from 'lucide-react';
+import { CATEGORY_KEYS, computeSummary, normalizeForMatch, overviewSentence, type AnyItem, type CategoryKey, type ExtractedReport, type ExtractionResult } from '@app/backend';
+import { ArrowLeft, ArrowRight, Columns2, Download, FileJson, FileSpreadsheet, ListChecks, MapPin, Printer, Search, ShieldCheck, TriangleAlert, X } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import type { PDFDocumentProxy } from 'pdfjs-dist';
 import { Popover, Tabs } from 'radix-ui';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState, type ReactNode } from 'react';
 import type { SampleCard } from '@/components/home/home';
 import { buttonClass } from '@/components/ui/button';
+import { cardClass } from '@/components/ui/card';
 import samples from '@/data/samples.json';
+import { useMediaQuery } from '@/hooks/use-media-query';
 import { InfoHint } from '@/components/ui/info-hint';
 import { PopoverSelect } from '@/components/ui/popover-select';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -21,8 +23,9 @@ import { openPdf } from '@/lib/pdf/browser-reader';
 import { session } from '@/lib/session';
 import { loadResult } from '@/lib/store';
 import { CategoryTab, matchesSearch } from './category-tab';
-import { BmpAmounts, BmpCosts, CategoryCounts, Timeline } from './charts';
+import { ActivityStatus, BmpAmounts, BmpCosts, CategoryCounts, Timeline } from './charts';
 import { EvidenceSheet } from './evidence-sheet';
+import { PdfPane, type Focus } from './pdf-pane';
 import { PrintReport } from './print-report';
 import { QualityTab } from './quality-tab';
 
@@ -51,18 +54,23 @@ export function ReportView({ id }: { id: string }) {
   const [search, setSearch] = useState('');
   const [area, setArea] = useState('all');
   const [evidence, setEvidence] = useState<{ item: AnyItem; category: CategoryKey } | null>(null);
+  const [focus, setFocus] = useState<Focus | null>(null);
+  // The PDF sits beside the results only where there is room for both.
+  const wide = useMediaQuery('(min-width: 1024px)');
   const tab = (TABS.includes(params.get('tab') as Tab) ? params.get('tab') : 'overview') as Tab;
+  const compare = wide && params.get('view') === 'compare';
 
   useEffect(() => {
     load(id).then(setState).catch(() => setState({ status: 'missing' }));
   }, [id]);
 
-  const setTab = (t: string) => {
+  const setParam = (key: string, value: string | null) => {
     const next = new URLSearchParams(params);
-    if (t === 'overview') next.delete('tab');
-    else next.set('tab', t);
+    if (value === null) next.delete(key);
+    else next.set(key, value);
     router.replace(`${pathname}${next.size ? `?${next}` : ''}`, { scroll: false });
   };
+  const setTab = (t: string) => setParam('tab', t === 'overview' ? null : t);
 
   const sample = state.status === 'ready' ? state.sample : null;
   const getDoc = useCallback(async (): Promise<PDFDocumentProxy | null> => {
@@ -78,15 +86,20 @@ export function ReportView({ id }: { id: string }) {
   const result = state.status === 'ready' ? state.result : null;
   const areaOptions = useMemo(() => {
     if (!result) return [];
-    const all = CATEGORY_KEYS.flatMap((k) => result.report[k] as AnyItem[]);
+    const all = CATEGORY_KEYS.filter((k) => k !== 'geographicAreas').flatMap((k) => result.report[k] as AnyItem[]);
     return result.report.geographicAreas
       .map((a) => {
         const name = normalizeForMatch(a.name);
-        const count = all.filter((i) => i.id !== a.id && [i.text, ...i.evidence.map((e) => e.quote)].some((s) => normalizeForMatch(s).includes(name))).length;
+        const count = all.filter((i) => [i.text, ...i.evidence.map((e) => e.quote)].some((s) => normalizeForMatch(s).includes(name))).length;
         return { value: a.id, label: a.name, count, hint: a.role === 'primary' ? 'Covered by the plan' : 'Mentioned' };
       })
-      .filter((o) => o.count > 0);
+      .filter((o) => o.count > 0)
+      .sort((a, b) => b.count - a.count);
   }, [result]);
+  const allItems = useMemo(
+    () => (result ? CATEGORY_KEYS.flatMap((category) => (result.report[category] as AnyItem[]).map((item) => ({ item, category }))) : []),
+    [result],
+  );
 
   if (state.status === 'loading') {
     return (
@@ -95,21 +108,29 @@ export function ReportView({ id }: { id: string }) {
         <Skeleton className="h-9 w-full" />
         <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
           {Array.from({ length: 6 }, (_, i) => (
-            <Skeleton key={i} className="h-20" />
+            <Skeleton key={i} className="h-24 rounded-card" />
           ))}
         </div>
-        <Skeleton className="h-72 w-full" />
+        <Skeleton className="h-72 w-full rounded-card" />
       </div>
     );
   }
   if (state.status === 'missing') {
     return (
       <div className="mx-auto max-w-xl px-4 py-16 text-center">
-        <p className="text-[17px] font-semibold text-slate-900">This report is not in this browser</p>
+        <span className="mx-auto grid size-12 place-items-center rounded-full bg-primary-50 text-primary-600">
+          <Search className="size-5" aria-hidden />
+        </span>
+        <p className="mt-4 text-[18px] font-semibold text-slate-900">This report is not in this browser</p>
         <p className="mt-1 text-[14px] text-slate-600">Results are saved only in the browser that ran the extraction.</p>
-        <Link href="/" className={buttonClass('primary', 'md', 'mt-4')}>
-          Extract a PDF
-        </Link>
+        <div className="mt-5 flex justify-center gap-2">
+          <Link href="/#upload" className={buttonClass('primary', 'md')}>
+            Extract a PDF
+          </Link>
+          <Link href="/#samples" className={buttonClass('secondary', 'md')}>
+            Open a sample
+          </Link>
+        </div>
       </div>
     );
   }
@@ -123,89 +144,111 @@ export function ReportView({ id }: { id: string }) {
   };
   const itemsOf = (k: CategoryKey) => (report[k] as AnyItem[]).filter(inArea);
   const count = (k: CategoryKey) => itemsOf(k).filter((i) => matchesSearch(i, search)).length;
-  const completion = quality.completionBasis.startsWith('No ') ? 'Not reported' : `${Math.round(report.summary.completionRate * 100)}%`;
+  // The overview follows the same area and search filters as the tabs.
+  const filtering = Boolean(selectedArea) || Boolean(search);
+  const shown = filtering
+    ? (Object.fromEntries(CATEGORY_KEYS.map((k) => [k, itemsOf(k).filter((i) => matchesSearch(i, search))])) as Omit<ExtractedReport, 'summary'>)
+    : report;
+  const { summary, completionBasis } = filtering ? computeSummary(shown) : { summary: report.summary, completionBasis: quality.completionBasis };
+  const view: ExtractedReport = { ...shown, summary };
+  const completion = completionBasis.startsWith('No ') ? 'Not reported' : `${Math.round(summary.completionRate * 100)}%`;
+  const clearFilters = () => {
+    setSearch('');
+    setArea('all');
+  };
   const csvTab = tab !== 'overview' && tab !== 'quality' ? tab : null;
+  const verified = Math.round(quality.verifiedRate * 100);
+  const showEvidence = (item: AnyItem, category: CategoryKey) =>
+    compare ? setFocus({ item, page: item.evidence[0]?.page ?? 1 }) : setEvidence({ item, category });
+  const tile = (k: CategoryKey) => ({ accent: CATEGORY_UI[k].color, icon: CATEGORY_UI[k].icon, onClick: () => setTab(k) });
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-5 sm:px-6">
-      <div className="no-print">
-        {/* Header row: title on the left, search, area, export and New file on the right. */}
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
-          <div className="flex min-w-0 flex-1 items-center gap-2">
-            <Link href="/" aria-label="Back to start" className={buttonClass('ghost', 'sm', 'size-8 px-0')}>
-              <ArrowLeft className="size-4" aria-hidden />
-            </Link>
-            <div className="min-w-0">
-              <h1 className="line-clamp-2 text-[20px] font-semibold leading-tight tracking-tight text-slate-900 sm:truncate">{doc.title ?? doc.fileName}</h1>
-              <p className="text-[12px] text-slate-500">
-                {[doc.year, `${doc.pages} pages`, sample ? 'Sample' : null, `${Math.round(quality.verifiedRate * 100)}% of proposed items passed the checks`]
-                  .filter(Boolean)
-                  .join(' · ')}
-              </p>
+    <Tabs.Root value={tab} onValueChange={setTab}>
+      <div className="no-print border-b border-slate-200 bg-white">
+        <div className={cn('mx-auto px-4 pt-5 sm:px-6', compare ? 'max-w-[1600px]' : 'max-w-7xl')}>
+          {/* Header row: title on the left; search, area, compare, export and New file on the right. */}
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
+            <div className="flex min-w-0 flex-1 items-center gap-2">
+              <Link href="/" aria-label="Back to start" className={buttonClass('ghost', 'sm', 'size-8 px-0')}>
+                <ArrowLeft className="size-4" aria-hidden />
+              </Link>
+              <div className="min-w-0">
+                <h1 className="line-clamp-2 text-[20px] font-semibold leading-tight tracking-tight text-slate-900 sm:truncate">{doc.title ?? doc.fileName}</h1>
+                <p className="text-[12px] text-slate-500">{[doc.year, `${doc.pages} pages`, sample ? 'Sample' : null].filter(Boolean).join(' · ')}</p>
+              </div>
             </div>
-          </div>
-          <div className="flex w-full flex-wrap items-center gap-2 sm:w-auto">
-            <label className="relative w-full sm:w-56">
-              <span className="sr-only">Search items</span>
-              <Search className="pointer-events-none absolute left-2.5 top-1/2 size-3.5 -translate-y-1/2 text-slate-400" aria-hidden />
-              <input
-                type="search"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search items and quotes"
-                className="h-8 w-full rounded-control border border-slate-300 bg-white pl-8 pr-7 text-[16px] text-slate-900 placeholder:text-slate-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 sm:text-[13px] [&::-webkit-search-cancel-button]:hidden"
-              />
-              {search && (
-                <button type="button" aria-label="Clear search" onClick={() => setSearch('')} className="absolute right-1.5 top-1/2 grid size-5 -translate-y-1/2 place-items-center rounded text-slate-400 hover:text-slate-700">
-                  <X className="size-3.5" aria-hidden />
+            <div className="flex w-full flex-wrap items-center gap-2 sm:w-auto">
+              <label className="relative w-full sm:w-56">
+                <span className="sr-only">Search items</span>
+                <Search className="pointer-events-none absolute left-2.5 top-1/2 size-3.5 -translate-y-1/2 text-slate-400" aria-hidden />
+                <input
+                  type="search"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  placeholder="Search items and quotes"
+                  className="h-8 w-full rounded-control border border-slate-300 bg-white pl-8 pr-7 text-[16px] text-slate-900 placeholder:text-slate-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 sm:text-[13px] [&::-webkit-search-cancel-button]:hidden"
+                />
+                {search && (
+                  <button type="button" aria-label="Clear search" onClick={() => setSearch('')} className="absolute right-1.5 top-1/2 grid size-5 -translate-y-1/2 place-items-center rounded text-slate-400 hover:text-slate-700">
+                    <X className="size-3.5" aria-hidden />
+                  </button>
+                )}
+              </label>
+              {areaOptions.length >= 2 && (
+                <PopoverSelect
+                  label="Area"
+                  icon={<MapPin className="size-3.5 text-slate-400" aria-hidden />}
+                  value={area}
+                  onChange={setArea}
+                  align="end"
+                  options={[{ value: 'all', label: 'All areas', count: undefined }, ...areaOptions]}
+                />
+              )}
+              {wide && (
+                <button
+                  type="button"
+                  aria-pressed={compare}
+                  onClick={() => setParam('view', compare ? null : 'compare')}
+                  className={buttonClass(compare ? 'selected' : 'secondary', 'md')}
+                >
+                  <Columns2 className="size-3.5" aria-hidden />
+                  Compare with PDF
                 </button>
               )}
-            </label>
-            {areaOptions.length >= 2 && (
-              <PopoverSelect
-                label="Area"
-                icon={<MapPin className="size-3.5 text-slate-400" aria-hidden />}
-                value={area}
-                onChange={setArea}
-                align="end"
-                options={[{ value: 'all', label: 'All areas', count: undefined }, ...areaOptions]}
-              />
-            )}
-            <ExportMenu result={state.result} csvTab={csvTab} />
-            <Link href="/" className={buttonClass('primary', 'md')}>
-              New file
-            </Link>
+              <ExportMenu result={state.result} csvTab={csvTab} />
+              <Link href="/#upload" className={buttonClass('primary', 'md')}>
+                New file
+              </Link>
+            </div>
           </div>
-        </div>
 
-        {quality.failedUnits.length > 0 &&
-          (CATEGORY_KEYS.every((k) => report[k].length === 0) ? (
-            // Nothing came back at all: say so plainly, not "the rest is complete".
-            <p className="mt-4 flex items-start gap-2 rounded-panel border border-negative-100 bg-negative-50 px-3.5 py-2.5 text-[13px] text-negative-700" role="alert">
-              <TriangleAlert className="mt-0.5 size-4 shrink-0" aria-hidden />
-              No section could be extracted: the AI service did not answer. Drop the file again on the home page to retry; details are under Quality.
-            </p>
-          ) : (
-            <p className="mt-4 flex items-start gap-2 rounded-panel border border-warning-100 bg-warning-50 px-3.5 py-2.5 text-[13px] text-warning-700" role="status">
-              <TriangleAlert className="mt-0.5 size-4 shrink-0" aria-hidden />
-              {quality.failedUnits.length} section{quality.failedUnits.length > 1 ? 's' : ''} could not be extracted (pages{' '}
-              {quality.failedUnits
-                .map((f) => f.pages[0])
-                .sort((a, b) => a - b)
-                .join(', ')}
-              ). Everything else is shown; drop the file again to retry them.
-            </p>
-          ))}
+          {quality.failedUnits.length > 0 &&
+            (CATEGORY_KEYS.every((k) => report[k].length === 0) ? (
+              // Nothing came back at all: say so plainly, not "the rest is complete".
+              <p className="mt-4 flex items-start gap-2 rounded-panel bg-negative-50 px-3.5 py-2.5 text-[13px] text-negative-700 ring-1 ring-negative-100" role="alert">
+                <TriangleAlert className="mt-0.5 size-4 shrink-0" aria-hidden />
+                No section could be extracted: the AI service did not answer. Drop the file again on the home page to retry; details are under Quality.
+              </p>
+            ) : (
+              <p className="mt-4 flex items-start gap-2 rounded-panel bg-warning-50 px-3.5 py-2.5 text-[13px] text-warning-700 ring-1 ring-warning-100" role="status">
+                <TriangleAlert className="mt-0.5 size-4 shrink-0" aria-hidden />
+                {quality.failedUnits.length} section{quality.failedUnits.length > 1 ? 's' : ''} could not be extracted (pages{' '}
+                {quality.failedUnits
+                  .map((f) => f.pages[0])
+                  .sort((a, b) => a - b)
+                  .join(', ')}
+                ). Everything else is shown; drop the file again to retry them.
+              </p>
+            ))}
 
-        <Tabs.Root value={tab} onValueChange={setTab} className="mt-4">
-          <Tabs.List aria-label="Report sections" className="-mx-4 flex gap-1 overflow-x-auto overflow-y-hidden border-b border-slate-200 px-4 [scrollbar-width:none] sm:mx-0 sm:px-0 [&::-webkit-scrollbar]:hidden">
+          <Tabs.List aria-label="Report sections" className="-mx-4 mt-3 flex gap-1 overflow-x-auto overflow-y-hidden px-4 [scrollbar-width:none] sm:mx-0 sm:px-0 [&::-webkit-scrollbar]:hidden">
             {TABS.map((t) => {
               const label = t === 'overview' ? 'Overview' : t === 'quality' ? 'Quality' : CATEGORY_UI[t].label;
               return (
                 <Tabs.Trigger
                   key={t}
                   value={t}
-                  className="relative -mb-px flex h-10 shrink-0 items-center gap-1.5 border-b-2 border-transparent px-2.5 text-[13px] font-medium text-slate-600 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-primary-600 data-[state=active]:border-primary-600 data-[state=active]:text-slate-900"
+                  className="relative flex h-11 shrink-0 items-center gap-1.5 border-b-2 border-transparent px-2.5 text-[13px] font-medium text-slate-600 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-primary-600 data-[state=active]:border-primary-600 data-[state=active]:text-slate-900"
                 >
                   {t !== 'overview' && t !== 'quality' && <span aria-hidden className="size-2 rounded-full" style={{ background: CATEGORY_UI[t].color }} />}
                   {label}
@@ -215,57 +258,143 @@ export function ReportView({ id }: { id: string }) {
               );
             })}
           </Tabs.List>
-
-          <Tabs.Content value="overview" className="mt-4 space-y-4 focus-visible:outline-none">
-            <p className="max-w-3xl text-[14px] text-slate-700">{overviewSentence(report, doc.title)}</p>
-            <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
-              <StatTile label="Goals" accent={CATEGORY_UI.goals.color} value={report.summary.totalGoals} sub="main goals" />
-              <StatTile label="BMPs" accent={CATEGORY_UI.bmps.color} value={report.summary.totalBMPs} sub="distinct practices" />
-              <StatTile
-                label="Completion"
-                value={completion}
-                sub={
-                  <span className="inline-flex items-center gap-1">
-                    {completion === 'Not reported' ? 'plans state no status' : quality.completionBasis}
-                    <InfoHint label="How completion is counted">
-                      Activities the document reports as completed, divided by all implementation activities. Counted from the document, never estimated.
-                    </InfoHint>
-                  </span>
-                }
-              />
-              <StatTile label="Activities" accent={CATEGORY_UI.implementation.color} value={report.implementation.length} />
-              <StatTile label="Monitoring" accent={CATEGORY_UI.monitoring.color} value={report.monitoring.length} sub="parameters and checks" />
-              <StatTile label="Outreach" accent={CATEGORY_UI.outreach.color} value={report.outreach.length} />
+          {filtering && (
+            <div className="flex flex-wrap items-center gap-2 border-t border-slate-100 py-2.5 text-[12px]" role="status">
+              <span className="font-medium text-slate-500">Showing only items that match:</span>
+              {selectedArea && (
+                <FilterChip label={selectedArea.name} icon={<MapPin className="size-3" aria-hidden />} onRemove={() => setArea('all')} />
+              )}
+              {search && <FilterChip label={`“${search}”`} icon={<Search className="size-3" aria-hidden />} onRemove={() => setSearch('')} />}
+              <button type="button" onClick={clearFilters} className={buttonClass('link', 'sm', 'px-1')}>
+                Clear filters
+              </button>
             </div>
-            <div className="grid items-start gap-4 lg:grid-cols-2">
-              <CategoryCounts report={report} />
-              <BmpAmounts bmps={report.bmps} />
-              <BmpCosts bmps={report.bmps} />
-              <Timeline activities={report.implementation} />
-            </div>
-          </Tabs.Content>
+          )}
+        </div>
+      </div>
 
-          {CATEGORY_KEYS.map((k) => (
-            <Tabs.Content key={k} value={k} className="mt-4 focus-visible:outline-none">
-              <CategoryTab
-                category={k}
-                items={itemsOf(k)}
-                total={(report[k] as AnyItem[]).length}
-                areaActive={Boolean(selectedArea)}
-                search={search}
-                onClearFilters={() => {
-                  setSearch('');
-                  setArea('all');
-                }}
-                onEvidence={(item) => setEvidence({ item, category: k })}
-              />
+      <div className={cn('no-print mx-auto px-4 py-5 sm:px-6', compare ? 'max-w-[1600px]' : 'max-w-7xl')}>
+        <div className={cn(compare && 'grid grid-cols-[minmax(0,1fr)_minmax(380px,42%)] items-start gap-5')}>
+          <div className="@container min-w-0">
+            <Tabs.Content value="overview" className="space-y-4 focus-visible:outline-none">
+              <div className="grid gap-4 @4xl:grid-cols-[minmax(0,1fr)_20rem]">
+                <section className={cn(cardClass, 'p-5')} aria-label="Summary">
+                  <h2 className="text-[13px] font-semibold uppercase tracking-wide text-slate-400">{filtering ? 'Summary of the whole plan' : 'Summary'}</h2>
+                  <p className="mt-2 max-w-3xl text-[15px] leading-relaxed text-slate-700">{overviewSentence(report, doc.title)}</p>
+                  {areaOptions.length > 0 && (
+                    <div className="mt-4 flex flex-wrap items-center gap-1.5">
+                      <span className="mr-1 text-[12px] font-medium text-slate-500">Filter by area</span>
+                      {areaOptions.slice(0, 6).map((o) => (
+                        <button
+                          key={o.value}
+                          type="button"
+                          aria-pressed={area === o.value}
+                          onClick={() => setArea(area === o.value ? 'all' : o.value)}
+                          className={cn(
+                            'inline-flex h-7 items-center gap-1 rounded-full px-2.5 text-[12px] font-medium ring-1 transition-colors focus-visible:outline-2 focus-visible:outline-primary-600',
+                            area === o.value ? 'bg-primary-600 text-white ring-primary-600' : 'bg-white text-slate-700 ring-slate-200 hover:bg-slate-50',
+                          )}
+                        >
+                          <MapPin className="size-3" aria-hidden />
+                          {o.label}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </section>
+                <section className={cn(cardClass, 'flex flex-col p-5')} aria-label="Checks">
+                  <h2 className="flex items-center gap-1.5 text-[13px] font-semibold uppercase tracking-wide text-slate-400">
+                    <ShieldCheck className="size-3.5 text-positive-600" aria-hidden />
+                    Checked against the PDF
+                  </h2>
+                  <p className="mt-2 text-[28px] font-semibold leading-none text-slate-900">{verified}%</p>
+                  <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-slate-100" aria-hidden>
+                    <div className="h-full rounded-full bg-positive-600" style={{ width: `${verified}%` }} />
+                  </div>
+                  <p className="mt-2 text-[12px] text-slate-500">
+                    of proposed items passed · {quality.rejected.length} rejected · {quality.conflicts.length} conflicts
+                  </p>
+                  <div className="mt-auto flex flex-wrap gap-2 pt-4">
+                    <button type="button" onClick={() => setTab('quality')} className={buttonClass('secondary', 'sm')}>
+                      <ListChecks className="size-3.5" aria-hidden />
+                      See what was rejected
+                    </button>
+                    {wide && !compare && (
+                      <button type="button" onClick={() => setParam('view', 'compare')} className={buttonClass('link', 'sm')}>
+                        Compare with PDF
+                        <ArrowRight className="size-3.5" aria-hidden />
+                      </button>
+                    )}
+                  </div>
+                </section>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3 @xl:grid-cols-3 @5xl:grid-cols-6">
+                <StatTile label="Goals" value={view.summary.totalGoals} sub="main goals" {...tile('goals')} />
+                <StatTile label="BMPs" value={view.summary.totalBMPs} sub="distinct practices" {...tile('bmps')} />
+                <StatTile
+                  label="Completion"
+                  icon={ListChecks}
+                  accent="#0f8a4b"
+                  value={completion}
+                  sub={
+                    <span className="inline-flex items-center gap-1">
+                      {completion === 'Not reported' ? 'plan states no status' : completionBasis}
+                      <InfoHint label="How completion is counted">
+                        Activities the document reports as completed, divided by all implementation activities. Counted from the document, never estimated.
+                      </InfoHint>
+                    </span>
+                  }
+                />
+                <StatTile label="Activities" value={view.implementation.length} sub="implementation" {...tile('implementation')} />
+                <StatTile label="Monitoring" value={view.monitoring.length} sub="parameters and checks" {...tile('monitoring')} />
+                <StatTile label="Outreach" value={view.outreach.length} sub="activities" {...tile('outreach')} />
+              </div>
+
+              <div className="grid gap-4 @3xl:grid-cols-2">
+                <CategoryCounts report={view} onOpen={setTab} />
+                <ActivityStatus activities={view.implementation} />
+                <BmpAmounts bmps={view.bmps} />
+                <BmpCosts bmps={view.bmps} />
+                <Timeline activities={view.implementation} className="@3xl:col-span-2" />
+              </div>
             </Tabs.Content>
-          ))}
 
-          <Tabs.Content value="quality" className="mt-4 focus-visible:outline-none">
-            <QualityTab result={state.result} />
-          </Tabs.Content>
-        </Tabs.Root>
+            {CATEGORY_KEYS.map((k) => (
+              <Tabs.Content key={k} value={k} className="focus-visible:outline-none">
+                <CategoryTab
+                  category={k}
+                  items={itemsOf(k)}
+                  total={(report[k] as AnyItem[]).length}
+                  areaActive={Boolean(selectedArea)}
+                  search={search}
+                  onClearFilters={clearFilters}
+                  onEvidence={(item) => showEvidence(item, k)}
+                />
+              </Tabs.Content>
+            ))}
+
+            <Tabs.Content value="quality" className="focus-visible:outline-none">
+              <QualityTab result={state.result} />
+            </Tabs.Content>
+          </div>
+
+          {compare && (
+            <aside className="sticky top-[4.5rem]">
+              <PdfPane
+                docId={id}
+                pages={doc.pages}
+                getDoc={getDoc}
+                focus={focus}
+                onFocus={setFocus}
+                items={allItems}
+                pdfUrl={sample?.pdf}
+                sourceUrl={sample && !sample.pdf ? sample.sourceUrl : null}
+                onClose={() => setParam('view', null)}
+              />
+            </aside>
+          )}
+        </div>
       </div>
 
       <EvidenceSheet
@@ -276,7 +405,19 @@ export function ReportView({ id }: { id: string }) {
         sourceUrl={sample?.sourceUrl}
       />
       <PrintReport result={state.result} />
-    </div>
+    </Tabs.Root>
+  );
+}
+
+function FilterChip({ label, icon, onRemove }: { label: string; icon: ReactNode; onRemove: () => void }) {
+  return (
+    <span className="inline-flex h-6 max-w-full items-center gap-1 rounded-full bg-primary-50 pl-2 pr-1 font-medium text-primary-800 ring-1 ring-primary-200">
+      {icon}
+      <span className="truncate">{label}</span>
+      <button type="button" aria-label={`Remove filter ${label}`} onClick={onRemove} className="grid size-4 place-items-center rounded-full hover:bg-primary-100">
+        <X className="size-3" aria-hidden />
+      </button>
+    </span>
   );
 }
 

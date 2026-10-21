@@ -7,7 +7,15 @@
     "format": "9-element plan",
     "source": "MDEQ",
     "pdf": "/samples/broken-pumpkin-2019.pdf",
-    "sourceUrl": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_I/TB/Nine_Key_Element_Plans/Broken_Pumpkin_9_Key_Element_Plan_2019.pdf"
+    "sourceUrl": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_I/TB/Nine_Key_Element_Plans/Broken_Pumpkin_9_Key_Element_Plan_2019.pdf",
+    "counts": {
+      "goals": 1,
+      "bmps": 33,
+      "implementation": 18,
+      "monitoring": 14,
+      "outreach": 6,
+      "geographicAreas": 11
+    }
   },
   {
     "slug": "bell-creek-2012",
@@ -17,7 +25,15 @@
     "format": "Narrative plan",
     "source": "MDEQ",
     "pdf": "/samples/bell-creek-2012.pdf",
-    "sourceUrl": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_I/NI/Watershed_Plans/Bell_Creek_Muddy_Creek_Watershed_Plan_2012.pdf"
+    "sourceUrl": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_I/NI/Watershed_Plans/Bell_Creek_Muddy_Creek_Watershed_Plan_2012.pdf",
+    "counts": {
+      "goals": 9,
+      "bmps": 12,
+      "implementation": 43,
+      "monitoring": 12,
+      "outreach": 16,
+      "geographicAreas": 25
+    }
   },
   {
     "slug": "fuller-creek-2022",
@@ -27,7 +43,15 @@
     "format": "9-element plan",
     "source": "MDEQ",
     "pdf": "/samples/fuller-creek-2022.pdf",
-    "sourceUrl": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_I/TB/Nine_Key_Element_Plans/Fuller_Creek_Town_Creek_9_Key_Element_Plan_2022.pdf"
+    "sourceUrl": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_I/TB/Nine_Key_Element_Plans/Fuller_Creek_Town_Creek_9_Key_Element_Plan_2022.pdf",
+    "counts": {
+      "goals": 2,
+      "bmps": 11,
+      "implementation": 20,
+      "monitoring": 13,
+      "outreach": 6,
+      "geographicAreas": 8
+    }
   },
   {
     "slug": "buttahatchee-2004",
@@ -37,6 +61,14 @@
     "format": "Scanned plan",
     "source": "MDEQ",
     "pdf": null,
-    "sourceUrl": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_I/TB/Watershed_Plans/Buttahatchee_River_Watershed_Plan_2004.pdf"
+    "sourceUrl": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_I/TB/Watershed_Plans/Buttahatchee_River_Watershed_Plan_2004.pdf",
+    "counts": {
+      "goals": 24,
+      "bmps": 27,
+      "implementation": 116,
+      "monitoring": 31,
+      "outreach": 50,
+      "geographicAreas": 63
+    }
   }
 ]

@@ -1,9 +1,10 @@
 'use client';
 
 import { CATEGORY_KEYS } from '@app/backend';
-import { Check, LoaderCircle, Square } from 'lucide-react';
+import { Check, FileText, LoaderCircle, Square } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { cardClass } from '@/components/ui/card';
 import { ConfirmDialog } from '@/components/ui/confirm-dialog';
 import type { RunState } from '@/lib/active-run';
 import { CATEGORY_UI } from '@/lib/categories-ui';
@@ -62,15 +63,26 @@ export function Processing({
   const ocrDone = !state.ocr || state.ocr.done === state.ocr.total;
   const exDone = ex && ex.done === ex.total;
   const stage = !readDone ? 'Reading pages' : !ocrDone ? 'Reading scanned pages' : !exDone ? 'Extracting' : 'Checking and merging';
+  // One bar for the whole run: reading is quick, extraction is most of the wait.
+  const part = (p?: { done: number; total: number }) => (p && p.total ? p.done / p.total : 0);
+  const share = state.ocr ? { read: 0.1, ocr: 0.25, ex: 0.6 } : { read: 0.1, ocr: 0, ex: 0.85 };
+  const progress = state.merging ? 0.97 : Math.min(0.96, share.read * part(state.read) + share.ocr * part(state.ocr) + share.ex * part(ex));
+  const secs = Math.max(0, Math.round((now - startedAt) / 1000));
+  const elapsed = `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, '0')}`;
 
   return (
-    <section aria-labelledby="run-title" className="rounded-panel border border-slate-200 bg-white">
-      <div className="flex items-center justify-between gap-3 border-b border-slate-200 px-4 py-3">
-        <div className="min-w-0">
+    <section aria-labelledby="run-title" className={cardClass}>
+      <div className="flex items-center gap-3 px-4 pb-3 pt-4">
+        <span className="grid size-10 shrink-0 place-items-center rounded-full bg-primary-50 text-primary-600">
+          <FileText className="size-5" aria-hidden />
+        </span>
+        <div className="min-w-0 flex-1">
           <h2 id="run-title" className="truncate text-[15px] font-semibold text-slate-900">
             {fileName}
           </h2>
-          <p className="text-[13px] text-slate-500">{pages} pages</p>
+          <p className="text-[13px] text-slate-500">
+            {pages} pages · {stage}
+          </p>
         </div>
         <Button variant="danger" onClick={() => setConfirming(true)}>
           <Square className="size-3 fill-current" aria-hidden />
@@ -86,23 +98,41 @@ export function Processing({
           onConfirm={onStop}
         />
       </div>
-      <div className="grid gap-6 px-4 py-4 md:grid-cols-[1fr_1.2fr]">
+      <div className="border-b border-slate-100 px-4 pb-4">
+        <div
+          role="progressbar"
+          aria-label="Extraction progress"
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-valuenow={Math.round(progress * 100)}
+          className="h-2 overflow-hidden rounded-full bg-slate-100"
+        >
+          <div className="h-full rounded-full bg-primary-600 transition-[width] duration-500" style={{ width: `${Math.max(3, progress * 100)}%` }} />
+        </div>
+        <p className="tabular mt-1.5 flex justify-between text-[12px] text-slate-500">
+          <span>{Math.round(progress * 100)}%</span>
+          <span>
+            {elapsed} elapsed{eta ? ` · ${eta}` : ''}
+          </span>
+        </p>
+      </div>
+      <div className="grid gap-6 px-4 py-4 sm:grid-cols-[1fr_1.2fr]">
         <ol aria-label="Progress">
           <Step state={readDone ? 'done' : 'active'} label="Read pages" detail={state.read ? `${state.read.done} / ${state.read.total}` : undefined} />
           {state.ocr && <Step state={ocrDone ? 'done' : 'active'} label="Read scanned pages" detail={`${state.ocr.done} / ${state.ocr.total} batches`} />}
-          <Step state={exDone ? 'done' : readDone && ocrDone ? 'active' : 'waiting'} label="Extract sections" detail={ex ? `${ex.done} / ${ex.total}${eta ? ` · ${eta}` : ''}` : undefined} />
+          <Step state={exDone ? 'done' : readDone && ocrDone ? 'active' : 'waiting'} label="Extract sections" detail={ex ? `${ex.done} / ${ex.total}` : undefined} />
           <Step state={state.merging ? 'active' : 'waiting'} label="Check and merge" />
         </ol>
         <div>
           <p className="mb-2 text-[12px] font-semibold uppercase tracking-wide text-slate-400">Found so far</p>
-          <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+          <ul className="grid grid-cols-2 gap-2">
             {CATEGORY_KEYS.map((k) => {
               const ui = CATEGORY_UI[k];
               return (
-                <li key={k} className="flex items-center justify-between rounded-control border border-slate-200 px-2.5 py-1.5">
+                <li key={k} className="flex items-center justify-between rounded-control bg-slate-50 px-2.5 py-1.5 ring-1 ring-slate-200/70">
                   <span className="flex items-center gap-1.5 text-[13px] text-slate-600">
                     <span aria-hidden className="size-2 rounded-full" style={{ background: ui.color }} />
-                    {ui.label}
+                    {ui.short}
                   </span>
                   <span className="tabular text-[14px] font-semibold text-slate-900">{state.partial?.[k].length ?? 0}</span>
                 </li>
