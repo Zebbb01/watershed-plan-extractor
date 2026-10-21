@@ -94,13 +94,23 @@ export function PdfPane({
       </div>
 
       <div className="min-h-0 flex-1 overflow-y-auto bg-slate-100/70 p-3">
+        {doc && focus && quotes.length > 0 && (
+          <div className="mb-2 rounded-panel bg-white px-3 py-2 text-[12px] ring-1 ring-primary-200">
+            <p className="font-semibold text-slate-900">{focus.item.name}</p>
+            {quotes.map((q, i) => (
+              <p key={i} className="mt-0.5 text-slate-600">
+                “{q}”
+              </p>
+            ))}
+          </div>
+        )}
         {doc ? (
           <PdfPage doc={doc} page={page} quotes={quotes} />
         ) : doc === undefined ? (
           <Skeleton className="aspect-[8.5/11] w-full" />
         ) : sourceUrl ? (
           <p className="rounded-panel bg-white p-4 text-[13px] text-slate-600 ring-1 ring-slate-200">
-            This sample&apos;s PDF is too large to include here.{' '}
+            This sample&apos;s PDF is not included in this copy.{' '}
             <a href={`${sourceUrl}#page=${page}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 font-medium text-primary-700 hover:underline">
               Open page {page} on MDEQ <ExternalLink className="size-3.5" aria-hidden />
             </a>

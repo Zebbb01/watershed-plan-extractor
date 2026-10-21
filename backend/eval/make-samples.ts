@@ -1,4 +1,4 @@
-import { copyFileSync, existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
+import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { parseArgs } from 'node:util';
 import { createClient } from '../src/llm/client';
@@ -10,14 +10,14 @@ import { runDoc } from './run-doc';
 /*
  * Builds the site's one-click samples: runs the pipeline on a few plans (or reuses a saved eval
  * run with --from-runs), writes frontend/public/samples/<id>.json, copies PDFs small enough to
- * ship, and writes the sample list the home page imports.
+ * the site (scripts/package-submission.mjs leaves the large ones out of the zip), and writes
+ * the sample list the home page imports.
  *   npm run samples -w backend -- [--from-runs] [--model id]
  */
 
 const { values: args } = parseArgs({ options: { 'from-runs': { type: 'boolean', default: false }, model: { type: 'string' } } });
 const SAMPLES = ['broken-pumpkin-2019', 'bell-creek-2012', 'fuller-creek-2022', 'buttahatchee-2004'];
 const FORMAT: Record<string, string> = { 'nine-element': '9-element plan', narrative: 'Narrative plan', scanned: 'Scanned plan', 'action-plan': 'Action plan' };
-const MAX_SHIPPED_PDF = 3 * 1024 * 1024; // larger PDFs link to MDEQ instead of shipping in the zip
 
 const frontend = join(EVAL_DIR, '..', '..', 'frontend');
 const out = join(frontend, 'public', 'samples');
@@ -41,8 +41,7 @@ for (const id of SAMPLES) {
   result.document.id = `sample-${id}`;
   writeFileSync(join(out, `${id}.json`), JSON.stringify(result));
   const pdf = pdfPath(id);
-  const ship = statSync(pdf).size <= MAX_SHIPPED_PDF;
-  if (ship) copyFileSync(pdf, join(out, `${id}.pdf`));
+  copyFileSync(pdf, join(out, `${id}.pdf`));
   index.push({
     slug: id,
     title: result.document.title ?? doc.title,
@@ -50,7 +49,7 @@ for (const id of SAMPLES) {
     pages: result.document.pages,
     format: FORMAT[doc.format] ?? doc.format,
     source: 'MDEQ',
-    pdf: ship ? `/samples/${id}.pdf` : null,
+    pdf: `/samples/${id}.pdf`,
     sourceUrl: doc.url,
     counts: Object.fromEntries(CATEGORY_KEYS.map((k) => [k, result.report[k].length])),
   });

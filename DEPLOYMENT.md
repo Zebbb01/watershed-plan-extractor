@@ -97,6 +97,10 @@ npx netlify-cli deploy --prod --no-build --dir frontend/.netlify/static --skip-f
 `--dir frontend/.netlify/static` is where the runtime puts the static files; without it a
 `--no-build` deploy publishes the raw `.next` folder and every script returns 404.
 
+The sample plans' PDFs ship with the site so their pages show in the evidence panel. The
+scanned sample's PDF (18 MB) is left out of the submission zip to keep it small; a copy built
+from the zip links that sample's pages to MDEQ instead.
+
 To roll back, open **Deploys**, choose an earlier deploy and select **Publish deploy**.
 
 ### Checks after a deploy

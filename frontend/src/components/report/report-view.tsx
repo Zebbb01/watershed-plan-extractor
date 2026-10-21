@@ -88,7 +88,8 @@ export function ReportView({ id }: { id: string }) {
     const cached = session.doc(id);
     if (cached) return cached;
     // A sample ships its PDF; an uploaded file may still be kept in this browser.
-    const source = sample?.pdf ? await (await fetch(sample.pdf)).blob() : sample ? null : await loadPdf(id);
+    const shipped = sample?.pdf ? await fetch(sample.pdf).catch(() => null) : null;
+    const source = sample ? (shipped?.ok ? await shipped.blob() : null) : await loadPdf(id);
     if (!source) return null;
     const doc = await openPdf(new Uint8Array(await source.arrayBuffer()));
     session.setDoc(id, doc);
@@ -446,7 +447,7 @@ export function ReportView({ id }: { id: string }) {
                 onFocus={setFocus}
                 items={allItems}
                 pdfUrl={sample?.pdf}
-                sourceUrl={sample && !sample.pdf ? sample.sourceUrl : null}
+                sourceUrl={sample?.sourceUrl ?? null}
                 onClose={() => setParam('view', null)}
               />
             </aside>

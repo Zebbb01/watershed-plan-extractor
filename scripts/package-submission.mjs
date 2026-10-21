@@ -24,7 +24,14 @@ if (placeholders) {
   process.exit(1);
 }
 execFileSync('node', ['scripts/check-secrets.mjs'], { stdio: 'inherit' });
-execFileSync('git', ['archive', '--format=zip', '--prefix=watershed-extractor/', '-o', out, 'HEAD'], { stdio: 'inherit' });
+// Sample PDFs over 5 MB ship with the live site but not in the zip; without them those samples
+// link to the plan on MDEQ instead of showing its pages.
+const bigSamples = execFileSync('git', ['ls-files', '-s', 'frontend/public/samples'], { encoding: 'utf8' })
+  .split('\n')
+  .filter(Boolean)
+  .map((l) => l.split('\t')[1])
+  .filter((f) => f.endsWith('.pdf') && statSync(f).size > 5 * 1024 * 1024);
+execFileSync('git', ['archive', '--format=zip', '--prefix=watershed-extractor/', '-o', out, 'HEAD', '--', '.', ...bigSamples.map((f) => `:(exclude)${f}`)], { stdio: 'inherit' });
 const mb = statSync(out).size / 1024 / 1024;
 console.log(`Wrote ${out} (${mb.toFixed(1)} MB, commit ${execFileSync('git', ['rev-parse', '--short', 'HEAD'], { encoding: 'utf8' }).trim()})`);
 if (mb > MAX_MB) {
