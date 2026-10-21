@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
+import { ReportSkeleton } from '@/components/report/report-skeleton';
 import { ReportView } from '@/components/report/report-view';
 
 export const metadata: Metadata = { title: 'Report' };
@@ -8,7 +9,7 @@ export const metadata: Metadata = { title: 'Report' };
 export default async function Page({ params }: PageProps<'/report/[id]'>) {
   const { id } = await params;
   return (
-    <Suspense>
+    <Suspense fallback={<ReportSkeleton />}>
       <ReportView id={decodeURIComponent(id)} />
     </Suspense>
   );

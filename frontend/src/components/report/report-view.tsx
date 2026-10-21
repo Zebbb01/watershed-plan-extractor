@@ -14,7 +14,6 @@ import samples from '@/data/samples.json';
 import { useMediaQuery } from '@/hooks/use-media-query';
 import { InfoHint } from '@/components/ui/info-hint';
 import { PopoverSelect } from '@/components/ui/popover-select';
-import { Skeleton } from '@/components/ui/skeleton';
 import { StatTile } from '@/components/ui/stat-tile';
 import { CATEGORY_UI } from '@/lib/categories-ui';
 import { cn } from '@/lib/cn';
@@ -27,6 +26,7 @@ import { ActivityStatus, BmpAmounts, BmpCosts, CategoryCounts, Timeline } from '
 import { EvidenceSheet } from './evidence-sheet';
 import { PdfPane, type Focus } from './pdf-pane';
 import { PrintReport } from './print-report';
+import { ReportSkeleton } from './report-skeleton';
 import { QualityTab } from './quality-tab';
 
 type Tab = 'overview' | CategoryKey | 'quality';
@@ -101,20 +101,7 @@ export function ReportView({ id }: { id: string }) {
     [result],
   );
 
-  if (state.status === 'loading') {
-    return (
-      <div className="mx-auto max-w-7xl space-y-4 px-4 py-6 sm:px-6">
-        <Skeleton className="h-8 w-2/3 max-w-lg" />
-        <Skeleton className="h-9 w-full" />
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
-          {Array.from({ length: 6 }, (_, i) => (
-            <Skeleton key={i} className="h-24 rounded-card" />
-          ))}
-        </div>
-        <Skeleton className="h-72 w-full rounded-card" />
-      </div>
-    );
-  }
+  if (state.status === 'loading') return <ReportSkeleton />;
   if (state.status === 'missing') {
     return (
       <div className="mx-auto max-w-xl px-4 py-16 text-center">

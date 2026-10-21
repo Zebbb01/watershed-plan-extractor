@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
+import { RouteProgress } from '@/components/route-progress';
 import { SiteHeader } from '@/components/site-header';
 import './globals.css';
 
@@ -24,6 +25,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
         >
           Skip to content
         </a>
+        <RouteProgress />
         <SiteHeader />
         <main id="main" className="flex-1">
           {children}

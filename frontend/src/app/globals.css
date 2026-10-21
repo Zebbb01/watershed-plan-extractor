@@ -61,6 +61,8 @@ html {
 
 body {
   background: var(--color-canvas);
+  /* A stray wide element (a tooltip near the edge) must never scroll the page sideways. */
+  overflow-x: clip;
   color: var(--color-slate-900);
   font-size: 14px;
   line-height: 1.5;
@@ -105,6 +107,26 @@ body {
     transition: none !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* The page-change bar: a short segment sliding across while the next page loads. */
+.route-progress {
+  animation: route-progress 1.1s ease-in-out infinite;
+}
+@keyframes route-progress {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(300%); }
+}
+
+/* Charts take keyboard focus for their data; a mouse click should not leave a black frame. */
+.recharts-wrapper:focus,
+.recharts-surface:focus {
+  outline: none;
+}
+.recharts-wrapper:focus-visible,
+.recharts-surface:focus-visible {
+  outline: 2px solid var(--color-primary-600);
+  outline-offset: 2px;
 }
 
 /* Highlight of a quote inside the rendered PDF page. */

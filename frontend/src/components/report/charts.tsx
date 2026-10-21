@@ -21,8 +21,18 @@ import { cn } from '@/lib/cn';
 const AXIS = { fontSize: 12, fill: '#64748b' };
 const GRID = '#e8edf3';
 const CURSOR = { fill: '#f1f5f9' };
+// Tooltips wrap long names and stay narrower than a phone screen, so they never push the page sideways.
 const TOOLTIP = {
-  contentStyle: { borderRadius: 8, border: '1px solid #e2e8f0', boxShadow: '0 6px 16px -4px rgb(15 23 42 / 0.12)', fontSize: 12, padding: '6px 10px' },
+  wrapperStyle: { maxWidth: 'min(320px, calc(100% - 8px))', zIndex: 10 },
+  contentStyle: {
+    borderRadius: 8,
+    border: '1px solid #e2e8f0',
+    boxShadow: '0 6px 16px -4px rgb(15 23 42 / 0.12)',
+    fontSize: 12,
+    padding: '6px 10px',
+    whiteSpace: 'normal',
+    overflowWrap: 'anywhere',
+  } as const,
   labelStyle: { color: '#0f172a', fontWeight: 600, marginBottom: 2 },
   itemStyle: { color: '#334155', padding: 0 },
 };
@@ -30,6 +40,12 @@ const fmt = new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 });
 const usd = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
 const usdShort = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 1 });
 const TOP = 8;
+
+/** On phones the tooltip is pinned to the chart's left edge instead of following the finger off screen. */
+function useTooltip() {
+  const narrow = useMediaQuery('(max-width: 639px)');
+  return narrow ? { ...TOOLTIP, position: { x: 4 } } : TOOLTIP;
+}
 
 /** Narrow screens get shorter axis labels so the bars keep their room. */
 function useLabelWidth(wide: number) {
@@ -56,7 +72,7 @@ function ChartCard({
 }) {
   const [view, setView] = useState<'chart' | 'table'>('chart');
   return (
-    <section className={cn(cardClass, 'flex flex-col p-4 sm:p-5', className)} aria-label={title}>
+    <section className={cn(cardClass, '@container flex min-w-0 flex-col p-4 sm:p-5', className)} aria-label={title}>
       <div className="mb-3 flex flex-wrap items-start justify-between gap-2">
         <div className="min-w-0">
           <h2 className="text-[15px] font-semibold text-slate-900">{title}</h2>
@@ -107,6 +123,7 @@ function SimpleTable({ head, rows }: { head: string[]; rows: string[][] }) {
 
 /** How many verified items each category holds; a bar opens its tab. */
 export function CategoryCounts({ report, onOpen }: { report: ExtractedReport; onOpen?: (k: CategoryKey) => void }) {
+  const tooltip = useTooltip();
   const data = CATEGORY_KEYS.map((k) => ({ key: k, name: CATEGORY_UI[k].label, value: report[k].length, color: CATEGORY_UI[k].color }));
   return (
     <ChartCard
@@ -120,7 +137,7 @@ export function CategoryCounts({ report, onOpen }: { report: ExtractedReport; on
             <CartesianGrid horizontal={false} stroke={GRID} />
             <XAxis type="number" allowDecimals={false} tick={AXIS} axisLine={false} tickLine={false} />
             <YAxis type="category" dataKey="name" width={104} tick={AXIS} axisLine={false} tickLine={false} />
-            <Tooltip cursor={CURSOR} {...TOOLTIP} formatter={(v) => [v as number, 'Items']} />
+            <Tooltip cursor={CURSOR} {...tooltip} formatter={(v) => [v as number, 'Items']} />
             <Bar
               dataKey="value"
               radius={[0, 4, 4, 0]}
@@ -150,6 +167,7 @@ const STATUS = [
 
 /** What the plan says about each activity's status: the basis of the completion rate. */
 export function ActivityStatus({ activities }: { activities: ActivityItem[] }) {
+  const tooltip = useTooltip();
   const data = STATUS.map((s) => ({ ...s, value: activities.filter((a) => a.status === s.key).length })).filter((d) => d.value > 0);
   const stated = activities.filter((a) => a.status !== null).length;
   const pct = (n: number) => `${Math.round((n / activities.length) * 100)}%`;
@@ -160,7 +178,7 @@ export function ActivityStatus({ activities }: { activities: ActivityItem[] }) {
       empty={!activities.length ? 'No implementation activities were found.' : !stated ? 'No activity in this plan states its status.' : null}
       table={<SimpleTable head={['Status', 'Activities', 'Share']} rows={data.map((d) => [d.label, String(d.value), pct(d.value)])} />}
       chart={
-        <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-8">
+        <div className="flex flex-col items-center gap-4 @sm:flex-row @sm:justify-center @sm:gap-6">
           <div className="relative size-[200px] shrink-0">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
@@ -169,7 +187,7 @@ export function ActivityStatus({ activities }: { activities: ActivityItem[] }) {
                     <Cell key={d.label} fill={d.color} />
                   ))}
                 </Pie>
-                <Tooltip {...TOOLTIP} formatter={(v, n) => [`${v as number} (${pct(v as number)})`, n as string]} />
+                <Tooltip {...tooltip} formatter={(v, n) => [`${v as number} (${pct(v as number)})`, n as string]} />
               </PieChart>
             </ResponsiveContainer>
             <div className="pointer-events-none absolute inset-0 grid place-items-center text-center">
@@ -179,13 +197,13 @@ export function ActivityStatus({ activities }: { activities: ActivityItem[] }) {
               </div>
             </div>
           </div>
-          <ul className="grid gap-2 text-[13px]">
+          <ul className="grid w-full max-w-60 grid-cols-[auto_1fr_auto_auto] items-center gap-x-2.5 gap-y-2 text-[13px] @sm:w-auto">
             {data.map((d) => (
-              <li key={d.label} className="flex items-center gap-2.5">
+              <li key={d.label} className="col-span-4 grid grid-cols-subgrid items-center">
                 <span aria-hidden className="size-3 shrink-0 rounded-[3px] ring-1 ring-slate-300/60" style={{ background: d.color }} />
-                <span className="w-24 text-slate-700">{d.label}</span>
-                <span className="tabular w-8 text-right font-semibold text-slate-900">{d.value}</span>
-                <span className="tabular w-10 text-right text-slate-500">{pct(d.value)}</span>
+                <span className="text-slate-700">{d.label}</span>
+                <span className="tabular text-right font-semibold text-slate-900">{d.value}</span>
+                <span className="tabular text-right text-slate-500">{pct(d.value)}</span>
               </li>
             ))}
           </ul>
@@ -201,6 +219,7 @@ const barsHeight = (n: number) => Math.max(140, n * 30 + 36);
 
 /** Planned BMP amounts, one unit at a time (acres and feet never share an axis). */
 export function BmpAmounts({ bmps }: { bmps: BmpItem[] }) {
+  const tooltip = useTooltip();
   const byUnit = useMemo(() => {
     const groups = new Map<string, { name: string; value: number; scope: string | null }[]>();
     for (const b of bmps) {
@@ -243,7 +262,7 @@ export function BmpAmounts({ bmps }: { bmps: BmpItem[] }) {
             <CartesianGrid horizontal={false} stroke={GRID} />
             <XAxis type="number" tick={AXIS} axisLine={false} tickLine={false} tickFormatter={(v) => fmt.format(v)} />
             <YAxis type="category" dataKey="name" width={label.width} tick={AXIS} tickFormatter={label.cut} axisLine={false} tickLine={false} />
-            <Tooltip cursor={CURSOR} {...TOOLTIP} formatter={(v) => [`${fmt.format(v as number)} ${unitName}`, 'Planned']} />
+            <Tooltip cursor={CURSOR} {...tooltip} formatter={(v) => [`${fmt.format(v as number)} ${unitName}`, 'Planned']} />
             <Bar dataKey="value" fill={CATEGORY_UI.bmps.color} radius={[0, 4, 4, 0]} maxBarSize={18} label={{ position: 'right', fontSize: 12, fill: '#334155', formatter: (v: unknown) => fmt.format(v as number) }} />
           </BarChart>
         </ResponsiveContainer>
@@ -253,6 +272,7 @@ export function BmpAmounts({ bmps }: { bmps: BmpItem[] }) {
 }
 
 export function BmpCosts({ bmps }: { bmps: BmpItem[] }) {
+  const tooltip = useTooltip();
   const label = useLabelWidth(160);
   const all = bmps
     .filter((b) => b.estimatedCost?.value)
@@ -272,7 +292,7 @@ export function BmpCosts({ bmps }: { bmps: BmpItem[] }) {
             <CartesianGrid horizontal={false} stroke={GRID} />
             <XAxis type="number" tick={AXIS} axisLine={false} tickLine={false} tickFormatter={(v) => usdShort.format(v)} />
             <YAxis type="category" dataKey="name" width={label.width} tick={AXIS} tickFormatter={label.cut} axisLine={false} tickLine={false} />
-            <Tooltip cursor={CURSOR} {...TOOLTIP} formatter={(v) => [usd.format(v as number), 'Estimated cost']} />
+            <Tooltip cursor={CURSOR} {...tooltip} formatter={(v) => [usd.format(v as number), 'Estimated cost']} />
             <Bar dataKey="value" fill="#1d63b5" radius={[0, 4, 4, 0]} maxBarSize={18} label={{ position: 'right', fontSize: 12, fill: '#334155', formatter: (v: unknown) => usdShort.format(v as number) }} />
           </BarChart>
         </ResponsiveContainer>
@@ -283,6 +303,7 @@ export function BmpCosts({ bmps }: { bmps: BmpItem[] }) {
 
 /** When activities run, from their stated month or year ranges (a simple Gantt). */
 export function Timeline({ activities, className }: { activities: ActivityItem[]; className?: string }) {
+  const tooltip = useTooltip();
   const label = useLabelWidth(300);
   const timed = activities.filter((a) => a.start !== null && a.end !== null);
   const unit = timed.filter((a) => a.timeUnit === 'month').length >= timed.filter((a) => a.timeUnit === 'year').length ? 'month' : 'year';
@@ -293,7 +314,7 @@ export function Timeline({ activities, className }: { activities: ActivityItem[]
   // Stacked bars start at zero, so years are drawn from the first year ("2011-2014" is not 0-2014).
   const base = unit === 'year' && shown.length ? Math.min(...shown.map((a) => a.start!)) : 0;
   const data = shown.map((a) => ({
-    name: a.name.length > 46 ? `${a.name.slice(0, 44)}…` : a.name,
+    name: a.name.length > 42 ? `${a.name.slice(0, 40)}…` : a.name,
     full: a.name,
     offset: a.start! - base,
     span: Math.max(a.end! - a.start!, unit === 'month' ? 0.6 : 0.3),
@@ -322,7 +343,7 @@ export function Timeline({ activities, className }: { activities: ActivityItem[]
             <YAxis type="category" dataKey="name" width={label.width} tick={{ ...AXIS, fontSize: 12 }} tickFormatter={label.cut} axisLine={false} tickLine={false} />
             <Tooltip
               cursor={CURSOR}
-              {...TOOLTIP}
+              {...tooltip}
               labelFormatter={(_l, p) => (p?.[0]?.payload as { full: string } | undefined)?.full ?? ''}
               formatter={(_v, _n, p) => [(p?.payload as { when: string }).when, 'Scheduled']}
             />
