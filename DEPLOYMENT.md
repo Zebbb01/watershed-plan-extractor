@@ -62,6 +62,10 @@ devDependencies (Tailwind, TypeScript) and the build would fail.
 The keys are read only by `frontend/src/server/llm.ts`, which is marked `server-only`.
 `/api/health` reports which provider and model are configured and never a key value.
 
+Set your own key. When a project has no `ANTHROPIC_API_KEY` or `OPENAI_API_KEY`, Netlify's
+AI Gateway injects its own (with a matching base URL) and bills model calls to the
+account's Netlify credits; a key set on the project turns that off for its provider.
+
 ### Deploying
 
 From a terminal, in the repository root:
@@ -78,9 +82,17 @@ deployed this way from a clean checkout of a commit (`git worktree add`), so not
 uncommitted ships. Connecting the Git repository under **Add new site → Import an existing
 project** works too; the settings come from `netlify.toml`.
 
-A note for Windows: Netlify's Next.js runtime bundles any Next.js middleware into an edge
-function, and from a Windows build it writes the Windows path into that function
-unescaped, which fails with `MODULE_NOT_FOUND`. The app therefore uses no middleware.
+**Building on Windows.** Netlify's Next.js runtime (5.16) writes Windows paths into the
+code it generates when the build runs on Windows, and the deployed function cannot start
+(`Cannot find package '\var\task\frontend'`). It does the same for middleware, which is
+why the app uses none. Netlify's own build servers run Linux and are not affected. From a
+Windows machine, build, fix the paths, then deploy the build:
+
+```bash
+npx netlify-cli build --context production --filter @app/frontend
+node scripts/netlify-windows-paths.mjs
+npx netlify-cli deploy --prod --no-build --skip-functions-cache --site <site id> --filter @app/frontend
+```
 
 To roll back, open **Deploys**, choose an earlier deploy and select **Publish deploy**.
 
