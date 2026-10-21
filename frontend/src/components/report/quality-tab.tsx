@@ -33,10 +33,10 @@ const KIND_TAG: Record<StructureLine['kind'], string> = {
 function Section({ title, count, children }: { title: string; count?: number; children: React.ReactNode }) {
   return (
     <section className="rounded-panel border border-slate-200 bg-white">
-      <h3 className="flex items-center justify-between border-b border-slate-200 px-4 py-2.5 text-[13px] font-semibold text-slate-900">
+      <h2 className="flex items-center justify-between border-b border-slate-200 px-4 py-2.5 text-[13px] font-semibold text-slate-900">
         {title}
         {count !== undefined && <span className="tabular text-[12px] font-medium text-slate-500">{count}</span>}
-      </h3>
+      </h2>
       <div className="px-4 py-3">{children}</div>
     </section>
   );

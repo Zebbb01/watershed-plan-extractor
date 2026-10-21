@@ -29,7 +29,7 @@ function ChartCard({ title, note, chart, table, empty }: { title: string; note?:
     <section className="rounded-panel border border-slate-200 bg-white p-4" aria-label={title}>
       <div className="mb-3 flex flex-wrap items-start justify-between gap-2">
         <div>
-          <h3 className="text-[14px] font-semibold text-slate-900">{title}</h3>
+          <h2 className="text-[14px] font-semibold text-slate-900">{title}</h2>
           {note && <p className="text-[12px] text-slate-500">{note}</p>}
         </div>
         {!empty && (
@@ -116,7 +116,7 @@ export function BmpAmounts({ bmps }: { bmps: BmpItem[] }) {
     <section className="rounded-panel border border-slate-200 bg-white p-4" aria-label="Planned BMP amounts">
       <div className="mb-3 flex flex-wrap items-start justify-between gap-2">
         <div>
-          <h3 className="text-[14px] font-semibold text-slate-900">Planned BMP amounts</h3>
+          <h2 className="text-[14px] font-semibold text-slate-900">Planned BMP amounts</h2>
           <p className="text-[12px] text-slate-500">Largest 12 per unit, as written in the plan</p>
         </div>
         {byUnit.length > 1 && (

@@ -166,7 +166,7 @@ export function Home({ samples }: { samples: SampleCard[] }) {
                   </span>
                   <span className="mt-auto flex items-center justify-between gap-2 pt-3">
                     <Badge tone="neutral">{s.format}</Badge>
-                    <span className="text-[11px] text-slate-400">Source: {s.source}</span>
+                    <span className="text-[11px] text-slate-500">Source: {s.source}</span>
                   </span>
                 </Link>
               </li>
