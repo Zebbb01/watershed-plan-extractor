@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
-import { connection } from 'next/server';
 import { Droplets } from 'lucide-react';
 import './globals.css';
 
@@ -16,9 +15,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = { width: 'device-width', initialScale: 1, themeColor: '#ffffff' };
 
-export default async function RootLayout({ children }: LayoutProps<'/'>) {
-  // Render per request so each page carries the nonce the proxy put in its CSP header.
-  await connection();
+export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">

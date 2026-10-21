@@ -1,18 +1,23 @@
 import { describe, expect, it } from 'vitest';
-import { contentSecurityPolicy } from './security-headers';
+import { contentSecurityPolicy, STATIC_SECURITY_HEADERS } from './security-headers';
 
 describe('contentSecurityPolicy', () => {
-  it('locks scripts to the nonce and the app origin in production', () => {
-    const csp = contentSecurityPolicy('abc123', false);
-    expect(csp).toContain("script-src 'self' 'nonce-abc123' 'strict-dynamic'");
+  it('loads scripts only from the app origin in production', () => {
+    const csp = contentSecurityPolicy(false);
+    expect(csp).toContain("script-src 'self' 'unsafe-inline'");
     expect(csp).not.toContain('unsafe-eval');
     expect(csp).toContain("frame-ancestors 'none'");
     expect(csp).toContain("worker-src 'self' blob:");
     expect(csp).toContain("connect-src 'self'");
     expect(csp).toContain("object-src 'none'");
+    expect(csp).toContain("base-uri 'self'");
   });
 
   it('allows eval only in development, where React needs it for error overlays', () => {
-    expect(contentSecurityPolicy('abc123', true)).toContain("'unsafe-eval'");
+    expect(contentSecurityPolicy(true)).toContain("'unsafe-eval'");
+  });
+
+  it('is sent with every response, with no middleware involved', () => {
+    expect(STATIC_SECURITY_HEADERS['Content-Security-Policy']).toContain("default-src 'self'");
   });
 });

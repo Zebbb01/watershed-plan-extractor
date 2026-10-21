@@ -1,12 +1,15 @@
 /*
- * Content Security Policy for pages. Scripts run only from this origin with the per-request
- * nonce; pdf.js runs in a worker from this origin; the page may only call its own API.
- * Inline style attributes are allowed because the chart and dialog libraries set them.
+ * Content Security Policy for every response. Scripts load only from this origin; pdf.js runs
+ * in a worker from this origin; the page may only call its own API. Next.js's inline bootstrap
+ * scripts need 'unsafe-inline': a per-request nonce needs middleware, which Netlify's Next.js
+ * runtime cannot bundle from this build (DEPLOYMENT.md). No document text is ever rendered as
+ * HTML, so an inline script has no way in. Inline style attributes are allowed because the
+ * chart and dialog libraries set them.
  */
-export function contentSecurityPolicy(nonce: string, isDev: boolean): string {
+export function contentSecurityPolicy(isDev: boolean): string {
   return [
     "default-src 'self'",
-    `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'${isDev ? " 'unsafe-eval'" : ''}`,
+    `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ''}`,
     "style-src 'self' 'unsafe-inline'",
     "img-src 'self' blob: data:",
     "font-src 'self'",
@@ -22,6 +25,7 @@ export function contentSecurityPolicy(nonce: string, isDev: boolean): string {
 
 /** Headers for every response, pages and API alike. */
 export const STATIC_SECURITY_HEADERS: Record<string, string> = {
+  'Content-Security-Policy': contentSecurityPolicy(process.env.NODE_ENV === 'development'),
   'X-Content-Type-Options': 'nosniff',
   'Referrer-Policy': 'strict-origin-when-cross-origin',
   'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), payment=()',
