@@ -77,6 +77,15 @@ npx netlify-cli sites:create --name <name> --filter @app/frontend
 npx netlify-cli deploy --build --prod --site <site id> --filter @app/frontend
 ```
 
+A new project can start with **Visitor access** set to team login (every page returns 401
+with a Netlify login redirect). The demo needs no login, so set it to public under
+**Project configuration → General → Visitor access**, or with
+`npx netlify-cli api updateSite --data '{"site_id":"<site id>","body":{"sso_login":false}}'`.
+
+On the free plan each production deploy uses 15 of the month's 300 credits, and a team that
+runs out has its projects paused until the next month. Add the API key before the first
+deploy: environment variables reach the functions only on the next deploy.
+
 `--filter @app/frontend` tells the CLI which workspace is the site. The live demo is
 deployed this way from a clean checkout of a commit (`git worktree add`), so nothing
 uncommitted ships. Connecting the Git repository under **Add new site → Import an existing
@@ -113,7 +122,9 @@ grep -rE "sk-ant-|sk-proj-" frontend/.next/static || echo "no key strings in the
 
 Then upload a plan in the browser and open a sample.
 
-Results on the live demo after the final deploy (2026-10-22, commit `b735a1c`):
+Results on the live demo after the final deploy (2026-10-22, commit `b21cc8a`, on a new
+Netlify project at https://watershed-extractor.netlify.app; the first project's team had
+almost used its monthly credits):
 
 - `/api/health` returns `{"ok":true,"provider":"anthropic","model":"claude-haiku-5-5",...}`
   and no key.
@@ -131,14 +142,12 @@ Results on the live demo after the final deploy (2026-10-22, commit `b735a1c`):
 - The free plan adds a "Powered by Netlify" badge (an iframe, `#nl-badge-frame`) to every
   page. The served stylesheet hides it in print, so a printed or saved report leaves it out.
   On screen it stays unless it is turned off in the Netlify project's settings.
-
-One small request to `/api/extract` with a real page of text returned verified items in 4 s
-on an earlier deploy (`974237c`), so the key, the model and the verifier work in the deployed
-function. Later deploys changed only pages, buttons and the browser-side marking of quotes,
-so that paid request was not repeated.
+- The served stylesheet sets `@page { margin: 0 14mm }` for the printed report.
+- One small request to `/api/extract` with a real page of text returned verified items in
+  3.5 s for $0.0015, so the new project's key, the model and the verifier work.
 
 The pages, the compare view, the filters, the Upload buttons, the quote marks on scanned
-pages and the layouts at 1536, 1440 and 375 px wide were checked on the same commit running
+pages, the printed report and the layouts at 1536, 1440 and 375 px wide were checked on the same commit running
 locally, because the browser tool used here only opens localhost. A full upload through the
 live site was not run on this deploy; the runs in [TESTING.md](TESTING.md) used the same
 pipeline through the eval CLI.
