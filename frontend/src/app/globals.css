@@ -140,7 +140,10 @@ body {
     background: #fff;
     font-size: 11px;
   }
-  .no-print {
+  /* Netlify's free-plan badge is an iframe it adds to every page; it is no part of a report. */
+  .no-print,
+  #nl-badge-frame,
+  #nl-hud-frame {
     display: none !important;
   }
   .print-only {
