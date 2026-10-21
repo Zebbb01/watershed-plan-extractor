@@ -1,13 +1,14 @@
 # Deployment
 
-**Live demo: {{LIVE_URL}}**, hosted on Netlify, built from this repository.
+**Live demo: https://watershed-plan-extractor.netlify.app**, hosted on Netlify, built from
+this repository.
 
 ## Why the app fits a serverless host
 
 The PDF never travels to the server. The browser reads it with pdf.js and sends only small
 pieces: one work unit of text (at most 12 pages and 60,000 characters, with up to 6 page
-images) or up to 8 scanned page images per request. Each request finishes within 50
-seconds, and the server keeps nothing between requests.
+images) or two scanned page images per request. Each request has a 50-second deadline,
+and the server keeps nothing between requests.
 
 So a 100 MB+ plan needs no upload limit, no temporary storage and no job queue. The same
 build runs on Netlify, on Vercel, in Docker or on any Node host.
@@ -33,11 +34,13 @@ the environment variables.
   NEXT_TELEMETRY_DISABLED = "1"
 
 [[plugins]]
-  package = "@netlify/plugin-nextjs"      # Netlify's Next.js runtime: pages, route handlers, proxy
+  package = "@netlify/plugin-nextjs"      # Netlify's Next.js runtime: pages and route handlers
 ```
 
-The API routes (`/api/extract`, `/api/ocr`, `/api/health`) and server-rendered pages run as
-Netlify Functions. The proxy that sets the per-request CSP nonce runs on every page request.
+The API routes (`/api/extract`, `/api/ocr`, `/api/health`) and the report page run as
+Netlify Functions; the home and Accuracy pages are static. There is no middleware: the
+security headers, including the Content Security Policy, are static headers set in
+`frontend/next.config.ts`.
 
 ### Environment variables
 
@@ -65,13 +68,19 @@ From a terminal, in the repository root:
 
 ```bash
 npx netlify-cli login                  # opens the browser once
-npx netlify-cli sites:create           # or: npx netlify-cli link, for an existing site
+npx netlify-cli sites:create --name <name> --filter @app/frontend
 # set the environment variables in the Netlify UI (above), then:
-npx netlify-cli deploy --build --prod
+npx netlify-cli deploy --build --prod --site <site id> --filter @app/frontend
 ```
 
-Or connect the Git repository under **Add new site → Import an existing project**; the
-settings come from `netlify.toml`.
+`--filter @app/frontend` tells the CLI which workspace is the site. The live demo is
+deployed this way from a clean checkout of a commit (`git worktree add`), so nothing
+uncommitted ships. Connecting the Git repository under **Add new site → Import an existing
+project** works too; the settings come from `netlify.toml`.
+
+A note for Windows: Netlify's Next.js runtime bundles any Next.js middleware into an edge
+function, and from a Windows build it writes the Windows path into that function
+unescaped, which fails with `MODULE_NOT_FOUND`. The app therefore uses no middleware.
 
 To roll back, open **Deploys**, choose an earlier deploy and select **Publish deploy**.
 
@@ -89,17 +98,20 @@ Then upload a plan in the browser and open a sample.
 
 ## Security settings
 
-- **Headers** (`frontend/next.config.ts` and `frontend/src/proxy.ts`): a Content Security
-  Policy with a per-request nonce for scripts, `connect-src 'self'`,
-  `frame-ancestors 'none'` and `worker-src 'self' blob:` for pdf.js; HSTS;
+- **Headers** (`frontend/next.config.ts`, values in `frontend/src/server/security-headers.ts`):
+  a Content Security Policy with scripts from this origin only (plus Next.js's inline
+  bootstrap scripts), `connect-src 'self'`, `frame-ancestors 'none'`, `object-src 'none'`,
+  `base-uri 'self'` and `worker-src 'self' blob:` for pdf.js; HSTS;
   `X-Content-Type-Options: nosniff`; `Referrer-Policy: strict-origin-when-cross-origin`; a
   Permissions-Policy that turns off camera, microphone, geolocation and payment;
-  `X-Frame-Options: DENY`. The `X-Powered-By` header is removed.
+  `X-Frame-Options: DENY`. The `X-Powered-By` header is removed. A per-request script nonce
+  would need middleware (see the Windows note above); no document text is ever rendered as
+  HTML, so inline scripts have no way in.
 - **Requests** are validated with strict Zod schemas (unknown fields rejected) and size caps
   before any model call. Errors return `{ error: { code, message, requestId, retryAfter? } }`
   and never a stack trace.
 - **Rate limit:** a token bucket per client address in each function instance. It slows a
-  burst from one browser; the provider's spend limit is the hard cap.
+  burst from one browser; the provider account's prepaid balance or spend limit is the hard cap.
 - **Logs** (Netlify → Logs → Functions) show the request id, route, status, duration and
   token counts. Document text is never logged.
 

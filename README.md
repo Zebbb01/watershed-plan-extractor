@@ -6,7 +6,7 @@ Every item links to the page it came from and the exact words that support it.
 
 Built for ChowaCo's Document Extraction Tool assessment.
 
-**Live demo: {{LIVE_URL}}** (no login; the sample plans open instantly)
+**Live demo: https://watershed-plan-extractor.netlify.app** (no login; the sample plans open instantly)
 
 ## The approach in one minute
 
@@ -23,9 +23,10 @@ Code and an LLM each do the part they are reliable at.
    for every item and copy every name and amount exactly as printed. Table pages go with
    their image, so rows and columns line up.
 5. **Code verifies every item and fails closed.** The quote must be on the page. A BMP,
-   area, organisation or parameter name must appear there verbatim. Every number must be
-   written in the source. An item that fails is listed with its reason under Quality and
-   is never shown as data.
+   area, organisation or parameter name must appear there verbatim, as whole words. An
+   amount must be written as reported, in the quote or on the item's own table row, and
+   timeframes, audiences, pollutants and statuses are kept only when the document states
+   them. Whatever fails is listed with its reason under Quality and never shown as data.
 6. **Code merges and counts.** Duplicates across sections become one item with all its
    evidence. Two different amounts for the same thing are flagged for review. Totals and
    the completion rate are computed in code, never by the model.
@@ -89,8 +90,8 @@ reads the keys from `frontend/.env.local` when it starts; the image holds none.
 | `LLM_PROVIDER` | no | the key that is set, Anthropic first | `anthropic` or `openai` when both keys are set |
 | `EXTRACTION_MODEL` | no | `claude-opus-5-5`, or `gpt-6.1-sol` on OpenAI | Model for extraction |
 | `OCR_MODEL` | no | the same provider default | Model for scanned pages |
-| `EXTRACTION_EFFORT` | no | `low` | `low`, `medium` or `high` |
-| `MAX_PAGES` | no | `800` | Largest document one run accepts |
+| `EXTRACTION_EFFORT` | no | `low` on models that take an effort setting | `low`, `medium` or `high` |
+| `MAX_PAGES` | no | `800` | Pages read from one document; later pages are left out |
 | `RATE_LIMIT_PER_MIN` | no | `60` | API calls per minute per client address |
 | `NODE_ENV` | set by the host | | `production` on the live site |
 
@@ -124,7 +125,6 @@ frontend/                 Next.js app
   src/components/         home, processing, report tabs, charts, evidence panel, UI primitives
   src/lib/                browser PDF reading, run orchestration, storage, export
   src/server/             the only code that reads keys; rate limit, errors, security headers
-  src/proxy.ts            per-request CSP nonce
 backend/                  extraction engine (plain TypeScript, no framework)
   src/layout/             layout reconstruction: lines, columns, tables, headings, admin text
   src/text/               normalisation, quote matching, quantity parsing
@@ -150,12 +150,14 @@ scripts/                  secret scan, licence check, submission zip
   marked `server-only`, so a build fails if browser code imports it.
 - Every API request is validated with a strict Zod schema and size caps. Errors carry a
   code and a request id, never a stack trace.
-- A per-client rate limit slows bursts; the provider's spend limit is the hard cap.
+- A per-client rate limit slows bursts; the provider account's prepaid balance or spend
+  limit is the hard cap.
 - Document text is passed to the model as data inside delimiters. The model has no tools,
   its output must match the schema, and the verifier drops anything not found in the
   source.
-- Pages are served with a nonce-based Content Security Policy, HSTS, `nosniff`,
-  `frame-ancestors 'none'`, a strict referrer policy and a permissions policy.
+- Every response carries a Content Security Policy (scripts, connections and workers from
+  this origin only, no framing, no plugins), HSTS, `nosniff`, a strict referrer policy and
+  a permissions policy. No document text is ever rendered as HTML.
 - CSV export escapes cells that a spreadsheet would run as formulas.
 - Logs record the request id, timings and token counts, never document content.
 - The PDF stays in the browser. The server stores nothing. Anthropic and OpenAI do not
@@ -165,8 +167,10 @@ scripts/                  secret scan, licence check, submission zip
 
 - The rate limit is kept per server instance, so on serverless hosting it slows a burst
   from one browser but is not a global cap.
-- A section that still fails after its retries is reported with its pages; re-running the
-  file retries it.
+- A section that still fails after its retries is reported with its pages; dropping the
+  same file again runs it again (complete results are reused, results with failed sections
+  are not).
+- Documents longer than `MAX_PAGES` (800) are read up to that page.
 - The area filter shows items that mention the chosen area. Plans rarely tie each item to
   one county, so it is not a strict partition.
 - Files far above 100 MB are read in the browser, so a phone may run short of memory where

@@ -115,12 +115,14 @@ be on the page.
 
 `backend/src/pipeline.ts`, `backend/src/llm/prompt.ts` (`OCR_PROMPT`), `layout/text-page.ts`
 
-Scanned pages are rendered to JPEG (longest side 1,400 px) and sent up to eight per call.
-The model writes the text exactly as printed: line breaks kept, bullets as "• ", table rows
-with " | " between cells, `[illegible]` where it cannot read, and no corrections. The
-transcript becomes that page's text, marked `ocr`, and goes through the same layout
-reading. Items from OCR pages are never better than medium confidence, and their quotes
-are matched with a small tolerance (section 6).
+Scanned pages are rendered to JPEG (longest side 1,400 px) and sent two per call, because a
+page's transcript is long and every call must finish inside the host's time limit. A pair
+that times out is read one page at a time. The model writes the text exactly as printed:
+line breaks kept, bullets as "• ", table rows with " | " between cells, `[illegible]` where
+it cannot read, and no corrections. The transcript becomes that page's text, marked `ocr`,
+and goes through the same layout reading. Items from OCR pages are never better than medium
+confidence, and their quotes are matched with a small tolerance (section 6). Pages that
+still cannot be read are reported as a failed section, not as an empty category.
 
 ## 4. Work units and hints (code)
 
@@ -128,9 +130,9 @@ are matched with a small tolerance (section 6).
 
 - **Skipped pages** are listed with a reason under Quality: a scan that could not be read,
   a contents or administrative page, a blank page, a figure or map page.
-- **Units** are runs of consecutive pages of at most 6 pages and 24,000 characters, so
-  every call returns well inside the host's 60-second limit. The API accepts at most 12
-  pages, 60,000 characters and 6 images per call.
+- **Units** are runs of consecutive pages of at most 6 pages and 24,000 characters, sized
+  to return inside the host's 60-second limit; a unit that does not is split (section 9).
+  The API accepts at most 12 pages, 60,000 characters and 6 images per call.
 - **Order:** units with the most planning words (goals, BMPs, milestones, monitoring, costs,
   acres, counties) run first, so the dashboard fills with the sections that matter.
 - **Hints:** HUC codes, acreages, county names, "Month n-m" timeframes and dollar amounts
@@ -176,42 +178,57 @@ absent, so the model cannot drift into free text. The model has no tools.
 **Prompt injection:** the pages arrive inside `<document_pages>` and are declared data; the
 output must match the schema; and anything not found in the source is dropped in step 6.
 
-**Models:** `claude-opus-5-5` by default at low effort; `gpt-6.1-sol` when only an OpenAI key
-is set. Both go through the official SDKs with typed errors, and both are switched by
-environment variables (`EXTRACTION_MODEL`, `OCR_MODEL`, `EXTRACTION_EFFORT`).
+**Models:** `claude-opus-5-5` by default; `gpt-6.1-sol` when only an OpenAI key is set. Both
+go through the official SDKs with typed errors, and both are switched by environment
+variables (`EXTRACTION_MODEL`, `OCR_MODEL`, `EXTRACTION_EFFORT`). Effort is "low" on models
+that take an effort setting and is not sent to older ones; Opus models also get Anthropic's
+server-side fallback for refused requests. The SDKs never retry on their own: the pipeline
+decides (section 9), with the call's deadline in view.
 
 ## 6. Verify every item (code, fails closed)
 
 `backend/src/verify.ts`, `backend/src/text/normalize.ts`, `backend/src/text/quantity.ts`
 
-Nothing reaches the report unless it passes these checks. A failure is recorded with its
-reason (`quote-not-found`, `name-not-in-source`, `number-not-in-quote`, `invalid`) and shown
-under Quality, never as data.
+Nothing the model wrote reaches the report unless the document says it. A failure is
+recorded with its reason (`quote-not-found`, `name-not-in-source`, `number-not-in-quote`,
+`detail-not-in-source`, `invalid`) and shown under Quality, never as data. A failed quote or
+name drops the item; a failed amount or detail drops only that field.
 
 1. **The quote is on the page.** Both sides are normalised (Unicode NFKC, bullet and
    Wingdings glyphs, curly quotes, dash forms, hyphenation at line ends, spacing, case) and
-   compared on letters and digits only. That removes the differences between a PDF text
-   layer and a copied quote, and nothing else.
+   compared on letters and digits only, keeping decimal points, so "25 miles" never matches
+   "2.5 miles". That removes the differences between a PDF text layer and a copied quote,
+   and nothing else.
    - OCR pages accept a near match (similarity at least 0.92).
    - On a table page whose image was sent, a quote's words may be interleaved with
      neighbouring cells; they must still appear in order within a short span.
    - A quote may run over a page break.
-2. **The name is in the source.** BMP, outreach and area names, monitoring parameters,
-   responsible organisations and HUC codes must appear verbatim in the quote or on the
-   page. Goal and activity names are labels the model may shorten, so at least 70% of their
-   word stems must be on the page.
-3. **Every number is in the source.** Each number in an amount must be in the quote (high
-   confidence) or elsewhere on the page (medium). If it is nowhere, the amount is dropped.
-4. **Amounts are parsed by code:** "1,000" becomes 1000; "77% to 97%" a range of 77–97 %;
-   "no fewer than 20" ≥ 20; "$27,930.00" 27930 USD. Units are normalised (ac, ft, mi, cu yd,
-   ea, lb, ton, gal, sq ft, mg/L, NTU, °F, %), and counted things keep their noun ("fact
-   sheets"). Timeframes such as "Months 1-36" or "2020-2022" become a start and an end.
-5. **Cost rows add up.** When a BMP has a quantity, a unit cost and an estimated cost,
+2. **The name is in the source, as whole words.** BMP, outreach and area names, monitoring
+   parameters, responsible organisations and HUC codes must appear in the quote or on the
+   page; "Rain Garden" is not found inside "terrain gardens", while a plural ending still
+   counts. Goal and activity names are labels the model may shorten, so at least 70% of
+   their word stems must be on the page.
+3. **Every amount is written as reported.** On prose, the amount must be in the quote as
+   reported ("500 feet" is rejected when the plan says "500 acres"; "five field days" when it
+   says "Three"). On a table page it must sit on the item's own row with every number and
+   unit word, so a number cannot be borrowed from the next row. Every number must also be
+   one the page holds, compared by value.
+4. **Details are written in the source.** Timeframes, deadlines, pollutants, audiences,
+   monitoring frequencies and locations, and amount scopes ("Phase 1") are kept only when
+   they appear on the evidence pages. A status ("completed") is kept only when the item's own
+   quote says it. A description that carries a number the page does not is emptied.
+5. **Amounts are parsed by code:** "1,000" becomes 1000; "77% to 97%" a range of 77–97 %;
+   "no fewer than 20" ≥ 20; "$27,930.00" 27930 USD; "two (2) demonstration farms" 2, while
+   "12 structures (410)" stays 12 (a practice code is not an amount). Units are normalised
+   (ac, ft, mi, cu yd, ea, lb, ton, gal, sq ft, mg/L, NTU, °F, %), and counted things keep
+   their noun ("fact sheets"). Timeframes such as "Months 1-36" or "2020-2022" become a
+   start and an end.
+6. **Cost rows add up.** When a BMP has a quantity, a unit cost and an estimated cost,
    quantity × unit cost must match the estimate within 1%, or the item is marked "needs
    review".
-6. **Confidence:** high when the quote is found exactly on its own text page; medium for
-   OCR pages, interleaved table cells, quotes across a page break, or a number found only
-   elsewhere on the page.
+7. **Confidence:** high when a quote of four or more words is found exactly on its own text
+   page; medium for shorter quotes, OCR pages, interleaved table cells, quotes across a page
+   break, and amounts read from a table row.
 
 Why fail closed: the assessment asks for zero false positives on copied content. A
 dropped item lowers recall a little; a wrong name or number would cost the user's trust.
@@ -229,8 +246,9 @@ Oxygen % Saturation". Areas merge only within one type.
 
 Amounts stay separate per scope ("Full project" and "Phase 1" tables). Two different values
 for the same scope and unit are kept, listed as a conflict under Quality, and the item is
-marked "needs review". Nothing is picked silently. Sub-items are linked to their parent by
-name.
+marked "needs review". Nothing is picked silently. The merged item keeps the lowest
+confidence of its copies, so a "medium" check stays visible. Sub-items are linked to their
+parent by name.
 
 ## 8. Summary (code)
 
@@ -250,16 +268,19 @@ name.
 
 `backend/src/pipeline.ts`, `frontend/src/lib/run-extraction.ts`
 
-- Four units run in parallel. A rate-limit response halves that and waits for the provider's
-  `retry-after` (up to five times).
-- A unit that times out or hits the output limit is split in half and retried, down to a
-  single page. Any other error is retried once.
-- A unit that still fails is listed with its pages as a failed section; the rest of the
-  report stands.
+One policy covers extraction units and OCR batches alike:
+
+- Four calls run in parallel. A rate-limit response halves that and waits for the
+  provider's `retry-after` (up to five times).
+- A call that times out, hits the output limit or is too large is split in half and
+  retried, down to a single page. Any other error is retried once.
+- Work that still fails is listed with its pages as a failed section; the rest of the
+  report stands. Dropping the same file again runs it again: complete results are reused
+  from the browser's storage, results with failed sections are not.
 - Each API call has a 50-second deadline, inside the host's 60-second limit.
-- Progress is shown per stage, items appear as units finish, and Cancel stops the calls in
-  flight.
-- `MAX_PAGES` (default 800) caps one run.
+- Progress is shown per stage, items appear as units finish, and Cancel (or leaving the
+  page) stops the calls in flight.
+- `MAX_PAGES` (default 800) caps how many pages one run reads.
 
 ## How the requirements map to the steps
 

@@ -9,7 +9,7 @@ hand-checked ground truth by a script. The live site's Accuracy page shows the l
 | Requirement | Metric | Bar |
 | --- | --- | --- |
 | Main goals, BMPs and activities | F1 over goals, BMPs, implementation activities and outreach activities (precision and recall reported too) | ≥ 75% |
-| Quantitative metrics | Share of ground-truth numbers on found items whose value and unit match exactly | ≥ 75% |
+| Quantitative metrics | Share of ground-truth numbers on found items whose value and unit match exactly (number precision reported too) | ≥ 75% |
 | No false positives for copied content | Extracted names that do not appear in the PDF text | 0 |
 | Proper categorisation | Items found in the right category ÷ items found in any category; `kind` (main, sub, example) agreement on found items | reported |
 
@@ -59,25 +59,32 @@ quantity lists, milestones repeated in an appended grant proposal), 2006–2007 
 
 - **Matching:** within each category, ground-truth and extracted items are paired
   one-to-one, best pair first. Names are compared on word stems with stop words removed,
-  so "Terraces" matches "terrace". When one name contains the other with at most three
-  extra words, the pair scores at least 0.9; otherwise the score is the word overlap. A pair
-  needs 0.6. Evidence within one page of the labelled page breaks ties.
+  so "Terraces" matches "terrace". When a name of two or more words is contained in the
+  other with at most three extra words, the pair scores at least 0.9; otherwise the score
+  is the word overlap, so a single word ("Protection") never matches a longer name by
+  containment. A pair needs 0.6, and a name that is only similar (not the same stems) must
+  be cited within one page of the labelled page.
 - **Precision** is matched ÷ extracted, **recall** matched ÷ ground truth, **F1** their
   harmonic mean.
 - **Numbers** are scored on matched items: each ground-truth number must be among the
   item's numbers with the same value (exactly, so 5,500 is not 5,509) and the same unit.
   Counted things ("12 grade stabilization structures") compare as counts. A number on a
-  missed item is not scored here; the miss already counts against recall.
+  missed item is not scored here; the miss already counts against recall. **Number
+  precision** is the reverse: of the numbers the tool reports on found items whose numbers
+  the ground truth lists, the share that are right, so a wrong extra number counts.
 - **Verbatim violations** are extracted BMP, outreach, area and monitoring names that are
-  not in the PDF's text, after the normalisation the verifier uses. Goal and activity
-  names are short labels the model may phrase, so they are not counted. The scanned plan
-  has no text layer to check against, so it is not counted there either.
+  not written in the PDF's text. The scorer checks this with its own test, not the
+  verifier's matcher: the name's words in order, as whole words, with decimal points kept.
+  Goal and activity names are short labels the model may phrase, so they are not counted.
+  The scanned plan has no text layer to check against, so it is not counted there either.
 - **Time and cost** come from the run itself: wall-clock time with four parallel calls, and
   token usage priced at the provider's list prices.
 
-Run it with `npm run eval -- --set dev`, `--set heldout` or `--set all`, and
-`--model <id>` to compare models. Each run writes `backend/eval/results/<date>-<model>-<set>.json`
-and the per-plan outputs.
+The eval runs the production pipeline and passes every request through the API routes' own
+schema and size checks before calling the same handlers, so a request the live site would
+refuse fails in the eval too. Run it with `npm run eval -- --set dev`, `--set heldout` or
+`--set all`, and `--model <id>` to compare models. Each run writes
+`backend/eval/results/<date>-<model>-<set>.json` and the per-plan outputs.
 
 ## Results
 
@@ -105,20 +112,29 @@ Each change was measured on the tuning plans before it was kept.
 
 `npm test` runs the unit tests in both workspaces (Vitest). They cover:
 
-- text normalisation and quote matching, including Wingdings glyphs, hyphenation and
-  OCR tolerance;
-- quantity and timeframe parsing (ranges, comparators, dollar amounts, units, word numbers);
+- text normalisation and quote matching, including Wingdings glyphs, hyphenation, decimal
+  points, whole-word names and OCR tolerance;
+- quantity and timeframe parsing (ranges, comparators, dollar amounts, units, word numbers,
+  practice codes in brackets);
 - layout: baselines, columns and sidebars, bullets and indent levels, tables, headings,
-  running headers, contents pages, plus fixtures captured from real plan pages;
+  running headers (also when a page reads them as a table row), contents pages, plus
+  fixtures captured from real plan pages;
 - work units, page skipping and regex hints;
-- verification: every rejection reason, confidence levels and the cost arithmetic check;
-- merging, conflicts and parent links; the summary and completion rate;
-- the pipeline: OCR batching, rate-limit backoff, splitting a unit that times out, a
-  failed unit not failing the run, cancellation;
-- both LLM adapters with mocked SDK responses, and the API handlers;
+- verification: every rejection reason, confidence levels, the cost arithmetic check, and
+  the cases a model gets wrong in practice (a moved decimal point, a changed unit, a number
+  from another table row, a spelled-out number, an invented timeframe, status, pollutant,
+  audience or scope, a name found only inside other words);
+- merging, conflicts, parent links and lowest-confidence joins; the summary and
+  completion rate;
+- the pipeline: OCR in pairs with splitting and rate-limit retries, rate-limit backoff,
+  splitting a unit that times out, failed work reported rather than lost, cancellation;
+- both LLM adapters with mocked SDK responses (request shape, no SDK retries, effort and
+  fallback only where a model takes them), and the API handlers;
+- the scorer itself (stems, aliases, page proximity, number precision, its own verbatim
+  test);
 - request validation, size caps, error codes, the rate limiter and the security headers;
 - file validation (extension, `%PDF-` signature, size, encrypted or corrupt files),
-  the run orchestration and the cache;
+  the run orchestration and the cache (a stored result with failed sections runs again);
 - CSV export, including formula-injection escaping.
 
 `npm run typecheck` checks both workspaces.
