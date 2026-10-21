@@ -113,7 +113,7 @@ grep -rE "sk-ant-|sk-proj-" frontend/.next/static || echo "no key strings in the
 
 Then upload a plan in the browser and open a sample.
 
-Results on the live demo after the final deploy (2026-10-22, commit `d71e25c`):
+Results on the live demo after the final deploy (2026-10-22, commit `08ddf28`):
 
 - `/api/health` returns `{"ok":true,"provider":"anthropic","model":"claude-haiku-5-5",...}`
   and no key.
@@ -124,16 +124,21 @@ Results on the live demo after the final deploy (2026-10-22, commit `d71e25c`):
 - The sample results and PDFs are served, and the build has no `sk-ant-` or `sk-proj-` string.
 - pdf.js's decoders are served from `/pdfjs/wasm/` as `application/wasm`, and the CSP allows
   them to compile (`'wasm-unsafe-eval'`).
-- How it works serves its four screenshots as `image/webp`.
+- How it works serves its four screenshots as `image/webp`, and the tab icon is the site's
+  logo (`/favicon.ico`, `/icon.svg`).
+- Tesseract's worker and engines are served from `/tesseract/` as JavaScript, and the English
+  model as `application/gzip` with no `Content-Encoding`, so Tesseract unpacks it itself.
 
 One small request to `/api/extract` with a real page of text returned verified items in 4 s
-on the deploy before (`974237c`), so the key, the model and the verifier work in the deployed
-function. This deploy changed only pages and buttons, so that paid request was not repeated.
+on an earlier deploy (`974237c`), so the key, the model and the verifier work in the deployed
+function. Later deploys changed only pages, buttons and the browser-side marking of quotes,
+so that paid request was not repeated.
 
-The pages, the compare view, the filters, the Upload buttons and the layouts at 1536, 1440
-and 375 px wide were checked on the same commit running locally, because the browser tool
-used here only opens localhost. A full upload through the live site was not run on this
-deploy; the runs in [TESTING.md](TESTING.md) used the same pipeline through the eval CLI.
+The pages, the compare view, the filters, the Upload buttons, the quote marks on scanned
+pages and the layouts at 1536, 1440 and 375 px wide were checked on the same commit running
+locally, because the browser tool used here only opens localhost. A full upload through the
+live site was not run on this deploy; the runs in [TESTING.md](TESTING.md) used the same
+pipeline through the eval CLI.
 
 ## Security settings
 
