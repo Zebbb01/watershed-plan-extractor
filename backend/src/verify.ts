@@ -119,9 +119,13 @@ function checkEvidence(ctx: Context, evidence: { page: number; quote: string }[]
   };
 }
 
-/** Is a name written, as whole words, in the quotes or on the evidence pages? OCR text gets a near match for long names. */
+/**
+ * Is a name written, as whole words, on the evidence pages? Checked against the page text, not
+ * the model's quotes: a quote matched across interleaved table cells is not text the page holds
+ * in that order. OCR text gets a near match for long names.
+ */
 function inSource(name: string, checked: Checked, ocr: boolean): boolean {
-  if (findName(checked.quotes, name) || findName(checked.sourceText, name)) return true;
+  if (findName(checked.sourceText, name)) return true;
   return ocr && normalizeForMatch(name).length >= 16 && findQuote(checked.sourceText, name, { fuzzy: true }).found;
 }
 

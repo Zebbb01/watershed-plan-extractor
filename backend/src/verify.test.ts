@@ -290,6 +290,17 @@ describe('verifyUnit on a milestone table', () => {
     expect(r.items.implementation[0]).toMatchObject({ confidence: 'medium', source: 'table' });
   });
 
+  it('checks a verbatim name against the page, not against a quote stitched from table cells', () => {
+    const stitched = {
+      name: 'Target priority areas', text: 'x', kind: 'main' as const, parentName: null,
+      evidence: [{ page: 8, quote: 'Target priority areas for BMPs' }],
+      audience: null, quantity: null, timeframe: null,
+    };
+    const r = verifyUnit({ ...empty(), outreach: [stitched] }, tablePage, [8]);
+    expect(r.items.outreach).toEqual([]);
+    expect(r.rejected[0].reason).toBe('name-not-in-source');
+  });
+
   it('does not accept the split quote on a page that is not a table', () => {
     const r = verifyUnit({ ...empty(), implementation: [activity] }, tablePage, []);
     expect(r.items.implementation).toEqual([]);
