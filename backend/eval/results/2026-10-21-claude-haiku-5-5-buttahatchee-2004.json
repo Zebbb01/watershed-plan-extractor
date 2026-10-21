@@ -1,0 +1,251 @@
+{
+ "date": "2026-10-21",
+ "provider": "anthropic",
+ "model": "claude-haiku-5-5",
+ "ocrModel": "claude-haiku-5-5",
+ "effort": "low",
+ "set": "buttahatchee-2004",
+ "docs": [
+  {
+   "id": "buttahatchee-2004",
+   "role": "dev",
+   "format": "scanned",
+   "pages": 108,
+   "timeMs": 240203,
+   "costUsd": 0.17245904,
+   "counts": {
+    "goals": 37,
+    "bmps": 26,
+    "implementation": 114,
+    "monitoring": 21,
+    "outreach": 45,
+    "geographicAreas": 77
+   },
+   "failedUnits": 0,
+   "rejected": 65,
+   "score": {
+    "doc": "buttahatchee-2004",
+    "categories": {
+     "goals": {
+      "gt": 6,
+      "predicted": 11,
+      "matched": 5,
+      "precision": 0.45454545454545453,
+      "recall": 0.8333333333333334,
+      "f1": 0.5882352941176471
+     },
+     "bmps": {
+      "gt": 0,
+      "predicted": 0,
+      "matched": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+     },
+     "implementation": {
+      "gt": 19,
+      "predicted": 10,
+      "matched": 10,
+      "precision": 1,
+      "recall": 0.5263157894736842,
+      "f1": 0.6896551724137931
+     },
+     "monitoring": {
+      "gt": 2,
+      "predicted": 2,
+      "matched": 1,
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1": 0.5
+     },
+     "outreach": {
+      "gt": 0,
+      "predicted": 0,
+      "matched": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+     },
+     "geographicAreas": {
+      "gt": 6,
+      "predicted": 4,
+      "matched": 2,
+      "precision": 0.5,
+      "recall": 0.3333333333333333,
+      "f1": 0.4
+     }
+    },
+    "core": {
+     "gt": 25,
+     "predicted": 21,
+     "matched": 15,
+     "precision": 0.7142857142857143,
+     "recall": 0.6,
+     "f1": 0.6521739130434783
+    },
+    "all": {
+     "gt": 33,
+     "predicted": 27,
+     "matched": 18,
+     "precision": 0.6666666666666666,
+     "recall": 0.5454545454545454,
+     "f1": 0.6
+    },
+    "numeric": {
+     "correct": 0,
+     "total": 1,
+     "accuracy": 0,
+     "predictedCorrect": 0,
+     "predicted": 0,
+     "precision": 1
+    },
+    "categoryAccuracy": 0.782608695652174,
+    "kindAccuracy": 0.8888888888888888,
+    "verbatimViolations": [],
+    "timeMs": 240203,
+    "costUsd": 0.17245904
+   }
+  }
+ ],
+ "aggregate": {
+  "dev": {
+   "docs": 1,
+   "core": {
+    "gt": 25,
+    "predicted": 21,
+    "matched": 15,
+    "precision": 0.7142857142857143,
+    "recall": 0.6,
+    "f1": 0.6521739130434783
+   },
+   "categories": {
+    "goals": {
+     "gt": 6,
+     "predicted": 11,
+     "matched": 5,
+     "precision": 0.45454545454545453,
+     "recall": 0.8333333333333334,
+     "f1": 0.5882352941176471
+    },
+    "bmps": {
+     "gt": 0,
+     "predicted": 0,
+     "matched": 0,
+     "precision": 0,
+     "recall": 0,
+     "f1": 0
+    },
+    "implementation": {
+     "gt": 19,
+     "predicted": 10,
+     "matched": 10,
+     "precision": 1,
+     "recall": 0.5263157894736842,
+     "f1": 0.6896551724137931
+    },
+    "monitoring": {
+     "gt": 2,
+     "predicted": 2,
+     "matched": 1,
+     "precision": 0.5,
+     "recall": 0.5,
+     "f1": 0.5
+    },
+    "outreach": {
+     "gt": 0,
+     "predicted": 0,
+     "matched": 0,
+     "precision": 0,
+     "recall": 0,
+     "f1": 0
+    },
+    "geographicAreas": {
+     "gt": 6,
+     "predicted": 4,
+     "matched": 2,
+     "precision": 0.5,
+     "recall": 0.3333333333333333,
+     "f1": 0.4
+    }
+   },
+   "numeric": {
+    "correct": 0,
+    "total": 1,
+    "accuracy": 0
+   },
+   "verbatimViolations": 0,
+   "timeMs": 240203,
+   "costUsd": 0.17245904
+  },
+  "heldout": null,
+  "all": {
+   "docs": 1,
+   "core": {
+    "gt": 25,
+    "predicted": 21,
+    "matched": 15,
+    "precision": 0.7142857142857143,
+    "recall": 0.6,
+    "f1": 0.6521739130434783
+   },
+   "categories": {
+    "goals": {
+     "gt": 6,
+     "predicted": 11,
+     "matched": 5,
+     "precision": 0.45454545454545453,
+     "recall": 0.8333333333333334,
+     "f1": 0.5882352941176471
+    },
+    "bmps": {
+     "gt": 0,
+     "predicted": 0,
+     "matched": 0,
+     "precision": 0,
+     "recall": 0,
+     "f1": 0
+    },
+    "implementation": {
+     "gt": 19,
+     "predicted": 10,
+     "matched": 10,
+     "precision": 1,
+     "recall": 0.5263157894736842,
+     "f1": 0.6896551724137931
+    },
+    "monitoring": {
+     "gt": 2,
+     "predicted": 2,
+     "matched": 1,
+     "precision": 0.5,
+     "recall": 0.5,
+     "f1": 0.5
+    },
+    "outreach": {
+     "gt": 0,
+     "predicted": 0,
+     "matched": 0,
+     "precision": 0,
+     "recall": 0,
+     "f1": 0
+    },
+    "geographicAreas": {
+     "gt": 6,
+     "predicted": 4,
+     "matched": 2,
+     "precision": 0.5,
+     "recall": 0.3333333333333333,
+     "f1": 0.4
+    }
+   },
+   "numeric": {
+    "correct": 0,
+    "total": 1,
+    "accuracy": 0
+   },
+   "verbatimViolations": 0,
+   "timeMs": 240203,
+   "costUsd": 0.17245904
+  }
+ }
+}

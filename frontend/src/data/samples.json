@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "slug": "broken-pumpkin-2019",
+    "title": "Broken Pumpkin 9 Key Element Plan",
+    "year": 2019,
+    "pages": 11,
+    "format": "9-element plan",
+    "source": "MDEQ",
+    "pdf": "/samples/broken-pumpkin-2019.pdf",
+    "sourceUrl": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_I/TB/Nine_Key_Element_Plans/Broken_Pumpkin_9_Key_Element_Plan_2019.pdf"
+  },
+  {
+    "slug": "bell-creek-2012",
+    "title": "Bell Creek - West Prong Muddy Creek Watershed Plan",
+    "year": 2012,
+    "pages": 53,
+    "format": "Narrative plan",
+    "source": "MDEQ",
+    "pdf": "/samples/bell-creek-2012.pdf",
+    "sourceUrl": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_I/NI/Watershed_Plans/Bell_Creek_Muddy_Creek_Watershed_Plan_2012.pdf"
+  },
+  {
+    "slug": "fuller-creek-2022",
+    "title": "Fuller Creek - Town Creek 9 Key Element Plan",
+    "year": 2022,
+    "pages": 13,
+    "format": "9-element plan",
+    "source": "MDEQ",
+    "pdf": "/samples/fuller-creek-2022.pdf",
+    "sourceUrl": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_I/TB/Nine_Key_Element_Plans/Fuller_Creek_Town_Creek_9_Key_Element_Plan_2022.pdf"
+  },
+  {
+    "slug": "buttahatchee-2004",
+    "title": "Buttahatchee River Watershed Plan",
+    "year": 2004,
+    "pages": 108,
+    "format": "Scanned plan",
+    "source": "MDEQ",
+    "pdf": null,
+    "sourceUrl": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_I/TB/Watershed_Plans/Buttahatchee_River_Watershed_Plan_2004.pdf"
+  }
+]

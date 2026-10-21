@@ -3,7 +3,7 @@ import { CATEGORY_KEYS } from '../src/schema';
 import { normalizeForMatch, stem } from '../src/text/normalize';
 
 /*
- * Scores one extraction against hand-checked ground truth. Items match by name (stems, so
+ * Scores one extraction against the ground truth. Items match by name (stems, so
  * "Terraces" matches "terrace"; aliases allowed), one-to-one, best match first; a name that is
  * not the same must also be cited within a page of the labelled one. Numbers count as right
  * only when value and unit both match, and wrong extra numbers lower number precision. Any

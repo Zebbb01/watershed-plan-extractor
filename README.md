@@ -31,7 +31,10 @@ Code and an LLM each do the part they are reliable at.
    evidence. Two different amounts for the same thing are flagged for review. Totals and
    the completion rate are computed in code, never by the model.
 
-{{ACCURACY_SUMMARY}} The method and the per-plan results are in [TESTING.md](TESTING.md).
+**Accuracy**, scored by script against answer keys for four Mississippi plans:
+81.4% F1 on goals, BMPs and activities (81.0% on a plan held out from tuning), 89.3% of
+numbers exact, and 0 extracted names that are not written in the PDF. The method and the
+per-plan results are in [TESTING.md](TESTING.md).
 
 ## Using it
 
@@ -106,6 +109,7 @@ which provider is configured, never a key.
 | `npm run build` then `npm start -w frontend` | Production build and server |
 | `npm test` | Unit tests in both workspaces |
 | `npm run typecheck` | TypeScript in both workspaces |
+| `npm run lint -w frontend` | ESLint with the Next.js and React hooks rules |
 | `npm run eval:fetch -w backend` | Downloads the evaluation PDFs from MDEQ and checks their SHA-256 |
 | `npm run eval:gt -w backend` | Checks every ground-truth quote against the PDF text |
 | `npm run eval -- --set dev` | Runs the real pipeline on the tuning plans and scores it (`--set heldout`, `--set all`, `--model <id>`) |

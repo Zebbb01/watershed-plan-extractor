@@ -1,0 +1,253 @@
+{
+ "date": "2026-10-21",
+ "provider": "anthropic",
+ "model": "claude-haiku-5-5",
+ "ocrModel": "claude-haiku-5-5",
+ "effort": "low",
+ "set": "broken-pumpkin-2019",
+ "docs": [
+  {
+   "id": "broken-pumpkin-2019",
+   "role": "dev",
+   "format": "nine-element",
+   "pages": 11,
+   "timeMs": 13669,
+   "costUsd": 0.017506630000000002,
+   "counts": {
+    "goals": 1,
+    "bmps": 33,
+    "implementation": 16,
+    "monitoring": 17,
+    "outreach": 9,
+    "geographicAreas": 9
+   },
+   "failedUnits": 0,
+   "rejected": 16,
+   "score": {
+    "doc": "broken-pumpkin-2019",
+    "categories": {
+     "goals": {
+      "gt": 2,
+      "predicted": 1,
+      "matched": 0,
+      "precision": 0,
+      "recall": 0,
+      "f1": 0
+     },
+     "bmps": {
+      "gt": 34,
+      "predicted": 33,
+      "matched": 33,
+      "precision": 1,
+      "recall": 0.9705882352941176,
+      "f1": 0.9850746268656716
+     },
+     "implementation": {
+      "gt": 19,
+      "predicted": 16,
+      "matched": 14,
+      "precision": 0.875,
+      "recall": 0.7368421052631579,
+      "f1": 0.7999999999999999
+     },
+     "monitoring": {
+      "gt": 15,
+      "predicted": 17,
+      "matched": 12,
+      "precision": 0.7058823529411765,
+      "recall": 0.8,
+      "f1": 0.7500000000000001
+     },
+     "outreach": {
+      "gt": 7,
+      "predicted": 9,
+      "matched": 7,
+      "precision": 0.7777777777777778,
+      "recall": 1,
+      "f1": 0.8750000000000001
+     },
+     "geographicAreas": {
+      "gt": 13,
+      "predicted": 9,
+      "matched": 8,
+      "precision": 0.8888888888888888,
+      "recall": 0.6153846153846154,
+      "f1": 0.7272727272727274
+     }
+    },
+    "core": {
+     "gt": 62,
+     "predicted": 59,
+     "matched": 54,
+     "precision": 0.9152542372881356,
+     "recall": 0.8709677419354839,
+     "f1": 0.8925619834710744
+    },
+    "all": {
+     "gt": 90,
+     "predicted": 85,
+     "matched": 74,
+     "precision": 0.8705882352941177,
+     "recall": 0.8222222222222222,
+     "f1": 0.8457142857142856
+    },
+    "numeric": {
+     "correct": 83,
+     "total": 92,
+     "accuracy": 0.9021739130434783,
+     "predictedCorrect": 83,
+     "predicted": 116,
+     "precision": 0.7155172413793104
+    },
+    "categoryAccuracy": 0.9866666666666667,
+    "kindAccuracy": 1,
+    "verbatimViolations": [
+     "outreach: Education/Outreach events scheduled"
+    ],
+    "timeMs": 13669,
+    "costUsd": 0.017506630000000002
+   }
+  }
+ ],
+ "aggregate": {
+  "dev": {
+   "docs": 1,
+   "core": {
+    "gt": 62,
+    "predicted": 59,
+    "matched": 54,
+    "precision": 0.9152542372881356,
+    "recall": 0.8709677419354839,
+    "f1": 0.8925619834710744
+   },
+   "categories": {
+    "goals": {
+     "gt": 2,
+     "predicted": 1,
+     "matched": 0,
+     "precision": 0,
+     "recall": 0,
+     "f1": 0
+    },
+    "bmps": {
+     "gt": 34,
+     "predicted": 33,
+     "matched": 33,
+     "precision": 1,
+     "recall": 0.9705882352941176,
+     "f1": 0.9850746268656716
+    },
+    "implementation": {
+     "gt": 19,
+     "predicted": 16,
+     "matched": 14,
+     "precision": 0.875,
+     "recall": 0.7368421052631579,
+     "f1": 0.7999999999999999
+    },
+    "monitoring": {
+     "gt": 15,
+     "predicted": 17,
+     "matched": 12,
+     "precision": 0.7058823529411765,
+     "recall": 0.8,
+     "f1": 0.7500000000000001
+    },
+    "outreach": {
+     "gt": 7,
+     "predicted": 9,
+     "matched": 7,
+     "precision": 0.7777777777777778,
+     "recall": 1,
+     "f1": 0.8750000000000001
+    },
+    "geographicAreas": {
+     "gt": 13,
+     "predicted": 9,
+     "matched": 8,
+     "precision": 0.8888888888888888,
+     "recall": 0.6153846153846154,
+     "f1": 0.7272727272727274
+    }
+   },
+   "numeric": {
+    "correct": 83,
+    "total": 92,
+    "accuracy": 0.9021739130434783
+   },
+   "verbatimViolations": 1,
+   "timeMs": 13669,
+   "costUsd": 0.017506630000000002
+  },
+  "heldout": null,
+  "all": {
+   "docs": 1,
+   "core": {
+    "gt": 62,
+    "predicted": 59,
+    "matched": 54,
+    "precision": 0.9152542372881356,
+    "recall": 0.8709677419354839,
+    "f1": 0.8925619834710744
+   },
+   "categories": {
+    "goals": {
+     "gt": 2,
+     "predicted": 1,
+     "matched": 0,
+     "precision": 0,
+     "recall": 0,
+     "f1": 0
+    },
+    "bmps": {
+     "gt": 34,
+     "predicted": 33,
+     "matched": 33,
+     "precision": 1,
+     "recall": 0.9705882352941176,
+     "f1": 0.9850746268656716
+    },
+    "implementation": {
+     "gt": 19,
+     "predicted": 16,
+     "matched": 14,
+     "precision": 0.875,
+     "recall": 0.7368421052631579,
+     "f1": 0.7999999999999999
+    },
+    "monitoring": {
+     "gt": 15,
+     "predicted": 17,
+     "matched": 12,
+     "precision": 0.7058823529411765,
+     "recall": 0.8,
+     "f1": 0.7500000000000001
+    },
+    "outreach": {
+     "gt": 7,
+     "predicted": 9,
+     "matched": 7,
+     "precision": 0.7777777777777778,
+     "recall": 1,
+     "f1": 0.8750000000000001
+    },
+    "geographicAreas": {
+     "gt": 13,
+     "predicted": 9,
+     "matched": 8,
+     "precision": 0.8888888888888888,
+     "recall": 0.6153846153846154,
+     "f1": 0.7272727272727274
+    }
+   },
+   "numeric": {
+    "correct": 83,
+    "total": 92,
+    "accuracy": 0.9021739130434783
+   },
+   "verbatimViolations": 1,
+   "timeMs": 13669,
+   "costUsd": 0.017506630000000002
+  }
+ }
+}

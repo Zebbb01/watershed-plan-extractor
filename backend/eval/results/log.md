@@ -25,3 +25,14 @@ Dev-set runs on the final tuning settings (micro-averaged over the three plans):
 | Opus 5.5, Broken Pumpkin only | 91.3% (Haiku 93.3%) | 89.2% | 93.5% | 87.8% | 0 | $0.69 (Haiku $0.02) |
 
 Decision: Haiku 5.5 is the default for extraction and OCR.
+
+Final run on the final settings (2026-10-21, Haiku 5.5, all four labelled plans, scored once):
+
+| Set | Core F1 | Precision | Recall | Numbers | Verbatim violations | Cost |
+| --- | --- | --- | --- | --- | --- | --- |
+| Tuning plans | 81.5% | 81.3% | 81.8% | 87.3% (110/126) | 0 | $0.23 |
+| Held-out plan (Owl Creek) | 81.0% | 78.0% | 84.2% | 100% (24/24) | 0 | $0.015 |
+| All four | 81.4% | 80.6% | 82.2% | 89.3% (134/150) | 0 | $0.24 |
+
+Buttahatchee has ranged from 58.8% to 68.1% across Haiku runs, so change 4 cannot be told
+apart from run-to-run spread.
