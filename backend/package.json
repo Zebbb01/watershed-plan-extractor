@@ -13,7 +13,8 @@
     "eval": "tsx eval/run.ts",
     "eval:fetch": "tsx eval/fetch-docs.ts",
     "samples": "tsx eval/make-samples.ts",
-    "eval:gt": "tsx eval/check-ground-truth.ts"
+    "eval:gt": "tsx eval/check-ground-truth.ts",
+    "eval:rescore": "tsx eval/rescore.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.136.0",

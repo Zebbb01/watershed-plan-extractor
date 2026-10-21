@@ -77,9 +77,10 @@ describe('score is not lenient with names', () => {
   });
 
   it('checks a monitoring item by its parameter, and skips items read only from scanned pages', () => {
-    const page = new Map([[5, 'Dissolved Oxygen daily average of 5.0 mg/L'], [9, '']]);
+    const page = new Map([[5, 'Dissolved Oxygen daily average of 5.0 mg/L'], [9, '12']]);
     const metric = (name: string, parameter: string, p: number) => ({ ...bmp(name, p), parameter, threshold: null, location: null, frequency: null });
     const r = result([]);
+    r.quality.ocrPages = [9];
     r.report.monitoring = [metric('Oxygen monitoring', 'Dissolved Oxygen', 5), metric('Turbidity', 'Turbidity', 5), metric('Phosphorus', 'Phosphorus', 9)] as never;
     expect(score(r, { doc: 'toy', scope: 'all', items: [] }, page).verbatimViolations).toEqual(['monitoring: Turbidity']);
   });
