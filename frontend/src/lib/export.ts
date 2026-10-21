@@ -22,7 +22,8 @@ export function toCsv(category: CategoryKey, items: AnyItem[]): string {
 
 /** The full result for download; the page-structure dump is left out (it is for the Quality tab). */
 export function toJson(result: ExtractionResult): string {
-  const { structure: _structure, ...quality } = result.quality;
+  // JSON.stringify leaves out undefined fields.
+  const quality = { ...result.quality, structure: undefined };
   return JSON.stringify({ report: result.report, document: result.document, quality }, null, 2);
 }
 

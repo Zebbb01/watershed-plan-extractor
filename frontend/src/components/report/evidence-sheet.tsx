@@ -28,11 +28,12 @@ export function EvidenceSheet({
   getDoc: () => Promise<PDFDocumentProxy | null>;
   sourceUrl?: string | null;
 }) {
-  const [page, setPage] = useState<number | null>(null);
+  // The page picked for this item; another item opens on its first quote's page.
+  const [picked, setPicked] = useState<{ item: AnyItem; page: number } | null>(null);
+  const page = picked && picked.item === item ? picked.page : (item?.evidence[0]?.page ?? null);
   const [doc, setDoc] = useState<PDFDocumentProxy | null | undefined>(undefined);
 
   useEffect(() => {
-    setPage(item?.evidence[0]?.page ?? null);
     if (item && doc === undefined) getDoc().then(setDoc).catch(() => setDoc(null));
   }, [item, doc, getDoc]);
 
@@ -61,7 +62,7 @@ export function EvidenceSheet({
                 <li key={i}>
                   <button
                     type="button"
-                    onClick={() => setPage(e.page)}
+                    onClick={() => setPicked({ item, page: e.page })}
                     aria-pressed={page === e.page}
                     className={cn(
                       'w-full rounded-panel border px-3 py-2 text-left text-[13px] transition-colors focus-visible:outline-2 focus-visible:outline-primary-600',
