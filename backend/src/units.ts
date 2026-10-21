@@ -27,6 +27,9 @@ const CAPTION = /^(figure|fig\.|photo|map|image)\b/i;
 
 const relevanceOf = (markup: string) => ((markup.match(KEYWORDS)?.length ?? 0) * 1000) / Math.max(500, markup.length);
 
+/** Skip reason for a scanned page whose transcription came back empty. */
+export const UNREADABLE_SCAN = 'Scanned page that could not be read';
+
 export function buildUnits(
   pages: PageModel[],
   opts: { maxChars?: number; maxPages?: number } = {},
@@ -43,7 +46,7 @@ export function buildUnits(
     const content = p.lines.filter((l) => l.kind !== 'admin');
     const markup = renderMarkup(p);
     if (p.flags.scanned && p.source === 'text') {
-      skipped.push({ page: p.n, reason: 'Scanned page that could not be read' });
+      skipped.push({ page: p.n, reason: UNREADABLE_SCAN });
     } else if (p.flags.adminOnly) {
       skipped.push({ page: p.n, reason: content.length ? 'Contents or administrative page' : 'Blank page' });
     } else if (!markup.trim()) {

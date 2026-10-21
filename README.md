@@ -188,8 +188,9 @@ scripts/                  secret scan, licence check, submission zip
   its output must match the schema, and the verifier drops anything not found in the
   source.
 - Every response carries a Content Security Policy (scripts, connections and workers from
-  this origin only, no framing, no plugins), HSTS, `nosniff`, a strict referrer policy and
-  a permissions policy. No document text is ever rendered as HTML.
+  this origin only, no framing, no plugins; WebAssembly may compile, for pdf.js's image
+  decoders, but JavaScript eval may not), HSTS, `nosniff`, a strict referrer policy and a
+  permissions policy. No document text is ever rendered as HTML.
 - CSV export escapes cells that a spreadsheet would run as formulas.
 - Logs record the request id, timings and token counts, never document content.
 - The PDF stays in the browser. The server stores nothing. Anthropic and OpenAI do not

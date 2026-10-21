@@ -252,6 +252,11 @@ From reading the output (not scored):
 
 ## What was not measured
 
+- Scanned plans end to end through the live site. The eval reads PDFs in Node, where pdf.js
+  finds its image decoders on its own; in the browser it needs them served and allowed by the
+  CSP. A JPEG 2000 scan (West Boley Creek 2007) first came out as blank pages on the live site
+  and was fixed. The fix was checked in a local production build up to the AI call: every page
+  image now carries the scan. The AI's reading of those pages was not run again.
 - The OpenAI path (`gpt-6.1-sol` through the Responses API with a strict JSON schema). It is
   built and unit-tested with mocked responses, but no OpenAI key was used, so it was never run
   against the live API.

@@ -1,4 +1,4 @@
-import { runPipeline, type ErrorCode, type ExtractionResult, type PipelineDeps, type Progress } from '@app/backend';
+import { runPipeline, UNREADABLE_SCAN, type ErrorCode, type ExtractionResult, type PipelineDeps, type Progress } from '@app/backend';
 import type { PDFDocumentProxy } from 'pdfjs-dist';
 import { openPdf, readPdfBrowser, renderPageJpegBrowser, sha256Hex } from './pdf/browser-reader';
 import { loadResult, saveResult } from './store';
@@ -52,8 +52,10 @@ export async function prepareFile(
   const data = new Uint8Array(await file.arrayBuffer());
   const id = await sha256Hex(data);
   const stored = await deps.load(id);
-  // A complete stored result is reused; one with failed sections runs again, which retries them.
-  const cached = stored && stored.quality.failedUnits.length === 0 ? stored : null;
+  // A complete stored result is reused. One with failed sections runs again, which retries them,
+  // and so does one in which no scanned page could be read (images the browser could not draw then).
+  const unread = !stored?.quality.ocrPages?.length && Boolean(stored?.quality.skippedPages?.some((s) => s.reason === UNREADABLE_SCAN));
+  const cached = stored && stored.quality.failedUnits.length === 0 && !unread ? stored : null;
   // A stored result still opens the PDF (best effort) so the evidence panel can show pages.
   // pdf.js takes over the buffer, so the file is hashed first and `data` is not used after this.
   const doc = await deps.open(data).catch((e) => {

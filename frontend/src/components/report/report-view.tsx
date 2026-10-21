@@ -147,6 +147,9 @@ export function ReportView({ id }: { id: string }) {
   };
   const csvTab = tab !== 'overview' && tab !== 'quality' ? tab : null;
   const verified = Math.round(quality.verifiedRate * 100);
+  const nothing = CATEGORY_KEYS.every((k) => report[k].length === 0);
+  // With nothing proposed there is no share to show: 0 of 0 is not "100% passed".
+  const proposedNone = nothing && quality.rejected.length === 0;
   const showEvidence = (item: AnyItem, category: CategoryKey) =>
     compare ? setFocus({ item, page: item.evidence[0]?.page ?? 1 }) : setEvidence({ item, category });
   const tile = (k: CategoryKey) => ({ accent: CATEGORY_UI[k].color, icon: CATEGORY_UI[k].icon, onClick: () => setTab(k) });
@@ -197,7 +200,7 @@ export function ReportView({ id }: { id: string }) {
           </div>
 
           {quality.failedUnits.length > 0 &&
-            (CATEGORY_KEYS.every((k) => report[k].length === 0) ? (
+            (nothing ? (
               // Nothing came back at all: say so plainly, not "the rest is complete".
               <p className="mt-4 flex items-start gap-2 rounded-panel bg-negative-50 px-3.5 py-2.5 text-[13px] text-negative-700 ring-1 ring-negative-100" role="alert">
                 <TriangleAlert className="mt-0.5 size-4 shrink-0" aria-hidden />
@@ -214,6 +217,14 @@ export function ReportView({ id }: { id: string }) {
                 ). Everything else is shown; drop the file again to retry them.
               </p>
             ))}
+          {quality.failedUnits.length === 0 && nothing && (
+            <p className="mt-4 flex items-start gap-2 rounded-panel bg-warning-50 px-3.5 py-2.5 text-[13px] text-warning-700 ring-1 ring-warning-100" role="status">
+              <TriangleAlert className="mt-0.5 size-4 shrink-0" aria-hidden />
+              {quality.skippedPages.length >= doc.pages
+                ? `Nothing was extracted: none of the ${doc.pages} pages could be used (blank, unreadable or figure pages). The Quality tab lists the reason for each page.`
+                : 'Nothing was extracted: no page states goals, BMPs, activities, monitoring, outreach or areas.'}
+            </p>
+          )}
 
           <Tabs.List aria-label="Report sections" className="-mx-4 mt-3 flex gap-1 overflow-x-auto overflow-y-hidden px-4 [scrollbar-width:none] sm:mx-0 sm:px-0 [&::-webkit-scrollbar]:hidden">
             {TABS.map((t) => {
@@ -281,12 +292,14 @@ export function ReportView({ id }: { id: string }) {
                     <ShieldCheck className="size-3.5 text-positive-600" aria-hidden />
                     Checked against the PDF
                   </h2>
-                  <p className="mt-2 text-[28px] font-semibold leading-none text-slate-900">{verified}%</p>
+                  <p className="mt-2 text-[28px] font-semibold leading-none text-slate-900">{proposedNone ? '—' : `${verified}%`}</p>
                   <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-slate-100" aria-hidden>
-                    <div className="h-full rounded-full bg-positive-600" style={{ width: `${verified}%` }} />
+                    <div className="h-full rounded-full bg-positive-600" style={{ width: `${proposedNone ? 0 : verified}%` }} />
                   </div>
                   <p className="mt-2 text-[12px] text-slate-500">
-                    of proposed items passed · {quality.rejected.length} rejected · {quality.conflicts.length} conflicts
+                    {proposedNone
+                      ? 'nothing was proposed to check'
+                      : `of proposed items passed · ${quality.rejected.length} rejected · ${quality.conflicts.length} conflicts`}
                   </p>
                   <div className="mt-auto flex flex-wrap gap-2 pt-4">
                     <button type="button" onClick={() => setTab('quality')} className={buttonClass('secondary', 'sm')}>

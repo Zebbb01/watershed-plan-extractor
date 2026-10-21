@@ -22,3 +22,6 @@ backend/eval/pdfs/
 *.zip
 *.log
 .DS_Store
+
+# pdf.js decoders, copied from node_modules before dev and build
+frontend/public/pdfjs/

@@ -163,6 +163,20 @@ describe('runPipeline', () => {
     expect(result.quality.failedUnits).toEqual([expect.objectContaining({ pages: [2], error: 'TIMEOUT' })]);
   });
 
+  it('skips a scanned page whose image comes out blank, without paying to transcribe it', async () => {
+    const sent: number[] = [];
+    const result = await runPipeline({ doc, rawPages: [scannedPage(1), scannedPage(2)] }, deps({
+      renderPage: async (n) => (n === 1 ? '' : `/9j/page${n}`),
+      ocr: async (req) => {
+        sent.push(...req.pages.map((p) => p.n));
+        return ocrText(req);
+      },
+    }));
+    expect(sent).toEqual([2]);
+    expect(result.quality.skippedPages).toContainEqual({ page: 1, reason: 'Blank page' });
+    expect(result.quality.ocrPages).toEqual([2]);
+  });
+
   it('waits and retries OCR on a rate limit', async () => {
     const waits: number[] = [];
     let calls = 0;

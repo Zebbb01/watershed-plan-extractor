@@ -55,6 +55,16 @@ describe('prepareFile', () => {
     expect(out.doc).toBe(doc);
   });
 
+  it('runs the file again when none of its scanned pages could be read', async () => {
+    const stored = {
+      document: { id: 'unread' },
+      quality: { failedUnits: [], ocrPages: [], skippedPages: [{ page: 1, reason: 'Scanned page that could not be read' }] },
+    } as unknown as ExtractionResult;
+    const doc = { numPages: 40 };
+    const out = await prepareFile(file, { load: async () => stored, open: async () => doc as never });
+    expect(out.cached).toBeNull();
+  });
+
   it('opens the PDF when nothing is stored', async () => {
     const doc = { numPages: 11 };
     const out = await prepareFile(file, { load: async () => null, open: async () => doc as never });

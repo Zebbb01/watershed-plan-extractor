@@ -28,7 +28,7 @@ export interface Progress {
 export interface PipelineDeps {
   extract(req: ExtractRequest, signal: AbortSignal): Promise<ExtractResponse>;
   ocr(req: OcrRequest, signal: AbortSignal): Promise<OcrResponse>;
-  /** base64 JPEG of a page */
+  /** base64 JPEG of a page, or '' when the image comes out blank (nothing to read, nothing to pay for) */
   renderPage(n: number): Promise<string>;
   onProgress?(p: Progress): void;
   sleep?(ms: number): Promise<void>;
@@ -141,15 +141,23 @@ export async function runPipeline(
     const jobs: { pages: number[]; tries: Tries }[] = [];
     for (let i = 0; i < scanned.length; i += OCR_BATCH) jobs.push({ pages: scanned.slice(i, i + OCR_BATCH), tries: { rate: 0, other: 0 } });
     const replaced = new Map<number, PageModel>();
+    const blank = new Set<number>();
     let done = 0;
     let total = jobs.length;
     progress({ stage: 'ocr', done, total });
     await pool(jobs, () => limit, async (job) => {
       try {
-        const images = await Promise.all(job.pages.map(async (n) => ({ n, jpegBase64: await deps.renderPage(n) })));
-        const res = await deps.ocr({ docId: input.doc.id, pages: images }, signal);
-        addUsage(res.usage);
-        for (const p of res.pages) if (job.pages.includes(p.n) && p.text.trim()) replaced.set(p.n, pageFromText(p.n, p.text));
+        const rendered = await Promise.all(job.pages.map(async (n) => ({ n, jpegBase64: await deps.renderPage(n) })));
+        for (const r of rendered.filter((r) => !r.jpegBase64)) {
+          blank.add(r.n);
+          replaced.set(r.n, pageFromText(r.n, ''));
+        }
+        const images = rendered.filter((r) => r.jpegBase64);
+        if (images.length) {
+          const res = await deps.ocr({ docId: input.doc.id, pages: images }, signal);
+          addUsage(res.usage);
+          for (const p of res.pages) if (job.pages.includes(p.n) && p.text.trim()) replaced.set(p.n, pageFromText(p.n, p.text));
+        }
       } catch (e) {
         const code = codeOf(e);
         if (code === 'ABORTED') throw e;
@@ -178,7 +186,7 @@ export async function runPipeline(
     }, signal);
     // Transcribed pages go through the document-level clean-up too: running heads, contents pages, admin sections.
     pages = annotateDocument(pages.map((p) => replaced.get(p.n) ?? p));
-    ocrPages.push(...[...replaced.keys()].sort((a, b) => a - b));
+    ocrPages.push(...[...replaced.keys()].filter((n) => !blank.has(n)).sort((a, b) => a - b));
   }
 
   // 3. Units
@@ -205,7 +213,7 @@ export async function runPipeline(
     try {
       const images = await Promise.all(
         unit.imagePages.slice(0, LIMITS.unitImages).map(async (page) => ({ page, jpegBase64: await deps.renderPage(page) })),
-      );
+      ).then((all) => all.filter((i) => i.jpegBase64));
       const req: ExtractRequest = {
         docId: input.doc.id,
         unit: {
