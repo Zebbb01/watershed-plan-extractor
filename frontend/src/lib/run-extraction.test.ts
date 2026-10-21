@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { ExtractionResult } from '@app/backend';
-import { apiCall, prepareFile } from './run-extraction';
+import { sha256Hex } from './pdf/browser-reader';
+import { apiCall, openSameFile, prepareFile } from './run-extraction';
 
 afterEach(() => vi.unstubAllGlobals());
 const signal = new AbortController().signal;
@@ -70,5 +71,21 @@ describe('prepareFile', () => {
     const out = await prepareFile(file, { load: async () => null, open: async () => doc as never });
     expect(out.cached).toBeNull();
     expect(out.doc).toBe(doc);
+  });
+});
+
+describe('openSameFile', () => {
+  const file = new File([new TextEncoder().encode('%PDF-1.7 report')], 'plan.pdf', { type: 'application/pdf' });
+
+  it('opens the file a report was made from', async () => {
+    const id = await sha256Hex(new TextEncoder().encode('%PDF-1.7 report'));
+    const doc = { numPages: 3 };
+    await expect(openSameFile(file, id, { open: async () => doc as never })).resolves.toBe(doc);
+  });
+
+  it('refuses a different file, so a retry never mixes two plans', async () => {
+    const open = vi.fn(async () => ({}) as never);
+    await expect(openSameFile(file, 'f'.repeat(64), { open })).rejects.toThrow('different file');
+    expect(open).not.toHaveBeenCalled();
   });
 });

@@ -35,6 +35,29 @@ export interface Health {
   limits: { maxPages: number };
 }
 
+/** The server's answer when it cannot be asked: no provider, default limits. */
+export const NO_HEALTH: Health = { provider: null, model: null, limits: { maxPages: 800 } };
+
+/** What the server can do (provider, limits); never throws. */
+export const fetchHealth = (): Promise<Health> =>
+  fetch('/api/health')
+    .then((r) => r.json() as Promise<Health>)
+    .catch(() => NO_HEALTH);
+
+/**
+ * Opens a PDF only if it is the file a report was made from (same SHA-256), so a retry or a
+ * side-by-side check never mixes two plans. Hashes first: pdf.js takes over the buffer.
+ */
+export async function openSameFile(
+  file: File,
+  id: string,
+  deps: { open: (data: Uint8Array) => Promise<PDFDocumentProxy> } = { open: openPdf },
+): Promise<PDFDocumentProxy> {
+  const data = new Uint8Array(await file.arrayBuffer());
+  if ((await sha256Hex(data)) !== id) throw new Error('This is a different file from the one this report was made from.');
+  return deps.open(data);
+}
+
 export interface Prepared {
   id: string;
   fileName: string;

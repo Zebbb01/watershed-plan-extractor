@@ -13,7 +13,7 @@ import { Shapes } from '@/components/ui/shapes';
 import { activeRun } from '@/lib/active-run';
 import { CATEGORY_UI } from '@/lib/categories-ui';
 import { readErrorMessage, validatePdfFile } from '@/lib/pdf/validate';
-import { estimateMinutes, prepareFile, type Health, type Prepared } from '@/lib/run-extraction';
+import { estimateMinutes, fetchHealth, NO_HEALTH, prepareFile, type Health, type Prepared } from '@/lib/run-extraction';
 import { session } from '@/lib/session';
 import { listRecent, type RecentEntry } from '@/lib/store';
 import { Processing } from './processing';
@@ -38,7 +38,6 @@ type Phase =
   | { kind: 'confirm'; prepared: Prepared & { doc: NonNullable<Prepared['doc']> } };
 
 const BIG_DOC_PAGES = 100;
-const NO_HEALTH: Health = { provider: null, model: null, limits: { maxPages: 800 } };
 
 export function Home({ samples }: { samples: SampleCard[] }) {
   const router = useRouter();
@@ -53,10 +52,7 @@ export function Home({ samples }: { samples: SampleCard[] }) {
 
   useEffect(() => {
     mounted.current = true;
-    fetch('/api/health')
-      .then((r) => r.json())
-      .then(setHealth)
-      .catch(() => setHealth(NO_HEALTH));
+    fetchHealth().then(setHealth);
     listRecent().then(setRecent);
     return () => {
       mounted.current = false;

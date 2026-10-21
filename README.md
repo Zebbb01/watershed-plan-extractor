@@ -43,6 +43,9 @@ per-plan results are in [TESTING.md](TESTING.md).
 - **Progress** is shown as one bar plus per-stage steps, with time elapsed and left. Items
   are counted as sections finish. Stopping asks first. The run keeps going if you open
   another page; the header shows where it stands.
+- **Run again:** a report with failed sections, or with no readable page, has a button that
+  runs the file again in place. If the file is no longer open in the tab, it asks for it and
+  checks it is the same file (SHA-256) first.
 - **Overview:** tiles that open their tab, the completion rate with its basis, how many
   proposed items passed the checks, and charts for items by category, activity status, BMP
   amounts by unit, BMP costs and the implementation timeline. Every chart has a table view.

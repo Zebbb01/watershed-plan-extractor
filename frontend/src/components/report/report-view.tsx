@@ -1,12 +1,12 @@
 'use client';
 
 import { CATEGORY_KEYS, computeSummary, normalizeForMatch, overviewSentence, type AnyItem, type CategoryKey, type ExtractedReport, type ExtractionResult } from '@app/backend';
-import { ArrowLeft, ArrowRight, Columns2, Download, FileJson, FileSpreadsheet, ListChecks, MapPin, Printer, Search, ShieldCheck, TriangleAlert, X } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Columns2, RotateCcw, Download, FileJson, FileSpreadsheet, ListChecks, MapPin, Printer, Search, ShieldCheck, TriangleAlert, X } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
 import type { PDFDocumentProxy } from 'pdfjs-dist';
 import { Popover, Tabs } from 'radix-ui';
-import { useCallback, useEffect, useMemo, useState, type ReactNode } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore, type ReactNode } from 'react';
 import type { SampleCard } from '@/components/home/home';
 import { buttonClass } from '@/components/ui/button';
 import { cardClass } from '@/components/ui/card';
@@ -19,7 +19,11 @@ import { StatTile } from '@/components/ui/stat-tile';
 import { CATEGORY_UI } from '@/lib/categories-ui';
 import { cn } from '@/lib/cn';
 import { download, fileStem, toCsv, toJson } from '@/lib/export';
+import { Processing } from '@/components/home/processing';
+import { activeRun } from '@/lib/active-run';
 import { openPdf } from '@/lib/pdf/browser-reader';
+import { readErrorMessage } from '@/lib/pdf/validate';
+import { fetchHealth, openSameFile } from '@/lib/run-extraction';
 import { session } from '@/lib/session';
 import { loadResult } from '@/lib/store';
 import { CategoryTab, matchesSearch } from './category-tab';
@@ -58,6 +62,11 @@ export function ReportView({ id }: { id: string }) {
   // The PDF sits beside the results only where there is room for both.
   const wide = useMediaQuery('(min-width: 1024px)');
   const tab = (TABS.includes(params.get('tab') as Tab) ? params.get('tab') : 'overview') as Tab;
+  // A run of this file started from here (Run again) shows its progress in place of the report.
+  const run = useSyncExternalStore(activeRun.subscribe, activeRun.get, () => null);
+  const rerunning = run?.status === 'running' && run.id === id;
+  const [retryError, setRetryError] = useState<string | null>(null);
+  const fileInput = useRef<HTMLInputElement>(null);
   const compare = wide && params.get('view') === 'compare';
 
   useEffect(() => {
@@ -86,6 +95,35 @@ export function ReportView({ id }: { id: string }) {
   }, [id, sample]);
 
   const result = state.status === 'ready' ? state.result : null;
+
+  /** Runs the same file again, here. Asks for the file when it is no longer open in this tab. */
+  async function runAgain(opened?: PDFDocumentProxy) {
+    setRetryError(null);
+    const doc = opened ?? (await getDoc().catch(() => null));
+    if (!doc) return fileInput.current?.click();
+    try {
+      await activeRun.start({ id, fileName: result?.document.fileName ?? 'plan.pdf', cached: null, doc }, await fetchHealth());
+      activeRun.dismiss();
+      setState(await load(id));
+    } catch (e) {
+      const stopped = (e as { name?: string }).name === 'AbortError';
+      const failed = activeRun.get();
+      setRetryError(stopped ? 'Stopped. The earlier result is still shown.' : failed?.status === 'failed' ? failed.error : (e as Error).message);
+      activeRun.dismiss();
+    }
+  }
+
+  async function onFileChosen(file: File | undefined) {
+    if (!file) return;
+    try {
+      const doc = await openSameFile(file, id);
+      session.setDoc(id, doc);
+      await runAgain(doc);
+    } catch (e) {
+      setRetryError((e as Error).message.startsWith('This is a different file') ? (e as Error).message : readErrorMessage(e));
+    }
+  }
+
   const areaOptions = useMemo(() => {
     if (!result) return [];
     const all = CATEGORY_KEYS.filter((k) => k !== 'geographicAreas').flatMap((k) => result.report[k] as AnyItem[]);
@@ -204,7 +242,8 @@ export function ReportView({ id }: { id: string }) {
               // Nothing came back at all: say so plainly, not "the rest is complete".
               <p className="mt-4 flex items-start gap-2 rounded-panel bg-negative-50 px-3.5 py-2.5 text-[13px] text-negative-700 ring-1 ring-negative-100" role="alert">
                 <TriangleAlert className="mt-0.5 size-4 shrink-0" aria-hidden />
-                No section could be extracted: the AI service did not answer. Drop the file again on the home page to retry; details are under Quality.
+                <span className="min-w-0 flex-1">No section could be extracted: the AI service did not answer. Details are under Quality.</span>
+                {!sample && <RetryButton onClick={() => runAgain()} busy={rerunning} label="Try again" />}
               </p>
             ) : (
               <p className="mt-4 flex items-start gap-2 rounded-panel bg-warning-50 px-3.5 py-2.5 text-[13px] text-warning-700 ring-1 ring-warning-100" role="status">
@@ -214,15 +253,28 @@ export function ReportView({ id }: { id: string }) {
                   .map((f) => f.pages[0])
                   .sort((a, b) => a - b)
                   .join(', ')}
-                ). Everything else is shown; drop the file again to retry them.
+                ). Everything else is shown.
+                {!sample && <RetryButton onClick={() => runAgain()} busy={rerunning} label="Run again" className="ml-auto" />}
               </p>
             ))}
           {quality.failedUnits.length === 0 && nothing && (
             <p className="mt-4 flex items-start gap-2 rounded-panel bg-warning-50 px-3.5 py-2.5 text-[13px] text-warning-700 ring-1 ring-warning-100" role="status">
               <TriangleAlert className="mt-0.5 size-4 shrink-0" aria-hidden />
-              {quality.skippedPages.length >= doc.pages
-                ? `Nothing was extracted: none of the ${doc.pages} pages could be used (blank, unreadable or figure pages). The Quality tab lists the reason for each page.`
-                : 'Nothing was extracted: no page states goals, BMPs, activities, monitoring, outreach or areas.'}
+              <span className="min-w-0 flex-1">
+                {quality.skippedPages.length >= doc.pages
+                  ? `Nothing was extracted: none of the ${doc.pages} pages could be used (blank, unreadable or figure pages). The Quality tab lists the reason for each page.`
+                  : 'Nothing was extracted: no page states goals, BMPs, activities, monitoring, outreach or areas.'}
+              </span>
+              {!sample && quality.skippedPages.length >= doc.pages && <RetryButton onClick={() => runAgain()} busy={rerunning} label="Run again" />}
+            </p>
+          )}
+          {retryError && (
+            <p className="mt-4 flex items-start gap-2 rounded-panel bg-negative-50 px-3.5 py-2.5 text-[13px] text-negative-700 ring-1 ring-negative-100" role="alert">
+              <TriangleAlert className="mt-0.5 size-4 shrink-0" aria-hidden />
+              <span className="min-w-0 flex-1">{retryError}</span>
+              <button type="button" aria-label="Dismiss" onClick={() => setRetryError(null)} className="shrink-0 rounded p-0.5 hover:bg-negative-100">
+                <X className="size-3.5" aria-hidden />
+              </button>
             </p>
           )}
 
@@ -259,7 +311,23 @@ export function ReportView({ id }: { id: string }) {
       </div>
 
       <div className={cn('no-print mx-auto px-4 py-5 sm:px-6', compare ? 'max-w-[1600px]' : 'max-w-7xl')}>
-        <div className={cn(compare && 'grid grid-cols-[minmax(0,1fr)_minmax(380px,42%)] items-start gap-5')}>
+        <input
+          ref={fileInput}
+          type="file"
+          accept="application/pdf,.pdf"
+          className="hidden"
+          aria-label="Choose the PDF to run again"
+          onChange={(e) => {
+            void onFileChosen(e.target.files?.[0]);
+            e.target.value = '';
+          }}
+        />
+        {rerunning && run?.status === 'running' && (
+          <div className="mx-auto mb-5 max-w-2xl">
+            <Processing fileName={run.fileName} pages={run.pages} startedAt={run.startedAt} state={run.state} onStop={() => activeRun.stop()} />
+          </div>
+        )}
+        <div className={cn(compare && 'grid grid-cols-[minmax(0,1fr)_minmax(380px,42%)] items-start gap-5', rerunning && 'pointer-events-none opacity-40')} aria-hidden={rerunning || undefined}>
           <div className="@container min-w-0">
             <Tabs.Content value="overview" className="space-y-4 focus-visible:outline-none">
               <div className="grid gap-4 @4xl:grid-cols-[minmax(0,1fr)_20rem]">
@@ -393,6 +461,15 @@ export function ReportView({ id }: { id: string }) {
       />
       <PrintReport result={state.result} />
     </Tabs.Root>
+  );
+}
+
+function RetryButton({ onClick, busy, label, className }: { onClick: () => void; busy: boolean; label: string; className?: string }) {
+  return (
+    <button type="button" onClick={onClick} disabled={busy} className={buttonClass('secondary', 'sm', cn('shrink-0', className))}>
+      <RotateCcw className={cn('size-3.5', busy && 'motion-safe:animate-spin')} aria-hidden />
+      {busy ? 'Running…' : label}
+    </button>
   );
 }
 

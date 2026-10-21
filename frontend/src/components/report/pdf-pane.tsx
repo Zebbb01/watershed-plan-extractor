@@ -10,7 +10,7 @@ import { cardClass } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { CATEGORY_UI } from '@/lib/categories-ui';
 import { cn } from '@/lib/cn';
-import { openPdf, sha256Hex } from '@/lib/pdf/browser-reader';
+import { openSameFile } from '@/lib/run-extraction';
 import { session } from '@/lib/session';
 import { PdfPage } from './pdf-page';
 
@@ -148,16 +148,11 @@ function AttachPdf({ docId, onOpen }: { docId: string; onOpen: (doc: PDFDocument
       if (!file) return;
       setState({ busy: true, error: null });
       try {
-        const data = new Uint8Array(await file.arrayBuffer());
-        // Hash first: pdf.js takes over the buffer once it opens it.
-        if ((await sha256Hex(data)) !== docId) {
-          return setState({ busy: false, error: 'This is a different file from the one this report was made from.' });
-        }
-        const doc = await openPdf(data);
+        const doc = await openSameFile(file, docId);
         session.setDoc(docId, doc);
         onOpen(doc);
-      } catch {
-        setState({ busy: false, error: 'This file could not be opened.' });
+      } catch (e) {
+        setState({ busy: false, error: (e as Error).message.startsWith('This is a different file') ? (e as Error).message : 'This file could not be opened.' });
       }
     },
   });
