@@ -1,19 +1,20 @@
 'use client';
 
 import { CATEGORY_KEYS } from '@app/backend';
-import { FileText, History, Loader2, ShieldCheck, TriangleAlert } from 'lucide-react';
+import { CircleCheck, FileText, History, Loader2, ShieldCheck, TriangleAlert } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+import { Button, buttonClass } from '@/components/ui/button';
 import { Dropzone } from '@/components/ui/dropzone';
+import { activeRun } from '@/lib/active-run';
 import { CATEGORY_UI } from '@/lib/categories-ui';
 import { readErrorMessage, validatePdfFile } from '@/lib/pdf/validate';
-import { estimateMinutes, extractFile, prepareFile, type Health, type Prepared } from '@/lib/run-extraction';
+import { estimateMinutes, prepareFile, type Health, type Prepared } from '@/lib/run-extraction';
 import { session } from '@/lib/session';
 import { listRecent, type RecentEntry } from '@/lib/store';
-import { Processing, reduceProgress, type RunState } from './processing';
+import { Processing } from './processing';
 
 export interface SampleCard {
   slug: string;
@@ -30,10 +31,10 @@ export interface SampleCard {
 type Phase =
   | { kind: 'idle' }
   | { kind: 'opening'; fileName: string }
-  | { kind: 'confirm'; prepared: Prepared & { doc: NonNullable<Prepared['doc']> } }
-  | { kind: 'running'; fileName: string; pages: number; state: RunState };
+  | { kind: 'confirm'; prepared: Prepared & { doc: NonNullable<Prepared['doc']> } };
 
 const BIG_DOC_PAGES = 100;
+const NO_HEALTH: Health = { provider: null, model: null, limits: { maxPages: 800 } };
 
 export function Home({ samples }: { samples: SampleCard[] }) {
   const router = useRouter();
@@ -41,22 +42,27 @@ export function Home({ samples }: { samples: SampleCard[] }) {
   const [phase, setPhase] = useState<Phase>({ kind: 'idle' });
   const [error, setError] = useState<string | null>(null);
   const [recent, setRecent] = useState<RecentEntry[]>([]);
-  const abort = useRef<AbortController | null>(null);
+  // The run lives outside this page, so leaving and coming back finds it still going.
+  const run = useSyncExternalStore(activeRun.subscribe, activeRun.get, () => null);
+  const mounted = useRef(false);
 
   useEffect(() => {
+    mounted.current = true;
     fetch('/api/health')
       .then((r) => r.json())
       .then(setHealth)
-      .catch(() => setHealth({ provider: null, model: null, limits: { maxPages: 800 } }));
+      .catch(() => setHealth(NO_HEALTH));
     listRecent().then(setRecent);
-    // Leaving the page stops a run, so nothing is spent on a report nobody is waiting for.
-    return () => abort.current?.abort();
+    return () => {
+      mounted.current = false;
+    };
   }, []);
 
   const live = Boolean(health?.provider);
 
   async function onFile(file: File) {
     setError(null);
+    activeRun.dismiss();
     const head = new Uint8Array(await file.slice(0, 1024).arrayBuffer());
     const check = validatePdfFile({ name: file.name, size: file.size, head });
     if (!check.ok) return setError(check.reason);
@@ -69,31 +75,30 @@ export function Home({ samples }: { samples: SampleCard[] }) {
       }
       const doc = prepared.doc!;
       if (doc.numPages > BIG_DOC_PAGES) return setPhase({ kind: 'confirm', prepared: { ...prepared, doc } });
-      await run({ ...prepared, doc });
+      setPhase({ kind: 'idle' });
+      await start({ ...prepared, doc });
     } catch (e) {
       setPhase({ kind: 'idle' });
       setError(readErrorMessage(e));
     }
   }
 
-  async function run(prepared: Prepared & { doc: NonNullable<Prepared['doc']> }) {
-    const controller = new AbortController();
-    abort.current = controller;
-    setPhase({ kind: 'running', fileName: prepared.fileName, pages: prepared.doc.numPages, state: {} });
+  async function start(prepared: Prepared & { doc: NonNullable<Prepared['doc']> }) {
+    setPhase({ kind: 'idle' });
     try {
-      const result = await extractFile(
-        prepared,
-        (p) => setPhase((ph) => (ph.kind === 'running' ? { ...ph, state: reduceProgress(ph.state, p) } : ph)),
-        controller.signal,
-        health ?? { provider: null, model: null, limits: { maxPages: 800 } },
-      );
-      session.put(result, prepared.doc);
-      router.push(`/report/${prepared.id}`);
+      await activeRun.start(prepared, health ?? NO_HEALTH);
+      // Open the report only if the user is still here; from elsewhere the header says it is ready.
+      if (mounted.current) {
+        activeRun.dismiss();
+        router.push(`/report/${prepared.id}`);
+      }
     } catch (e) {
-      setPhase({ kind: 'idle' });
-      setError((e as { name?: string }).name === 'AbortError' ? 'Cancelled. Nothing was saved.' : 'The extraction stopped: ' + readErrorMessage(e));
+      if ((e as { name?: string }).name === 'AbortError' && mounted.current) setError('Stopped. Nothing was saved.');
+      // A failed run stays in activeRun, and its reason shows under the dropzone.
     }
   }
+
+  const shownError = error ?? (run?.status === 'failed' ? run.error : null);
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-12">
@@ -111,8 +116,20 @@ export function Home({ samples }: { samples: SampleCard[] }) {
         </div>
       )}
 
-      {phase.kind === 'running' ? (
-        <Processing fileName={phase.fileName} pages={phase.pages} state={phase.state} onCancel={() => abort.current?.abort()} />
+      {run?.status === 'done' && (
+        <div className="mb-4 flex flex-wrap items-center gap-x-3 gap-y-2 rounded-panel border border-positive-100 bg-positive-50 px-3.5 py-2.5 text-[13px] text-positive-700" role="status">
+          <CircleCheck className="size-4 shrink-0" aria-hidden />
+          <span className="min-w-0 flex-1">
+            <span className="font-semibold">{run.fileName}</span> is ready.
+          </span>
+          <Link href={`/report/${run.id}`} onClick={() => activeRun.dismiss()} className={buttonClass('secondary', 'sm')}>
+            Open report
+          </Link>
+        </div>
+      )}
+
+      {run?.status === 'running' ? (
+        <Processing fileName={run.fileName} pages={run.pages} startedAt={run.startedAt} state={run.state} onStop={() => activeRun.stop()} />
       ) : phase.kind === 'confirm' ? (
         <section className="rounded-panel border border-slate-200 bg-white p-5" aria-labelledby="confirm-title">
           <h2 id="confirm-title" className="text-[15px] font-semibold text-slate-900">
@@ -122,7 +139,7 @@ export function Home({ samples }: { samples: SampleCard[] }) {
             {phase.prepared.doc.numPages} pages · about {estimateMinutes(phase.prepared.doc.numPages)} min. Keep this tab open while it runs.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
-            <Button variant="primary" onClick={() => run(phase.prepared)}>
+            <Button variant="primary" onClick={() => start(phase.prepared)}>
               Start extraction
             </Button>
             <Button variant="ghost" onClick={() => setPhase({ kind: 'idle' })}>
@@ -132,7 +149,7 @@ export function Home({ samples }: { samples: SampleCard[] }) {
         </section>
       ) : (
         <>
-          <Dropzone onFile={onFile} disabled={!live || phase.kind === 'opening'} error={error} />
+          <Dropzone onFile={onFile} disabled={!live || phase.kind === 'opening'} error={shownError} />
           {phase.kind === 'opening' && (
             <p role="status" className="mt-2 flex items-center gap-2 text-[13px] text-slate-600">
               <Loader2 className="size-4 text-primary-600 motion-safe:animate-spin" aria-hidden />

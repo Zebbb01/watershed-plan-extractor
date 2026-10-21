@@ -178,13 +178,24 @@ export function ReportView({ id }: { id: string }) {
           </div>
         </div>
 
-        {quality.failedUnits.length > 0 && (
-          <p className="mt-4 flex items-start gap-2 rounded-panel border border-warning-100 bg-warning-50 px-3.5 py-2.5 text-[13px] text-warning-700" role="status">
-            <TriangleAlert className="mt-0.5 size-4 shrink-0" aria-hidden />
-            {quality.failedUnits.length} section{quality.failedUnits.length > 1 ? 's' : ''} could not be extracted (pages{' '}
-            {quality.failedUnits.map((f) => f.pages[0]).join(', ')}). The rest of the report is complete; details are under Quality.
-          </p>
-        )}
+        {quality.failedUnits.length > 0 &&
+          (CATEGORY_KEYS.every((k) => report[k].length === 0) ? (
+            // Nothing came back at all: say so plainly, not "the rest is complete".
+            <p className="mt-4 flex items-start gap-2 rounded-panel border border-negative-100 bg-negative-50 px-3.5 py-2.5 text-[13px] text-negative-700" role="alert">
+              <TriangleAlert className="mt-0.5 size-4 shrink-0" aria-hidden />
+              No section could be extracted: the AI service did not answer. Drop the file again on the home page to retry; details are under Quality.
+            </p>
+          ) : (
+            <p className="mt-4 flex items-start gap-2 rounded-panel border border-warning-100 bg-warning-50 px-3.5 py-2.5 text-[13px] text-warning-700" role="status">
+              <TriangleAlert className="mt-0.5 size-4 shrink-0" aria-hidden />
+              {quality.failedUnits.length} section{quality.failedUnits.length > 1 ? 's' : ''} could not be extracted (pages{' '}
+              {quality.failedUnits
+                .map((f) => f.pages[0])
+                .sort((a, b) => a - b)
+                .join(', ')}
+              ). Everything else is shown; drop the file again to retry them.
+            </p>
+          ))}
 
         <Tabs.Root value={tab} onValueChange={setTab} className="mt-4">
           <Tabs.List aria-label="Report sections" className="-mx-4 flex gap-1 overflow-x-auto overflow-y-hidden border-b border-slate-200 px-4 [scrollbar-width:none] sm:mx-0 sm:px-0 [&::-webkit-scrollbar]:hidden">

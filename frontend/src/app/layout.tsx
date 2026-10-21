@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
 import { Droplets } from 'lucide-react';
+import { RunIndicator } from '@/components/run-indicator';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
@@ -36,7 +37,8 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
               </span>
               <span className="truncate text-[15px] tracking-tight">Watershed Plan Extractor</span>
             </Link>
-            <nav aria-label="Main" className="flex items-center gap-1 text-[13px] font-medium text-slate-600">
+            <nav aria-label="Main" className="flex items-center gap-2 text-[13px] font-medium text-slate-600">
+              <RunIndicator />
               <Link
                 href="/accuracy"
                 className="rounded-control px-2.5 py-1.5 hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-primary-600"

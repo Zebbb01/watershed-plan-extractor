@@ -1,26 +1,13 @@
 'use client';
 
-import { CATEGORY_KEYS, type ExtractedReport, type Progress } from '@app/backend';
-import { Check, LoaderCircle } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
+import { CATEGORY_KEYS } from '@app/backend';
+import { Check, LoaderCircle, Square } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { ConfirmDialog } from '@/components/ui/confirm-dialog';
+import type { RunState } from '@/lib/active-run';
 import { CATEGORY_UI } from '@/lib/categories-ui';
 import { cn } from '@/lib/cn';
-
-export interface RunState {
-  read?: { done: number; total: number };
-  ocr?: { done: number; total: number };
-  extract?: { done: number; total: number };
-  merging?: boolean;
-  partial?: ExtractedReport;
-}
-
-export function reduceProgress(s: RunState, p: Progress): RunState {
-  if (p.stage === 'read') return { ...s, read: { done: p.done, total: p.total } };
-  if (p.stage === 'ocr') return { ...s, ocr: { done: p.done, total: p.total } };
-  if (p.stage === 'extract') return { ...s, extract: { done: p.done, total: p.total }, partial: p.partial ?? s.partial };
-  return { ...s, merging: true };
-}
 
 type StepState = 'done' | 'active' | 'waiting';
 
@@ -43,10 +30,22 @@ function Step({ state, label, detail }: { state: StepState; label: string; detai
   );
 }
 
-/** Live progress of a run: steps with counts, items found so far, time left, and Cancel. */
-export function Processing({ fileName, pages, state, onCancel }: { fileName: string; pages: number; state: RunState; onCancel: () => void }) {
-  const started = useRef(Date.now());
+/** Live progress of a run: steps with counts, items found so far, time left, and Stop (confirmed first). */
+export function Processing({
+  fileName,
+  pages,
+  startedAt,
+  state,
+  onStop,
+}: {
+  fileName: string;
+  pages: number;
+  startedAt: number;
+  state: RunState;
+  onStop: () => void;
+}) {
   const [now, setNow] = useState(() => Date.now());
+  const [confirming, setConfirming] = useState(false);
   useEffect(() => {
     const t = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(t);
@@ -55,7 +54,7 @@ export function Processing({ fileName, pages, state, onCancel }: { fileName: str
   const ex = state.extract;
   let eta: string | undefined;
   if (ex && ex.done >= 3 && ex.done < ex.total) {
-    const perUnit = (now - started.current) / ex.done;
+    const perUnit = (now - startedAt) / ex.done;
     const mins = Math.ceil(((ex.total - ex.done) * perUnit) / 60_000);
     eta = mins <= 1 ? 'about a minute left' : `about ${mins} min left`;
   }
@@ -73,9 +72,19 @@ export function Processing({ fileName, pages, state, onCancel }: { fileName: str
           </h2>
           <p className="text-[13px] text-slate-500">{pages} pages</p>
         </div>
-        <Button variant="secondary" onClick={onCancel}>
-          Cancel
+        <Button variant="danger" onClick={() => setConfirming(true)}>
+          <Square className="size-3 fill-current" aria-hidden />
+          Stop
         </Button>
+        <ConfirmDialog
+          open={confirming}
+          onOpenChange={setConfirming}
+          title="Stop this extraction?"
+          description="The sections finished so far are discarded, and nothing is saved. You can start the file again later."
+          cancel="Keep running"
+          confirm="Stop extraction"
+          onConfirm={onStop}
+        />
       </div>
       <div className="grid gap-6 px-4 py-4 md:grid-cols-[1fr_1.2fr]">
         <ol aria-label="Progress">

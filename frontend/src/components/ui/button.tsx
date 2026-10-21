@@ -1,7 +1,7 @@
 import type { ButtonHTMLAttributes, Ref } from 'react';
 import { cn } from '@/lib/cn';
 
-type Variant = 'primary' | 'secondary' | 'ghost' | 'danger';
+type Variant = 'primary' | 'secondary' | 'ghost' | 'danger' | 'destructive';
 type Size = 'sm' | 'md';
 
 const VARIANTS: Record<Variant, string> = {
@@ -9,6 +9,7 @@ const VARIANTS: Record<Variant, string> = {
   secondary: 'border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 hover:border-slate-400',
   ghost: 'text-slate-700 hover:bg-slate-100 hover:text-slate-900',
   danger: 'border border-negative-100 bg-white text-negative-700 hover:bg-negative-50',
+  destructive: 'bg-negative-600 text-white hover:bg-negative-700 active:bg-negative-700',
 };
 const SIZES: Record<Size, string> = { sm: 'h-7 px-2.5 text-[13px]', md: 'h-8 px-3 text-[13px]' };
 
