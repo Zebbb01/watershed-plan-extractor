@@ -261,6 +261,10 @@ From reading the output (not scored):
   built and unit-tested with mocked responses, but no OpenAI key was used, so it was never run
   against the live API.
 - The verbatim check on the scanned plan, which has no text layer.
+- How often a quote gets marked on a scanned page. Tesseract reads the page image in the
+  browser only to place the highlight. It was checked on Buttahatchee pages 104 and 106 in a
+  local production build (both quotes marked on the right line), not across the plan. When
+  it cannot find a quote, the page says so and the quote stays shown above it.
 - Agreement between two annotators: the ground truth has one author and the script check.
 - Plans from outside Mississippi beyond the smoke test.
 - Memory use on phones for files far above 100 MB.

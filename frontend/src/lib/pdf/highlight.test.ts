@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { pickHighlightRuns } from './highlight';
+import { joinLines, pickHighlightRuns } from './highlight';
 
 const run = (str: string, y: number) => ({ str, x: 0, y, w: 100, h: 10 });
 
@@ -33,5 +33,40 @@ describe('pickHighlightRuns', () => {
   it('marks nothing without a quote, or when the quote is not on the page', () => {
     expect(pickHighlightRuns([run('Cover Crop', 100)], [])).toEqual([]);
     expect(pickHighlightRuns([run('Cover Crop', 100)], ['Fencing 20000 ft'])).toEqual([]);
+  });
+});
+
+describe('pickHighlightRuns on words read off a scanned page', () => {
+  const words = (line: string, y: number) => line.split(' ').map((str, i) => ({ str, x: i * 60, y, w: 50, h: 10 }));
+  const quote = 'Conduct at least 1 informational field day/tour to inform the public about the project';
+  // Item 13 of a scanned milestone list, as OCR reads it: two letters wrong, a stray space.
+  const item13 = words('Conduct at leasl 1 informational field day/tour to inforrn the public about the project .', 300);
+  const item14 = words('Establish at least 1 demonstration farm. (Month 13-24)', 314);
+
+  it('marks the quote despite misread letters', () => {
+    // Every word of the quote; the lone full stop after it is not part of it.
+    expect(pickHighlightRuns([...item13, ...item14], [quote], { fuzzy: true })).toEqual(item13.slice(0, -1));
+  });
+
+  it('marks nothing where the quote is not, even with fuzzy matching', () => {
+    expect(pickHighlightRuns(item14, [quote], { fuzzy: true })).toEqual([]);
+  });
+
+  it('needs the exact words without fuzzy matching', () => {
+    expect(pickHighlightRuns(item13, [quote])).toEqual([]);
+  });
+});
+
+describe('joinLines', () => {
+  it('draws the marked words of each line as one box', () => {
+    const marked = [
+      { str: 'Conduct', x: 0, y: 100, w: 40, h: 10 },
+      { str: 'at', x: 46, y: 101, w: 10, h: 10 },
+      { str: 'least', x: 0, y: 114, w: 30, h: 10 },
+    ];
+    expect(joinLines(marked)).toEqual([
+      { x: 0, y: 100, w: 56, h: 11 },
+      { x: 0, y: 114, w: 30, h: 10 },
+    ]);
   });
 });

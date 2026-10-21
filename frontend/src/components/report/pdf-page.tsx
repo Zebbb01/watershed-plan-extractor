@@ -1,22 +1,31 @@
 'use client';
 
 import { toTextItems } from '@app/backend';
+import { LoaderCircle } from 'lucide-react';
 import type { PDFDocumentProxy } from 'pdfjs-dist';
 import { useEffect, useRef, useState } from 'react';
 import { Skeleton } from '@/components/ui/skeleton';
 import { cn } from '@/lib/cn';
-import { pickHighlightRuns } from '@/lib/pdf/highlight';
+import { joinLines, pickHighlightRuns, type Box } from '@/lib/pdf/highlight';
+import { readScannedWords } from '@/lib/pdf/scan-words';
+
+const NOTE = {
+  reading: 'Scanned page: finding the quote on the image…',
+  scanned: 'Scanned page: the quote could not be found on the image. It is shown above.',
+  unmatched: 'The quote could not be marked word for word on this page. It is shown above.',
+};
 
 /**
  * One PDF page drawn to fit its box, with the text runs of the given quotes highlighted. A
- * scanned page has no text to mark, and says so instead of showing nothing.
+ * scanned page has no text runs: its words are read off the image to find the quote, and the
+ * page says so while it looks, or when the quote is not found.
  */
 export function PdfPage({ doc, page, quotes }: { doc: PDFDocumentProxy; page: number; quotes: string[] }) {
   const box = useRef<HTMLDivElement>(null);
   const canvas = useRef<HTMLCanvasElement>(null);
-  const [marks, setMarks] = useState<{ x: number; y: number; w: number; h: number }[]>([]);
+  const [marks, setMarks] = useState<Box[]>([]);
   const [ready, setReady] = useState(false);
-  const [note, setNote] = useState<'scanned' | 'unmatched' | null>(null);
+  const [note, setNote] = useState<keyof typeof NOTE | null>(null);
   const quoteKey = quotes.join('\n');
 
   useEffect(() => {
@@ -41,12 +50,24 @@ export function PdfPage({ doc, page, quotes }: { doc: PDFDocumentProxy; page: nu
       const quoted = quoteKey ? quoteKey.split('\n') : [];
       const items = toTextItems((await p.getTextContent()).items, viewport.transform);
       const kept = pickHighlightRuns(items, quoted);
-      if (!cancelled) {
-        setMarks(kept.map((it) => ({ x: it.x, y: it.y - it.h * 0.85, w: it.w, h: it.h * 1.1 })));
-        setNote(!quoted.length ? null : !items.length ? 'scanned' : kept.length ? null : 'unmatched');
-        setReady(true);
-      }
-    })().catch(() => !cancelled && setReady(true));
+      const scanned = quoted.length > 0 && !items.length;
+      if (cancelled) return;
+      setMarks(kept.map((it) => ({ x: it.x, y: it.y - it.h * 0.85, w: it.w, h: it.h * 1.1 })));
+      setNote(!quoted.length ? null : scanned ? 'reading' : kept.length ? null : 'unmatched');
+      setReady(true);
+      if (!scanned) return;
+      // No text layer: find the quote among the words read off the page image.
+      const words = await readScannedWords(p, `${doc.fingerprints[0]}:${page}`).catch(() => []);
+      if (cancelled) return;
+      const lines = joinLines(pickHighlightRuns(words, quoted, { fuzzy: true }));
+      const s = viewport.scale;
+      setMarks(lines.map((b) => ({ x: b.x * s - 2, y: b.y * s - 1.5, w: b.w * s + 4, h: b.h * s + 3 })));
+      setNote(lines.length ? null : 'scanned');
+    })().catch(() => {
+      if (cancelled) return;
+      setReady(true);
+      setNote((n) => (n === 'reading' ? 'scanned' : n));
+    });
     return () => {
       cancelled = true;
       task?.cancel();
@@ -67,10 +88,9 @@ export function PdfPage({ doc, page, quotes }: { doc: PDFDocumentProxy; page: nu
   return (
     <div>
       {ready && note && (
-        <p className="mb-2 rounded-panel bg-slate-800 px-2.5 py-1.5 text-[12px] text-white">
-          {note === 'scanned'
-            ? 'Scanned page: it was read from the image, so the words cannot be marked on it. The quote is shown above.'
-            : 'The quote could not be marked word for word on this page. It is shown above.'}
+        <p className="mb-2 flex items-center gap-1.5 rounded-panel bg-slate-800 px-2.5 py-1.5 text-[12px] text-white" role="status">
+          {note === 'reading' && <LoaderCircle className="size-3.5 shrink-0 animate-spin" aria-hidden />}
+          {NOTE[note]}
         </p>
       )}
       <div ref={box} className={cn('relative overflow-hidden rounded-panel bg-white ring-1 ring-slate-200', !ready && 'min-h-96')}>

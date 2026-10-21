@@ -140,7 +140,8 @@ deploy; the runs in [TESTING.md](TESTING.md) used the same pipeline through the 
 - **Headers** (`frontend/next.config.ts`, values in `frontend/src/server/security-headers.ts`):
   a Content Security Policy with scripts from this origin only (plus Next.js's inline
   bootstrap scripts, and `'wasm-unsafe-eval'` so pdf.js can compile its JPEG 2000 and JBIG2
-  decoders, served from `/pdfjs/wasm/`), `connect-src 'self'`, `frame-ancestors 'none'`,
+  decoders, served from `/pdfjs/wasm/`, and Tesseract its engine, served from `/tesseract/`),
+  `connect-src 'self'`, `frame-ancestors 'none'`,
   `object-src 'none'`, `base-uri 'self'` and `worker-src 'self' blob:` for pdf.js; HSTS;
   `X-Content-Type-Options: nosniff`; `Referrer-Policy: strict-origin-when-cross-origin`; a
   Permissions-Policy that turns off camera, microphone, geolocation and payment;

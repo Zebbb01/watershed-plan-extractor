@@ -12,8 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
-    // pdf.js decoders copied from node_modules (vendor code, not ours)
+    // pdf.js decoders and Tesseract files copied from node_modules (vendor code, not ours)
     "public/pdfjs/**",
+    "public/tesseract/**",
   ]),
 ]);
 

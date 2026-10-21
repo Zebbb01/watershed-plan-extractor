@@ -51,7 +51,9 @@ per-plan results are in [TESTING.md](TESTING.md).
   proposed items passed the checks, and charts for items by category, activity status, BMP
   amounts by unit, BMP costs and the implementation timeline. Every chart has a table view.
 - **One tab per category:** a sortable table with kind and "needs review" filters. Each row
-  opens its evidence: the PDF page with the quote highlighted.
+  opens its evidence: the PDF page with the quote highlighted. A scanned page has no text to
+  mark, so the browser reads the page image with Tesseract (about 7 MB, loaded the first
+  time) and marks the quote where it finds it.
 - **Search and area filter** apply to every tab, the overview's tiles and charts included,
   and a bar under the tabs shows what is filtered.
 - **Compare with PDF** (wide screens): the results and the original PDF side by side.
@@ -75,6 +77,7 @@ per-plan results are in [TESTING.md](TESTING.md).
 | Charts | Recharts | Bars and a timeline, each with a table view |
 | Upload | react-dropzone | Drag and drop with a keyboard-reachable Browse button |
 | PDF | pdf.js (`pdfjs-dist`) in the browser | Text with positions, page rendering, no upload |
+| Marks on scans | Tesseract.js in the browser | Word positions on scanned pages, used only to place the highlight |
 | Engine | `backend/`: framework-free TypeScript | The same code runs in the browser, the API routes and the eval CLI |
 | LLM | Anthropic (`@anthropic-ai/sdk`) or OpenAI (`openai`) | Structured output against a Zod schema; either key works |
 | Validation | Zod | Model output, API requests and environment |
