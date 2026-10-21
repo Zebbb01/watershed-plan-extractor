@@ -130,9 +130,13 @@ still cannot be read are reported as a failed section, not as an empty category.
 
 - **Skipped pages** are listed with a reason under Quality: a scan that could not be read,
   a contents or administrative page, a blank page, a figure or map page.
-- **Units** are runs of consecutive pages of at most 6 pages and 24,000 characters, sized
-  to return inside the host's 60-second limit; a unit that does not is split (section 9).
-  The API accepts at most 12 pages, 60,000 characters and 6 images per call.
+- **Units** are runs of consecutive pages of at most 3 pages, 12,000 characters and about
+  40 table rows and list items (each tends to come back as an item, so this bounds the
+  answer), sized to return inside the host's 60-second limit; a unit that does not is split
+  (section 9). The API accepts at most 12 pages, 60,000 characters and 6 images per call.
+- **Two calls per unit.** The six categories are asked for in two calls that run side by
+  side (goals, BMPs and activities; monitoring, outreach and areas): one schema for all six
+  compiles to a structured-output grammar the API refuses as too large.
 - **Order:** units with the most planning words (goals, BMPs, milestones, monitoring, costs,
   acres, counties) run first, so the dashboard fills with the sections that matter.
 - **Hints:** HUC codes, acreages, county names, "Month n-m" timeframes and dollar amounts
@@ -273,7 +277,8 @@ One policy covers extraction units and OCR batches alike:
 - Four calls run in parallel. A rate-limit response halves that and waits for the
   provider's `retry-after` (up to five times).
 - A call that times out, hits the output limit or is too large is split in half and
-  retried, down to a single page. Any other error is retried once.
+  retried, down to a single page. Any other error, such as a dropped connection, is retried
+  twice.
 - Work that still fails is listed with its pages as a failed section; the rest of the
   report stands. Dropping the same file again runs it again: complete results are reused
   from the browser's storage, results with failed sections are not.

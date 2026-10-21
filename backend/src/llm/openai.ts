@@ -23,9 +23,10 @@ const image = (jpegBase64: string): InputContent => ({
 
 function toLlmError(e: unknown): LlmError {
   if (e instanceof LlmError) return e;
-  if (e instanceof OpenAI.APIUserAbortError || e instanceof OpenAI.APIConnectionTimeoutError) {
-    return new LlmError('TIMEOUT', 'The model took too long on these pages.');
-  }
+  // Our 50 s deadline aborts the call: too much work for one call, so the pipeline splits it.
+  if (e instanceof OpenAI.APIUserAbortError) return new LlmError('TIMEOUT', 'The model took too long on these pages.');
+  // The SDK's own timeout is the connection, not the work: retried as it is, never split.
+  if (e instanceof OpenAI.APIConnectionTimeoutError) return new LlmError('UPSTREAM_ERROR', 'Could not reach the model service.');
   if (e instanceof OpenAI.RateLimitError) {
     return new LlmError('RATE_LIMITED', 'The model is busy.', Number(e.headers?.get('retry-after')) || 10);
   }

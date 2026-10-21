@@ -22,9 +22,10 @@ const image = (jpegBase64: string): Block => ({
 
 function toLlmError(e: unknown): LlmError {
   if (e instanceof LlmError) return e;
-  if (e instanceof Anthropic.APIUserAbortError || e instanceof Anthropic.APIConnectionTimeoutError) {
-    return new LlmError('TIMEOUT', 'The model took too long on these pages.');
-  }
+  // Our 50 s deadline aborts the call: too much work for one call, so the pipeline splits it.
+  if (e instanceof Anthropic.APIUserAbortError) return new LlmError('TIMEOUT', 'The model took too long on these pages.');
+  // The SDK's own timeout is the connection, not the work: retried as it is, never split.
+  if (e instanceof Anthropic.APIConnectionTimeoutError) return new LlmError('UPSTREAM_ERROR', 'Could not reach the model service.');
   if (e instanceof Anthropic.RateLimitError) {
     return new LlmError('RATE_LIMITED', 'The model is busy.', Number(e.headers?.get('retry-after')) || 10);
   }
@@ -57,17 +58,21 @@ export function createAnthropicClient(opts: Options, sdk = anthropicSdk(opts.api
   ): Promise<{ data: T; usage: Usage }> {
     const effort = effortFor(model, opts.effort);
     try {
-      const res = await sdk.beta.messages.parse(
-        {
-          model,
-          max_tokens: 16_000,
-          ...(takesFallback(model) ? { betas: ['server-side-fallback-2026-07-01'], fallbacks: 'default' as const } : {}),
-          system: [{ type: 'text', text: system, cache_control: { type: 'ephemeral' } }],
-          messages: [{ role: 'user', content }],
-          output_config: { format, ...(effort ? { effort } : {}) },
-        },
-        { signal },
-      );
+      // Streamed, then read whole: a request that sends nothing for many seconds can be dropped
+      // by networks between here and the API ("other side closed"); a stream keeps bytes moving.
+      const res = await sdk.beta.messages
+        .stream(
+          {
+            model,
+            max_tokens: 16_000,
+            ...(takesFallback(model) ? { betas: ['server-side-fallback-2026-07-01'], fallbacks: 'default' as const } : {}),
+            system: [{ type: 'text', text: system, cache_control: { type: 'ephemeral' } }],
+            messages: [{ role: 'user', content }],
+            output_config: { format, ...(effort ? { effort } : {}) },
+          },
+          { signal },
+        )
+        .finalMessage();
       if (res.stop_reason === 'refusal') throw new LlmError('UPSTREAM_ERROR', 'The model declined these pages.');
       if (res.stop_reason === 'max_tokens' || !res.parsed_output) {
         throw new LlmError('OUTPUT_TRUNCATED', 'The answer was cut off.');

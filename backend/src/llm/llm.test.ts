@@ -89,7 +89,9 @@ describe('priceUsd', () => {
 });
 
 const empty: UnitExtraction = { goals: [], bmps: [], implementation: [], monitoring: [], outreach: [], geographicAreas: [] };
-const fakeSdk = (impl: (body: Record<string, unknown>) => Promise<unknown>) => ({ beta: { messages: { parse: impl } } }) as unknown as Anthropic;
+// The adapter streams every call (a long silent request can be dropped on the way), then reads the final message.
+const fakeSdk = (impl: (body: Record<string, unknown>) => Promise<unknown>) =>
+  ({ beta: { messages: { stream: (body: Record<string, unknown>) => ({ finalMessage: () => impl(body) }) } } }) as unknown as Anthropic;
 
 describe('Anthropic adapter', () => {
   const opts = { apiKey: 'k', extractionModel: 'claude-opus-5-5', ocrModel: 'claude-opus-5-5', effort: 'low' as 'low' | 'high' | null };
@@ -127,6 +129,13 @@ describe('Anthropic adapter', () => {
       throw new Anthropic.APIUserAbortError();
     }));
     await expect(client.extract(request, new AbortController().signal)).rejects.toMatchObject({ code: 'TIMEOUT' });
+  });
+
+  it('reports a connection that could not be made as UPSTREAM_ERROR, so it is retried rather than split', async () => {
+    const client = createAnthropicClient(opts, fakeSdk(async () => {
+      throw new Anthropic.APIConnectionTimeoutError();
+    }));
+    await expect(client.extract(request, new AbortController().signal)).rejects.toMatchObject({ code: 'UPSTREAM_ERROR' });
   });
 
   it('leaves every retry to the pipeline', () => {

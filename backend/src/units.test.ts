@@ -13,20 +13,26 @@ const page = (n: number, lines: Line[], flags: Partial<PageModel['flags']> = {},
 const filler = (chars: number, word = 'background') => line(`${word} `.repeat(Math.ceil(chars / (word.length + 1))).slice(0, chars));
 
 describe('buildUnits', () => {
-  it('keeps every unit within 6 pages and 24 000 characters', () => {
+  it('keeps every unit within 3 pages and 12 000 characters', () => {
     const pages = Array.from({ length: 20 }, (_, i) => page(i + 1, [filler(3000)]));
     const { units } = buildUnits(pages);
     for (const u of units) {
-      expect(u.pages.length).toBeLessThanOrEqual(6);
-      expect(u.pages.reduce((s, p) => s + p.markup.length, 0)).toBeLessThanOrEqual(24_000);
+      expect(u.pages.length).toBeLessThanOrEqual(3);
+      expect(u.pages.reduce((s, p) => s + p.markup.length, 0)).toBeLessThanOrEqual(12_000);
     }
     expect(units.flatMap((u) => u.pages.map((p) => p.n)).sort((a, b) => a - b)).toEqual(pages.map((p) => p.n));
   });
 
   it('splits a run of large pages by characters before the page cap', () => {
-    const pages = Array.from({ length: 4 }, (_, i) => page(i + 1, [filler(10_000)]));
+    const pages = Array.from({ length: 4 }, (_, i) => page(i + 1, [filler(6_000)]));
     const { units } = buildUnits(pages);
     expect(units.every((u) => u.pages.length <= 2)).toBe(true);
+  });
+
+  it('gives pages dense with rows and list items a unit of their own, so one answer stays short', () => {
+    const dense = (n: number) => page(n, Array.from({ length: 30 }, (_, i) => line(`Practice ${i} | ac | ${i}`, 'table')), { tableLike: true });
+    const { units } = buildUnits([dense(1), dense(2), dense(3)]);
+    expect(units.map((u) => u.pages.length)).toEqual([1, 1, 1]);
   });
 
   it('skips admin-only, blank and figure-only pages with a reason', () => {
@@ -63,13 +69,13 @@ describe('buildUnits', () => {
   });
 
   it('numbers units 0..n-1 in the order returned', () => {
-    const pages = Array.from({ length: 13 }, (_, i) => page(i + 1, [filler(3000)]));
+    const pages = Array.from({ length: 7 }, (_, i) => page(i + 1, [filler(3000)]));
     expect(buildUnits(pages).units.map((u) => u.index)).toEqual([0, 1, 2]);
   });
 });
 
 describe('splitUnit', () => {
-  const { units } = buildUnits(Array.from({ length: 4 }, (_, i) => page(i + 1, [filler(500)], { tableLike: i === 3 })));
+  const { units } = buildUnits(Array.from({ length: 4 }, (_, i) => page(i + 1, [filler(500)], { tableLike: i === 3 })), { maxPages: 4 });
 
   it('halves a 4-page unit and keeps each half its own image pages', () => {
     const halves = splitUnit(units[0])!;

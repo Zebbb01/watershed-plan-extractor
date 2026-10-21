@@ -15,7 +15,7 @@ import { buildUnits, regexHints, splitUnit, type Unit } from './units';
  * Failure handling, per unit:
  *   RATE_LIMITED            wait retry-after, halve parallelism, try again
  *   TIMEOUT / OUTPUT_TRUNCATED  split into halves; a single page that still fails is reported
- *   anything else           one retry, then reported as failed
+ *   anything else           two retries, then reported as failed
  */
 
 export interface Progress {
@@ -53,11 +53,12 @@ interface Tries {
   other: number;
 }
 
-/** After a failed call: wait out a rate limit, split work that was too big, retry once, or give up. */
+/** After a failed call: wait out a rate limit, split work that was too big, retry twice, or give up. */
 function nextStep(code: ErrorCode | 'ABORTED', tries: Tries, canSplit: boolean): 'wait' | 'split' | 'retry' | 'fail' {
   if (code === 'RATE_LIMITED' && tries.rate < MAX_RATE_RETRIES) return 'wait';
   if (code === 'TIMEOUT' || code === 'OUTPUT_TRUNCATED' || code === 'INPUT_TOO_LARGE') return canSplit ? 'split' : 'fail';
-  if (code !== 'RATE_LIMITED' && tries.other < 1) return 'retry';
+  // Two retries: networks drop connections now and then, and a failed call is rarely billed.
+  if (code !== 'RATE_LIMITED' && tries.other < 2) return 'retry';
   return 'fail';
 }
 

@@ -31,10 +31,13 @@ export function buildUnits(
   pages: PageModel[],
   opts: { maxChars?: number; maxPages?: number } = {},
 ): { units: Unit[]; skipped: { page: number; reason: string }[] } {
-  const maxChars = opts.maxChars ?? 24_000;
-  const maxPages = opts.maxPages ?? 6;
+  // Sized so an answer stays well inside one call's 50 s: three pages at most, and at most about
+  // 40 table rows and list items, since every row or item tends to come back as an item.
+  const maxChars = opts.maxChars ?? 12_000;
+  const maxPages = opts.maxPages ?? 3;
+  const maxRows = 40;
   const skipped: { page: number; reason: string }[] = [];
-  const usable: (UnitPage & { table: boolean })[] = [];
+  const usable: (UnitPage & { table: boolean; rows: number })[] = [];
 
   for (const p of pages) {
     const content = p.lines.filter((l) => l.kind !== 'admin');
@@ -48,21 +51,25 @@ export function buildUnits(
     } else if (content.every((l) => l.kind === 'aside') && content.some((l) => CAPTION.test(l.text))) {
       skipped.push({ page: p.n, reason: 'Figure or map page' });
     } else {
-      usable.push({ n: p.n, markup, source: p.source, table: p.flags.tableLike });
+      const rows = content.filter((l) => l.kind === 'table' || l.kind === 'bullet' || l.kind === 'numbered').length;
+      usable.push({ n: p.n, markup, source: p.source, table: p.flags.tableLike, rows });
     }
   }
 
   const groups: (typeof usable)[] = [];
   let current: typeof usable = [];
   let chars = 0;
+  let rows = 0;
   for (const page of usable) {
-    if (current.length && (current.length >= maxPages || chars + page.markup.length > maxChars)) {
+    if (current.length && (current.length >= maxPages || chars + page.markup.length > maxChars || rows + page.rows > maxRows)) {
       groups.push(current);
       current = [];
       chars = 0;
+      rows = 0;
     }
     current.push(page);
     chars += page.markup.length;
+    rows += page.rows;
   }
   if (current.length) groups.push(current);
 

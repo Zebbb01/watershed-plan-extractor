@@ -76,15 +76,15 @@ describe('runPipeline', () => {
 
   it('splits a unit that times out and extracts both halves', async () => {
     const calls: number[][] = [];
-    await runPipeline({ doc, rawPages: pagesOf(6) }, deps({
+    await runPipeline({ doc, rawPages: pagesOf(3) }, deps({
       extract: async (req) => {
         const ns = req.unit.pages.map((p) => p.n);
         calls.push(ns);
-        if (ns.length === 6) throw { code: 'TIMEOUT' };
+        if (ns.length === 3) throw { code: 'TIMEOUT' };
         return ok(req);
       },
     }));
-    expect(calls).toEqual([[1, 2, 3, 4, 5, 6], [1, 2, 3], [4, 5, 6]]);
+    expect(calls).toEqual([[1, 2, 3], [1, 2], [3]]);
   });
 
   it('marks a one-page unit that still truncates as failed, and finishes the run', async () => {
@@ -97,7 +97,7 @@ describe('runPipeline', () => {
     expect(result.quality.failedUnits).toEqual([{ index: expect.any(Number), pages: [2], error: 'OUTPUT_TRUNCATED' }]);
   });
 
-  it('retries an upstream error once, then reports the unit failed', async () => {
+  it('retries an upstream error twice (networks drop connections), then reports the unit failed', async () => {
     let calls = 0;
     const result = await runPipeline({ doc, rawPages: pagesOf(1) }, deps({
       extract: async () => {
@@ -105,7 +105,7 @@ describe('runPipeline', () => {
         throw { code: 'UPSTREAM_ERROR' };
       },
     }));
-    expect(calls).toBe(2);
+    expect(calls).toBe(3);
     expect(result.quality.failedUnits).toHaveLength(1);
   });
 
@@ -191,7 +191,7 @@ describe('runPipeline', () => {
 
   it('reports progress with a partial report after each unit, and sums usage', async () => {
     const events: Progress[] = [];
-    const result = await runPipeline({ doc, rawPages: pagesOf(12) }, deps({
+    const result = await runPipeline({ doc, rawPages: pagesOf(6) }, deps({
       extract: async (req) => ok(req, { ...emptyItems(), bmps: [bmp(`Practice ${req.unit.index}`, req.unit.pages[0].n)] }),
       onProgress: (p) => events.push(p),
     }));
