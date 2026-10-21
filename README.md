@@ -108,6 +108,27 @@ reads the keys from `frontend/.env.local` when it starts; the image holds none.
 Keys are read only on the server. They never reach the browser, and `/api/health` reports
 which provider is configured, never a key.
 
+## Choosing a model
+
+The default is Claude Haiku 5.5, because on this task a larger model did not buy accuracy.
+On the tuning plans (one run each), Sonnet 5.5 scored 1.2 points higher F1 at 11 times the
+cost and was worse on numbers; Opus 5.5 scored below Haiku on the one plan it ran, at 36
+times the cost ([TESTING.md](TESTING.md), model comparison). Most of the accuracy comes from
+small sections and the checks, not from the model's size.
+
+To try another model, set `EXTRACTION_MODEL` (and `OCR_MODEL` for scanned pages) on the
+server. It is a server setting on purpose: visitors to a public demo cannot pick an expensive
+model and run up the bill.
+
+## Long plans
+
+Length does not change what the model is given. Every request carries at most three pages
+(12,000 characters or 40 table rows) plus the document outline, so a 600-page plan is many
+small requests, not one long prompt, and every item is checked against its own page. Length
+adds time and cost (647 pages: 9 minutes, $0.55) and repeated content, which the merge step
+joins. Accuracy was scored on plans of 11 to 108 pages; the 647-page plan was run for time,
+cost and names not in the PDF (0), not scored against an answer key.
+
 ## Scripts
 
 | Command | What it does |

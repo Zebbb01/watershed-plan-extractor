@@ -3,7 +3,7 @@
 import { CATEGORY_KEYS, computeSummary, normalizeForMatch, overviewSentence, type AnyItem, type CategoryKey, type ExtractedReport, type ExtractionResult } from '@app/backend';
 import { ArrowLeft, ArrowRight, Columns2, Download, FileJson, FileSpreadsheet, ListChecks, MapPin, Printer, Search, ShieldCheck, TriangleAlert, X } from 'lucide-react';
 import Link from 'next/link';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 import type { PDFDocumentProxy } from 'pdfjs-dist';
 import { Popover, Tabs } from 'radix-ui';
 import { useCallback, useEffect, useMemo, useState, type ReactNode } from 'react';
@@ -48,7 +48,6 @@ async function load(id: string): Promise<Loaded> {
 }
 
 export function ReportView({ id }: { id: string }) {
-  const router = useRouter();
   const pathname = usePathname();
   const params = useSearchParams();
   const [state, setState] = useState<Loaded>({ status: 'loading' });
@@ -69,7 +68,9 @@ export function ReportView({ id }: { id: string }) {
     const next = new URLSearchParams(params);
     if (value === null) next.delete(key);
     else next.set(key, value);
-    router.replace(`${pathname}${next.size ? `?${next}` : ''}`, { scroll: false });
+    // The browser's own history call: Next keeps useSearchParams in step without asking the
+    // server for the page again, so a tab opens at once instead of after a round trip.
+    window.history.replaceState(null, '', `${pathname}${next.size ? `?${next}` : ''}`);
   };
   const setTab = (t: string) => setParam('tab', t === 'overview' ? null : t);
 

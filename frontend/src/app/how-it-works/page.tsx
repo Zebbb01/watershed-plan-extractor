@@ -44,6 +44,10 @@ export default function HowItWorksPage() {
             </li>
           ))}
         </ol>
+        <p className="mt-4 max-w-3xl text-[13px] text-slate-600">
+          Long plans are read the same way: every request carries at most three pages and the document outline, so a 600-page plan is many small requests,
+          not one long prompt. Time and cost grow with length; each item is still checked against its own page.
+        </p>
         <div className="mt-8 flex flex-wrap items-center gap-2">
           <Link href="/#upload" className={buttonClass('primary', 'lg')}>
             Upload a PDF
