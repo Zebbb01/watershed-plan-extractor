@@ -6,7 +6,7 @@ Every item links to the page it came from and the exact words that support it.
 
 Built for ChowaCo's Document Extraction Tool assessment.
 
-**Live demo: https://watershed-plan-extractor.netlify.app** (no login; the sample plans open instantly)
+**Live demo: https://watershed-extractor.netlify.app** (no login; the sample plans open instantly)
 
 ## The approach in one minute
 
@@ -63,7 +63,8 @@ per-plan results are in [TESTING.md](TESTING.md).
 - **Quality tab:** the verified share, rejected items with reasons, conflicting amounts,
   OCR pages, skipped pages, the reconstructed outline, and the model, time and cost.
 - **Export:** JSON (the `ExtractedReport` interface plus document and quality data), CSV of
-  the current tab, or a printable report.
+  the current tab, or a printed or PDF report: a summary page (key figures, how it was
+  checked, contents), then one table per category, with no browser header or web address.
 - **Recent extractions** stay in this browser (IndexedDB), so reopening a file costs
   nothing. The last three PDFs (up to 150 MB each) are kept there too, so a report opened
   later can still show its pages and run again without asking for the file.

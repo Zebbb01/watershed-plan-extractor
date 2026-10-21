@@ -1,6 +1,6 @@
 # Deployment
 
-**Live demo: https://watershed-plan-extractor.netlify.app**, hosted on Netlify, built from
+**Live demo: https://watershed-extractor.netlify.app**, hosted on Netlify, built from
 this repository.
 
 ## Why the app fits a serverless host
