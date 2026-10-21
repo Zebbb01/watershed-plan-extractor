@@ -179,11 +179,19 @@ export function Timeline({ activities }: { activities: ActivityItem[] }) {
   const label = useLabelWidth(230);
   const timed = activities.filter((a) => a.start !== null && a.end !== null);
   const unit = timed.filter((a) => a.timeUnit === 'month').length >= timed.filter((a) => a.timeUnit === 'year').length ? 'month' : 'year';
-  const data = timed
+  const shown = timed
     .filter((a) => a.timeUnit === unit)
     .sort((a, b) => a.start! - b.start! || a.end! - b.end!)
-    .slice(0, 20)
-    .map((a) => ({ name: a.name.length > 46 ? `${a.name.slice(0, 44)}…` : a.name, full: a.name, offset: a.start!, span: Math.max(a.end! - a.start!, unit === 'month' ? 0.6 : 0.3), when: a.timeframe ?? '' }));
+    .slice(0, 20);
+  // Stacked bars start at zero, so years are drawn from the first year ("2011-2014" is not 0-2014).
+  const base = unit === 'year' && shown.length ? Math.min(...shown.map((a) => a.start!)) : 0;
+  const data = shown.map((a) => ({
+    name: a.name.length > 46 ? `${a.name.slice(0, 44)}…` : a.name,
+    full: a.name,
+    offset: a.start! - base,
+    span: Math.max(a.end! - a.start!, unit === 'month' ? 0.6 : 0.3),
+    when: a.timeframe ?? '',
+  }));
   return (
     <ChartCard
       title="Implementation timeline"
@@ -194,7 +202,7 @@ export function Timeline({ activities }: { activities: ActivityItem[] }) {
         <ResponsiveContainer width="100%" height={Math.max(160, data.length * 26 + 48)}>
           <BarChart data={data} layout="vertical" margin={{ left: 8, right: 16 }} barCategoryGap={5}>
             <CartesianGrid horizontal={false} stroke={GRID} />
-            <XAxis type="number" tick={AXIS} axisLine={false} tickLine={false} domain={['dataMin', 'dataMax']} allowDecimals={false} />
+            <XAxis type="number" tick={AXIS} axisLine={false} tickLine={false} domain={[0, 'dataMax']} allowDecimals={false} tickFormatter={(v: number) => String(v + base)} />
             <YAxis type="category" dataKey="name" width={label.width} tick={{ ...AXIS, fontSize: 11 }} tickFormatter={label.cut} axisLine={false} tickLine={false} />
             <Tooltip cursor={{ fill: '#f1f5f9' }} formatter={(_v, _n, p) => [(p?.payload as { when: string }).when, 'Scheduled']} />
             <Bar dataKey="offset" stackId="t" fill="transparent" isAnimationActive={false} />

@@ -49,7 +49,7 @@ export default function Page() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
       <h1 className="text-[26px] font-semibold tracking-tight text-slate-900">Accuracy</h1>
-      <p className="mt-2 max-w-2xl text-[15px] text-slate-600">Measured against hand-checked ground truth for Mississippi watershed plans in three formats, one of them scanned.</p>
+      <p className="mt-2 max-w-2xl text-[15px] text-slate-600">Measured against hand-checked ground truth for Mississippi watershed plans in four formats, one of them scanned.</p>
 
       {data.pending ? (
         <p className="mt-8 rounded-panel border border-slate-200 bg-white px-4 py-6 text-[14px] text-slate-600">Results appear here after the evaluation runs.</p>

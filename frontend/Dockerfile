@@ -9,6 +9,8 @@ COPY backend/package.json backend/
 COPY frontend/package.json frontend/
 RUN npm ci
 COPY . .
+# public/ holds the sample plans; the build needs the folder even before samples exist.
+RUN mkdir -p frontend/public
 RUN NEXT_STANDALONE=1 npm run build -w frontend
 
 FROM node:22-alpine

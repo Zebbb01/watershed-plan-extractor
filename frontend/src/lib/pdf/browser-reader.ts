@@ -17,10 +17,13 @@ export async function sha256Hex(data: Uint8Array): Promise<string> {
   return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, '0')).join('');
 }
 
+/**
+ * Opens a PDF. pdf.js takes ownership of `data` (its buffer moves to the worker), so callers
+ * must not use it afterwards. No copy is made: on a 300 MB file a copy doubles peak memory.
+ */
 export async function openPdf(data: Uint8Array): Promise<PDFDocumentProxy> {
   const lib = await pdfjs();
-  // pdf.js takes ownership of the buffer it is given, so it gets a copy.
-  return lib.getDocument({ data: data.slice() }).promise;
+  return lib.getDocument({ data }).promise;
 }
 
 export async function readPdfBrowser(

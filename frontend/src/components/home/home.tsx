@@ -1,7 +1,7 @@
 'use client';
 
 import { CATEGORY_KEYS } from '@app/backend';
-import { FileText, History, ShieldCheck, TriangleAlert } from 'lucide-react';
+import { FileText, History, Loader2, ShieldCheck, TriangleAlert } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
@@ -49,6 +49,8 @@ export function Home({ samples }: { samples: SampleCard[] }) {
       .then(setHealth)
       .catch(() => setHealth({ provider: null, model: null, limits: { maxPages: 800 } }));
     listRecent().then(setRecent);
+    // Leaving the page stops a run, so nothing is spent on a report nobody is waiting for.
+    return () => abort.current?.abort();
   }, []);
 
   const live = Boolean(health?.provider);
@@ -129,7 +131,15 @@ export function Home({ samples }: { samples: SampleCard[] }) {
           </div>
         </section>
       ) : (
-        <Dropzone onFile={onFile} disabled={!live || phase.kind === 'opening'} error={error} />
+        <>
+          <Dropzone onFile={onFile} disabled={!live || phase.kind === 'opening'} error={error} />
+          {phase.kind === 'opening' && (
+            <p role="status" className="mt-2 flex items-center gap-2 text-[13px] text-slate-600">
+              <Loader2 className="size-4 text-primary-600 motion-safe:animate-spin" aria-hidden />
+              Opening {phase.fileName}…
+            </p>
+          )}
+        </>
       )}
 
       <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2">

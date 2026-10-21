@@ -40,11 +40,19 @@ describe('prepareFile', () => {
   const file = new File([new TextEncoder().encode('%PDF-1.7 test')], 'plan.pdf', { type: 'application/pdf' });
 
   it('returns a stored result for the same file and its sha256 id', async () => {
-    const stored = { document: { id: 'cached' } } as unknown as ExtractionResult;
+    const stored = { document: { id: 'cached' }, quality: { failedUnits: [] } } as unknown as ExtractionResult;
     const open = vi.fn(async () => null);
     const out = await prepareFile(file, { load: async () => stored, open });
     expect(out.cached).toBe(stored);
     expect(out.id).toMatch(/^[0-9a-f]{64}$/);
+  });
+
+  it('runs the file again when the stored result has failed sections', async () => {
+    const stored = { document: { id: 'partial' }, quality: { failedUnits: [{ index: 3, pages: [9], error: 'TIMEOUT' }] } } as unknown as ExtractionResult;
+    const doc = { numPages: 11 };
+    const out = await prepareFile(file, { load: async () => stored, open: async () => doc as never });
+    expect(out.cached).toBeNull();
+    expect(out.doc).toBe(doc);
   });
 
   it('opens the PDF when nothing is stored', async () => {

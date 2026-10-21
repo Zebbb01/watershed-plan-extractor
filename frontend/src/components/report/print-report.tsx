@@ -8,8 +8,11 @@ export function PrintReport({ result }: { result: ExtractionResult }) {
       <h1 style={{ fontSize: 18, fontWeight: 600 }}>{doc.title ?? doc.fileName}</h1>
       <p style={{ margin: '4px 0 12px' }}>{overviewSentence(report, doc.title)}</p>
       <p style={{ marginBottom: 12, color: '#475569' }}>
-        {doc.pages} pages · completion {Math.round(report.summary.completionRate * 100)}% ({result.quality.completionBasis}) · every item verified against
-        its page
+        {doc.pages} pages · completion{' '}
+        {result.quality.completionBasis.startsWith('No ')
+          ? 'not reported'
+          : `${Math.round(report.summary.completionRate * 100)}% (${result.quality.completionBasis})`}{' '}
+        · every item verified against its page
       </p>
       {CATEGORY_KEYS.map((k) => {
         const def = categoryByKey(k);
