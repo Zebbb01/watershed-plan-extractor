@@ -36,3 +36,14 @@ Final run on the final settings (2026-10-21, Haiku 5.5, all four labelled plans,
 
 Buttahatchee has ranged from 58.8% to 68.1% across Haiku runs, so change 4 cannot be told
 apart from run-to-run spread.
+
+Tried after the final run (2026-10-21, not kept):
+
+| # | Change | Plan | Core F1 | Numbers | Goals matched |
+| --- | --- | --- | --- | --- | --- |
+| 5 | Whatever the plan calls a goal or objective is a goal, education objectives included | Broken Pumpkin | 93.3% → 92.6% | 89.0% → 89.1% | 0/2 → 0/2 (2 predicted) |
+| 5 | same | Bell Creek | 76.3% → 72.7% | 85.3% → 76.5% | 6/17 → 6/17 (11 predicted) |
+
+More goals were found, but named by their lead-in ("The ultimate goal", "The goal and
+objective"), so none more matched. The held-out and scanned plans lost sections to API
+timeouts in that run, so it says nothing about them. Reverted; the final run stands.

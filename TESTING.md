@@ -163,6 +163,11 @@ Each change was measured on the tuning plans before it was kept. The log with ev
 | 2 | same | Bell Creek | Haiku 5.5 | 63.9% → 71.6% | 82.4% → 82.9% |
 | 3 | Scanned pages: sub-bullet glyphs, numbered section titles, running dates; action lists are activities | Buttahatchee | Haiku 5.5 | 66.7% → 65.2% (within run-to-run spread) | |
 | 4 | Running heads removed from transcribed pages too | Buttahatchee | Haiku 5.5 | 58.8% → 68.1% (final run); this plan's runs have ranged from 58.8% to 68.1%, so the change cannot be told apart from spread | |
+| 5 | Prompt: whatever the plan calls a goal or objective is a goal, education objectives included. **Not kept** | Broken Pumpkin, Bell Creek | Haiku 5.5 | 93.3% → 92.6% and 76.3% → 72.7%. More goals were found, but named by their lead-in ("The ultimate goal"), so none more matched | 89.0% → 89.1%, 85.3% → 76.5% |
+
+Change 5 was tried after the final run. In the same run the held-out and scanned plans lost
+sections to API timeouts, so it says nothing about them; their reported scores are still the
+final run's.
 
 The jump in step 1 is mostly reliability: the first runs lost whole sections to timeouts and
 dropped connections, and every item in a lost section counts as a miss.

@@ -40,13 +40,20 @@ per-plan results are in [TESTING.md](TESTING.md).
 
 - **Drop a PDF** (text or scanned, up to 300 MB) or open a sample plan. Plans over 100
   pages show the page count and an estimated time first.
-- **Progress** is shown per stage. Items appear as sections finish, and you can cancel.
-- **Overview:** counts, the completion rate with its basis, and charts for items by
-  category, BMP amounts by unit, BMP costs and the implementation timeline. Every chart
-  has a table view.
-- **One tab per category:** a sortable table with search, an area filter, kind and
-  "needs review" filters. Each row opens its evidence: the PDF page with the quote
-  highlighted.
+- **Progress** is shown as one bar plus per-stage steps, with time elapsed and left. Items
+  are counted as sections finish. Stopping asks first. The run keeps going if you open
+  another page; the header shows where it stands.
+- **Overview:** tiles that open their tab, the completion rate with its basis, how many
+  proposed items passed the checks, and charts for items by category, activity status, BMP
+  amounts by unit, BMP costs and the implementation timeline. Every chart has a table view.
+- **One tab per category:** a sortable table with kind and "needs review" filters. Each row
+  opens its evidence: the PDF page with the quote highlighted.
+- **Search and area filter** apply to every tab, the overview's tiles and charts included,
+  and a bar under the tabs shows what is filtered.
+- **Compare with PDF** (wide screens): the results and the original PDF side by side.
+  Picking an item turns the PDF to its page with the quote highlighted; the items found on
+  the shown page are listed under it. A report reopened later asks for the same file again
+  and checks its SHA-256 before showing it.
 - **Quality tab:** the verified share, rejected items with reasons, conflicting amounts,
   OCR pages, skipped pages, the reconstructed outline, and the model, time and cost.
 - **Export:** JSON (the `ExtractedReport` interface plus document and quality data), CSV of
