@@ -109,7 +109,7 @@ grep -rE "sk-ant-|sk-proj-" frontend/.next/static || echo "no key strings in the
 
 Then upload a plan in the browser and open a sample.
 
-Results on the live demo after the final deploy (2026-10-21, commit `1d89986`):
+Results on the live demo after the final deploy (2026-10-21, commit `be3df83`):
 
 - `/api/health` returns `{"ok":true,"provider":"anthropic","model":"claude-haiku-5-5",...}`
   and no key.
@@ -120,6 +120,8 @@ Results on the live demo after the final deploy (2026-10-21, commit `1d89986`):
 - One small request to `/api/extract` with a real page of text returned verified items in
   4 s, so the key, the model and the verifier work in the deployed function.
 - The sample results and PDFs are served, and the build has no `sk-ant-` or `sk-proj-` string.
+- pdf.js's decoders are served from `/pdfjs/wasm/` as `application/wasm`, and the CSP allows
+  them to compile (`'wasm-unsafe-eval'`).
 
 The pages, the compare view, the filters and the layouts at 1536, 1440 and 375 px wide were
 checked on the same commit running locally, because the browser tool used here only opens
