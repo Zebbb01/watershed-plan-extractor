@@ -91,8 +91,11 @@ Windows machine, build, fix the paths, then deploy the build:
 ```bash
 npx netlify-cli build --context production --filter @app/frontend
 node scripts/netlify-windows-paths.mjs
-npx netlify-cli deploy --prod --no-build --skip-functions-cache --site <site id> --filter @app/frontend
+npx netlify-cli deploy --prod --no-build --dir frontend/.netlify/static --skip-functions-cache --site <site id> --filter @app/frontend
 ```
+
+`--dir frontend/.netlify/static` is where the runtime puts the static files; without it a
+`--no-build` deploy publishes the raw `.next` folder and every script returns 404.
 
 To roll back, open **Deploys**, choose an earlier deploy and select **Publish deploy**.
 
