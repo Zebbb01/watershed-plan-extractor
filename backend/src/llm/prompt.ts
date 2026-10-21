@@ -25,8 +25,10 @@ Rules
 5. Decide kind from the structure: a top-level bullet or numbered item, a table row, or a stated goal is main; an indented bullet under another item is sub; something introduced by "e.g.", "such as" or "for example" inside a sentence about something else is example.
 6. Background text (history, land use shares, impairment listings, regulations, method descriptions) is not an item unless it states a goal, practice, activity, metric, outreach activity or area.
 7. One item per distinct thing. When a sentence lists several practices ("cover crops; fencing; ponds"), return each one. When the same thing appears twice on these pages, return it once with both quotes as evidence.
-8. When unsure whether something belongs, leave it out: a missing item costs less than a wrong one.
-9. Return an empty list for any category with nothing on these pages.`;
+8. Lists and tables hold most of a plan's items. Return every item of a numbered or bulleted list, and every row of a task, milestone, schedule or cost table, that belongs to a category you are asked for: all of them, in order, never a sample or a summary.
+9. A heading names a section ("Monitoring", "Plan Evaluation Procedure"); it is not an item. Return the statements under it instead.
+10. When unsure whether something belongs to a category, leave it out: a missing item costs less than a wrong one. This never means skipping items of a list that clearly belongs.
+11. Return an empty list for any category with nothing on these pages.`;
 
 const pageSpan = (req: ExtractRequest) => {
   const ns = req.unit.pages.map((p) => p.n);
@@ -35,7 +37,10 @@ const pageSpan = (req: ExtractRequest) => {
   return first === last ? `page ${first}` : `pages ${first}–${last}`;
 };
 
-export function buildUserText(req: ExtractRequest, ask = 'every goal, BMP, implementation activity, monitoring metric, outreach activity and geographic area'): string {
+export function buildUserText(
+  req: ExtractRequest,
+  ask = 'Return every goal, BMP, implementation activity, monitoring metric, outreach activity and geographic area on these pages.',
+): string {
   const { context, pages } = req.unit;
   const parts = [
     `Document: ${context.title ?? 'untitled'} (${context.totalPages} pages). These are ${pageSpan(req)} of ${context.totalPages}.`,
@@ -45,7 +50,7 @@ export function buildUserText(req: ExtractRequest, ask = 'every goal, BMP, imple
   if (req.images.length) parts.push(`Images are attached for page${req.images.length > 1 ? 's' : ''} ${req.images.map((i) => i.page).join(', ')}.`);
   parts.push(
     `<document_pages>\n${pages.map((p) => `<page n="${p.n}">\n${p.markup}\n</page>`).join('\n')}\n</document_pages>`,
-    `Return ${ask} on these pages.`,
+    ask,
   );
   return parts.join('\n\n');
 }

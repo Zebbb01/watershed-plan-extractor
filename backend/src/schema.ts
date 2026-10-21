@@ -333,8 +333,8 @@ export type WireUnit = z.infer<typeof WireUnitSchema>;
  * model fills them in two calls of three categories each.
  */
 export const WIRE_HALVES = [
-  { ask: 'every goal, BMP and implementation activity', schema: z.object({ goals: wireCategories.goals, bmps: wireCategories.bmps, implementation: wireCategories.implementation }) },
-  { ask: 'every monitoring metric, outreach activity and geographic area', schema: z.object({ monitoring: wireCategories.monitoring, outreach: wireCategories.outreach, geographicAreas: wireCategories.geographicAreas }) },
+  { ask: 'Return every goal, BMP and implementation activity on these pages. Monitoring metrics, outreach activities and geographic areas are collected by another request: leave them out here, and put no education or outreach event under implementation.', schema: z.object({ goals: wireCategories.goals, bmps: wireCategories.bmps, implementation: wireCategories.implementation }) },
+  { ask: 'Return every monitoring metric, outreach activity and geographic area on these pages. Goals, BMPs and implementation activities are collected by another request: leave them out here.', schema: z.object({ monitoring: wireCategories.monitoring, outreach: wireCategories.outreach, geographicAreas: wireCategories.geographicAreas }) },
 ] as const;
 
 const orNull = (s: string) => (s.trim() ? s : null);
