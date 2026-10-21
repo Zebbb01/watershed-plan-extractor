@@ -182,7 +182,7 @@ absent, so the model cannot drift into free text. The model has no tools.
 **Prompt injection:** the pages arrive inside `<document_pages>` and are declared data; the
 output must match the schema; and anything not found in the source is dropped in step 6.
 
-**Models:** `claude-opus-5-5` by default; `gpt-6.1-sol` when only an OpenAI key is set. Both
+**Models:** `claude-haiku-5-5` by default, chosen on the eval (TESTING.md); `gpt-6.1-sol` when only an OpenAI key is set. Both
 go through the official SDKs with typed errors, and both are switched by environment
 variables (`EXTRACTION_MODEL`, `OCR_MODEL`, `EXTRACTION_EFFORT`). Effort is "low" on models
 that take an effort setting and is not sent to older ones; Opus models also get Anthropic's

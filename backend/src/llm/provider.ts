@@ -15,8 +15,11 @@ export interface LlmEnv {
   ratePerMin: number;
 }
 
+// Haiku 5.5 is the default because the eval says so: on the tuning plans it scored within about a
+// point of Sonnet 5.5 (core F1 77.8% vs 79.0%), higher on numbers (88.1% vs 84.3%), at about a
+// tenth of the cost; Opus 5.5 did no better on Broken Pumpkin. TESTING.md has the table.
 export const DEFAULT_MODELS: Record<Provider, string> = {
-  anthropic: 'claude-opus-5-5',
+  anthropic: 'claude-haiku-5-5',
   openai: 'gpt-6.1-sol',
 };
 

@@ -27,9 +27,9 @@ describe('readEnv', () => {
     expect(readEnv({ ANTHROPIC_API_KEY: '', OPENAI_API_KEY: ' ' }).provider).toBeNull();
   });
 
-  it('defaults to Anthropic with Opus 5.5, no explicit effort and the safety limits', () => {
+  it('defaults to Anthropic with Haiku 5.5 (chosen on the eval), no explicit effort and the safety limits', () => {
     expect(readEnv({ ANTHROPIC_API_KEY: 'k' })).toEqual({
-      provider: 'anthropic', extractionModel: 'claude-opus-5-5', ocrModel: 'claude-opus-5-5',
+      provider: 'anthropic', extractionModel: 'claude-haiku-5-5', ocrModel: 'claude-haiku-5-5',
       effort: null, maxPages: 800, ratePerMin: 60,
     });
   });

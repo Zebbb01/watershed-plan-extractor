@@ -88,7 +88,7 @@ reads the keys from `frontend/.env.local` when it starts; the image holds none.
 | `ANTHROPIC_API_KEY` | one of the two | | Claude for extraction and OCR |
 | `OPENAI_API_KEY` | one of the two | | OpenAI for extraction and OCR |
 | `LLM_PROVIDER` | no | the key that is set, Anthropic first | `anthropic` or `openai` when both keys are set |
-| `EXTRACTION_MODEL` | no | `claude-opus-5-5`, or `gpt-6.1-sol` on OpenAI | Model for extraction |
+| `EXTRACTION_MODEL` | no | `claude-haiku-5-5` (chosen on the eval), or `gpt-6.1-sol` on OpenAI | Model for extraction |
 | `OCR_MODEL` | no | the same provider default | Model for scanned pages |
 | `EXTRACTION_EFFORT` | no | `low` on models that take an effort setting | `low`, `medium` or `high` |
 | `MAX_PAGES` | no | `800` | Pages read from one document; later pages are left out |
