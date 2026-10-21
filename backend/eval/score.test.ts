@@ -76,6 +76,14 @@ describe('score is not lenient with names', () => {
     expect(score(result([bmp('Protection', 5)]), heavy, text).categories.bmps.matched).toBe(0);
   });
 
+  it('checks a monitoring item by its parameter, and skips items read only from scanned pages', () => {
+    const page = new Map([[5, 'Dissolved Oxygen daily average of 5.0 mg/L'], [9, '']]);
+    const metric = (name: string, parameter: string, p: number) => ({ ...bmp(name, p), parameter, threshold: null, location: null, frequency: null });
+    const r = result([]);
+    r.report.monitoring = [metric('Oxygen monitoring', 'Dissolved Oxygen', 5), metric('Turbidity', 'Turbidity', 5), metric('Phosphorus', 'Phosphorus', 9)] as never;
+    expect(score(r, { doc: 'toy', scope: 'all', items: [] }, page).verbatimViolations).toEqual(['monitoring: Turbidity']);
+  });
+
   it('checks names against the PDF as whole words, with its own test, keeping decimal points', () => {
     const page = new Map([[5, 'Crews will plant terrain gardens on 2.5 acres']]);
     const s = score(result([bmp('Rain Garden', 5), bmp('25 acres', 5), bmp('2.5 acres', 5)]), { doc: 'toy', scope: 'all', items: [] }, page);

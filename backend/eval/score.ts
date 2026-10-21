@@ -190,8 +190,14 @@ export function score(result: ExtractionResult, gt: GroundTruth, pdfText: Map<nu
   const all = sum([...CATEGORY_KEYS]);
 
   const docText = [...pdfText.values()].join('\n');
+  // The verbatim field: a monitoring item's parameter, every other item's name. Items read only
+  // from scanned pages are skipped: the PDF has no text there to check them against.
+  const verbatimOf = (c: CategoryKey, i: AnyItem) => (c === 'monitoring' ? (i as unknown as { parameter: string }).parameter : i.name);
+  const checkable = (i: AnyItem) => i.evidence.some((e) => (pdfText.get(e.page) ?? '').trim());
   const verbatimViolations = docText.trim()
-    ? CATEGORY_KEYS.filter((c) => c !== 'goals' && c !== 'implementation').flatMap((c) => (result.report[c] as AnyItem[]).filter((i) => !writtenIn(docText, i.name)).map((i) => `${c}: ${i.name}`))
+    ? CATEGORY_KEYS.filter((c) => c !== 'goals' && c !== 'implementation').flatMap((c) =>
+        (result.report[c] as AnyItem[]).filter((i) => checkable(i) && !writtenIn(docText, verbatimOf(c, i))).map((i) => `${c}: ${verbatimOf(c, i)}`),
+      )
     : [];
 
   return {

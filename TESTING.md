@@ -72,11 +72,12 @@ quantity lists, milestones repeated in an appended grant proposal), 2006–2007 
   missed item is not scored here; the miss already counts against recall. **Number
   precision** is the reverse: of the numbers the tool reports on found items whose numbers
   the ground truth lists, the share that are right, so a wrong extra number counts.
-- **Verbatim violations** are extracted BMP, outreach, area and monitoring names that are
-  not written in the PDF's text. The scorer checks this with its own test, not the
-  verifier's matcher: the name's words in order, as whole words, with decimal points kept.
-  Goal and activity names are short labels the model may phrase, so they are not counted.
-  The scanned plan has no text layer to check against, so it is not counted there either.
+- **Verbatim violations** are extracted BMP, outreach and area names and monitoring
+  parameters that are not written in the PDF's text. The scorer checks this with its own
+  test, not the verifier's matcher: the words in order, as whole words, with decimal points
+  kept. Goal and activity names are short labels the model may phrase, so they are not
+  counted. Items read only from scanned pages are not counted either, because the PDF has
+  no text there to check against (this covers the whole scanned plan).
 - **Time and cost** come from the run itself: wall-clock time with four parallel calls, and
   token usage priced at the provider's list prices.
 
