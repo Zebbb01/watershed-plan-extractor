@@ -30,6 +30,10 @@ function sameName(a: string, b: string, minSubset: number): boolean {
   return minSubset > 0 && smaller >= minSubset && inter === smaller;
 }
 
+// "Objective 1" names a position, not a thing: a long plan restarts the numbering in each
+// section. Items under the same bare label join only when their texts say the same thing.
+const LABEL = /^(?:objective|goal|task|action(?: item)?|milestone|element|step|phase|strategy|priority|target)(?:\s*\d[\w.-]{0,5}|\s+[a-z]|\s+[ivx]+):?$/i;
+
 const RANK = { low: 0, medium: 1, high: 2 } as const;
 
 // How readily two names merge, per category. 0 = only on equal stems or high overlap.
@@ -67,7 +71,8 @@ export function mergeUnits(results: { items: LooseItems; rejected: Rejection[] }
         const match = out.find((o) =>
           (key !== 'geographicAreas' || (o as unknown as AreaItem).type === (item as unknown as AreaItem).type) &&
           sameName(key === 'monitoring' ? (o as unknown as MetricItem).parameter : o.name,
-            key === 'monitoring' ? (item as unknown as MetricItem).parameter : item.name, SUBSET_RULE[key]));
+            key === 'monitoring' ? (item as unknown as MetricItem).parameter : item.name, SUBSET_RULE[key]) &&
+          (!LABEL.test(item.name.trim()) || sameName(o.text, item.text, 0)));
         if (!match) {
           out.push(item);
           continue;
@@ -81,10 +86,12 @@ export function mergeUnits(results: { items: LooseItems; rejected: Rejection[] }
         combine(match, item);
       }
     }
-    // Resolve sub-items to their parent's id; an unknown parent stays empty.
+    // Resolve sub-items to their parent's id, the nearest one when several share the name; an unknown parent stays empty.
     for (const item of out) {
       if (item.parentName) {
-        const parent = out.find((o) => o !== item && sameName(o.name, item.parentName!, 0));
+        const page = item.evidence[0]?.page ?? 0;
+        const distance = (o: AnyItem) => Math.min(...o.evidence.map((e) => Math.abs(e.page - page)));
+        const parent = out.filter((o) => o !== item && sameName(o.name, item.parentName!, 0)).sort((a, b) => distance(a) - distance(b))[0];
         item.parentId = parent ? parent.id : null;
       }
       delete item.parentName;

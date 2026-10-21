@@ -46,6 +46,27 @@ describe('mergeUnits', () => {
     expect(report.bmps[0].evidence.map((e) => e.page)).toEqual([3, 5]);
   });
 
+  // A long plan restarts "Objective 1" in each section (Ross Barnett: pages 83, 100, 109, 118).
+  const objective = (page: number, text: string) => ({ ...goal('Objective 1', page), text });
+
+  it('keeps items under the same bare label apart unless their texts match', () => {
+    const { report } = mergeUnits([
+      unit({ goals: [objective(83, 'Incorporate green infrastructure in new construction')] }),
+      unit({ goals: [objective(118, 'Maintain wetlands and streamside buffer zones')] }),
+      unit({ goals: [objective(84, 'Incorporate green infrastructure in new construction')] }),
+    ]);
+    expect(report.goals.map((g) => g.evidence.map((e) => e.page))).toEqual([[83, 84], [118]]);
+  });
+
+  it('links a sub-item to the nearest parent of that name', () => {
+    const { report } = mergeUnits([
+      unit({ goals: [objective(83, 'Incorporate green infrastructure')] }),
+      unit({ goals: [objective(118, 'Maintain wetlands'), goal('Restore 2 miles of buffer', 119, 'sub', 'Objective 1')] }),
+    ]);
+    const sub = report.goals.find((g) => g.kind === 'sub')!;
+    expect(sub.parentId).toBe(report.goals.find((g) => g.evidence[0].page === 118)!.id);
+  });
+
   it('merges Fence with Fencing and a shorter name contained in a longer one', () => {
     const { report } = mergeUnits([
       unit({ bmps: [bmp('Fence', 4), bmp('Herbaceous Weed Management', 4)] }),

@@ -246,13 +246,15 @@ quotes. Two names are the same thing when their word stems are equal (after "&" 
 and plurals), when they overlap by 80%, or when one is contained in the other. Containment
 needs at least 2 shared words for BMPs, outreach and areas and 3 for goals and activities.
 It never applies to monitoring parameters, because "Dissolved Oxygen" is not "Dissolved
-Oxygen % Saturation". Areas merge only within one type.
+Oxygen % Saturation". Areas merge only within one type. A bare label ("Objective 1",
+"Task 3.1") names a position, not a thing: a long plan restarts its numbering in each
+section, so items under the same label merge only when their texts match too.
 
 Amounts stay separate per scope ("Full project" and "Phase 1" tables). Two different values
 for the same scope and unit are kept, listed as a conflict under Quality, and the item is
 marked "needs review". Nothing is picked silently. The merged item keeps the lowest
 confidence of its copies, so a "medium" check stays visible. Sub-items are linked to their
-parent by name.
+parent by name, the nearest one when several share it.
 
 ## 8. Summary (code)
 
