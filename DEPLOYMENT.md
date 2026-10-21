@@ -109,7 +109,21 @@ grep -rE "sk-ant-|sk-proj-" frontend/.next/static || echo "no key strings in the
 
 Then upload a plan in the browser and open a sample.
 
-{{LIVE_CHECKS}}
+Results on the live demo after the final deploy (2026-10-21, commit `892cf76`):
+
+- `/api/health` returns `{"ok":true,"provider":"anthropic","model":"claude-haiku-5-5",...}`
+  and no key.
+- The home page sets all six security headers (CSP, HSTS, `nosniff`, `X-Frame-Options: DENY`,
+  the referrer and permissions policies) and no `X-Powered-By`.
+- A malformed request to `/api/extract` returns 400 `INVALID_INPUT` with a request id.
+- One small request to `/api/extract` with a real page of text returned verified items, so
+  the key, the model and the verifier work in the deployed function.
+- The sample results and PDFs are served, and the build has no `sk-ant-` or `sk-proj-` string.
+
+The evidence panel and the 360 px layout were checked on the same commit running locally,
+because the browser tool used here only opens localhost. A full upload through the live site
+was not run on this deploy; the runs in [TESTING.md](TESTING.md) used the same pipeline
+through the eval CLI.
 
 ## Security settings
 
