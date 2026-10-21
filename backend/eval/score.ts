@@ -1,12 +1,14 @@
 import type { AnyItem, CategoryKey, ExtractionResult, Kind } from '../src/schema';
 import { CATEGORY_KEYS } from '../src/schema';
-import { findQuote, normalizeForMatch, stem } from '../src/text/normalize';
+import { normalizeForMatch, stem } from '../src/text/normalize';
 
 /*
  * Scores one extraction against hand-checked ground truth. Items match by name (stems, so
- * "Terraces" matches "terrace"; aliases allowed), one-to-one, best match first. Numbers count
- * as right only when value and unit both match. Any predicted name that is not written in the
- * PDF is a verbatim violation: the brief allows zero.
+ * "Terraces" matches "terrace"; aliases allowed), one-to-one, best match first; a name that is
+ * not the same must also be cited within a page of the labelled one. Numbers count as right
+ * only when value and unit both match, and wrong extra numbers lower number precision. Any
+ * predicted name that is not written in the PDF is a verbatim violation (the brief allows
+ * zero), checked by this file's own test rather than the verifier's.
  */
 
 export interface GtQuantity {
@@ -45,7 +47,8 @@ export interface DocScore {
   categories: Record<CategoryKey, Prf>;
   core: Prf;
   all: Prf;
-  numeric: { correct: number; total: number; accuracy: number };
+  /** correct/total: ground-truth numbers found on matched items; predictedCorrect/predicted: the reverse */
+  numeric: { correct: number; total: number; accuracy: number; predictedCorrect: number; predicted: number; precision: number };
   categoryAccuracy: number;
   kindAccuracy: number;
   verbatimViolations: string[];
@@ -63,8 +66,25 @@ export function nameSimilarity(a: string, b: string): number {
   const B = stems(b);
   if (!A.size || !B.size) return 0;
   const inter = [...A].filter((w) => B.has(w)).length;
-  if (inter === Math.min(A.size, B.size) && Math.max(A.size, B.size) - inter <= 3) return Math.max(0.9, (2 * inter) / (A.size + B.size));
+  // One name inside the other counts as close, but a single word ("Protection") is too little to go on.
+  const contained = inter === Math.min(A.size, B.size) && Math.min(A.size, B.size) >= 2 && Math.max(A.size, B.size) - inter <= 3;
+  if (contained) return Math.max(0.9, (2 * inter) / (A.size + B.size));
   return (2 * inter) / (A.size + B.size);
+}
+
+/**
+ * The scorer's own verbatim test, independent of the verifier's matching: the name's words in
+ * order, as whole words, with any punctuation or spacing between them and an optional plural
+ * ending. Numbers keep their decimal points, so "25 acres" is not "2.5 acres".
+ */
+export function writtenIn(text: string, name: string): boolean {
+  const norm = (s: string) =>
+    s.normalize('NFKC').toLowerCase().replace(/[‐-―−]/g, '-').replace(/[“”„‟″]/g, '"').replace(/[‘’‚‛′]/g, "'").replace(/(\w)-\s*\n\s*(\w)/g, '$1$2');
+  const words = norm(name).match(/[\p{L}\p{N}]+(?:[.,]\d+)*/gu);
+  if (!words) return false;
+  const escape = (w: string) => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const pattern = `(?<![\\p{L}\\p{N}.])${words.map(escape).join('[^\\p{L}\\p{N}]+')}(?:e?s)?(?![\\p{L}\\p{N}]|[.,]\\d)`;
+  return new RegExp(pattern, 'u').test(norm(text));
 }
 
 const prf = (gt: number, predicted: number, matched: number): Prf => {
@@ -103,6 +123,8 @@ export function score(result: ExtractionResult, gt: GroundTruth, pdfText: Map<nu
   const unmatchedPred: { category: CategoryKey; item: AnyItem }[] = [];
   let numericCorrect = 0;
   let numericTotal = 0;
+  let predictedCorrect = 0;
+  let predictedTotal = 0;
   let kindRight = 0;
   let kindTotal = 0;
 
@@ -113,8 +135,10 @@ export function score(result: ExtractionResult, gt: GroundTruth, pdfText: Map<nu
     truth.forEach((g, gi) =>
       preds.forEach((p, pi) => {
         const sim = Math.max(...[g.name, ...(g.aliases ?? [])].map((n) => nameSimilarity(n, p.name)));
-        const near = p.evidence.some((e) => Math.abs(e.page - g.page) <= 1) ? 0.01 : 0;
-        if (sim >= THRESHOLD) pairs.push({ g: gi, p: pi, sim: sim + near });
+        const near = p.evidence.some((e) => Math.abs(e.page - g.page) <= 1);
+        // The same name may be cited anywhere (a practice listed again in an appendix); a merely
+        // similar name must be cited within a page of where the ground truth labels it.
+        if (sim >= THRESHOLD && (sim >= 1 || near)) pairs.push({ g: gi, p: pi, sim: sim + (near ? 0.01 : 0) });
       }),
     );
     pairs.sort((a, b) => b.sim - a.sim);
@@ -129,10 +153,16 @@ export function score(result: ExtractionResult, gt: GroundTruth, pdfText: Map<nu
       kindTotal++;
       if (truthItem.kind === pred.kind) kindRight++;
       const got = valuesOf(category, pred);
+      const same = (v: { value: number; unit: string | null }, q: GtQuantity) =>
+        Math.abs(v.value - q.value) <= Math.abs(q.value) * 1e-6 && (!q.unit || UNIT(q.unit) === UNIT(v.unit));
       for (const q of truthItem.quantities ?? []) {
         numericTotal++;
-        const ok = got.some((v) => Math.abs(v.value - q.value) <= Math.abs(q.value) * 1e-6 && (!q.unit || UNIT(q.unit) === UNIT(v.unit)));
-        if (ok) numericCorrect++;
+        if (got.some((v) => same(v, q))) numericCorrect++;
+      }
+      // Precision is counted only where the ground truth lists the item's numbers.
+      if (truthItem.quantities?.length) {
+        predictedTotal += got.length;
+        predictedCorrect += got.filter((v) => truthItem.quantities!.some((q) => same(v, q))).length;
       }
     }
     truth.forEach((g, gi) => !usedG.has(gi) && unmatchedGt.push(g));
@@ -161,7 +191,7 @@ export function score(result: ExtractionResult, gt: GroundTruth, pdfText: Map<nu
 
   const docText = [...pdfText.values()].join('\n');
   const verbatimViolations = docText.trim()
-    ? CATEGORY_KEYS.filter((c) => c !== 'goals' && c !== 'implementation').flatMap((c) => (result.report[c] as AnyItem[]).filter((i) => !findQuote(docText, i.name).found).map((i) => `${c}: ${i.name}`))
+    ? CATEGORY_KEYS.filter((c) => c !== 'goals' && c !== 'implementation').flatMap((c) => (result.report[c] as AnyItem[]).filter((i) => !writtenIn(docText, i.name)).map((i) => `${c}: ${i.name}`))
     : [];
 
   return {
@@ -169,7 +199,14 @@ export function score(result: ExtractionResult, gt: GroundTruth, pdfText: Map<nu
     categories,
     core: prf(core.gt, core.predicted, core.matched),
     all: prf(all.gt, all.predicted, all.matched),
-    numeric: { correct: numericCorrect, total: numericTotal, accuracy: numericTotal ? numericCorrect / numericTotal : 1 },
+    numeric: {
+      correct: numericCorrect,
+      total: numericTotal,
+      accuracy: numericTotal ? numericCorrect / numericTotal : 1,
+      predictedCorrect,
+      predicted: predictedTotal,
+      precision: predictedTotal ? predictedCorrect / predictedTotal : 1,
+    },
     categoryAccuracy: all.matched + misplaced ? all.matched / (all.matched + misplaced) : 1,
     kindAccuracy: kindTotal ? kindRight / kindTotal : 1,
     verbatimViolations,

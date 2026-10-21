@@ -37,7 +37,12 @@ describe('score', () => {
   });
 
   it('counts a quantity as right only when value and unit both match', () => {
-    expect(s.numeric).toEqual({ correct: 1, total: 2, accuracy: 0.5 });
+    expect(s.numeric).toMatchObject({ correct: 1, total: 2, accuracy: 0.5 });
+  });
+
+  it('scores number precision too: a wrong extra number on a found item counts against it', () => {
+    const extra = score(result([bmp('Cover Crops', 5, [q(500, 'ac'), q(900, 'ac')])]), gt, pdfText);
+    expect(extra.numeric).toMatchObject({ correct: 1, total: 1, predicted: 2, predictedCorrect: 1, precision: 0.5 });
   });
 
   it('counts predicted names that are not in the PDF text', () => {
@@ -52,5 +57,28 @@ describe('score', () => {
   it('matches a plural or stemmed name, and an alias', () => {
     const alias: GroundTruth = { ...gt, items: [{ ...gt.items[2], aliases: ['Terrace'] }] };
     expect(score(result([bmp('terrace', 5)]), alias, pdfText).categories.bmps.matched).toBe(1);
+  });
+});
+
+describe('score is not lenient with names', () => {
+  const heavy: GroundTruth = {
+    doc: 'toy', scope: 'all',
+    items: [{ category: 'bmps', name: 'Heavy Use Area Protection', page: 5, quote: 'Heavy Use Area Protection', kind: 'main' }],
+  };
+  const text = new Map([[5, 'Heavy Use Area Protection ac 3'], [20, 'Heavy Use Area appendix']]);
+
+  it('matches a partial name only near the labelled page', () => {
+    expect(score(result([bmp('Heavy Use Area', 5)]), heavy, text).categories.bmps.matched).toBe(1);
+    expect(score(result([bmp('Heavy Use Area', 20)]), heavy, text).categories.bmps.matched).toBe(0);
+  });
+
+  it('does not let a one-word name match a longer one by containment', () => {
+    expect(score(result([bmp('Protection', 5)]), heavy, text).categories.bmps.matched).toBe(0);
+  });
+
+  it('checks names against the PDF as whole words, with its own test, keeping decimal points', () => {
+    const page = new Map([[5, 'Crews will plant terrain gardens on 2.5 acres']]);
+    const s = score(result([bmp('Rain Garden', 5), bmp('25 acres', 5), bmp('2.5 acres', 5)]), { doc: 'toy', scope: 'all', items: [] }, page);
+    expect(s.verbatimViolations).toEqual(['bmps: Rain Garden', 'bmps: 25 acres']);
   });
 });
