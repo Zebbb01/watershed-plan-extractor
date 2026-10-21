@@ -30,6 +30,8 @@ function sameName(a: string, b: string, minSubset: number): boolean {
   return minSubset > 0 && smaller >= minSubset && inter === smaller;
 }
 
+const RANK = { low: 0, medium: 1, high: 2 } as const;
+
 // How readily two names merge, per category. 0 = only on equal stems or high overlap.
 const SUBSET_RULE: Record<CategoryKey, number> = {
   goals: 3, bmps: 2, implementation: 3, monitoring: 0, outreach: 2, geographicAreas: 2,
@@ -72,7 +74,8 @@ export function mergeUnits(results: { items: LooseItems; rejected: Rejection[] }
         }
         match.evidence = mergeEvidence(match.evidence, item.evidence);
         if (item.kind === 'main') match.kind = 'main';
-        if (item.confidence === 'high') match.confidence = 'high';
+        // The weakest copy decides: a "medium" check anywhere stays visible after the join.
+        if (RANK[item.confidence] < RANK[match.confidence]) match.confidence = item.confidence;
         match.needsReview = [match.needsReview, item.needsReview].filter(Boolean).join(' ') || null;
         match.parentName = match.parentName ?? item.parentName ?? null;
         combine(match, item);

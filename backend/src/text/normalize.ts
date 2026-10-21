@@ -26,8 +26,41 @@ export function normalizeForMatch(s: string): string {
     .toLowerCase();
 }
 
+// A decimal point is kept (as "d") so that "2.5 miles" never matches "25 miles".
+const keepDecimals = (s: string) => s.replace(/(\d)\.(?=\d)/g, '$1d');
+
 /** Letters and digits only: immune to spacing, punctuation and line-end hyphenation. */
-const skeleton = (s: string) => normalizeForMatch(s).replace(/[^\p{L}\p{N}]+/gu, '');
+const skeleton = (s: string) => keepDecimals(normalizeForMatch(s)).replace(/[^\p{L}\p{N}]+/gu, '');
+
+const isWordChar = (c: string | undefined) => c !== undefined && /[\p{L}\p{N}]/u.test(c);
+
+/**
+ * Is `name` written on the page as whole words? Spacing, punctuation and line-end hyphenation
+ * may differ, and a plural ending ("Rain Gardens" for "Rain Garden") still counts, but a name
+ * inside other words ("terrain gardens") does not.
+ */
+export function findName(haystack: string, name: string): boolean {
+  const target = skeleton(name);
+  if (!target) return false;
+  const text = keepDecimals(normalizeForMatch(haystack));
+  let sk = '';
+  const pos: number[] = [];
+  for (let i = 0; i < text.length; i++) {
+    if (isWordChar(text[i])) {
+      sk += text[i];
+      pos.push(i);
+    }
+  }
+  for (let at = sk.indexOf(target); at !== -1; at = sk.indexOf(target, at + 1)) {
+    const start = pos[at];
+    let end = pos[at + target.length - 1] + 1;
+    if (isWordChar(text[start - 1])) continue;
+    if (text.startsWith('es', end) && !isWordChar(text[end + 2])) end += 2;
+    else if (text[end] === 's' && !isWordChar(text[end + 1])) end += 1;
+    if (!isWordChar(text[end])) return true;
+  }
+  return false;
+}
 
 function bigrams(s: string): Map<string, number> {
   const m = new Map<string, number>();

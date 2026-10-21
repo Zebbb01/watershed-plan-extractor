@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { findQuote, findQuoteInOrder, normalizeForMatch, numbersIn, stem } from './normalize';
+import { findName, findQuote, findQuoteInOrder, normalizeForMatch, numbersIn, stem } from './normalize';
 
 describe('normalizeForMatch', () => {
   it('treats en dashes and hyphens alike', () => {
@@ -89,5 +89,21 @@ describe('findQuoteInOrder', () => {
 
   it('rejects a quote with a word that is not there', () => {
     expect(findQuoteInOrder(table, 'Coordinate with the EPA, NRCS, MSWCC, USGS')).toBe(false);
+  });
+});
+
+describe('decimal points and whole words', () => {
+  it('keeps decimal points: 25 miles is not 2.5 miles', () => {
+    expect(findQuote('installed on 2.5 miles of creek', 'installed on 25 miles').found).toBe(false);
+    expect(findQuote('installed on 2.5 miles of creek', 'installed on 2.5 miles').found).toBe(true);
+    expect(findQuote('a total of $27,930.00 for the project', 'a total of $27,930.00').found).toBe(true);
+  });
+
+  it('finds a name only as whole words, allowing a plural ending', () => {
+    expect(findName('drain garden and terrain gardens', 'Rain Garden')).toBe(false);
+    expect(findName('install rain gardens near homes', 'Rain Garden')).toBe(true);
+    expect(findName('Stream-\nbank Protection on 2 miles', 'Streambank Protection')).toBe(true);
+    expect(findName('Cover Crops; Fencing', 'Cover Crop')).toBe(true);
+    expect(findName('Fencing', 'Fence')).toBe(false);
   });
 });

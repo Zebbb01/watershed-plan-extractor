@@ -1,6 +1,6 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { findQuote } from '../src/text/normalize';
+import { findName, findQuote } from '../src/text/normalize';
 import { EVAL_DIR, pdfPath } from './doc-set';
 import { pageTexts } from './page-text';
 import { readPdfNode } from './read-pdf';
@@ -33,7 +33,7 @@ for (const file of readdirSync(dir).filter((f) => f.endsWith('.json'))) {
       bad++;
     }
     const labelOnly = item.category === 'goals' || item.category === 'implementation';
-    if (!labelOnly && !findQuote(all, item.name).found && !(item.aliases ?? []).some((a) => findQuote(all, a).found)) {
+    if (!labelOnly && !findName(all, item.name) && !(item.aliases ?? []).some((a) => findName(all, a))) {
       console.log(`  ${gt.doc} ${item.category} "${item.name}": name not in the PDF`);
       bad++;
     }

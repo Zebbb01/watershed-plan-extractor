@@ -63,3 +63,13 @@ describe('parseTimeframe', () => {
     expect(parseTimeframe('Ongoing')).toEqual({ start: null, end: null, timeUnit: null });
   });
 });
+
+describe('parseQuantity with numbers in brackets', () => {
+  it('takes the amount, not a practice code in brackets', () => {
+    expect(parseQuantity('12 grade stabilization structures (410)')).toMatchObject({ value: 12, unit: 'grade stabilization structures' });
+  });
+
+  it('takes the digits in brackets when they restate a number word', () => {
+    expect(parseQuantity('at least two (2) demonstration farms')).toMatchObject({ value: 2, comparator: '>=', unit: 'demonstration farms' });
+  });
+});

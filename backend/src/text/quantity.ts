@@ -20,6 +20,8 @@ const WORD_NUMBERS: Record<string, number> = {
   eighteen: 18, nineteen: 19, twenty: 20, thirty: 30, forty: 40, fifty: 50, hundred: 100,
 };
 
+const RESTATED = new RegExp(String.raw`\b(?:${Object.keys(WORD_NUMBERS).join('|')})\s*\((\d[\d,]*(?:\.\d+)?)\)`, 'i');
+
 const UNIT_ALIASES: [RegExp, string][] = [
   [/^(ac|acre|acres)$/i, 'ac'],
   [/^(ft|feet|foot|linear feet|lf|lin ft)$/i, 'ft'],
@@ -77,9 +79,10 @@ export function parseQuantity(raw: string, scope: string | null = null): Quantit
   let value: number | null = null;
   let after = '';
   let dollars = false;
-  // "two (2) demonstration farms": the digits in brackets win.
-  const bracketed = /\((\d[\d,]*(?:\.\d+)?)\)/.exec(text);
-  const first = bracketed ?? FIRST_NUMBER.exec(text);
+  // "two (2) demonstration farms": digits in brackets win only when they restate a number word;
+  // otherwise the first number does ("12 structures (410)" carries a practice code, not an amount).
+  const restated = RESTATED.exec(text);
+  const first = restated ?? FIRST_NUMBER.exec(text);
   if (first) {
     value = toNumber(first[1] ?? first[0]);
     dollars = first[0].startsWith('$');

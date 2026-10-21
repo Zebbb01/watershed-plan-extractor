@@ -126,7 +126,7 @@ export interface Rejection {
   category: CategoryKey;
   name: string;
   page: number | null;
-  reason: 'quote-not-found' | 'name-not-in-source' | 'number-not-in-quote' | 'invalid';
+  reason: 'quote-not-found' | 'name-not-in-source' | 'number-not-in-quote' | 'detail-not-in-source' | 'invalid';
 }
 export interface Conflict {
   category: CategoryKey;

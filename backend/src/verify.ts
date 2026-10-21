@@ -3,13 +3,16 @@ import type {
   ActivityItem, AreaItem, BmpItem, CategoryKey, Confidence, Evidence, GoalItem, LlmQuantityValue, MetricItem,
   OutreachItem, Quantity, Rejection, Source, UnitExtraction, UnitItems,
 } from './schema';
-import { findQuote, findQuoteInOrder, normalizeForMatch, numbersIn, stem } from './text/normalize';
+import { findName, findQuote, findQuoteInOrder, normalizeForMatch, numbersIn, stem } from './text/normalize';
 import { parseQuantity, parseTimeframe } from './text/quantity';
 
 /*
- * The trust boundary between the model and the screen. Nothing reaches the report unless
- * its quote is on the page, its name is in the source, and every number it carries is
- * written there too. Failures are returned as rejections with a reason, never shown as data.
+ * The trust boundary between the model and the screen. Nothing the model wrote reaches the
+ * report unless the document says it: the quote is on the page; names, organisations, codes,
+ * timeframes, audiences and other details are written there; an amount is written in the
+ * quote as reported, or on the item's own table row; and every number is one the page holds.
+ * A detail that fails is dropped from its item; an item whose quote or name fails is dropped.
+ * Every failure is returned as a rejection with a reason, never shown as data.
  */
 
 export interface VerifyPage {
@@ -24,6 +27,20 @@ export type VerifiedItems = { [K in keyof UnitItems]: WithParent<UnitItems[K][nu
 const STOP = new Set(['the', 'and', 'for', 'with', 'from', 'that', 'this', 'into', 'will', 'are', 'its', 'all', 'any', 'per']);
 const words = (s: string) => normalizeForMatch(s).split(/[^\p{L}\p{N}]+/u).filter((w) => w.length > 2 && !STOP.has(w));
 
+// Unit words compare in one spelling: a table's "ac" column is the "acres" a model may write.
+const UNIT_WORDS: Record<string, string> = {
+  acre: 'ac', acres: 'ac', feet: 'ft', foot: 'ft', lf: 'ft', mile: 'mi', miles: 'mi', each: 'ea', lbs: 'lb', pound: 'lb',
+  pounds: 'lb', tons: 'ton', gallon: 'gal', gallons: 'gal', cubic: 'cu', yard: 'yd', yards: 'yd', square: 'sq',
+};
+const amountWords = (s: string) => normalizeForMatch(s).split(/[^\p{L}]+/u).filter(Boolean).map((w) => UNIT_WORDS[w] ?? w);
+
+// A status counts only when the item's own quote says it.
+const STATUS_WORDS: Record<string, RegExp> = {
+  completed: /\b(completed|complete|done|finished|accomplished)\b/,
+  'in-progress': /\b(in progress|ongoing|underway|under way|currently)\b/,
+  planned: /\b(planned|proposed|scheduled|will)\b/,
+};
+
 /** FNV-1a: a stable, dependency-free id that works in the browser and in Node. */
 export function stableId(s: string): string {
   let h = 0x811c9dc5;
@@ -36,7 +53,7 @@ export function stableId(s: string): string {
 
 interface Context {
   category: CategoryKey;
-  pages: Map<number, { text: string; source: 'text' | 'ocr' }>;
+  pages: Map<number, { text: string; source: 'text' | 'ocr'; rows: string[] }>;
   imagePages: Set<number>;
   rejected: Rejection[];
 }
@@ -44,6 +61,8 @@ interface Context {
 interface Checked {
   evidence: Evidence[];
   sourceText: string;
+  /** table rows of the evidence pages, as marked up ("| cell | cell |") */
+  rows: string[];
   quotes: string;
   exact: boolean;
   source: Source;
@@ -63,7 +82,9 @@ function checkEvidence(ctx: Context, evidence: { page: number; quote: string }[]
       if (!page) continue;
       const r = findQuote(page.text, quote, { fuzzy: page.source === 'ocr' });
       if (r.found) {
-        hit = { page: n, exact: r.score === 1 && page.source === 'text' && n === Math.round(e.page) };
+        // High confidence needs a real passage: a two-word quote proves little.
+        const long = quote.split(/\s+/).length >= 4;
+        hit = { page: n, exact: r.score === 1 && page.source === 'text' && n === Math.round(e.page) && long };
         break;
       }
     }
@@ -91,31 +112,59 @@ function checkEvidence(ctx: Context, evidence: { page: number; quote: string }[]
   return {
     evidence: found.map(({ page, quote }) => ({ page, quote })),
     sourceText: pagesUsed.map((n) => ctx.pages.get(n)!.text).join('\n'),
+    rows: pagesUsed.flatMap((n) => ctx.pages.get(n)!.rows),
     quotes: found.map((f) => f.quote).join('\n'),
     exact: found.every((f) => f.exact),
     source,
   };
 }
 
-/** Is a name written in the quotes or on the evidence pages? */
+/** Is a name written, as whole words, in the quotes or on the evidence pages? OCR text gets a near match for long names. */
 function inSource(name: string, checked: Checked, ocr: boolean): boolean {
-  return findQuote(checked.quotes, name).found || findQuote(checked.sourceText, name, { fuzzy: ocr }).found;
+  if (findName(checked.quotes, name) || findName(checked.sourceText, name)) return true;
+  return ocr && normalizeForMatch(name).length >= 16 && findQuote(checked.sourceText, name, { fuzzy: true }).found;
 }
 
-/** For labels a model may shorten (goals, activities): most of their word stems must be in the source. */
-function wordsInSource(name: string, checked: Checked): boolean {
+/** Share of a label's word stems found in `hay`. */
+function stemShare(name: string, hay: string): number {
   const ws = words(name).map(stem);
-  if (!ws.length) return false;
-  const hay = new Set(words(`${checked.quotes}\n${checked.sourceText}`).map(stem));
-  return ws.filter((w) => hay.has(w)).length / ws.length >= 0.7;
+  if (!ws.length) return 0;
+  const have = new Set(words(hay).map(stem));
+  return ws.filter((w) => have.has(w)).length / ws.length;
+}
+
+/**
+ * Where an amount is written: in the item's quote exactly as reported ("quote"), or, on a
+ * table page, on the item's own row with every number and word of it ("row"). Null when
+ * neither, or when any of its numbers (decimals included) is not on the page at all.
+ */
+function amountSource(raw: string, name: string, checked: Checked): 'quote' | 'row' | null {
+  const nums = numbersIn(raw);
+  const pageNumbers = new Set(numbersIn(checked.sourceText));
+  if (nums.some((n) => !pageNumbers.has(n))) return null;
+  if (findQuote(checked.quotes, raw).found) return 'quote';
+  if (!nums.length) return null;
+  const want = amountWords(raw);
+  const onRow = checked.rows.some((row) => {
+    if (!findName(row, name) && stemShare(name, row) < 0.7) return false;
+    const rowNumbers = new Set(numbersIn(row));
+    const rowWords = new Set(amountWords(row));
+    return nums.every((n) => rowNumbers.has(n)) && want.every((w) => rowWords.has(w));
+  });
+  return onRow ? 'row' : null;
 }
 
 export function verifyUnit(data: UnitExtraction, pages: VerifyPage[], imagePages: number[]): { items: VerifiedItems; rejected: Rejection[] } {
   const rejected: Rejection[] = [];
-  const pageMap = new Map(pages.map((p) => [p.n, { text: stripMarkup(p.markup), source: p.source }]));
+  const pageMap = new Map(
+    pages.map((p) => [
+      p.n,
+      { text: stripMarkup(p.markup), source: p.source, rows: p.markup.split('\n').filter((l) => l.startsWith('| ') || l.includes(' | ')) },
+    ]),
+  );
   const ctxFor = (category: CategoryKey): Context => ({ category, pages: pageMap, imagePages: new Set(imagePages), rejected });
 
-  // Shared steps for every category: evidence, name, numbers, ids.
+  // Shared steps for every category: evidence, name, details, amounts, ids.
   function base<T extends { name: string; text: string; kind: GoalItem['kind']; parentName: string | null; evidence: { page: number; quote: string }[] }>(
     ctx: Context,
     item: T,
@@ -129,35 +178,45 @@ export function verifyUnit(data: UnitExtraction, pages: VerifyPage[], imagePages
     const checked = checkEvidence(ctx, item.evidence);
     if (!checked) return reject('quote-not-found');
     const ocr = checked.source === 'ocr';
-    const nameOk = verbatimName ? inSource(item.name, checked, ocr) : inSource(item.name, checked, ocr) || wordsInSource(item.name, checked);
+    const nameOk = verbatimName ? inSource(item.name, checked, ocr) : inSource(item.name, checked, ocr) || stemShare(item.name, `${checked.quotes}\n${checked.sourceText}`) >= 0.7;
     if (!nameOk) return reject('name-not-in-source');
 
+    const page = checked.evidence[0].page;
     let confidence: Confidence = checked.exact && !ocr ? 'high' : 'medium';
-    const quoteNumbers = new Set(numbersIn(checked.quotes));
     const pageNumbers = new Set(numbersIn(checked.sourceText));
-    /** Parses an amount in code; drops it when one of its numbers is not in the source. */
+
+    /** A detail (timeframe, audience, pollutant, scope...) is kept only when it is written in the source. */
+    const detail = (value: string | null | undefined, label: string): string | null => {
+      const v = value?.trim();
+      if (!v) return null;
+      if (inSource(v, checked, ocr)) return v;
+      rejected.push({ category: ctx.category, name: `${item.name}: ${label} "${v}"`, page, reason: 'detail-not-in-source' });
+      return null;
+    };
+    /** Parses an amount in code; drops it when it is not written as reported. */
     const quantity = (q: LlmQuantityValue | null | undefined): Quantity | null => {
       if (!q?.raw?.trim()) return null;
-      const nums = numbersIn(q.raw);
-      if (nums.some((n) => !quoteNumbers.has(n) && !pageNumbers.has(n))) {
-        rejected.push({ category: ctx.category, name: `${item.name}: ${q.raw}`, page: checked.evidence[0].page, reason: 'number-not-in-quote' });
+      const where = amountSource(q.raw, item.name, checked);
+      if (!where) {
+        rejected.push({ category: ctx.category, name: `${item.name}: ${q.raw}`, page, reason: 'number-not-in-quote' });
         return null;
       }
-      if (nums.some((n) => !quoteNumbers.has(n))) confidence = 'medium';
-      return parseQuantity(q.raw, q.scope ?? null);
+      if (where === 'row') confidence = 'medium';
+      return parseQuantity(q.raw, q.scope ? detail(q.scope, 'scope') : null);
     };
     /** Keeps only names written in the source, rejecting the rest. */
     const verbatimList = (names: string[]) =>
       names.filter((n) => {
         const ok = Boolean(n?.trim()) && inSource(n, checked, ocr);
-        if (!ok && n?.trim()) rejected.push({ category: ctx.category, name: n, page: checked.evidence[0].page, reason: 'name-not-in-source' });
+        if (!ok && n?.trim()) rejected.push({ category: ctx.category, name: n, page, reason: 'name-not-in-source' });
         return ok;
       });
 
     const common = {
-      id: stableId(`${ctx.category}|${normalizeForMatch(item.name)}|${checked.evidence[0].page}`),
+      id: stableId(`${ctx.category}|${normalizeForMatch(item.name)}|${page}`),
       name: item.name.trim(),
-      text: item.text,
+      // The description is the model's wording, so it may not carry a number the page does not.
+      text: numbersIn(item.text ?? '').every((n) => pageNumbers.has(n)) ? item.text : '',
       kind: item.kind,
       parentId: null,
       parentName: item.parentName,
@@ -166,7 +225,7 @@ export function verifyUnit(data: UnitExtraction, pages: VerifyPage[], imagePages
       source: checked.source,
       needsReview: null as string | null,
     };
-    return { common, checked, quantity, verbatimList, confidence: () => confidence };
+    return { common, checked, page, detail, quantity, verbatimList, confidence: () => confidence };
   }
 
   const keep = <T>(x: T | null): x is T => x !== null;
@@ -175,7 +234,9 @@ export function verifyUnit(data: UnitExtraction, pages: VerifyPage[], imagePages
     const b = base(ctxFor('goals'), g, false);
     if (!b) return null;
     const targets = g.targets.map(b.quantity).filter(keep);
-    return { ...b.common, confidence: b.confidence(), targets, pollutant: g.pollutant, deadline: g.deadline } satisfies WithParent<GoalItem>;
+    const pollutant = b.detail(g.pollutant, 'pollutant');
+    const deadline = b.detail(g.deadline, 'deadline');
+    return { ...b.common, confidence: b.confidence(), targets, pollutant, deadline } satisfies WithParent<GoalItem>;
   }).filter(keep);
 
   const bmps = data.bmps.map((m) => {
@@ -189,7 +250,7 @@ export function verifyUnit(data: UnitExtraction, pages: VerifyPage[], imagePages
       const matches = quantities.some((q) => q.value !== null && Math.abs(q.value * unitCost.value! - estimatedCost.value!) <= Math.max(1, estimatedCost.value! * 0.01));
       if (!matches) needsReview = 'Quantity × unit cost does not match the estimated cost.';
     }
-    const pollutants = m.pollutants.filter((p) => normalizeForMatch(b.checked.sourceText).includes(normalizeForMatch(p)));
+    const pollutants = m.pollutants.filter((p) => findName(b.checked.sourceText, p));
     return { ...b.common, needsReview, confidence: b.confidence(), quantities, unitCost, estimatedCost, pollutants } satisfies WithParent<BmpItem>;
   }).filter(keep);
 
@@ -197,9 +258,15 @@ export function verifyUnit(data: UnitExtraction, pages: VerifyPage[], imagePages
     const b = base(ctxFor('implementation'), a, false);
     if (!b) return null;
     const responsible = b.verbatimList(a.responsible);
-    const time = a.timeframe ? parseTimeframe(a.timeframe) : { start: null, end: null, timeUnit: null };
+    const timeframe = b.detail(a.timeframe, 'timeframe');
+    const time = timeframe ? parseTimeframe(timeframe) : { start: null, end: null, timeUnit: null };
+    let status = a.status;
+    if (status && !STATUS_WORDS[status].test(normalizeForMatch(b.checked.quotes))) {
+      rejected.push({ category: 'implementation', name: `${a.name}: status "${status}"`, page: b.page, reason: 'detail-not-in-source' });
+      status = null;
+    }
     return {
-      ...b.common, confidence: b.confidence(), responsible, timeframe: a.timeframe, ...time, status: a.status, milestone: a.milestone,
+      ...b.common, confidence: b.confidence(), responsible, timeframe, ...time, status, milestone: a.milestone,
     } satisfies WithParent<ActivityItem>;
   }).filter(keep);
 
@@ -207,27 +274,30 @@ export function verifyUnit(data: UnitExtraction, pages: VerifyPage[], imagePages
     const b = base(ctxFor('monitoring'), m, false);
     if (!b) return null;
     if (!inSource(m.parameter, b.checked, b.checked.source === 'ocr')) {
-      rejected.push({ category: 'monitoring', name: m.parameter, page: b.checked.evidence[0].page, reason: 'name-not-in-source' });
+      rejected.push({ category: 'monitoring', name: m.parameter, page: b.page, reason: 'name-not-in-source' });
       return null;
     }
     const threshold = b.quantity(m.threshold);
-    const location = m.location && inSource(m.location, b.checked, false) ? m.location : null;
-    return { ...b.common, confidence: b.confidence(), parameter: m.parameter, threshold, location, frequency: m.frequency } satisfies WithParent<MetricItem>;
+    const location = b.detail(m.location, 'location');
+    const frequency = b.detail(m.frequency, 'frequency');
+    return { ...b.common, confidence: b.confidence(), parameter: m.parameter, threshold, location, frequency } satisfies WithParent<MetricItem>;
   }).filter(keep);
 
   const outreach = data.outreach.map((o) => {
     const b = base(ctxFor('outreach'), o, true);
     if (!b) return null;
     const quantity = b.quantity(o.quantity);
-    return { ...b.common, confidence: b.confidence(), audience: o.audience, quantity, timeframe: o.timeframe } satisfies WithParent<OutreachItem>;
+    const audience = b.detail(o.audience, 'audience');
+    const timeframe = b.detail(o.timeframe, 'timeframe');
+    return { ...b.common, confidence: b.confidence(), audience, quantity, timeframe } satisfies WithParent<OutreachItem>;
   }).filter(keep);
 
   const geographicAreas = data.geographicAreas.map((a) => {
     const b = base(ctxFor('geographicAreas'), a, true);
     if (!b) return null;
     let code = a.code?.trim() || null;
-    if (code && !findQuote(b.checked.sourceText, code).found) {
-      rejected.push({ category: 'geographicAreas', name: code, page: b.checked.evidence[0].page, reason: 'name-not-in-source' });
+    if (code && !findName(b.checked.sourceText, code)) {
+      rejected.push({ category: 'geographicAreas', name: code, page: b.page, reason: 'name-not-in-source' });
       code = null;
     }
     const acres = b.quantity(a.areaAcres);

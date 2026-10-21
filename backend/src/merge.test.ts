@@ -145,3 +145,12 @@ describe('overviewSentence', () => {
     );
   });
 });
+
+describe('mergeUnits confidence', () => {
+  it('keeps the lowest confidence of the copies it joins', () => {
+    const high = bmp('Cover Crops', 3);
+    const medium = { ...bmp('Cover Crops', 5), confidence: 'medium' as const };
+    expect(mergeUnits([unit({ bmps: [high] }), unit({ bmps: [medium] })]).report.bmps[0].confidence).toBe('medium');
+    expect(mergeUnits([unit({ bmps: [medium] }), unit({ bmps: [high] })]).report.bmps[0].confidence).toBe('medium');
+  });
+});

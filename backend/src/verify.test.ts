@@ -28,8 +28,8 @@ const pages = [
     source: 'text' as const,
     markup:
       '## Cost Estimate: Phase 1 Implementation\n[TABLE — see image]\n' +
-      'Cover Crops ac 500 $55.86 $27,930.00\n' +
-      'Diversion cu yd 8000 $2.40 $19,200.00',
+      '| Cover Crops | ac | 500 | $55.86 | $27,930.00 |\n' +
+      '| Diversion | cu yd | 8000 | $2.40 | $19,000.00 |',
   },
   {
     n: 7,
@@ -109,10 +109,10 @@ describe('verifyUnit', () => {
   it('flags a cost row whose quantity times unit cost does not give the estimated cost', () => {
     const data = {
       ...empty(),
-      bmps: [bmp('Diversion', 5, 'Diversion cu yd 8000 $2.40 $19,200.00', {
+      bmps: [bmp('Diversion', 5, 'Diversion cu yd 8000 $2.40 $19,000.00', {
         quantities: [{ raw: '8000 cu yd', scope: null }],
         unitCost: { raw: '$2.40', scope: null },
-        estimatedCost: { raw: '$27,930.00', scope: null },
+        estimatedCost: { raw: '$19,000.00', scope: null },
       })],
     };
     const b = verifyUnit(data, pages, [5]).items.bmps[0];
@@ -130,7 +130,7 @@ describe('verifyUnit', () => {
   });
 
   it('corrects the page when the quote sits on another page of the unit', () => {
-    const data = { ...empty(), bmps: [bmp('Diversion', 3, 'Diversion cu yd 8000 $2.40 $19,200.00')] };
+    const data = { ...empty(), bmps: [bmp('Diversion', 3, 'Diversion cu yd 8000 $2.40 $19,000.00')] };
     const b = verifyUnit(data, pages, []).items.bmps[0];
     expect(b.evidence[0].page).toBe(5);
   });
@@ -163,6 +163,110 @@ describe('verifyUnit', () => {
   it('rejects an item without evidence as invalid', () => {
     const data = { ...empty(), bmps: [{ ...bmp('cover crops', 3, 'x'), evidence: [] }] };
     expect(verifyUnit(data, pages, []).rejected[0].reason).toBe('invalid');
+  });
+});
+
+describe('verifyUnit: nothing the model wrote reaches the report unchecked', () => {
+  const page = (n: number, markup: string, source: 'text' | 'ocr' = 'text') => [{ n, markup, source }];
+  const prose = page(1, 'Streambank stabilization will be installed on 2.5 miles of Broken Pumpkin Creek to reduce sediment loads.');
+
+  it('rejects a quote whose decimal point moved (2.5 miles quoted as 25 miles)', () => {
+    const data = { ...empty(), bmps: [bmp('Streambank stabilization', 1, 'Streambank stabilization will be installed on 25 miles of Broken Pumpkin Creek', { quantities: [{ raw: '25 miles', scope: null }] })] };
+    const r = verifyUnit(data, prose, []);
+    expect(r.items.bmps).toEqual([]);
+    expect(r.rejected[0].reason).toBe('quote-not-found');
+  });
+
+  it('drops an amount whose unit is not the one written (500 feet reported as 500 acres)', () => {
+    const fence = page(1, 'Fencing will be installed along 500 feet of the creek to exclude cattle from the stream channel.');
+    const data = { ...empty(), bmps: [bmp('Fencing', 1, 'Fencing will be installed along 500 feet of the creek', { quantities: [{ raw: '500 acres', scope: null }] })] };
+    const r = verifyUnit(data, fence, []);
+    expect(r.items.bmps[0].quantities).toEqual([]);
+    expect(r.rejected[0]).toMatchObject({ reason: 'number-not-in-quote' });
+  });
+
+  it('takes a table amount only from the item’s own row', () => {
+    const table = page(4, '[TABLE — see image]\n| Cover Crop | ac | 2500 | $55.86 | $139,650.00 |\n| Fencing | ft | 1200 | $3.00 | $3,600.00 |');
+    const wrongRow = { ...empty(), bmps: [bmp('Cover Crop', 4, 'Cover Crop', { quantities: [{ raw: '1200 ac', scope: null }] })] };
+    expect(verifyUnit(wrongRow, table, [4]).items.bmps[0].quantities).toEqual([]);
+    const ownRow = { ...empty(), bmps: [bmp('Cover Crop', 4, 'Cover Crop', { quantities: [{ raw: '2500 ac', scope: null }] })] };
+    const kept = verifyUnit(ownRow, table, [4]).items.bmps[0];
+    expect(kept.quantities[0]).toMatchObject({ value: 2500, unit: 'ac' });
+    expect(kept.confidence).toBe('medium');
+  });
+
+  it('drops a spelled-out amount that is not written, and details that are not on the page', () => {
+    const days = page(1, 'Three field days will be held for landowners in the watershed each year of the project.');
+    const data = {
+      ...empty(),
+      outreach: [{
+        ...base('field days', 1, 'Three field days will be held for landowners in the watershed'),
+        audience: 'county commissioners', quantity: { raw: 'five field days', scope: null }, timeframe: 'Months 1-60',
+      }],
+    };
+    const r = verifyUnit(data, days, []);
+    expect(r.items.outreach[0]).toMatchObject({ quantity: null, audience: null, timeframe: null });
+    expect(r.rejected.map((x) => x.reason)).toEqual(['number-not-in-quote', 'detail-not-in-source', 'detail-not-in-source']);
+  });
+
+  it('keeps a timeframe and a status only when the document states them', () => {
+    const list = page(7, '[L1] 1. Work to develop, execute, and implement a Subgrant Agreement (Month 1)\n[L1] 2. Conduct inspections of BMPs during construction (Months 3-36)');
+    const act = (timeframe: string, status: 'completed' | null) => ({
+      ...empty(),
+      implementation: [{
+        ...base('Conduct inspections of BMPs during construction', 7, 'Conduct inspections of BMPs during construction'),
+        responsible: [], timeframe, status, milestone: true,
+      }],
+    });
+    expect(verifyUnit(act('Months 3-48', 'completed'), list, []).items.implementation[0]).toMatchObject({ timeframe: null, start: null, end: null, status: null });
+    expect(verifyUnit(act('(Months 3-36)', null), list, []).items.implementation[0]).toMatchObject({ timeframe: '(Months 3-36)', start: 3, end: 36 });
+  });
+
+  it('keeps a completed status when the item’s own quote says so', () => {
+    const done = page(9, '[L1] 3. Initiate watershed monitoring – Completed using historical data');
+    const data = {
+      ...empty(),
+      implementation: [{
+        ...base('Initiate watershed monitoring', 9, 'Initiate watershed monitoring – Completed using historical data'),
+        responsible: [], timeframe: null, status: 'completed' as const, milestone: true,
+      }],
+    };
+    expect(verifyUnit(data, done, []).items.implementation[0].status).toBe('completed');
+  });
+
+  it('drops a goal pollutant and deadline that are not in the document', () => {
+    const data = { ...empty(), goals: [{ ...goal('Reduce sediment loads', 1, 'Streambank stabilization will be installed on 2.5 miles of Broken Pumpkin Creek to reduce sediment loads', ''), targets: [], pollutant: 'Phosphorus', deadline: 'by 2030' }] };
+    expect(verifyUnit(data, prose, []).items.goals[0]).toMatchObject({ pollutant: null, deadline: null });
+    const kept = { ...empty(), goals: [{ ...goal('Reduce sediment loads', 1, 'Streambank stabilization will be installed on 2.5 miles of Broken Pumpkin Creek to reduce sediment loads', ''), targets: [], pollutant: 'sediment', deadline: null }] };
+    expect(verifyUnit(kept, prose, []).items.goals[0].pollutant).toBe('sediment');
+  });
+
+  it('checks numbers against the page itself on OCR pages', () => {
+    const ocr = page(12, 'Approximately 1500 feet of fencing will be installed along Buttahatchee River to exclude cattle from the stream and riparian area.', 'ocr');
+    const data = { ...empty(), bmps: [bmp('fencing', 12, 'Approximately 1600 feet of fencing will be installed along Buttahatchee River to exclude cattle from the stream and riparian area.', { quantities: [{ raw: '1600 feet', scope: null }] })] };
+    const r = verifyUnit(data, ocr, []);
+    expect(r.items.bmps[0].quantities).toEqual([]);
+  });
+
+  it('drops a scope that is not on the page but keeps the amount', () => {
+    const data = { ...empty(), bmps: [bmp('Cover Crops', 5, 'Cover Crops ac 500 $55.86 $27,930.00', { quantities: [{ raw: '500 ac', scope: 'Phase 9 Implementation' }] })] };
+    expect(verifyUnit(data, pages, [5]).items.bmps[0].quantities[0]).toMatchObject({ value: 500, scope: null });
+  });
+
+  it('empties a description that carries a number the page does not', () => {
+    const data = { ...empty(), bmps: [{ ...bmp('cover crops', 3, 'prescribed burning; cover crops; critical area'), text: 'Plant 900 acres of cover crops' }] };
+    expect(verifyUnit(data, pages, []).items.bmps[0].text).toBe('');
+  });
+
+  it('gives high confidence only to a quote of four words or more', () => {
+    const data = { ...empty(), bmps: [bmp('cover crops', 3, 'cover crops')] };
+    expect(verifyUnit(data, pages, []).items.bmps[0].confidence).toBe('medium');
+  });
+
+  it('rejects a verbatim name found only inside other words', () => {
+    const road = page(2, 'Crews will install terrain gardens along the county road ditches next spring.');
+    const data = { ...empty(), bmps: [bmp('Rain Garden', 2, 'Crews will install terrain gardens along the county road')] };
+    expect(verifyUnit(data, road, []).rejected[0].reason).toBe('name-not-in-source');
   });
 });
 

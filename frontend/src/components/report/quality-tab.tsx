@@ -10,7 +10,8 @@ import { cn } from '@/lib/cn';
 const REASON: Record<Rejection['reason'], string> = {
   'quote-not-found': 'Quote is not on the page',
   'name-not-in-source': 'Name is not in the document',
-  'number-not-in-quote': 'Number is not in the document',
+  'number-not-in-quote': 'Amount is not written this way',
+  'detail-not-in-source': 'Detail is not in the document',
   invalid: 'No evidence given',
 };
 const ERROR: Record<string, string> = {
