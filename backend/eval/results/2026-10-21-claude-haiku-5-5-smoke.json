@@ -1,0 +1,53 @@
+{
+ "date": "2026-10-21",
+ "provider": "anthropic",
+ "model": "claude-haiku-5-5",
+ "ocrModel": "claude-haiku-5-5",
+ "effort": "low",
+ "set": "smoke",
+ "docs": [
+  {
+   "id": "ross-barnett-2011",
+   "role": "smoke",
+   "format": "consultant-report",
+   "pages": 647,
+   "timeMs": 554228,
+   "costUsd": 0.5477643799999994,
+   "counts": {
+    "goals": 50,
+    "bmps": 137,
+    "implementation": 131,
+    "monitoring": 124,
+    "outreach": 48,
+    "geographicAreas": 257
+   },
+   "failedUnits": 0,
+   "rejected": 384,
+   "score": null
+  },
+  {
+   "id": "columbia-vsp-2018",
+   "role": "smoke",
+   "format": "wa-vsp",
+   "pages": 212,
+   "timeMs": 145985,
+   "costUsd": 0.14968884000000002,
+   "counts": {
+    "goals": 48,
+    "bmps": 36,
+    "implementation": 43,
+    "monitoring": 26,
+    "outreach": 29,
+    "geographicAreas": 36
+   },
+   "failedUnits": 0,
+   "rejected": 129,
+   "score": null
+  }
+ ],
+ "aggregate": {
+  "dev": null,
+  "heldout": null,
+  "all": null
+ }
+}

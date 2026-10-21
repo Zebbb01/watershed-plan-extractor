@@ -192,7 +192,27 @@ Where the tool loses points, from reading the tuning runs item by item:
 
 ## Smoke tests
 
-{{SMOKE_TESTS}}
+The largest file and a plan from another state, run once on the final settings to check that
+they complete. They ran through the eval CLI, which runs the site's pipeline and API checks
+but reads the PDF in Node rather than the browser. Neither is labelled, so neither has an
+accuracy score.
+
+| Plan | Pages | Time | Cost | Failed sections | Scanned pages | Items kept | Rejected by the verifier | Names not in the PDF |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Ross Barnett Reservoir 2011 (61 MB) | 647 | 554 s | $0.55 | 0 | 12 | 747 | 384 | 0 |
+| Columbia County, Washington, VSP 2018 | 212 | 146 s | $0.15 | 0 | 0 | 218 | 129 | 0 |
+
+From reading the output (not scored):
+
+- **Ross Barnett** restarts "Objective 1" to "Objective 7" in each sub-watershed section. The
+  merge joined the four "Objective 1"s into one item that showed one objective's text with
+  four unrelated quotes. Fixed after the run: items under a bare label now merge only when
+  their texts match. The plan was not run again to save cost, so the unit tests in
+  `merge.test.ts` are the only check of the fix.
+- **Columbia County** (another state's format): the benchmarks, NRCS practices with their codes
+  ("Cover Crop (340)") and outreach are found. Some appendix descriptions were taken as items
+  ("Describes the organization leads that provide technical assistance in the County"), and
+  benchmark headings appear both as goals and as monitoring metrics.
 
 ## Automated tests
 
@@ -210,8 +230,8 @@ Where the tool loses points, from reading the tuning runs item by item:
   the cases a model gets wrong in practice (a moved decimal point, a changed unit, a number
   from another table row, a spelled-out number, an invented timeframe, status, pollutant,
   audience or scope, a name found only inside other words);
-- merging, conflicts, parent links and lowest-confidence joins; the summary and
-  completion rate;
+- merging, conflicts, parent links and lowest-confidence joins, and labels such as
+  "Objective 1" that restart in each section; the summary and completion rate;
 - the pipeline: OCR in pairs with splitting and rate-limit retries, rate-limit backoff,
   splitting a unit that times out, failed work reported rather than lost, cancellation;
 - both LLM adapters with mocked SDK responses (request shape, no SDK retries, effort and
