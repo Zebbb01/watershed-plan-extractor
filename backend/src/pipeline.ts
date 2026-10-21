@@ -176,7 +176,8 @@ export async function runPipeline(
       }
       progress({ stage: 'ocr', done: ++done, total });
     }, signal);
-    pages = pages.map((p) => replaced.get(p.n) ?? p);
+    // Transcribed pages go through the document-level clean-up too: running heads, contents pages, admin sections.
+    pages = annotateDocument(pages.map((p) => replaced.get(p.n) ?? p));
     ocrPages.push(...[...replaced.keys()].sort((a, b) => a - b));
   }
 

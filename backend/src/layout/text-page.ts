@@ -35,6 +35,7 @@ export function pageFromText(n: number, text: string): PageModel {
     flags: { scanned: false, tableLike: tableRows >= 3, multiColumn: false, adminOnly: lines.length === 0 },
     charCount: lines.reduce((s, l) => s + l.text.length, 0),
     // One unit of height per line, so annotateDocument's top and bottom bands are the first and last lines.
-    height: Math.max(lines.length - 1, 1),
+    // A page of one or two lines has no header band: its only text is content.
+    height: lines.length >= 3 ? lines.length - 1 : undefined,
   };
 }

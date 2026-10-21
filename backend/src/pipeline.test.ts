@@ -129,6 +129,18 @@ describe('runPipeline', () => {
     expect(result.quality.ocrPages).toEqual(raw.map((p) => p.n));
   });
 
+  it('finds running headers on transcribed pages too', async () => {
+    const result = await runPipeline({ doc, rawPages: [1, 2, 3, 4].map(scannedPage) }, deps({
+      ocr: async (req) => ({
+        pages: req.pages.map((p) => ({ n: p.n, text: `April 6, 2004\nThe goal is to reduce sediment loading on page ${p.n}.\nMore text about the plan.\n3-${p.n}` })),
+        usage: { inputTokens: 1, outputTokens: 1, costUsd: null },
+      }),
+    }));
+    const dates = result.quality.structure.filter((l) => l.text === 'April 6, 2004');
+    expect(dates).toHaveLength(4);
+    expect(dates.every((l) => l.kind === 'admin')).toBe(true);
+  });
+
   it('splits an OCR batch that times out and reads each page on its own', async () => {
     const calls: number[][] = [];
     const result = await runPipeline({ doc, rawPages: [scannedPage(1), scannedPage(2)] }, deps({
