@@ -1,7 +1,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { betaZodOutputFormat } from '@anthropic-ai/sdk/helpers/beta/zod';
 import type { ExtractRequest, OcrRequest, OcrResponse } from '../api';
-import { UnitExtractionSchema, type UnitExtraction, type Usage } from '../schema';
+import { fromWire, WIRE_HALVES, type UnitExtraction, type Usage, type WireUnit } from '../schema';
 import { priceUsd } from './prices';
 import { buildUserText, OCR_PROMPT, SYSTEM_PROMPT } from './prompt';
 import { effortFor, LlmError, OcrSchema, type Effort, type LlmClient } from './provider';
@@ -33,6 +33,12 @@ function toLlmError(e: unknown): LlmError {
   if (e instanceof Error && e.name === 'AbortError') return new LlmError('TIMEOUT', 'The model took too long on these pages.');
   return new LlmError('UPSTREAM_ERROR', 'The model call failed.');
 }
+
+const sumUsage = (us: Usage[]): Usage => ({
+  inputTokens: us.reduce((a, u) => a + u.inputTokens, 0),
+  outputTokens: us.reduce((a, u) => a + u.outputTokens, 0),
+  costUsd: us.some((u) => u.costUsd === null) ? null : us.reduce((a, u) => a + u.costUsd!, 0),
+});
 
 /** The SDK client. It never retries on its own: the pipeline waits, splits or retries with the deadline in view. */
 export const anthropicSdk = (apiKey: string) => new Anthropic({ apiKey, maxRetries: 0 });
@@ -85,11 +91,18 @@ export function createAnthropicClient(opts: Options, sdk = anthropicSdk(opts.api
   return {
     provider: 'anthropic',
     model: opts.extractionModel,
-    extract(req: ExtractRequest, signal: AbortSignal) {
-      const content: Block[] = [];
-      for (const img of req.images) content.push({ type: 'text', text: `Image of page ${img.page}:` }, image(img.jpegBase64));
-      content.push({ type: 'text', text: buildUserText(req) });
-      return call<UnitExtraction>(opts.extractionModel, SYSTEM_PROMPT, content, betaZodOutputFormat(UnitExtractionSchema) as never, signal);
+    async extract(req: ExtractRequest, signal: AbortSignal): Promise<{ data: UnitExtraction; usage: Usage }> {
+      // Two calls side by side, three categories each (see WIRE_HALVES); each returns about half the output.
+      const halves = await Promise.all(
+        WIRE_HALVES.map(({ ask, schema }) => {
+          const content: Block[] = [];
+          for (const img of req.images) content.push({ type: 'text', text: `Image of page ${img.page}:` }, image(img.jpegBase64));
+          content.push({ type: 'text', text: buildUserText(req, ask) });
+          return call<Partial<WireUnit>>(opts.extractionModel, SYSTEM_PROMPT, content, betaZodOutputFormat(schema) as never, signal);
+        }),
+      );
+      const data = Object.assign({}, ...halves.map((h) => h.data)) as WireUnit;
+      return { data: fromWire(data), usage: sumUsage(halves.map((h) => h.usage)) };
     },
     async ocr(req: OcrRequest, signal: AbortSignal): Promise<OcrResponse> {
       const content: Block[] = [];

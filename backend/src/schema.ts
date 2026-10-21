@@ -276,3 +276,80 @@ export const UnitExtractionSchema = z.object({
 });
 export type UnitExtraction = z.infer<typeof UnitExtractionSchema>;
 export type LlmQuantityValue = z.infer<typeof LlmQuantity>;
+
+// ---------------------------------------------------------------- wire schema (what the model fills in)
+
+/*
+ * The schema the model actually fills in. Structured outputs compile the schema into a grammar,
+ * and nullable fields (each an anyOf with null) across six categories made that grammar too
+ * large to compile. Here nothing is nullable: an empty string means "not stated", an amount is
+ * just its words, and status has a "none" value. fromWire() turns this back into
+ * UnitExtraction, which the verifier reads.
+ */
+const NONE = 'Empty string when the document does not state it.';
+const WireAmount = z.object({
+  raw: z.string().describe(LlmQuantity.shape.raw.description!),
+  scope: z.string().describe(`Which plan, phase or table the amount belongs to, copied from its heading, e.g. "Cost Estimate: Phase 1 Implementation". ${NONE}`),
+});
+const amountText = (what: string) => z.string().describe(`${what}, exactly as written, e.g. "$27,930.00" or "75 NTU". ${NONE}`);
+const wireBase = {
+  name: llmBase.name,
+  text: llmBase.text,
+  kind: llmBase.kind,
+  parentName: z.string().describe(`For kind sub or example: the exact name of the parent item. ${NONE}`),
+  evidence: z.array(LlmEvidence),
+};
+const wireCategories = {
+  goals: z.array(z.object({ ...wireBase, targets: z.array(WireAmount), pollutant: z.string().describe(NONE), deadline: z.string().describe(`Deadline or time frame exactly as written. ${NONE}`) })),
+  bmps: z.array(z.object({ ...wireBase, quantities: z.array(WireAmount), unitCost: amountText('Unit cost'), estimatedCost: amountText('Estimated cost'), pollutants: z.array(z.string()) })),
+  implementation: z.array(z.object({
+    ...wireBase,
+    responsible: LlmActivitySchema.shape.responsible,
+    timeframe: z.string().describe(`Schedule text exactly as written, e.g. "Months 1-36". ${NONE}`),
+    status: z.enum([...STATUS_VALUES, 'none']).describe('Only if the document states it (e.g. "Completed"); otherwise none.'),
+    milestone: LlmActivitySchema.shape.milestone,
+  })),
+  monitoring: z.array(z.object({
+    ...wireBase,
+    parameter: LlmMetricSchema.shape.parameter,
+    threshold: amountText('Threshold or target'),
+    location: z.string().describe(`Station ids or locations exactly as written. ${NONE}`),
+    frequency: z.string().describe(NONE),
+  })),
+  outreach: z.array(z.object({ ...wireBase, audience: z.string().describe(NONE), quantity: amountText('Count'), timeframe: z.string().describe(NONE) })),
+  geographicAreas: z.array(z.object({
+    ...wireBase,
+    type: LlmAreaSchema.shape.type,
+    code: z.string().describe(`HUC, segment or station code exactly as written, e.g. "031601060307". ${NONE}`),
+    areaAcres: amountText('Area'),
+    role: LlmAreaSchema.shape.role,
+  })),
+};
+export const WireUnitSchema = z.object(wireCategories);
+export type WireUnit = z.infer<typeof WireUnitSchema>;
+
+/**
+ * All six categories in one schema compile to a grammar the API refuses as too large, so the
+ * model fills them in two calls of three categories each.
+ */
+export const WIRE_HALVES = [
+  { ask: 'every goal, BMP and implementation activity', schema: z.object({ goals: wireCategories.goals, bmps: wireCategories.bmps, implementation: wireCategories.implementation }) },
+  { ask: 'every monitoring metric, outreach activity and geographic area', schema: z.object({ monitoring: wireCategories.monitoring, outreach: wireCategories.outreach, geographicAreas: wireCategories.geographicAreas }) },
+] as const;
+
+const orNull = (s: string) => (s.trim() ? s : null);
+const amount = (raw: string): LlmQuantityValue | null => (raw.trim() ? { raw, scope: null } : null);
+const fromWireAmount = (q: { raw: string; scope: string }): LlmQuantityValue => ({ raw: q.raw, scope: orNull(q.scope) });
+const fromWireBase = <T extends { parentName: string }>(i: T) => ({ ...i, parentName: orNull(i.parentName) });
+
+/** The model's answer in the shape the verifier reads. */
+export function fromWire(w: WireUnit): UnitExtraction {
+  return {
+    goals: w.goals.map((g) => ({ ...fromWireBase(g), targets: g.targets.map(fromWireAmount), pollutant: orNull(g.pollutant), deadline: orNull(g.deadline) })),
+    bmps: w.bmps.map((b) => ({ ...fromWireBase(b), quantities: b.quantities.map(fromWireAmount), unitCost: amount(b.unitCost), estimatedCost: amount(b.estimatedCost) })),
+    implementation: w.implementation.map((a) => ({ ...fromWireBase(a), timeframe: orNull(a.timeframe), status: a.status === 'none' ? null : a.status })),
+    monitoring: w.monitoring.map((m) => ({ ...fromWireBase(m), threshold: amount(m.threshold), location: orNull(m.location), frequency: orNull(m.frequency) })),
+    outreach: w.outreach.map((o) => ({ ...fromWireBase(o), audience: orNull(o.audience), quantity: amount(o.quantity), timeframe: orNull(o.timeframe) })),
+    geographicAreas: w.geographicAreas.map((a) => ({ ...fromWireBase(a), code: orNull(a.code), areaAcres: amount(a.areaAcres) })),
+  };
+}

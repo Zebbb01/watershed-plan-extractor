@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { z } from 'zod';
-import { ExtractedReportSchema, UnitExtractionSchema, CATEGORY_KEYS } from './schema';
+import { ExtractedReportSchema, fromWire, UnitExtractionSchema, WireUnitSchema, CATEGORY_KEYS } from './schema';
 import { CATEGORIES } from './categories';
 import { ExtractRequestSchema, OcrRequestSchema } from './api';
 
@@ -63,8 +63,32 @@ describe('extract request validation', () => {
 });
 
 describe('LLM output schema', () => {
+  it('has no unions anywhere, so the structured-output grammar stays small enough to compile', () => {
+    const text = JSON.stringify(z.toJSONSchema(WireUnitSchema));
+    expect(text).not.toMatch(/"anyOf"|"oneOf"|"allOf"|"null"/);
+  });
+
+  it('turns the wire format back into the internal one: empty strings and "none" become null', () => {
+    const item = { name: 'Fence', text: 'x', kind: 'sub' as const, parentName: '', evidence: [{ page: 4, quote: 'Fence ft 20000' }] };
+    const unit = fromWire({
+      goals: [{ ...item, targets: [{ raw: '77% to 97%', scope: '' }], pollutant: 'sediment', deadline: '' }],
+      bmps: [{ ...item, quantities: [{ raw: '20000 ft', scope: 'Phase 1' }], unitCost: '$2.22', estimatedCost: '', pollutants: [] }],
+      implementation: [{ ...item, responsible: ['MDEQ'], timeframe: '', status: 'none', milestone: false }],
+      monitoring: [{ ...item, parameter: 'Turbidity', threshold: '75 NTU', location: '', frequency: '' }],
+      outreach: [{ ...item, audience: '', quantity: '', timeframe: 'Month 2' }],
+      geographicAreas: [{ ...item, type: 'county', code: '', areaAcres: '24,573 acres', role: 'primary' }],
+    });
+    expect(unit.goals[0]).toMatchObject({ parentName: null, targets: [{ raw: '77% to 97%', scope: null }], deadline: null, pollutant: 'sediment' });
+    expect(unit.bmps[0]).toMatchObject({ quantities: [{ raw: '20000 ft', scope: 'Phase 1' }], unitCost: { raw: '$2.22', scope: null }, estimatedCost: null });
+    expect(unit.implementation[0]).toMatchObject({ timeframe: null, status: null });
+    expect(unit.monitoring[0]).toMatchObject({ threshold: { raw: '75 NTU', scope: null }, location: null, frequency: null });
+    expect(unit.outreach[0]).toMatchObject({ audience: null, quantity: null, timeframe: 'Month 2' });
+    expect(unit.geographicAreas[0]).toMatchObject({ code: null, areaAcres: { raw: '24,573 acres', scope: null } });
+    expect(UnitExtractionSchema.safeParse(unit).success).toBe(true);
+  });
+
   it('has no optional properties anywhere (structured outputs need every field required)', () => {
-    const schema = z.toJSONSchema(UnitExtractionSchema) as Record<string, unknown>;
+    const schema = z.toJSONSchema(WireUnitSchema) as Record<string, unknown>;
     const problems: string[] = [];
     const walk = (node: unknown, path: string) => {
       if (!node || typeof node !== 'object') return;

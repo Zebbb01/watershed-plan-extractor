@@ -35,7 +35,7 @@ const pageSpan = (req: ExtractRequest) => {
   return first === last ? `page ${first}` : `pages ${first}–${last}`;
 };
 
-export function buildUserText(req: ExtractRequest): string {
+export function buildUserText(req: ExtractRequest, ask = 'every goal, BMP, implementation activity, monitoring metric, outreach activity and geographic area'): string {
   const { context, pages } = req.unit;
   const parts = [
     `Document: ${context.title ?? 'untitled'} (${context.totalPages} pages). These are ${pageSpan(req)} of ${context.totalPages}.`,
@@ -45,7 +45,7 @@ export function buildUserText(req: ExtractRequest): string {
   if (req.images.length) parts.push(`Images are attached for page${req.images.length > 1 ? 's' : ''} ${req.images.map((i) => i.page).join(', ')}.`);
   parts.push(
     `<document_pages>\n${pages.map((p) => `<page n="${p.n}">\n${p.markup}\n</page>`).join('\n')}\n</document_pages>`,
-    'Return every goal, BMP, implementation activity, monitoring metric, outreach activity and geographic area on these pages.',
+    `Return ${ask} on these pages.`,
   );
   return parts.join('\n\n');
 }

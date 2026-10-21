@@ -94,13 +94,18 @@ const fakeSdk = (impl: (body: Record<string, unknown>) => Promise<unknown>) => (
 describe('Anthropic adapter', () => {
   const opts = { apiKey: 'k', extractionModel: 'claude-opus-5-5', ocrModel: 'claude-opus-5-5', effort: 'low' as 'low' | 'high' | null };
 
-  it('returns the parsed output and priced usage', async () => {
-    const client = createAnthropicClient(opts, fakeSdk(async () => ({
-      stop_reason: 'end_turn', parsed_output: empty, usage: { input_tokens: 1000, output_tokens: 500 },
-    })));
+  it('asks for the six categories in two calls, so each output grammar compiles, and sums their usage', async () => {
+    const asked: string[][] = [];
+    const client = createAnthropicClient(opts, fakeSdk(async (body) => {
+      const schema = (body.output_config as { format: { schema: { properties: Record<string, unknown> } } }).format.schema;
+      const keys = Object.keys(schema.properties);
+      asked.push(keys);
+      return { stop_reason: 'end_turn', parsed_output: Object.fromEntries(keys.map((k) => [k, []])), usage: { input_tokens: 1000, output_tokens: 500 } };
+    }));
     const r = await client.extract(request, new AbortController().signal);
+    expect(asked).toEqual([['goals', 'bmps', 'implementation'], ['monitoring', 'outreach', 'geographicAreas']]);
     expect(r.data).toEqual(empty);
-    expect(r.usage).toEqual({ inputTokens: 1000, outputTokens: 500, costUsd: priceUsd('claude-opus-5-5', 1000, 500) });
+    expect(r.usage).toEqual({ inputTokens: 2000, outputTokens: 1000, costUsd: 2 * priceUsd('claude-opus-5-5', 1000, 500)! });
   });
 
   it('reports a cut-off answer as OUTPUT_TRUNCATED', async () => {
@@ -143,8 +148,8 @@ describe('Anthropic adapter', () => {
     await createAnthropicClient({ ...opts, extractionModel: 'claude-opus-5-5' }, sdk).extract(request, signal);
     await createAnthropicClient({ ...opts, extractionModel: 'claude-haiku-5-5' }, sdk).extract(request, signal);
     expect(bodies[0]).toMatchObject({ fallbacks: 'default', betas: ['server-side-fallback-2026-07-01'] });
-    expect(bodies[1]).not.toHaveProperty('fallbacks');
-    expect(bodies[1]).not.toHaveProperty('betas');
+    expect(bodies[2]).not.toHaveProperty('fallbacks');
+    expect(bodies[2]).not.toHaveProperty('betas');
   });
 
   it('sends effort only to models that take it, unless it is set explicitly', async () => {
@@ -153,8 +158,8 @@ describe('Anthropic adapter', () => {
     await createAnthropicClient({ ...opts, effort: null, extractionModel: 'claude-haiku-4-5' }, sdk).extract(request, signal);
     await createAnthropicClient({ ...opts, effort: 'high', extractionModel: 'claude-haiku-4-5' }, sdk).extract(request, signal);
     expect(bodies[0].output_config).toMatchObject({ effort: 'low' });
-    expect(bodies[1].output_config).not.toHaveProperty('effort');
-    expect(bodies[2].output_config).toMatchObject({ effort: 'high' });
+    expect(bodies[2].output_config).not.toHaveProperty('effort');
+    expect(bodies[4].output_config).toMatchObject({ effort: 'high' });
   });
 
   it('reports a refusal as UPSTREAM_ERROR', async () => {

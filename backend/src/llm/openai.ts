@@ -1,7 +1,7 @@
 import OpenAI from 'openai';
 import { zodTextFormat } from 'openai/helpers/zod';
 import type { ExtractRequest, OcrRequest, OcrResponse } from '../api';
-import { UnitExtractionSchema, type UnitExtraction, type Usage } from '../schema';
+import { fromWire, WireUnitSchema, type UnitExtraction, type Usage, type WireUnit } from '../schema';
 import { priceUsd } from './prices';
 import { buildUserText, OCR_PROMPT, SYSTEM_PROMPT } from './prompt';
 import { effortFor, LlmError, OcrSchema, type Effort, type LlmClient } from './provider';
@@ -72,11 +72,12 @@ export function createOpenAIClient(opts: Options, sdk = openaiSdk(opts.apiKey)):
   return {
     provider: 'openai',
     model: opts.extractionModel,
-    extract(req: ExtractRequest, signal: AbortSignal) {
+    async extract(req: ExtractRequest, signal: AbortSignal): Promise<{ data: UnitExtraction; usage: Usage }> {
       const content: InputContent[] = [];
       for (const img of req.images) content.push({ type: 'input_text', text: `Image of page ${img.page}:` }, image(img.jpegBase64));
       content.push({ type: 'input_text', text: buildUserText(req) });
-      return call<UnitExtraction>(opts.extractionModel, SYSTEM_PROMPT, content, zodTextFormat(UnitExtractionSchema, 'unit_extraction'), signal);
+      const { data, usage } = await call<WireUnit>(opts.extractionModel, SYSTEM_PROMPT, content, zodTextFormat(WireUnitSchema, 'unit_extraction'), signal);
+      return { data: fromWire(data), usage };
     },
     async ocr(req: OcrRequest, signal: AbortSignal): Promise<OcrResponse> {
       const content: InputContent[] = [];
