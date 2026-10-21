@@ -113,7 +113,7 @@ grep -rE "sk-ant-|sk-proj-" frontend/.next/static || echo "no key strings in the
 
 Then upload a plan in the browser and open a sample.
 
-Results on the live demo after the final deploy (2026-10-22, commit `08ddf28`):
+Results on the live demo after the final deploy (2026-10-22, commit `b735a1c`):
 
 - `/api/health` returns `{"ok":true,"provider":"anthropic","model":"claude-haiku-5-5",...}`
   and no key.
@@ -128,6 +128,9 @@ Results on the live demo after the final deploy (2026-10-22, commit `08ddf28`):
   logo (`/favicon.ico`, `/icon.svg`).
 - Tesseract's worker and engines are served from `/tesseract/` as JavaScript, and the English
   model as `application/gzip` with no `Content-Encoding`, so Tesseract unpacks it itself.
+- The free plan adds a "Powered by Netlify" badge (an iframe, `#nl-badge-frame`) to every
+  page. The served stylesheet hides it in print, so a printed or saved report leaves it out.
+  On screen it stays unless it is turned off in the Netlify project's settings.
 
 One small request to `/api/extract` with a real page of text returned verified items in 4 s
 on an earlier deploy (`974237c`), so the key, the model and the verifier work in the deployed
