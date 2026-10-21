@@ -108,8 +108,10 @@ const implementation: CategoryDef<ActivityItem> = {
     '(Months 3-36)", "Submit a final report to MDEQ", and every row of a milestones or schedule table (use the ' +
     'milestone text as the name, the outcome in text, and its date as timeframe). Copy responsible organizations ' +
     'exactly. timeframe = the schedule words exactly as written. status only when the document states it (e.g. ' +
-    '"Completed using historical data" means completed). milestone=true for milestone table or list rows. Not ' +
-    'activities: the BMPs themselves, and education events (those go to outreach).',
+    '"Completed using historical data" means completed). milestone=true for milestone table or list rows. Items ' +
+    'listed under words that call them actions, tasks or management actions ("The following actions will need to ' +
+    'be taken:") are activities even when worded like outcomes ("Reduce sediment loads to streams"), and so are ' +
+    'their sub-items. Not activities: the BMPs themselves, and education events (those go to outreach).',
   columns: [
     { key: 'name', label: 'Activity', align: 'left', get: (i) => i.name },
     { key: 'responsible', label: 'Responsible', align: 'left', get: (i) => i.responsible.join(', ') || null },

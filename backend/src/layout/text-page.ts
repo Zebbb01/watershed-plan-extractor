@@ -2,9 +2,15 @@ import type { Line, PageModel } from './page-model';
 
 /*
  * A page model built from transcribed text (OCR of a scanned page). There are no positions,
- * so structure comes from how the transcript is written: "• " bullets, "1." items,
- * "| a | b |" table rows, and short capitalised lines as headings.
+ * so structure comes from how the transcript is written: "• " bullets ("○", "◦", "-" and
+ * similar for sub-items), "1." items, "| a | b |" table rows, numbered or capitalised short
+ * lines as headings. Line order stands in for height, so the first and last lines of each
+ * page can be recognised as running headers and page numbers like on a text page.
  */
+
+const TOP_BULLET = /^[•●*]\s+/;
+const SUB_BULLET = /^[○◦▪■□‣⁃–-]\s+/;
+const SECTION_TITLE = /^\d{1,2}(\.\d{1,2}){1,3}\.?\s+[A-Z][^.;:]{1,70}$/;
 
 export function pageFromText(n: number, text: string): PageModel {
   const lines: Line[] = [];
@@ -12,10 +18,12 @@ export function pageFromText(n: number, text: string): PageModel {
     const t = raw.trim();
     if (!t) continue;
     const base = { x: 0, y: lines.length, size: 11, bold: false, level: 0 };
-    if (/^[•●◦▪\-*]\s+/.test(t)) lines.push({ ...base, text: t.replace(/^[•●◦▪\-*]\s+/, ''), kind: 'bullet', level: 1 });
+    if (TOP_BULLET.test(t)) lines.push({ ...base, text: t.replace(TOP_BULLET, ''), kind: 'bullet', level: 1 });
+    else if (SUB_BULLET.test(t)) lines.push({ ...base, text: t.replace(SUB_BULLET, ''), kind: 'bullet', level: 2 });
     else if (/\|/.test(t) && t.split('|').filter((c) => c.trim()).length >= 2) {
       lines.push({ ...base, text: t.replace(/^\|\s*|\s*\|$/g, '').split(/\s*\|\s*/).join(' | '), kind: 'table' });
-    } else if (/^(\(?\d{1,2}[.)]|\(?[a-z][.)])\s+\S/i.test(t)) lines.push({ ...base, text: t, kind: 'numbered', level: 1 });
+    } else if (SECTION_TITLE.test(t)) lines.push({ ...base, text: t, kind: 'heading' });
+    else if (/^(\(?\d{1,2}[.)]|\(?[a-z][.)])\s+\S/i.test(t)) lines.push({ ...base, text: t, kind: 'numbered', level: 1 });
     else if (t.length <= 80 && /^[A-Z][A-Z0-9 &,/()'-]{3,}$/.test(t)) lines.push({ ...base, text: t, kind: 'heading' });
     else lines.push({ ...base, text: t, kind: 'para' });
   }
@@ -26,5 +34,7 @@ export function pageFromText(n: number, text: string): PageModel {
     lines,
     flags: { scanned: false, tableLike: tableRows >= 3, multiColumn: false, adminOnly: lines.length === 0 },
     charCount: lines.reduce((s, l) => s + l.text.length, 0),
+    // One unit of height per line, so annotateDocument's top and bottom bands are the first and last lines.
+    height: Math.max(lines.length - 1, 1),
   };
 }

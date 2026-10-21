@@ -3,6 +3,31 @@ import type { RawPage, TextItemLite } from '../schema';
 import { buildPageModel } from './page-model';
 import { annotateDocument, outline } from './document';
 import { renderMarkup, stripMarkup } from './markup';
+import { pageFromText } from './text-page';
+
+describe('pageFromText (transcribed scanned pages)', () => {
+  const transcript = (n: number) =>
+    `April 6, 2004\n3.2 Goals\nThe following actions will need to be taken:\n• Reduce sediment loads to streams,\n○ Reduce livestock access to streams\n○ Agricultural BMPs\n3-${n}`;
+
+  it('reads white-circle bullets as sub-items of the bullet above', () => {
+    const p = pageFromText(21, transcript(2));
+    const sub = p.lines.find((l) => l.text === 'Agricultural BMPs')!;
+    expect(sub).toMatchObject({ kind: 'bullet', level: 2 });
+    expect(p.lines.find((l) => l.text.startsWith('Reduce sediment'))).toMatchObject({ kind: 'bullet', level: 1 });
+  });
+
+  it('treats a numbered section title as a heading', () => {
+    expect(pageFromText(21, transcript(2)).lines.find((l) => l.text === '3.2 Goals')!.kind).toBe('heading');
+  });
+
+  it('lets the running date and page number of transcribed pages be found as admin text', () => {
+    const pages = annotateDocument([20, 21, 22, 23].map((n) => pageFromText(n, transcript(n))));
+    for (const p of pages) {
+      expect(p.lines.find((l) => l.text === 'April 6, 2004')!.kind).toBe('admin');
+      expect(p.lines.find((l) => /^3-\d+$/.test(l.text))!.kind).toBe('admin');
+    }
+  });
+});
 
 const W = 612;
 const H = 792;
