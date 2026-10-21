@@ -42,9 +42,24 @@ export interface PipelineOptions {
   model?: string;
 }
 
-const OCR_BATCH = Math.min(8, LIMITS.ocrImages);
+// Two pages per OCR call: a page's transcript is long, and every call must finish inside the
+// host's time limit. A batch that still times out is read one page at a time.
+const OCR_BATCH = Math.min(2, LIMITS.ocrImages);
 const MAX_RATE_RETRIES = 5;
 const STRUCTURE_LIMIT = 3_000;
+
+interface Tries {
+  rate: number;
+  other: number;
+}
+
+/** After a failed call: wait out a rate limit, split work that was too big, retry once, or give up. */
+function nextStep(code: ErrorCode | 'ABORTED', tries: Tries, canSplit: boolean): 'wait' | 'split' | 'retry' | 'fail' {
+  if (code === 'RATE_LIMITED' && tries.rate < MAX_RATE_RETRIES) return 'wait';
+  if (code === 'TIMEOUT' || code === 'OUTPUT_TRUNCATED' || code === 'INPUT_TOO_LARGE') return canSplit ? 'split' : 'fail';
+  if (code !== 'RATE_LIMITED' && tries.other < 1) return 'retry';
+  return 'fail';
+}
 
 const codeOf = (e: unknown): ErrorCode | 'ABORTED' => {
   if (e && typeof e === 'object') {
@@ -72,12 +87,12 @@ function pool<T>(queue: T[], limit: () => number, worker: (t: T) => Promise<void
       while (active < limit() && queue.length) {
         const task = queue.shift()!;
         active++;
+        // Workers handle their own failures; anything that still escapes stops the run loudly
+        // rather than losing a section without a trace.
         worker(task)
           .catch((e) => {
-            if (codeOf(e) === 'ABORTED' || signal.aborted) {
-              failed = true;
-              reject(abortError());
-            }
+            failed = true;
+            reject(codeOf(e) === 'ABORTED' || signal.aborted ? abortError() : e);
           })
           .finally(() => {
             active--;
@@ -112,33 +127,53 @@ export async function runPipeline(
   let pages: PageModel[] = annotateDocument(raw.map(buildPageModel));
   progress({ stage: 'read', done: pages.length, total: pages.length });
 
+  const failedUnits: FailedUnit[] = [];
+  const wait = async (e: unknown) => {
+    limit = Math.max(1, Math.floor(limit / 2));
+    await sleep(((e as { retryAfter?: number }).retryAfter ?? 10) * 1000);
+  };
+
   // 2. OCR for scanned pages
   const scanned = pages.filter((p) => p.flags.scanned).map((p) => p.n);
   const ocrPages: number[] = [];
   if (scanned.length) {
-    const batches: number[][] = [];
-    for (let i = 0; i < scanned.length; i += OCR_BATCH) batches.push(scanned.slice(i, i + OCR_BATCH));
+    const jobs: { pages: number[]; tries: Tries }[] = [];
+    for (let i = 0; i < scanned.length; i += OCR_BATCH) jobs.push({ pages: scanned.slice(i, i + OCR_BATCH), tries: { rate: 0, other: 0 } });
     const replaced = new Map<number, PageModel>();
     let done = 0;
-    progress({ stage: 'ocr', done, total: batches.length });
-    await pool([...batches], () => limit, async (batch) => {
-      const images = await Promise.all(batch.map(async (n) => ({ n, jpegBase64: await deps.renderPage(n) })));
-      for (let attempt = 0; attempt < 2; attempt++) {
-        try {
-          const res = await deps.ocr({ docId: input.doc.id, pages: images }, signal);
-          addUsage(res.usage);
-          for (const p of res.pages) if (batch.includes(p.n) && p.text.trim()) replaced.set(p.n, pageFromText(p.n, p.text));
-          break;
-        } catch (e) {
-          const code = codeOf(e);
-          if (code === 'ABORTED') throw e;
-          if (code === 'RATE_LIMITED') {
-            limit = Math.max(1, Math.floor(limit / 2));
-            await sleep(((e as { retryAfter?: number }).retryAfter ?? 10) * 1000);
-          }
+    let total = jobs.length;
+    progress({ stage: 'ocr', done, total });
+    await pool(jobs, () => limit, async (job) => {
+      try {
+        const images = await Promise.all(job.pages.map(async (n) => ({ n, jpegBase64: await deps.renderPage(n) })));
+        const res = await deps.ocr({ docId: input.doc.id, pages: images }, signal);
+        addUsage(res.usage);
+        for (const p of res.pages) if (job.pages.includes(p.n) && p.text.trim()) replaced.set(p.n, pageFromText(p.n, p.text));
+      } catch (e) {
+        const code = codeOf(e);
+        if (code === 'ABORTED') throw e;
+        const step = nextStep(code, job.tries, job.pages.length > 1);
+        if (step === 'wait') {
+          job.tries.rate++;
+          await wait(e);
+          jobs.push(job);
+          return;
         }
+        if (step === 'split') {
+          jobs.push(...job.pages.map((n) => ({ pages: [n], tries: { rate: 0, other: 0 } })));
+          total += job.pages.length - 1;
+          progress({ stage: 'ocr', done, total });
+          return;
+        }
+        if (step === 'retry') {
+          job.tries.other++;
+          jobs.push(job);
+          return;
+        }
+        // These pages stay unread: reported as a failed section, not only as skipped pages.
+        failedUnits.push({ index: -1, pages: job.pages, error: code });
       }
-      progress({ stage: 'ocr', done: ++done, total: batches.length });
+      progress({ stage: 'ocr', done: ++done, total });
     }, signal);
     pages = pages.map((p) => replaced.get(p.n) ?? p);
     ocrPages.push(...[...replaced.keys()].sort((a, b) => a - b));
@@ -151,61 +186,62 @@ export async function runPipeline(
   let total = units.length;
   let done = 0;
   const results: ExtractResponse[] = [];
-  const failedUnits: FailedUnit[] = [];
-  const attempts = new Map<Unit, { rate: number; other: number }>();
+  const attempts = new Map<Unit, Tries>();
   const queue = [...units];
   const fail = (u: Unit, error: string) => failedUnits.push({ index: u.index, pages: u.pages.map((p) => p.n), error });
   const partial = (): ExtractedReport => {
     const { report } = mergeUnits(results);
     return { summary: computeSummary(report).summary, ...report };
   };
+  // A partial report is a full merge, so long documents send one about every 5% of units.
+  const wantPartial = () => done === total || done % Math.max(1, Math.ceil(total / 20)) === 0;
 
   progress({ stage: 'extract', done, total });
   await pool(queue, () => limit, async (unit) => {
     const tries = attempts.get(unit) ?? { rate: 0, other: 0 };
     attempts.set(unit, tries);
-    const images = await Promise.all(
-      unit.imagePages.slice(0, LIMITS.unitImages).map(async (page) => ({ page, jpegBase64: await deps.renderPage(page) })),
-    );
-    const req: ExtractRequest = {
-      docId: input.doc.id,
-      unit: {
-        index: unit.index,
-        pages: unit.pages,
-        context: {
-          title: input.doc.title,
-          outline: docOutline.slice(0, 8_000),
-          totalPages: raw.length,
-          hints: regexHints(unit.pages.map((p) => p.markup).join('\n')).map((h) => h.slice(0, 200)),
-        },
-      },
-      images,
-    };
     try {
+      const images = await Promise.all(
+        unit.imagePages.slice(0, LIMITS.unitImages).map(async (page) => ({ page, jpegBase64: await deps.renderPage(page) })),
+      );
+      const req: ExtractRequest = {
+        docId: input.doc.id,
+        unit: {
+          index: unit.index,
+          pages: unit.pages,
+          context: {
+            title: input.doc.title?.slice(0, 200) ?? null,
+            outline: docOutline.slice(0, 8_000),
+            totalPages: raw.length,
+            hints: regexHints(unit.pages.map((p) => p.markup).join('\n')).map((h) => h.slice(0, 200)),
+          },
+        },
+        images,
+      };
       const res = await deps.extract(req, signal);
       results.push(res);
       addUsage(res.usage);
-      progress({ stage: 'extract', done: ++done, total, partial: partial() });
+      done++;
+      progress({ stage: 'extract', done, total, ...(wantPartial() ? { partial: partial() } : {}) });
     } catch (e) {
       const code = codeOf(e);
       if (code === 'ABORTED') throw e;
-      if (code === 'RATE_LIMITED' && tries.rate < MAX_RATE_RETRIES) {
+      const halves = code === 'TIMEOUT' || code === 'OUTPUT_TRUNCATED' || code === 'INPUT_TOO_LARGE' ? splitUnit(unit) : null;
+      const step = nextStep(code, tries, halves !== null);
+      if (step === 'wait') {
         tries.rate++;
-        limit = Math.max(1, Math.floor(limit / 2));
-        await sleep(((e as { retryAfter?: number }).retryAfter ?? 10) * 1000);
+        await wait(e);
         queue.push(unit);
         return;
       }
-      if (code === 'TIMEOUT' || code === 'OUTPUT_TRUNCATED') {
-        const halves = splitUnit(unit);
-        if (halves) {
-          for (const h of halves) h.index = nextIndex++;
-          queue.push(...halves);
-          total += 1; // one unit became two
-          progress({ stage: 'extract', done, total });
-          return;
-        }
-      } else if (tries.other < 1) {
+      if (step === 'split') {
+        for (const h of halves!) h.index = nextIndex++;
+        queue.push(...halves!);
+        total += 1; // one unit became two
+        progress({ stage: 'extract', done, total });
+        return;
+      }
+      if (step === 'retry') {
         tries.other++;
         queue.push(unit);
         return;

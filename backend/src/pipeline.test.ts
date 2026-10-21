@@ -25,6 +25,19 @@ const deps = (overrides: Partial<PipelineDeps> = {}): PipelineDeps => ({
   ...overrides,
 });
 const pagesOf = (count: number) => Array.from({ length: count }, (_, i) => textPage(i + 1));
+const tablePage = (n: number): RawPage => ({
+  ...textPage(n),
+  items: ['Cover Crops', 'Diversion', 'Fencing', 'Terraces'].flatMap((name, i) => [
+    { str: name, x: 72, y: 300 + i * 14, w: 80, h: 11, font: 'f', bold: false },
+    { str: 'ac', x: 250, y: 300 + i * 14, w: 12, h: 11, font: 'f', bold: false },
+    { str: String(500 + i), x: 320, y: 300 + i * 14, w: 20, h: 11, font: 'f', bold: false },
+    { str: '$55.86', x: 400, y: 300 + i * 14, w: 30, h: 11, font: 'f', bold: false },
+  ]),
+});
+const ocrText = (req: OcrRequest) => ({
+  pages: req.pages.map((p) => ({ n: p.n, text: `The goal is to reduce sediment loading on page ${p.n}.` })),
+  usage: { inputTokens: 1, outputTokens: 1, costUsd: null },
+});
 
 describe('runPipeline', () => {
   it('never runs more than 4 extract calls at once and covers every page', async () => {
@@ -96,24 +109,69 @@ describe('runPipeline', () => {
     expect(result.quality.failedUnits).toHaveLength(1);
   });
 
-  it('sends scanned pages to OCR in batches of at most 8, then extracts their text as OCR', async () => {
+  it('sends scanned pages to OCR two at a time, then extracts their text as OCR', async () => {
     const batches: number[][] = [];
     const sources = new Set<string>();
     const raw = Array.from({ length: 10 }, (_, i) => scannedPage(i + 1));
     const result = await runPipeline({ doc, rawPages: raw }, deps({
       ocr: async (req) => {
         batches.push(req.pages.map((p) => p.n));
-        return { pages: req.pages.map((p) => ({ n: p.n, text: `The goal is to reduce sediment loading on page ${p.n}.` })), usage: { inputTokens: 1, outputTokens: 1, costUsd: null } };
+        return ocrText(req);
       },
       extract: async (req) => {
         req.unit.pages.forEach((p) => sources.add(p.source));
         return ok(req);
       },
     }));
-    expect(batches.every((b) => b.length <= 8)).toBe(true);
+    expect(batches.every((b) => b.length <= 2)).toBe(true);
     expect(batches.flat().sort((a, b) => a - b)).toEqual(raw.map((p) => p.n));
     expect([...sources]).toEqual(['ocr']);
     expect(result.quality.ocrPages).toEqual(raw.map((p) => p.n));
+  });
+
+  it('splits an OCR batch that times out and reads each page on its own', async () => {
+    const calls: number[][] = [];
+    const result = await runPipeline({ doc, rawPages: [scannedPage(1), scannedPage(2)] }, deps({
+      ocr: async (req) => {
+        calls.push(req.pages.map((p) => p.n));
+        if (req.pages.length > 1) throw { code: 'TIMEOUT' };
+        return ocrText(req);
+      },
+    }));
+    expect(calls).toEqual([[1, 2], [1], [2]]);
+    expect(result.quality.ocrPages).toEqual([1, 2]);
+  });
+
+  it('reports scanned pages that still cannot be read as a failed section', async () => {
+    const result = await runPipeline({ doc, rawPages: [textPage(1), scannedPage(2)] }, deps({
+      ocr: async () => {
+        throw { code: 'TIMEOUT' };
+      },
+    }));
+    expect(result.quality.failedUnits).toEqual([expect.objectContaining({ pages: [2], error: 'TIMEOUT' })]);
+  });
+
+  it('waits and retries OCR on a rate limit', async () => {
+    const waits: number[] = [];
+    let calls = 0;
+    const result = await runPipeline({ doc, rawPages: [scannedPage(1)] }, deps({
+      sleep: async (ms) => void waits.push(ms),
+      ocr: async (req) => {
+        if (calls++ < 2) throw { code: 'RATE_LIMITED', retryAfter: 3 };
+        return ocrText(req);
+      },
+    }));
+    expect(waits).toEqual([3000, 3000]);
+    expect(result.quality.ocrPages).toEqual([1]);
+  });
+
+  it('reports a unit whose page image cannot be drawn as failed, never dropping it silently', async () => {
+    const result = await runPipeline({ doc, rawPages: [tablePage(3)] }, deps({
+      renderPage: async () => {
+        throw new Error('canvas out of memory');
+      },
+    }));
+    expect(result.quality.failedUnits).toEqual([expect.objectContaining({ pages: [3] })]);
   });
 
   it('stops starting calls once aborted and rejects with AbortError', async () => {
@@ -146,17 +204,8 @@ describe('runPipeline', () => {
   });
 
   it('attaches page images for table pages', async () => {
-    const table: RawPage = {
-      ...textPage(3),
-      items: ['Cover Crops', 'Diversion', 'Fencing', 'Terraces'].flatMap((name, i) => [
-        { str: name, x: 72, y: 300 + i * 14, w: 80, h: 11, font: 'f', bold: false },
-        { str: 'ac', x: 250, y: 300 + i * 14, w: 12, h: 11, font: 'f', bold: false },
-        { str: String(500 + i), x: 320, y: 300 + i * 14, w: 20, h: 11, font: 'f', bold: false },
-        { str: '$55.86', x: 400, y: 300 + i * 14, w: 30, h: 11, font: 'f', bold: false },
-      ]),
-    };
     const images: number[] = [];
-    await runPipeline({ doc, rawPages: [textPage(1), textPage(2), table] }, deps({
+    await runPipeline({ doc, rawPages: [textPage(1), textPage(2), tablePage(3)] }, deps({
       extract: async (req) => {
         images.push(...req.images.map((i) => i.page));
         return ok(req);
