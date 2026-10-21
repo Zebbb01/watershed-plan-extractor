@@ -109,7 +109,7 @@ grep -rE "sk-ant-|sk-proj-" frontend/.next/static || echo "no key strings in the
 
 Then upload a plan in the browser and open a sample.
 
-Results on the live demo after the final deploy (2026-10-21, commit `be3df83`):
+Results on the live demo after the final deploy (2026-10-21, commit `d103a7f`):
 
 - `/api/health` returns `{"ok":true,"provider":"anthropic","model":"claude-haiku-5-5",...}`
   and no key.
