@@ -20,6 +20,7 @@ import { CATEGORY_UI } from '@/lib/categories-ui';
 import { cn } from '@/lib/cn';
 import { download, fileStem, toCsv, toJson } from '@/lib/export';
 import { Processing } from '@/components/home/processing';
+import { UploadButton } from '@/components/upload-button';
 import { activeRun } from '@/lib/active-run';
 import { openPdf } from '@/lib/pdf/browser-reader';
 import { readErrorMessage } from '@/lib/pdf/validate';
@@ -154,9 +155,7 @@ export function ReportView({ id }: { id: string }) {
         <p className="mt-4 text-[18px] font-semibold text-slate-900">This report is not in this browser</p>
         <p className="mt-1 text-[14px] text-slate-600">Results are saved only in the browser that ran the extraction.</p>
         <div className="mt-5 flex justify-center gap-2">
-          <Link href="/#upload" className={buttonClass('primary', 'md')}>
-            Extract a PDF
-          </Link>
+          <UploadButton>Extract a PDF</UploadButton>
           <Link href="/#samples" className={buttonClass('secondary', 'md')}>
             Open a sample
           </Link>
@@ -234,9 +233,7 @@ export function ReportView({ id }: { id: string }) {
                 </button>
               )}
               <ExportMenu result={state.result} csvTab={csvTab} />
-              <Link href="/#upload" className={buttonClass('primary', 'md')}>
-                New file
-              </Link>
+              <UploadButton>New file</UploadButton>
             </div>
           </div>
 

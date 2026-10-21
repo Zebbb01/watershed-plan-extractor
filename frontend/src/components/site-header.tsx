@@ -8,15 +8,16 @@ import { useState } from 'react';
 import { buttonClass } from '@/components/ui/button';
 import { cn } from '@/lib/cn';
 import { RunIndicator } from './run-indicator';
+import { UploadButton } from './upload-button';
 
 const LINKS = [
-  { href: '/', label: 'Extract' },
+  { href: '/', label: 'Home' },
   { href: '/#samples', label: 'Samples' },
   { href: '/accuracy', label: 'Accuracy' },
   { href: '/how-it-works', label: 'How it works' },
 ];
 
-/** The same way around from every page: the sections, any running extraction, and Upload. */
+/** The same way around from every page: the sections, any running extraction, and Upload, which opens the file picker. */
 export function SiteHeader() {
   const path = usePathname();
   const [open, setOpen] = useState(false);
@@ -53,10 +54,10 @@ export function SiteHeader() {
 
         <div className="ml-auto flex items-center gap-2">
           <RunIndicator />
-          <Link href="/#upload" className={buttonClass('primary', 'md', 'hidden sm:inline-flex')}>
+          <UploadButton>
             <Upload className="size-3.5" aria-hidden />
-            Upload PDF
-          </Link>
+            <span className="sr-only sm:not-sr-only">Upload PDF</span>
+          </UploadButton>
           <Popover.Root open={open} onOpenChange={setOpen}>
             <Popover.Trigger aria-label="Menu" className={buttonClass('ghost', 'md', 'size-9 px-0 md:hidden')}>
               <Menu className="size-5" aria-hidden />
@@ -64,7 +65,7 @@ export function SiteHeader() {
             <Popover.Portal>
               <Popover.Content align="end" sideOffset={8} className="z-50 w-56 rounded-card border border-slate-200 bg-white p-1.5 shadow-overlay">
                 <nav aria-label="Main" className="flex flex-col">
-                  {[{ href: '/#upload', label: 'Upload PDF' }, ...LINKS].map((l) => (
+                  {LINKS.map((l) => (
                     <Link
                       key={l.href}
                       href={l.href}

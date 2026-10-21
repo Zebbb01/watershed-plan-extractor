@@ -1,6 +1,7 @@
 import { FileQuestion } from 'lucide-react';
 import Link from 'next/link';
 import { buttonClass } from '@/components/ui/button';
+import { UploadButton } from '@/components/upload-button';
 
 export default function NotFound() {
   return (
@@ -11,9 +12,7 @@ export default function NotFound() {
       <h1 className="mt-4 text-[20px] font-semibold text-slate-900">This page does not exist</h1>
       <p className="mt-1 text-[14px] text-slate-600">The link may be old or mistyped.</p>
       <div className="mt-5 flex justify-center gap-2">
-        <Link href="/#upload" className={buttonClass('primary', 'lg')}>
-          Extract a PDF
-        </Link>
+        <UploadButton className={buttonClass('primary', 'lg')}>Extract a PDF</UploadButton>
         <Link href="/#samples" className={buttonClass('secondary', 'lg')}>
           Open a sample
         </Link>

@@ -11,9 +11,10 @@ import { cardClass } from '@/components/ui/card';
 import { Dropzone } from '@/components/ui/dropzone';
 import { Shapes } from '@/components/ui/shapes';
 import { activeRun } from '@/lib/active-run';
+import { pendingFile } from '@/lib/pending-file';
 import { CATEGORY_UI } from '@/lib/categories-ui';
 import { readErrorMessage, validatePdfFile } from '@/lib/pdf/validate';
-import { estimateMinutes, fetchHealth, NO_HEALTH, prepareFile, type Health, type Prepared } from '@/lib/run-extraction';
+import { estimateMinutes, fetchHealth, prepareFile, type Health, type Prepared } from '@/lib/run-extraction';
 import { session } from '@/lib/session';
 import { listRecent, savePdf, type RecentEntry } from '@/lib/store';
 import { Processing } from './processing';
@@ -61,6 +62,20 @@ export function Home({ samples }: { samples: SampleCard[] }) {
 
   const live = Boolean(health?.provider);
 
+  // A PDF picked with an Upload button elsewhere (header, report) runs here, with the latest onFile.
+  const onFileRef = useRef(onFile);
+  useEffect(() => {
+    onFileRef.current = onFile;
+  });
+  useEffect(() => {
+    const runPicked = () => {
+      const file = pendingFile.take();
+      if (file) void onFileRef.current(file);
+    };
+    runPicked();
+    return pendingFile.subscribe(runPicked);
+  }, []);
+
   async function onFile(file: File) {
     setError(null);
     setNotice(null);
@@ -89,7 +104,8 @@ export function Home({ samples }: { samples: SampleCard[] }) {
   async function start(prepared: Prepared & { doc: NonNullable<Prepared['doc']> }) {
     setPhase({ kind: 'idle' });
     try {
-      await activeRun.start(prepared, health ?? NO_HEALTH);
+      // A file picked from the header can arrive before this page has asked the server.
+      await activeRun.start(prepared, health ?? (await fetchHealth()));
       // Open the report only if the user is still here; from elsewhere the header says it is ready.
       if (mounted.current) {
         activeRun.dismiss();

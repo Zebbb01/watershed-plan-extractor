@@ -38,8 +38,9 @@ per-plan results are in [TESTING.md](TESTING.md).
 
 ## Using it
 
-- **Drop a PDF** (text or scanned, up to 300 MB) or open a sample plan. Plans over 100
-  pages show the page count and an estimated time first.
+- **Drop a PDF** (text or scanned, up to 300 MB) or open a sample plan. **Upload PDF** in
+  the header opens the file picker from any page. Plans over 100 pages show the page count
+  and an estimated time first.
 - **Progress** is shown as one bar plus per-stage steps, with time elapsed and left. Items
   are counted as sections finish. Stopping asks first. The run keeps going if you open
   another page; the header shows where it stands.
