@@ -62,7 +62,8 @@ per-plan results are in [TESTING.md](TESTING.md).
 - **Export:** JSON (the `ExtractedReport` interface plus document and quality data), CSV of
   the current tab, or a printable report.
 - **Recent extractions** stay in this browser (IndexedDB), so reopening a file costs
-  nothing.
+  nothing. The last three PDFs (up to 150 MB each) are kept there too, so a report opened
+  later can still show its pages and run again without asking for the file.
 
 ## Framework
 

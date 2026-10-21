@@ -15,7 +15,7 @@ import { CATEGORY_UI } from '@/lib/categories-ui';
 import { readErrorMessage, validatePdfFile } from '@/lib/pdf/validate';
 import { estimateMinutes, fetchHealth, NO_HEALTH, prepareFile, type Health, type Prepared } from '@/lib/run-extraction';
 import { session } from '@/lib/session';
-import { listRecent, type RecentEntry } from '@/lib/store';
+import { listRecent, savePdf, type RecentEntry } from '@/lib/store';
 import { Processing } from './processing';
 
 export interface SampleCard {
@@ -71,6 +71,7 @@ export function Home({ samples }: { samples: SampleCard[] }) {
     setPhase({ kind: 'opening', fileName: file.name });
     try {
       const prepared = await prepareFile(file);
+      void savePdf(prepared.id, file); // kept in this browser, so the report can re-run or show it later
       if (prepared.cached) {
         session.put(prepared.cached, prepared.doc);
         return router.push(`/report/${prepared.id}`);

@@ -25,7 +25,7 @@ import { openPdf } from '@/lib/pdf/browser-reader';
 import { readErrorMessage } from '@/lib/pdf/validate';
 import { fetchHealth, openSameFile } from '@/lib/run-extraction';
 import { session } from '@/lib/session';
-import { loadResult } from '@/lib/store';
+import { loadPdf, loadResult, savePdf } from '@/lib/store';
 import { CategoryTab, matchesSearch } from './category-tab';
 import { ActivityStatus, BmpAmounts, BmpCosts, CategoryCounts, Timeline } from './charts';
 import { EvidenceSheet } from './evidence-sheet';
@@ -87,9 +87,10 @@ export function ReportView({ id }: { id: string }) {
   const getDoc = useCallback(async (): Promise<PDFDocumentProxy | null> => {
     const cached = session.doc(id);
     if (cached) return cached;
-    if (!sample?.pdf) return null;
-    const data = new Uint8Array(await (await fetch(sample.pdf)).arrayBuffer());
-    const doc = await openPdf(data);
+    // A sample ships its PDF; an uploaded file may still be kept in this browser.
+    const source = sample?.pdf ? await (await fetch(sample.pdf)).blob() : sample ? null : await loadPdf(id);
+    if (!source) return null;
+    const doc = await openPdf(new Uint8Array(await source.arrayBuffer()));
     session.setDoc(id, doc);
     return doc;
   }, [id, sample]);
@@ -117,6 +118,7 @@ export function ReportView({ id }: { id: string }) {
     if (!file) return;
     try {
       const doc = await openSameFile(file, id);
+      void savePdf(id, file);
       session.setDoc(id, doc);
       await runAgain(doc);
     } catch (e) {

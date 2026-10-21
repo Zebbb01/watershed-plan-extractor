@@ -12,6 +12,7 @@ import { CATEGORY_UI } from '@/lib/categories-ui';
 import { cn } from '@/lib/cn';
 import { openSameFile } from '@/lib/run-extraction';
 import { session } from '@/lib/session';
+import { savePdf } from '@/lib/store';
 import { PdfPage } from './pdf-page';
 
 /*
@@ -149,6 +150,7 @@ function AttachPdf({ docId, onOpen }: { docId: string; onOpen: (doc: PDFDocument
       setState({ busy: true, error: null });
       try {
         const doc = await openSameFile(file, docId);
+        void savePdf(docId, file);
         session.setDoc(docId, doc);
         onOpen(doc);
       } catch (e) {
@@ -175,7 +177,7 @@ function AttachPdf({ docId, onOpen }: { docId: string; onOpen: (doc: PDFDocument
       )}
       <div>
         <p className="text-[14px] font-semibold text-slate-900">Add the original PDF to compare</p>
-        <p className="mt-1 text-[12px] text-slate-500">The file is not open in this tab any more. It stays in your browser.</p>
+        <p className="mt-1 text-[12px] text-slate-500">This browser keeps only the last three files (up to 150 MB each). Choose it again to compare.</p>
       </div>
       <button type="button" onClick={open} className={buttonClass('secondary', 'md')}>
         Choose the PDF

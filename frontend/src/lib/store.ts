@@ -41,3 +41,24 @@ export async function saveResult(r: ExtractionResult): Promise<void> {
 }
 
 export const listRecent = () => safe(async () => (await get<RecentEntry[]>(RECENT)) ?? [], [] as RecentEntry[]);
+
+/*
+ * The PDFs of the last few files, also only in this browser, so a report reopened later can
+ * show its pages and run again without asking for the file. Large files are not kept.
+ */
+const PDFS = 'pdfs';
+const MAX_PDFS = 3;
+const MAX_KEPT_BYTES = 150 * 1024 * 1024;
+const pdfKey = (id: string) => `pdf:${id}`;
+
+export async function savePdf(id: string, file: Blob): Promise<void> {
+  if (file.size > MAX_KEPT_BYTES) return;
+  await safe(async () => {
+    await set(pdfKey(id), file);
+    const ids = [id, ...((await get<string[]>(PDFS)) ?? []).filter((x) => x !== id)];
+    for (const old of ids.slice(MAX_PDFS)) await del(pdfKey(old));
+    await set(PDFS, ids.slice(0, MAX_PDFS));
+  }, undefined);
+}
+
+export const loadPdf = (id: string) => safe(() => get<Blob>(pdfKey(id)).then((b) => b ?? null), null);
