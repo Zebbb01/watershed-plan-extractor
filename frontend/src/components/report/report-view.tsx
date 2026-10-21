@@ -14,6 +14,7 @@ import samples from '@/data/samples.json';
 import { useMediaQuery } from '@/hooks/use-media-query';
 import { InfoHint } from '@/components/ui/info-hint';
 import { PopoverSelect } from '@/components/ui/popover-select';
+import { SearchField } from '@/components/ui/search-field';
 import { StatTile } from '@/components/ui/stat-tile';
 import { CATEGORY_UI } from '@/lib/categories-ui';
 import { cn } from '@/lib/cn';
@@ -165,22 +166,7 @@ export function ReportView({ id }: { id: string }) {
               </div>
             </div>
             <div className="flex w-full flex-wrap items-center gap-2 sm:w-auto">
-              <label className="relative w-full sm:w-56">
-                <span className="sr-only">Search items</span>
-                <Search className="pointer-events-none absolute left-2.5 top-1/2 size-3.5 -translate-y-1/2 text-slate-400" aria-hidden />
-                <input
-                  type="search"
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
-                  placeholder="Search items and quotes"
-                  className="h-8 w-full rounded-control border border-slate-300 bg-white pl-8 pr-7 text-[16px] text-slate-900 placeholder:text-slate-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 sm:text-[13px] [&::-webkit-search-cancel-button]:hidden"
-                />
-                {search && (
-                  <button type="button" aria-label="Clear search" onClick={() => setSearch('')} className="absolute right-1.5 top-1/2 grid size-5 -translate-y-1/2 place-items-center rounded text-slate-400 hover:text-slate-700">
-                    <X className="size-3.5" aria-hidden />
-                  </button>
-                )}
-              </label>
+              <SearchField value={search} onChange={setSearch} placeholder="Search items and quotes" label="Search items" className="w-full sm:w-56" />
               {areaOptions.length >= 2 && (
                 <PopoverSelect
                   label="Area"

@@ -5,6 +5,7 @@ import { ChevronDown, ChevronRight, CircleX, FileX, GitCompareArrows, ScanText, 
 import { useMemo, useState } from 'react';
 import { buttonClass } from '@/components/ui/button';
 import { cardClass } from '@/components/ui/card';
+import { SearchField } from '@/components/ui/search-field';
 import { StatTile } from '@/components/ui/stat-tile';
 import { CATEGORY_UI } from '@/lib/categories-ui';
 import { cn } from '@/lib/cn';
@@ -33,13 +34,14 @@ const KIND_TAG: Record<StructureLine['kind'], string> = {
   admin: 'Skipped',
 };
 
-function Section({ title, count, children }: { title: string; count?: number; children: React.ReactNode }) {
+function Section({ title, count, actions, children }: { title: string; count?: number; actions?: React.ReactNode; children: React.ReactNode }) {
   return (
     <section className={cardClass}>
-      <h2 className="flex items-center justify-between border-b border-slate-100 px-4 py-3 text-[14px] font-semibold text-slate-900">
-        {title}
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-2 border-b border-slate-100 px-4 py-3">
+        <h2 className="mr-auto text-[14px] font-semibold text-slate-900">{title}</h2>
+        {actions}
         {count !== undefined && <span className="tabular text-[12px] font-medium text-slate-500">{count}</span>}
-      </h2>
+      </div>
       <div className="px-4 py-3">{children}</div>
     </section>
   );
@@ -55,6 +57,11 @@ export function QualityTab({ result }: { result: ExtractionResult }) {
   }, [q.structure]);
   const seconds = Math.round(q.durationMs / 1000);
   const [showStructure, setShowStructure] = useState(false);
+  const [find, setFind] = useState('');
+  const term = find.trim().toLowerCase();
+  const rejected = term
+    ? q.rejected.filter((r) => [r.name, CATEGORY_UI[r.category].label, REASON[r.reason], `p. ${r.page ?? ''}`].some((s) => s.toLowerCase().includes(term)))
+    : q.rejected;
 
   return (
     <div className="space-y-4">
@@ -80,14 +87,36 @@ export function QualityTab({ result }: { result: ExtractionResult }) {
         </Section>
       )}
 
-      <Section title="Rejected by the checks" count={q.rejected.length}>
+      <Section
+        title="Rejected by the checks"
+        count={term ? undefined : q.rejected.length}
+        actions={
+          q.rejected.length > 0 && (
+            <>
+              <SearchField value={find} onChange={setFind} placeholder="Search rejected items" label="Search rejected items" className="w-full sm:w-60" />
+              {term && (
+                <span className="tabular text-[12px] font-medium text-slate-500">
+                  {rejected.length} of {q.rejected.length}
+                </span>
+              )}
+            </>
+          )
+        }
+      >
         {q.rejected.length === 0 ? (
           <p className="text-[13px] text-slate-500">Every item the model proposed was found in the document.</p>
+        ) : rejected.length === 0 ? (
+          <p className="py-4 text-center text-[13px] text-slate-500">
+            No rejected item matches “{find}”.{' '}
+            <button type="button" onClick={() => setFind('')} className="font-medium text-primary-700 hover:underline">
+              Clear search
+            </button>
+          </p>
         ) : (
           <div className="max-h-80 overflow-y-auto">
             <table className="w-full text-dense">
               <thead>
-                <tr className="border-b border-slate-200 text-left text-[12px] uppercase tracking-wide text-slate-500">
+                <tr className="whitespace-nowrap border-b border-slate-200 text-left text-[12px] uppercase tracking-wide text-slate-500">
                   <th className="py-1.5 pr-3 font-semibold">Category</th>
                   <th className="py-1.5 pr-3 font-semibold">Proposed name</th>
                   <th className="py-1.5 pr-3 font-semibold">Page</th>
@@ -95,12 +124,12 @@ export function QualityTab({ result }: { result: ExtractionResult }) {
                 </tr>
               </thead>
               <tbody>
-                {q.rejected.map((r, i) => (
+                {rejected.map((r, i) => (
                   <tr key={i} className="border-b border-slate-100 last:border-0">
-                    <td className="py-1.5 pr-3 text-slate-600">{CATEGORY_UI[r.category].label}</td>
+                    <td className="whitespace-nowrap py-1.5 pr-3 text-slate-600">{CATEGORY_UI[r.category].label}</td>
                     <td className="py-1.5 pr-3 text-slate-800">{r.name}</td>
                     <td className="tabular py-1.5 pr-3 text-slate-600">{r.page ?? '—'}</td>
-                    <td className="py-1.5 text-slate-600">{REASON[r.reason]}</td>
+                    <td className="whitespace-nowrap py-1.5 text-slate-600">{REASON[r.reason]}</td>
                   </tr>
                 ))}
               </tbody>
@@ -136,7 +165,7 @@ export function QualityTab({ result }: { result: ExtractionResult }) {
             </ul>
           )}
         </Section>
-        <Section title="This run">
+        <Section title="Run details">
           <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-[13px]">
             <dt className="text-slate-500">Model</dt>
             <dd className="text-slate-800">
