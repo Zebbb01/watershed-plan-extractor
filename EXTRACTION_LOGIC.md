@@ -117,7 +117,10 @@ be on the page.
 `backend/src/pipeline.ts`, `backend/src/llm/prompt.ts` (`OCR_PROMPT`), `layout/text-page.ts`
 
 Scanned pages are rendered to JPEG (longest side 1,400 px) and sent two per call, because a
-page's transcript is long and every call must finish inside the host's time limit. A pair
+page's transcript is long and every call must finish inside the host's time limit. They are
+drawn with pdf.js's print intent: the display intent draws in animation frames, which a
+browser pauses in a background tab, so a run stalled whenever its tab was hidden. Both
+intents give the same pixels. A pair
 that times out is read one page at a time. The model writes the text exactly as printed:
 line breaks kept, bullets as "• ", table rows with " | " between cells, `[illegible]` where
 it cannot read, and no corrections. The transcript becomes that page's text, marked `ocr`,
@@ -303,7 +306,11 @@ parent by name, the nearest one when several share it.
 One policy covers extraction units and OCR batches alike:
 
 - Four calls run in parallel. A rate-limit response halves that and waits for the
-  provider's `retry-after` (up to five times).
+  provider's `retry-after` (up to five times); after that, each run of successes as long as
+  the current number of calls adds one back, up to four. The account's output tokens per
+  minute are shared by every run, so a second run at the same time can cause a burst of rate
+  limits; without the way back, the rest of a long run went on one call at a time (a 40-page
+  scan took 29 minutes that way, against 77 seconds when it had the account to itself).
 - A call that times out, hits the output limit or is too large is split in half and
   retried, down to a single page. Any other error, such as a dropped connection, is retried
   twice.

@@ -74,6 +74,24 @@ describe('runPipeline', () => {
     expect(result.quality.failedUnits).toEqual([]);
   });
 
+  it('goes back to 4 calls at once after a burst of rate limits, instead of staying at one', async () => {
+    let inflight = 0;
+    let calls = 0;
+    const peaks: number[] = [];
+    await runPipeline({ doc, rawPages: pagesOf(90) }, deps({
+      extract: async (req) => {
+        inflight++;
+        peaks.push(inflight);
+        await new Promise((r) => setTimeout(r, 2));
+        inflight--;
+        if (calls++ < 4) throw { code: 'RATE_LIMITED', retryAfter: 1 };
+        return ok(req);
+      },
+    }));
+    // The four first calls are refused, which drops the limit to one; later calls run four at a time again.
+    expect(Math.max(...peaks.slice(-10))).toBe(4);
+  });
+
   it('splits a unit that times out and extracts both halves', async () => {
     const calls: number[][] = [];
     await runPipeline({ doc, rawPages: pagesOf(3) }, deps({

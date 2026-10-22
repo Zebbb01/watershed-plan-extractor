@@ -129,8 +129,20 @@ export async function runPipeline(
   progress({ stage: 'read', done: pages.length, total: pages.length });
 
   const failedUnits: FailedUnit[] = [];
+  // A rate limit halves the calls in flight; after that, every `limit` calls in a row that succeed
+  // add one back, up to the starting number. Without the way back, one burst of 429s (another run
+  // sharing the account's tokens-per-minute) left the rest of a long run on one call at a time.
+  const maxLimit = limit;
+  let streak = 0;
+  const succeeded = () => {
+    if (limit < maxLimit && ++streak >= limit) {
+      limit++;
+      streak = 0;
+    }
+  };
   const wait = async (e: unknown) => {
     limit = Math.max(1, Math.floor(limit / 2));
+    streak = 0;
     await sleep(((e as { retryAfter?: number }).retryAfter ?? 10) * 1000);
   };
 
@@ -156,6 +168,7 @@ export async function runPipeline(
         if (images.length) {
           const res = await deps.ocr({ docId: input.doc.id, pages: images }, signal);
           addUsage(res.usage);
+          succeeded();
           for (const p of res.pages) if (job.pages.includes(p.n) && p.text.trim()) replaced.set(p.n, pageFromText(p.n, p.text));
         }
       } catch (e) {
@@ -232,6 +245,7 @@ export async function runPipeline(
       const res = await deps.extract(req, signal);
       results.push(res);
       addUsage(res.usage);
+      succeeded();
       done++;
       progress({ stage: 'extract', done, total, ...(wantPartial() ? { partial: partial() } : {}) });
     } catch (e) {

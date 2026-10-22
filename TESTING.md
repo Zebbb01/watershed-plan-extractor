@@ -282,11 +282,13 @@ From reading the output (not scored):
 
 ## What was not measured
 
-- Scanned plans end to end through the live site. The eval reads PDFs in Node, where pdf.js
-  finds its image decoders on its own; in the browser it needs them served and allowed by the
-  CSP. A JPEG 2000 scan (West Boley Creek 2007) first came out as blank pages on the live site
-  and was fixed. The fix was checked in a local production build up to the AI call: every page
-  image now carries the scan. The AI's reading of those pages was not run again.
+- Scanned plans end to end through a browser on the live site, with timing. A JPEG 2000 scan
+  (West Boley Creek 2007, 40 pages) was run through the live site's API routes from the eval
+  code, with its pages drawn by pdf.js's wasm decoders in Node: 77 s, $0.048, no failed
+  section, 108 items. The same plan uploaded in a browser took 29 minutes while the eval was
+  using the account's output-token limit at the same time (see "Running a whole document" in
+  EXTRACTION_LOGIC.md); the browser's own share of the time (drawing the pages) was not
+  measured. Its answers are not scored: the plan has no answer key.
 - The OpenAI path (`gpt-6.1-sol` through the Responses API with a strict JSON schema). It is
   built and unit-tested with mocked responses, but no OpenAI key was used, so it was never run
   against the live API.

@@ -76,7 +76,9 @@ export async function renderPageJpegBrowser(doc: PDFDocumentProxy, n: number, ma
   const ctx = canvas.getContext('2d')!;
   ctx.fillStyle = '#ffffff';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-  await page.render({ canvas, viewport }).promise;
+  // The print intent draws without requestAnimationFrame, which a browser pauses in a background
+  // tab: with the display intent, a run whose tab was hidden stopped drawing pages until it came back.
+  await page.render({ canvas, viewport, intent: 'print' }).promise;
   page.cleanup();
   if (isBlankImage(ctx.getImageData(0, 0, canvas.width, canvas.height).data)) {
     canvas.width = canvas.height = 0;

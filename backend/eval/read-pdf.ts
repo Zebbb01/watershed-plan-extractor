@@ -10,7 +10,10 @@ import type { RawPage } from '../src/schema';
 // both hand the same RawPage shape to the shared layout code.
 
 const require = createRequire(import.meta.url);
-const STANDARD_FONTS = join(dirname(require.resolve('pdfjs-dist/package.json')), 'standard_fonts') + '/';
+const PDFJS = dirname(require.resolve('pdfjs-dist/package.json'));
+const STANDARD_FONTS = join(PDFJS, 'standard_fonts') + '/';
+// JPEG 2000 and JBIG2 scans decode only with pdf.js's wasm decoders; without them those pages render blank.
+const WASM = join(PDFJS, 'wasm') + '/';
 
 const docs = new Map<string, Promise<PDFDocumentProxy>>();
 
@@ -20,6 +23,7 @@ function openPdf(path: string): Promise<PDFDocumentProxy> {
     doc = getDocument({
       data: new Uint8Array(readFileSync(path)),
       standardFontDataUrl: STANDARD_FONTS,
+      wasmUrl: WASM,
       verbosity: 0,
     }).promise;
     docs.set(path, doc);

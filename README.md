@@ -208,6 +208,10 @@ scripts/                  secret scan, licence check, submission zip
 
 ## Known limits
 
+- The AI account's output tokens per minute are shared by every run (80,000 a minute for
+  Haiku 5.5 on the current tier; one 100-page scan uses most of it). Two large runs at once
+  slow each other down: the pipeline halves its parallel calls on a rate limit and adds them
+  back as calls succeed. A higher account tier raises the limit.
 - The rate limit is kept per server instance, so on serverless hosting it slows a burst
   from one browser but is not a global cap.
 - A section that still fails after its retries is reported with its pages; dropping the
