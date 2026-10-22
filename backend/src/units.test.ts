@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
+import { renderMarkup } from './layout/markup';
 import type { Line, PageModel } from './layout/page-model';
-import { buildUnits, regexHints, splitUnit } from './units';
+import { buildUnits, pageTail, regexHints, splitUnit } from './units';
 
 const line = (text: string, kind: Line['kind'] = 'para'): Line => ({ text, x: 72, y: 100, size: 11, bold: false, kind, level: 0 });
 const page = (n: number, lines: Line[], flags: Partial<PageModel['flags']> = {}, source: PageModel['source'] = 'text'): PageModel => ({
@@ -72,6 +73,22 @@ describe('buildUnits', () => {
     const pages = Array.from({ length: 7 }, (_, i) => page(i + 1, [filler(3000)]));
     expect(buildUnits(pages).units.map((u) => u.index)).toEqual([0, 1, 2]);
   });
+
+  it('gives each unit the end of the page before it, so a list cut by the boundary keeps its lead-in', () => {
+    const bullet = (text: string): Line => ({ ...line(text, 'bullet'), level: 1 });
+    const { units } = buildUnits([
+      page(18, [filler(3000)]),
+      page(19, [filler(3000)]),
+      page(20, [line('3.2 Goals', 'heading'), line('The following actions will need to be taken to meet these goals:'), filler(1500), bullet('Develop interstate stream alliance,')]),
+      page(21, [bullet('Reduce sediment loads to streams,')]),
+    ]);
+    const byFirst = new Map(units.map((u) => [u.pages[0].n, u]));
+    expect(byFirst.get(18)!.lead).toBe('');
+    expect(byFirst.get(21)!.lead).toMatch(/^The following actions will need to be taken to meet these goals:\n…\n/);
+    expect(byFirst.get(21)!.lead).toMatch(/• \[L1\] Develop interstate stream alliance,$/);
+    expect(byFirst.get(21)!.lead).not.toContain('3.2 Goals');
+    expect(pageTail(renderMarkup(page(1, [filler(5000)])))).toHaveLength(1_200);
+  });
 });
 
 describe('splitUnit', () => {
@@ -81,6 +98,12 @@ describe('splitUnit', () => {
     const halves = splitUnit(units[0])!;
     expect(halves.map((h) => h.pages.map((p) => p.n))).toEqual([[1, 2], [3, 4]]);
     expect(halves.map((h) => h.imagePages)).toEqual([[], [4]]);
+  });
+
+  it('gives the second half the end of the first half as its lead', () => {
+    const halves = splitUnit(units[0])!;
+    expect(halves[0].lead).toBe(units[0].lead);
+    expect(halves[1].lead).toBe(pageTail(units[0].pages[1].markup));
   });
 
   it('returns null for a one-page unit', () => {

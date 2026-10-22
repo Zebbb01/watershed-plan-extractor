@@ -34,6 +34,23 @@ const UNIT_WORDS: Record<string, string> = {
 };
 const amountWords = (s: string) => normalizeForMatch(s).split(/[^\p{L}]+/u).filter(Boolean).map((w) => UNIT_WORDS[w] ?? w);
 
+// A name made only of section words ("Goals/Objectives", "Desired Results/Benefits", "BMPs") labels a section; it is not an item.
+const LABEL_WORDS = new Set([
+  'goal', 'goals', 'objective', 'objectives', 'desired', 'result', 'results', 'benefit', 'benefits', 'bmp', 'bmps', 'best',
+  'management', 'practice', 'practices', 'activity', 'activities', 'action', 'actions', 'task', 'tasks', 'milestone',
+  'milestones', 'outreach', 'education', 'monitoring', 'implementation',
+]);
+const isLabel = (name: string) => {
+  const ws = normalizeForMatch(name).split(/[^\p{L}]+/u).filter(Boolean);
+  return ws.length > 0 && ws.every((w) => LABEL_WORDS.has(w));
+};
+
+// A row priced per piece under an outreach activity ("| Event Flyers | 300 | .60/each | $180.00 |") is what the
+// activity costs, not an activity.
+const UNIT_PRICE = /\d\s*\/\s*(?:each|ea)\b/i;
+const isCostLine = (name: string, rows: string[]) =>
+  rows.some((row) => UNIT_PRICE.test(row) && normalizeForMatch(row.replace(/^\|\s*/, '').split(' | ')[0]) === normalizeForMatch(name));
+
 // A status counts only when the item's own quote says it.
 const STATUS_WORDS: Record<string, RegExp> = {
   completed: /\b(completed|complete|done|finished|accomplished)\b/,
@@ -184,6 +201,7 @@ export function verifyUnit(data: UnitExtraction, pages: VerifyPage[], imagePages
     const ocr = checked.source === 'ocr';
     const nameOk = verbatimName ? inSource(item.name, checked, ocr) : inSource(item.name, checked, ocr) || stemShare(item.name, `${checked.quotes}\n${checked.sourceText}`) >= 0.7;
     if (!nameOk) return reject('name-not-in-source');
+    if (isLabel(item.name)) return reject('not-an-item');
 
     const page = checked.evidence[0].page;
     let confidence: Confidence = checked.exact && !ocr ? 'high' : 'medium';
@@ -290,6 +308,10 @@ export function verifyUnit(data: UnitExtraction, pages: VerifyPage[], imagePages
   const outreach = data.outreach.map((o) => {
     const b = base(ctxFor('outreach'), o, true);
     if (!b) return null;
+    if (isCostLine(o.name, b.checked.rows)) {
+      rejected.push({ category: 'outreach', name: o.name, page: b.page, reason: 'not-an-item' });
+      return null;
+    }
     const quantity = b.quantity(o.quantity);
     const audience = b.detail(o.audience, 'audience');
     const timeframe = b.detail(o.timeframe, 'timeframe');

@@ -50,6 +50,8 @@ export const ExtractRequestSchema = z
             outline: z.string().max(8_000),
             totalPages: z.number().int().positive(),
             hints: z.array(z.string().max(200)).max(200),
+            /** the end of the page before the unit; optional so a page loaded before it existed still works */
+            lead: z.string().max(2_000).optional(),
           })
           .strict(),
       })

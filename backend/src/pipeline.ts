@@ -224,6 +224,7 @@ export async function runPipeline(
             outline: docOutline.slice(0, 8_000),
             totalPages: raw.length,
             hints: regexHints(unit.pages.map((p) => p.markup).join('\n')).map((h) => h.slice(0, 200)),
+            lead: unit.lead,
           },
         },
         images,

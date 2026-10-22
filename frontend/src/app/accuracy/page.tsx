@@ -28,6 +28,8 @@ interface DocRow {
   timeMs: number;
   costUsd: number | null;
   score: null | { core: Prf; numeric: { correct: number; total: number; accuracy: number }; verbatimViolations: string[] };
+  /** core F1 of each run when the plan was run more than once; the scores above are then the runs' mean */
+  runs?: number[];
 }
 interface Aggregate {
   docs: number;
@@ -43,12 +45,15 @@ interface Accuracy {
   model: string;
   ocrModel: string;
   effort: string;
+  repeat?: number;
   docs: DocRow[];
   aggregate: { dev: Aggregate | null; heldout: Aggregate | null; all: Aggregate | null };
 }
 
 const pct = (x: number) => `${Math.round(x * 100)}%`;
 const pct1 = (x: number) => `${(x * 100).toFixed(1)}%`;
+/** Counts are averages when each plan ran more than once. */
+const num = (x: number) => (Math.abs(x - Math.round(x)) < 1e-6 ? String(Math.round(x)) : x.toFixed(1));
 const ROLE = { dev: 'Tuning', heldout: 'Held out', smoke: 'Smoke' } as const;
 /** "broken-pumpkin-2019" -> "Broken Pumpkin 2019" */
 const planName = (id: string) => id.replace(/-/g, ' ').replace(/\b[a-z]/g, (c) => c.toUpperCase());
@@ -82,6 +87,7 @@ export default function Page() {
             <li>Prompts were tuned only on the tuning plans. The held-out plan was labelled after tuning and scored on the final settings.</li>
             <li>Items match by name (word stems, one-to-one). Precision is the share of extracted items that are real; recall is the share of real items found.</li>
             <li>A number counts as right only when its value and unit both match the plan.</li>
+            <li>The model is not deterministic, so each plan is run three times; the scores are the mean, with each run&apos;s F1 under it.</li>
             <li>A verbatim violation is an extracted name that is not written in the PDF. The checks reject these before display, so the target is zero.</li>
           </ul>
           <p className="mt-3 text-[13px] text-slate-500">Full method, per-plan misses and what was not measured: TESTING.md in the code.</p>
@@ -107,11 +113,12 @@ function Results({ data }: { data: Accuracy }) {
     <>
       <p className="text-[13px] text-slate-500">
         {data.model} ({data.provider}) · run {data.date} · {all.docs} plans with answer keys
+        {data.repeat && data.repeat > 1 ? ` · each plan run ${data.repeat} times, scores are the mean` : ''}
       </p>
       <div className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-4">
         <StatTile label="Goals, BMPs and activities" icon={Target} accent="#1d63b5" value={pct1(all.core.f1)} sub={`F1, all plans · bar 75%`} />
         {held && <StatTile label="Held-out plan" icon={FileCheck2} accent="#1d63b5" value={pct1(held.core.f1)} sub="F1 on a plan not used for tuning" />}
-        <StatTile label="Numbers exact" icon={Hash} accent="#0f8a4b" value={pct1(all.numeric.accuracy)} sub={`${all.numeric.correct} of ${all.numeric.total} values · bar 75%`} />
+        <StatTile label="Numbers exact" icon={Hash} accent="#0f8a4b" value={pct1(all.numeric.accuracy)} sub={`${num(all.numeric.correct)} of ${num(all.numeric.total)} values · bar 75%`} />
         <StatTile label="Names not in the PDF" icon={ShieldCheck} accent="#0f8a4b" value={all.verbatimViolations} sub="verbatim violations · target 0" />
       </div>
 
@@ -150,7 +157,7 @@ function Results({ data }: { data: Accuracy }) {
                         </span>
                       </td>
                       <td className="tabular px-3 py-2 text-right text-slate-600">
-                        {c.matched} of {c.gt}
+                        {num(c.matched)} of {num(c.gt)}
                       </td>
                       <td className="tabular px-3 py-2 text-right">{pct(c.precision)}</td>
                       <td className="tabular px-3 py-2 text-right">{pct(c.recall)}</td>
@@ -186,10 +193,17 @@ function Results({ data }: { data: Accuracy }) {
                   <td className="px-3 py-2 text-slate-600">{d.score ? ROLE[d.role] : 'Unlabelled'}</td>
                   <td className="px-3 py-2 text-slate-600">{d.format}</td>
                   <td className="tabular px-3 py-2 text-right">{d.pages}</td>
-                  <td className="tabular px-3 py-2 text-right font-semibold">{d.score ? pct(d.score.core.f1) : '—'}</td>
+                  <td className="tabular px-3 py-2 text-right font-semibold">
+                    {d.score ? pct(d.score.core.f1) : '—'}
+                    {d.runs && (
+                      <span className="block text-[11px] font-normal text-slate-500" title="Core F1 of each run">
+                        {d.runs.map(pct).join(' · ')}
+                      </span>
+                    )}
+                  </td>
                   <td className="tabular px-3 py-2 text-right">{d.score ? pct(d.score.core.precision) : '—'}</td>
                   <td className="tabular px-3 py-2 text-right">{d.score ? pct(d.score.core.recall) : '—'}</td>
-                  <td className="tabular px-3 py-2 text-right">{d.score ? `${pct(d.score.numeric.accuracy)} (${d.score.numeric.correct}/${d.score.numeric.total})` : '—'}</td>
+                  <td className="tabular px-3 py-2 text-right">{d.score ? `${pct(d.score.numeric.accuracy)} (${num(d.score.numeric.correct)}/${num(d.score.numeric.total)})` : '—'}</td>
                   <td className="tabular px-3 py-2 text-right">{Math.round(d.timeMs / 1000)} s</td>
                   <td className="tabular py-2 pl-3 pr-5 text-right">{d.costUsd === null ? '—' : `$${d.costUsd.toFixed(3)}`}</td>
                 </tr>

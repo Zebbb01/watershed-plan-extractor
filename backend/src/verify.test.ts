@@ -164,6 +164,19 @@ describe('verifyUnit', () => {
     const data = { ...empty(), bmps: [{ ...bmp('cover crops', 3, 'x'), evidence: [] }] };
     expect(verifyUnit(data, pages, []).rejected[0].reason).toBe('invalid');
   });
+
+  it('rejects a section label as a name, and an outreach "activity" that is a line of its cost table', () => {
+    const budget = [{
+      n: 24, source: 'text' as const,
+      markup: '## 3. Fact Sheets\nA fact sheet will be developed at the end of the project.\n## c. Budget\nTable 9.3 Projected Costs for Fact Sheets.\n| Item | Unit | Cost | Total Cost |\n| Printing | 1,000 | 1.00/each | $1,000.00 |',
+    }];
+    const outreach = (name: string, quote: string) => ({ ...base(name, 24, quote), audience: null, quantity: null, timeframe: null });
+    const data = { ...empty(), bmps: [bmp('BMPs', 3, 'installation of the following BMPs would help to mitigate')], outreach: [outreach('Printing', 'Printing | 1,000 | 1.00/each | $1,000.00'), outreach('Fact Sheets', 'A fact sheet will be developed at the end of the project')] };
+    const { items, rejected } = verifyUnit(data, [...pages, ...budget], []);
+    expect(items.bmps).toEqual([]);
+    expect(items.outreach.map((o) => o.name)).toEqual(['Fact Sheets']);
+    expect(rejected.map((r) => [r.name, r.reason])).toEqual([['BMPs', 'not-an-item'], ['Printing', 'not-an-item']]);
+  });
 });
 
 describe('verifyUnit: nothing the model wrote reaches the report unchecked', () => {

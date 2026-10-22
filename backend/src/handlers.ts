@@ -1,3 +1,4 @@
+import { moveActionItems } from './action-lists';
 import type { ExtractRequest, ExtractResponse, OcrRequest, OcrResponse } from './api';
 import type { LlmClient } from './llm/provider';
 import { verifyUnit } from './verify';
@@ -9,7 +10,8 @@ import { verifyUnit } from './verify';
 
 export async function handleExtract(req: ExtractRequest, client: LlmClient, signal: AbortSignal): Promise<ExtractResponse> {
   const { data, usage } = await client.extract(req, signal);
-  const { items, rejected } = verifyUnit(data, req.unit.pages, req.images.map((i) => i.page));
+  const sorted = moveActionItems(data, req.unit.pages, req.unit.context.lead);
+  const { items, rejected } = verifyUnit(sorted, req.unit.pages, req.images.map((i) => i.page));
   return { unitIndex: req.unit.index, items, rejected, usage };
 }
 

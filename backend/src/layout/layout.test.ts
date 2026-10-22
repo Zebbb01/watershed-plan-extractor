@@ -7,13 +7,19 @@ import { pageFromText } from './text-page';
 
 describe('pageFromText (transcribed scanned pages)', () => {
   const transcript = (n: number) =>
-    `April 6, 2004\n3.2 Goals\nThe following actions will need to be taken:\n• Reduce sediment loads to streams,\n○ Reduce livestock access to streams\n○ Agricultural BMPs\n3-${n}`;
+    `April 6, 2004\n3.2 Goals\nThe following actions will need to be taken:\n• Reduce sediment loads to streams,\n○ Reduce livestock access to streams\no Agricultural BMPs\n3-${n}`;
 
-  it('reads white-circle bullets as sub-items of the bullet above', () => {
+  it('reads white-circle bullets, and the letter "o" a transcriber writes for them, as sub-items of the bullet above', () => {
     const p = pageFromText(21, transcript(2));
-    const sub = p.lines.find((l) => l.text === 'Agricultural BMPs')!;
-    expect(sub).toMatchObject({ kind: 'bullet', level: 2 });
+    expect(p.lines.find((l) => l.text === 'Reduce livestock access to streams')).toMatchObject({ kind: 'bullet', level: 2 });
+    expect(p.lines.find((l) => l.text === 'Agricultural BMPs')).toMatchObject({ kind: 'bullet', level: 2 });
     expect(p.lines.find((l) => l.text.startsWith('Reduce sediment'))).toMatchObject({ kind: 'bullet', level: 1 });
+    expect(pageFromText(1, 'o and so on').lines[0].kind).toBe('para');
+  });
+
+  it('removes a chapter-page number such as "3-1" even on a page where nothing repeats', () => {
+    const [p] = annotateDocument([pageFromText(20, 'The overall goal for this plan\nis to restore the watershed.\nThe following actions will be taken.\n3-1')]);
+    expect(p.lines.find((l) => l.text === '3-1')!.kind).toBe('admin');
   });
 
   it('treats a numbered section title as a heading', () => {

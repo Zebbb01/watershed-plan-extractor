@@ -3,7 +3,7 @@ import { join } from 'node:path';
 import { parseArgs } from 'node:util';
 import { createClient } from '../src/llm/client';
 import { effortFor, readEnv } from '../src/llm/provider';
-import type { CategoryKey } from '../src/schema';
+import type { CategoryKey, ExtractionResult } from '../src/schema';
 import { CATEGORY_KEYS } from '../src/schema';
 import { DOCS, EVAL_DIR, pdfPath, type EvalDoc } from './doc-set';
 import { loadEnv } from './env';
@@ -13,7 +13,7 @@ import { score, type DocScore, type GroundTruth } from './score';
 
 /*
  * npm run eval -w backend -- --set dev|heldout|all|smoke|<doc id> [--model id] [--ocr-model id]
- *   [--provider anthropic|openai] [--effort low|medium|high] [--concurrency 4] [--latest]
+ *   [--provider anthropic|openai] [--effort low|medium|high] [--concurrency 4] [--repeat 3] [--latest]
  * Runs the production pipeline on the eval PDFs, scores it against ground truth, and writes
  * eval/results/<date>-<model>.json (and latest.json with --latest or --set all).
  */
@@ -27,6 +27,7 @@ const { values: args } = parseArgs({
     effort: { type: 'string' },
     concurrency: { type: 'string', default: '4' },
     label: { type: 'string' },
+    repeat: { type: 'string', default: '1' },
     latest: { type: 'boolean', default: false },
   },
 });
@@ -68,32 +69,70 @@ interface DocRow {
   failedUnits: number;
   rejected: number;
   score: DocScore | null;
+  /** core F1 of each run, when the plan was run more than once */
+  runs?: number[];
 }
 const rows: DocRow[] = [];
 
+type Totals = { gt: number; predicted: number; matched: number };
+const f = (t: Totals) => {
+  const p = t.predicted ? t.matched / t.predicted : 0;
+  const r = t.gt ? t.matched / t.gt : 0;
+  return { ...t, precision: p, recall: r, f1: p + r ? (2 * p * r) / (p + r) : 0 };
+};
+
+/** Several runs of one plan as one score: counts averaged over the runs, rates computed from those averages. */
+function meanScore(scores: DocScore[]): DocScore {
+  const mean = (pick: (s: DocScore) => number) => scores.reduce((a, s) => a + pick(s), 0) / scores.length;
+  const totals = (pick: (s: DocScore) => Totals) =>
+    f({ gt: mean((s) => pick(s).gt), predicted: mean((s) => pick(s).predicted), matched: mean((s) => pick(s).matched) });
+  const n = { correct: mean((s) => s.numeric.correct), total: mean((s) => s.numeric.total), predictedCorrect: mean((s) => s.numeric.predictedCorrect), predicted: mean((s) => s.numeric.predicted) };
+  return {
+    ...scores[scores.length - 1],
+    categories: Object.fromEntries(CATEGORY_KEYS.map((k) => [k, totals((s) => s.categories[k])])) as DocScore['categories'],
+    core: totals((s) => s.core),
+    all: totals((s) => s.all),
+    numeric: { ...n, accuracy: n.total ? n.correct / n.total : 1, precision: n.predicted ? n.predictedCorrect / n.predicted : 1 },
+    categoryAccuracy: mean((s) => s.categoryAccuracy),
+    kindAccuracy: mean((s) => s.kindAccuracy),
+    verbatimViolations: [...new Set(scores.flatMap((s) => s.verbatimViolations))],
+  };
+}
+
+// The model is not deterministic: --repeat runs each plan several times and reports the mean, with each run's F1.
+const repeat = Math.max(1, Number(args.repeat) || 1);
 for (const doc of docs) {
   const path = pdfPath(doc.id);
   if (!existsSync(path)) {
     console.error(`${doc.id}: missing PDF, run npm run eval:fetch -w backend`);
     continue;
   }
-  process.stdout.write(`${doc.id} ... `);
-  const { result, pages } = await runDoc(doc, client, Number(args.concurrency));
-  writeFileSync(join(RESULTS, 'runs', `${doc.id}.${client.model}.json`), JSON.stringify(result, null, 1));
-
   const gtFile = join(EVAL_DIR, 'ground-truth', `${doc.id}.json`);
   const gt: GroundTruth | null = existsSync(gtFile) ? JSON.parse(readFileSync(gtFile, 'utf8')) : null;
-  const s = gt ? score(result, gt, pageTexts(pages)) : null;
-  const counts = Object.fromEntries(CATEGORY_KEYS.map((k) => [k, result.report[k].length])) as Record<CategoryKey, number>;
+  const runs: { result: ExtractionResult; pages: number; s: DocScore | null }[] = [];
+  for (let i = 0; i < repeat; i++) {
+    process.stdout.write(`${doc.id}${repeat > 1 ? ` (run ${i + 1})` : ''} ... `);
+    const { result, pages } = await runDoc(doc, client, Number(args.concurrency));
+    // The last run's output is kept for the samples, not the best one.
+    writeFileSync(join(RESULTS, 'runs', `${doc.id}.${client.model}.json`), JSON.stringify(result, null, 1));
+    const s = gt ? score(result, gt, pageTexts(pages)) : null;
+    runs.push({ result, pages: pages.length, s });
+    console.log(
+      `${(result.quality.durationMs / 1000).toFixed(0)} s, $${result.quality.usage.costUsd?.toFixed(3) ?? '?'}` +
+        (s ? `, core F1 ${pct(s.core.f1)}, numbers ${pct(s.numeric.accuracy)}, verbatim violations ${s.verbatimViolations.length}` : ', no ground truth'),
+    );
+  }
+  const last = runs[runs.length - 1].result;
+  const mean = (pick: (r: (typeof runs)[number]) => number) => runs.reduce((a, r) => a + pick(r), 0) / runs.length;
+  const costs = runs.map((r) => r.result.quality.usage.costUsd);
   rows.push({
-    id: doc.id, role: doc.role, format: doc.format, pages: pages.length, timeMs: result.quality.durationMs,
-    costUsd: result.quality.usage.costUsd, counts, failedUnits: result.quality.failedUnits.length,
-    rejected: result.quality.rejected.length, score: s,
+    id: doc.id, role: doc.role, format: doc.format, pages: runs[0].pages, timeMs: mean((r) => r.result.quality.durationMs),
+    costUsd: costs.includes(null) ? null : mean((r) => r.result.quality.usage.costUsd!),
+    counts: Object.fromEntries(CATEGORY_KEYS.map((k) => [k, last.report[k].length])) as Record<CategoryKey, number>,
+    failedUnits: runs.reduce((a, r) => a + r.result.quality.failedUnits.length, 0), rejected: last.quality.rejected.length,
+    score: gt ? meanScore(runs.map((r) => r.s!)) : null,
+    ...(gt && repeat > 1 ? { runs: runs.map((r) => r.s!.core.f1) } : {}),
   });
-  console.log(
-    `${(result.quality.durationMs / 1000).toFixed(0)} s, $${result.quality.usage.costUsd?.toFixed(3) ?? '?'}` +
-      (s ? `, core F1 ${pct(s.core.f1)}, numbers ${pct(s.numeric.accuracy)}, verbatim violations ${s.verbatimViolations.length}` : ', no ground truth'),
-  );
 }
 
 // Micro-averaged totals per role, so a long document weighs by its items, not as one vote.
@@ -105,11 +144,6 @@ function aggregate(role: string) {
       const x = pick(r.score!);
       return { gt: a.gt + x.gt, predicted: a.predicted + x.predicted, matched: a.matched + x.matched };
     }, { gt: 0, predicted: 0, matched: 0 });
-  const f = (t: { gt: number; predicted: number; matched: number }) => {
-    const p = t.predicted ? t.matched / t.predicted : 0;
-    const r = t.gt ? t.matched / t.gt : 0;
-    return { ...t, precision: p, recall: r, f1: p + r ? (2 * p * r) / (p + r) : 0 };
-  };
   const numeric = scored.reduce((a, r) => ({ correct: a.correct + r.score!.numeric.correct, total: a.total + r.score!.numeric.total }), { correct: 0, total: 0 });
   return {
     docs: scored.length,
@@ -130,6 +164,7 @@ const out = {
   ocrModel,
   effort: effortFor(client.model, cfg.effort) ?? 'none',
   set,
+  repeat,
   docs: rows,
   aggregate: { dev: aggregate('dev'), heldout: aggregate('heldout'), all: aggregate('all') },
 };
@@ -146,8 +181,8 @@ console.log(`|---|---|---|---|---|---|---|---|---|`);
 for (const r of rows) {
   const s = r.score;
   console.log(
-    `| ${r.id} | ${r.role} | ${s ? pct(s.core.f1) : '–'} | ${s ? pct(s.core.precision) : '–'} | ${s ? pct(s.core.recall) : '–'} | ` +
-      `${s ? `${pct(s.numeric.accuracy)} (${s.numeric.correct}/${s.numeric.total})` : '–'} | ${s ? s.verbatimViolations.length : '–'} | ` +
+    `| ${r.id} | ${r.role} | ${s ? pct(s.core.f1) : '–'}${r.runs ? ` (runs: ${r.runs.map(pct).join(', ')})` : ''} | ${s ? pct(s.core.precision) : '–'} | ${s ? pct(s.core.recall) : '–'} | ` +
+      `${s ? `${pct(s.numeric.accuracy)} (${+s.numeric.correct.toFixed(1)}/${+s.numeric.total.toFixed(1)})` : '–'} | ${s ? s.verbatimViolations.length : '–'} | ` +
       `${(r.timeMs / 1000).toFixed(0)} s | ${r.costUsd === null ? '–' : `$${r.costUsd.toFixed(3)}`} |`,
   );
 }

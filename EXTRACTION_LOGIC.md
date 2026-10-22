@@ -78,8 +78,9 @@ of words, and administrative text never reaches it.
 
 **The whole document:**
 - **Running headers and footers:** lines in the top or bottom 12% of the page that repeat
-  on at least half the pages (digits ignored, so "Page 18 of 22" matches "Page 19 of 22"),
-  and bare page numbers.
+  on at least 40% of the pages (digits ignored, so "Page 18 of 22" matches "Page 19 of 22"; not
+  half, because appendices often carry their own headers),
+  and bare page numbers, chapter-page numbers ("3-1") included.
 - **Contents pages:** dot leaders, a "Contents" title, or a column of page numbers.
 - **Administrative sections:** acknowledgements, references, literature cited,
   bibliography, lists of figures and tables, abbreviations, glossary, distribution lists
@@ -120,7 +121,8 @@ page's transcript is long and every call must finish inside the host's time limi
 that times out is read one page at a time. The model writes the text exactly as printed:
 line breaks kept, bullets as "• ", table rows with " | " between cells, `[illegible]` where
 it cannot read, and no corrections. The transcript becomes that page's text, marked `ocr`,
-and goes through the same layout reading. Items from OCR pages are never better than medium
+and goes through the same layout reading. Hollow-circle sub-bullets often come back as the
+letter "o" ("o Fix failing septic systems"); those lines are read as sub-items, not prose. Items from OCR pages are never better than medium
 confidence, and their quotes are matched with a small tolerance (section 6). Pages that
 still cannot be read are reported as a failed section, not as an empty category.
 
@@ -134,6 +136,15 @@ still cannot be read are reported as a failed section, not as an empty category.
   40 table rows and list items (each tends to come back as an item, so this bounds the
   answer), sized to return inside the host's 60-second limit; a unit that does not is split
   (section 9). The API accepts at most 12 pages, 60,000 characters and 6 images per call.
+- **The end of the page before** goes with each unit, marked as context the model must not
+  extract from or quote: its last lines (up to 1,200 characters), headed by the last line
+  that introduces a list when that line is further up. Unit boundaries fall mid-section, so
+  a list often starts on one unit's last page and ends on the next one's first. Without its
+  lead-in ("The following actions will need to be taken to meet these goals:", on the page
+  before), "Reduce sediment loads to streams" reads as a goal and its sub-items as nothing
+  in particular; with it they are activities. This is the chunk-overlap idea of long-document
+  extraction, kept small, because an item quoted from the overlap would fail verification
+  (its quote is not on the unit's pages) instead of becoming a duplicate.
 - **Two calls per unit.** The six categories are asked for in two calls that run side by
   side (goals, BMPs and activities; monitoring, outreach and areas): one schema for all six
   compiles to a structured-output grammar the API refuses as too large.
@@ -191,12 +202,23 @@ decides (section 9), with the call's deadline in view.
 
 ## 6. Verify every item (code, fails closed)
 
-`backend/src/verify.ts`, `backend/src/text/normalize.ts`, `backend/src/text/quantity.ts`
+`backend/src/verify.ts`, `backend/src/action-lists.ts`, `backend/src/text/normalize.ts`, `backend/src/text/quantity.ts`
 
 Nothing the model wrote reaches the report unless the document says it. A failure is
 recorded with its reason (`quote-not-found`, `name-not-in-source`, `number-not-in-quote`,
-`detail-not-in-source`, `invalid`) and shown under Quality, never as data. A failed quote or
-name drops the item; a failed amount or detail drops only that field.
+`detail-not-in-source`, `not-an-item`, `invalid`) and shown under Quality, never as data. A
+failed quote or name drops the item; a failed amount or detail drops only that field.
+
+First, one category rule is applied in code, because the prompt states it but the model
+follows it on some runs and not on others: the items of a list whose lead-in calls them
+actions, tasks or activities ("The following actions will need to be taken to meet these
+goals:") are activities, even when worded like outcomes ("Reduce sediment loads to
+streams"), and so are the items nested under them. The lead-in is looked for directly above
+the list, across the page break through the end of the page before. Such items filed as
+goals, and nested ones filed as BMPs, move to implementation. A BMP right under the lead-in
+stays a BMP, since "Install fencing" may be a practice the plan counts. On the saved runs of
+all eight evaluation plans this moves exactly the ten items of Buttahatchee page 21 and
+nothing else.
 
 1. **The quote is on the page.** Both sides are normalised (Unicode NFKC, bullet and
    Wingdings glyphs, curly quotes, dash forms, hyphenation at line ends, spacing, case) and
@@ -233,6 +255,10 @@ name drops the item; a failed amount or detail drops only that field.
 7. **Confidence:** high when a quote of four or more words is found exactly on its own text
    page; medium for shorter quotes, OCR pages, interleaved table cells, quotes across a page
    break, and amounts read from a table row.
+8. **Labels and cost lines are not items.** A name made only of section words
+   ("Goals/Objectives", "Desired Results/Benefits", "BMPs") labels a section. An outreach
+   "activity" that is the first cell of a row priced per piece ("| Event Flyers | 300 |
+   .60/each | $180.00 |") is what an activity costs. Both are rejected as `not-an-item`.
 
 Why fail closed: the assessment asks for zero false positives on copied content. A
 dropped item lowers recall a little; a wrong name or number would cost the user's trust.

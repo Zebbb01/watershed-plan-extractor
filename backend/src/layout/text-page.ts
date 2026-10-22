@@ -2,14 +2,16 @@ import type { Line, PageModel } from './page-model';
 
 /*
  * A page model built from transcribed text (OCR of a scanned page). There are no positions,
- * so structure comes from how the transcript is written: "• " bullets ("○", "◦", "-" and
- * similar for sub-items), "1." items, "| a | b |" table rows, numbered or capitalised short
- * lines as headings. Line order stands in for height, so the first and last lines of each
- * page can be recognised as running headers and page numbers like on a text page.
+ * so structure comes from how the transcript is written: "• " bullets ("○", "◦", "-", the
+ * letter "o" and similar for sub-items), "1." items, "| a | b |" table rows, numbered or
+ * capitalised short lines as headings. Line order stands in for height, so the first and
+ * last lines of each page can be recognised as running headers and page numbers like on a
+ * text page.
  */
 
 const TOP_BULLET = /^[•●*]\s+/;
-const SUB_BULLET = /^[○◦▪■□‣⁃–-]\s+/;
+// A hollow-circle sub-bullet often comes back from the transcriber as the letter "o".
+const SUB_BULLET = /^(?:[○◦▪■□‣⁃–-]|o(?=\s+[A-Z0-9]))\s+/;
 const SECTION_TITLE = /^\d{1,2}(\.\d{1,2}){1,3}\.?\s+[A-Z][^.;:]{1,70}$/;
 
 export function pageFromText(n: number, text: string): PageModel {

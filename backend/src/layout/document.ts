@@ -7,7 +7,8 @@ import type { PageModel } from './page-model';
  */
 
 const ADMIN_SECTION = /^(acknowledge?ments?|references|literature cited|bibliography|works cited|table of contents|contents|list of (figures|tables|maps)|abbreviations|acronyms|glossary|distribution list|signature page)\b/i;
-const PAGE_NUMBER = /^(page\s+)?([0-9]{1,4}|[ivxlc]{1,7})(\s+of\s+\d+)?$/i;
+// "12", "iv", "Page 3 of 22", and chapter-page numbers such as "3-1".
+const PAGE_NUMBER = /^(page\s+)?([0-9]{1,4}|[ivxlc]{1,7}|\d{1,2}-\d{1,3})(\s+of\s+\d+)?$/i;
 const TOC_LINE = /(\.{4,}|\s{3,}|…+)\s*\d{1,4}\s*$/;
 
 // A header read as a table row on some pages ("Plan | FY19") is the same header as plain text on others.
@@ -15,14 +16,16 @@ const repeatKey = (text: string) => text.toLowerCase().replace(/\|/g, ' ').repla
 const inBand = (y: number, height: number | undefined) => height !== undefined && (y < height * 0.12 || y > height * 0.88);
 
 export function annotateDocument(pages: PageModel[]): PageModel[] {
-  // Lines in the top or bottom band that repeat on at least half the pages are running heads.
+  // Lines in the top or bottom band that repeat on at least 40% of the pages are running heads.
+  // Not half: a plan whose appendices carry their own headers (Buttahatchee 2004: its date on
+  // 49 of 108 pages) would keep its running head on every page of the plan itself.
   const counts = new Map<string, number>();
   for (const p of pages) {
     const seen = new Set<string>();
     for (const l of p.lines) if (inBand(l.y, p.height)) seen.add(repeatKey(l.text));
     for (const k of seen) counts.set(k, (counts.get(k) ?? 0) + 1);
   }
-  const minRepeats = Math.max(2, Math.ceil(pages.length / 2));
+  const minRepeats = Math.max(2, Math.ceil(pages.length * 0.4));
   const running = new Set([...counts].filter(([k, n]) => n >= minRepeats && k !== '#').map(([k]) => k));
 
   let inAdminSection = false;

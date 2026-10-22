@@ -15,6 +15,7 @@ const REASON: Record<Rejection['reason'], string> = {
   'name-not-in-source': 'Name is not in the document',
   'number-not-in-quote': 'Amount is not written this way',
   'detail-not-in-source': 'Detail is not in the document',
+  'not-an-item': 'A section label or cost line, not an item',
   invalid: 'No evidence given',
 };
 const ERROR: Record<string, string> = {

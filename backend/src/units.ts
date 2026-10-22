@@ -19,6 +19,8 @@ export interface Unit {
   /** pages whose image goes with the text (tables) */
   imagePages: number[];
   relevance: number;
+  /** the end of the page before the unit, so a list or table cut at the boundary keeps its lead-in */
+  lead: string;
 }
 
 const KEYWORDS =
@@ -29,6 +31,27 @@ const relevanceOf = (markup: string) => ((markup.match(KEYWORDS)?.length ?? 0) *
 
 /** Skip reason for a scanned page whose transcription came back empty. */
 export const UNREADABLE_SCAN = 'Scanned page that could not be read';
+
+const LEAD_CHARS = 1_200;
+const INTRO = /:\s*$/;
+
+/**
+ * The end of a page, sent with the unit that starts after it: its last lines up to LEAD_CHARS,
+ * headed by the last line that introduces a list ("The following actions will need to be
+ * taken:") when that line is further up. A list cut by the page break then keeps its lead-in,
+ * which is often what says whether its items are goals, actions or practices.
+ */
+export function pageTail(markup: string): string {
+  const lines = markup.split('\n').filter((l) => l.trim());
+  if (!lines.length) return '';
+  let start = lines.length - 1;
+  let size = lines[start].length;
+  while (start > 0 && size + lines[start - 1].length + 1 <= LEAD_CHARS) size += lines[--start].length + 1;
+  let intro = start - 1;
+  while (intro >= 0 && !(INTRO.test(lines[intro]) && !lines[intro].startsWith('|'))) intro--;
+  const head = intro < 0 ? [] : intro === start - 1 ? [lines[intro].slice(0, 300)] : [lines[intro].slice(0, 300), '…'];
+  return [...head, lines[start].slice(-LEAD_CHARS), ...lines.slice(start + 1)].join('\n');
+}
 
 export function buildUnits(
   pages: PageModel[],
@@ -77,11 +100,12 @@ export function buildUnits(
   if (current.length) groups.push(current);
 
   const units = groups
-    .map((g) => ({
+    .map((g, i) => ({
       index: 0,
       pages: g.map(({ n, markup, source }) => ({ n, markup, source })),
       imagePages: g.filter((p) => p.table).map((p) => p.n),
       relevance: relevanceOf(g.map((p) => p.markup).join('\n')),
+      lead: i ? pageTail(groups[i - 1][groups[i - 1].length - 1].markup) : '',
     }))
     .sort((a, b) => b.relevance - a.relevance)
     .map((u, index) => ({ ...u, index }));
@@ -92,12 +116,13 @@ export function buildUnits(
 export function splitUnit(u: Unit): [Unit, Unit] | null {
   if (u.pages.length < 2) return null;
   const mid = Math.ceil(u.pages.length / 2);
-  const half = (pages: UnitPage[]): Unit => ({
+  const half = (pages: UnitPage[], lead: string): Unit => ({
     ...u,
     pages,
     imagePages: u.imagePages.filter((n) => pages.some((p) => p.n === n)),
+    lead,
   });
-  return [half(u.pages.slice(0, mid)), half(u.pages.slice(mid))];
+  return [half(u.pages.slice(0, mid), u.lead), half(u.pages.slice(mid), pageTail(u.pages[mid - 1].markup))];
 }
 
 /** Places, sizes, codes and dates found by pattern, given to the model as a checklist. */

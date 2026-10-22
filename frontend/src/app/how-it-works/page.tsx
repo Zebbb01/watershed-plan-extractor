@@ -117,8 +117,9 @@ export default function HowItWorksPage() {
             <Eyebrow>Long plans</Eyebrow>
             <Title>Hundreds of pages, a few at a time</Title>
             <p className="mt-3 text-[15px] leading-relaxed text-slate-600">
-              Each request carries the plan&apos;s outline and at most three pages, so a long plan becomes many small requests instead of one long prompt.
-              Every item is still checked against its own page.
+              Each request carries the plan&apos;s outline, the end of the page before it and at most three pages, so a long plan becomes many small
+              requests instead of one long prompt, and a list that runs over a page break keeps its lead-in. Every item is still checked against its own
+              page.
             </p>
           </div>
           <div className={cn(cardClass, 'min-w-0 p-5 sm:p-6')}>
@@ -132,7 +133,7 @@ export default function HowItWorksPage() {
                 </span>
               ))}
             </div>
-            <p className="mt-3 text-[12px] text-slate-500">One request: the outline and up to three pages</p>
+            <p className="mt-3 text-[12px] text-slate-500">One request: the outline, the end of the page before and up to three pages</p>
             <dl className="mt-5 grid grid-cols-3 gap-3 border-t border-slate-100 pt-5">
               <Stat value={String(LONGEST.pages)} label="pages in the largest plan tested" />
               <Stat value={`${LONGEST.minutes} min`} label="to read and check it" />
