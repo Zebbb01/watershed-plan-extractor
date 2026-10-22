@@ -122,7 +122,19 @@ grep -rE "sk-ant-|sk-proj-" frontend/.next/static || echo "no key strings in the
 
 Then upload a plan in the browser and open a sample.
 
-Results on the live demo after the final deploy (2026-10-22, commit `b21cc8a`, on a new
+Results on the live demo after the long-plans deploy (2026-10-23, commit `fb5c02f`; the
+version submitted for review is tagged `submitted-2026-10-22`):
+
+- `/api/health` returns `{"ok":true,"provider":"anthropic","model":"claude-haiku-5-5",...}`.
+- The Accuracy page shows the three-run results (83.7% over the four plans, 82.2% held out,
+  Buttahatchee 87%), and the Buttahatchee sample has the 11 activities of its page 21.
+- The home page sets all six security headers, and a malformed request to `/api/extract`
+  returns 400 `INVALID_INPUT` with a request id.
+- One request to `/api/extract` with Buttahatchee's page 21 and the end of page 20 as `lead`
+  returned all seven list items as activities, none rejected, for $0.0023, so the new request
+  field, the prompt and the action-list rule work on the deployed functions.
+
+Results on the live demo after the earlier final deploy (2026-10-22, commit `b21cc8a`, on a new
 Netlify project at https://watershed-extractor.netlify.app; the first project's team had
 almost used its monthly credits):
 
