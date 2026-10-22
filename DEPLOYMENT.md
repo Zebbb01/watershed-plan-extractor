@@ -122,6 +122,17 @@ grep -rE "sk-ant-|sk-proj-" frontend/.next/static || echo "no key strings in the
 
 Then upload a plan in the browser and open a sample.
 
+Results on the live demo after the speed-fix deploy (2026-10-23, commit `50625e2`):
+
+- `/api/health` answers, the Accuracy page shows the same results as before (83.7%,
+  Buttahatchee 87%), the home page sets all six security headers, and a malformed request
+  to `/api/extract` returns 400.
+- The served script chunk that draws pages for OCR carries `intent:"print"`, so page drawing
+  no longer waits for animation frames in a hidden tab.
+- Before this deploy, West Boley Creek 2007 (40 scanned pages) ran through the live API routes
+  in 77 s with the account to itself; a browser upload of the same plan had taken 29 minutes
+  while the eval shared the account's output-token limit.
+
 Results on the live demo after the long-plans deploy (2026-10-23, commit `fb5c02f`; the
 version submitted for review is tagged `submitted-2026-10-22`):
 
