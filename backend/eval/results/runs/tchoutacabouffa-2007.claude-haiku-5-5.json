@@ -1,21 +1,41 @@
 {
  "report": {
   "summary": {
-   "totalGoals": 3,
+   "totalGoals": 4,
    "totalBMPs": 3,
    "completionRate": 0
   },
   "goals": [
    {
-    "id": "8201158a",
-    "name": "Research, identify and implement watershed protection and associated education strategies for the lower Tchoutacabouffa River",
-    "text": "Objective to research, identify and implement watershed protection and education strategies for the lower Tchoutacabouffa River.",
-    "kind": "sub",
+    "id": "4185b586",
+    "name": "One of the goals of the watershed partnership",
+    "text": "A goal of the watershed partnership was to develop and implement a solution-oriented action plan.",
+    "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 4,
-      "quote": "We have two primary objectives: (1) Research, identify and implement watershed protection and associated education strategies for the lower Tchoutacabouffa River"
+      "quote": "One of the goals of the watershed partnership was to develop and implement a solution-oriented, action plan."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "targets": [],
+    "pollutant": null,
+    "deadline": null
+   },
+   {
+    "id": "8201158a",
+    "name": "Research, identify and implement watershed protection and associated education strategies for the lower Tchoutacabouffa River",
+    "text": "Objective 1: research, identify and implement watershed protection and associated education strategies for the lower Tchoutacabouffa River.",
+    "kind": "sub",
+    "parentId": "4185b586",
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Research, identify and implement watershed protection and associated education strategies for the lower Tchoutacabouffa River"
      }
     ],
     "verified": true,
@@ -29,13 +49,13 @@
    {
     "id": "dadf1e5e",
     "name": "Research, design and implement watershed restoration and associated education strategies for lower Tchoutacabouffa River",
-    "text": "Objective to research, design and implement watershed restoration and education strategies for the lower Tchoutacabouffa River.",
+    "text": "Objective 2: research, design and implement watershed restoration and associated education strategies for lower Tchoutacabouffa River.",
     "kind": "sub",
-    "parentId": null,
+    "parentId": "4185b586",
     "evidence": [
      {
       "page": 4,
-      "quote": "(2) Research, design and implement watershed restoration and associated education strategies for lower Tchoutacabouffa River."
+      "quote": "Research, design and implement watershed restoration and associated education strategies for lower Tchoutacabouffa River"
      }
     ],
     "verified": true,
@@ -49,7 +69,7 @@
    {
     "id": "4b7fd679",
     "name": "Protection",
-    "text": "Defending the existing natural and cultural resources of the Watershed from further degradation.",
+    "text": "Defending the existing natural and cultural resources of the Watershed from further degradation caused by encroachment, abuse or neglect.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -69,13 +89,13 @@
    {
     "id": "8ef7c5c0",
     "name": "Restoration",
-    "text": "Actively initiating or accelerating the recovery of the ecological and cultural health of the degraded watershed.",
+    "text": "Actively initiating or accelerating the recovery of the ecological and cultural health, integrity and sustainability of the degraded watershed.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 5,
-      "quote": "Restoration is defined as actively initiating or accelerating the recovery of the ecological and"
+      "quote": "Restoration is defined as actively initiating or accelerating the recovery of the ecological and cultural health"
      }
     ],
     "verified": true,
@@ -89,7 +109,7 @@
    {
     "id": "9bc624e7",
     "name": "Our goal is to build a watershed partnership that will develop and implement a solution-oriented, action plan",
-    "text": "Build a watershed partnership that will develop and implement a solution-oriented action plan.",
+    "text": "Build a watershed partnership that will develop and implement a solution-oriented action plan for the Tchoutacabouffa River.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -109,32 +129,11 @@
   ],
   "bmps": [
    {
-    "id": "a3b3b7f2",
-    "name": "plant native plants and trees",
-    "text": "Stakeholders need to plant native plants and trees in the watershed.",
+    "id": "e8244cdd",
+    "name": "native plants and trees",
+    "text": "Planting native plants and trees, such as cypress trees, to protect the river.",
     "kind": "main",
     "parentId": null,
-    "evidence": [
-     {
-      "page": 12,
-      "quote": "Need to plant native plants and trees, e.g. cypress trees"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "quantities": [],
-    "unitCost": null,
-    "estimatedCost": null,
-    "pollutants": []
-   },
-   {
-    "id": "098c6e56",
-    "name": "cypress trees",
-    "text": "Cypress trees given as an example of native trees to plant.",
-    "kind": "example",
-    "parentId": "a3b3b7f2",
     "evidence": [
      {
       "page": 12,
@@ -153,13 +152,13 @@
    {
     "id": "5467b7f4",
     "name": "streamside re-planting program",
-    "text": "Establish a streamside re-planting program with native trees and vegetation, especially cypress trees, in identified river bank areas.",
+    "text": "Identify river bank areas that need re-planting and establish a streamside re-planting program with native trees and vegetation.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 14,
-      "quote": "establish a streamside re-planting program to include native trees and vegetation, especially cypress trees"
+      "quote": "Identify river bank areas that need re-planting and establish a streamside re-planting program to include native trees and vegetation"
      }
     ],
     "verified": true,
@@ -174,13 +173,13 @@
    {
     "id": "486ea4ba",
     "name": "vegetated riparian buffers",
-    "text": "Green infrastructure in floodplain management in the form of vegetated riparian buffers.",
+    "text": "Floodplain management focused on green infrastructure through vegetated riparian buffers.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 14,
-      "quote": "floodplain management focused on green infrastructure – vegetated riparian buffers"
+      "quote": "floodplain management focused on green infrastructure – vegetated"
      }
     ],
     "verified": true,
@@ -195,15 +194,213 @@
   ],
   "implementation": [
    {
-    "id": "2126ee13",
-    "name": "Conduct an assessment at the watershed scale",
-    "text": "Assessment at the watershed scale to determine geomorphic changes, flooding risks and priority areas for stream restoration.",
+    "id": "98db513f",
+    "name": "Annual review of the watershed action plan",
+    "text": "A small working group appointed by the LTMCP advisory team reviews the action plan annually.",
+    "kind": "main",
+    "parentId": "01e3ee84",
+    "evidence": [
+     {
+      "page": 15,
+      "quote": "Conducting an annual review of the watershed Action Plan."
+     },
+     {
+      "page": 16,
+      "quote": "LTMCP advisory team shall appoint a small working group to review the action plan annually."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "LTMCP advisory team"
+    ],
+    "timeframe": "annually",
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "705b3239",
+    "name": "Develop building and zoning codes that require setbacks from the rivers banks",
+    "text": "Develop building and zoning codes that require setbacks from the river banks to create a protected riparian corridor.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 11,
+      "quote": "Develop building and zoning codes that require setbacks from the rivers banks"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "4e5f1630",
+    "name": "Assessment at the watershed scale",
+    "text": "Assess the full extent of geomorphic changes, flooding risks and restoration strategies at the watershed scale and identify priority areas.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 13,
-      "quote": "we recommend an assessment at the watershed scale to (1) determine the full extent"
+      "quote": "First, we recommend an assessment at the watershed scale to (1) determine the full extent"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "3570e5e2",
+    "name": "Create an action plan to address boating concerns",
+    "text": "Host a facilitated Q&A session with landowners and boating officials, then create an action plan to address boating concerns.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 14,
+      "quote": "Create an action plan to address boating concerns."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "a925bf62",
+    "name": "Identify river bank areas that need re-planting",
+    "text": "Identify river bank areas that need re-planting and establish a streamside re-planting program.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 14,
+      "quote": "Identify river bank areas that need re-planting and establish a streamside re-planting program to include native trees and vegetation"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "9c06dfc3",
+    "name": "Work with County and City planning commissions to establish set-backs along the river bank",
+    "text": "Establish set-backs along the river bank with the planning commissions.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 14,
+      "quote": "Work with County and City planning commissions to establish “set-backs” along the"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "50038682",
+    "name": "Work with Harrison County Board of Supervisors to identify currently available resources",
+    "text": "Identify currently available resources to address land-use questions, including wetland loss and hardened surfaces, and look for funding sources to monitor wetland loss and natural bank loss.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 14,
+      "quote": "Work with Harrison County Board of Supervisors to identify currently available"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "e7e74d8a",
+    "name": "Identify landowners along the lower Tuxachanie Creek",
+    "text": "Identify landowners along the lower Tuxachanie Creek interested in protecting or improving water quality.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 14,
+      "quote": "Identify landowners along the lower Tuxachanie Creek interested in protecting/"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "d07727e3",
+    "name": "Work with state and federal partners, particularly EPA and MDEQ, to identify grant programs",
+    "text": "Work with state and federal partners to identify grant programs and primary partners to complete a watershed assessment and implementation plan.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 14,
+      "quote": "Work with state and federal partners, particularly EPA and MDEQ, to identify grant"
      }
     ],
     "verified": true,
@@ -221,7 +418,7 @@
    {
     "id": "685682fd",
     "name": "Identify a local champion(s) for the watershed",
-    "text": "Identify a local champion for the watershed.",
+    "text": "Identify a local champion or champions for the watershed.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -243,15 +440,15 @@
     "milestone": false
    },
    {
-    "id": "265d3968",
-    "name": "Ask the Land Trust for Mississippi Coastal Plain Board of Directors to establish a Tchoutacabouffa River Watershed Partnership Committee (steering committee)",
-    "text": "Board of Directors to establish a steering committee that will implement the action plan under the Land Trust's auspices.",
+    "id": "01e3ee84",
+    "name": "Ask the Land Trust for Mississippi Coastal Plain Board of Directors to establish a",
+    "text": "Establish a Tchoutacabouffa River Watershed Partnership Committee (steering committee) to implement the action plan.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 15,
-      "quote": "Ask the Land Trust for Mississippi Coastal Plain Board of Directors to establish a Tchoutacabouffa River Watershed Partnership Committee"
+      "quote": "Ask the Land Trust for Mississippi Coastal Plain Board of Directors to establish a"
      }
     ],
     "verified": true,
@@ -269,9 +466,9 @@
    {
     "id": "3c3aa0b8",
     "name": "Categorizing and prioritizing the Action Plan",
-    "text": "Committee task: categorize and prioritize the Action Plan.",
+    "text": "Task of the steering committee: categorize and prioritize the Action Plan.",
     "kind": "sub",
-    "parentId": "265d3968",
+    "parentId": "01e3ee84",
     "evidence": [
      {
       "page": 15,
@@ -293,9 +490,9 @@
    {
     "id": "3f27b429",
     "name": "Creating a timeline for the Action Plan",
-    "text": "Committee task: create a timeline for the Action Plan.",
+    "text": "Task of the steering committee: create a timeline for the Action Plan.",
     "kind": "sub",
-    "parentId": "265d3968",
+    "parentId": "01e3ee84",
     "evidence": [
      {
       "page": 15,
@@ -317,37 +514,13 @@
    {
     "id": "56df6ab9",
     "name": "Developing an estimated budget and volunteer staffing program to implement the timeline",
-    "text": "Committee task: develop an estimated budget and volunteer staffing program.",
+    "text": "Task of the steering committee: develop an estimated budget and volunteer staffing program.",
     "kind": "sub",
-    "parentId": "265d3968",
+    "parentId": "01e3ee84",
     "evidence": [
      {
       "page": 15,
-      "quote": "Developing an estimated budget and volunteer staffing program to implement the timeline;"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "responsible": [],
-    "timeframe": null,
-    "start": null,
-    "end": null,
-    "timeUnit": null,
-    "status": null,
-    "milestone": false
-   },
-   {
-    "id": "f49da02d",
-    "name": "Conducting an annual review of the watershed Action Plan",
-    "text": "Committee task: conduct an annual review of the watershed Action Plan.",
-    "kind": "sub",
-    "parentId": "265d3968",
-    "evidence": [
-     {
-      "page": 15,
-      "quote": "Conducting an annual review of the watershed Action Plan."
+      "quote": "Developing an estimated budget and volunteer staffing program to implement"
      }
     ],
     "verified": true,
@@ -365,7 +538,7 @@
    {
     "id": "732422f8",
     "name": "Formalize the technical advisory committee",
-    "text": "Formalize the technical advisory committee and send each member a copy of the action plan.",
+    "text": "Formalize the technical advisory committee and send each person a copy of the action plan.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -389,13 +562,13 @@
    {
     "id": "fc6d50c9",
     "name": "Formalize the education, recreation resources team",
-    "text": "Formalize the education, recreation resources team and send each member a copy of the action plan.",
+    "text": "Formalize the education, recreation resources team and send each person a copy of the action plan.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 15,
-      "quote": "Formalize the education, recreation resources team and send each person a copy of the action plan"
+      "quote": "Formalize the education, recreation resources team and send each person a copy of"
      }
     ],
     "verified": true,
@@ -404,152 +577,6 @@
     "confidence": "high",
     "responsible": [],
     "timeframe": null,
-    "start": null,
-    "end": null,
-    "timeUnit": null,
-    "status": null,
-    "milestone": false
-   },
-   {
-    "id": "9c06dfc3",
-    "name": "Work with County and City planning commissions to establish set-backs along the river bank",
-    "text": "Establish set-backs along the river bank with county and city planning commissions.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 14,
-      "quote": "Work with County and City planning commissions to establish “set-backs” along the river bank"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "responsible": [],
-    "timeframe": null,
-    "start": null,
-    "end": null,
-    "timeUnit": null,
-    "status": null,
-    "milestone": false
-   },
-   {
-    "id": "6bc65fba",
-    "name": "Work with Harrison County Board of Supervisors to identify currently available resources to address the land-use questions",
-    "text": "Identify available resources for land-use questions, wetland loss and hardened surfaces, and funding to monitor wetland and bank loss.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 14,
-      "quote": "Work with Harrison County Board of Supervisors to identify currently available"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "responsible": [],
-    "timeframe": null,
-    "start": null,
-    "end": null,
-    "timeUnit": null,
-    "status": null,
-    "milestone": false
-   },
-   {
-    "id": "1bb01737",
-    "name": "Identify landowners along the lower Tuxachanie Creek interested in protecting/improving water quality",
-    "text": "Identify interested landowners along the lower Tuxachanie Creek.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 14,
-      "quote": "Identify landowners along the lower Tuxachanie Creek interested in protecting/ improving water quality"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "responsible": [],
-    "timeframe": null,
-    "start": null,
-    "end": null,
-    "timeUnit": null,
-    "status": null,
-    "milestone": false
-   },
-   {
-    "id": "e378c408",
-    "name": "Host and support the development of a citizen's monitoring program for river levels",
-    "text": "Host and support development of a citizen's monitoring program for river levels.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 14,
-      "quote": "Host and support the development of a citizen’s monitoring program for river levels."
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "responsible": [],
-    "timeframe": null,
-    "start": null,
-    "end": null,
-    "timeUnit": null,
-    "status": null,
-    "milestone": false
-   },
-   {
-    "id": "bb276231",
-    "name": "Work with state and federal partners, particularly EPA and MDEQ, to identify grant programs and primary partners",
-    "text": "Identify grant programs and primary partners to complete a watershed assessment and implementation plan.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 14,
-      "quote": "Work with state and federal partners, particularly EPA and MDEQ, to identify grant"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "responsible": [],
-    "timeframe": null,
-    "start": null,
-    "end": null,
-    "timeUnit": null,
-    "status": null,
-    "milestone": false
-   },
-   {
-    "id": "fe8df572",
-    "name": "Regular evaluation of the watershed action plan",
-    "text": "Annual review of the watershed action plan by a small working group appointed by the LTMCP advisory team, considering completed tasks and changes in the watershed, stakeholder interests and understanding.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 16,
-      "quote": "LTMCP advisory team shall appoint a small working group to review the action plan annually."
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "responsible": [
-     "LTMCP advisory team"
-    ],
-    "timeframe": "annually",
     "start": null,
     "end": null,
     "timeUnit": null,
@@ -559,9 +586,72 @@
   ],
   "monitoring": [
    {
-    "id": "508df836",
-    "name": "Need more measuring stations, more monitoring stations",
-    "text": "The forum called for more measuring and monitoring stations for water quality and flood stages.",
+    "id": "6b97a775",
+    "name": "Flood levels",
+    "text": "Tracking of flood levels along the river, requested by participants as a monitoring measure.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 5,
+      "quote": "tracking flood levels, wetland loss and linear feet bulk headed along the river"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "flood levels",
+    "threshold": null,
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "13164d02",
+    "name": "Wetland loss",
+    "text": "Tracking of wetland loss in the watershed, requested by participants as a monitoring measure.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 5,
+      "quote": "tracking flood levels, wetland loss and linear feet bulk headed along the river"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "wetland loss",
+    "threshold": null,
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "c124bcd4",
+    "name": "Linear feet bulk headed",
+    "text": "Tracking of linear feet bulk headed along the river, requested by participants as a monitoring measure.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 5,
+      "quote": "tracking flood levels, wetland loss and linear feet bulk headed along the river"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "linear feet bulk headed",
+    "threshold": null,
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "f583c747",
+    "name": "Monitoring stations for water quality and flood stages",
+    "text": "Need for more measuring and monitoring stations for water quality and flood stages.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -574,21 +664,21 @@
     "source": "text",
     "needsReview": null,
     "confidence": "high",
-    "parameter": "water quality and flood stages",
+    "parameter": "Water quality and flood stages",
     "threshold": null,
     "location": null,
     "frequency": null
    },
    {
-    "id": "2d25f7a0",
-    "name": "Citizen's monitoring program for river levels",
-    "text": "Host and support the development of a citizen's monitoring program for river levels.",
+    "id": "fa466f2d",
+    "name": "River levels citizen monitoring",
+    "text": "Interest in citizen monitoring and reporting of river levels during storm events.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
-      "page": 14,
-      "quote": "Host and support the development of a citizen's monitoring program for river levels."
+      "page": 12,
+      "quote": "Interested in recording river levels: citizen monitoring and reporting of river levels during storm events"
      }
     ],
     "verified": true,
@@ -598,34 +688,108 @@
     "parameter": "River levels",
     "threshold": null,
     "location": null,
-    "frequency": null
-   }
-  ],
-  "outreach": [
+    "frequency": "during storm events"
+   },
    {
-    "id": "d4f5450a",
-    "name": "Provide education about",
-    "text": "Education on wetland function, sources of watershed information, connecting with others in the watershed, tree planting and streamside management.",
+    "id": "73a048f7",
+    "name": "Impervious surface",
+    "text": "Need to know the percentage of impervious surface in the watershed.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 11,
-      "quote": "Provide education about:"
+      "quote": "Need to know the % of impervious surface in the watershed"
      }
     ],
     "verified": true,
     "source": "text",
     "needsReview": null,
-    "confidence": "medium",
-    "audience": null,
-    "quantity": null,
-    "timeframe": null
+    "confidence": "high",
+    "parameter": "% of impervious surface",
+    "threshold": null,
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "9e2543a8",
+    "name": "fecal coliform",
+    "text": "Some sections of river are impaired by fecal coliform.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "some sections of river are impaired by fecal coliform (failing septic tanks and loss of wetlands)"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "fecal coliform",
+    "threshold": null,
+    "location": "some sections of river",
+    "frequency": null
+   },
+   {
+    "id": "0c6e0997",
+    "name": "Monitor wetland loss and natural bank loss",
+    "text": "Funding sources to monitor wetland loss and natural bank loss, identified with Harrison County Board of Supervisors.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 14,
+      "quote": "Look for funding sources to monitor wetland loss and natural bank loss."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "wetland loss and natural bank loss",
+    "threshold": null,
+    "location": null,
+    "frequency": null
+   }
+  ],
+  "outreach": [
+   {
+    "id": "4aab38ec",
+    "name": "Roundtable discussions",
+    "text": "Two roundtable discussions with landowners held at private homes to shape the watershed partnership.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 5,
+      "quote": "began with two roundtable discussions in March and June of 2007 held at the homes of Judy and"
+     },
+     {
+      "page": 13,
+      "quote": "discussions with private landowners along the lower Tchoutacabouffa River. These"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": "private landowners along the lower Tchoutacabouffa River",
+    "quantity": {
+     "raw": "two roundtable discussions",
+     "scope": null,
+     "value": 2,
+     "valueMax": null,
+     "unit": "roundtable discussions",
+     "comparator": "="
+    },
+    "timeframe": "March and June of 2007"
    },
    {
     "id": "535cf110",
     "name": "Adopt-a-stream program",
-    "text": "Citizen monitoring of water quality through an adopt-a-stream program.",
+    "text": "Interest in an adopt-a-stream program for citizen monitoring of water quality.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -643,15 +807,15 @@
     "timeframe": null
    },
    {
-    "id": "9112cfad",
-    "name": "Recording river levels",
-    "text": "Citizen monitoring and reporting of river levels during storm events.",
+    "id": "336daf06",
+    "name": "Watershed signage program",
+    "text": "Develop and implement a watershed signage program, possibly with billboards, to educate and build pride in place.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 12,
-      "quote": "Interested in recording river levels: citizen monitoring and reporting of river levels"
+      "quote": "Develop and implement watershed signage program, possibly billboards too – educate and build pride in place"
      }
     ],
     "verified": true,
@@ -660,142 +824,122 @@
     "confidence": "high",
     "audience": null,
     "quantity": null,
-    "timeframe": "during storm events"
-   },
-   {
-    "id": "ddd06231",
-    "name": "program where people come out to advise new landowners",
-    "text": "A program where people advise new landowners about best building practices, possibly through the MSU coastal extension center or CRMP.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 12,
-      "quote": "Interested in a program where people come out to advise new landowners about best building practices"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "audience": "new landowners",
-    "quantity": null,
     "timeframe": null
    },
    {
-    "id": "336daf06",
-    "name": "watershed signage program",
-    "text": "Develop and implement a watershed signage program, possibly with billboards, to educate and build pride in place.",
-    "kind": "main",
-    "parentId": "4f635897",
-    "evidence": [
-     {
-      "page": 12,
-      "quote": "Develop and implement watershed signage program, possibly billboards too"
-     },
-     {
-      "page": 13,
-      "quote": "Design and install watershed signage that"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "audience": "Public",
-    "quantity": null,
-    "timeframe": null
-   },
-   {
-    "id": "4ede1e39",
-    "name": "Webpage for the Tchoutacabouffa Watershed Partnership",
-    "text": "Create a webpage for the Tchoutacabouffa Watershed Partnership that can provide answers to questions asked by local stakeholders.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 13,
-      "quote": "Create a webpage for the Tchoutacabouffa Watershed Partnership that can provide answers to questions asked by local stakeholders"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "audience": "Local stakeholders",
-    "quantity": null,
-    "timeframe": null
-   },
-   {
-    "id": "4f635897",
-    "name": "Roadside/streamside education campaign",
-    "text": "Develop a roadside/streamside education campaign to include signage on private lands (willing landowners).",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 13,
-      "quote": "Develop a roadside/streamside education campaign to include signage on private lands (willing landowners)"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "audience": "Private landowners",
-    "quantity": null,
-    "timeframe": null
-   },
-   {
-    "id": "5fb070d4",
-    "name": "Streamside Management for Landowner's Handbook",
-    "text": "Print and distribute Tchoutacabouffa Streamside Management for Landowner's Handbook.",
+    "id": "3a193091",
+    "name": "wetland function for storage and how to maximize to decrease flooding risk",
+    "text": "Education about wetland function for storage and maximizing it to decrease flooding risk.",
     "kind": "sub",
     "parentId": null,
     "evidence": [
      {
-      "page": 14,
-      "quote": "Print and distribute Tchoutacabouffa Streamside Management for Landowner's Handbook"
+      "page": 11,
+      "quote": "a. wetland function for storage and how to maximize to decrease flooding risk"
      }
     ],
     "verified": true,
     "source": "text",
     "needsReview": null,
     "confidence": "high",
-    "audience": "Landowners",
+    "audience": null,
     "quantity": null,
     "timeframe": null
    },
    {
-    "id": "7e27e329",
-    "name": "Landowner education program",
-    "text": "Discuss with MSU Coastal Extension Service the possibilities of designing and hosting a landowner education program for homeowners.",
-    "kind": "main",
+    "id": "4e937c29",
+    "name": "where to get watershed information",
+    "text": "Education about where to get watershed information.",
+    "kind": "sub",
     "parentId": null,
     "evidence": [
      {
-      "page": 14,
-      "quote": "landowner education program for homeowners that addresses the primary information needs for homeowners"
+      "page": 11,
+      "quote": "b. where to get watershed information"
      }
     ],
     "verified": true,
     "source": "text",
     "needsReview": null,
     "confidence": "high",
-    "audience": "Homeowners and small land owners along the river",
+    "audience": null,
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "835a701e",
+    "name": "streamside management",
+    "text": "Education about streamside management and the benefits of native vegetation in the riparian buffer.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 11,
+      "quote": "e. streamside management – more information about the benefits of vegetation, particularly native vegetation in the riparian buffer."
+     },
+     {
+      "page": 14,
+      "quote": "Print and distribute Tchoutacabouffa Streamside Management for Landowner’s Handbook"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": "landowners",
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "275b8128",
+    "name": "Education and enforcement from DEQ",
+    "text": "Roundtable concern calling for education and enforcement from DEQ about lack of silt fences and BMPs.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "Lack of silt fences – lack of BMPs, erosion control. Need education and enforcement from DEQ."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": null,
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "e6a3febc",
+    "name": "Better education for boaters",
+    "text": "Roundtable call for better education for boaters.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "Also need better education for boaters."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": "boaters",
     "quantity": null,
     "timeframe": null
    },
    {
     "id": "57cdfceb",
     "name": "Watershed Harmony Puppet Show",
-    "text": "Identify elementary schools in the watershed and contact them to schedule the Watershed Harmony Puppet Show during 2007-2008 school calendar.",
+    "text": "Puppet show scheduled at elementary schools in the watershed during the 2007-2008 school calendar.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 14,
-      "quote": "Identify elementary schools in the watershed and contact them to schedule the Watershed Harmony Puppet Show"
+      "quote": "Watershed Harmony Puppet Show during 2007-2008 school calendar."
      }
     ],
     "verified": true,
@@ -808,28 +952,28 @@
    },
    {
     "id": "2f5ae760",
-    "name": "Children's activity page",
-    "text": "Develop a children's activity page to be used in conjunction with the Watershed Harmony Puppet Show.",
-    "kind": "sub",
-    "parentId": "57cdfceb",
+    "name": "Children’s activity page",
+    "text": "Children’s activity page to be used with the Watershed Harmony Puppet Show.",
+    "kind": "main",
+    "parentId": null,
     "evidence": [
      {
       "page": 14,
-      "quote": "Develop a children's activity page to be used in conjunction with the Watershed Harmony Puppet Show."
+      "quote": "Develop a children’s activity page to be used in conjunction with the Watershed Harmony"
      }
     ],
     "verified": true,
     "source": "text",
     "needsReview": null,
     "confidence": "high",
-    "audience": "Children",
+    "audience": "children",
     "quantity": null,
     "timeframe": null
    },
    {
     "id": "d09217eb",
     "name": "Facilitated Q&A session with private landowners",
-    "text": "Host a facilitated Q&A session with private landowners along the river and DMR boating and safety officials.",
+    "text": "Facilitated Q&A session with private landowners, DMR boating and safety officials and possibly coast guard officials.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -849,7 +993,7 @@
    {
     "id": "ef43f84b",
     "name": "Adopt-a-Stream workshop",
-    "text": "Host and support an Adopt-a-Stream workshop for landowners on the lower Tuxachanie.",
+    "text": "Adopt-a-Stream workshop for landowners on the lower Tuxachanie Creek.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -862,7 +1006,27 @@
     "source": "text",
     "needsReview": null,
     "confidence": "high",
-    "audience": "Landowners on the lower Tuxachanie",
+    "audience": null,
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "afe8a337",
+    "name": "Citizen’s monitoring program for river levels",
+    "text": "Hosted and supported citizen monitoring program for river levels.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 14,
+      "quote": "Host and support the development of a citizen’s monitoring program for river levels."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": "citizens",
     "quantity": null,
     "timeframe": null
    }
@@ -871,13 +1035,17 @@
    {
     "id": "51ca7a07",
     "name": "Tchoutacabouffa River",
-    "text": "The watershed whose partnership and action plan this document describes.",
+    "text": "Watershed partnership action plan area covering the lower Tchoutacabouffa River.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 4,
       "quote": "Tchoutacabouffa River (stream sections flowing through Harrison County)"
+     },
+     {
+      "page": 4,
+      "quote": "research, identify and implement watershed protection and associated education strategies for the lower Tchoutacabouffa River"
      },
      {
       "page": 5,
@@ -889,11 +1057,7 @@
      },
      {
       "page": 13,
-      "quote": "hosted two roundtable discussions with private landowners along the lower Tchoutacabouffa River"
-     },
-     {
-      "page": 16,
-      "quote": "in understanding of the Tchoutacabouffa River Watershed."
+      "quote": "the health of the Tchoutacabouffa River Watershed"
      }
     ],
     "verified": true,
@@ -906,19 +1070,15 @@
     "role": "primary"
    },
    {
-    "id": "612fd67f",
+    "id": "5c2fcea0",
     "name": "Harrison County",
-    "text": "County named in the plan title and as location of Tchoutacabouffa River stream sections.",
+    "text": "County named as containing the Tchoutacabouffa River stream sections and Turkey Creek.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
-      "page": 1,
-      "quote": "Harrison County and West Jackson County, Mississippi"
-     },
-     {
       "page": 4,
-      "quote": "Turkey Creek in Harrison County"
+      "quote": "Turkey Creek in Harrison County, Red Creek (stream sections flowing through Stone County)"
      },
      {
       "page": 7,
@@ -926,7 +1086,7 @@
      },
      {
       "page": 8,
-      "quote": "is located in Harrison County, west Jackson County and southeast Stone County in south Mississippi"
+      "quote": "The Tchoutacabouffa River Watershed is located in Harrison County, west Jackson County"
      },
      {
       "page": 14,
@@ -963,7 +1123,7 @@
      },
      {
       "page": 8,
-      "quote": "located in Harrison County, west Jackson County and southeast Stone County"
+      "quote": "located in Harrison County, west Jackson County"
      }
     ],
     "verified": true,
@@ -978,7 +1138,7 @@
    {
     "id": "8c9c7a31",
     "name": "Stone County",
-    "text": "County where stream sections of Red Creek flow, mentioned as part of the wider partnership.",
+    "text": "County through which Red Creek stream sections flow.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -988,7 +1148,7 @@
      },
      {
       "page": 8,
-      "quote": "and southeast Stone County in south Mississippi"
+      "quote": "and southeast Stone County in south Mississippi."
      }
     ],
     "verified": true,
@@ -998,33 +1158,12 @@
     "type": "county",
     "code": null,
     "areaAcres": null,
-    "role": "mentioned"
-   },
-   {
-    "id": "dcee0c68",
-    "name": "River County",
-    "text": "County mentioned in the list of watersheds; the document names Pearl River County for West Hobolochitto Creek.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 4,
-      "quote": "West Hobolochitto Creek in Pearl"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "county",
-    "code": null,
-    "areaAcres": null,
-    "role": "mentioned"
+    "role": "primary"
    },
    {
     "id": "090cb88b",
     "name": "Hancock County",
-    "text": "County where identified streams of Upper Bay of St. Louis are located, mentioned as part of the wider partnership.",
+    "text": "County containing identified streams of the Upper Bay of St. Louis watershed.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1043,15 +1182,36 @@
     "role": "mentioned"
    },
    {
-    "id": "7537cea2",
-    "name": "Turkey Creek",
-    "text": "Watershed in Harrison County named as one of six partnership watersheds.",
+    "id": "fcd8f6ec",
+    "name": "Pearl River County",
+    "text": "County containing the West Hobolochitto Creek watershed.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 4,
-      "quote": "Turkey Creek in Harrison County, Red Creek"
+      "quote": "West Hobolochitto Creek in Pearl"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "county",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "7537cea2",
+    "name": "Turkey Creek",
+    "text": "Watershed in Harrison County selected for a watershed partnership.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "The six watersheds that were chosen included Turkey Creek in Harrison County"
      }
     ],
     "verified": true,
@@ -1066,7 +1226,7 @@
    {
     "id": "9e06cbcb",
     "name": "Red Creek",
-    "text": "Watershed with stream sections in Stone County, named as one of six partnership watersheds.",
+    "text": "Watershed with stream sections in Stone County selected for a partnership.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1087,7 +1247,7 @@
    {
     "id": "1a31264a",
     "name": "Old Fort Bayou",
-    "text": "Watershed in Jackson County named as one of six partnership watersheds.",
+    "text": "Watershed in Jackson County selected for a watershed partnership.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1108,7 +1268,7 @@
    {
     "id": "0b652e41",
     "name": "West Hobolochitto Creek",
-    "text": "Watershed in Pearl River County named as one of six partnership watersheds.",
+    "text": "Watershed in Pearl River County selected for a watershed partnership.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1129,7 +1289,7 @@
    {
     "id": "ffead77e",
     "name": "Upper Bay of St. Louis",
-    "text": "Water body with identified streams in Hancock County, named as one of six partnership watersheds.",
+    "text": "Watershed of identified streams in Hancock County selected for a partnership.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1142,42 +1302,42 @@
     "source": "text",
     "needsReview": null,
     "confidence": "high",
-    "type": "waterbody",
+    "type": "watershed",
     "code": null,
     "areaAcres": null,
     "role": "mentioned"
    },
    {
-    "id": "50ca7874",
-    "name": "Tchoutacabouffa River",
-    "text": "The river whose lower reach the partnership and action plan address.",
+    "id": "96ebed60",
+    "name": "Mississippi",
+    "text": "State in which the watersheds and counties are located.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
-      "page": 5,
-      "quote": "efforts to build a partnership for the lower Tchoutacabouffa River began"
+      "page": 1,
+      "quote": "Harrison County and West Jackson County, Mississippi"
      }
     ],
     "verified": true,
     "source": "text",
     "needsReview": null,
     "confidence": "high",
-    "type": "waterbody",
+    "type": "state",
     "code": null,
     "areaAcres": null,
-    "role": "primary"
+    "role": "mentioned"
    },
    {
     "id": "7ae8f53a",
     "name": "Mississippi Coastal Plain",
-    "text": "Coastal region whose counties the Land Trust's mission covers.",
+    "text": "Region of counties in which the Land Trust's mission applies.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 6,
-      "quote": "in the counties of the Mississippi Coastal Plain"
+      "quote": "in the counties of the Mississippi Coastal Plain. Riparian corridors, or streamside management zones"
      }
     ],
     "verified": true,
@@ -1192,7 +1352,7 @@
    {
     "id": "8aadf4e0",
     "name": "Tchoutacabouffa",
-    "text": "The Tchoutacabouffa watershed, referred to in discussion of boating problems and local watershed needs.",
+    "text": "Watershed that the plan covers, with boating problems unique to it.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1208,28 +1368,7 @@
     "type": "watershed",
     "code": null,
     "areaAcres": null,
-    "role": "mentioned"
-   },
-   {
-    "id": "c7c46c67",
-    "name": "Tuxachanie Creek",
-    "text": "Lower Tuxachanie Creek where landowners are to be identified and an Adopt-a-Stream workshop hosted.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 14,
-      "quote": "Identify landowners along the lower Tuxachanie Creek interested in protecting/"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "watershed",
-    "code": null,
-    "areaAcres": null,
-    "role": "mentioned"
+    "role": "primary"
    },
    {
     "id": "cb12cddf",
@@ -1253,15 +1392,99 @@
     "role": "mentioned"
    },
    {
+    "id": "663fd329",
+    "name": "Tchoutacabouffa River/Bayou Billie watershed",
+    "text": "Hydrologic unit in the Targeted Area for Action Plan.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "I. Tchoutacabouffa River/Bayou Billie watershed covers @39 sq. miles and is 10.56 miles long. Hydrologic Unit Code: 031700090602"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "huc",
+    "code": "031700090602",
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "d3ca56f2",
+    "name": "Tuxachanie Creek/Hester Creek watershed",
+    "text": "Hydrologic unit in the Targeted Area for Action Plan.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "II. Tuxachanie Creek/Hester Creek watershed covers @39 sq. miles and is 8.87 miles long. Hydrologic Unit Code: 031700090605"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "huc",
+    "code": "031700090605",
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "87a0a1f7",
+    "name": "Tuxachanie Creek/Hog Branch watershed",
+    "text": "Hydrologic unit in the Targeted Area for Action Plan.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "III. Tuxachanie Creek/Hog Branch watershed covers @17 sq. miles and is 7.22 miles long. Hydrologic Unit Code: 031700090606"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "huc",
+    "code": "031700090606",
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "0835c871",
+    "name": "Tchoutacabouffa River/Cypress Creek watershed",
+    "text": "Hydrologic unit in the Targeted Area for Action Plan.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "IV. Tchoutacabouffa River/Cypress Creek watershed covers @ 38 sq. miles and is 11.98 miles long. Hydrologic Unit Code: 031700090607"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "huc",
+    "code": "031700090607",
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
     "id": "33b6dd2a",
     "name": "Bayou Castopia",
     "text": "Sub-basin targeted for partnership building and action.",
-    "kind": "sub",
+    "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 8,
-      "quote": "Bayou Castopia, Railroad Creek-Hurricane Creek, Tchoutacabouffa River and Bayou Billie, Tchoutacabouffa River and Cypress Creek, Tuxachanie Creek and Bigfoot Creek, Tuxachanie Creek and Hester Creek, Tuxachanie Creek and Hog Creek."
+      "quote": "Bayou Castopia, Railroad Creek-Hurricane Creek, Tchoutacabouffa"
      }
     ],
     "verified": true,
@@ -1277,54 +1500,12 @@
     "id": "78baf72c",
     "name": "Railroad Creek-Hurricane Creek",
     "text": "Sub-basin targeted for partnership building and action.",
-    "kind": "sub",
+    "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 8,
-      "quote": "Bayou Castopia, Railroad Creek-Hurricane Creek, Tchoutacabouffa River and Bayou Billie, Tchoutacabouffa River and Cypress Creek, Tuxachanie Creek and Bigfoot Creek, Tuxachanie Creek and Hester Creek, Tuxachanie Creek and Hog Creek."
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "subwatershed",
-    "code": null,
-    "areaAcres": null,
-    "role": "primary"
-   },
-   {
-    "id": "44288251",
-    "name": "Tchoutacabouffa River and Bayou Billie",
-    "text": "Sub-basin targeted for partnership building and action.",
-    "kind": "sub",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 8,
-      "quote": "Bayou Castopia, Railroad Creek-Hurricane Creek, Tchoutacabouffa River and Bayou Billie, Tchoutacabouffa River and Cypress Creek, Tuxachanie Creek and Bigfoot Creek, Tuxachanie Creek and Hester Creek, Tuxachanie Creek and Hog Creek."
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "subwatershed",
-    "code": null,
-    "areaAcres": null,
-    "role": "primary"
-   },
-   {
-    "id": "0ab13c0d",
-    "name": "Tchoutacabouffa River and Cypress Creek",
-    "text": "Sub-basin targeted for partnership building and action.",
-    "kind": "sub",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 8,
-      "quote": "Bayou Castopia, Railroad Creek-Hurricane Creek, Tchoutacabouffa River and Bayou Billie, Tchoutacabouffa River and Cypress Creek, Tuxachanie Creek and Bigfoot Creek, Tuxachanie Creek and Hester Creek, Tuxachanie Creek and Hog Creek."
+      "quote": "Bayou Castopia, Railroad Creek-Hurricane Creek, Tchoutacabouffa"
      }
     ],
     "verified": true,
@@ -1340,33 +1521,12 @@
     "id": "039325a5",
     "name": "Tuxachanie Creek and Bigfoot Creek",
     "text": "Sub-basin targeted for partnership building and action.",
-    "kind": "sub",
+    "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 8,
-      "quote": "Bayou Castopia, Railroad Creek-Hurricane Creek, Tchoutacabouffa River and Bayou Billie, Tchoutacabouffa River and Cypress Creek, Tuxachanie Creek and Bigfoot Creek, Tuxachanie Creek and Hester Creek, Tuxachanie Creek and Hog Creek."
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "subwatershed",
-    "code": null,
-    "areaAcres": null,
-    "role": "primary"
-   },
-   {
-    "id": "5f5288ba",
-    "name": "Tuxachanie Creek and Hester Creek",
-    "text": "Sub-basin targeted for partnership building and action.",
-    "kind": "sub",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 8,
-      "quote": "Bayou Castopia, Railroad Creek-Hurricane Creek, Tchoutacabouffa River and Bayou Billie, Tchoutacabouffa River and Cypress Creek, Tuxachanie Creek and Bigfoot Creek, Tuxachanie Creek and Hester Creek, Tuxachanie Creek and Hog Creek."
+      "quote": "Tuxachanie Creek and Bigfoot Creek, Tuxachanie Creek and Hester Creek"
      }
     ],
     "verified": true,
@@ -1382,12 +1542,12 @@
     "id": "dba3e175",
     "name": "Tuxachanie Creek and Hog Creek",
     "text": "Sub-basin targeted for partnership building and action.",
-    "kind": "sub",
+    "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 8,
-      "quote": "Bayou Castopia, Railroad Creek-Hurricane Creek, Tchoutacabouffa River and Bayou Billie, Tchoutacabouffa River and Cypress Creek, Tuxachanie Creek and Bigfoot Creek, Tuxachanie Creek and Hester Creek, Tuxachanie Creek and Hog Creek."
+      "quote": "Tuxachanie Creek and Hog Creek."
      }
     ],
     "verified": true,
@@ -1400,88 +1560,67 @@
     "role": "primary"
    },
    {
-    "id": "663fd329",
-    "name": "Tchoutacabouffa River/Bayou Billie watershed",
-    "text": "Hydrologic unit in the lower watershed targeted for citizen action.",
+    "id": "a356d6ea",
+    "name": "Bigfoot Creek",
+    "text": "Stream named among sub-basins within the watershed.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
-      "page": 9,
-      "quote": "I. Tchoutacabouffa River/Bayou Billie watershed covers @39 sq. miles and is 10.56 miles long. Hydrologic Unit Code: 031700090602"
+      "page": 8,
+      "quote": "Tuxachanie Creek and Bigfoot Creek"
      }
     ],
     "verified": true,
     "source": "text",
     "needsReview": null,
     "confidence": "high",
-    "type": "huc",
-    "code": "031700090602",
-    "areaAcres": 39,
+    "type": "waterbody",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "fdb1a081",
+    "name": "Tchoutacabouffa River",
+    "text": "River whose lower reaches are discussed for erosion, flooding and water quality.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 13,
+      "quote": "discussions with private landowners along the lower Tchoutacabouffa River. These"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "waterbody",
+    "code": null,
+    "areaAcres": null,
     "role": "primary"
    },
    {
-    "id": "d3ca56f2",
-    "name": "Tuxachanie Creek/Hester Creek watershed",
-    "text": "Hydrologic unit in the lower watershed targeted for citizen action.",
+    "id": "c7c46c67",
+    "name": "Tuxachanie Creek",
+    "text": "Creek whose lower reaches are a target for landowner outreach.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
-      "page": 9,
-      "quote": "II. Tuxachanie Creek/Hester Creek watershed covers @39 sq. miles and is 8.87 miles long. Hydrologic Unit Code: 031700090605"
+      "page": 14,
+      "quote": "along the lower Tuxachanie Creek interested in protecting/"
      }
     ],
     "verified": true,
     "source": "text",
     "needsReview": null,
     "confidence": "high",
-    "type": "huc",
-    "code": "031700090605",
-    "areaAcres": 39,
-    "role": "primary"
-   },
-   {
-    "id": "87a0a1f7",
-    "name": "Tuxachanie Creek/Hog Branch watershed",
-    "text": "Hydrologic unit in the lower watershed targeted for citizen action.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 9,
-      "quote": "III. Tuxachanie Creek/Hog Branch watershed covers @17 sq. miles and is 7.22 miles long. Hydrologic Unit Code: 031700090606"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "huc",
-    "code": "031700090606",
-    "areaAcres": 17,
-    "role": "primary"
-   },
-   {
-    "id": "0835c871",
-    "name": "Tchoutacabouffa River/Cypress Creek watershed",
-    "text": "Hydrologic unit in the lower watershed targeted for citizen action.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 9,
-      "quote": "IV. Tchoutacabouffa River/Cypress Creek watershed covers @ 38 sq. miles and is 11.98 miles long. Hydrologic Unit Code: 031700090607"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "huc",
-    "code": "031700090607",
-    "areaAcres": 38,
-    "role": "primary"
+    "type": "waterbody",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
    }
   ]
  },
@@ -1493,36 +1632,78 @@
   "year": 2007
  },
  "quality": {
-  "verifiedRate": 0.8354430379746836,
+  "verifiedRate": 0.8089887640449438,
   "rejected": [
    {
+    "category": "outreach",
+    "name": "Roundtable discussions: audience \"Private landowners along the lower Tchoutacabouffa River\"",
+    "page": 5,
+    "reason": "detail-not-in-source"
+   },
+   {
     "category": "monitoring",
-    "name": "flood levels, wetland loss, linear feet bulk headed",
-    "page": 5,
+    "name": "% of river bank bulk-headed",
+    "page": 12,
     "reason": "name-not-in-source"
    },
    {
     "category": "outreach",
-    "name": "Roundtable discussions with landowners",
-    "page": 5,
-    "reason": "name-not-in-source"
-   },
-   {
-    "category": "outreach",
-    "name": "Adopt-a-stream program: audience \"citizens\"",
+    "name": "Adopt-a-stream program: audience \"Citizens\"",
     "page": 12,
     "reason": "detail-not-in-source"
    },
    {
     "category": "outreach",
-    "name": "Recording river levels: audience \"citizens\"",
+    "name": "Watershed signage program: audience \"General public\"",
     "page": 12,
     "reason": "detail-not-in-source"
    },
    {
+    "category": "outreach",
+    "name": "Advising new landowners program",
+    "page": 12,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "wetland function for storage and how to maximize to decrease flooding risk: audience \"General public\"",
+    "page": 11,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "where to get watershed information: audience \"General public\"",
+    "page": 11,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "streamside management: audience \"General public\"",
+    "page": 11,
+    "reason": "detail-not-in-source"
+   },
+   {
     "category": "monitoring",
-    "name": "Wetland acres lost and natural bank loss",
-    "page": 14,
+    "name": "Water depth observations",
+    "page": 10,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Roundtable discussions with private landowners: two roundtable discussions",
+    "page": 13,
+    "reason": "number-not-in-quote"
+   },
+   {
+    "category": "outreach",
+    "name": "Tchoutacabouffa Watershed Partnership webpage",
+    "page": 13,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Roadside/streamside education campaign and signage",
+    "page": 13,
     "reason": "name-not-in-source"
    },
    {
@@ -1533,45 +1714,27 @@
    },
    {
     "category": "outreach",
-    "name": "Watershed Harmony Puppet Show: audience \"Elementary school students\"",
+    "name": "Landowner education program with MSU Coastal Extension Service",
+    "page": 14,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Watershed Harmony Puppet Show: audience \"elementary school children\"",
     "page": 14,
     "reason": "detail-not-in-source"
    },
    {
     "category": "outreach",
-    "name": "Facilitated Q&A session with private landowners: audience \"Private landowners, DMR boating and safety officials\"",
+    "name": "Facilitated Q&A session with private landowners: audience \"private landowners, DMR boating and safety officials\"",
     "page": 14,
     "reason": "detail-not-in-source"
    },
    {
     "category": "outreach",
-    "name": "Landowner outreach on lower Tuxachanie Creek",
+    "name": "Adopt-a-Stream workshop: audience \"landowners on the lower Tuxachanie Creek\"",
     "page": 14,
-    "reason": "name-not-in-source"
-   },
-   {
-    "category": "outreach",
-    "name": "Formalized technical advisory committee",
-    "page": 15,
-    "reason": "name-not-in-source"
-   },
-   {
-    "category": "outreach",
-    "name": "Formalized education, recreation resources team",
-    "page": 15,
-    "reason": "name-not-in-source"
-   },
-   {
-    "category": "outreach",
-    "name": "Tchoutacabouffa River Watershed Partnership Committee meetings",
-    "page": 15,
-    "reason": "name-not-in-source"
-   },
-   {
-    "category": "goals",
-    "name": "Reduce sediment loads",
-    "page": 10,
-    "reason": "name-not-in-source"
+    "reason": "detail-not-in-source"
    }
   ],
   "conflicts": [],
@@ -1584,7 +1747,6 @@
   ],
   "emptyPages": [
    2,
-   10,
    17,
    19,
    20,
@@ -1594,11 +1756,11 @@
   "failedUnits": [],
   "provider": "anthropic",
   "model": "claude-haiku-5-5",
-  "durationMs": 26072,
+  "durationMs": 22698,
   "usage": {
-   "inputTokens": 145705,
-   "outputTokens": 23411,
-   "costUsd": 0.01857938
+   "inputTokens": 157207,
+   "outputTokens": 24759,
+   "costUsd": 0.020209180000000004
   },
   "completionBasis": "No completion status reported in this document",
   "structure": [

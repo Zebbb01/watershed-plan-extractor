@@ -7,19 +7,15 @@
   },
   "goals": [
    {
-    "id": "6d7874a4",
-    "name": "Reduce sediment loads (TMDL reduction target)",
-    "text": "A sediment TMDL reduction of 50% to 94% is recommended in HUC 08010207 so yields reflect stable conditions.",
+    "id": "0cf34a8b",
+    "name": "Expected Load Reduction",
+    "text": "Reduce sediment yields in HUC 08010207 by 50% to 94% to reach stable stream conditions.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 3,
       "quote": "a reduction of 50% to 94% is recommended in HUC 08010207"
-     },
-     {
-      "page": 3,
-      "quote": "Based on the ranges of stable and unstable yield values"
      }
     ],
     "verified": true,
@@ -29,7 +25,7 @@
     "targets": [
      {
       "raw": "a reduction of 50% to 94%",
-      "scope": null,
+      "scope": "Element b: Expected Load Reduction",
       "value": 50,
       "valueMax": 94,
       "unit": "%",
@@ -40,9 +36,38 @@
     "deadline": null
    },
    {
+    "id": "5cb7348f",
+    "name": "the estimated allowable range of sediment loads for stable streams",
+    "text": "Sediment load target range for stable streams at effective discharge, the TMDL reference yield for the watershed.",
+    "kind": "sub",
+    "parentId": "0cf34a8b",
+    "evidence": [
+     {
+      "page": 3,
+      "quote": "the estimated allowable range of sediment loads for stable streams is 0.000757 to 0.00459 tons per acre per day at effective discharge"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "targets": [
+     {
+      "raw": "0.000757 to 0.00459 tons per acre per day",
+      "scope": null,
+      "value": 0.000757,
+      "valueMax": 0.00459,
+      "unit": "ton",
+      "comparator": "range"
+     }
+    ],
+    "pollutant": "Sediment",
+    "deadline": null
+   },
+   {
     "id": "b9c4833c",
     "name": "Reduce the Nutrient and Sediment loads entering into the Owl Creek-Little Hatchie River Watershed",
-    "text": "Goal to reduce nutrient and sediment loads entering the Owl Creek-Little Hatchie River Watershed.",
+    "text": "Plan goal to reduce nutrient and sediment loads entering the Owl Creek-Little Hatchie River Watershed.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -64,7 +89,7 @@
    {
     "id": "6fa1c2b3",
     "name": "Grade Stabilization Structure",
-    "text": "Grade stabilization structure practice with estimated units and costs in the full project cost estimate.",
+    "text": "Grade stabilization structure practice in the cost estimate, proposed to address sediment issues.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -73,8 +98,8 @@
       "quote": "Grade Stabilization Structure ea 40 $10,000.00 $400,000"
      },
      {
-      "page": 6,
-      "quote": "Grade Stabilization Structure ea 15 $10,000.00 $150,000.00"
+      "page": 4,
+      "quote": "installation of the following potential BMPs would mitigate sediment issues in the Owl Creek-Little Hatchie River watershed"
      }
     ],
     "verified": true,
@@ -86,14 +111,6 @@
       "raw": "40 ea",
       "scope": "Cost Estimate: Full Project Implementation",
       "value": 40,
-      "valueMax": null,
-      "unit": "ea",
-      "comparator": "="
-     },
-     {
-      "raw": "15 ea",
-      "scope": "Phase 1 Cost Estimate: Project Implementation",
-      "value": 15,
       "valueMax": null,
       "unit": "ea",
       "comparator": "="
@@ -115,12 +132,14 @@
      "unit": "USD",
      "comparator": "="
     },
-    "pollutants": []
+    "pollutants": [
+     "Sediment"
+    ]
    },
    {
     "id": "92a8527d",
     "name": "Streambank and Shoreline Protection",
-    "text": "Streambank and shoreline protection practice with estimated units and costs in the cost estimates.",
+    "text": "Streambank and shoreline protection practice in the cost estimate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -176,7 +195,7 @@
    {
     "id": "154dd540",
     "name": "Fencing",
-    "text": "Fencing practice with estimated linear feet and costs in the cost estimates.",
+    "text": "Fencing practice in the cost estimate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -232,7 +251,7 @@
    {
     "id": "0083d521",
     "name": "Heavy Use Area",
-    "text": "Heavy use area practice with estimated square feet and costs in the cost estimates.",
+    "text": "Heavy use area protection practice in the cost estimate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -288,7 +307,7 @@
    {
     "id": "7a0dd608",
     "name": "Watering Facility",
-    "text": "Watering facility practice with estimated units and costs in the cost estimates.",
+    "text": "Watering facility practice in the cost estimate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -344,7 +363,7 @@
    {
     "id": "2c0d1092",
     "name": "Stream Crossing",
-    "text": "Stream crossing practice with estimated units and costs in the cost estimates.",
+    "text": "Stream crossing practice in the cost estimate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -400,19 +419,15 @@
   ],
   "implementation": [
    {
-    "id": "63af6425",
-    "name": "Develop a sediment TMDL for Owl Creek-Little Hatchie River watershed",
-    "text": "Now that sediment has been identified as the pollutant of concern, a total maximum daily load (TMDL) will be developed.",
+    "id": "2569cb8e",
+    "name": "This list will be used to identify candidate BMPs",
+    "text": "Use the NRCS list of approved BMPs for sedimentation to identify candidate BMPs in the Owl Creek-Little Hatchie River watershed.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
-      "page": 1,
-      "quote": "Now that sediment has been identified as the pollutant of concern, a total"
-     },
-     {
-      "page": 2,
-      "quote": "maximum daily load (TMDL) will be developed."
+      "page": 3,
+      "quote": "This list will be used to identify candidate BMPs in the Owl Creek-Little Hatchie River watershed."
      }
     ],
     "verified": true,
@@ -424,19 +439,19 @@
     "start": null,
     "end": null,
     "timeUnit": null,
-    "status": "planned",
+    "status": null,
     "milestone": false
    },
    {
-    "id": "a26fc6fb",
-    "name": "Work to develop, execute, and implement a Subgrant Agreement",
-    "text": "Develop, execute and implement a Subgrant Agreement specifying roles, tasks, requirements and milestones.",
+    "id": "f494a291",
+    "name": "Work to develop, execute, and implement a Subgrant Agreement that specifies the roles, tasks, requirements, and milestones for project implementation",
+    "text": "Develop, execute and implement a Subgrant Agreement for project implementation.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 7,
-      "quote": "Work to develop, execute, and implement a Subgrant Agreement that specifies the roles, tasks, requirements, and milestones for project implementation. (Month 1)"
+      "quote": "Work to develop, execute, and implement a Subgrant Agreement that specifies the roles, tasks, requirements, and milestones"
      }
     ],
     "verified": true,
@@ -454,9 +469,9 @@
     "milestone": false
    },
    {
-    "id": "ff55af7c",
-    "name": "Facilitate meetings, media and social media promotion of the project",
-    "text": "Facilitate meetings, media and social media promotion and coordinate activities to fully implement the plan.",
+    "id": "7a8d6c04",
+    "name": "Facilitate, in coordination with MDEQ and other partners, meetings, media and social media promotion of the project, and coordinate activities to fully implement this plan",
+    "text": "Facilitate meetings and promotion and coordinate activities to fully implement the plan.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -480,15 +495,15 @@
     "milestone": false
    },
    {
-    "id": "1c056f69",
-    "name": "Work to secure landowner commitments",
+    "id": "19d37f8f",
+    "name": "Work with the Tippah County SWCD, MSWCC, NRCS, and MDEQ to inform landowners and operators within the watershed about the project",
     "text": "Inform landowners and operators about the project and secure commitments from priority area landowners.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 7,
-      "quote": "work to secure commitments from priority area landowners and operators who are willing to participate in the project. (Months 1-6)"
+      "quote": "Work with the Tippah County SWCD, MSWCC, NRCS, and MDEQ to inform landowners and operators within the watershed"
      }
     ],
     "verified": true,
@@ -509,15 +524,15 @@
     "milestone": false
    },
    {
-    "id": "f772c01f",
-    "name": "Determine priority areas through GIS applications and intensive site surveys",
-    "text": "Determine priority areas within the sub-watershed contributing significant pollutant loads; install BMPs per NRCS guidelines.",
+    "id": "e17a49ce",
+    "name": "Work with the local SWCD, MSWCC, NRCS, and MDEQ to determine through GIS applications and intensive site surveys the priority areas within the sub-watershed",
+    "text": "Determine priority areas contributing significant pollutant loads through GIS and site surveys, installing BMPs per NRCS guidelines.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 8,
-      "quote": "determine through GIS applications and intensive site surveys the priority areas within the sub-watershed that are contributing significant pollutant loads."
+      "quote": "Work with the local SWCD, MSWCC, NRCS, and MDEQ to determine through GIS applications and intensive site surveys"
      }
     ],
     "verified": true,
@@ -538,15 +553,15 @@
     "milestone": false
    },
    {
-    "id": "b093bc13",
-    "name": "Facilitate completion and implementation of a monitoring plan",
+    "id": "136b0c80",
+    "name": "Facilitate, in cooperation with MDEQ and other monitoring partners, the completion and implementation of an effective and efficient plan",
     "text": "Facilitate completion and implementation of a plan to monitor baseline water quality and track changes from BMPs.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 8,
-      "quote": "Facilitate, in cooperation with MDEQ and other monitoring partners, the completion and implementation of an effective and efficient plan to monitor baseline water quality"
+      "quote": "Facilitate, in cooperation with MDEQ and other monitoring partners, the completion and implementation of an effective and efficient plan"
      }
     ],
     "verified": true,
@@ -556,7 +571,7 @@
     "responsible": [
      "MDEQ"
     ],
-    "timeframe": "Plan Completion: Months 1-2; Implementation: Months 3-36",
+    "timeframe": "(Plan Completion: Months 1-2); Implementation: Months 3-36)",
     "start": 1,
     "end": 2,
     "timeUnit": "month",
@@ -579,9 +594,7 @@
     "source": "table",
     "needsReview": null,
     "confidence": "high",
-    "responsible": [
-     "MDEQ"
-    ],
+    "responsible": [],
     "timeframe": "Months 13-36",
     "start": 13,
     "end": 36,
@@ -614,15 +627,15 @@
     "milestone": false
    },
    {
-    "id": "91129321",
-    "name": "Collect GPS coordinates of installed BMPs for GIS",
-    "text": "Coordinate with local SWCD, MSWCC and NRCS to collect GPS coordinates of installed BMPs and incorporate them into GIS.",
+    "id": "bd9a75e5",
+    "name": "Coordinate with and support the local SWCD, MSWCC and NRCS in the collection of relevant GPS coordinates of all installed BMPs",
+    "text": "Support collection of GPS coordinates of installed BMPs and incorporate them into a GIS format.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 8,
-      "quote": "Coordinate with and support the local SWCD, MSWCC and NRCS in the collection of relevant GPS coordinates of all installed BMPs"
+      "quote": "Coordinate with and support the local SWCD, MSWCC and NRCS in the collection of"
      }
     ],
     "verified": true,
@@ -642,15 +655,15 @@
     "milestone": false
    },
    {
-    "id": "427ef347",
-    "name": "Collect photo documentation before, during, and after BMP installation",
-    "text": "Collect adequate photo documentation before, during, and after installation of approved BMPs.",
+    "id": "6bf47ac9",
+    "name": "Collect adequate photo documentation before, during, and after installation of the approved BMPs",
+    "text": "Collect photo documentation before, during and after BMP installation.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 8,
-      "quote": "Collect adequate photo documentation before, during, and after installation of the approved BMPs. (Months 3-36)"
+      "quote": "Collect adequate photo documentation before, during, and after installation of the"
      }
     ],
     "verified": true,
@@ -666,15 +679,15 @@
     "milestone": false
    },
    {
-    "id": "a74ab0e1",
-    "name": "Report pollutant load reduction, acreage affected and GIS data",
-    "text": "Report measured or estimated nonpoint source pollutant load reduction, acreage affected, pre- and post-site conditions, and GIS data.",
+    "id": "13ccc1a7",
+    "name": "Report measured, or estimated, nonpoint source pollutant load reduction, acreage affected, pre-and post- site conditions, and GIS data",
+    "text": "Report measured or estimated pollutant load reduction, acreage affected, site conditions and GIS data.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 8,
-      "quote": "Report measured, or estimated, nonpoint source pollutant load reduction, acreage affected, pre-and post- site conditions, and GIS data. (1-36)"
+      "quote": "Report measured, or estimated, nonpoint source pollutant load reduction, acreage affected, pre-and post- site conditions, and GIS data"
      }
     ],
     "verified": true,
@@ -682,7 +695,7 @@
     "needsReview": null,
     "confidence": "high",
     "responsible": [],
-    "timeframe": "1-36",
+    "timeframe": "(1-36)",
     "start": 1,
     "end": 36,
     "timeUnit": "month",
@@ -690,21 +703,21 @@
     "milestone": false
    },
    {
-    "id": "ca0d34fb",
-    "name": "Coordinate with the MDEQ, NRCS, MSWCC, USGS, and the Tippah Co. Soil and Water District to determine priority areas",
-    "text": "Target priority areas for BMPs through coordination with partner agencies.",
+    "id": "09af3c6c",
+    "name": "Coordinate with the MDEQ, NRCS, MSWCC, USGS, and the Tippah Co. Soil and Water District to determine priority areas that are contributing significant pollutant loads to Owl Creek-Little Hatchie River Watershed",
+    "text": "Milestone: target priority areas for BMPs.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 8,
-      "quote": "Coordinate with the MDEQ, NRCS, MSWCC, USGS, and the Tippah Co. Soil and Water District to determine priority areas"
+      "quote": "the Tippah Co. Soil and Water District to determine"
      }
     ],
     "verified": true,
     "source": "table",
     "needsReview": null,
-    "confidence": "medium",
+    "confidence": "high",
     "responsible": [
      "MDEQ",
      "NRCS",
@@ -720,21 +733,21 @@
     "milestone": true
    },
    {
-    "id": "9cc8a4fa",
-    "name": "Establish Watershed Implementation Team",
-    "text": "Establish WIT to begin refinement of the Watershed Based Plan.",
+    "id": "f00b0a26",
+    "name": "Establish Watershed Implementation Team to begin refinement of Watershed Based Plan (WBP) for Owl Creek-Little Hatchie River Watershed",
+    "text": "Milestone: establish the WIT outcome.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 8,
-      "quote": "Establish Watershed Implementation Team to begin refinement of Watershed Based Plan"
+      "quote": "Watershed Based Plan (WBP) for Owl Creek-Little Hatchie River Watershed"
      }
     ],
     "verified": true,
     "source": "table",
     "needsReview": null,
-    "confidence": "medium",
+    "confidence": "high",
     "responsible": [],
     "timeframe": "Months 1-2",
     "start": 1,
@@ -744,15 +757,39 @@
     "milestone": true
    },
    {
-    "id": "e8f1cc0d",
-    "name": "Meet with landowners and cooperators to secure commitments",
-    "text": "Secure landowner commitments to install BMPs in priority areas.",
+    "id": "bbaf248b",
+    "name": "Initiate watershed monitoring",
+    "text": "Milestone: baseline condition monitoring, completed using historical data.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 8,
-      "quote": "Meet with landowners and cooperators to secure commitments to install BMPs in priority areas"
+      "quote": "Initiate watershed monitoring Baseline condition"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": true
+   },
+   {
+    "id": "15b0d5d8",
+    "name": "Meet with landowners and cooperators to secure commitments to install BMPs in priority areas",
+    "text": "Milestone: landowner commitment to install BMPs in priority areas.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 8,
+      "quote": "Meet with landowners and cooperators to secure"
      }
     ],
     "verified": true,
@@ -768,33 +805,9 @@
     "milestone": true
    },
    {
-    "id": "ec1a8188",
-    "name": "Establish routine meeting schedule for WIT to support WBP revision",
-    "text": "Establish routine WIT meetings to support WBP revision.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 9,
-      "quote": "Establish routine meeting schedule for WIT to support WBP revision"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "responsible": [],
-    "timeframe": "Months 1-36",
-    "start": 1,
-    "end": 36,
-    "timeUnit": "month",
-    "status": null,
-    "milestone": true
-   },
-   {
     "id": "0d8910dd",
     "name": "Implement BMPs",
-    "text": "BMP installation.",
+    "text": "Milestone: BMP installation.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -816,21 +829,21 @@
     "milestone": true
    },
    {
-    "id": "a7ddef34",
-    "name": "Coordinate with Landowners to inspect BMPs installed using Section 319 funds",
-    "text": "BMP inspection coordinated with landowners.",
+    "id": "dd91753e",
+    "name": "Coordinate with Landowners to inspect BMPs that were installed using Section 319 funds",
+    "text": "Milestone: BMP inspection with landowners.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 9,
-      "quote": "Coordinate with Landowners to inspect BMPs that were installed using Section 319 funds"
+      "quote": "installed using Section 319 funds"
      }
     ],
     "verified": true,
     "source": "table",
     "needsReview": null,
-    "confidence": "medium",
+    "confidence": "high",
     "responsible": [
      "Landowners"
     ],
@@ -844,19 +857,19 @@
    {
     "id": "eeeef8c7",
     "name": "Begin monitoring to collect data on post-BMP water quality",
-    "text": "Post-BMP monitoring.",
+    "text": "Milestone: post-BMP monitoring.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 9,
-      "quote": "Begin monitoring to collect data on post-BMP water quality"
+      "quote": "data on post-BMP water quality"
      }
     ],
     "verified": true,
     "source": "table",
     "needsReview": null,
-    "confidence": "medium",
+    "confidence": "high",
     "responsible": [],
     "timeframe": "Months 42-48",
     "start": 42,
@@ -868,7 +881,7 @@
    {
     "id": "f6a81ab7",
     "name": "Finalize revised WBP",
-    "text": "Final Revised WBP.",
+    "text": "Milestone: final revised WBP.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -892,22 +905,22 @@
   ],
   "monitoring": [
    {
-    "id": "57244459",
-    "name": "M-BISQ",
-    "text": "Benthic macroinvertebrate index used to assess the biological condition of wadeable streams.",
+    "id": "ff77b777",
+    "name": "Index of Biological Integrity (IBI) / Mississippi Benthic Index of Stream Quality (M-BISQ)",
+    "text": "Regionally calibrated benthic macroinvertebrate index used in the biological assessment of the state's wadeable streams and rivers.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 1,
-      "quote": "known as the Mississippi Benthic Index of Stream Quality (M-BISQ), was used in the biological assessment"
+      "quote": "Mississippi Benthic Index of Stream Quality (M-BISQ), was used in the biological assessment of the state’s wadeable streams and rivers."
      }
     ],
     "verified": true,
     "source": "text",
     "needsReview": null,
     "confidence": "high",
-    "parameter": "Mississippi Benthic Index of Stream Quality",
+    "parameter": "M-BISQ",
     "threshold": null,
     "location": null,
     "frequency": null
@@ -915,13 +928,13 @@
    {
     "id": "d38b36af",
     "name": "Dissolved Oxygen",
-    "text": "Dissolved oxygen water quality threshold for monitoring.",
+    "text": "Dissolved oxygen water quality threshold.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 9,
-      "quote": "conventional parameters generally measured to determine aquatic health (e.g. Dissolved Oxygen, pH, Temperature, Conductivity, Dissolved Solids)"
+      "quote": "generally measured to determine aquatic health (e.g. Dissolved Oxygen, pH, Temperature, Conductivity, Dissolved Solids)"
      },
      {
       "page": 10,
@@ -947,7 +960,7 @@
    {
     "id": "0c6921be",
     "name": "Dissolved Oxygen % Sat",
-    "text": "Dissolved oxygen percent saturation threshold for monitoring.",
+    "text": "Dissolved oxygen percent saturation threshold.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -975,13 +988,13 @@
    {
     "id": "88a88166",
     "name": "pH",
-    "text": "pH water quality threshold for monitoring.",
+    "text": "pH water quality threshold.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 9,
-      "quote": "conventional parameters generally measured to determine aquatic health (e.g. Dissolved Oxygen, pH, Temperature, Conductivity, Dissolved Solids)"
+      "quote": "generally measured to determine aquatic health (e.g. Dissolved Oxygen, pH, Temperature, Conductivity, Dissolved Solids)"
      },
      {
       "page": 10,
@@ -1007,13 +1020,13 @@
    {
     "id": "8a240376",
     "name": "Temperature",
-    "text": "Temperature water quality threshold for monitoring.",
+    "text": "Temperature water quality threshold.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 9,
-      "quote": "conventional parameters generally measured to determine aquatic health (e.g. Dissolved Oxygen, pH, Temperature, Conductivity, Dissolved Solids)"
+      "quote": "generally measured to determine aquatic health (e.g. Dissolved Oxygen, pH, Temperature, Conductivity, Dissolved Solids)"
      },
      {
       "page": 10,
@@ -1039,7 +1052,7 @@
    {
     "id": "27687457",
     "name": "Specific Conductance",
-    "text": "Specific conductance water quality threshold for monitoring.",
+    "text": "Specific conductance water quality threshold.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1067,13 +1080,13 @@
    {
     "id": "716c4bbb",
     "name": "Dissolved Solids",
-    "text": "Dissolved solids water quality threshold for monitoring.",
+    "text": "Dissolved solids water quality threshold.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 9,
-      "quote": "conventional parameters generally measured to determine aquatic health (e.g. Dissolved Oxygen, pH, Temperature, Conductivity, Dissolved Solids)"
+      "quote": "generally measured to determine aquatic health (e.g. Dissolved Oxygen, pH, Temperature, Conductivity, Dissolved Solids)"
      },
      {
       "page": 10,
@@ -1099,7 +1112,7 @@
    {
     "id": "940728a1",
     "name": "Total Suspended Solids",
-    "text": "Total suspended solids water quality threshold for monitoring.",
+    "text": "Total suspended solids threshold.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1131,13 +1144,13 @@
    {
     "id": "aa4a9306",
     "name": "Turbidity",
-    "text": "Turbidity water quality threshold for monitoring.",
+    "text": "Turbidity water quality threshold.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 9,
-      "quote": "may include measurements for Total Suspended Solids, Total Suspended Sediment, and turbidity"
+      "quote": "Total Suspended Sediment, and turbidity along with conventional parameters"
      },
      {
       "page": 10,
@@ -1163,7 +1176,7 @@
    {
     "id": "23756857",
     "name": "Chemical Oxygen Demand",
-    "text": "Chemical oxygen demand water quality threshold for monitoring.",
+    "text": "Chemical oxygen demand threshold.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1213,26 +1226,26 @@
      "unit": "Calibration",
      "comparator": "="
     },
-    "location": "East bioregion",
+    "location": null,
     "frequency": null
    },
    {
-    "id": "906318af",
-    "name": "Benthic macroinvertebrate community data",
-    "text": "Biological community monitoring used to determine attainment of the Aquatic Life Designated Use.",
+    "id": "4abb87d4",
+    "name": "Post BMP monitoring",
+    "text": "Post-BMP monitoring after installation and stream stabilization to compare with pre-implementation data.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
-      "page": 10,
-      "quote": "biological community data and in stream habitat surveys will be collected over the course of the project"
+      "page": 11,
+      "quote": "post BMP monitoring will be initiated. Post BMP monitoring will be conducted in a way that allows for comparison with the pre-implementation data."
      }
     ],
     "verified": true,
     "source": "table",
     "needsReview": null,
     "confidence": "high",
-    "parameter": "Benthic macroinvertebrate community data",
+    "parameter": "Post BMP monitoring",
     "threshold": null,
     "location": null,
     "frequency": null
@@ -1240,7 +1253,7 @@
    {
     "id": "fbe79238",
     "name": "Total Suspended Sediment",
-    "text": "Surrogate parameter for sediment concentrations that may be measured.",
+    "text": "Surrogate parameter measured in lieu of numeric sediment criteria.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1261,13 +1274,13 @@
    {
     "id": "99fec79b",
     "name": "Conductivity",
-    "text": "Conventional aquatic health parameter that may be monitored.",
-    "kind": "example",
+    "text": "Conventional parameter generally measured to determine aquatic health.",
+    "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 9,
-      "quote": "conventional parameters generally measured to determine aquatic health (e.g. Dissolved Oxygen, pH, Temperature, Conductivity, Dissolved Solids)"
+      "quote": "generally measured to determine aquatic health (e.g. Dissolved Oxygen, pH, Temperature, Conductivity, Dissolved Solids)"
      }
     ],
     "verified": true,
@@ -1278,40 +1291,19 @@
     "threshold": null,
     "location": null,
     "frequency": null
-   },
-   {
-    "id": "cef43c9a",
-    "name": "Post-BMP Monitoring",
-    "text": "Monitoring of post-BMP water quality to measure progress.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 9,
-      "quote": "Begin monitoring to collect data on post-BMP water quality"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "parameter": "post-BMP water quality",
-    "threshold": null,
-    "location": null,
-    "frequency": "Months 42-48"
    }
   ],
   "outreach": [
    {
     "id": "cc518d2c",
     "name": "Training workshops",
-    "text": "Stakeholders and coordinators participate in training workshops as part of collaboration and ownership activities in the watershed.",
+    "text": "Stakeholders and coordinators join together to participate in training workshops for problem-solving and plan development.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 6,
-      "quote": "training workshops, festival event planning, soil and water conservation field days, tree boards, poster, art and writing"
+      "quote": "plan development, training workshops, festival"
      }
     ],
     "verified": true,
@@ -1325,13 +1317,13 @@
    {
     "id": "053d036d",
     "name": "Festival event planning",
-    "text": "Stakeholders and coordinators join together in festival event planning to promote collaboration and ownership of the watershed.",
+    "text": "Stakeholders and coordinators participate in festival event planning as a collaboration activity.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 6,
-      "quote": "training workshops, festival event planning, soil and water conservation field days, tree boards, poster, art and writing"
+      "quote": "training workshops, festival event planning, soil and water conservation field days"
      }
     ],
     "verified": true,
@@ -1345,13 +1337,13 @@
    {
     "id": "947a4195",
     "name": "Soil and water conservation field days",
-    "text": "Stakeholders and coordinators take part in soil and water conservation field days.",
+    "text": "Stakeholders and coordinators participate in soil and water conservation field days.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 6,
-      "quote": "training workshops, festival event planning, soil and water conservation field days, tree boards, poster, art and writing"
+      "quote": "event planning, soil and water conservation field days, tree boards, poster"
      },
      {
       "page": 7,
@@ -1369,13 +1361,13 @@
    {
     "id": "7314befd",
     "name": "Tree boards",
-    "text": "Stakeholders and coordinators join together in tree boards as an information and education activity.",
+    "text": "Stakeholders and coordinators take part in tree boards as a collaboration activity.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 6,
-      "quote": "training workshops, festival event planning, soil and water conservation field days, tree boards, poster, art and writing"
+      "quote": "field days, tree boards, poster, art and writing"
      }
     ],
     "verified": true,
@@ -1389,13 +1381,13 @@
    {
     "id": "7e01f313",
     "name": "Poster, art and writing projects",
-    "text": "Stakeholders and coordinators join together in poster, art and writing projects that promote ownership of the watershed.",
+    "text": "Stakeholders and coordinators take part in poster, art and writing projects that promote ownership of the watershed.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 6,
-      "quote": "training workshops, festival event planning, soil and water conservation field days, tree boards, poster, art and writing"
+      "quote": "tree boards, poster, art and writing projects and other activities"
      }
     ],
     "verified": true,
@@ -1407,29 +1399,9 @@
     "timeframe": null
    },
    {
-    "id": "ff881fce",
-    "name": "Public service announcements",
-    "text": "MDEQ and stakeholders have developed public service announcements that address pollutants from Nonpoint Source Pollution.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 6,
-      "quote": "books, videos, and public service announcements that address pollutants from the seven (7)"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "high",
-    "audience": "Audiences from pre-school to adults throughout the state",
-    "quantity": null,
-    "timeframe": null
-   },
-   {
     "id": "b5bccef8",
     "name": "Water Model Presentations",
-    "text": "Statewide distribution of Enviroscapes and groundwater aquifer models with training and lesson plans.",
+    "text": "Enviroscapes and groundwater aquifer models distributed statewide with training and interactive lesson plans.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1449,7 +1421,7 @@
    {
     "id": "1a4aad93",
     "name": "Teacher workshops",
-    "text": "Workshops training educators near the watershed about NPS pollution.",
+    "text": "Training educators about NPS pollution with materials for classrooms.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1482,20 +1454,20 @@
     "source": "text",
     "needsReview": null,
     "confidence": "high",
-    "audience": "citizens, teachers, and students",
+    "audience": null,
     "quantity": null,
     "timeframe": null
    },
    {
     "id": "f20082e7",
     "name": "Watershed Harmony Mobile Classroom",
-    "text": "Mobile classroom with public education objectives for kindergarten through adults.",
+    "text": "Public education program with objectives tailored for K through 5th grade students.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 7,
-      "quote": "Watershed Harmony Mobile Classroom - for ages kindergarten"
+      "quote": "Watershed Harmony Mobile Classroom - for ages kindergarten – adults with state and"
      }
     ],
     "verified": true,
@@ -1509,7 +1481,7 @@
    {
     "id": "0db4b75f",
     "name": "Storm Drain Marking",
-    "text": "Storm drain marking projects for scouts, environmental clubs, and citizen groups.",
+    "text": "Projects for scouts, environmental clubs, and citizen groups.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1522,7 +1494,7 @@
     "source": "text",
     "needsReview": null,
     "confidence": "high",
-    "audience": "scouts, environmental clubs, and citizen groups",
+    "audience": null,
     "quantity": null,
     "timeframe": null
    },
@@ -1549,7 +1521,7 @@
    {
     "id": "f36f7562",
     "name": "Waste Pesticide Disposal Event",
-    "text": "Event helping farmers and property owners dispose of waste-pesticide products safely.",
+    "text": "Program helping farmers and property owners dispose of waste-pesticide products safely.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1569,7 +1541,7 @@
    {
     "id": "bfc8c1c4",
     "name": "Education/Outreach events",
-    "text": "Education and outreach events scheduled in the outreach plan.",
+    "text": "Scheduled education and outreach events from finalizing the education and outreach plan.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1591,7 +1563,7 @@
    {
     "id": "a1654f91",
     "name": "Owl Creek-Little Hatchie River Watershed",
-    "text": "The watershed covered by the plan, located in Tippah County.",
+    "text": "The watershed the plan covers, located in Tippah County, northeast Mississippi.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1600,12 +1572,12 @@
       "quote": "The entirety of the 25,740-acre watershed lies within Tippah County in northeast Mississippi"
      },
      {
-      "page": 6,
-      "quote": "Owl Creek-Little Hatchie River watershed are listed below:"
+      "page": 4,
+      "quote": "mitigate sediment issues in the Owl Creek-Little Hatchie River watershed, helping the stream recover"
      },
      {
       "page": 9,
-      "quote": "Reduce the Nutrient and Sediment loads entering into the Owl Creek-Little Hatchie River"
+      "quote": "Goal: Reduce the Nutrient and Sediment loads entering into the Owl Creek-Little Hatchie River"
      },
      {
       "page": 11,
@@ -1622,105 +1594,30 @@
     "role": "primary"
    },
    {
-    "id": "878bf69b",
-    "name": "Tippah County",
-    "text": "County in northeast Mississippi where the entire watershed lies.",
+    "id": "d8900dd7",
+    "name": "HUC 080102070101 (MWS 3014)",
+    "text": "Hydrologic unit code identifying the plan's project area.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 1,
-      "quote": "The entirety of the 25,740-acre watershed lies within Tippah County in northeast Mississippi"
-     },
-     {
-      "page": 4,
-      "quote": "Partners in this project who may contribute match include MSWCC, Tippah County Soil and"
-     },
-     {
-      "page": 7,
-      "quote": "Work with the Tippah County SWCD, MSWCC, NRCS, and MDEQ to inform"
+      "quote": "HUC 080102070101 (MWS 3014)"
      }
     ],
     "verified": true,
     "source": "text",
     "needsReview": null,
     "confidence": "high",
-    "type": "county",
-    "code": null,
+    "type": "huc",
+    "code": "080102070101",
     "areaAcres": null,
     "role": "primary"
-   },
-   {
-    "id": "54007221",
-    "name": "Little Hatchie River",
-    "text": "Largest water body in the watershed and the receiving stream for most of its drainage.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 1,
-      "quote": "Little Hatchie River, water body segment MS201E, was initially listed as evaluated on the 1996"
-     },
-     {
-      "page": 9,
-      "quote": "applicable target for the Little Hatchie River TMDL"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "waterbody",
-    "code": "MS201E",
-    "areaAcres": null,
-    "role": "primary"
-   },
-   {
-    "id": "11f6115d",
-    "name": "Owl Creek",
-    "text": "Named stream in the watershed that flows into the Little Hatchie River and is listed as impaired.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 1,
-      "quote": "Owl Creek (segment 301412) was assessed as biologically impaired"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "waterbody",
-    "code": "301412",
-    "areaAcres": null,
-    "role": "primary"
-   },
-   {
-    "id": "5d66e232",
-    "name": "North Independent Streams Basin",
-    "text": "Basin in which the watershed is located.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 1,
-      "quote": "part of the North Independent Streams Basin"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "other",
-    "code": null,
-    "areaAcres": null,
-    "role": "mentioned"
    },
    {
     "id": "cfa145f9",
     "name": "HUC 08010207",
-    "text": "Hydrologic unit referenced for the sediment TMDL and recommended reduction.",
+    "text": "Hydrologic unit covering the Little Hatchie River watershed, for which a sediment reduction is recommended.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1739,9 +1636,130 @@
     "role": "mentioned"
    },
    {
+    "id": "878bf69b",
+    "name": "Tippah County",
+    "text": "County in northeast Mississippi where the entire watershed lies.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "lies within Tippah County in northeast Mississippi and is"
+     },
+     {
+      "page": 4,
+      "quote": "Tippah County Soil and Water Conservation District, NRCS, United States Geological Survey"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "county",
+    "code": null,
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "54007221",
+    "name": "Little Hatchie River",
+    "text": "Largest water body in the watershed and receiving stream for most of the drainage; segment MS201E.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "The largest water body in the Owl Creek-Little Hatchie River Watershed is Little Hatchie River"
+     },
+     {
+      "page": 9,
+      "quote": "applicable target for the Little Hatchie River TMDL."
+     },
+     {
+      "page": 10,
+      "quote": "Owl Creek and Little Hatchie River are both located in the East bioregion"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "waterbody",
+    "code": "MS201E",
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "11f6115d",
+    "name": "Owl Creek",
+    "text": "Only other named stream in the watershed, flowing into the Little Hatchie River; segment 301412.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "Owl Creek (segment 301412) was assessed as"
+     },
+     {
+      "page": 10,
+      "quote": "Owl Creek and Little Hatchie River are both located in the East bioregion"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "waterbody",
+    "code": "301412",
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "ecbf28ac",
+    "name": "Ripley",
+    "text": "City/location named as where the watershed is located.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "is located in Ripley Mississippi (MS)."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "other",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "5d66e232",
+    "name": "North Independent Streams Basin",
+    "text": "Basin in which the watershed is part.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "and is part of the North Independent Streams Basin."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "other",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
     "id": "1276077c",
     "name": "East bioregion",
-    "text": "Mississippi bioregion where Owl Creek and Little Hatchie River are located.",
+    "text": "Mississippi bioregion in which Owl Creek and Little Hatchie River are located.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1760,51 +1778,9 @@
     "role": "mentioned"
    },
    {
-    "id": "65b25cf8",
-    "name": "Mississippi Alluvial Plain",
-    "text": "Area excluded from the M-BISQ index, also called the Delta.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 10,
-      "quote": "not including the Mississippi Alluvial Plain (i.e. Delta)"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "other",
-    "code": null,
-    "areaAcres": null,
-    "role": "mentioned"
-   },
-   {
-    "id": "2bee1b58",
-    "name": "HUC 12 sub-watershed",
-    "text": "The HUC 12 sub-watershed for which the plan is written.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 7,
-      "quote": "watershed-based plan for this HUC 12 sub-watershed"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "subwatershed",
-    "code": null,
-    "areaAcres": null,
-    "role": "primary"
-   },
-   {
-    "id": "42e8fbc2",
-    "name": "State of Mississippi",
-    "text": "State whose water quality criteria are referenced.",
+    "id": "9eebf9f8",
+    "name": "Mississippi",
+    "text": "State whose water quality criteria are discussed.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1832,55 +1808,85 @@
   "year": 2020
  },
  "quality": {
-  "verifiedRate": 0.868421052631579,
+  "verifiedRate": 0.7926829268292683,
   "rejected": [
    {
-    "category": "goals",
-    "name": "Reduce sediment loads (TMDL reduction target): scope \"Element a: Identification of Causes and Sources of Impairment\"",
+    "category": "monitoring",
+    "name": "Sediment load (stable streams)",
     "page": 3,
-    "reason": "detail-not-in-source"
+    "reason": "name-not-in-source"
    },
    {
     "category": "monitoring",
-    "name": "Dissolved Solids: frequency \"Monthly average; instantaneous\"",
-    "page": 10,
-    "reason": "detail-not-in-source"
-   },
-   {
-    "category": "monitoring",
-    "name": "Benthic macroinvertebrate community data: location \"Owl Creek; Little Hatchie River\"",
-    "page": 10,
-    "reason": "detail-not-in-source"
-   },
-   {
-    "category": "monitoring",
-    "name": "Station 112B43",
-    "page": 11,
-    "reason": "quote-not-found"
-   },
-   {
-    "category": "monitoring",
-    "name": "Station NI005",
-    "page": 11,
-    "reason": "quote-not-found"
+    "name": "Sediment yield (unstable streams)",
+    "page": 3,
+    "reason": "name-not-in-source"
    },
    {
     "category": "geographicAreas",
-    "name": "Owl Creek",
+    "name": "Forestry land use",
+    "page": 1,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "geographicAreas",
+    "name": "Pastureland land use",
+    "page": 1,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "geographicAreas",
+    "name": "Cropland land use",
+    "page": 1,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "monitoring",
+    "name": "Historical water quality monitoring at Owl Creek 112B43",
     "page": 11,
     "reason": "quote-not-found"
    },
    {
-    "category": "geographicAreas",
-    "name": "Little Hatchie River",
+    "category": "monitoring",
+    "name": "Historical water quality monitoring at Little Hatchie River NI005",
     "page": 11,
     "reason": "quote-not-found"
+   },
+   {
+    "category": "monitoring",
+    "name": "Post BMP monitoring: frequency \"More than 1 year of post-BMP data, possibly 5 or more years\"",
+    "page": 11,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "bmps",
+    "name": "Grade Stabilization Structure: 15 ea",
+    "page": 5,
+    "reason": "number-not-in-quote"
    },
    {
     "category": "implementation",
-    "name": "Initiate watershed monitoring",
+    "name": "Initiate watershed monitoring: timeframe \"Completed using historical data\"",
     "page": 8,
-    "reason": "quote-not-found"
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "implementation",
+    "name": "Initiate watershed monitoring: status \"completed\"",
+    "page": 8,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Water Model Presentations: audience \"citizens, teachers, students\"",
+    "page": 7,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Adopt A Stream: audience \"citizens, teachers, students\"",
+    "page": 7,
+    "reason": "detail-not-in-source"
    },
    {
     "category": "outreach",
@@ -1890,8 +1896,20 @@
    },
    {
     "category": "outreach",
+    "name": "Storm Drain Marking: audience \"scouts, environmental clubs, citizen groups\"",
+    "page": 7,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "outreach",
     "name": "Watershed Implementation Team meetings",
     "page": 7,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "geographicAreas",
+    "name": "Tippah County",
+    "page": 8,
     "reason": "name-not-in-source"
    }
   ],
@@ -1903,17 +1921,19 @@
     "reason": "Figure or map page"
    }
   ],
-  "emptyPages": [],
+  "emptyPages": [
+   2
+  ],
   "failedUnits": [],
   "provider": "anthropic",
   "model": "claude-haiku-5-5",
-  "durationMs": 32624,
+  "durationMs": 31969,
   "usage": {
-   "inputTokens": 84606,
-   "outputTokens": 19870,
-   "costUsd": 0.01497488
+   "inputTokens": 88010,
+   "outputTokens": 21183,
+   "costUsd": 0.015885379999999998
   },
-  "completionBasis": "0 of 19 activities reported completed",
+  "completionBasis": "No completion status reported in this document",
   "structure": [
    {
     "page": 1,

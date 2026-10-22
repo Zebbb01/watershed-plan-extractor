@@ -31,10 +31,10 @@ Code and an LLM each do the part they are reliable at.
    evidence. Two different amounts for the same thing are flagged for review. Totals and
    the completion rate are computed in code, never by the model.
 
-**Accuracy**, scored by script against answer keys for four Mississippi plans:
-81.4% F1 on goals, BMPs and activities (81.0% on a plan held out from tuning), 89.3% of
-numbers exact, and 0 extracted names that are not written in the PDF. The method and the
-per-plan results are in [TESTING.md](TESTING.md).
+**Accuracy**, scored by script against answer keys for four Mississippi plans, each run three
+times: 83.7% F1 on goals, BMPs and activities (82.2% on a plan held out from tuning; 87.2% on
+the 108-page scanned plan), 88.3% of numbers exact, and 0 extracted names that are not written
+in the PDF. The method and the per-plan results are in [TESTING.md](TESTING.md).
 
 ## Using it
 
@@ -132,8 +132,9 @@ model and run up the bill.
 ## Long plans
 
 Length does not change what the model is given. Every request carries at most three pages
-(12,000 characters or 40 table rows) plus the document outline, so a 600-page plan is many
-small requests, not one long prompt, and every item is checked against its own page. Length
+(12,000 characters or 40 table rows) plus the document outline and the end of the page
+before, so a 600-page plan is many small requests, not one long prompt, a list that runs over
+a page break keeps its lead-in, and every item is checked against its own page. Length
 adds time and cost (647 pages: 9 minutes, $0.55) and repeated content, which the merge step
 joins. Accuracy was scored on plans of 11 to 108 pages; the 647-page plan was run for time,
 cost and names not in the PDF (0), not scored against an answer key.
@@ -149,7 +150,7 @@ cost and names not in the PDF (0), not scored against an answer key.
 | `npm run lint -w frontend` | ESLint with the Next.js and React hooks rules |
 | `npm run eval:fetch -w backend` | Downloads the evaluation PDFs from MDEQ and checks their SHA-256 |
 | `npm run eval:gt -w backend` | Checks every ground-truth quote against the PDF text |
-| `npm run eval -- --set dev` | Runs the real pipeline on the tuning plans and scores it (`--set heldout`, `--set all`, `--model <id>`) |
+| `npm run eval -- --set dev` | Runs the real pipeline on the tuning plans and scores it (`--set heldout`, `--set all`, `--repeat 3`, `--model <id>`) |
 | `npm run samples -w backend` | Rebuilds the sample results shown on the home page |
 | `node scripts/check-secrets.mjs` | Fails if a tracked file holds a credential |
 | `node scripts/check-licenses.mjs` | Fails on a production dependency outside the permissive licences |

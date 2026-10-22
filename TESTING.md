@@ -83,55 +83,68 @@ quantity lists, milestones repeated in an appended grant proposal), 2006–2007 
   no text there to check against (this covers the whole scanned plan).
 - **Time and cost** come from the run itself: wall-clock time with four parallel calls, and
   token usage priced at the provider's list prices.
+- **Repeats:** the model is not deterministic, and a single run of a plan has differed from
+  the next by up to 33 points of F1 (Buttahatchee: 88.9% and 55.6% on the same settings).
+  `--repeat 3` runs each plan three times; a plan's counts are averaged over its runs and its
+  rates computed from those averages, and each run's F1 is kept beside the mean. The Accuracy
+  page shows both. The plan output kept for the samples is the last run's, not the best one.
 
 The eval runs the production pipeline and passes every request through the API routes' own
 schema and size checks before calling the same handlers, so a request the live site would
 refuse fails in the eval too. Run it with `npm run eval -- --set dev`, `--set heldout` or
-`--set all`, and `--model <id>` to compare models. Each run writes
+`--set all`, `--repeat 3` to run each plan three times, and `--model <id>` to compare models. Each run writes
 `backend/eval/results/<date>-<model>-<set>.json` and the per-plan outputs.
 
 ## Results
 
-Final settings: Claude Haiku 5.5 for extraction and OCR, run on 2026-10-21. The scores are in
-`backend/eval/results/2026-10-21-claude-haiku-5-5-all.json` and each plan's full output in
-`backend/eval/results/runs/`. Each plan was run once on these settings. The model is not
-deterministic, so a second run gives somewhat different figures; that spread was not measured.
+Final settings: Claude Haiku 5.5 for extraction and OCR, run on 2026-10-23 (the result file
+carries the UTC date, 2026-10-22). Each plan was run three times on these settings
+(`--repeat 3`): the table gives the mean, with each run's core F1 beside it. The scores are in
+`backend/eval/results/2026-10-22-claude-haiku-5-5-all.json` and each plan's last run in
+`backend/eval/results/runs/`.
 
-| Plan | Role | Core F1 | Precision | Recall | Numbers | Names not in the PDF | Time | Cost |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Broken Pumpkin Creek 2019 | Tuning | 93.3% | 96.6% | 90.3% | 89.0% (81/91) | 0 | 31 s | $0.017 |
-| Bell Creek 2012 | Tuning | 76.3% | 72.5% | 80.6% | 85.3% (29/34) | 0 | 60 s | $0.046 |
-| Buttahatchee River 2004 (scanned) | Tuning | 68.1% | 72.7% | 64.0% | 0/1 | not checkable | 210 s | $0.166 |
-| **Owl Creek 2020** | **Held out** | **81.0%** | 78.0% | 84.2% | **100% (24/24)** | **0** | 33 s | $0.015 |
-| **All four plans** (micro-average) | | **81.4%** | 80.6% | 82.2% | **89.3% (134/150)** | **0** | | $0.244 |
+| Plan | Role | Core F1 (mean) | Each run | Precision | Recall | Numbers | Names not in the PDF | Time | Cost |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Broken Pumpkin Creek 2019 | Tuning | 93.4% | 93.4%, 92.6%, 94.3% | 95.0% | 91.9% | 88.0% | 0 | 21 s | $0.016 |
+| Bell Creek 2012 | Tuning | 75.4% | 74.0%, 72.2%, 80.6% | 71.7% | 79.6% | 83.5% | 0 | 54 s | $0.049 |
+| Buttahatchee River 2004 (scanned) | Tuning | 87.2% | 85.7%, 86.3%, 89.8% | 84.0% | 90.7% | 2 of 3 runs (1 number) | not checkable | 187 s | $0.168 |
+| **Owl Creek 2020** | **Held out** | **82.2%** | 81.0%, 87.2%, 78.5% | 79.5% | 85.1% | **97.2%** | **0** | 31 s | $0.017 |
+| **All four plans** (micro-average) | | **83.7%** | | 81.5% | 86.0% | **88.3%** | **0** | | $0.250 |
+
+Against the previous final run (2026-10-21, one run per plan): Buttahatchee 68.1% → 87.2%,
+all four plans 81.4% → 83.7%, the held-out plan 81.0% → 82.2%; Broken Pumpkin (93.3%) and Bell
+Creek (76.3%) are unchanged within their run-to-run spread, and numbers moved from 89.3% to
+88.3%. The changes are in "What tuning changed" (6 to 11).
 
 Against the bars:
 
-- **Goals, BMPs and activities, ≥ 75%:** met. 81.4% F1 over the four plans and 81.0% on the
-  held-out plan. The scanned plan is below the bar (68.1%, on 25 labelled items).
-- **Quantitative metrics, ≥ 75%:** met. 89.3% of numbers exact over the four plans, 24 of 24
-  on the held-out plan. Number precision is lower (67% to 76% on the text plans): the tool
-  also reports numbers the answer key does not list. Those were not analysed one by one.
+- **Goals, BMPs and activities, ≥ 75%:** met. 83.7% F1 over the four plans and 82.2% on the
+  held-out plan, and every plan's mean is above the bar. Single runs are not: Bell Creek's
+  lowest run is 72.2%.
+- **Quantitative metrics, ≥ 75%:** met. 88.3% of numbers exact over the four plans (133 of 151
+  per run on average), 97.2% on the held-out plan. Number precision is lower (67% to 76% on the
+  text plans): the tool also reports numbers the answer key does not list (see Known misses).
 - **No false positives for copied content:** 0 extracted BMP, outreach, area or parameter names
-  that are not written in the PDF, on all five text plans that were checked (the four above
-  without the scan, plus Fuller Creek and Tchoutacabouffa). Before display, the verifier
-  rejected 10 to 84 items per plan; they are listed under Quality with their reasons.
-- **Categorisation:** 88% to 100% of found items are in the answer key's category, and 91% to
+  that are not written in the PDF, in every run of the five text plans that were checked (the
+  four above without the scan, plus Fuller Creek and Tchoutacabouffa). Before display, the
+  verifier rejected 17 to 77 items per plan; they are listed under Quality with their reasons.
+- **Categorisation:** 98% to 100% of found items are in the answer key's category, and 92% to
   100% have its kind (main, sub-item or example).
 
-By category, over the four plans:
+By category, over the four plans (per run, averaged over the three):
 
 | Category | In answer key | Extracted | Matched | Precision | Recall | F1 |
 | --- | --- | --- | --- | --- | --- | --- |
-| Goals | 28 | 22 | 14 | 63.6% | 50.0% | 56.0% |
+| Goals | 28 | 18.7 | 13.0 | 69.6% | 46.4% | 55.7% |
 | BMPs | 51 | 51 | 50 | 98.0% | 98.0% | 98.0% |
-| Implementation activities | 90 | 90 | 72 | 80.0% | 80.0% | 80.0% |
-| Outreach activities | 28 | 38 | 26 | 68.4% | 92.9% | 78.8% |
-| Monitoring metrics (not in core) | 42 | 43 | 33 | 76.7% | 78.6% | 77.6% |
-| Geographic areas (not in core) | 45 | 51 | 33 | 64.7% | 73.3% | 68.8% |
+| Implementation activities | 90 | 100 | 80 | 80.0% | 88.9% | 84.2% |
+| Outreach activities | 28 | 38 | 26.3 | 69.3% | 94.0% | 79.8% |
+| Monitoring metrics (not in core) | 42 | 44 | 33 | 75.0% | 78.6% | 76.7% |
+| Geographic areas (not in core) | 45 | 47 | 36.3 | 77.3% | 80.7% | 79.0% |
 
-The two unlabelled plans ran without a failed section: Fuller Creek (13 pages) in 34 s for
-$0.013, Tchoutacabouffa (22 pages) in 26 s for $0.019. The six plans together cost $0.28.
+The two unlabelled plans ran without a failed section in all three runs: Fuller Creek (13
+pages) in 17 s for $0.014, Tchoutacabouffa (22 pages) in 19 s for $0.019. The six plans together
+cost $0.28 a run.
 
 ## Model comparison
 
@@ -146,7 +159,8 @@ settings and scorer for each model; one run each.
 
 Haiku 5.5 is the default. Sonnet scored 1.2 points higher on F1 for 11 times the cost, and
 lower on numbers; Opus did not beat Haiku on the plan it was run on. Haiku's final run on the
-same plans scored 81.5%; part of that rise is run-to-run spread, which was not measured.
+same plans scored 81.5%; part of that rise is run-to-run spread, which single runs of one plan
+have since shown to reach 33 points (Results, Repeats).
 
 ## What tuning changed
 
@@ -165,6 +179,17 @@ Each change was measured on the tuning plans before it was kept. The log with ev
 | 4 | Running heads removed from transcribed pages too | Buttahatchee | Haiku 5.5 | 58.8% → 68.1% (final run); this plan's runs have ranged from 58.8% to 68.1%, so the change cannot be told apart from spread | |
 | 5 | Prompt: whatever the plan calls a goal or objective is a goal, education objectives included. **Not kept** | Broken Pumpkin, Bell Creek | Haiku 5.5 | 93.3% → 92.6% and 76.3% → 72.7%. More goals were found, but named by their lead-in ("The ultimate goal"), so none more matched | 89.0% → 89.1%, 85.3% → 76.5% |
 
+| 6 | The end of the page before goes with each unit as context; on transcribed pages, an "o" sub-bullet is read as a sub-item and a chapter-page number ("3-1") as a page number | Buttahatchee, Bell Creek, Broken Pumpkin | Haiku 5.5 | 68.1% → 88.9%, 76.3% → 76.7%, 93.3% → 92.6%. On Buttahatchee the page-21 action list was found in full (19 of 19 activities) | |
+| 7 | Prompt: education objectives are goals; a goal is named by its outcome words, without its lead-in; a sentence with several goals gives several. **Not kept** | the three tuning plans | Haiku 5.5 | 93.4%, 75.2%, 82.8%; a stricter wording (and outreach cost lines excluded in the prompt): 92.9%, 71.9%, 54.9%. Bell Creek found more goals (5, then 8, then 11 of 17), but names elsewhere grew longer and stopped matching, and on Buttahatchee the page-21 actions went back to goals | |
+| 8 | Effort medium instead of low. **Not kept** | Bell Creek, Broken Pumpkin | Haiku 5.5 | 75.5% and 93.4%: no gain, at 1.5 times the time and cost | |
+| 9 | Change 6 alone, run again on all plans | all four | Haiku 5.5 | Buttahatchee 55.6%: with the lead-in in view, the page-21 list was filed as goals and BMPs again. Bell Creek 66.3%, Broken Pumpkin 93.3%, Owl Creek 80.5% | |
+| 10 | In code: the items of a list whose lead-in calls them actions, and the items nested under them, move to implementation; running heads are lines repeated on 40% of pages, not half | Buttahatchee | — | rescoring the saved runs: 55.6% → 82.4%; 88.9% unchanged. On the saved runs of all eight plans the rule moves the ten page-21 items and nothing else | |
+| 11 | In code: a name made only of section words ("Goals/Objectives", "BMPs"), and an outreach "activity" that is a cost row priced per piece, are rejected as not-an-item | Bell Creek | — | such items were in 4 of 6 earlier Bell Creek runs (labels) and 3 of 6 (cost rows) | |
+
+The final settings are changes 1–4, 6, 10 and 11; their scores, three runs per plan, are under
+Results. Change 9 is why the plans now run three times: a single run can land far from the
+next, and change 6 on its own fixed the scanned plan in some runs only.
+
 Change 5 was tried after the final run. In the same run the held-out and scanned plans lost
 sections to API timeouts, so it says nothing about them; their reported scores are still the
 final run's.
@@ -176,14 +201,16 @@ dropped connections, and every item in a lost section counts as a miss.
 
 Where the tool loses points, from reading the tuning runs item by item:
 
-- **Goals** are the weakest category (14 of 28 found). In narrative plans (Bell Creek, 6 of
-  17) objectives written inside paragraphs, or split between a goal and its sub-objectives,
-  are often merged or missed.
-- **Activities in narrative plans:** evaluation procedures and reporting duties are listed as
-  activities the answer key does not count, so precision there is 67% (29 of 43).
-- **Actions worded like outcomes on scanned pages** (Buttahatchee pages 20–21: "Reduce
-  sediment loads to streams" under "The following actions will need to be taken") are often
-  filed as goals instead of activities (10 of 19 activities found).
+- **Goals** are the weakest category (13 of 28 found per run). In narrative plans (Bell Creek,
+  6 of 17) objectives written inside paragraphs, or split between a goal and its
+  sub-objectives, are often merged or missed. Prompt changes that found more of them broke
+  other categories (change 7).
+- **Activities in narrative plans:** evaluation procedures, reporting duties and the schedule
+  lines of outreach activities are listed as activities the answer key does not count, so
+  precision there is 66% (29 of 44 per run). This is most of Bell Creek's spread from run to run.
+- **Actions worded like outcomes** (Buttahatchee pages 20–21: "Reduce sediment loads to
+  streams" under "The following actions will need to be taken") were filed as goals, 10 of 19
+  activities found. Fixed by changes 6 and 10: 17.7 of 19 per run now.
 - **Outreach the plan describes in general terms** is extracted item by item. Page 6 of the
   held-out plan lists training workshops, festival planning, field days, tree boards and
   poster projects as ways stakeholders take part; the answer key counts only the outreach the
@@ -192,8 +219,11 @@ Where the tool loses points, from reading the tuning runs item by item:
 - **Geographic areas mentioned in passing** (tributaries, neighbouring watersheds) are
   extracted beyond the ones the answer key lists (25 for 15 on Bell Creek), which lowers area
   precision; areas are not part of the core score.
-- **Numbers** on found items are right 89% of the time (134 of 150); the misses were not
-  analysed one by one.
+- **Numbers** on found items are right 88% of the time (133 of 151 per run). Most misses on
+  Broken Pumpkin are one cost of two: a BMP has one estimated-cost field, so when a plan prices
+  the same practice in a full-project table and a Phase 1 table, one of the two costs is not
+  kept. In one run, 8 of its 11 missed numbers were estimated costs, 7 of them one of the two
+  costs of a practice priced in both tables. Both quantities are kept.
 
 ## Smoke tests
 

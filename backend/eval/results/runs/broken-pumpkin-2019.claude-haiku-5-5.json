@@ -3,35 +3,26 @@
   "summary": {
    "totalGoals": 1,
    "totalBMPs": 33,
-   "completionRate": 0.056
+   "completionRate": 0
   },
   "goals": [
    {
-    "id": "cbbae079",
+    "id": "c9badd53",
     "name": "Reduce sediment loads entering waters in the watershed",
-    "text": "Reduce sediment to meet the TMDL target for Broken Pumpkin Creek watershed.",
+    "text": "Reduce sediment yields in the Broken Pumpkin Creek watershed to meet the sediment TMDL target.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
-      "page": 1,
-      "quote": "a reduction in sediment of 77% to 97% is recommended in the Broken Pumpkin Creek watershed"
+      "page": 3,
+      "quote": "concluded that yields would need to be reduced by 77-97% within the watersheds in order to reflect stable conditions."
      }
     ],
     "verified": true,
     "source": "text",
     "needsReview": null,
     "confidence": "high",
-    "targets": [
-     {
-      "raw": "a reduction in sediment of 77% to 97%",
-      "scope": "Element a: Identification of Causes and Sources of Impairment",
-      "value": 77,
-      "valueMax": 97,
-      "unit": "%",
-      "comparator": "range"
-     }
-    ],
+    "targets": [],
     "pollutant": "Sediment",
     "deadline": null
    }
@@ -40,7 +31,7 @@
    {
     "id": "8b7346b4",
     "name": "Brush Management",
-    "text": "Brush management practice listed in the full project cost estimate.",
+    "text": "Brush management practice listed in the cost estimate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -86,7 +77,7 @@
    {
     "id": "b619f008",
     "name": "Herbaceous Weed Management",
-    "text": "Weed management practice listed in the full project cost estimate.",
+    "text": "Weed management practice listed in the cost estimate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -132,7 +123,7 @@
    {
     "id": "ba31705d",
     "name": "Prescribed Burning",
-    "text": "Prescribed burning practice listed in the full project cost estimate.",
+    "text": "Prescribed burning practice listed in the cost estimate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -178,7 +169,7 @@
    {
     "id": "274f0ac4",
     "name": "Cover Crop",
-    "text": "Cover crop practice listed in the full project cost estimate.",
+    "text": "Cover crop practice listed in the cost estimate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -236,7 +227,7 @@
    {
     "id": "51a59d76",
     "name": "Critical Area Planting",
-    "text": "Critical area planting practice listed in the full project cost estimate.",
+    "text": "Critical area planting practice listed in the cost estimate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -282,7 +273,7 @@
    {
     "id": "494fe215",
     "name": "Sediment Basin",
-    "text": "Sediment basin practice listed in the full project cost estimate.",
+    "text": "Sediment basin practice listed in the cost estimate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -328,7 +319,7 @@
    {
     "id": "cd2e584c",
     "name": "Diversion",
-    "text": "Diversion practice listed in the full project cost estimate.",
+    "text": "Diversion practice listed in the cost estimate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -386,7 +377,7 @@
    {
     "id": "d82e491c",
     "name": "Pond",
-    "text": "Pond practice listed in the full project cost estimate.",
+    "text": "Pond practice listed in the cost estimate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -432,7 +423,7 @@
    {
     "id": "b88dba90",
     "name": "Fence",
-    "text": "Fencing practice listed in the full project cost estimate.",
+    "text": "Fencing practice listed in the cost estimate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -490,7 +481,7 @@
    {
     "id": "aecce515",
     "name": "Field Border",
-    "text": "Field border practice listed in the full project cost estimate.",
+    "text": "Field border practice listed in the cost estimate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -536,7 +527,7 @@
    {
     "id": "798c2b83",
     "name": "Filter Strip",
-    "text": "Filter strip practice listed in the full project cost estimate.",
+    "text": "Filter strip practice listed in the cost estimate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -582,7 +573,7 @@
    {
     "id": "2355df8e",
     "name": "Firebreak",
-    "text": "Firebreak practice listed in the full project cost estimate.",
+    "text": "Firebreak practice listed in the cost estimate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -628,7 +619,7 @@
    {
     "id": "6ea1c120",
     "name": "Grade Stabilization Structure",
-    "text": "Grade stabilization structure practice listed in the full project cost estimate.",
+    "text": "Grade stabilization structure practice listed in the cost estimate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -686,7 +677,7 @@
    {
     "id": "97380dc0",
     "name": "Grassed Waterway",
-    "text": "Grassed waterway practice listed in the full project cost estimate.",
+    "text": "Grassed waterway practice listed in the cost estimate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -732,7 +723,7 @@
    {
     "id": "7b7d4d3b",
     "name": "Irrigation Pipeline",
-    "text": "Irrigation pipeline practice listed in the full project cost estimate.",
+    "text": "Irrigation pipeline practice listed in the cost estimate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -778,7 +769,7 @@
    {
     "id": "0a04ec2e",
     "name": "Irrigation Reservoir",
-    "text": "Irrigation reservoir practice listed in the full project cost estimate.",
+    "text": "Irrigation reservoir practice listed in the cost estimate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -824,7 +815,7 @@
    {
     "id": "7ae99721",
     "name": "Land Clearing",
-    "text": "Land clearing practice listed in the full project cost estimate.",
+    "text": "Land clearing practice listed in the cost estimate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -870,7 +861,7 @@
    {
     "id": "54985cd5",
     "name": "Tree/Shrub Preparation",
-    "text": "Tree and shrub preparation practice listed in the full project cost estimate.",
+    "text": "Tree/shrub preparation practice listed in the cost estimate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -916,7 +907,7 @@
    {
     "id": "57be9c91",
     "name": "Forage and Biomass Planting",
-    "text": "Forage and biomass planting practice listed in the full project cost estimate.",
+    "text": "Forage and biomass planting practice listed in the cost estimate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -974,7 +965,7 @@
    {
     "id": "05085ba9",
     "name": "Livestock Pipeline",
-    "text": "Livestock pipeline practice listed in the full project cost estimate.",
+    "text": "Livestock pipeline practice listed in the cost estimate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1020,7 +1011,7 @@
    {
     "id": "7415815b",
     "name": "Prescribed Grazing",
-    "text": "Prescribed grazing is listed in the cost table with 500 acres at a unit cost of $57.13.",
+    "text": "Prescribed grazing practice listed in the Phase cost table with units, unit cost and estimated cost.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1064,7 +1055,7 @@
    {
     "id": "63aaf2e6",
     "name": "Heavy Use Area Protection",
-    "text": "Heavy use area protection is listed in the cost table with 15000 feet.",
+    "text": "Heavy use area protection practice in the cost table.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1108,7 +1099,7 @@
    {
     "id": "2b031bba",
     "name": "Livestock Shelter Structure",
-    "text": "Livestock shelter structure is listed in the cost table with 2000 feet.",
+    "text": "Livestock shelter structure practice in the cost table.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1152,7 +1143,7 @@
    {
     "id": "2c0d1092",
     "name": "Stream Crossing",
-    "text": "Stream crossing is listed in the cost table with 3000 feet.",
+    "text": "Stream crossing practice in the cost table.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1196,7 +1187,7 @@
    {
     "id": "92a8527d",
     "name": "Streambank and Shoreline Protection",
-    "text": "Streambank and shoreline protection is listed in the cost table with 275 feet.",
+    "text": "Streambank and shoreline protection practice in the cost table.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1231,7 +1222,7 @@
    {
     "id": "50c14dce",
     "name": "Structure for Water Control",
-    "text": "Structure for water control is listed in the cost table with 4400 feet.",
+    "text": "Structure for water control practice in the cost table.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1275,7 +1266,7 @@
    {
     "id": "ddfaf5f4",
     "name": "Terrace",
-    "text": "Terrace is listed in the cost table with 9000 feet.",
+    "text": "Terrace practice in the cost table.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1331,7 +1322,7 @@
    {
     "id": "b3022f3c",
     "name": "Tree/Shrub Establishment",
-    "text": "Tree and shrub establishment is listed in the cost table with 66700 each.",
+    "text": "Tree and shrub establishment practice in the cost table.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1375,7 +1366,7 @@
    {
     "id": "7a0dd608",
     "name": "Watering Facility",
-    "text": "Watering facility is listed in the cost table with 2400 gallons.",
+    "text": "Watering facility practice in the cost table.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1419,17 +1410,13 @@
    {
     "id": "093d79c2",
     "name": "Underground Outlet",
-    "text": "Underground outlet appears in the cost tables with 2500 feet and 1600 feet.",
+    "text": "Underground outlet practice in the cost tables.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 5,
       "quote": "Underground Outlet ft 2500 $5.39 $13,475.00"
-     },
-     {
-      "page": 6,
-      "quote": "Underground Outlet ft 1600 $5.39 $8,624.00"
      }
     ],
     "verified": true,
@@ -1444,14 +1431,6 @@
       "valueMax": null,
       "unit": "ft",
       "comparator": "="
-     },
-     {
-      "raw": "1600 ft",
-      "scope": "Cost Estimate: Phase 1 Implementation",
-      "value": 1600,
-      "valueMax": null,
-      "unit": "ft",
-      "comparator": "="
      }
     ],
     "unitCost": {
@@ -1462,13 +1441,20 @@
      "unit": "USD",
      "comparator": "="
     },
-    "estimatedCost": null,
+    "estimatedCost": {
+     "raw": "$13,475.00",
+     "scope": null,
+     "value": 13475,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
     "pollutants": []
    },
    {
     "id": "fabd578b",
     "name": "Early Successional Habitat Development/Management",
-    "text": "Early successional habitat development and management is listed with 25 acres.",
+    "text": "Early successional habitat development and management practice in the cost table.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1503,7 +1489,7 @@
    {
     "id": "3d422ab9",
     "name": "Forest Stand Improvement",
-    "text": "Forest stand improvement is listed in the cost table with 500 acres.",
+    "text": "Forest stand improvement practice in the cost table.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1547,7 +1533,7 @@
    {
     "id": "8b69d027",
     "name": "Tank/Trough",
-    "text": "Tank/trough is budgeted in the Phase 1 implementation estimate with 6 each.",
+    "text": "Tank or trough practice in the Phase 1 implementation cost table.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1593,7 +1579,7 @@
    {
     "id": "a26fc6fb",
     "name": "Work to develop, execute, and implement a Subgrant Agreement",
-    "text": "Develop, execute, and implement a Subgrant Agreement specifying roles, tasks, requirements, and milestones for project implementation.",
+    "text": "Develop, execute and implement a Subgrant Agreement specifying roles, tasks, requirements and milestones for project implementation.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1607,7 +1593,9 @@
     "needsReview": null,
     "confidence": "high",
     "responsible": [
-     "MDEQ"
+     "MDEQ",
+     "Watershed Implementation Team",
+     "Project Manager"
     ],
     "timeframe": "Month 1",
     "start": 1,
@@ -1617,9 +1605,9 @@
     "milestone": false
    },
    {
-    "id": "6569f9e0",
-    "name": "Facilitate, in coordination with MDEQ and other partners, meetings, media and social media promotion of the project, and coordinate activities to fully implement this plan.",
-    "text": "Facilitate meetings, promotion and coordination activities to fully implement the plan.",
+    "id": "7a8d6c04",
+    "name": "Facilitate, in coordination with MDEQ and other partners, meetings, media and social media promotion of the project, and coordinate activities to fully implement this plan",
+    "text": "Facilitate meetings, promotion and coordination to fully implement the plan.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1645,8 +1633,8 @@
     "milestone": false
    },
    {
-    "id": "303f16d9",
-    "name": "Work with the Tallahatchie County SWCD, MSWCC, NRCS, and MDEQ to inform landowners and operators within the watershed about the project and work to secure commitments from priority area landowners and operators who are willing to participate in the project.",
+    "id": "8c0dc893",
+    "name": "Work with the Tallahatchie County SWCD, MSWCC, NRCS, and MDEQ to inform landowners and operators within the watershed about the project and work to secure commitments from priority area landowners and operators who are willing to participate in the project",
     "text": "Inform landowners and operators about the project and secure commitments from priority area landowners.",
     "kind": "main",
     "parentId": null,
@@ -1674,15 +1662,15 @@
     "milestone": false
    },
    {
-    "id": "84c8de57",
-    "name": "Work with the local SWCD, MSWCC, NRCS, and MDEQ to determine through GIS applications and intensive site surveys the priority areas within the sub-watershed that are contributing significant pollutant loads.",
+    "id": "06e67081",
+    "name": "Work with the local SWCD, MSWCC, NRCS, and MDEQ to determine through GIS applications and intensive site surveys the priority areas within the sub-watershed that are contributing significant pollutant loads",
     "text": "Determine priority areas contributing significant pollutant loads through GIS and site surveys; BMPs installed per NRCS Technical Field Manual or other approved guidelines.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 7,
-      "quote": "determine through GIS applications and intensive site surveys the priority areas within the sub-watershed that are contributing significant pollutant loads."
+      "quote": "Work with the local SWCD, MSWCC, NRCS, and MDEQ to determine through GIS applications and intensive site surveys the priority areas within the sub-watershed"
      }
     ],
     "verified": true,
@@ -1730,8 +1718,8 @@
     "milestone": false
    },
    {
-    "id": "98222a15",
-    "name": "Submit blank copies of standard maintenance agreements to MDEQ.",
+    "id": "e925735f",
+    "name": "Submit blank copies of standard maintenance agreements to MDEQ",
     "text": "Submit blank copies of standard maintenance agreements to MDEQ.",
     "kind": "main",
     "parentId": null,
@@ -1778,15 +1766,15 @@
     "milestone": false
    },
    {
-    "id": "13906699",
-    "name": "Coordinate with and support the local SWCD, MSWCC and NRCS in the collection of relevant GPS coordinates of all installed BMPs and incorporate into GIS format",
-    "text": "Collect GPS coordinates of installed BMPs and incorporate them into a GIS format.",
+    "id": "00b97df0",
+    "name": "Coordinate with and support the local SWCD, MSWCC and NRCS in the collection of relevant GPS coordinates of all installed BMPs and incorporate into a GIS format",
+    "text": "Collect GPS coordinates of installed BMPs and incorporate them into GIS format.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 7,
-      "quote": "Coordinate with and support the local SWCD, MSWCC and NRCS in the collection of relevant GPS coordinates of all installed BMPs and incorporate this information into a GIS format."
+      "quote": "Coordinate with and support the local SWCD, MSWCC and NRCS in the collection of relevant GPS coordinates of all installed BMPs"
      }
     ],
     "verified": true,
@@ -1808,7 +1796,7 @@
    {
     "id": "74f488f4",
     "name": "Collect adequate photo documentation before, during, and after installation of the approved BMPs",
-    "text": "Collect photo documentation before, during, and after BMP installation.",
+    "text": "Collect photo documentation before, during and after BMP installation.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1832,7 +1820,7 @@
    {
     "id": "13ccc1a7",
     "name": "Report measured, or estimated, nonpoint source pollutant load reduction, acreage affected, pre-and post- site conditions, and GIS data",
-    "text": "Report measured or estimated pollutant load reduction, acreage affected, pre- and post-site conditions, and GIS data.",
+    "text": "Report load reduction, acreage affected, pre- and post-site conditions and GIS data.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1854,9 +1842,9 @@
     "milestone": false
    },
    {
-    "id": "3b7b0a70",
-    "name": "Coordinate with the MDEQ, NRCS, MSWCC, USGS, and the Noxubee and Lowndes Co. Soil and Water Districts to determine priority areas that are contributing significant pollutant loads to Broken Pumpkin Creek Watershed",
-    "text": "Target priority areas for BMPs.",
+    "id": "6e873f17",
+    "name": "Target priority areas for BMPs",
+    "text": "Coordinate with MDEQ, NRCS, MSWCC, USGS and local districts to determine priority areas contributing significant pollutant loads.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1883,9 +1871,9 @@
     "milestone": true
    },
    {
-    "id": "02de8e9a",
-    "name": "Establish Watershed Implementation Team to begin refinement of Watershed Based Plan for Broken Pumpkin Creek Watershed",
-    "text": "Establish WIT to begin refinement of the watershed based plan.",
+    "id": "4fa6c59c",
+    "name": "Establish WIT",
+    "text": "Establish Watershed Implementation Team to begin refinement of the Watershed Based Plan.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1909,13 +1897,13 @@
    {
     "id": "bbaf248b",
     "name": "Initiate watershed monitoring",
-    "text": "Baseline condition monitoring of the watershed.",
+    "text": "Initiate baseline condition monitoring of the watershed.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 8,
-      "quote": "Initiate watershed monitoring Baseline condition Completed using historical"
+      "quote": "Initiate watershed monitoring Baseline condition"
      }
     ],
     "verified": true,
@@ -1927,7 +1915,7 @@
     "start": null,
     "end": null,
     "timeUnit": null,
-    "status": "completed",
+    "status": null,
     "milestone": true
    },
    {
@@ -1981,7 +1969,7 @@
    {
     "id": "0c890f4a",
     "name": "Implement BMPs",
-    "text": "Implement BMPs with BMP installation outcome.",
+    "text": "Implement BMP installation.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2005,7 +1993,7 @@
    {
     "id": "de9176d1",
     "name": "Coordinate with Landowners to inspect BMPs that were installed using Section 319 funds",
-    "text": "Inspect BMPs installed using Section 319 funds.",
+    "text": "Coordinate with landowners to inspect BMPs installed using Section 319 funds.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2031,7 +2019,7 @@
    {
     "id": "edeef734",
     "name": "Begin monitoring to collect data on post-BMP water quality",
-    "text": "Post-BMP water quality monitoring.",
+    "text": "Begin post-BMP water quality monitoring.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2055,9 +2043,62 @@
   ],
   "monitoring": [
    {
+    "id": "bf3eed49",
+    "name": "M-BISQ score",
+    "text": "Overall M-BISQ score compared against the bioregion attainment threshold to assess the aquatic life use designation.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "This index, known as the Mississippi Benthic Index of Stream Quality (M-BISQ), was used in the biological assessment"
+     },
+     {
+      "page": 10,
+      "quote": "If the score is above the attainment threshold for the bioregion, the site is assessed as attaining the aquatic life use designation."
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "M-BISQ score",
+    "threshold": {
+     "raw": "Above the attainment threshold for the bioregion",
+     "scope": null,
+     "value": null,
+     "valueMax": null,
+     "unit": null,
+     "comparator": null
+    },
+    "location": "East bioregion",
+    "frequency": null
+   },
+   {
+    "id": "886a78e6",
+    "name": "In-stream habitat surveys",
+    "text": "In-stream habitat surveys used alongside MBISQ scores to determine change over time.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "Along with overall MBISQ scores, the in-stream habitat surveys will also be used to determine change over time."
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "In-stream habitat surveys",
+    "threshold": null,
+    "location": null,
+    "frequency": null
+   },
+   {
     "id": "d38b36af",
-    "name": "Dissolved Oxygen",
-    "text": "In-situ field measurement parameter used in water quality monitoring of Broken Pumpkin Creek.",
+    "name": "Dissolved oxygen",
+    "text": "In-situ field parameter measured in monitoring of Broken Pumpkin Creek.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2074,7 +2115,7 @@
     "source": "table",
     "needsReview": null,
     "confidence": "high",
-    "parameter": "Dissolved Oxygen",
+    "parameter": "Dissolved oxygen",
     "threshold": {
      "raw": "Daily Average of 5.0 mg/L; Instantaneous threshold of 4.0 mg/L",
      "scope": null,
@@ -2087,9 +2128,105 @@
     "frequency": null
    },
    {
+    "id": "88a88166",
+    "name": "pH",
+    "text": "In-situ field parameter measured in monitoring of Broken Pumpkin Creek.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "pH 6.0-9.0"
+     },
+     {
+      "page": 10,
+      "quote": "in-situ field measurements for such parameters as dissolved oxygen, pH, temperature, specific conductance, and turbidity"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "parameter": "pH",
+    "threshold": {
+     "raw": "6.0-9.0",
+     "scope": null,
+     "value": 6,
+     "valueMax": 9,
+     "unit": null,
+     "comparator": "range"
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "8a240376",
+    "name": "Temperature",
+    "text": "In-situ field parameter measured in monitoring of Broken Pumpkin Creek.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "Temperature Not to exceed 90°F"
+     },
+     {
+      "page": 10,
+      "quote": "in-situ field measurements for such parameters as dissolved oxygen, pH, temperature, specific conductance, and turbidity"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Temperature",
+    "threshold": {
+     "raw": "Not to exceed 90°F",
+     "scope": null,
+     "value": 90,
+     "valueMax": null,
+     "unit": "°F",
+     "comparator": "<="
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "27687457",
+    "name": "Specific conductance",
+    "text": "In-situ field parameter measured in monitoring of Broken Pumpkin Creek.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "Specific Conductance Less Than 1000 micromhos/cm"
+     },
+     {
+      "page": 10,
+      "quote": "in-situ field measurements for such parameters as dissolved oxygen, pH, temperature, specific conductance, and turbidity"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Specific conductance",
+    "threshold": {
+     "raw": "Less Than 1000 micromhos/cm",
+     "scope": null,
+     "value": 1000,
+     "valueMax": null,
+     "unit": "micromhos/cm",
+     "comparator": "<="
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
     "id": "aa4a9306",
     "name": "Turbidity",
-    "text": "In-situ field measurement parameter used in water quality monitoring.",
+    "text": "In-situ field parameter measured in monitoring of Broken Pumpkin Creek.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2119,92 +2256,22 @@
     "frequency": null
    },
    {
-    "id": "59a6f64a",
-    "name": "MBISQ",
-    "text": "Biological community score used to assess whether a site attains the aquatic life use designation.",
+    "id": "df232cfd",
+    "name": "Benthic macroinvertebrates",
+    "text": "Biological community monitoring for benthic macroinvertebrates.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 10,
-      "quote": "If the score is above the attainment threshold for the bioregion, the site is assessed as attaining the aquatic life use designation."
+      "quote": "as well as biological community monitoring for benthic macroinvertebrates."
      }
     ],
     "verified": true,
     "source": "table",
     "needsReview": null,
     "confidence": "high",
-    "parameter": "MBISQ",
-    "threshold": {
-     "raw": "above the attainment threshold for the bioregion",
-     "scope": null,
-     "value": null,
-     "valueMax": null,
-     "unit": null,
-     "comparator": null
-    },
-    "location": null,
-    "frequency": null
-   },
-   {
-    "id": "6467deb6",
-    "name": "Post-BMP monitoring",
-    "text": "Monitoring of water quality downstream of BMP activity after installation to compare with pre-implementation data.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 10,
-      "quote": "Post BMP monitoring will be conducted in a way that allows for comparison with the pre-implementation data."
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "high",
-    "parameter": "Water quality downstream of BMP activity",
-    "threshold": null,
-    "location": null,
-    "frequency": "more than 1 year of post BMP data may be needed"
-   },
-   {
-    "id": "886a78e6",
-    "name": "In-stream habitat surveys",
-    "text": "Surveys used with overall MBISQ scores to determine change over time.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 10,
-      "quote": "Along with overall MBISQ scores, the in-stream habitat surveys will also be used to determine change over time."
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "high",
-    "parameter": "In-stream habitat",
-    "threshold": null,
-    "location": null,
-    "frequency": null
-   },
-   {
-    "id": "b88c5320",
-    "name": "Mississippi Benthic Index of Stream Quality (M-BISQ)",
-    "text": "Benthic macroinvertebrate index used in the biological assessment of Broken Pumpkin Creek.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 1,
-      "quote": "Based on the M-BISQ scores, this water body was determined to be impaired."
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "parameter": "M-BISQ scores",
+    "parameter": "Benthic macroinvertebrates",
     "threshold": null,
     "location": null,
     "frequency": null
@@ -2212,7 +2279,7 @@
    {
     "id": "4e65d9a2",
     "name": "Dissolved Oxygen % Sat",
-    "text": "Water quality parameter with a percent saturation range threshold.",
+    "text": "Dissolved oxygen percent saturation threshold.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2238,93 +2305,9 @@
     "frequency": null
    },
    {
-    "id": "808d7d8a",
-    "name": "pH",
-    "text": "Water quality parameter with a pH range threshold.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 9,
-      "quote": "pH 6.0-9.0"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "parameter": "pH",
-    "threshold": {
-     "raw": "6.0-9.0",
-     "scope": null,
-     "value": 6,
-     "valueMax": 9,
-     "unit": null,
-     "comparator": "range"
-    },
-    "location": null,
-    "frequency": null
-   },
-   {
-    "id": "c6a17cda",
-    "name": "Temperature",
-    "text": "Water quality parameter with a maximum temperature threshold.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 9,
-      "quote": "Temperature Not to exceed 90°F"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "high",
-    "parameter": "Temperature",
-    "threshold": {
-     "raw": "Not to exceed 90°F",
-     "scope": null,
-     "value": 90,
-     "valueMax": null,
-     "unit": "°F",
-     "comparator": "<="
-    },
-    "location": null,
-    "frequency": null
-   },
-   {
-    "id": "7b298005",
-    "name": "Specific Conductance",
-    "text": "Water quality parameter with a conductance threshold.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 9,
-      "quote": "Specific Conductance Less Than 1000 micromhos/cm"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "high",
-    "parameter": "Specific Conductance",
-    "threshold": {
-     "raw": "Less Than 1000 micromhos/cm",
-     "scope": null,
-     "value": 1000,
-     "valueMax": null,
-     "unit": "micromhos/cm",
-     "comparator": "<="
-    },
-    "location": null,
-    "frequency": null
-   },
-   {
     "id": "55a392a1",
     "name": "Dissolved Solids",
-    "text": "Water quality parameter with monthly average and instantaneous thresholds.",
+    "text": "Dissolved solids threshold for water quality monitoring.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2352,7 +2335,7 @@
    {
     "id": "963c50b3",
     "name": "Total Suspended Solids",
-    "text": "Water quality surrogate parameter for sediment with a threshold.",
+    "text": "Total suspended solids threshold, used as a sediment surrogate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2380,7 +2363,7 @@
    {
     "id": "37d13c05",
     "name": "Chemical Oxygen Demand",
-    "text": "Water quality parameter with a threshold.",
+    "text": "Chemical oxygen demand threshold for water quality monitoring.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2408,7 +2391,7 @@
    {
     "id": "89194db2",
     "name": "M-BISQ East Bioregion",
-    "text": "Biological index metric with a calibration threshold for waters outside the Mississippi Alluvial Plain.",
+    "text": "Mississippi Benthic Index of Stream Quality score threshold for the East Bioregion.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2436,26 +2419,6 @@
   ],
   "outreach": [
    {
-    "id": "b9a525a4",
-    "name": "Field days",
-    "text": "Field days to showcase implemented BMPs for the public.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 7,
-      "quote": "and hosting field days to showcase the implemented BMPs for the public"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "audience": "Public",
-    "quantity": null,
-    "timeframe": null
-   },
-   {
     "id": "b6bcd08b",
     "name": "Water Model Presentations",
     "text": "Enviroscapes and groundwater aquifer models distributed statewide with training and related interactive lesson plans.",
@@ -2464,7 +2427,7 @@
     "evidence": [
      {
       "page": 6,
-      "quote": "Water Model Presentations - Enviroscapes and groundwater aquifer models distributed statewide with training and related interactive lesson plans."
+      "quote": "Enviroscapes and groundwater aquifer models distributed statewide with training and related interactive lesson plans."
      }
     ],
     "verified": true,
@@ -2484,14 +2447,14 @@
     "evidence": [
      {
       "page": 6,
-      "quote": "Teacher Workshops – train educators in proximity to the watershed about NPS pollution"
+      "quote": "train educators in proximity to the watershed about NPS pollution and provide materials and information"
      }
     ],
     "verified": true,
     "source": "table",
     "needsReview": null,
     "confidence": "high",
-    "audience": null,
+    "audience": "Educators",
     "quantity": null,
     "timeframe": null
    },
@@ -2504,27 +2467,27 @@
     "evidence": [
      {
       "page": 6,
-      "quote": "Adopt A Stream - workshops and training venues for citizens, teachers, and students in the Dry Creek Watershed."
+      "quote": "workshops and training venues for citizens, teachers, and students in the Dry Creek Watershed."
      }
     ],
     "verified": true,
     "source": "table",
     "needsReview": null,
     "confidence": "high",
-    "audience": null,
+    "audience": "Citizens, teachers, and students",
     "quantity": null,
     "timeframe": null
    },
    {
     "id": "f1008154",
     "name": "Watershed Harmony Mobile Classroom",
-    "text": "Public education program for ages kindergarten to adults with state and federal objectives tailored for 4th and 5th grade students.",
+    "text": "Mobile classroom with state and federal public education objectives tailored for 4th and 5th grade students.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 6,
-      "quote": "Watershed Harmony Mobile Classroom - for ages kindergarten – adults with state and federal public education objectives"
+      "quote": "federal public education objectives tailored for 4th and 5th grade students"
      }
     ],
     "verified": true,
@@ -2544,7 +2507,51 @@
     "evidence": [
      {
       "page": 6,
-      "quote": "“Train the Trainer” - workshops and materials for Soil and Water districts, Extension Service, etc."
+      "quote": "workshops and materials for Soil and Water districts, Extension Service, etc."
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": "Soil and Water districts, Extension Service",
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "947a4195",
+    "name": "Soil and water conservation field days",
+    "text": "Soil and water conservation field days listed among stakeholder collaboration activities.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 6,
+      "quote": "festival event planning, soil and water conservation field days, tree boards"
+     },
+     {
+      "page": 7,
+      "quote": "hosting field days to showcase the implemented BMPs for the public"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": "Public",
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "053d036d",
+    "name": "Festival event planning",
+    "text": "Festival event planning listed among stakeholder collaboration activities.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 6,
+      "quote": "training workshops, festival event planning, soil and water conservation field days"
      }
     ],
     "verified": true,
@@ -2554,20 +2561,56 @@
     "audience": null,
     "quantity": null,
     "timeframe": null
+   },
+   {
+    "id": "1f54f3f2",
+    "name": "Establish routine meeting schedule for WIT",
+    "text": "Routine WIT meetings to support WBP revision.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 8,
+      "quote": "Establish routine meeting schedule for WIT to support WBP revision"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": "WIT",
+    "quantity": null,
+    "timeframe": "Months 1-36"
+   },
+   {
+    "id": "42f75485",
+    "name": "Finalize education and outreach plan",
+    "text": "Finalize the education and outreach plan with events scheduled.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 8,
+      "quote": "Finalize education and outreach plan Education/Outreach events scheduled"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": null,
+    "quantity": null,
+    "timeframe": "Months 8-36"
    }
   ],
   "geographicAreas": [
    {
     "id": "11da976a",
     "name": "Broken Pumpkin Creek",
-    "text": "Stream in the East bioregion determined impaired in 2002; the plan's water body.",
+    "text": "Stream that is the subject of the watershed plan, impaired in 2002 and located in the East bioregion.",
     "kind": "main",
     "parentId": null,
     "evidence": [
-     {
-      "page": 1,
-      "quote": "Broken Pumpkin Creek (MS031BPE) was placed on the Mississippi 2002 Section"
-     },
      {
       "page": 10,
       "quote": "Broken Pumpkin Creek is located in the East bioregion and was determined to be impaired in 2002"
@@ -2578,14 +2621,14 @@
     "needsReview": null,
     "confidence": "high",
     "type": "waterbody",
-    "code": "MS031BPE",
+    "code": null,
     "areaAcres": null,
     "role": "primary"
    },
    {
     "id": "1276077c",
     "name": "East bioregion",
-    "text": "Bioregion in which Broken Pumpkin Creek is located.",
+    "text": "Mississippi bioregion in which Broken Pumpkin Creek is located.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2604,23 +2647,23 @@
     "role": "mentioned"
    },
    {
-    "id": "f91baf9b",
-    "name": "Broken Pumpkin Creek watershed",
-    "text": "Watershed covered by the plan, located in Noxubee and Lowndes counties.",
+    "id": "1629d51e",
+    "name": "Broken Pumpkin Creek",
+    "text": "Watershed in Noxubee and Lowndes counties covering 24,573 acres, the plan's focus area.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 1,
-      "quote": "The Broken Pumpkin Creek watershed is located in Noxubee and Lowndes counties in east central Mississippi covering 24,573 acres."
+      "quote": "The Broken Pumpkin Creek watershed is located in Noxubee and Lowndes counties in east"
      },
      {
       "page": 6,
-      "quote": "These programs, events, manuals and literature can be used in the Broken Pumpkin Creek watershed project"
+      "quote": "can be used in the Broken Pumpkin Creek watershed project by tailoring them to"
      },
      {
       "page": 8,
-      "quote": "contributing significant pollutant loads to Broken Pumpkin Creek Watershed"
+      "quote": "Broken Pumpkin Creek Watershed"
      }
     ],
     "verified": true,
@@ -2628,41 +2671,41 @@
     "needsReview": null,
     "confidence": "high",
     "type": "watershed",
-    "code": null,
-    "areaAcres": 24573,
+    "code": "HUC 031601060307",
+    "areaAcres": null,
     "role": "primary"
    },
    {
-    "id": "a48cd068",
-    "name": "HUC 031601060307",
-    "text": "Hydrologic unit code identifying the plan's watershed.",
+    "id": "16b215a1",
+    "name": "Kincaide Creek",
+    "text": "Segment added to the TMDL in 2010 but stated not to be part of the Broken Pumpkin Creek watershed.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 1,
-      "quote": "HUC 031601060307"
+      "quote": "This TMDL was updated in 2010 to include Kincaide Creek (MS033K); however, this segment is not part of the"
      }
     ],
     "verified": true,
     "source": "text",
     "needsReview": null,
-    "confidence": "medium",
-    "type": "huc",
-    "code": "031601060307",
+    "confidence": "high",
+    "type": "waterbody",
+    "code": "MS033K",
     "areaAcres": null,
-    "role": "primary"
+    "role": "mentioned"
    },
    {
     "id": "9c51af46",
     "name": "Luxapallila Creek",
-    "text": "Stream in HUC 03106105 covered by the Tombigbee River Basin TMDL.",
+    "text": "Water body within HUC 03106105 named in the Tombigbee River Basin TMDL.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 1,
-      "quote": "Tombigbee Ricer Basin Designated Streams in HUCs 03106105 (Luxapallila Creek)"
+      "quote": "Designated Streams in HUCs 03106105 (Luxapallila Creek) and"
      }
     ],
     "verified": true,
@@ -2677,13 +2720,13 @@
    {
     "id": "c0fbfefa",
     "name": "Middle Tombigbee River",
-    "text": "River in HUC 03160106 covered by the Tombigbee River Basin TMDL.",
+    "text": "Water body within HUC 03160106 named in the Tombigbee River Basin TMDL.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 1,
-      "quote": "and 03160106 (Middle Tombigbee River) (MDEQ, 2006) TMDL"
+      "quote": "03160106 (Middle Tombigbee River) (MDEQ, 2006) TMDL, which includes Broken Pumpkin"
      }
     ],
     "verified": true,
@@ -2692,90 +2735,6 @@
     "confidence": "high",
     "type": "huc",
     "code": "03160106",
-    "areaAcres": null,
-    "role": "mentioned"
-   },
-   {
-    "id": "16b215a1",
-    "name": "Kincaide Creek",
-    "text": "Segment mentioned as added to the TMDL update but outside this watershed.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 1,
-      "quote": "Kincaide Creek (MS033K); however, this segment is not part of the"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "waterbody",
-    "code": "MS033K",
-    "areaAcres": null,
-    "role": "mentioned"
-   },
-   {
-    "id": "c78b9741",
-    "name": "Tallahatchie County",
-    "text": "County named as the location of the local SWCD working on the project.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 7,
-      "quote": "Work with the Tallahatchie County SWCD, MSWCC, NRCS, and MDEQ to inform landowners"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "county",
-    "code": null,
-    "areaAcres": null,
-    "role": "mentioned"
-   },
-   {
-    "id": "cda99a68",
-    "name": "Lowndes Co.",
-    "text": "County whose Soil and Water District is named as a coordinating partner.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 8,
-      "quote": "Lowndes Co. Soil and Water Districts to determine priority areas"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "county",
-    "code": null,
-    "areaAcres": null,
-    "role": "mentioned"
-   },
-   {
-    "id": "ead01d80",
-    "name": "Mississippi Alluvial Plain",
-    "text": "Area excluded from the M-BISQ index use for freshwater wadeable streams.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 9,
-      "quote": "not including the Mississippi Alluvial Plain (i.e. Delta)"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "other",
-    "code": null,
     "areaAcres": null,
     "role": "mentioned"
    },
@@ -2799,6 +2758,69 @@
     "code": null,
     "areaAcres": null,
     "role": "mentioned"
+   },
+   {
+    "id": "c78b9741",
+    "name": "Tallahatchie County",
+    "text": "County named for SWCD coordination.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 7,
+      "quote": "Work with the Tallahatchie County SWCD, MSWCC, NRCS, and MDEQ"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "county",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "cda99a68",
+    "name": "Lowndes Co.",
+    "text": "County whose Soil and Water District is named as a partner.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 8,
+      "quote": "Lowndes Co. Soil and Water Districts to"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "county",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "0ae4f3e4",
+    "name": "Noxubee",
+    "text": "Area whose Soil and Water District is named as a partner.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 8,
+      "quote": "the Noxubee and"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "other",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
    }
   ]
  },
@@ -2810,19 +2832,37 @@
   "year": 2019
  },
  "quality": {
-  "verifiedRate": 0.8556701030927835,
+  "verifiedRate": 0.7850467289719626,
   "rejected": [
    {
     "category": "monitoring",
-    "name": "Water chemistry, in-situ and benthics monitoring",
+    "name": "Station TB146",
     "page": 10,
     "reason": "name-not-in-source"
    },
    {
     "category": "monitoring",
-    "name": "Water chemistry, in-situ and benthics monitoring",
+    "name": "Station TB562",
     "page": 10,
     "reason": "name-not-in-source"
+   },
+   {
+    "category": "monitoring",
+    "name": "Post-BMP water quality",
+    "page": 10,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "goals",
+    "name": "Reduce sediment loads entering waters in the watershed: a reduction in sediment of 77% to 97%",
+    "page": 3,
+    "reason": "number-not-in-quote"
+   },
+   {
+    "category": "geographicAreas",
+    "name": "Broken Pumpkin Creek: 24,573 acres",
+    "page": 1,
+    "reason": "number-not-in-quote"
    },
    {
     "category": "geographicAreas",
@@ -2837,50 +2877,26 @@
     "reason": "name-not-in-source"
    },
    {
-    "category": "implementation",
-    "name": "Noxubee and Lowndes Co. Soil and Water Districts",
-    "page": 8,
-    "reason": "name-not-in-source"
-   },
-   {
-    "category": "implementation",
-    "name": "Initiate watershed monitoring: timeframe \"Completed using historical data\"",
-    "page": 8,
+    "category": "bmps",
+    "name": "Prescribed Grazing: scope \"Cost table on page 5 (Streambank/Total budget table)\"",
+    "page": 5,
     "reason": "detail-not-in-source"
-   },
-   {
-    "category": "monitoring",
-    "name": "Initiate watershed monitoring",
-    "page": 8,
-    "reason": "quote-not-found"
-   },
-   {
-    "category": "monitoring",
-    "name": "Begin monitoring to collect data on post-BMP water quality",
-    "page": 8,
-    "reason": "quote-not-found"
-   },
-   {
-    "category": "outreach",
-    "name": "Watershed Implementation Team meetings",
-    "page": 7,
-    "reason": "name-not-in-source"
-   },
-   {
-    "category": "outreach",
-    "name": "WIT meetings",
-    "page": 8,
-    "reason": "quote-not-found"
-   },
-   {
-    "category": "outreach",
-    "name": "Education/Outreach events",
-    "page": 8,
-    "reason": "quote-not-found"
    },
    {
     "category": "bmps",
     "name": "Streambank and Shoreline Protection: 275 ft",
+    "page": 5,
+    "reason": "number-not-in-quote"
+   },
+   {
+    "category": "bmps",
+    "name": "Underground Outlet: scope \"Cost table on page 5\"",
+    "page": 5,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "bmps",
+    "name": "Underground Outlet: 1600 ft",
     "page": 5,
     "reason": "number-not-in-quote"
    },
@@ -2895,6 +2911,66 @@
     "name": "Tank/Trough: scope \"Cost Estimate: Phase 1 Implementation\"",
     "page": 6,
     "reason": "detail-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Watershed Harmony Mobile Classroom: audience \"Kindergarten through adults, tailored to 4th and 5th grade students\"",
+    "page": 6,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Soil and water conservation field days: audience \"Stakeholders and community\"",
+    "page": 6,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Festival event planning: audience \"Stakeholders and community\"",
+    "page": 6,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "implementation",
+    "name": "Noxubee and Lowndes Co. Soil and Water Districts",
+    "page": 8,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "implementation",
+    "name": "Initiate watershed monitoring: timeframe \"Completed using historical data\"",
+    "page": 8,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "implementation",
+    "name": "Initiate watershed monitoring: status \"completed\"",
+    "page": 8,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "monitoring",
+    "name": "Dissolved Solids: frequency \"Monthly average; instantaneous\"",
+    "page": 9,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "monitoring",
+    "name": "Baseline condition monitoring",
+    "page": 8,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "monitoring",
+    "name": "Begin monitoring to collect data on post-BMP water quality",
+    "page": 8,
+    "reason": "quote-not-found"
+   },
+   {
+    "category": "outreach",
+    "name": "Watershed Implementation Team meetings",
+    "page": 7,
+    "reason": "name-not-in-source"
    }
   ],
   "conflicts": [],
@@ -2909,19 +2985,17 @@
     "reason": "Figure or map page"
    }
   ],
-  "emptyPages": [
-   3
-  ],
+  "emptyPages": [],
   "failedUnits": [],
   "provider": "anthropic",
   "model": "claude-haiku-5-5",
-  "durationMs": 30775,
+  "durationMs": 14190,
   "usage": {
-   "inputTokens": 84852,
-   "outputTokens": 21685,
-   "costUsd": 0.01699971
+   "inputTokens": 89034,
+   "outputTokens": 18723,
+   "costUsd": 0.014757779999999998
   },
-  "completionBasis": "1 of 18 activities reported completed",
+  "completionBasis": "No completion status reported in this document",
   "structure": [
    {
     "page": 1,
