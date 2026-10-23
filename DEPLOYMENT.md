@@ -122,6 +122,12 @@ grep -rE "sk-ant-|sk-proj-" frontend/.next/static || echo "no key strings in the
 
 Then upload a plan in the browser and open a sample.
 
+Results on the live demo after the scanned-table highlight deploy (2026-10-23, commit `e24b0c2`):
+the served chunk sets Tesseract's `tessedit_pageseg_mode` to automatic, `/api/health`, the
+Buttahatchee sample report and Tesseract's worker return 200. A quote marked on a live page in
+a browser was not checked here; the 71-of-73 figure in TESTING.md comes from the same Tesseract
+build and settings run in Node.
+
 Results on the live demo after the speed-fix deploy (2026-10-23, commit `50625e2`):
 
 - `/api/health` answers, the Accuracy page shows the same results as before (83.7%,
