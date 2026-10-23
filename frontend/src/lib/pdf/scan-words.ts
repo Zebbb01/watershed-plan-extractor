@@ -35,9 +35,14 @@ async function read(page: PDFPageProxy): Promise<Run[]> {
   await page.render({ canvas, viewport }).promise;
 
   if (!worker) {
-    worker = import('tesseract.js').then(({ createWorker, OEM }) =>
-      createWorker('eng', OEM.LSTM_ONLY, { workerPath: '/tesseract/worker.min.js', corePath: '/tesseract/', langPath: '/tesseract/', workerBlobURL: false }),
-    );
+    worker = import('tesseract.js').then(async ({ createWorker, OEM, PSM }) => {
+      const w = await createWorker('eng', OEM.LSTM_ONLY, { workerPath: '/tesseract/worker.min.js', corePath: '/tesseract/', langPath: '/tesseract/', workerBlobURL: false });
+      // Tesseract.js reads a page as one block of text by default, which skips many words of a
+      // ruled table; automatic segmentation finds them (Buttahatchee pages 3, 32, 34, 35, 105:
+      // 71 of 73 quotes marked, against 60 as one block).
+      await w.setParameters({ tessedit_pageseg_mode: PSM.AUTO });
+      return w;
+    });
     // A failed start (offline, say) is tried again next time.
     worker.catch(() => (worker = null));
   }

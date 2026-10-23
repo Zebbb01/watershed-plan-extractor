@@ -42,13 +42,63 @@ export function pickHighlightRuns<T extends Run>(runs: T[], quotes: string[], { 
     const q = normalizeForMatch(quote);
     if (q.length < 4) continue;
     const found = findExact(text, q) ?? (fuzzy ? findClosest(text, q) : null);
-    if (!found) continue;
+    if (!found) {
+      for (const i of findRowWords(runs, q, fuzzy ? ROW_COVER : 1)) marked.add(i);
+      continue;
+    }
     const [from, to] = found;
     spans.forEach((s, i) => {
       if (s && s.start < to && s.end > from) marked.add(i);
     });
   }
   return runs.filter((_, i) => marked.has(i));
+}
+
+// Share of a quote's words that must sit together, read row by row, to mark them on a scanned
+// page (misread words); a text layer needs them all.
+const ROW_COVER = 0.8;
+const wordsOf = (s: string) => s.split(/[^\p{L}\p{N}]+/u).filter(Boolean);
+
+/**
+ * A table row is often not one stretch in reading order: Tesseract may read a table column by
+ * column, and a cell that wraps puts its second line after the rest of the row ("Fix failing
+ * onsite $3,300 72 systems $237,600 wastewater systems"). Here the words are read row by row,
+ * top to bottom and left to right, and the shortest stretch holding `cover` of the quote's
+ * words gives the runs to mark: only those of its words that are in the quote.
+ */
+function findRowWords(runs: Run[], q: string, cover: number): number[] {
+  const want = new Map<string, number>();
+  for (const w of wordsOf(q)) want.set(w, (want.get(w) ?? 0) + 1);
+  const total = [...want.values()].reduce((a, b) => a + b, 0);
+  if (total < 3) return [];
+
+  // Rows: runs whose vertical middles lie within half a height of the row's first run.
+  const order = runs.map((r, i) => ({ r, i, mid: r.y + r.h / 2 })).sort((a, b) => a.mid - b.mid);
+  const rows: (typeof order)[] = [];
+  for (const o of order) {
+    const row = rows.at(-1);
+    if (row && Math.abs(o.mid - row[0].mid) < Math.max(o.r.h, row[0].r.h) / 2) row.push(o);
+    else rows.push([o]);
+  }
+  const tokens = rows.flatMap((row) => row.sort((a, b) => a.r.x - b.r.x)).flatMap((o) => wordsOf(normalizeForMatch(o.r.str)).map((w) => ({ w, i: o.i })));
+
+  // The stretch that holds the most of the quote's words, the shorter one on a tie.
+  let best = { hits: 0, from: 0, to: -1 };
+  const limit = Math.ceil(total * 1.5) + 2;
+  for (let from = 0; from < tokens.length; from++) {
+    if (!want.has(tokens[from].w)) continue;
+    const seen = new Map<string, number>();
+    let hits = 0;
+    for (let to = from; to < tokens.length && to - from < limit; to++) {
+      const w = tokens[to].w;
+      const n = seen.get(w) ?? 0;
+      if (n < (want.get(w) ?? 0)) hits++;
+      seen.set(w, n + 1);
+      if (hits > best.hits || (hits === best.hits && to - from < best.to - best.from)) best = { hits, from, to };
+    }
+  }
+  if (best.hits < total * cover) return [];
+  return [...new Set(tokens.slice(best.from, best.to + 1).filter((t) => want.has(t.w)).map((t) => t.i))];
 }
 
 function findExact(text: string, q: string): [number, number] | null {

@@ -293,10 +293,15 @@ From reading the output (not scored):
   built and unit-tested with mocked responses, but no OpenAI key was used, so it was never run
   against the live API.
 - The verbatim check on the scanned plan, which has no text layer.
-- How often a quote gets marked on a scanned page. Tesseract reads the page image in the
-  browser only to place the highlight. It was checked on Buttahatchee pages 104 and 106 in a
-  local production build (both quotes marked on the right line), not across the plan. When
-  it cannot find a quote, the page says so and the quote stays shown above it.
+- How often a quote gets marked across a whole scanned plan. Tesseract reads the page image in
+  the browser only to place the highlight. On five Buttahatchee pages (3, 32, 34, 35 and 105,
+  three of them tables), read by the same Tesseract build and settings in Node, 71 of the
+  sample's 73 quotes are marked. Before two changes it was 51: Tesseract.js reads a page as one
+  block of text by default, which skipped many words of ruled tables (automatic page
+  segmentation finds them), and a table row is not always one stretch in reading order (a
+  wrapped cell's second line comes after the row), so rows are now also read left to right.
+  The two misses are a goal written in a narrow cell over five lines. When a quote is not
+  found, the page says so and the quote stays shown above it.
 - Agreement between two annotators: the ground truth has one author and the script check.
 - Plans from outside Mississippi beyond the smoke test.
 - Memory use on phones for files far above 100 MB.

@@ -55,6 +55,23 @@ describe('pickHighlightRuns on words read off a scanned page', () => {
   it('needs the exact words without fuzzy matching', () => {
     expect(pickHighlightRuns(item13, [quote])).toEqual([]);
   });
+
+  it('marks a table row whose cell wraps, as Tesseract reads it (the second line of the cell last)', () => {
+    // Buttahatchee 2004 p. 32, Table 3.4, in Tesseract's order.
+    const at = (str: string, x: number, y: number) => ({ str, x, y, w: 40, h: 10 });
+    const row = [at('Fix', 90, 444), at('failing', 115, 444), at('onsite', 150, 444), at('$3,300', 265, 444), at('72', 385, 444), at('systems', 400, 444), at('$237,600', 470, 444)];
+    const wrapped = [at('wastewater', 90, 456), at('systems', 145, 456)];
+    const below = [at('*Avg', 90, 470), at('on', 112, 470), at('previous', 125, 470), at('319', 165, 470), at('project', 185, 470)];
+    const marked = pickHighlightRuns([...row, ...wrapped, ...below], ['Fix failing onsite wastewater systems $3,300 72 systems $237,600'], { fuzzy: true });
+    expect(marked).toEqual([...row, ...wrapped]);
+  });
+
+  it('marks a row read in another order only when nearly all its words are there', () => {
+    const at = (str: string, x: number, y: number) => ({ str, x, y, w: 40, h: 10 });
+    const cells = [at('$2,500/pond', 300, 372), at('10', 385, 372), at('ponds', 400, 372), at('$25,000', 470, 372)];
+    // The practice name was not read at all: 4 of 7 words are too few to point at.
+    expect(pickHighlightRuns(cells, ['Livestock watering ponds $2,500/pond 10 ponds $25,000'], { fuzzy: true })).toEqual([]);
+  });
 });
 
 describe('joinLines', () => {
