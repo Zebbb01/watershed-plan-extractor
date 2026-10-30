@@ -122,6 +122,18 @@ grep -rE "sk-ant-|sk-proj-" frontend/.next/static || echo "no key strings in the
 
 Then upload a plan in the browser and open a sample.
 
+Results on the live demo after the generalisation release (2026-10-30, tag `1.1.0`, commit
+`6e729e9`):
+
+- `/api/health` returns `{"ok":true,"provider":"anthropic","model":"claude-haiku-5-5",...}`;
+  the home page sets the six security headers; a malformed request to `/api/extract` returns
+  400 `INVALID_INPUT` with a request id; an unknown path returns 404.
+- The home page lists six samples, three marked "Not used for tuning"; their reports, results
+  and PDFs return 200.
+- The Accuracy page shows the nine-plan results (80.3%, held-out plans 78.6%), and the West
+  Boley and Buttahatchee reports show the plan diagram and the page map with no page errors in
+  the browser.
+
 Results on the live demo after the scanned-table highlight deploy (2026-10-23, commit `e24b0c2`):
 the served chunk sets Tesseract's `tessedit_pageseg_mode` to automatic, `/api/health`, the
 Buttahatchee sample report and Tesseract's worker return 200. A quote marked on a live page in
