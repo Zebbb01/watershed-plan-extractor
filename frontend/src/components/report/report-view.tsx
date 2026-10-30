@@ -29,6 +29,7 @@ import { session } from '@/lib/session';
 import { loadPdf, loadResult, savePdf } from '@/lib/store';
 import { CategoryTab, matchesSearch } from './category-tab';
 import { ActivityStatus, BmpAmounts, BmpCosts, CategoryCounts, Timeline } from './charts';
+import { DocumentMap, PlanAtAGlance, ReductionTargets, WhoDoesWhat } from './insights';
 import { EvidenceSheet } from './evidence-sheet';
 import { PdfPane, type Focus } from './pdf-pane';
 import { PrintReport } from './print-report';
@@ -406,12 +407,17 @@ export function ReportView({ id }: { id: string }) {
                 <StatTile label="Outreach" value={view.outreach.length} sub="activities" {...tile('outreach')} />
               </div>
 
+              <PlanAtAGlance report={view} onOpen={setTab} />
+
               <div className="grid gap-4 @3xl:grid-cols-2">
                 <CategoryCounts report={view} onOpen={setTab} />
                 <ActivityStatus activities={view.implementation} />
+                <ReductionTargets goals={view.goals} />
+                <WhoDoesWhat activities={view.implementation} />
                 <BmpAmounts bmps={view.bmps} />
                 <BmpCosts bmps={view.bmps} />
                 <Timeline activities={view.implementation} className="@3xl:col-span-2" />
+                <DocumentMap report={view} pages={doc.pages} quality={quality} />
               </div>
             </Tabs.Content>
 

@@ -18,9 +18,9 @@ import { cn } from '@/lib/cn';
  * value labels where they fit. Cards in one row share a height so the grid has no holes.
  */
 
-const AXIS = { fontSize: 12, fill: '#64748b' };
-const GRID = '#e8edf3';
-const CURSOR = { fill: '#f1f5f9' };
+export const AXIS = { fontSize: 12, fill: '#64748b' };
+export const GRID = '#e8edf3';
+export const CURSOR = { fill: '#f1f5f9' };
 // Tooltips wrap long names and stay narrower than a phone screen, so they never push the page sideways.
 const TOOLTIP = {
   wrapperStyle: { maxWidth: 'min(320px, calc(100% - 8px))', zIndex: 10 },
@@ -36,24 +36,24 @@ const TOOLTIP = {
   labelStyle: { color: '#0f172a', fontWeight: 600, marginBottom: 2 },
   itemStyle: { color: '#334155', padding: 0 },
 };
-const fmt = new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 });
-const usd = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
-const usdShort = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 1 });
-const TOP = 8;
+export const fmt = new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 });
+export const usd = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+export const usdShort = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 1 });
+export const TOP = 8;
 
 /** On phones the tooltip is pinned to the chart's left edge instead of following the finger off screen. */
-function useTooltip() {
+export function useTooltip() {
   const narrow = useMediaQuery('(max-width: 639px)');
   return narrow ? { ...TOOLTIP, position: { x: 4 } } : TOOLTIP;
 }
 
 /** Narrow screens get shorter axis labels so the bars keep their room. */
-function useLabelWidth(wide: number) {
+export function useLabelWidth(wide: number) {
   const narrow = useMediaQuery('(max-width: 639px)');
   return { width: narrow ? Math.round(wide * 0.62) : wide, cut: (s: string) => (narrow && s.length > 20 ? `${s.slice(0, 19)}…` : s) };
 }
 
-function ChartCard({
+export function ChartCard({
   title,
   note,
   chart,
@@ -92,7 +92,7 @@ function ChartCard({
   );
 }
 
-function SimpleTable({ head, rows }: { head: string[]; rows: string[][] }) {
+export function SimpleTable({ head, rows }: { head: string[]; rows: string[][] }) {
   return (
     <div className="max-h-72 overflow-y-auto">
       <table className="w-full text-dense">
@@ -215,7 +215,7 @@ export function ActivityStatus({ activities }: { activities: ActivityItem[] }) {
 
 const UNIT_LABEL: Record<string, string> = { ac: 'Acres', ft: 'Feet', 'cu yd': 'Cubic yards', mi: 'Miles', gal: 'Gallons', count: 'Count' };
 const MEASURE_UNITS = new Set(['ac', 'ft', 'cu yd', 'mi', 'gal', 'sq ft', 'lb', 'ton']);
-const barsHeight = (n: number) => Math.max(140, n * 30 + 36);
+export const barsHeight = (n: number) => Math.max(140, n * 30 + 36);
 
 /** Planned BMP amounts, one unit at a time (acres and feet never share an axis). */
 export function BmpAmounts({ bmps }: { bmps: BmpItem[] }) {

@@ -67,7 +67,8 @@ export default function Page() {
         <div className="relative mx-auto max-w-6xl px-4 py-10 sm:px-6">
           <h1 className="text-[clamp(1.75rem,3vw,2.5rem)] font-semibold tracking-tight text-slate-900">Accuracy</h1>
           <p className="mt-2 max-w-2xl text-[15px] text-slate-600">
-            Scored by script against answer keys for Mississippi watershed plans in four formats, one of them scanned.
+            Scored by script against answer keys for Mississippi watershed plans from 2004 to 2021: nine-key-element plans,
+            narrative plans and scans. Most of them were held out from tuning.
           </p>
         </div>
       </section>
@@ -84,7 +85,10 @@ export default function Page() {
           </h2>
           <ul className="mt-3 list-disc space-y-1.5 pl-5 text-[14px] text-slate-700">
             <li>The answer keys were written page by page from each PDF; a script checks every quote and name in them against the PDF text.</li>
-            <li>Prompts were tuned only on the tuning plans. The held-out plan was labelled after tuning and scored on the final settings.</li>
+            <li>
+              Prompts and rules were tuned on the tuning plans and on ten unlabelled plans read for errors. The held-out plans were labelled from
+              the PDF before the tool ran on them and were not used to choose any change.
+            </li>
             <li>Items match by name (word stems, one-to-one). Precision is the share of extracted items that are real; recall is the share of real items found.</li>
             <li>A number counts as right only when its value and unit both match the plan.</li>
             <li>The model is not deterministic, so each plan is run three times; the scores are the mean, with each run&apos;s F1 under it.</li>
@@ -117,7 +121,15 @@ function Results({ data }: { data: Accuracy }) {
       </p>
       <div className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-4">
         <StatTile label="Goals, BMPs and activities" icon={Target} accent="#1d63b5" value={pct1(all.core.f1)} sub={`F1, all plans · bar 75%`} />
-        {held && <StatTile label="Held-out plan" icon={FileCheck2} accent="#1d63b5" value={pct1(held.core.f1)} sub="F1 on a plan not used for tuning" />}
+        {held && (
+          <StatTile
+            label={held.docs > 1 ? 'Held-out plans' : 'Held-out plan'}
+            icon={FileCheck2}
+            accent="#1d63b5"
+            value={pct1(held.core.f1)}
+            sub={held.docs > 1 ? `F1 on ${held.docs} plans not used for tuning` : 'F1 on a plan not used for tuning'}
+          />
+        )}
         <StatTile label="Numbers exact" icon={Hash} accent="#0f8a4b" value={pct1(all.numeric.accuracy)} sub={`${num(all.numeric.correct)} of ${num(all.numeric.total)} values · bar 75%`} />
         <StatTile label="Names not in the PDF" icon={ShieldCheck} accent="#0f8a4b" value={all.verbatimViolations} sub="verbatim violations · target 0" />
       </div>
@@ -187,7 +199,8 @@ function Results({ data }: { data: Accuracy }) {
               </tr>
             </thead>
             <tbody>
-              {data.docs.map((d) => (
+              {/* plans with answer keys first, in their set order */}
+              {[...data.docs].sort((a, b) => Number(!a.score) - Number(!b.score)).map((d) => (
                 <tr key={d.id} className="border-b border-slate-100 last:border-0">
                   <td className="py-2 pl-5 pr-3 font-medium text-slate-900">{planName(d.id)}</td>
                   <td className="px-3 py-2 text-slate-600">{d.score ? ROLE[d.role] : 'Unlabelled'}</td>
@@ -203,7 +216,9 @@ function Results({ data }: { data: Accuracy }) {
                   </td>
                   <td className="tabular px-3 py-2 text-right">{d.score ? pct(d.score.core.precision) : '—'}</td>
                   <td className="tabular px-3 py-2 text-right">{d.score ? pct(d.score.core.recall) : '—'}</td>
-                  <td className="tabular px-3 py-2 text-right">{d.score ? `${pct(d.score.numeric.accuracy)} (${num(d.score.numeric.correct)}/${num(d.score.numeric.total)})` : '—'}</td>
+                  <td className="tabular px-3 py-2 text-right">
+                    {d.score?.numeric.total ? `${pct(d.score.numeric.accuracy)} (${num(d.score.numeric.correct)}/${num(d.score.numeric.total)})` : '—'}
+                  </td>
                   <td className="tabular px-3 py-2 text-right">{Math.round(d.timeMs / 1000)} s</td>
                   <td className="tabular py-2 pl-3 pr-5 text-right">{d.costUsd === null ? '—' : `$${d.costUsd.toFixed(3)}`}</td>
                 </tr>

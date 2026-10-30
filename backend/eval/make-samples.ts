@@ -16,7 +16,8 @@ import { runDoc } from './run-doc';
  */
 
 const { values: args } = parseArgs({ options: { 'from-runs': { type: 'boolean', default: false }, model: { type: 'string' } } });
-const SAMPLES = ['broken-pumpkin-2019', 'bell-creek-2012', 'fuller-creek-2022', 'buttahatchee-2004'];
+// One plan of each format from the tuning set, then one of each from the held-out set.
+const SAMPLES = ['broken-pumpkin-2019', 'bell-creek-2012', 'buttahatchee-2004', 'yazoo-pass-2021', 'lake-washington-2007', 'west-boley-2007'];
 const FORMAT: Record<string, string> = { 'nine-element': '9-element plan', narrative: 'Narrative plan', scanned: 'Scanned plan', 'action-plan': 'Action plan' };
 
 const frontend = join(EVAL_DIR, '..', '..', 'frontend');
@@ -48,6 +49,7 @@ for (const id of SAMPLES) {
     year: result.document.year,
     pages: result.document.pages,
     format: FORMAT[doc.format] ?? doc.format,
+    heldOut: doc.role === 'heldout',
     source: 'MDEQ',
     pdf: `/samples/${id}.pdf`,
     sourceUrl: doc.url,
