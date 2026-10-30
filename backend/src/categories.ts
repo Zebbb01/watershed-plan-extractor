@@ -47,7 +47,8 @@ const goals: CategoryDef<GoalItem> = {
     '"Goals/Objectives", "Desired Results" or "the goal of this project" belong here. Put each stated target ' +
     '(percent reduction, load, standard) in targets. kind=main for each distinct goal; sub for an objective or ' +
     'target nested under a goal. Not goals: tasks or milestones (implementation), BMP lists, background facts ' +
-    'about the impairment, and the purpose of a monitoring method.',
+    'about the impairment, problems or concerns listed with their causes, the purpose of a monitoring method, ' +
+    'and the rows of a water quality criteria or standards table (those are monitoring thresholds).',
   columns: [
     { key: 'name', label: 'Goal', align: 'left', get: (i) => i.name },
     { key: 'targets', label: 'Targets', align: 'left', get: (i) => raws(i.targets) },
@@ -111,7 +112,8 @@ const implementation: CategoryDef<ActivityItem> = {
     '"Completed using historical data" means completed). milestone=true for milestone table or list rows. Items ' +
     'listed under words that call them actions, tasks or management actions ("The following actions will need to ' +
     'be taken:") are activities even when worded like outcomes ("Reduce sediment loads to streams"), and so are ' +
-    'their sub-items. Not activities: the BMPs themselves, and education events (those go to outreach).',
+    'their sub-items. Not activities: the BMPs themselves, education events (those go to outreach), and a role ' +
+    'or organization named alone (a coordinator, an agency lead): its duties are the activities.',
   columns: [
     { key: 'name', label: 'Activity', align: 'left', get: (i) => i.name },
     { key: 'responsible', label: 'Responsible', align: 'left', get: (i) => i.responsible.join(', ') || null },
@@ -140,9 +142,11 @@ const monitoring: CategoryDef<MetricItem> = {
   definition:
     'Monitoring metrics: water-quality parameters with their thresholds or targets, and monitoring activities ' +
     'or stations used to measure progress, e.g. "Dissolved Oxygen" with threshold "Daily Average of 5.0 mg/L; ' +
-    'Instantaneous threshold of 4.0 mg/L", "Turbidity" "75 NTU", an M-BISQ score threshold, station "TB146", ' +
-    'baseline or post-BMP monitoring. parameter = the parameter or measure name exactly as written; threshold.raw ' +
-    '= the exact threshold words; location = station ids or places exactly as written.',
+    'Instantaneous threshold of 4.0 mg/L", "Turbidity" "75 NTU", a biological index score threshold, a ' +
+    'sampling station id, baseline or post-BMP monitoring. parameter = the parameter or measure name exactly as ' +
+    'written; threshold.raw = the exact threshold words; location = station ids or places exactly as written. ' +
+    'Not monitoring: concerns, impairments or their causes listed as problems (a table of stakeholder concerns), ' +
+    'and an agency, program or report named without a parameter it measures (education programs are outreach).',
   columns: [
     { key: 'parameter', label: 'Parameter', align: 'left', get: (i) => i.parameter },
     { key: 'threshold', label: 'Threshold / target', align: 'left', get: (i) => raw(i.threshold) },
@@ -170,8 +174,9 @@ const outreach: CategoryDef<OutreachItem> = {
     'Workshops", "Adopt A Stream", Watershed Implementation Team meetings ("a minimum of 3 face-to-face ' +
     'meetings"), field days, demonstration farms, fact sheets, project signs, newspaper articles, radio ' +
     'advertisements, county fair booths, presentations. quantity.raw = the exact count words, e.g. "no fewer ' +
-    'than 1,000 informational fact sheets". Not outreach: acknowledgements, contact lists, author lists, and ' +
-    'the ways success will be measured (surveys, pre-tests) unless described as an activity.',
+    'than 1,000 informational fact sheets". Not outreach: acknowledgements, contact lists, author lists, an ' +
+    'agency or organization named alone, and the ways success will be measured (surveys, pre-tests) unless ' +
+    'described as an activity.',
   columns: [
     { key: 'name', label: 'Activity', align: 'left', get: (i) => i.name },
     { key: 'audience', label: 'Audience', align: 'left', get: (i) => i.audience },
@@ -195,10 +200,10 @@ const geographicAreas: CategoryDef<AreaItem> = {
   singular: 'area',
   definition:
     'Geographic areas: the watersheds, sub-watersheds, HUC units, counties, water bodies, states or WRIAs that ' +
-    'the plan covers or mentions. name exactly as written (e.g. "Broken Pumpkin Creek", "Noxubee"); type; code ' +
-    'for HUC or segment ids exactly as written (e.g. "031601060307", "MS031BPE"); areaAcres.raw when the size ' +
-    'is stated (e.g. "24,573 acres"); role=primary for the areas the plan is about (title, location paragraph), ' +
-    'mentioned for any other area named.',
+    'the plan covers or mentions. name exactly as written, as the page prints it; type; code for HUC numbers ' +
+    '(8 to 12 digits) or water body segment ids exactly as written; areaAcres.raw when the size is stated (the ' +
+    'number with its unit, as written); role=primary for the areas the plan is about (title, location ' +
+    'paragraph), mentioned for any other area named.',
   columns: [
     { key: 'name', label: 'Area', align: 'left', get: (i) => i.name },
     { key: 'type', label: 'Type', align: 'left', get: (i) => i.type },

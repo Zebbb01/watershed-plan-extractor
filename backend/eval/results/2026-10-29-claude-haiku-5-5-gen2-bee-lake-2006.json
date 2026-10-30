@@ -1,0 +1,35 @@
+{
+ "date": "2026-10-29",
+ "provider": "anthropic",
+ "model": "claude-haiku-5-5",
+ "ocrModel": "claude-haiku-5-5",
+ "effort": "low",
+ "set": "bee-lake-2006",
+ "repeat": 1,
+ "docs": [
+  {
+   "id": "bee-lake-2006",
+   "role": "dev",
+   "format": "narrative",
+   "pages": 67,
+   "timeMs": 90226,
+   "costUsd": 0.07119564,
+   "counts": {
+    "goals": 7,
+    "bmps": 44,
+    "implementation": 49,
+    "monitoring": 29,
+    "outreach": 26,
+    "geographicAreas": 25
+   },
+   "failedUnits": 0,
+   "rejected": 133,
+   "score": null
+  }
+ ],
+ "aggregate": {
+  "dev": null,
+  "heldout": null,
+  "all": null
+ }
+}

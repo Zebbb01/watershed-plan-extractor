@@ -12,9 +12,13 @@
     "build": "npm run build -w frontend",
     "test": "npm test --workspaces --if-present",
     "typecheck": "npm run typecheck --workspaces --if-present",
-    "eval": "npm run eval -w backend --"
+    "eval": "npm run eval -w backend --",
+    "test:e2e": "playwright test"
   },
   "engines": {
     "node": ">=20.9"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1"
   }
 }

@@ -2,1016 +2,49 @@
  "report": {
   "summary": {
    "totalGoals": 1,
-   "totalBMPs": 33,
+   "totalBMPs": 34,
    "completionRate": 0
   },
   "goals": [
    {
-    "id": "c9badd53",
-    "name": "Reduce sediment loads entering waters in the watershed",
-    "text": "Reduce sediment yields in the Broken Pumpkin Creek watershed to meet the sediment TMDL target.",
+    "id": "0cf34a8b",
+    "name": "Expected Load Reduction",
+    "text": "Reduce sediment yields within the watersheds to reflect stable conditions, per the sediment TMDL.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 3,
-      "quote": "concluded that yields would need to be reduced by 77-97% within the watersheds in order to reflect stable conditions."
+      "quote": "concluded that yields would need to be reduced by 77-97% within the watersheds in order to reflect stable conditions"
+     },
+     {
+      "page": 1,
+      "quote": "a reduction in sediment of 77% to 97% is recommended in the Broken Pumpkin Creek watershed"
      }
     ],
     "verified": true,
     "source": "text",
     "needsReview": null,
     "confidence": "high",
-    "targets": [],
-    "pollutant": "Sediment",
+    "targets": [
+     {
+      "raw": "a reduction in sediment of 77% to 97%",
+      "scope": null,
+      "value": 77,
+      "valueMax": 97,
+      "unit": "%",
+      "comparator": "range"
+     }
+    ],
+    "pollutant": "sediment",
     "deadline": null
    }
   ],
   "bmps": [
    {
-    "id": "8b7346b4",
-    "name": "Brush Management",
-    "text": "Brush management practice listed in the cost estimate.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 4,
-      "quote": "Brush Management ac 5 $44.43 $222.15"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "quantities": [
-     {
-      "raw": "5 ac",
-      "scope": "Cost Estimate: Full Project Implementation",
-      "value": 5,
-      "valueMax": null,
-      "unit": "ac",
-      "comparator": "="
-     }
-    ],
-    "unitCost": {
-     "raw": "$44.43",
-     "scope": null,
-     "value": 44.43,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "estimatedCost": {
-     "raw": "$222.15",
-     "scope": null,
-     "value": 222.15,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "pollutants": [
-     "Sediment"
-    ]
-   },
-   {
-    "id": "b619f008",
-    "name": "Herbaceous Weed Management",
-    "text": "Weed management practice listed in the cost estimate.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 4,
-      "quote": "Herbaceous Weed Management ac 325 $64.80 $21,060.00"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "quantities": [
-     {
-      "raw": "325 ac",
-      "scope": "Cost Estimate: Full Project Implementation",
-      "value": 325,
-      "valueMax": null,
-      "unit": "ac",
-      "comparator": "="
-     }
-    ],
-    "unitCost": {
-     "raw": "$64.80",
-     "scope": null,
-     "value": 64.8,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "estimatedCost": {
-     "raw": "$21,060.00",
-     "scope": null,
-     "value": 21060,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "pollutants": [
-     "Sediment"
-    ]
-   },
-   {
-    "id": "ba31705d",
-    "name": "Prescribed Burning",
-    "text": "Prescribed burning practice listed in the cost estimate.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 4,
-      "quote": "Prescribed Burning ac 350 $42.63 $14,920.50"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "quantities": [
-     {
-      "raw": "350 ac",
-      "scope": "Cost Estimate: Full Project Implementation",
-      "value": 350,
-      "valueMax": null,
-      "unit": "ac",
-      "comparator": "="
-     }
-    ],
-    "unitCost": {
-     "raw": "$42.63",
-     "scope": null,
-     "value": 42.63,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "estimatedCost": {
-     "raw": "$14,920.50",
-     "scope": null,
-     "value": 14920.5,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "pollutants": [
-     "Sediment"
-    ]
-   },
-   {
-    "id": "274f0ac4",
-    "name": "Cover Crop",
-    "text": "Cover crop practice listed in the cost estimate.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 4,
-      "quote": "Cover Crop ac 2500 $55.86 $139,650.00"
-     },
-     {
-      "page": 5,
-      "quote": "Cover Crops ac 500 $55.86 $27,930.00"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "quantities": [
-     {
-      "raw": "2500 ac",
-      "scope": "Cost Estimate: Full Project Implementation",
-      "value": 2500,
-      "valueMax": null,
-      "unit": "ac",
-      "comparator": "="
-     },
-     {
-      "raw": "500 ac",
-      "scope": "Cost Estimate: Phase 1 Implementation",
-      "value": 500,
-      "valueMax": null,
-      "unit": "ac",
-      "comparator": "="
-     }
-    ],
-    "unitCost": {
-     "raw": "$55.86",
-     "scope": null,
-     "value": 55.86,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "estimatedCost": {
-     "raw": "$139,650.00",
-     "scope": null,
-     "value": 139650,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "pollutants": [
-     "Sediment"
-    ]
-   },
-   {
-    "id": "51a59d76",
-    "name": "Critical Area Planting",
-    "text": "Critical area planting practice listed in the cost estimate.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 4,
-      "quote": "Critical Area Planting ac 55 $483.84 $26,611.20"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "quantities": [
-     {
-      "raw": "55 ac",
-      "scope": "Cost Estimate: Full Project Implementation",
-      "value": 55,
-      "valueMax": null,
-      "unit": "ac",
-      "comparator": "="
-     }
-    ],
-    "unitCost": {
-     "raw": "$483.84",
-     "scope": null,
-     "value": 483.84,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "estimatedCost": {
-     "raw": "$26,611.20",
-     "scope": null,
-     "value": 26611.2,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "pollutants": [
-     "Sediment"
-    ]
-   },
-   {
-    "id": "494fe215",
-    "name": "Sediment Basin",
-    "text": "Sediment basin practice listed in the cost estimate.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 4,
-      "quote": "Sediment Basin cu yd 5000 $3.34 $16,700.00"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "quantities": [
-     {
-      "raw": "5000 cu yd",
-      "scope": "Cost Estimate: Full Project Implementation",
-      "value": 5000,
-      "valueMax": null,
-      "unit": "cu yd",
-      "comparator": "="
-     }
-    ],
-    "unitCost": {
-     "raw": "$3.34",
-     "scope": null,
-     "value": 3.34,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "estimatedCost": {
-     "raw": "$16,700.00",
-     "scope": null,
-     "value": 16700,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "pollutants": [
-     "Sediment"
-    ]
-   },
-   {
-    "id": "cd2e584c",
-    "name": "Diversion",
-    "text": "Diversion practice listed in the cost estimate.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 4,
-      "quote": "Diversion cu yd 2500 $2.40 $6,000.00"
-     },
-     {
-      "page": 5,
-      "quote": "Diversion cu yd 8000 $2.40 $19,200.00"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "quantities": [
-     {
-      "raw": "2500 cu yd",
-      "scope": "Cost Estimate: Full Project Implementation",
-      "value": 2500,
-      "valueMax": null,
-      "unit": "cu yd",
-      "comparator": "="
-     },
-     {
-      "raw": "8000 cu yd",
-      "scope": "Cost Estimate: Phase 1 Implementation",
-      "value": 8000,
-      "valueMax": null,
-      "unit": "cu yd",
-      "comparator": "="
-     }
-    ],
-    "unitCost": {
-     "raw": "$2.40",
-     "scope": null,
-     "value": 2.4,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "estimatedCost": {
-     "raw": "$6,000.00",
-     "scope": null,
-     "value": 6000,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "pollutants": [
-     "Sediment"
-    ]
-   },
-   {
-    "id": "d82e491c",
-    "name": "Pond",
-    "text": "Pond practice listed in the cost estimate.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 4,
-      "quote": "Pond cu yd 8000 $3.93 $31,440.00"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "quantities": [
-     {
-      "raw": "8000 cu yd",
-      "scope": "Cost Estimate: Full Project Implementation",
-      "value": 8000,
-      "valueMax": null,
-      "unit": "cu yd",
-      "comparator": "="
-     }
-    ],
-    "unitCost": {
-     "raw": "$3.93",
-     "scope": null,
-     "value": 3.93,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "estimatedCost": {
-     "raw": "$31,440.00",
-     "scope": null,
-     "value": 31440,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "pollutants": [
-     "Sediment"
-    ]
-   },
-   {
-    "id": "b88dba90",
-    "name": "Fence",
-    "text": "Fencing practice listed in the cost estimate.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 4,
-      "quote": "Fence ft 20000 $2.22 $44,400.00"
-     },
-     {
-      "page": 5,
-      "quote": "Fencing ft 5509 $2.22 $12,229.98"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "quantities": [
-     {
-      "raw": "20000 ft",
-      "scope": "Cost Estimate: Full Project Implementation",
-      "value": 20000,
-      "valueMax": null,
-      "unit": "ft",
-      "comparator": "="
-     },
-     {
-      "raw": "5509 ft",
-      "scope": "Cost Estimate: Phase 1 Implementation",
-      "value": 5509,
-      "valueMax": null,
-      "unit": "ft",
-      "comparator": "="
-     }
-    ],
-    "unitCost": {
-     "raw": "$2.22",
-     "scope": null,
-     "value": 2.22,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "estimatedCost": {
-     "raw": "$44,400.00",
-     "scope": null,
-     "value": 44400,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "pollutants": [
-     "Sediment"
-    ]
-   },
-   {
-    "id": "aecce515",
-    "name": "Field Border",
-    "text": "Field border practice listed in the cost estimate.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 4,
-      "quote": "Field Border ac 54 $631.20 $34,084.80"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "quantities": [
-     {
-      "raw": "54 ac",
-      "scope": "Cost Estimate: Full Project Implementation",
-      "value": 54,
-      "valueMax": null,
-      "unit": "ac",
-      "comparator": "="
-     }
-    ],
-    "unitCost": {
-     "raw": "$631.20",
-     "scope": null,
-     "value": 631.2,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "estimatedCost": {
-     "raw": "$34,084.80",
-     "scope": null,
-     "value": 34084.8,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "pollutants": [
-     "Sediment"
-    ]
-   },
-   {
-    "id": "798c2b83",
-    "name": "Filter Strip",
-    "text": "Filter strip practice listed in the cost estimate.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 4,
-      "quote": "Filter Strip ac 50 $146.35 $7,317.50"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "quantities": [
-     {
-      "raw": "50 ac",
-      "scope": "Cost Estimate: Full Project Implementation",
-      "value": 50,
-      "valueMax": null,
-      "unit": "ac",
-      "comparator": "="
-     }
-    ],
-    "unitCost": {
-     "raw": "$146.35",
-     "scope": null,
-     "value": 146.35,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "estimatedCost": {
-     "raw": "$7,317.50",
-     "scope": null,
-     "value": 7317.5,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "pollutants": [
-     "Sediment"
-    ]
-   },
-   {
-    "id": "2355df8e",
-    "name": "Firebreak",
-    "text": "Firebreak practice listed in the cost estimate.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 4,
-      "quote": "Firebreak ft 11000 $0.24 $2,640.00"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "quantities": [
-     {
-      "raw": "11000 ft",
-      "scope": "Cost Estimate: Full Project Implementation",
-      "value": 11000,
-      "valueMax": null,
-      "unit": "ft",
-      "comparator": "="
-     }
-    ],
-    "unitCost": {
-     "raw": "$0.24",
-     "scope": null,
-     "value": 0.24,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "estimatedCost": {
-     "raw": "$2,640.00",
-     "scope": null,
-     "value": 2640,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "pollutants": [
-     "Sediment"
-    ]
-   },
-   {
-    "id": "6ea1c120",
-    "name": "Grade Stabilization Structure",
-    "text": "Grade stabilization structure practice listed in the cost estimate.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 4,
-      "quote": "Grade Stabilization Structure ea 18 $10,000.00 $180,000.00"
-     },
-     {
-      "page": 5,
-      "quote": "Grade Stabilization Structure ea 8 $10,000.00 $80,000.00"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "quantities": [
-     {
-      "raw": "18 ea",
-      "scope": "Cost Estimate: Full Project Implementation",
-      "value": 18,
-      "valueMax": null,
-      "unit": "ea",
-      "comparator": "="
-     },
-     {
-      "raw": "8 ea",
-      "scope": "Cost Estimate: Phase 1 Implementation",
-      "value": 8,
-      "valueMax": null,
-      "unit": "ea",
-      "comparator": "="
-     }
-    ],
-    "unitCost": {
-     "raw": "$10,000.00",
-     "scope": null,
-     "value": 10000,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "estimatedCost": {
-     "raw": "$180,000.00",
-     "scope": null,
-     "value": 180000,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "pollutants": [
-     "Sediment"
-    ]
-   },
-   {
-    "id": "97380dc0",
-    "name": "Grassed Waterway",
-    "text": "Grassed waterway practice listed in the cost estimate.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 4,
-      "quote": "Grassed Waterway ac 10 $1,753.81 $17,538.10"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "quantities": [
-     {
-      "raw": "10 ac",
-      "scope": "Cost Estimate: Full Project Implementation",
-      "value": 10,
-      "valueMax": null,
-      "unit": "ac",
-      "comparator": "="
-     }
-    ],
-    "unitCost": {
-     "raw": "$1,753.81",
-     "scope": null,
-     "value": 1753.81,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "estimatedCost": {
-     "raw": "$17,538.10",
-     "scope": null,
-     "value": 17538.1,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "pollutants": [
-     "Sediment"
-    ]
-   },
-   {
-    "id": "7b7d4d3b",
-    "name": "Irrigation Pipeline",
-    "text": "Irrigation pipeline practice listed in the cost estimate.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 4,
-      "quote": "Irrigation Pipeline ft 20000 $21.85 $437,000.00"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "quantities": [
-     {
-      "raw": "20000 ft",
-      "scope": "Cost Estimate: Full Project Implementation",
-      "value": 20000,
-      "valueMax": null,
-      "unit": "ft",
-      "comparator": "="
-     }
-    ],
-    "unitCost": {
-     "raw": "$21.85",
-     "scope": null,
-     "value": 21.85,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "estimatedCost": {
-     "raw": "$437,000.00",
-     "scope": null,
-     "value": 437000,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "pollutants": [
-     "Sediment"
-    ]
-   },
-   {
-    "id": "0a04ec2e",
-    "name": "Irrigation Reservoir",
-    "text": "Irrigation reservoir practice listed in the cost estimate.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 4,
-      "quote": "Irrigation Reservoir cu yd 40000 $8.21 $328,400.00"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "quantities": [
-     {
-      "raw": "40000 cu yd",
-      "scope": "Cost Estimate: Full Project Implementation",
-      "value": 40000,
-      "valueMax": null,
-      "unit": "cu yd",
-      "comparator": "="
-     }
-    ],
-    "unitCost": {
-     "raw": "$8.21",
-     "scope": null,
-     "value": 8.21,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "estimatedCost": {
-     "raw": "$328,400.00",
-     "scope": null,
-     "value": 328400,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "pollutants": [
-     "Sediment"
-    ]
-   },
-   {
-    "id": "7ae99721",
-    "name": "Land Clearing",
-    "text": "Land clearing practice listed in the cost estimate.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 4,
-      "quote": "Land Clearing ac 20 $530.65 $10,613.00"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "quantities": [
-     {
-      "raw": "20 ac",
-      "scope": "Cost Estimate: Full Project Implementation",
-      "value": 20,
-      "valueMax": null,
-      "unit": "ac",
-      "comparator": "="
-     }
-    ],
-    "unitCost": {
-     "raw": "$530.65",
-     "scope": null,
-     "value": 530.65,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "estimatedCost": {
-     "raw": "$10,613.00",
-     "scope": null,
-     "value": 10613,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "pollutants": [
-     "Sediment"
-    ]
-   },
-   {
-    "id": "54985cd5",
-    "name": "Tree/Shrub Preparation",
-    "text": "Tree/shrub preparation practice listed in the cost estimate.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 4,
-      "quote": "Tree/Shrub Preparation ac 350 $255.05 $89,267.50"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "quantities": [
-     {
-      "raw": "350 ac",
-      "scope": "Cost Estimate: Full Project Implementation",
-      "value": 350,
-      "valueMax": null,
-      "unit": "ac",
-      "comparator": "="
-     }
-    ],
-    "unitCost": {
-     "raw": "$255.05",
-     "scope": null,
-     "value": 255.05,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "estimatedCost": {
-     "raw": "$89,267.50",
-     "scope": null,
-     "value": 89267.5,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "pollutants": [
-     "Sediment"
-    ]
-   },
-   {
-    "id": "57be9c91",
-    "name": "Forage and Biomass Planting",
-    "text": "Forage and biomass planting practice listed in the cost estimate.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 4,
-      "quote": "Forage and Biomass Planting ac 60 $109.48 $6,568.80"
-     },
-     {
-      "page": 5,
-      "quote": "Forage and Biomass Planting ac 100 $109.48 $10,948.00"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "quantities": [
-     {
-      "raw": "60 ac",
-      "scope": "Cost Estimate: Full Project Implementation",
-      "value": 60,
-      "valueMax": null,
-      "unit": "ac",
-      "comparator": "="
-     },
-     {
-      "raw": "100 ac",
-      "scope": "Cost Estimate: Phase 1 Implementation",
-      "value": 100,
-      "valueMax": null,
-      "unit": "ac",
-      "comparator": "="
-     }
-    ],
-    "unitCost": {
-     "raw": "$109.48",
-     "scope": null,
-     "value": 109.48,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "estimatedCost": {
-     "raw": "$6,568.80",
-     "scope": null,
-     "value": 6568.8,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "pollutants": [
-     "Sediment"
-    ]
-   },
-   {
-    "id": "05085ba9",
-    "name": "Livestock Pipeline",
-    "text": "Livestock pipeline practice listed in the cost estimate.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 4,
-      "quote": "Livestock Pipeline ft 8000 $1.91 $15,280.00"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "quantities": [
-     {
-      "raw": "8000 ft",
-      "scope": "Cost Estimate: Full Project Implementation",
-      "value": 8000,
-      "valueMax": null,
-      "unit": "ft",
-      "comparator": "="
-     }
-    ],
-    "unitCost": {
-     "raw": "$1.91",
-     "scope": null,
-     "value": 1.91,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "estimatedCost": {
-     "raw": "$15,280.00",
-     "scope": null,
-     "value": 15280,
-     "valueMax": null,
-     "unit": "USD",
-     "comparator": "="
-    },
-    "pollutants": [
-     "Sediment"
-    ]
-   },
-   {
     "id": "7415815b",
     "name": "Prescribed Grazing",
-    "text": "Prescribed grazing practice listed in the Phase cost table with units, unit cost and estimated cost.",
+    "text": "Prescribed grazing practice listed in the Phase implementation cost table.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1192,6 +225,10 @@
     "parentId": null,
     "evidence": [
      {
+      "page": 3,
+      "quote": "livestock management practices; streambank and shoreline protection; water control structures; terraces"
+     },
+     {
       "page": 5,
       "quote": "Protection ft 275 $183.56 $50,479.00"
      }
@@ -1226,6 +263,10 @@
     "kind": "main",
     "parentId": null,
     "evidence": [
+     {
+      "page": 3,
+      "quote": "streambank and shoreline protection; water control structures; terraces; underground outlets"
+     },
      {
       "page": 5,
       "quote": "Structure for Water Control ft 4400 $2.06 $9,064.00"
@@ -1270,6 +311,10 @@
     "kind": "main",
     "parentId": null,
     "evidence": [
+     {
+      "page": 3,
+      "quote": "water control structures; terraces; underground outlets; habitat development and management"
+     },
      {
       "page": 5,
       "quote": "Terrace ft 9000 $1.59 $14,310.00"
@@ -1410,10 +455,14 @@
    {
     "id": "093d79c2",
     "name": "Underground Outlet",
-    "text": "Underground outlet practice in the cost tables.",
+    "text": "Underground outlet practice in the cost table.",
     "kind": "main",
     "parentId": null,
     "evidence": [
+     {
+      "page": 3,
+      "quote": "terraces; underground outlets; habitat development and management; and forest stand improvements"
+     },
      {
       "page": 5,
       "quote": "Underground Outlet ft 2500 $5.39 $13,475.00"
@@ -1459,6 +508,10 @@
     "parentId": null,
     "evidence": [
      {
+      "page": 3,
+      "quote": "underground outlets; habitat development and management; and forest stand improvements"
+     },
+     {
       "page": 5,
       "quote": "Development/Management ac 25 $24.03 $600.75"
      }
@@ -1493,6 +546,10 @@
     "kind": "main",
     "parentId": null,
     "evidence": [
+     {
+      "page": 3,
+      "quote": "habitat development and management; and forest stand improvements"
+     },
      {
       "page": 5,
       "quote": "Forest Stand Improvement ac 500 $210.59 $105,295.00"
@@ -1531,9 +588,289 @@
     "pollutants": []
    },
    {
+    "id": "7a74dfca",
+    "name": "Cover Crops",
+    "text": "Cover crops practice in the Phase 1 cost estimate.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Cover Crop ac 2500 $55.86 $139,650.00"
+     },
+     {
+      "page": 5,
+      "quote": "Cover Crops ac 500 $55.86 $27,930.00"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [
+     {
+      "raw": "500 ac",
+      "scope": "Cost Estimate: Phase 1 Implementation",
+      "value": 500,
+      "valueMax": null,
+      "unit": "ac",
+      "comparator": "="
+     },
+     {
+      "raw": "2500 ac",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 2500,
+      "valueMax": null,
+      "unit": "ac",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$55.86",
+     "scope": null,
+     "value": 55.86,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$27,930.00",
+     "scope": null,
+     "value": 27930,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": []
+   },
+   {
+    "id": "ce2e59df",
+    "name": "Diversion",
+    "text": "Diversion practice in the Phase 1 cost estimate.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Diversion cu yd 2500 $2.40 $6,000.00"
+     },
+     {
+      "page": 5,
+      "quote": "Diversion cu yd 8000 $2.40 $19,200.00"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [
+     {
+      "raw": "8000 cu yd",
+      "scope": "Cost Estimate: Phase 1 Implementation",
+      "value": 8000,
+      "valueMax": null,
+      "unit": "cu yd",
+      "comparator": "="
+     },
+     {
+      "raw": "2500 cu yd",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 2500,
+      "valueMax": null,
+      "unit": "cu yd",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$2.40",
+     "scope": null,
+     "value": 2.4,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$19,200.00",
+     "scope": null,
+     "value": 19200,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": []
+   },
+   {
+    "id": "154dd540",
+    "name": "Fencing",
+    "text": "Fencing practice in the Phase 1 cost estimate.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Fence ft 20000 $2.22 $44,400.00"
+     },
+     {
+      "page": 5,
+      "quote": "Fencing ft 5509 $2.22 $12,229.98"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [
+     {
+      "raw": "5509 ft",
+      "scope": "Cost Estimate: Phase 1 Implementation",
+      "value": 5509,
+      "valueMax": null,
+      "unit": "ft",
+      "comparator": "="
+     },
+     {
+      "raw": "20000 ft",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 20000,
+      "valueMax": null,
+      "unit": "ft",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$2.22",
+     "scope": null,
+     "value": 2.22,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$12,229.98",
+     "scope": null,
+     "value": 12229.98,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": []
+   },
+   {
+    "id": "6fa1c2b3",
+    "name": "Grade Stabilization Structure",
+    "text": "Grade stabilization structure practice in the Phase 1 cost estimate.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Grade Stabilization Structure ea 18 $10,000.00 $180,000.00"
+     },
+     {
+      "page": 5,
+      "quote": "Grade Stabilization Structure ea 8 $10,000.00 $80,000.00"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [
+     {
+      "raw": "8 ea",
+      "scope": "Cost Estimate: Phase 1 Implementation",
+      "value": 8,
+      "valueMax": null,
+      "unit": "ea",
+      "comparator": "="
+     },
+     {
+      "raw": "18 ea",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 18,
+      "valueMax": null,
+      "unit": "ea",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$10,000.00",
+     "scope": null,
+     "value": 10000,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$80,000.00",
+     "scope": null,
+     "value": 80000,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": []
+   },
+   {
+    "id": "56be9afe",
+    "name": "Forage and Biomass Planting",
+    "text": "Forage and biomass planting practice in the Phase 1 cost estimate.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Forage and Biomass Planting ac 60 $109.48 $6,568.80"
+     },
+     {
+      "page": 5,
+      "quote": "Forage and Biomass Planting ac 100 $109.48 $10,948.00"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [
+     {
+      "raw": "100 ac",
+      "scope": "Cost Estimate: Phase 1 Implementation",
+      "value": 100,
+      "valueMax": null,
+      "unit": "ac",
+      "comparator": "="
+     },
+     {
+      "raw": "60 ac",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 60,
+      "valueMax": null,
+      "unit": "ac",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$109.48",
+     "scope": null,
+     "value": 109.48,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$10,948.00",
+     "scope": null,
+     "value": 10948,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": []
+   },
+   {
     "id": "8b69d027",
     "name": "Tank/Trough",
-    "text": "Tank or trough practice in the Phase 1 implementation cost table.",
+    "text": "Tank or trough practice in the Phase 1 cost estimate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1573,19 +910,700 @@
      "comparator": "="
     },
     "pollutants": []
+   },
+   {
+    "id": "8b7346b4",
+    "name": "Brush Management",
+    "text": "Brush management practice included in the cost estimate.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Brush Management ac 5 $44.43 $222.15"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [
+     {
+      "raw": "5 ac",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 5,
+      "valueMax": null,
+      "unit": "ac",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$44.43",
+     "scope": null,
+     "value": 44.43,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$222.15",
+     "scope": null,
+     "value": 222.15,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": []
+   },
+   {
+    "id": "b619f008",
+    "name": "Herbaceous Weed Management",
+    "text": "Herbaceous weed management practice included in the cost estimate.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Herbaceous Weed Management ac 325 $64.80 $21,060.00"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [
+     {
+      "raw": "325 ac",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 325,
+      "valueMax": null,
+      "unit": "ac",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$64.80",
+     "scope": null,
+     "value": 64.8,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$21,060.00",
+     "scope": null,
+     "value": 21060,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": []
+   },
+   {
+    "id": "ba31705d",
+    "name": "Prescribed Burning",
+    "text": "Prescribed burning practice included in the cost estimate.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Prescribed Burning ac 350 $42.63 $14,920.50"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [
+     {
+      "raw": "350 ac",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 350,
+      "valueMax": null,
+      "unit": "ac",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$42.63",
+     "scope": null,
+     "value": 42.63,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$14,920.50",
+     "scope": null,
+     "value": 14920.5,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": []
+   },
+   {
+    "id": "51a59d76",
+    "name": "Critical Area Planting",
+    "text": "Critical area planting practice included in the cost estimate.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Critical Area Planting ac 55 $483.84 $26,611.20"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [
+     {
+      "raw": "55 ac",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 55,
+      "valueMax": null,
+      "unit": "ac",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$483.84",
+     "scope": null,
+     "value": 483.84,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$26,611.20",
+     "scope": null,
+     "value": 26611.2,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": []
+   },
+   {
+    "id": "494fe215",
+    "name": "Sediment Basin",
+    "text": "Sediment basin practice included in the cost estimate.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Sediment Basin cu yd 5000 $3.34 $16,700.00"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [
+     {
+      "raw": "5000 cu yd",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 5000,
+      "valueMax": null,
+      "unit": "cu yd",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$3.34",
+     "scope": null,
+     "value": 3.34,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$16,700.00",
+     "scope": null,
+     "value": 16700,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": []
+   },
+   {
+    "id": "d82e491c",
+    "name": "Pond",
+    "text": "Pond practice included in the cost estimate.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Pond cu yd 8000 $3.93 $31,440.00"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [
+     {
+      "raw": "8000 cu yd",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 8000,
+      "valueMax": null,
+      "unit": "cu yd",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$3.93",
+     "scope": null,
+     "value": 3.93,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$31,440.00",
+     "scope": null,
+     "value": 31440,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": []
+   },
+   {
+    "id": "aecce515",
+    "name": "Field Border",
+    "text": "Field border practice included in the cost estimate.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Field Border ac 54 $631.20 $34,084.80"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [
+     {
+      "raw": "54 ac",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 54,
+      "valueMax": null,
+      "unit": "ac",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$631.20",
+     "scope": null,
+     "value": 631.2,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$34,084.80",
+     "scope": null,
+     "value": 34084.8,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": []
+   },
+   {
+    "id": "798c2b83",
+    "name": "Filter Strip",
+    "text": "Filter strip practice included in the cost estimate.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Filter Strip ac 50 $146.35 $7,317.50"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [
+     {
+      "raw": "50 ac",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 50,
+      "valueMax": null,
+      "unit": "ac",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$146.35",
+     "scope": null,
+     "value": 146.35,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$7,317.50",
+     "scope": null,
+     "value": 7317.5,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": []
+   },
+   {
+    "id": "2355df8e",
+    "name": "Firebreak",
+    "text": "Firebreak practice included in the cost estimate.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Firebreak ft 11000 $0.24 $2,640.00"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [
+     {
+      "raw": "11000 ft",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 11000,
+      "valueMax": null,
+      "unit": "ft",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$0.24",
+     "scope": null,
+     "value": 0.24,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$2,640.00",
+     "scope": null,
+     "value": 2640,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": []
+   },
+   {
+    "id": "97380dc0",
+    "name": "Grassed Waterway",
+    "text": "Grassed waterway practice included in the cost estimate.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Grassed Waterway ac 10 $1,753.81 $17,538.10"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [
+     {
+      "raw": "10 ac",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 10,
+      "valueMax": null,
+      "unit": "ac",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$1,753.81",
+     "scope": null,
+     "value": 1753.81,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$17,538.10",
+     "scope": null,
+     "value": 17538.1,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": []
+   },
+   {
+    "id": "7b7d4d3b",
+    "name": "Irrigation Pipeline",
+    "text": "Irrigation pipeline practice included in the cost estimate.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Irrigation Pipeline ft 20000 $21.85 $437,000.00"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [
+     {
+      "raw": "20000 ft",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 20000,
+      "valueMax": null,
+      "unit": "ft",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$21.85",
+     "scope": null,
+     "value": 21.85,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$437,000.00",
+     "scope": null,
+     "value": 437000,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": []
+   },
+   {
+    "id": "0a04ec2e",
+    "name": "Irrigation Reservoir",
+    "text": "Irrigation reservoir practice included in the cost estimate.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Irrigation Reservoir cu yd 40000 $8.21 $328,400.00"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [
+     {
+      "raw": "40000 cu yd",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 40000,
+      "valueMax": null,
+      "unit": "cu yd",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$8.21",
+     "scope": null,
+     "value": 8.21,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$328,400.00",
+     "scope": null,
+     "value": 328400,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": []
+   },
+   {
+    "id": "7ae99721",
+    "name": "Land Clearing",
+    "text": "Land clearing practice included in the cost estimate.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Land Clearing ac 20 $530.65 $10,613.00"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [
+     {
+      "raw": "20 ac",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 20,
+      "valueMax": null,
+      "unit": "ac",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$530.65",
+     "scope": null,
+     "value": 530.65,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$10,613.00",
+     "scope": null,
+     "value": 10613,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": []
+   },
+   {
+    "id": "54985cd5",
+    "name": "Tree/Shrub Preparation",
+    "text": "Tree/shrub preparation practice included in the cost estimate.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Tree/Shrub Preparation ac 350 $255.05 $89,267.50"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [
+     {
+      "raw": "350 ac",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 350,
+      "valueMax": null,
+      "unit": "ac",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$255.05",
+     "scope": null,
+     "value": 255.05,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$89,267.50",
+     "scope": null,
+     "value": 89267.5,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": []
+   },
+   {
+    "id": "05085ba9",
+    "name": "Livestock Pipeline",
+    "text": "Livestock pipeline practice included in the cost estimate.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Livestock Pipeline ft 8000 $1.91 $15,280.00"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [
+     {
+      "raw": "8000 ft",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 8000,
+      "valueMax": null,
+      "unit": "ft",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$1.91",
+     "scope": null,
+     "value": 1.91,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$15,280.00",
+     "scope": null,
+     "value": 15280,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": []
+   },
+   {
+    "id": "137b5443",
+    "name": "livestock management practices",
+    "text": "Livestock management practices named as candidate BMPs to mitigate sediment issues.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 3,
+      "quote": "forage and biomass planting; livestock management practices; streambank and shoreline protection; water control structures"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "quantities": [],
+    "unitCost": null,
+    "estimatedCost": null,
+    "pollutants": []
    }
   ],
   "implementation": [
    {
-    "id": "a26fc6fb",
-    "name": "Work to develop, execute, and implement a Subgrant Agreement",
-    "text": "Develop, execute and implement a Subgrant Agreement specifying roles, tasks, requirements and milestones for project implementation.",
+    "id": "81ca10c7",
+    "name": "Work to develop, execute, and implement a Subgrant Agreement that specifies the roles, tasks, requirements, and milestones for project implementation.",
+    "text": "MDEQ, with the Watershed Implementation Team and Project Manager, will develop, execute and implement a Subgrant Agreement.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 7,
-      "quote": "Work to develop, execute, and implement a Subgrant Agreement that specifies the roles, tasks, requirements, and milestones for project implementation. (Month 1)"
+      "quote": "Work to develop, execute, and implement a Subgrant Agreement that specifies the roles, tasks, requirements, and milestones for project implementation."
      }
     ],
     "verified": true,
@@ -1593,9 +1611,7 @@
     "needsReview": null,
     "confidence": "high",
     "responsible": [
-     "MDEQ",
-     "Watershed Implementation Team",
-     "Project Manager"
+     "MDEQ"
     ],
     "timeframe": "Month 1",
     "start": 1,
@@ -1605,15 +1621,15 @@
     "milestone": false
    },
    {
-    "id": "7a8d6c04",
-    "name": "Facilitate, in coordination with MDEQ and other partners, meetings, media and social media promotion of the project, and coordinate activities to fully implement this plan",
-    "text": "Facilitate meetings, promotion and coordination to fully implement the plan.",
+    "id": "6569f9e0",
+    "name": "Facilitate, in coordination with MDEQ and other partners, meetings, media and social media promotion of the project, and coordinate activities to fully implement this plan.",
+    "text": "Facilitate meetings and coordinate activities to fully implement the plan.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 7,
-      "quote": "Facilitate, in coordination with MDEQ and other partners, meetings, media and social media promotion of the project, and coordinate activities to fully implement this plan."
+      "quote": "Facilitate, in coordination with MDEQ and other partners, meetings, media and social media promotion of the project"
      }
     ],
     "verified": true,
@@ -1621,9 +1637,7 @@
     "needsReview": null,
     "confidence": "high",
     "responsible": [
-     "MDEQ",
-     "Watershed Implementation Team",
-     "Project Manager"
+     "MDEQ"
     ],
     "timeframe": "Months 1-36",
     "start": 1,
@@ -1633,9 +1647,9 @@
     "milestone": false
    },
    {
-    "id": "8c0dc893",
-    "name": "Work with the Tallahatchie County SWCD, MSWCC, NRCS, and MDEQ to inform landowners and operators within the watershed about the project and work to secure commitments from priority area landowners and operators who are willing to participate in the project",
-    "text": "Inform landowners and operators about the project and secure commitments from priority area landowners.",
+    "id": "303f16d9",
+    "name": "Work with the Tallahatchie County SWCD, MSWCC, NRCS, and MDEQ to inform landowners and operators within the watershed about the project and work to secure commitments from priority area landowners and operators who are willing to participate in the project.",
+    "text": "Inform landowners about the project and secure commitments from priority area landowners.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1662,15 +1676,15 @@
     "milestone": false
    },
    {
-    "id": "06e67081",
-    "name": "Work with the local SWCD, MSWCC, NRCS, and MDEQ to determine through GIS applications and intensive site surveys the priority areas within the sub-watershed that are contributing significant pollutant loads",
-    "text": "Determine priority areas contributing significant pollutant loads through GIS and site surveys; BMPs installed per NRCS Technical Field Manual or other approved guidelines.",
+    "id": "84c8de57",
+    "name": "Work with the local SWCD, MSWCC, NRCS, and MDEQ to determine through GIS applications and intensive site surveys the priority areas within the sub-watershed that are contributing significant pollutant loads.",
+    "text": "Determine priority areas contributing significant pollutant loads through GIS and site surveys; BMPs installed per NRCS Technical Field Manual.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 7,
-      "quote": "Work with the local SWCD, MSWCC, NRCS, and MDEQ to determine through GIS applications and intensive site surveys the priority areas within the sub-watershed"
+      "quote": "Work with the local SWCD, MSWCC, NRCS, and MDEQ to determine through GIS applications and intensive site surveys the priority areas"
      }
     ],
     "verified": true,
@@ -1691,9 +1705,9 @@
     "milestone": false
    },
    {
-    "id": "d887f888",
-    "name": "Facilitate the completion and implementation of a plan to monitor baseline water quality conditions in the watershed and track changes over time",
-    "text": "Complete and implement a plan to monitor baseline water quality and track changes resulting from BMPs.",
+    "id": "28bdbfdd",
+    "name": "Monitor baseline water quality conditions in the watershed and track changes resulting from the BMPs",
+    "text": "Complete and implement a plan to monitor baseline water quality and track changes over time.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1707,8 +1721,7 @@
     "needsReview": null,
     "confidence": "high",
     "responsible": [
-     "MDEQ",
-     "monitoring partners"
+     "MDEQ"
     ],
     "timeframe": "Plan Completion: Months 1-2; Implementation: Months 3-36",
     "start": 1,
@@ -1718,8 +1731,8 @@
     "milestone": false
    },
    {
-    "id": "e925735f",
-    "name": "Submit blank copies of standard maintenance agreements to MDEQ",
+    "id": "98222a15",
+    "name": "Submit blank copies of standard maintenance agreements to MDEQ.",
     "text": "Submit blank copies of standard maintenance agreements to MDEQ.",
     "kind": "main",
     "parentId": null,
@@ -1766,9 +1779,9 @@
     "milestone": false
    },
    {
-    "id": "00b97df0",
-    "name": "Coordinate with and support the local SWCD, MSWCC and NRCS in the collection of relevant GPS coordinates of all installed BMPs and incorporate into a GIS format",
-    "text": "Collect GPS coordinates of installed BMPs and incorporate them into GIS format.",
+    "id": "c02ca906",
+    "name": "Coordinate with and support the local SWCD, MSWCC and NRCS in the collection of relevant GPS coordinates of all installed BMPs and incorporate this information into a GIS format.",
+    "text": "Collect GPS coordinates of installed BMPs and incorporate into GIS format.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1842,15 +1855,15 @@
     "milestone": false
    },
    {
-    "id": "6e873f17",
-    "name": "Target priority areas for BMPs",
-    "text": "Coordinate with MDEQ, NRCS, MSWCC, USGS and local districts to determine priority areas contributing significant pollutant loads.",
+    "id": "3b7b0a70",
+    "name": "Coordinate with the MDEQ, NRCS, MSWCC, USGS, and the Noxubee and Lowndes Co. Soil and Water Districts to determine priority areas that are contributing significant pollutant loads to Broken Pumpkin Creek Watershed",
+    "text": "Target priority areas for BMPs.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 8,
-      "quote": "Coordinate with the MDEQ, NRCS, MSWCC, USGS, and the Noxubee and Lowndes Co. Soil and Water Districts to determine priority areas"
+      "quote": "Coordinate with the MDEQ, NRCS, MSWCC, USGS, and the Noxubee and Lowndes Co. Soil and Water Districts"
      }
     ],
     "verified": true,
@@ -1871,9 +1884,9 @@
     "milestone": true
    },
    {
-    "id": "4fa6c59c",
-    "name": "Establish WIT",
-    "text": "Establish Watershed Implementation Team to begin refinement of the Watershed Based Plan.",
+    "id": "02de8e9a",
+    "name": "Establish Watershed Implementation Team to begin refinement of Watershed Based Plan for Broken Pumpkin Creek Watershed",
+    "text": "Establish WIT. Outcome: Establish WIT.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1897,19 +1910,19 @@
    {
     "id": "bbaf248b",
     "name": "Initiate watershed monitoring",
-    "text": "Initiate baseline condition monitoring of the watershed.",
+    "text": "Outcome: Baseline condition monitoring.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 8,
-      "quote": "Initiate watershed monitoring Baseline condition"
+      "quote": "Initiate watershed monitoring"
      }
     ],
     "verified": true,
     "source": "table",
     "needsReview": null,
-    "confidence": "high",
+    "confidence": "medium",
     "responsible": [],
     "timeframe": null,
     "start": null,
@@ -1921,7 +1934,7 @@
    {
     "id": "15b0d5d8",
     "name": "Meet with landowners and cooperators to secure commitments to install BMPs in priority areas",
-    "text": "Secure landowner commitments to install BMPs in priority areas.",
+    "text": "Outcome: Landowner Commitment.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1945,7 +1958,7 @@
    {
     "id": "ed1a831b",
     "name": "Establish routine meeting schedule for WIT to support WBP revision",
-    "text": "Establish routine WIT meetings to support watershed based plan revision.",
+    "text": "Outcome: WIT meetings.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1969,19 +1982,19 @@
    {
     "id": "0c890f4a",
     "name": "Implement BMPs",
-    "text": "Implement BMP installation.",
+    "text": "Outcome: BMP installation.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 8,
-      "quote": "Implement BMPs BMP installation Months 6-36"
+      "quote": "Implement BMPs"
      }
     ],
     "verified": true,
     "source": "table",
     "needsReview": null,
-    "confidence": "high",
+    "confidence": "medium",
     "responsible": [],
     "timeframe": "Months 6-36",
     "start": 6,
@@ -1993,7 +2006,7 @@
    {
     "id": "de9176d1",
     "name": "Coordinate with Landowners to inspect BMPs that were installed using Section 319 funds",
-    "text": "Coordinate with landowners to inspect BMPs installed using Section 319 funds.",
+    "text": "Outcome: BMP Inspection.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2019,7 +2032,7 @@
    {
     "id": "edeef734",
     "name": "Begin monitoring to collect data on post-BMP water quality",
-    "text": "Begin post-BMP water quality monitoring.",
+    "text": "Outcome: Post-BMP Monitoring.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2043,62 +2056,9 @@
   ],
   "monitoring": [
    {
-    "id": "bf3eed49",
-    "name": "M-BISQ score",
-    "text": "Overall M-BISQ score compared against the bioregion attainment threshold to assess the aquatic life use designation.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 1,
-      "quote": "This index, known as the Mississippi Benthic Index of Stream Quality (M-BISQ), was used in the biological assessment"
-     },
-     {
-      "page": 10,
-      "quote": "If the score is above the attainment threshold for the bioregion, the site is assessed as attaining the aquatic life use designation."
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "high",
-    "parameter": "M-BISQ score",
-    "threshold": {
-     "raw": "Above the attainment threshold for the bioregion",
-     "scope": null,
-     "value": null,
-     "valueMax": null,
-     "unit": null,
-     "comparator": null
-    },
-    "location": "East bioregion",
-    "frequency": null
-   },
-   {
-    "id": "886a78e6",
-    "name": "In-stream habitat surveys",
-    "text": "In-stream habitat surveys used alongside MBISQ scores to determine change over time.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 10,
-      "quote": "Along with overall MBISQ scores, the in-stream habitat surveys will also be used to determine change over time."
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "high",
-    "parameter": "In-stream habitat surveys",
-    "threshold": null,
-    "location": null,
-    "frequency": null
-   },
-   {
     "id": "d38b36af",
     "name": "Dissolved oxygen",
-    "text": "In-situ field parameter measured in monitoring of Broken Pumpkin Creek.",
+    "text": "In-situ field measurement parameter used in water quality monitoring of Broken Pumpkin Creek.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2128,105 +2088,9 @@
     "frequency": null
    },
    {
-    "id": "88a88166",
-    "name": "pH",
-    "text": "In-situ field parameter measured in monitoring of Broken Pumpkin Creek.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 9,
-      "quote": "pH 6.0-9.0"
-     },
-     {
-      "page": 10,
-      "quote": "in-situ field measurements for such parameters as dissolved oxygen, pH, temperature, specific conductance, and turbidity"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "parameter": "pH",
-    "threshold": {
-     "raw": "6.0-9.0",
-     "scope": null,
-     "value": 6,
-     "valueMax": 9,
-     "unit": null,
-     "comparator": "range"
-    },
-    "location": null,
-    "frequency": null
-   },
-   {
-    "id": "8a240376",
-    "name": "Temperature",
-    "text": "In-situ field parameter measured in monitoring of Broken Pumpkin Creek.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 9,
-      "quote": "Temperature Not to exceed 90°F"
-     },
-     {
-      "page": 10,
-      "quote": "in-situ field measurements for such parameters as dissolved oxygen, pH, temperature, specific conductance, and turbidity"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "high",
-    "parameter": "Temperature",
-    "threshold": {
-     "raw": "Not to exceed 90°F",
-     "scope": null,
-     "value": 90,
-     "valueMax": null,
-     "unit": "°F",
-     "comparator": "<="
-    },
-    "location": null,
-    "frequency": null
-   },
-   {
-    "id": "27687457",
-    "name": "Specific conductance",
-    "text": "In-situ field parameter measured in monitoring of Broken Pumpkin Creek.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 9,
-      "quote": "Specific Conductance Less Than 1000 micromhos/cm"
-     },
-     {
-      "page": 10,
-      "quote": "in-situ field measurements for such parameters as dissolved oxygen, pH, temperature, specific conductance, and turbidity"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "high",
-    "parameter": "Specific conductance",
-    "threshold": {
-     "raw": "Less Than 1000 micromhos/cm",
-     "scope": null,
-     "value": 1000,
-     "valueMax": null,
-     "unit": "micromhos/cm",
-     "comparator": "<="
-    },
-    "location": null,
-    "frequency": null
-   },
-   {
     "id": "aa4a9306",
     "name": "Turbidity",
-    "text": "In-situ field parameter measured in monitoring of Broken Pumpkin Creek.",
+    "text": "In-situ field measurement parameter used in water quality monitoring of Broken Pumpkin Creek.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2236,7 +2100,7 @@
      },
      {
       "page": 10,
-      "quote": "in-situ field measurements for such parameters as dissolved oxygen, pH, temperature, specific conductance, and turbidity"
+      "quote": "specific conductance, and turbidity, as well as biological community monitoring for benthic macroinvertebrates"
      }
     ],
     "verified": true,
@@ -2256,30 +2120,30 @@
     "frequency": null
    },
    {
-    "id": "df232cfd",
-    "name": "Benthic macroinvertebrates",
-    "text": "Biological community monitoring for benthic macroinvertebrates.",
+    "id": "886a78e6",
+    "name": "In-stream habitat surveys",
+    "text": "Habitat surveys used with MBISQ scores to determine change over time.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 10,
-      "quote": "as well as biological community monitoring for benthic macroinvertebrates."
+      "quote": "Along with overall MBISQ scores, the in-stream habitat surveys will also be used to determine change over time."
      }
     ],
     "verified": true,
     "source": "table",
     "needsReview": null,
     "confidence": "high",
-    "parameter": "Benthic macroinvertebrates",
+    "parameter": "In-stream habitat",
     "threshold": null,
-    "location": null,
+    "location": "Broken Pumpkin Creek",
     "frequency": null
    },
    {
     "id": "4e65d9a2",
     "name": "Dissolved Oxygen % Sat",
-    "text": "Dissolved oxygen percent saturation threshold.",
+    "text": "Water quality parameter with a percent saturation range threshold.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2305,9 +2169,93 @@
     "frequency": null
    },
    {
+    "id": "808d7d8a",
+    "name": "pH",
+    "text": "Water quality parameter with a pH range threshold.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "pH 6.0-9.0"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "parameter": "pH",
+    "threshold": {
+     "raw": "6.0-9.0",
+     "scope": null,
+     "value": 6,
+     "valueMax": 9,
+     "unit": null,
+     "comparator": "range"
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "c6a17cda",
+    "name": "Temperature",
+    "text": "Water quality parameter with a maximum threshold.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "Temperature Not to exceed 90°F"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Temperature",
+    "threshold": {
+     "raw": "Not to exceed 90°F",
+     "scope": null,
+     "value": 90,
+     "valueMax": null,
+     "unit": "°F",
+     "comparator": "<="
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "7b298005",
+    "name": "Specific Conductance",
+    "text": "Water quality parameter with a maximum threshold.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "Specific Conductance Less Than 1000 micromhos/cm"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Specific Conductance",
+    "threshold": {
+     "raw": "Less Than 1000 micromhos/cm",
+     "scope": null,
+     "value": 1000,
+     "valueMax": null,
+     "unit": "micromhos/cm",
+     "comparator": "<="
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
     "id": "55a392a1",
     "name": "Dissolved Solids",
-    "text": "Dissolved solids threshold for water quality monitoring.",
+    "text": "Water quality parameter with monthly average and instantaneous thresholds.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2335,7 +2283,7 @@
    {
     "id": "963c50b3",
     "name": "Total Suspended Solids",
-    "text": "Total suspended solids threshold, used as a sediment surrogate.",
+    "text": "Surrogate parameter for sediment with a threshold.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2363,7 +2311,7 @@
    {
     "id": "37d13c05",
     "name": "Chemical Oxygen Demand",
-    "text": "Chemical oxygen demand threshold for water quality monitoring.",
+    "text": "Water quality parameter with a threshold.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2391,29 +2339,85 @@
    {
     "id": "89194db2",
     "name": "M-BISQ East Bioregion",
-    "text": "Mississippi Benthic Index of Stream Quality score threshold for the East Bioregion.",
+    "text": "Biological index score threshold for waters outside the Mississippi Alluvial Plain.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 9,
-      "quote": "71.6 Calibration 3 (Applicable to waters outside the Mississippi Alluvial Plain)"
+      "quote": "71.6 Calibration 3 (Applicable to waters outside the Mississippi"
      }
     ],
     "verified": true,
     "source": "table",
     "needsReview": null,
-    "confidence": "medium",
+    "confidence": "high",
     "parameter": "M-BISQ East Bioregion",
-    "threshold": {
-     "raw": "71.6 Calibration 3 (Applicable to waters outside the Mississippi Alluvial Plain)",
-     "scope": null,
-     "value": 71.6,
-     "valueMax": null,
-     "unit": "Calibration",
-     "comparator": "="
-    },
+    "threshold": null,
     "location": null,
+    "frequency": null
+   },
+   {
+    "id": "b88c5320",
+    "name": "Mississippi Benthic Index of Stream Quality (M-BISQ)",
+    "text": "Index of Biological Integrity based on benthic macroinvertebrates used to assess wadeable streams, including Broken Pumpkin Creek.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "This index, known as the Mississippi Benthic Index of Stream Quality (M-BISQ), was used in the biological assessment"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "M-BISQ scores",
+    "threshold": null,
+    "location": "Broken Pumpkin Creek",
+    "frequency": null
+   },
+   {
+    "id": "51192d66",
+    "name": "Total Suspended Solids (TSS)",
+    "text": "Indicator of sediment contributions from permitted activities; no facilities in the watershed have TSS limits.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "Total Suspended Solids (TSS) which is used as an indicator of sediment contributions from permitted activities"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Total Suspended Solids (TSS)",
+    "threshold": null,
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "519fcf96",
+    "name": "Sediment TMDL reduction target",
+    "text": "Sediment yields need to be reduced by 77-97% within the watersheds to reflect stable conditions.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "a reduction in sediment of 77% to 97% is recommended in the Broken Pumpkin Creek watershed"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Sediment yield",
+    "threshold": null,
+    "location": "Broken Pumpkin Creek watershed",
     "frequency": null
    }
   ],
@@ -2427,7 +2431,7 @@
     "evidence": [
      {
       "page": 6,
-      "quote": "Enviroscapes and groundwater aquifer models distributed statewide with training and related interactive lesson plans."
+      "quote": "Water Model Presentations - Enviroscapes and groundwater aquifer models distributed statewide with training and related interactive lesson plans."
      }
     ],
     "verified": true,
@@ -2441,20 +2445,20 @@
    {
     "id": "194aac00",
     "name": "Teacher Workshops",
-    "text": "Train educators in proximity to the watershed about NPS pollution and provide materials and information for their classrooms.",
+    "text": "Train educators in proximity to the watershed about NPS pollution and provide materials and information for classrooms.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 6,
-      "quote": "train educators in proximity to the watershed about NPS pollution and provide materials and information"
+      "quote": "Teacher Workshops – train educators in proximity to the watershed about NPS pollution and provide materials and information"
      }
     ],
     "verified": true,
     "source": "table",
     "needsReview": null,
     "confidence": "high",
-    "audience": "Educators",
+    "audience": "educators",
     "quantity": null,
     "timeframe": null
    },
@@ -2467,27 +2471,27 @@
     "evidence": [
      {
       "page": 6,
-      "quote": "workshops and training venues for citizens, teachers, and students in the Dry Creek Watershed."
+      "quote": "Adopt A Stream - workshops and training venues for citizens, teachers, and students in the Dry Creek Watershed."
      }
     ],
     "verified": true,
     "source": "table",
     "needsReview": null,
     "confidence": "high",
-    "audience": "Citizens, teachers, and students",
+    "audience": null,
     "quantity": null,
     "timeframe": null
    },
    {
     "id": "f1008154",
     "name": "Watershed Harmony Mobile Classroom",
-    "text": "Mobile classroom with state and federal public education objectives tailored for 4th and 5th grade students.",
+    "text": "Public education objectives tailored for 4th and 5th grade students, for ages kindergarten to adults.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 6,
-      "quote": "federal public education objectives tailored for 4th and 5th grade students"
+      "quote": "Watershed Harmony Mobile Classroom - for ages kindergarten – adults with state and federal public education objectives tailored for"
      }
     ],
     "verified": true,
@@ -2507,7 +2511,7 @@
     "evidence": [
      {
       "page": 6,
-      "quote": "workshops and materials for Soil and Water districts, Extension Service, etc."
+      "quote": "“Train the Trainer” - workshops and materials for Soil and Water districts, Extension Service, etc."
      }
     ],
     "verified": true,
@@ -2519,101 +2523,88 @@
     "timeframe": null
    },
    {
-    "id": "947a4195",
-    "name": "Soil and water conservation field days",
-    "text": "Soil and water conservation field days listed among stakeholder collaboration activities.",
+    "id": "f94c038d",
+    "name": "WIT meetings",
+    "text": "Watershed Implementation Team face-to-face meetings to provide updates and review the plan.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
-      "page": 6,
-      "quote": "festival event planning, soil and water conservation field days, tree boards"
-     },
+      "page": 7,
+      "quote": "will participate in a minimum of 3 face-to-face meetings"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": "Watershed Implementation Team",
+    "quantity": {
+     "raw": "a minimum of 3 face-to-face meetings",
+     "scope": null,
+     "value": 3,
+     "valueMax": null,
+     "unit": "face-to-face meetings",
+     "comparator": ">="
+    },
+    "timeframe": null
+   },
+   {
+    "id": "42f75485",
+    "name": "Finalize education and outreach plan",
+    "text": "Finalize the education and outreach plan with scheduled education/outreach events.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 8,
+      "quote": "Finalize education and outreach plan"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": null,
+    "quantity": null,
+    "timeframe": "Months 8-36"
+   },
+   {
+    "id": "b9a525a4",
+    "name": "Field days",
+    "text": "Field days to showcase implemented BMPs for the public.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
      {
       "page": 7,
       "quote": "hosting field days to showcase the implemented BMPs for the public"
      }
     ],
     "verified": true,
-    "source": "table",
+    "source": "text",
     "needsReview": null,
     "confidence": "high",
     "audience": "Public",
     "quantity": null,
     "timeframe": null
-   },
-   {
-    "id": "053d036d",
-    "name": "Festival event planning",
-    "text": "Festival event planning listed among stakeholder collaboration activities.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 6,
-      "quote": "training workshops, festival event planning, soil and water conservation field days"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "high",
-    "audience": null,
-    "quantity": null,
-    "timeframe": null
-   },
-   {
-    "id": "1f54f3f2",
-    "name": "Establish routine meeting schedule for WIT",
-    "text": "Routine WIT meetings to support WBP revision.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 8,
-      "quote": "Establish routine meeting schedule for WIT to support WBP revision"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "audience": "WIT",
-    "quantity": null,
-    "timeframe": "Months 1-36"
-   },
-   {
-    "id": "42f75485",
-    "name": "Finalize education and outreach plan",
-    "text": "Finalize the education and outreach plan with events scheduled.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 8,
-      "quote": "Finalize education and outreach plan Education/Outreach events scheduled"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "audience": null,
-    "quantity": null,
-    "timeframe": "Months 8-36"
    }
   ],
   "geographicAreas": [
    {
     "id": "11da976a",
     "name": "Broken Pumpkin Creek",
-    "text": "Stream that is the subject of the watershed plan, impaired in 2002 and located in the East bioregion.",
+    "text": "Stream that is the subject of the watershed plan, located in the East bioregion.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
+      "page": 1,
+      "quote": "Broken Pumpkin Creek (MS031BPE) was placed on the Mississippi 2002 Section"
+     },
+     {
       "page": 10,
-      "quote": "Broken Pumpkin Creek is located in the East bioregion and was determined to be impaired in 2002"
+      "quote": "Broken Pumpkin Creek is located in the East bioregion"
      }
     ],
     "verified": true,
@@ -2621,7 +2612,7 @@
     "needsReview": null,
     "confidence": "high",
     "type": "waterbody",
-    "code": null,
+    "code": "MS031BPE",
     "areaAcres": null,
     "role": "primary"
    },
@@ -2647,9 +2638,72 @@
     "role": "mentioned"
    },
    {
-    "id": "1629d51e",
-    "name": "Broken Pumpkin Creek",
-    "text": "Watershed in Noxubee and Lowndes counties covering 24,573 acres, the plan's focus area.",
+    "id": "30e5e1ce",
+    "name": "Dry Creek Watershed",
+    "text": "Watershed named as location for Adopt A Stream workshops.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 6,
+      "quote": "in the Dry Creek Watershed."
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "watershed",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "f15f1712",
+    "name": "Lowndes Co. Soil and Water Districts",
+    "text": "Local soil and water district named as a partner covering the area.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 8,
+      "quote": "Lowndes Co. Soil and Water Districts to"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "county",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "a778ed14",
+    "name": "Tallahatchie County SWCD",
+    "text": "County soil and water conservation district named in the plan.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 7,
+      "quote": "Work with the Tallahatchie County SWCD, MSWCC, NRCS, and MDEQ"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "county",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "f01ba170",
+    "name": "Broken Pumpkin Creek Watershed",
+    "text": "Watershed covered by the plan.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2658,33 +2712,29 @@
       "quote": "The Broken Pumpkin Creek watershed is located in Noxubee and Lowndes counties in east"
      },
      {
-      "page": 6,
-      "quote": "can be used in the Broken Pumpkin Creek watershed project by tailoring them to"
-     },
-     {
       "page": 8,
-      "quote": "Broken Pumpkin Creek Watershed"
+      "quote": "contributing significant pollutant loads to Broken Pumpkin Creek Watershed"
      }
     ],
     "verified": true,
-    "source": "text",
+    "source": "table",
     "needsReview": null,
     "confidence": "high",
     "type": "watershed",
-    "code": "HUC 031601060307",
+    "code": "031601060307",
     "areaAcres": null,
     "role": "primary"
    },
    {
-    "id": "16b215a1",
-    "name": "Kincaide Creek",
-    "text": "Segment added to the TMDL in 2010 but stated not to be part of the Broken Pumpkin Creek watershed.",
+    "id": "5f047ff3",
+    "name": "Kincaide Creek (MS033K)",
+    "text": "Segment added to the TMDL in 2010; not part of the Broken Pumpkin Creek watershed.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 1,
-      "quote": "This TMDL was updated in 2010 to include Kincaide Creek (MS033K); however, this segment is not part of the"
+      "quote": "to include Kincaide Creek (MS033K); however, this segment is not part of the"
      }
     ],
     "verified": true,
@@ -2699,7 +2749,7 @@
    {
     "id": "9c51af46",
     "name": "Luxapallila Creek",
-    "text": "Water body within HUC 03106105 named in the Tombigbee River Basin TMDL.",
+    "text": "Stream within HUC 03106105 covered by the sediment TMDL.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2720,7 +2770,7 @@
    {
     "id": "c0fbfefa",
     "name": "Middle Tombigbee River",
-    "text": "Water body within HUC 03160106 named in the Tombigbee River Basin TMDL.",
+    "text": "River within HUC 03160106 covered by the sediment TMDL.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2737,90 +2787,6 @@
     "code": "03160106",
     "areaAcres": null,
     "role": "mentioned"
-   },
-   {
-    "id": "30e5e1ce",
-    "name": "Dry Creek Watershed",
-    "text": "Watershed named as the location for the Adopt A Stream program.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 6,
-      "quote": "workshops and training venues for citizens, teachers, and students in the Dry Creek Watershed."
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "watershed",
-    "code": null,
-    "areaAcres": null,
-    "role": "mentioned"
-   },
-   {
-    "id": "c78b9741",
-    "name": "Tallahatchie County",
-    "text": "County named for SWCD coordination.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 7,
-      "quote": "Work with the Tallahatchie County SWCD, MSWCC, NRCS, and MDEQ"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "county",
-    "code": null,
-    "areaAcres": null,
-    "role": "mentioned"
-   },
-   {
-    "id": "cda99a68",
-    "name": "Lowndes Co.",
-    "text": "County whose Soil and Water District is named as a partner.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 8,
-      "quote": "Lowndes Co. Soil and Water Districts to"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "county",
-    "code": null,
-    "areaAcres": null,
-    "role": "mentioned"
-   },
-   {
-    "id": "0ae4f3e4",
-    "name": "Noxubee",
-    "text": "Area whose Soil and Water District is named as a partner.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 8,
-      "quote": "the Noxubee and"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "type": "other",
-    "code": null,
-    "areaAcres": null,
-    "role": "mentioned"
    }
   ]
  },
@@ -2832,53 +2798,35 @@
   "year": 2019
  },
  "quality": {
-  "verifiedRate": 0.7850467289719626,
+  "verifiedRate": 0.7636363636363637,
   "rejected": [
    {
     "category": "monitoring",
-    "name": "Station TB146",
+    "name": "Sampling station",
     "page": 10,
     "reason": "name-not-in-source"
    },
    {
     "category": "monitoring",
-    "name": "Station TB562",
+    "name": "Sampling station",
     "page": 10,
     "reason": "name-not-in-source"
    },
    {
     "category": "monitoring",
-    "name": "Post-BMP water quality",
+    "name": "Benthic macroinvertebrate score (M-BISQ)",
     "page": 10,
     "reason": "name-not-in-source"
    },
    {
-    "category": "goals",
-    "name": "Reduce sediment loads entering waters in the watershed: a reduction in sediment of 77% to 97%",
-    "page": 3,
-    "reason": "number-not-in-quote"
-   },
-   {
-    "category": "geographicAreas",
-    "name": "Broken Pumpkin Creek: 24,573 acres",
-    "page": 1,
-    "reason": "number-not-in-quote"
-   },
-   {
-    "category": "geographicAreas",
-    "name": "Noxubee County",
-    "page": 1,
-    "reason": "name-not-in-source"
-   },
-   {
-    "category": "geographicAreas",
-    "name": "Lowndes County",
-    "page": 1,
+    "category": "monitoring",
+    "name": "Water quality change",
+    "page": 10,
     "reason": "name-not-in-source"
    },
    {
     "category": "bmps",
-    "name": "Prescribed Grazing: scope \"Cost table on page 5 (Streambank/Total budget table)\"",
+    "name": "Prescribed Grazing: scope \"Cost table on page 5 (Practice Name table)\"",
     "page": 5,
     "reason": "detail-not-in-source"
    },
@@ -2890,7 +2838,7 @@
    },
    {
     "category": "bmps",
-    "name": "Underground Outlet: scope \"Cost table on page 5\"",
+    "name": "Underground Outlet: scope \"Cost table on page 5 (Practice Name table)\"",
     "page": 5,
     "reason": "detail-not-in-source"
    },
@@ -2913,20 +2861,26 @@
     "reason": "detail-not-in-source"
    },
    {
+    "category": "monitoring",
+    "name": "Monitoring",
+    "page": 6,
+    "reason": "not-an-item"
+   },
+   {
     "category": "outreach",
-    "name": "Watershed Harmony Mobile Classroom: audience \"Kindergarten through adults, tailored to 4th and 5th grade students\"",
+    "name": "Water Model Presentations: audience \"citizens, teachers, students\"",
     "page": 6,
     "reason": "detail-not-in-source"
    },
    {
     "category": "outreach",
-    "name": "Soil and water conservation field days: audience \"Stakeholders and community\"",
+    "name": "Adopt A Stream: audience \"citizens, teachers, students\"",
     "page": 6,
     "reason": "detail-not-in-source"
    },
    {
     "category": "outreach",
-    "name": "Festival event planning: audience \"Stakeholders and community\"",
+    "name": "Watershed Harmony Mobile Classroom: audience \"kindergarten to adults, 4th and 5th grade students\"",
     "page": 6,
     "reason": "detail-not-in-source"
    },
@@ -2950,26 +2904,56 @@
    },
    {
     "category": "monitoring",
-    "name": "Dissolved Solids: frequency \"Monthly average; instantaneous\"",
+    "name": "M-BISQ East Bioregion: 71.6 Calibration 3 (Applicable to waters outside the Mississippi Alluvial Plain)",
     "page": 9,
-    "reason": "detail-not-in-source"
+    "reason": "number-not-in-quote"
    },
    {
     "category": "monitoring",
-    "name": "Baseline condition monitoring",
+    "name": "Post-BMP water quality",
     "page": 8,
     "reason": "name-not-in-source"
    },
    {
     "category": "monitoring",
-    "name": "Begin monitoring to collect data on post-BMP water quality",
+    "name": "Baseline condition monitoring",
     "page": 8,
     "reason": "quote-not-found"
    },
    {
     "category": "outreach",
-    "name": "Watershed Implementation Team meetings",
-    "page": 7,
+    "name": "Establish routine meeting schedule for WIT to support WBP revision",
+    "page": 8,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "monitoring",
+    "name": "Sediment TMDL reduction target: 77% to 97% reduction",
+    "page": 1,
+    "reason": "number-not-in-quote"
+   },
+   {
+    "category": "outreach",
+    "name": "Coordinating partner communication with local landowners",
+    "page": 3,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "geographicAreas",
+    "name": "Broken Pumpkin Creek watershed: 24,573 acres",
+    "page": 1,
+    "reason": "number-not-in-quote"
+   },
+   {
+    "category": "geographicAreas",
+    "name": "Noxubee County",
+    "page": 1,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "geographicAreas",
+    "name": "Lowndes County",
+    "page": 1,
     "reason": "name-not-in-source"
    }
   ],
@@ -2989,11 +2973,11 @@
   "failedUnits": [],
   "provider": "anthropic",
   "model": "claude-haiku-5-5",
-  "durationMs": 14190,
+  "durationMs": 28549,
   "usage": {
-   "inputTokens": 89034,
-   "outputTokens": 18723,
-   "costUsd": 0.014757779999999998
+   "inputTokens": 89938,
+   "outputTokens": 19813,
+   "costUsd": 0.01531182
   },
   "completionBasis": "No completion status reported in this document",
   "structure": [

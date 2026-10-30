@@ -1,0 +1,35 @@
+{
+ "date": "2026-10-29",
+ "provider": "anthropic",
+ "model": "claude-haiku-5-5",
+ "ocrModel": "claude-haiku-5-5",
+ "effort": "low",
+ "set": "ellison-creek-2021",
+ "repeat": 1,
+ "docs": [
+  {
+   "id": "ellison-creek-2021",
+   "role": "dev",
+   "format": "nine-element",
+   "pages": 13,
+   "timeMs": 20458,
+   "costUsd": 0.01372502,
+   "counts": {
+    "goals": 3,
+    "bmps": 14,
+    "implementation": 20,
+    "monitoring": 12,
+    "outreach": 8,
+    "geographicAreas": 9
+   },
+   "failedUnits": 0,
+   "rejected": 16,
+   "score": null
+  }
+ ],
+ "aggregate": {
+  "dev": null,
+  "heldout": null,
+  "all": null
+ }
+}

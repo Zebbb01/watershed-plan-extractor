@@ -26,3 +26,7 @@ backend/eval/pdfs/
 # pdf.js decoders and Tesseract files, copied from node_modules before dev and build
 frontend/public/pdfjs/
 frontend/public/tesseract/
+
+# Playwright output
+test-results/
+playwright-report/

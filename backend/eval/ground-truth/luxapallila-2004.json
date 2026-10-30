@@ -1,0 +1,44 @@
+{
+  "doc": "luxapallila-2004",
+  "scope": [3, 17, 18],
+  "notes": "Held-out plan added 2026-10-29 to test generalisation: a 112-page scanned 2004 basin plan from the same MDEQ series as Buttahatchee (a tuning plan), but for another watershed. Drafted by Claude from the page images before any extraction of this plan was run; quotes are transcribed by eye, so the verbatim and quote checks do not apply. Labelled like the Buttahatchee answer key: the goals-and-actions table (page 3) and sections 3.1-3.3.1 (pages 17-18). Here the list of actions starts at the top of page 18 under a lead-in on page 17, and its sub-items are marked with diamonds.",
+  "items": [
+    { "category": "goals", "name": "Protect threatened and endangered species present in Luxapallila Creek watershed", "page": 3, "quote": "Protect threatened and endangered species present in Luxapallila Creek watershed", "kind": "main" },
+    { "category": "goals", "name": "protect the currently good quality of the Luxapallila Creek Watershed", "page": 17, "quote": "The goal for this watershed implementation plan is to protect the currently good quality of the Luxapallila Creek Watershed", "kind": "main" },
+    { "category": "goals", "name": "Maintain existing populations of threatened and endangered native mussel species in the watershed", "page": 17, "quote": "Maintain existing populations of threatened and endangered native mussel species in the watershed (i.e. no net decrease in population),", "kind": "main" },
+    { "category": "goals", "name": "Prevent loss of good quality habitat for threatened and endangered mussel species and their host fish species", "page": 17, "quote": "Prevent loss of good quality habitat for threatened and endangered mussel species and their host fish species,", "kind": "main" },
+    { "category": "goals", "name": "Improve the quality of marginal or poor quality habitat for threatened and endangered mussel species and their host fish species", "page": 17, "quote": "Improve the quality of marginal or poor quality habitat for threatened and endangered mussel species and their host fish species, and;", "kind": "main" },
+    { "category": "goals", "name": "Maintain the currently good water quality in Luxapallila Creek and its tributaries", "aliases": ["continue to achieve state water quality standards"], "page": 17, "quote": "Maintain the currently good water quality in Luxapallila Creek and its tributaries (i.e. continue to achieve state water quality standards).", "kind": "main" },
+    { "category": "goals", "name": "development of GIS layers of the basin management areas statewide to locate nonpoint pollution sources", "page": 18, "quote": "The general goal of this project is the development of GIS layers of the basin management areas statewide to locate nonpoint pollution sources", "kind": "main" },
+
+    { "category": "implementation", "name": "Initiate Phase I of Medallion Farmer program", "aliases": ["Medallion Farmer program"], "page": 3, "quote": "Initiate Phase I of Medallion Farmer program", "kind": "main" },
+    { "category": "implementation", "name": "Continue existing projects related to farmer education, BMP implementation, and habitat restoration and conservation", "page": 3, "quote": "Continue existing projects related to farmer education, BMP implementation, and habitat restoration and conservation", "kind": "main" },
+    { "category": "implementation", "name": "Aerial survey to determine silvicultural activity and develop sampling plan", "page": 3, "quote": "Aerial survey to determine silvicultural activity and develop sampling plan", "kind": "main" },
+    { "category": "implementation", "name": "Evaluate potential risk to water quality from recently harvested forest tracts", "page": 3, "quote": "Evaluate potential risk to water quality from recently harvested forest tracts", "kind": "main" },
+    { "category": "implementation", "name": "Contact owners of forest tracts at risk for water quality to inform them of risk and suggest BMPs", "page": 3, "quote": "Contact owners of forest tracts at risk for water quality to inform them of risk and suggest BMPs", "kind": "main" },
+    { "category": "implementation", "name": "Survey locations of failing septic systems", "page": 3, "quote": "Survey locations of failing septic systems", "kind": "main" },
+    { "category": "implementation", "name": "Stream bank stabilization", "page": 3, "quote": "Stream bank stabilization", "kind": "main" },
+    { "category": "implementation", "name": "Reduce sediment loads to streams", "page": 18, "quote": "Reduce sediment loads to streams", "kind": "main" },
+    { "category": "implementation", "name": "Cropland BMPs", "page": 18, "quote": "Cropland BMPs", "kind": "sub" },
+    { "category": "implementation", "name": "Pasture BMPs", "page": 18, "quote": "Pasture BMPs", "kind": "sub" },
+    { "category": "implementation", "name": "Inventory silviculture BMPs", "page": 18, "quote": "Inventory silviculture BMPs", "kind": "sub" },
+    { "category": "implementation", "name": "Reduce nutrient loads to streams", "page": 18, "quote": "Reduce nutrient loads to streams", "kind": "main" },
+    { "category": "implementation", "name": "Locate failing septic systems", "page": 18, "quote": "Locate failing septic systems", "kind": "sub" },
+    { "category": "implementation", "name": "Manage point source discharges", "page": 18, "quote": "Manage point source discharges", "kind": "main" },
+    { "category": "implementation", "name": "Research threatened and endangered species", "page": 18, "quote": "Research threatened and endangered species", "kind": "main" },
+    { "category": "implementation", "name": "Create GIS layers(s) with delineated polygons encompassing all unsewered communities", "page": 18, "quote": "Create GIS layers(s) with delineated polygons encompassing all unsewered communities or significant clusters of unsewered dwellings/businesses in the state", "kind": "sub" },
+    { "category": "implementation", "name": "Create GIS layer(s) showing 90% of existing IOWS", "page": 18, "quote": "Create GIS layer(s) showing 90% of existing IOWS, recreational vehicle campgrounds, and food facilities using IOWS and/or having NPDES permits.", "kind": "sub" },
+    { "category": "implementation", "name": "Map 90% of new IOWS", "page": 18, "quote": "Map 90% of new IOWS", "kind": "sub" },
+
+    { "category": "monitoring", "name": "Mussel population survey", "page": 3, "quote": "Mussel population survey", "kind": "main" },
+    { "category": "monitoring", "name": "Water quality monitoring", "page": 3, "quote": "Water quality monitoring", "kind": "main" },
+
+    { "category": "geographicAreas", "name": "Luxapallila Creek Watershed", "aliases": ["Luxapallila Creek watershed", "Luxapallila Creek Basin"], "page": 17, "quote": "All references to the Luxapallila Creek Watershed or Basin in the remainder of this document", "kind": "main" },
+    { "category": "geographicAreas", "name": "Luxapallila Creek", "page": 3, "quote": "Ambient monitoring station on Luxapallila Creek", "kind": "main" },
+    { "category": "geographicAreas", "name": "Lowndes County", "aliases": ["Lowndes"], "page": 3, "quote": "Initiate Phase I of Medallion Farmer program Lowndes County 2004", "kind": "main" },
+    { "category": "geographicAreas", "name": "Yellow Creek", "page": 3, "quote": "Mussel population survey Yellow Creek 2005, 2007", "kind": "main" },
+    { "category": "geographicAreas", "name": "Columbus", "aliases": ["Columbus, MS"], "page": 3, "quote": "Luxapallila Creek near Columbus, MS", "kind": "main" },
+    { "category": "geographicAreas", "name": "Mississippi", "page": 17, "quote": "This Watershed Implementation Plan covers only the portion of the watershed that is in Mississippi.", "kind": "main" },
+    { "category": "geographicAreas", "name": "Alabama", "page": 17, "quote": "will develop a Watershed Implementation Plan for Luxapallila Creek Basin in Alabama in the future", "kind": "main" }
+  ]
+}

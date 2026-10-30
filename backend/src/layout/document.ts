@@ -10,6 +10,8 @@ const ADMIN_SECTION = /^(acknowledge?ments?|references|literature cited|bibliogr
 // "12", "iv", "Page 3 of 22", and chapter-page numbers such as "3-1".
 const PAGE_NUMBER = /^(page\s+)?([0-9]{1,4}|[ivxlc]{1,7}|\d{1,2}-\d{1,3})(\s+of\s+\d+)?$/i;
 const TOC_LINE = /(\.{4,}|\s{3,}|…+)\s*\d{1,4}\s*$/;
+// A stamp printed across the page, wherever it sits.
+const WATERMARK = /^(draft|confidential|preliminary|for review only|do not cite)$/i;
 
 // A header read as a table row on some pages ("Plan | FY19") is the same header as plain text on others.
 const repeatKey = (text: string) => text.toLowerCase().replace(/\|/g, ' ').replace(/\d+/g, '#').replace(/\s+/g, ' ').trim();
@@ -19,20 +21,34 @@ export function annotateDocument(pages: PageModel[]): PageModel[] {
   // Lines in the top or bottom band that repeat on at least 40% of the pages are running heads.
   // Not half: a plan whose appendices carry their own headers (Buttahatchee 2004: its date on
   // 49 of 108 pages) would keep its running head on every page of the plan itself.
+  // A short line that is not a table row may also head only one part of a plan ("Coldwater River Watershed
+  // Implementation Plan - Draft" over one chapter, a "DRAFT" stamp on some pages): 5 pages and a tenth of
+  // the plan are enough for those.
   const counts = new Map<string, number>();
+  const shortCounts = new Map<string, number>();
   for (const p of pages) {
     const seen = new Set<string>();
-    for (const l of p.lines) if (inBand(l.y, p.height)) seen.add(repeatKey(l.text));
+    const short = new Set<string>();
+    for (const l of p.lines) {
+      if (!inBand(l.y, p.height)) continue;
+      seen.add(repeatKey(l.text));
+      if (l.kind !== 'table' && l.text.length <= 80) short.add(repeatKey(l.text));
+    }
     for (const k of seen) counts.set(k, (counts.get(k) ?? 0) + 1);
+    for (const k of short) shortCounts.set(k, (shortCounts.get(k) ?? 0) + 1);
   }
   const minRepeats = Math.max(2, Math.ceil(pages.length * 0.4));
-  const running = new Set([...counts].filter(([k, n]) => n >= minRepeats && k !== '#').map(([k]) => k));
+  const minShort = Math.max(5, Math.ceil(pages.length * 0.1));
+  const running = new Set(
+    [...counts].filter(([k, n]) => k !== '#' && (n >= minRepeats || (shortCounts.get(k) ?? 0) >= minShort)).map(([k]) => k),
+  );
 
   let inAdminSection = false;
   return pages.map((p) => {
     const lines = p.lines.map((l) => ({ ...l }));
     for (const l of lines) {
-      if (inBand(l.y, p.height) && (running.has(repeatKey(l.text)) || PAGE_NUMBER.test(l.text.trim()))) {
+      const t = l.text.trim();
+      if (WATERMARK.test(t) || (inBand(l.y, p.height) && (running.has(repeatKey(l.text)) || PAGE_NUMBER.test(t)))) {
         l.kind = 'admin';
         continue;
       }

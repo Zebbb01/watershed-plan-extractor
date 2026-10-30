@@ -3,7 +3,7 @@ import type { Line, PageModel } from './page-model';
 /*
  * A page model built from transcribed text (OCR of a scanned page). There are no positions,
  * so structure comes from how the transcript is written: "• " bullets ("○", "◦", "-", the
- * letter "o" and similar for sub-items), "1." items, "| a | b |" table rows, numbered or
+ * letter "o", diamonds and similar for sub-items), "1." items, "| a | b |" table rows, numbered or
  * capitalised short lines as headings. Line order stands in for height, so the first and
  * last lines of each page can be recognised as running headers and page numbers like on a
  * text page.
@@ -12,16 +12,25 @@ import type { Line, PageModel } from './page-model';
 const TOP_BULLET = /^[•●*]\s+/;
 // A hollow-circle sub-bullet often comes back from the transcriber as the letter "o".
 const SUB_BULLET = /^(?:[○◦▪■□‣⁃–-]|o(?=\s+[A-Z0-9]))\s+/;
+// Diamonds, arrows and ticks: a sub-item under a bullet, or a list of their own when no bullet comes before.
+const OTHER_BULLET = /^[♦◆◇❖►▸➢➤✓✔]\s*/;
 const SECTION_TITLE = /^\d{1,2}(\.\d{1,2}){1,3}\.?\s+[A-Z][^.;:]{1,70}$/;
 
 export function pageFromText(n: number, text: string): PageModel {
   const lines: Line[] = [];
+  let otherLevel = 0; // level of the diamond list in progress, 0 when none
   for (const raw of text.split(/\r?\n/)) {
     const t = raw.trim();
     if (!t) continue;
     const base = { x: 0, y: lines.length, size: 11, bold: false, level: 0 };
+    const other = OTHER_BULLET.test(t);
+    if (!other) otherLevel = 0;
     if (TOP_BULLET.test(t)) lines.push({ ...base, text: t.replace(TOP_BULLET, ''), kind: 'bullet', level: 1 });
     else if (SUB_BULLET.test(t)) lines.push({ ...base, text: t.replace(SUB_BULLET, ''), kind: 'bullet', level: 2 });
+    else if (other) {
+      otherLevel ||= lines.at(-1)?.kind === 'bullet' ? 2 : 1;
+      lines.push({ ...base, text: t.replace(OTHER_BULLET, ''), kind: 'bullet', level: otherLevel });
+    }
     else if (/\|/.test(t) && t.split('|').filter((c) => c.trim()).length >= 2) {
       lines.push({ ...base, text: t.replace(/^\|\s*|\s*\|$/g, '').split(/\s*\|\s*/).join(' | '), kind: 'table' });
     } else if (SECTION_TITLE.test(t)) lines.push({ ...base, text: t, kind: 'heading' });

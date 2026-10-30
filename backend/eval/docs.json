@@ -60,6 +60,156 @@
     "pages": 22
   },
   {
+    "id": "bear-creek-2007",
+    "title": "Bear Creek Watershed Plan (2007)",
+    "file": "Bear_Creek_Watershed_Plan_2007.pdf",
+    "url": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_II/YZ/Watershed_Plans/Bear_Creek_Watershed_Plan_2007.pdf",
+    "sha256": "3c7b204cd7e057d275d390184a2f3c9ee6563c24b607057f3e5a0b3f169b3a4b",
+    "role": "dev",
+    "format": "narrative",
+    "pages": 41
+  },
+  {
+    "id": "bee-lake-2006",
+    "title": "Bee Lake Watershed Plan (2006)",
+    "file": "Bee_Lake_Watershed_Plan_2006.pdf",
+    "url": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_II/YZ/Watershed_Plans/Bee_Lake_Watershed_Plan_2006.pdf",
+    "sha256": "2ec654258f24efe3e17c5f773c772b1a4a52445eb98ac42c7c894f6438f1cc32",
+    "role": "dev",
+    "format": "narrative",
+    "pages": 67
+  },
+  {
+    "id": "deer-creek-2008",
+    "title": "Deer Creek Watershed Plan (2008)",
+    "file": "Deer_Creek_Watershed_Plan_2008.pdf",
+    "url": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_II/YZ/Watershed_Plans/Deer_Creek_Watershed_Plan_2008.pdf",
+    "sha256": "ea4c6832acbbc566d3b591f78508d499c6f955a2b9435077eb1ae5dc35799d41",
+    "role": "dev",
+    "format": "narrative",
+    "pages": 74
+  },
+  {
+    "id": "ellison-creek-2021",
+    "title": "Ellison Creek 9 Key Element Plan (2021)",
+    "file": "Ellison_Creek_9_Key_Element_Plan_2021.pdf",
+    "url": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_III/BB/Nine_Key_Element_Plans/Ellison_Creek_9_Key_Element_Plan_2021.pdf",
+    "sha256": "447852a3c3fb76167e4a8a7d3132403e4cef8e04257dfa54607b9796b0b9154e",
+    "role": "dev",
+    "format": "nine-element",
+    "pages": 13
+  },
+  {
+    "id": "hickahala-creek-2009",
+    "title": "Hickahala Creek Watershed Plan (2009)",
+    "file": "Hickahala_Creek_Watershed_Plan_2009.pdf",
+    "url": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_II/YZ/Watershed_Plans/Hickahala_Creek_Watershed_Plan_2009.pdf",
+    "sha256": "28be5a04b8b10896880368f085dc030fff709ea605dbf55ddd758480322a62c4",
+    "role": "dev",
+    "format": "narrative",
+    "pages": 58
+  },
+  {
+    "id": "jasper-creek-2019",
+    "title": "Jasper Creek Watershed Plan (2019)",
+    "file": "Jasper_Creek_Watershed_Plan_2019.pdf",
+    "url": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_II/YZ/Watershed_Plans/Jasper_Creek_Watershed_Plan_2019.pdf",
+    "sha256": "2948739465101580f1259e6b0e127a297f5cff4eafb0dc802538fa9670a4143d",
+    "role": "dev",
+    "format": "narrative",
+    "pages": 37
+  },
+  {
+    "id": "pickwick-2009",
+    "title": "Pickwick Reservoir Watershed Plan (2009)",
+    "file": "Pickwick_Reservoir_Watershed_Plan_2009.pdf",
+    "url": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_I/TN/Watershed_Plans/Pickwick_Reservoir_Watershed_Plan_2009.pdf",
+    "sha256": "a13b6e5eab6b6dbbb031ffe724b87bbd441d7abf6f64602aa17f72145a047b83",
+    "role": "dev",
+    "format": "narrative",
+    "pages": 42
+  },
+  {
+    "id": "red-bud-catalpa-2016",
+    "title": "Red Bud - Catalpa Creek Watershed Plan (2016)",
+    "file": "Red_Bud_Catalpa_Creek_Watershed_Plan_2016.pdf",
+    "url": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_I/TB/Watershed_Plans/Red_Bud_Catalpa_Creek_Watershed_Plan_2016.pdf",
+    "sha256": "fbddc02576d4f0112f09fa5dbaf582ab5bfa970c7e81332d41aced2ade71f343",
+    "role": "dev",
+    "format": "narrative",
+    "pages": 137
+  },
+  {
+    "id": "red-bud-catalpa-2017",
+    "title": "Red Bud - Catalpa Creek Watershed Phase 1 Plan (2017)",
+    "file": "Red_Bud_Catalpa_Creek_Watershed_Phase_1_Plan_2017.pdf",
+    "url": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_I/TB/Watershed_Plans/Red_Bud_Catalpa_Creek_Watershed_Phase_1_Plan_2017.pdf",
+    "sha256": "4e02b0beb87a26dfb106d75fcd7ca52b315a1e65e98833f4c3330e71b13192a5",
+    "role": "dev",
+    "format": "narrative",
+    "pages": 93
+  },
+  {
+    "id": "tarebreeches-2012",
+    "title": "Tarebreeches Creek - Tuscumbia River Canal Watershed Plan (2012)",
+    "file": "Tarebreeches_Creek_Tuscumbia_River_Canal_Watersehd_Plan_2012.pdf",
+    "url": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_I/NI/Watershed_Plans/Tarebreeches_Creek_Tuscumbia_River_Canal_Watersehd_Plan_2012.pdf",
+    "sha256": "08eee287846d33b08bce5a13017fe72cce77187d626e790d465940de91c126fc",
+    "role": "dev",
+    "format": "narrative",
+    "pages": 53
+  },
+  {
+    "id": "west-boley-2007",
+    "title": "West Boley Creek Watershed Action Plan (2007, scanned)",
+    "file": "West_Boley_Creek_Watershed_Action_Plan_2007.pdf",
+    "url": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_IV/LPL/Watershed_Plans/West_Boley_Creek_Watershed_Action_Plan_2007.pdf",
+    "sha256": "8541eea32d9acb81be11639107f46de488791a3264f109fba55c1edce5018808",
+    "role": "heldout",
+    "format": "scanned",
+    "pages": 40
+  },
+  {
+    "id": "luxapallila-2004",
+    "title": "Luxapallila Creek Watershed Plan (2004, scanned)",
+    "file": "Luxapallila_Creek_Watershed_Plan_2004.pdf",
+    "url": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_I/TB/Watershed_Plans/Luxapallila_Creek_Watershed_Plan_2004.pdf",
+    "sha256": "41ee85d2483ce7866d39a6707e1e4f4efd060e7eedbc54583dddf9e94306d339",
+    "role": "heldout",
+    "format": "scanned",
+    "pages": 112
+  },
+  {
+    "id": "lake-washington-2007",
+    "title": "Lake Washington Watershed Plan (2007)",
+    "file": "Lake_Washington_Watershed_Plan_2007.pdf",
+    "url": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_II/YZ/Watershed_Plans/Lake_Washington_Watershed_Plan_2007.pdf",
+    "sha256": "35c50182693d2455c7b4c3ef7575dba49e2e27181e0028eb3854cff3908c58ce",
+    "role": "heldout",
+    "format": "narrative",
+    "pages": 98
+  },
+  {
+    "id": "yazoo-pass-2021",
+    "title": "Yazoo Pass 9 Key Element Plan (2021)",
+    "file": "Yazoo_Pass_9_Key_Element_Plan_2021.pdf",
+    "url": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_II/YZ/Nine_Key_Element_Plans/Yazoo_Pass_9_Key_Element_Plan_2021.pdf",
+    "sha256": "7b5d6ec595e67e286a508e86b2b1f1dbf1a32f27b461c8e96d3b82a27ecd9dd5",
+    "role": "heldout",
+    "format": "nine-element",
+    "pages": 14
+  },
+  {
+    "id": "coldwater-2013",
+    "title": "Coldwater River Watershed Plan (2013)",
+    "file": "Coldwater_River_Watershed_Plan_2013.pdf",
+    "url": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_II/YZ/Watershed_Plans/Coldwater_River_Watershed_Plan_2013.pdf",
+    "sha256": "2985e7130ea35e7292ec865f9ce701abd2247b2017bd528c5dd7d854684dc6c3",
+    "role": "heldout",
+    "format": "narrative",
+    "pages": 35
+  },
+  {
     "id": "ross-barnett-2011",
     "title": "Ross Barnett Reservoir Watershed Plan (2011, 647 pages)",
     "file": "Ross_Barnett_Reservoir_Watershed_Plan_2011.pdf",

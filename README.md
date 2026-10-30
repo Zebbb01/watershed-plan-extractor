@@ -31,10 +31,11 @@ Code and an LLM each do the part they are reliable at.
    evidence. Two different amounts for the same thing are flagged for review. Totals and
    the completion rate are computed in code, never by the model.
 
-**Accuracy**, scored by script against answer keys for four Mississippi plans, each run three
-times: 83.7% F1 on goals, BMPs and activities (82.2% on a plan held out from tuning; 87.2% on
-the 108-page scanned plan), 88.3% of numbers exact, and 0 extracted names that are not written
-in the PDF. The method and the per-plan results are in [TESTING.md](TESTING.md).
+**Accuracy**, scored by script against answer keys for nine Mississippi plans from 2004 to 2021
+(nine-key-element, narrative and scanned), each run three times: 80.3% F1 on goals, BMPs and
+activities, 78.6% on the six plans held out from tuning (76.2% before the latest round of
+changes), 83.7% of numbers exact, and 0 extracted names that are not written in the PDF. The
+method, the per-plan results and the run-to-run spread are in [TESTING.md](TESTING.md).
 
 ## Using it
 
@@ -48,8 +49,12 @@ in the PDF. The method and the per-plan results are in [TESTING.md](TESTING.md).
   runs the file again in place. If the file is no longer open in the tab, it asks for it and
   checks it is the same file (SHA-256) first.
 - **Overview:** tiles that open their tab, the completion rate with its basis, how many
-  proposed items passed the checks, and charts for items by category, activity status, BMP
-  amounts by unit, BMP costs and the implementation timeline. Every chart has a table view.
+  proposed items passed the checks, and a diagram of the plan at a glance: what it sets out
+  to achieve, the practices and activities that get there and how progress is checked, with
+  the outreach that supports them; each step opens its tab. Charts show items by category,
+  activity status, reduction targets, who carries out the activities, BMP amounts by unit, BMP
+  costs, the implementation timeline, and a page map of where each category is found (scanned
+  and skipped pages marked). Every chart has a table view.
 - **One tab per category:** a sortable table with kind and "needs review" filters. Each row
   opens its evidence: the PDF page with the quote highlighted. A scanned page has no text to
   mark, so the browser reads the page image with Tesseract (about 7 MB, loaded the first
@@ -75,14 +80,14 @@ in the PDF. The method and the per-plan results are in [TESTING.md](TESTING.md).
 | --- | --- | --- |
 | App | Next.js 16 (App Router), React 19, TypeScript | One deployable unit: pages plus thin API routes |
 | Styling and UI | Tailwind CSS 4, Radix primitives, lucide icons | Accessible custom controls instead of browser defaults |
-| Charts | Recharts | Bars and a timeline, each with a table view |
+| Charts | Recharts, plus SVG for the page map | Bars, ranges and a timeline, each with a table view |
 | Upload | react-dropzone | Drag and drop with a keyboard-reachable Browse button |
 | PDF | pdf.js (`pdfjs-dist`) in the browser | Text with positions, page rendering, no upload |
 | Marks on scans | Tesseract.js in the browser | Word positions on scanned pages, used only to place the highlight |
 | Engine | `backend/`: framework-free TypeScript | The same code runs in the browser, the API routes and the eval CLI |
 | LLM | Anthropic (`@anthropic-ai/sdk`) or OpenAI (`openai`) | Structured output against a Zod schema; either key works |
 | Validation | Zod | Model output, API requests and environment |
-| Tests | Vitest | Unit tests in both workspaces; the eval measures accuracy |
+| Tests | Vitest, Playwright | Unit tests in both workspaces, end-to-end tests of the user flows in Chromium; the eval measures accuracy |
 
 ## Run it locally
 
@@ -136,7 +141,7 @@ Length does not change what the model is given. Every request carries at most th
 before, so a 600-page plan is many small requests, not one long prompt, a list that runs over
 a page break keeps its lead-in, and every item is checked against its own page. Length
 adds time and cost (647 pages: 9 minutes, $0.55) and repeated content, which the merge step
-joins. Accuracy was scored on plans of 11 to 108 pages; the 647-page plan was run for time,
+joins. Accuracy was scored on plans of 11 to 112 pages; the 647-page plan was run for time,
 cost and names not in the PDF (0), not scored against an answer key.
 
 ## Scripts
@@ -146,6 +151,7 @@ cost and names not in the PDF (0), not scored against an answer key.
 | `npm run dev` | Development server on port 3100 |
 | `npm run build` then `npm start -w frontend` | Production build and server |
 | `npm test` | Unit tests in both workspaces |
+| `npm run test:e2e` | Playwright end-to-end tests (builds the app and starts it on port 3100; `npx playwright install chromium` once first) |
 | `npm run typecheck` | TypeScript in both workspaces |
 | `npm run lint -w frontend` | ESLint with the Next.js and React hooks rules |
 | `npm run eval:fetch -w backend` | Downloads the evaluation PDFs from MDEQ and checks their SHA-256 |
@@ -177,6 +183,7 @@ backend/                  extraction engine (plain TypeScript, no framework)
   src/summary.ts          totals and completion rate
   src/pipeline.ts         the whole run: OCR, parallel extraction, retries, progress
   eval/                   ground truth, scorer and the eval CLI
+e2e/                      Playwright tests: samples, report tabs and evidence, upload, accuracy page
 scripts/                  secret scan, licence check, submission zip
 ```
 
