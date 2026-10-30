@@ -40,10 +40,28 @@ const LABEL_WORDS = new Set([
   'management', 'practice', 'practices', 'activity', 'activities', 'action', 'actions', 'task', 'tasks', 'milestone',
   'milestones', 'outreach', 'education', 'monitoring', 'implementation',
 ]);
+const LABEL_GLUE = new Set(['and', 'or', 'of', 'the', 'for', 'to']);
 const isLabel = (name: string) => {
-  const ws = normalizeForMatch(name).split(/[^\p{L}]+/u).filter(Boolean);
+  const ws = normalizeForMatch(name).split(/[^\p{L}]+/u).filter((w) => w && !LABEL_GLUE.has(w));
   return ws.length > 0 && ws.every((w) => LABEL_WORDS.has(w));
 };
+
+// "Goal: Reduce sediment loads" names "Reduce sediment loads": a label in front of a name is not part of it,
+// and neither is a list number ("1a. 70% reduction", "ii) Fencing").
+const LABEL_PREFIX = /^(?:goals?|objectives?|actions?|tasks?|milestones?|implementation(?:\s*\/\s*action)?)\s*(?:\d+[a-z]?|[ivx]+)?\s*[:–-]\s+/i;
+const LIST_NUMBER = /^\(?(?:\d{1,2}[a-z]?|[a-z]|[ivx]{1,4})[.)]\s+/;
+// A goal named by the words that introduce it ("The long-term goal of the plan") rather than by what it is.
+const LEAD_IN = /^(?:the |our |this )?(?:(?:long|short)-term |overall |ultimate |primary |main |general |principal )?(?:goals?|objectives?|purpose|mission)\b/i;
+const IS_TO = /\b(?:is|are|will be|shall be) to (.+)/i;
+
+/** An item's name as the plan states the thing itself; a goal named by its lead-in takes what follows "is to". */
+export function tidyName(name: string, quotes: string[], goal: boolean): string {
+  const n = name.replace(LABEL_PREFIX, '').replace(LIST_NUMBER, '').trim() || name;
+  if (!goal || !LEAD_IN.test(n)) return n;
+  const m = IS_TO.exec(n) ?? quotes.map((q) => IS_TO.exec(q)).find(Boolean);
+  const outcome = m?.[1].split(/\.(?:\s|$)|;/)[0].trim().replace(/[,:]$/, '');
+  return outcome && outcome.split(/\s+/).length >= 3 ? outcome : n;
+}
 
 // A row priced per piece under an outreach activity ("| Event Flyers | 300 | .60/each | $180.00 |") is what the
 // activity costs, not an activity.
@@ -175,8 +193,14 @@ function amountSource(raw: string, name: string, checked: Checked): 'quote' | 'r
   return onRow ? 'row' : null;
 }
 
-export function verifyUnit(data: UnitExtraction, pages: VerifyPage[], imagePages: number[]): { items: VerifiedItems; rejected: Rejection[] } {
+export function verifyUnit(raw: UnitExtraction, pages: VerifyPage[], imagePages: number[]): { items: VerifiedItems; rejected: Rejection[] } {
   const rejected: Rejection[] = [];
+  const tidy = <T extends { name: string; evidence: { quote: string }[] }>(items: T[], goal = false) =>
+    items.map((i) => ({ ...i, name: tidyName(i.name ?? '', (i.evidence ?? []).map((e) => e.quote), goal) }));
+  const data: UnitExtraction = {
+    goals: tidy(raw.goals, true), bmps: tidy(raw.bmps), implementation: tidy(raw.implementation),
+    monitoring: tidy(raw.monitoring), outreach: tidy(raw.outreach), geographicAreas: tidy(raw.geographicAreas),
+  };
   const pageMap = new Map(
     pages.map((p) => [
       p.n,

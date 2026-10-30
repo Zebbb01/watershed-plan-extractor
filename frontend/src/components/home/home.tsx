@@ -29,6 +29,8 @@ export interface SampleCard {
   /** shipped copy of the PDF, or null when it is too large to ship */
   pdf: string | null;
   sourceUrl: string;
+  /** not used to tune the prompts or rules */
+  heldOut?: boolean;
   /** items per category in the sample's result */
   counts?: Partial<Record<CategoryKey, number>>;
 }
@@ -210,7 +212,7 @@ export function Home({ samples }: { samples: SampleCard[] }) {
                 <ArrowRight className="size-3.5" aria-hidden />
               </Link>
             </div>
-            <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {samples.map((s) => (
                 <li key={s.slug}>
                   <Link
@@ -221,7 +223,10 @@ export function Home({ samples }: { samples: SampleCard[] }) {
                       <span className="grid size-9 place-items-center rounded-full bg-primary-50 text-primary-600">
                         <FileText className="size-4" aria-hidden />
                       </span>
-                      <Badge tone="neutral">{s.format}</Badge>
+                      <span className="flex flex-wrap justify-end gap-1">
+                        {s.heldOut && <Badge tone="primary">Not used for tuning</Badge>}
+                        <Badge tone="neutral">{s.format}</Badge>
+                      </span>
                     </span>
                     <span className="mt-3 text-[14px] font-semibold leading-snug text-slate-900 group-hover:text-primary-700">{s.title}</span>
                     <span className="mt-1 text-[12px] text-slate-500">

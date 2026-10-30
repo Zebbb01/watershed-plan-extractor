@@ -1,15 +1,15 @@
 {
  "report": {
   "summary": {
-   "totalGoals": 3,
+   "totalGoals": 2,
    "totalBMPs": 11,
-   "completionRate": 0
+   "completionRate": 0.045
   },
   "goals": [
    {
-    "id": "c950738f",
-    "name": "Reduce sediment yields in the Fuller Creek-Town Creek watershed",
-    "text": "Sediment yields in the watershed need to be reduced to meet the HUC 03160101 sediment TMDL targets.",
+    "id": "6a76d093",
+    "name": "Element b: Expected Load Reduction",
+    "text": "Sediment yields in the Fuller Creek-Town Creek watershed need to be reduced to meet the HUC 03160101 sediment TMDL targets.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -32,33 +32,13 @@
       "comparator": "range"
      }
     ],
-    "pollutant": "Sediment",
-    "deadline": null
-   },
-   {
-    "id": "fc856ff0",
-    "name": "The ultimate goal is to bring about behavior changes and the use of “best management practices”",
-    "text": "Ultimate goal of education programs is behavior change and use of best management practices that improve water quality.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 8,
-      "quote": "The ultimate goal is to bring about behavior changes and the use of “best management practices” that will improve water quality"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "high",
-    "targets": [],
-    "pollutant": null,
+    "pollutant": "sediment",
     "deadline": null
    },
    {
     "id": "a55ffd1b",
     "name": "Reduce sediment loads entering waters in the Fuller Creek-Town Creek Watershed",
-    "text": "Goal to reduce sediment loads entering waters in the watershed.",
+    "text": "Goal to reduce sediment loads entering waters in the Fuller Creek-Town Creek Watershed.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -80,14 +60,10 @@
    {
     "id": "71a1c5d9",
     "name": "Grade Stabilization Structure",
-    "text": "Grade stabilization structures to mitigate sediment issues in the watershed.",
+    "text": "Grade stabilization structure installation to mitigate sediment issues.",
     "kind": "main",
     "parentId": null,
     "evidence": [
-     {
-      "page": 6,
-      "quote": "installation of the following BMPs would mitigate sediment issues in the Fuller Creek-Town Creek watershed helping the stream recover: grade stabilization structures"
-     },
      {
       "page": 7,
       "quote": "Grade Stabilization Structure 22 each $76,749"
@@ -102,7 +78,7 @@
      },
      {
       "page": 8,
-      "quote": "Grade Stabilization Structure (Check Dams) 2,500 tn $178,600"
+      "quote": "Dams) 2,500 tn $178,600"
      }
     ],
     "verified": true,
@@ -152,24 +128,18 @@
      "unit": "USD",
      "comparator": "="
     },
-    "pollutants": [
-     "Sediment"
-    ]
+    "pollutants": []
    },
    {
     "id": "8a69ce94",
     "name": "Tank/Trough",
-    "text": "Livestock watering facilities (tanks/troughs) in the watershed.",
+    "text": "Livestock watering facilities.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 7,
       "quote": "Tank/Trough 5 each $20,000"
-     },
-     {
-      "page": 6,
-      "quote": "livestock watering facilities, cover crops, and the instillation of dikes"
      }
     ],
     "verified": true,
@@ -195,21 +165,15 @@
      "unit": "USD",
      "comparator": "="
     },
-    "pollutants": [
-     "Sediment"
-    ]
+    "pollutants": []
    },
    {
     "id": "7874dca4",
     "name": "Cover Crops",
-    "text": "Cover crops to mitigate sediment issues in the watershed.",
+    "text": "Cover crops to reduce sediment.",
     "kind": "main",
     "parentId": null,
     "evidence": [
-     {
-      "page": 6,
-      "quote": "terraces, critical area planting, livestock watering facilities, cover crops"
-     },
      {
       "page": 7,
       "quote": "Cover Crops 1,800 ac $137,862"
@@ -250,9 +214,7 @@
      "unit": "USD",
      "comparator": "="
     },
-    "pollutants": [
-     "Sediment"
-    ]
+    "pollutants": []
    },
    {
     "id": "174dd866",
@@ -294,17 +256,13 @@
    {
     "id": "783fc56c",
     "name": "Dikes",
-    "text": "Dikes and other water control structures in the watershed.",
+    "text": "Installation of dikes and other water control structures.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 7,
       "quote": "Dikes 1,500 cuyd $7,035"
-     },
-     {
-      "page": 6,
-      "quote": "the instillation of dikes and other water control structures"
      }
     ],
     "verified": true,
@@ -330,14 +288,12 @@
      "unit": "USD",
      "comparator": "="
     },
-    "pollutants": [
-     "Sediment"
-    ]
+    "pollutants": []
    },
    {
     "id": "db2e4dd5",
     "name": "Pond",
-    "text": "Ponds in the watershed.",
+    "text": "Ponds installed in the watershed.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -374,14 +330,10 @@
    {
     "id": "50a59be3",
     "name": "Critical Area Planting",
-    "text": "Critical area planting to mitigate sediment issues in the watershed.",
+    "text": "Critical area planting to mitigate sediment issues.",
     "kind": "main",
     "parentId": null,
     "evidence": [
-     {
-      "page": 6,
-      "quote": "terraces, critical area planting, livestock watering facilities"
-     },
      {
       "page": 7,
       "quote": "Critical Area Planting 27 ac $6,330"
@@ -422,9 +374,7 @@
      "unit": "USD",
      "comparator": "="
     },
-    "pollutants": [
-     "Sediment"
-    ]
+    "pollutants": []
    },
    {
     "id": "54a31f1f",
@@ -466,14 +416,10 @@
    {
     "id": "18e0ce3d",
     "name": "Terraces",
-    "text": "Terraces to mitigate sediment issues in the watershed.",
+    "text": "Terraces to mitigate sediment issues.",
     "kind": "main",
     "parentId": null,
     "evidence": [
-     {
-      "page": 6,
-      "quote": "grade stabilization structures, terraces, critical area planting"
-     },
      {
       "page": 7,
       "quote": "Terraces 7,200 ft $12,411"
@@ -514,9 +460,7 @@
      "unit": "USD",
      "comparator": "="
     },
-    "pollutants": [
-     "Sediment"
-    ]
+    "pollutants": []
    },
    {
     "id": "0ade0041",
@@ -558,7 +502,7 @@
    {
     "id": "53a11b01",
     "name": "Diversions",
-    "text": "Diversions included in the Phase 1 cost estimate.",
+    "text": "Diversion practice listed in the Phase 1 cost estimate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -597,17 +541,13 @@
    {
     "id": "df035bd1",
     "name": "Project Management, Implementation, Coordination, Plan Revision",
-    "text": "Project administration, management, implementation, coordination and watershed plan revision under an MOA with MSWCC.",
+    "text": "Project management, implementation, coordination and plan revision under a memorandum of agreement with MSWCC.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 7,
       "quote": "Project Management, Implementation, Coordination, Plan Revision* $110,000"
-     },
-     {
-      "page": 6,
-      "quote": "For project implementation, administration, management, and watershed plan revision"
      }
     ],
     "verified": true,
@@ -615,8 +555,7 @@
     "needsReview": null,
     "confidence": "high",
     "responsible": [
-     "MDEQ",
-     "MSWCC"
+     "MDEQ"
     ],
     "timeframe": null,
     "start": null,
@@ -628,7 +567,7 @@
    {
     "id": "e8fe73e5",
     "name": "Technical Assistance",
-    "text": "Technical assistance for the project, estimated over two incremental funding cycles.",
+    "text": "Technical assistance for the project, estimated at $30,000.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -678,7 +617,7 @@
    {
     "id": "238a4207",
     "name": "Facilitate meetings, media and social media promotion of the project, and coordinate activities to fully implement this plan",
-    "text": "Facilitate meetings, promotion and coordination to implement the plan.",
+    "text": "Facilitate meetings, media and social media promotion and coordinate activities to implement the plan.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -704,15 +643,15 @@
     "milestone": false
    },
    {
-    "id": "6cac4026",
-    "name": "Work with the Clay and Monroe SWCDs, MSWCC, NRCS, and MDEQ to inform landowners and operators",
-    "text": "Inform landowners and operators about the project and secure commitments from priority area landowners.",
+    "id": "a520009e",
+    "name": "Inform landowners and secure commitments from priority area landowners and operators",
+    "text": "Work with SWCDs, MSWCC, NRCS and MDEQ to inform landowners and secure commitments from priority area landowners and operators.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 9,
-      "quote": "Work with the Clay and Monroe SWCDs, MSWCC, NRCS, and MDEQ to inform landowners and operators within the watershed"
+      "quote": "work to secure commitments from priority area landowners and operators who are willing to participate in the project. (Months 1-6)"
      }
     ],
     "verified": true,
@@ -733,23 +672,19 @@
     "milestone": false
    },
    {
-    "id": "60b1e0c6",
-    "name": "Work with the local SWCDs, MSWCC, NRCS, and MDEQ to determine through GIS applications and intensive site surveys the priority areas",
-    "text": "Determine priority areas contributing significant pollutant loads and install BMPs per NRCS guidelines.",
+    "id": "f672be8c",
+    "name": "Determine priority areas through GIS applications and intensive site surveys",
+    "text": "Determine through GIS applications and intensive site surveys the priority areas contributing significant pollutant loads.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 9,
-      "quote": "Work with the local SWCDs, MSWCC, NRCS, and MDEQ to determine through GIS applications and intensive site surveys"
-     },
-     {
-      "page": 10,
-      "quote": "All BMPs shall be installed in accordance with the guidelines developed in the latest edition of the NRCS Technical Field Manual"
+      "quote": "determine through GIS applications and intensive site surveys the priority areas within the sub-watershed"
      }
     ],
     "verified": true,
-    "source": "table",
+    "source": "text",
     "needsReview": null,
     "confidence": "high",
     "responsible": [
@@ -766,9 +701,33 @@
     "milestone": false
    },
    {
-    "id": "c732d8c5",
-    "name": "Facilitate the completion and implementation of a plan to monitor baseline water quality conditions",
-    "text": "Complete and implement a plan to monitor baseline water quality and track changes from BMPs.",
+    "id": "f071a2a6",
+    "name": "Install BMPs per NRCS Technical Field Manual guidelines",
+    "text": "Install all BMPs in accordance with the latest NRCS Technical Field Manual or other approved guidelines.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "All BMPs shall be installed in accordance with the guidelines developed in the latest edition of the NRCS Technical Field Manual"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [],
+    "timeframe": "Months 1-36",
+    "start": 1,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "6fc26358",
+    "name": "Monitor baseline water quality conditions and track changes",
+    "text": "Facilitate completion and implementation of a plan to monitor baseline water quality and track changes resulting from BMPs.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -783,7 +742,7 @@
     "confidence": "high",
     "responsible": [
      "MDEQ",
-     "other monitoring partners"
+     "monitoring partners"
     ],
     "timeframe": "Months 3-36",
     "start": 3,
@@ -795,7 +754,7 @@
    {
     "id": "e8ef5e2b",
     "name": "Submit blank copies of standard maintenance agreements to MDEQ",
-    "text": "Submit blank standard maintenance agreements to MDEQ.",
+    "text": "Submit blank copies of standard maintenance agreements to MDEQ.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -819,7 +778,7 @@
    {
     "id": "5e26d116",
     "name": "Conduct inspections of BMPs during construction",
-    "text": "Inspect BMPs during construction.",
+    "text": "Conduct inspections of BMPs during construction.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -841,9 +800,9 @@
     "milestone": false
    },
    {
-    "id": "942decf2",
-    "name": "Coordinate with and support the local SWCD, MSWCC and NRCS in the collection of relevant GPS coordinates",
-    "text": "Collect GPS coordinates of installed BMPs and incorporate into GIS format.",
+    "id": "53beb38f",
+    "name": "Collect GPS coordinates of installed BMPs and incorporate into GIS format",
+    "text": "Coordinate with and support local SWCD, MSWCC and NRCS in collecting GPS coordinates of installed BMPs and incorporating them into GIS.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -869,15 +828,15 @@
     "milestone": false
    },
    {
-    "id": "f4eeeeda",
-    "name": "Collect adequate photo documentation before, during, and after installation of the approved BMPs",
-    "text": "Collect photo documentation of BMP installation.",
+    "id": "ba62e78a",
+    "name": "Collect photo documentation before, during and after BMP installation",
+    "text": "Collect adequate photo documentation before, during, and after installation of approved BMPs.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 10,
-      "quote": "Collect adequate photo documentation before, during, and after installation of the approved BMPs."
+      "quote": "Collect adequate photo documentation before, during, and after installation of the approved BMPs. (Months 3-36)"
      }
     ],
     "verified": true,
@@ -893,9 +852,9 @@
     "milestone": false
    },
    {
-    "id": "4c3e40a4",
-    "name": "Report measured, or estimated, nonpoint source pollutant load reduction, acreage affected, pre-and post- site conditions, and GIS data",
-    "text": "Report load reduction, acreage affected, pre- and post-site conditions and GIS data.",
+    "id": "1cbc13c7",
+    "name": "Report pollutant load reduction, acreage affected, pre- and post-site conditions, and GIS data",
+    "text": "Report measured or estimated nonpoint source pollutant load reduction, acreage affected, pre- and post-site conditions, and GIS data.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -919,7 +878,7 @@
    {
     "id": "68b50d3e",
     "name": "Continue Coordinating with the MDEQ, NRCS, MSWCC, USGS, and the Monroe and Clay Co. Soil and Water Districts to determine additional priority areas",
-    "text": "Target priority areas for BMPs by determining additional priority areas contributing significant pollutant loads.",
+    "text": "Outcome: target priority areas for BMPs.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -946,9 +905,57 @@
     "milestone": true
    },
    {
+    "id": "7886d32d",
+    "name": "Establish Watershed Implementation Team.",
+    "text": "Outcome: Establish WIT.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "Establish Watershed Implementation Team."
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": "Month 1-2",
+    "start": 1,
+    "end": 2,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": true
+   },
+   {
+    "id": "99a01ff0",
+    "name": "Initiate watershed monitoring",
+    "text": "Outcome: Baseline condition monitoring.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "Initiate watershed monitoring Baseline condition Completed using historical"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": "completed",
+    "milestone": true
+   },
+   {
     "id": "f7f5c441",
     "name": "Meet with landowners and cooperators to continue securing commitments to install BMPs in priority areas",
-    "text": "Landowner commitment to install BMPs in priority areas.",
+    "text": "Outcome: Landowner Commitment.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -972,7 +979,7 @@
    {
     "id": "d5a5ca40",
     "name": "Establish routine meeting schedule for WIT to support WBP revision",
-    "text": "WIT meetings to support WBP revision.",
+    "text": "Outcome: WIT meetings.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -996,7 +1003,7 @@
    {
     "id": "2bb2042f",
     "name": "Implement BMPs",
-    "text": "BMP installation.",
+    "text": "Outcome: BMP installation.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1065,12 +1072,12 @@
     "end": 48,
     "timeUnit": "month",
     "status": null,
-    "milestone": true
+    "milestone": false
    },
    {
     "id": "e08e526a",
     "name": "Finalize revised WBP",
-    "text": "Finalize the revised watershed-based plan.",
+    "text": "Finalize the revised WBP, with final revised WBP as the outcome.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1094,30 +1101,9 @@
   ],
   "monitoring": [
    {
-    "id": "57244459",
-    "name": "M-BISQ",
-    "text": "Mississippi Benthic Index of Stream Quality used in the biological assessment of the state's wadeable streams and rivers, including this watershed.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 1,
-      "quote": "This index, known as the Mississippi Benthic Index of Stream Quality (M-BISQ), is used in the biological assessment of the state's wadeable streams"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "parameter": "Mississippi Benthic Index of Stream Quality (M-BISQ)",
-    "threshold": null,
-    "location": null,
-    "frequency": null
-   },
-   {
     "id": "d28b351c",
     "name": "Dissolved Oxygen",
-    "text": "In-situ dissolved oxygen threshold for compliance with water quality criteria.",
+    "text": "In-situ monitoring threshold for dissolved oxygen used to measure compliance.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1138,13 +1124,13 @@
    {
     "id": "c675cf3d",
     "name": "Dissolved Oxygen % Sat.",
-    "text": "Dissolved oxygen percent saturation threshold.",
+    "text": "Compliance threshold for dissolved oxygen percent saturation.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 11,
-      "quote": "Dissolved Oxygen % Sat."
+      "quote": "The following thresholds will be used to measure compliance"
      }
     ],
     "verified": true,
@@ -1159,13 +1145,13 @@
    {
     "id": "89a882f9",
     "name": "pH",
-    "text": "pH threshold for compliance.",
+    "text": "Compliance threshold for pH.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 11,
-      "quote": "pH 6.0-9.0"
+      "quote": "The following thresholds will be used to measure compliance"
      }
     ],
     "verified": true,
@@ -1187,19 +1173,19 @@
    {
     "id": "8b240509",
     "name": "Temperature",
-    "text": "Temperature threshold for compliance.",
+    "text": "Compliance threshold for water temperature.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 11,
-      "quote": "Temperature Not to exceed 90°F"
+      "quote": "The following thresholds will be used to measure compliance"
      }
     ],
     "verified": true,
     "source": "table",
     "needsReview": null,
-    "confidence": "high",
+    "confidence": "medium",
     "parameter": "Temperature",
     "threshold": {
      "raw": "Not to exceed 90°F",
@@ -1215,19 +1201,19 @@
    {
     "id": "266872c4",
     "name": "Specific Conductance",
-    "text": "Specific conductance threshold for compliance.",
+    "text": "Compliance threshold for specific conductance.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 11,
-      "quote": "Specific Conductance Less Than 1000 micromhos/cm"
+      "quote": "The following thresholds will be used to measure compliance"
      }
     ],
     "verified": true,
     "source": "table",
     "needsReview": null,
-    "confidence": "high",
+    "confidence": "medium",
     "parameter": "Specific Conductance",
     "threshold": {
      "raw": "Less Than 1000 micromhos/cm",
@@ -1243,13 +1229,13 @@
    {
     "id": "706c4a28",
     "name": "Dissolved Solids",
-    "text": "Dissolved solids threshold for compliance.",
+    "text": "Compliance threshold for dissolved solids.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 11,
-      "quote": "Monthly average less than 750 mg/L; instantaneous"
+      "quote": "The following thresholds will be used to measure compliance"
      }
     ],
     "verified": true,
@@ -1264,13 +1250,13 @@
    {
     "id": "227566c4",
     "name": "Chemical Oxygen Demand",
-    "text": "Chemical oxygen demand threshold for compliance.",
+    "text": "Compliance threshold for chemical oxygen demand.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 11,
-      "quote": "Chemical Oxygen Demand <50 mg/l"
+      "quote": "The following thresholds will be used to measure compliance"
      }
     ],
     "verified": true,
@@ -1278,27 +1264,20 @@
     "needsReview": null,
     "confidence": "high",
     "parameter": "Chemical Oxygen Demand",
-    "threshold": {
-     "raw": "<50 mg/l",
-     "scope": null,
-     "value": 50,
-     "valueMax": null,
-     "unit": "mg/L",
-     "comparator": "="
-    },
+    "threshold": null,
     "location": null,
     "frequency": null
    },
    {
     "id": "ab4a9499",
     "name": "Turbidity",
-    "text": "Turbidity threshold, a sediment surrogate.",
+    "text": "Compliance threshold for turbidity, a sediment surrogate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 11,
-      "quote": "Turbidity <100 NTU"
+      "quote": "The following thresholds will be used to measure compliance"
      }
     ],
     "verified": true,
@@ -1320,19 +1299,19 @@
    {
     "id": "9307270e",
     "name": "Total Suspended Solids",
-    "text": "Total suspended solids threshold, a sediment surrogate.",
+    "text": "Compliance threshold for total suspended solids, a sediment surrogate.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 11,
-      "quote": "Total Suspended Solids <80 mg/l"
+      "quote": "The following thresholds will be used to measure compliance"
      }
     ],
     "verified": true,
     "source": "table",
     "needsReview": null,
-    "confidence": "high",
+    "confidence": "medium",
     "parameter": "Total Suspended Solids",
     "threshold": {
      "raw": "<80 mg/l",
@@ -1346,52 +1325,28 @@
     "frequency": null
    },
    {
-    "id": "e5e96fa1",
-    "name": "M-BISQ East Bioregion",
-    "text": "Biological index assessment threshold for the East bioregion.",
+    "id": "694b5e0f",
+    "name": "E. coli monitoring",
+    "text": "E. coli monitoring to be conducted for the project.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 11,
-      "quote": "Assessment threshold 71.6 (25th percentile of reference"
+      "quote": "e. coli monitoring will be conducted"
      }
     ],
     "verified": true,
     "source": "table",
     "needsReview": null,
     "confidence": "high",
-    "parameter": "M-BISQ East Bioregion",
+    "parameter": "E. coli",
     "threshold": null,
     "location": null,
     "frequency": null
    }
   ],
   "outreach": [
-   {
-    "id": "73f44965",
-    "name": "Education and Outreach",
-    "text": "Budget line for education and outreach activities at an estimated cost of $24,000.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 7,
-      "quote": "Education and Outreach* N/A $24,000"
-     },
-     {
-      "page": 9,
-      "quote": "Mobile Classroom Education and Outreach Events - for school ages kindergarten –5 th"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "high",
-    "audience": null,
-    "quantity": null,
-    "timeframe": null
-   },
    {
     "id": "b3bccbd2",
     "name": "Water Model Presentations",
@@ -1415,7 +1370,7 @@
    {
     "id": "284ac39d",
     "name": "Teacher Workshops",
-    "text": "Workshops that train educators in proximity to the watershed about NPS pollution and provide classroom materials.",
+    "text": "Train educators in proximity to the watershed about NPS pollution and provide materials for classrooms.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1428,7 +1383,7 @@
     "source": "text",
     "needsReview": null,
     "confidence": "high",
-    "audience": "educators",
+    "audience": "Educators",
     "quantity": null,
     "timeframe": null
    },
@@ -1453,6 +1408,26 @@
     "timeframe": null
    },
    {
+    "id": "79f9c32f",
+    "name": "Mobile Classroom Education and Outreach Events",
+    "text": "Education events for school-age students kindergarten to 5th grade.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "Mobile Classroom Education and Outreach Events - for school ages kindergarten –5 th"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": null,
+    "quantity": null,
+    "timeframe": null
+   },
+   {
     "id": "f56f7888",
     "name": "Waste Pesticide Disposal Event",
     "text": "Program helping Mississippi farmers and property owners dispose of waste-pesticide products safely.",
@@ -1461,7 +1436,7 @@
     "evidence": [
      {
       "page": 9,
-      "quote": "“Waste Pesticide Disposal Event” - The primary goal of this program is to help"
+      "quote": "“Waste Pesticide Disposal Event” - The primary goal of this program is to help Mississippi farmers"
      }
     ],
     "verified": true,
@@ -1495,48 +1470,15 @@
   ],
   "geographicAreas": [
    {
-    "id": "68743dc7",
-    "name": "Fuller Creek-Town Creek Watershed",
-    "text": "The watershed covered by the nine key element plan.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 1,
-      "quote": "The Fuller Creek-Town Creek Watershed is located in Northeast Mississippi in the Tombigbee River Basin and is part of the larger"
-     },
-     {
-      "page": 5,
-      "quote": "Fuller Creek-Town Creek Watershed"
-     },
-     {
-      "page": 10,
-      "quote": "determine additional priority areas that are contributing significant pollutant loads to Fuller Creek-Town Creek Watershed"
-     },
-     {
-      "page": 11,
-      "quote": "Reduce sediment loads entering waters in the Fuller Creek-Town Creek Watershed."
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "medium",
-    "type": "watershed",
-    "code": null,
-    "areaAcres": null,
-    "role": "primary"
-   },
-   {
     "id": "9be02285",
     "name": "HUC 03160101",
-    "text": "Hydrologic unit containing the Fuller Creek-Town Creek watershed, covered by a sediment TMDL.",
+    "text": "Hydrologic unit containing the Fuller Creek-Town Creek watershed, for which a sediment TMDL was developed in 2007.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 5,
-      "quote": "MDEQ developed a total maximum daily load (TMDL) for waters within HUC 03160101."
+      "quote": "In 2007, MDEQ developed a total maximum daily load (TMDL) for waters within HUC 03160101."
      }
     ],
     "verified": true,
@@ -1549,19 +1491,52 @@
     "role": "mentioned"
    },
    {
-    "id": "e9f933e7",
-    "name": "Clay County",
-    "text": "County whose Soil and Water Conservation District is a project partner.",
+    "id": "68743dc7",
+    "name": "Fuller Creek-Town Creek Watershed",
+    "text": "The watershed the plan addresses for sediment load reduction and BMP installation.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 1,
-      "quote": "southern portion of Monroe County and upper portion of Clay County covering approximately 20,346 acres"
+      "quote": "The watershed lies northeast of the city of West Point in the southern portion of Monroe County and upper portion of Clay County covering approximately 20,346 acres."
+     },
+     {
+      "page": 5,
+      "quote": "sediment yields in the Fuller Creek-Town Creek watershed need to be reduced by 80-84%."
+     },
+     {
+      "page": 10,
+      "quote": "Continue Coordinating with the MDEQ, NRCS, MSWCC, USGS, and the Monroe and Clay Co. Soil and Water Districts"
+     },
+     {
+      "page": 11,
+      "quote": "Reduce sediment loads entering waters in the Fuller Creek-Town Creek Watershed"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "watershed",
+    "code": null,
+    "areaAcres": 20346,
+    "role": "primary"
+   },
+   {
+    "id": "9b39bbb6",
+    "name": "Monroe and Clay County",
+    "text": "Counties whose Soil and Water Conservation Districts may contribute match to the project.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "southern portion of Monroe County and upper portion of Clay County"
      },
      {
       "page": 6,
-      "quote": "Monroe and Clay County Soil and Water Conservation Districts, NRCS, USGS"
+      "quote": "Monroe and Clay County Soil and Water Conservation Districts, NRCS, USGS (monitoring)"
      }
     ],
     "verified": true,
@@ -1576,84 +1551,34 @@
    {
     "id": "73215f3a",
     "name": "HUC 031601011301",
-    "text": "Hydrologic unit code for the project watershed.",
+    "text": "Hydrologic unit code identifying the project watershed.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 1,
-      "quote": "HUC 031601011301 ## MWS 8041 GY22 Project Area Version 0 (9/25/2022)"
+      "quote": "HUC 031601011301"
      }
     ],
     "verified": true,
     "source": "text",
     "needsReview": null,
-    "confidence": "high",
+    "confidence": "medium",
     "type": "huc",
     "code": "031601011301",
     "areaAcres": null,
     "role": "primary"
    },
    {
-    "id": "3c9c41e7",
-    "name": "MWS 8041",
-    "text": "Management watershed code for the project area.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 1,
-      "quote": "HUC 031601011301 ## MWS 8041 GY22 Project Area Version 0 (9/25/2022)"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "other",
-    "code": "8041",
-    "areaAcres": null,
-    "role": "primary"
-   },
-   {
-    "id": "944f6c6d",
-    "name": "Monroe County",
-    "text": "County in whose southern portion the watershed lies.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 1,
-      "quote": "southern portion of Monroe County and upper portion of Clay County covering approximately 20,346 acres"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "county",
-    "code": null,
-    "areaAcres": null,
-    "role": "primary"
-   },
-   {
     "id": "4cab1477",
     "name": "Town Creek",
-    "text": "Stream on the western side of the watershed, listed as impaired for aquatic life use.",
+    "text": "Major stream on the western side of the watershed, listed as impaired.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 1,
       "quote": "Town Creek on the western side of the watershed and Fuller Creek on the eastern side"
-     },
-     {
-      "page": 1,
-      "quote": "The segment ID was eventually updated to MS804111."
-     },
-     {
-      "page": 12,
-      "quote": "TB116 Town 2001, MDEQ MBISQ X X X"
      }
     ],
     "verified": true,
@@ -1668,17 +1593,13 @@
    {
     "id": "4290a715",
     "name": "Fuller Creek",
-    "text": "Stream on the eastern side of the watershed, assessed as not attaining aquatic life use in 2012.",
+    "text": "Major stream on the eastern side of the watershed that drains into Town Creek.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 1,
-      "quote": "In 2012, Fuller Creek (segment MS804112) was assessed as not attaining the aquatic life use"
-     },
-     {
-      "page": 12,
-      "quote": "112D52 Fuller 2010, MDEQ MBISQ X X X"
+      "quote": "Fuller Creek (segment MS804112) was assessed as not attaining the aquatic life use"
      }
     ],
     "verified": true,
@@ -1699,7 +1620,7 @@
     "evidence": [
      {
       "page": 1,
-      "quote": "located in Northeast Mississippi in the Tombigbee River Basin and is part of the larger Blackland Prairie"
+      "quote": "located in Northeast Mississippi in the Tombigbee River Basin"
      }
     ],
     "verified": true,
@@ -1707,52 +1628,6 @@
     "needsReview": null,
     "confidence": "high",
     "type": "other",
-    "code": null,
-    "areaAcres": null,
-    "role": "mentioned"
-   },
-   {
-    "id": "d7a77168",
-    "name": "Blackland Prairie ecoregion",
-    "text": "Larger ecoregion of which the watershed is part.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 1,
-      "quote": "is part of the larger Blackland Prairie ecoregion (65a)"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "other",
-    "code": "65a",
-    "areaAcres": null,
-    "role": "mentioned"
-   },
-   {
-    "id": "96ebed60",
-    "name": "Mississippi",
-    "text": "State whose water-quality listings and standards apply to the watershed.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 1,
-      "quote": "Town Creek has been on Mississippi's Section 303(d) List of Impaired Water Bodies since 2002."
-     },
-     {
-      "page": 12,
-      "quote": "Mississippi uses a calibrated and verified index of biotic integrity"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "state",
     "code": null,
     "areaAcres": null,
     "role": "mentioned"
@@ -1760,13 +1635,13 @@
    {
     "id": "d8864af9",
     "name": "Monroe",
-    "text": "County named with Clay County soil and water districts.",
+    "text": "County named with Clay Co. in the soil and water districts.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 10,
-      "quote": "the Monroe and Clay Co. Soil and Water Districts"
+      "quote": "and the Monroe and Clay Co. Soil and Water Districts"
      }
     ],
     "verified": true,
@@ -1774,6 +1649,48 @@
     "needsReview": null,
     "confidence": "medium",
     "type": "county",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "15994fe4",
+    "name": "031601011301",
+    "text": "HUC unit for the Fuller Creek-Town Creek watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 12,
+      "quote": "Town Creek watershed 031601011301 is provided in the table below"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "huc",
+    "code": "031601011301",
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "14760aa2",
+    "name": "East bioregion",
+    "text": "Mississippi bioregion in which the Fuller Creek-Town Creek watershed lies.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 12,
+      "quote": "The Fuller Creek-Town Creek watershed is in the East bioregion"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "other",
     "code": null,
     "areaAcres": null,
     "role": "mentioned"
@@ -1788,19 +1705,19 @@
   "year": 2022
  },
  "quality": {
-  "verifiedRate": 0.7380952380952381,
+  "verifiedRate": 0.7530864197530864,
   "rejected": [
    {
-    "category": "geographicAreas",
-    "name": "Monroe County",
-    "page": 6,
+    "category": "implementation",
+    "name": "MSWCC",
+    "page": 7,
     "reason": "name-not-in-source"
    },
    {
-    "category": "geographicAreas",
-    "name": "Fuller Creek-Town Creek Watershed: 20,346 acres",
+    "category": "monitoring",
+    "name": "Benthic macroinvertebrate IBI",
     "page": 1,
-    "reason": "number-not-in-quote"
+    "reason": "name-not-in-source"
    },
    {
     "category": "implementation",
@@ -1810,15 +1727,9 @@
    },
    {
     "category": "implementation",
-    "name": "Establish Watershed Implementation Team.",
+    "name": "Initiate watershed monitoring: timeframe \"Completed using historical data\"",
     "page": 10,
-    "reason": "quote-not-found"
-   },
-   {
-    "category": "implementation",
-    "name": "Initiate watershed monitoring",
-    "page": 10,
-    "reason": "quote-not-found"
+    "reason": "detail-not-in-source"
    },
    {
     "category": "monitoring",
@@ -1827,20 +1738,26 @@
     "reason": "name-not-in-source"
    },
    {
+    "category": "monitoring",
+    "name": "Monitoring",
+    "page": 8,
+    "reason": "not-an-item"
+   },
+   {
     "category": "outreach",
-    "name": "Water Model Presentations: audience \"citizens, teachers, students\"",
+    "name": "Water Model Presentations: audience \"Statewide citizens and students\"",
     "page": 9,
     "reason": "detail-not-in-source"
    },
    {
     "category": "outreach",
-    "name": "Adopt A Stream: audience \"citizens, teachers, students\"",
+    "name": "Adopt A Stream: audience \"Citizens, teachers, students\"",
     "page": 9,
     "reason": "detail-not-in-source"
    },
    {
     "category": "outreach",
-    "name": "Mobile Classroom Education and Outreach Events: audience \"school students K-5\"",
+    "name": "Mobile Classroom Education and Outreach Events: audience \"Kindergarten to 5th grade students\"",
     "page": 9,
     "reason": "detail-not-in-source"
    },
@@ -1855,6 +1772,12 @@
     "name": "Establish routine meeting schedule for WIT: audience \"Watershed Implementation Team\"",
     "page": 10,
     "reason": "detail-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Education and Outreach",
+    "page": 8,
+    "reason": "not-an-item"
    },
    {
     "category": "geographicAreas",
@@ -1882,44 +1805,26 @@
    },
    {
     "category": "monitoring",
-    "name": "M-BISQ East Bioregion: Assessment threshold 71.6 (25th percentile of reference condition)",
+    "name": "Chemical Oxygen Demand: <50 mg/l",
     "page": 11,
     "reason": "number-not-in-quote"
    },
    {
     "category": "monitoring",
-    "name": "Water chemistry, in-situ and benthics sampling",
+    "name": "M-BISQ East Bioregion",
     "page": 12,
     "reason": "name-not-in-source"
    },
    {
     "category": "monitoring",
-    "name": "Water chemistry, in-situ and benthics sampling",
+    "name": "Water chemistry, in-situ parameters, benthic macroinvertebrates",
     "page": 12,
-    "reason": "name-not-in-source"
-   },
-   {
-    "category": "monitoring",
-    "name": "Water chemistry, in-situ and benthics sampling",
-    "page": 13,
     "reason": "name-not-in-source"
    },
    {
     "category": "monitoring",
     "name": "Post-BMP water quality",
     "page": 13,
-    "reason": "name-not-in-source"
-   },
-   {
-    "category": "outreach",
-    "name": "Implement the developed education and outreach plan",
-    "page": 11,
-    "reason": "name-not-in-source"
-   },
-   {
-    "category": "geographicAreas",
-    "name": "031601011301",
-    "page": 11,
     "reason": "name-not-in-source"
    }
   ],
@@ -1939,13 +1844,13 @@
   "failedUnits": [],
   "provider": "anthropic",
   "model": "claude-haiku-5-5",
-  "durationMs": 18206,
+  "durationMs": 21280,
   "usage": {
-   "inputTokens": 87408,
-   "outputTokens": 17320,
-   "costUsd": 0.013893679999999999
+   "inputTokens": 88312,
+   "outputTokens": 15046,
+   "costUsd": 0.012765720000000001
   },
-  "completionBasis": "No completion status reported in this document",
+  "completionBasis": "1 of 22 activities reported completed",
   "structure": [
    {
     "page": 1,

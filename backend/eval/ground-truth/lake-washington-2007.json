@@ -1,0 +1,58 @@
+{
+  "doc": "lake-washington-2007",
+  "scope": [49, 50, 51, 52, 55, 56, 58, 59, 60, 61],
+  "notes": "Held-out plan added 2026-10-29 to test generalisation: a 98-page 2007 watershed implementation plan organised by management action rather than by key element, with fishery, cormorant, lake-level and alligator actions no tuning plan has. Drafted by Claude from the PDF text, page by page, before any extraction of this plan was run. Labelled on the pages of chapter 5 that describe the management actions; page 57 (potential activities not committed to by anyone) is left out. Education events in the action lists (the Sewage Summit, educating landowners) are outreach, as the category definitions say.",
+  "items": [
+    { "category": "goals", "name": "reduce sediments/siltation by about 55%", "aliases": ["reduce sediments/siltation", "sediment load reduction"], "page": 51, "quote": "management actions are being taken to reduce sediments/siltation by about 55% and associated", "kind": "main", "quantities": [{ "raw": "about 55%", "value": 55, "unit": "%" }] },
+    { "category": "goals", "name": "organic matter loading by about 50%", "aliases": ["reduce associated organic matter loading by about 50%"], "page": 51, "quote": "organic matter loading by about 50% to Lake Washington", "kind": "main", "quantities": [{ "raw": "about 50%", "value": 50, "unit": "%" }] },
+    { "category": "goals", "name": "reduce sediments/siltation to the listed Lake Washington tributaries and Lake Jackson by at least 32%", "aliases": ["reduce sediments/siltation by at least 32%"], "page": 51, "quote": "reduce sediments/siltation to the listed Lake", "kind": "main", "quantities": [{ "raw": "at least 32%", "value": 32, "unit": "%" }] },
+    { "category": "goals", "name": "100% elimination of all sewage discharge into Lake Washington", "aliases": ["eliminate all sewage discharge into Lake Washington"], "page": 51, "quote": "This management action will focus on 100% elimination of all sewage discharge", "kind": "main", "quantities": [{ "raw": "100%", "value": 100, "unit": "%" }] },
+    { "category": "goals", "name": "all waterbodies meet all applicable state water quality standards", "aliases": ["meet all applicable state water quality standards"], "page": 51, "quote": "Part of our vision for the Lake Washington watershed is that all waterbodies meet all", "kind": "main" },
+    { "category": "goals", "name": "Increase largemouth bass stock", "page": 56, "quote": "Increase largemouth bass stock", "kind": "main" },
+    { "category": "goals", "name": "Increase crappie stock", "page": 56, "quote": "Increase crappie stock", "kind": "main" },
+    { "category": "goals", "name": "Decrease shad stock", "page": 56, "quote": "Decrease shad stock", "kind": "main" },
+    { "category": "goals", "name": "Decrease catfish stock", "page": 56, "quote": "Decrease catfish stock", "kind": "main" },
+    { "category": "goals", "name": "reduce the number of cormorants to historical levels", "page": 58, "quote": "The intent of these management actions is to reduce", "kind": "main" },
+
+    { "category": "bmps", "name": "dropped inlets", "aliases": ["dropped inlet"], "page": 52, "quote": "Potential sites for the installation of dropped inlets, grassed waterways, and vegetative buffer", "kind": "main" },
+    { "category": "bmps", "name": "grassed waterways", "aliases": ["grassed waterway"], "page": 52, "quote": "Potential sites for the installation of dropped inlets, grassed waterways, and vegetative buffer", "kind": "main" },
+    { "category": "bmps", "name": "vegetative buffer strips", "aliases": ["vegetative buffer strip"], "page": 52, "quote": "strips (25 ft wide per state standards) have been identified", "kind": "main" },
+    { "category": "bmps", "name": "filter strips", "aliases": ["riparian filter strips"], "page": 55, "quote": "Some BMPs, such as filter strips, can remove up to 70% of the total", "kind": "example" },
+
+    { "category": "implementation", "name": "Assess the feasibility of a regional sewer system around Lake Washington", "aliases": ["Regional Sewer Cost Estimate"], "page": 50, "quote": "Assess the feasibility of a regional sewer system around Lake Washington", "kind": "main" },
+    { "category": "implementation", "name": "Eliminate direct discharge and failing septic system discharges into Lake Washington", "aliases": ["Eliminate Direct Discharge and Failing Septic System Discharges"], "page": 50, "quote": "Eliminate direct discharge and failing septic system discharges into Lake", "kind": "main" },
+    { "category": "implementation", "name": "Repair failing culverts under Washington County roads", "aliases": ["County Road Culverts"], "page": 51, "quote": "Repair failing culverts under Washington County roads", "kind": "main" },
+    { "category": "implementation", "name": "Implement sediment BMPs on agricultural fields in the watershed", "aliases": ["Individual Field Sediment BMPs"], "page": 51, "quote": "Implement sediment BMPs on agricultural fields in the watershed", "kind": "main" },
+    { "category": "implementation", "name": "Maintain BMPs following implementation", "aliases": ["Maintenance of BMPs"], "page": 51, "quote": "Maintain BMPs following implementation", "kind": "main" },
+    { "category": "implementation", "name": "contact the Washington County Board of Supervisors to evaluate modifying the roads, culverts, or ditches", "aliases": ["The Washington County Board of Supervisors will be contacted"], "page": 52, "quote": "Board of Supervisors will be contacted to evaluate the possibility of modifying the roads", "kind": "sub" },
+    { "category": "implementation", "name": "prepare a Section 319 grant to fund part of the cost of repairing the failing culverts", "aliases": ["A Section 319 grant will be prepared"], "page": 52, "quote": "A Section 319 grant will be prepared to fund", "kind": "sub" },
+    { "category": "implementation", "name": "Nutrient Reduction through Sediment Control", "page": 55, "quote": "Nutrient Reduction through Sediment Control", "kind": "main" },
+    { "category": "implementation", "name": "Individual Field Nutrient BMPs", "aliases": ["individual field nutrient BMPs will be implemented"], "page": 55, "quote": "Individual Field Nutrient BMPs", "kind": "main" },
+    { "category": "implementation", "name": "Game fish management", "page": 56, "quote": "Game fish management;", "kind": "main" },
+    { "category": "implementation", "name": "Conduct Catfishing Clinic and Catfish Rodeo", "page": 56, "quote": "Conduct Catfishing Clinic and Catfish Rodeo;", "kind": "main" },
+    { "category": "implementation", "name": "Commercial harvest of catfish", "page": 56, "quote": "Commercial harvest of catfish; and", "kind": "main" },
+    { "category": "implementation", "name": "Public fishing pier", "aliases": ["construct a fishing pier on Lake Washington"], "page": 56, "quote": "Public fishing pier.", "kind": "main" },
+    { "category": "implementation", "name": "Cormorant harassment programs", "page": 58, "quote": "Cormorant harassment programs;", "kind": "main" },
+    { "category": "implementation", "name": "Recruiting and training additional volunteers for cormorant harassment", "aliases": ["Recruiting and Training Additional Volunteers"], "page": 58, "quote": "Recruiting and training additional volunteers for cormorant harassment;", "kind": "main" },
+    { "category": "implementation", "name": "Cormorant harvest", "page": 58, "quote": "Cormorant harvest;", "kind": "main" },
+    { "category": "implementation", "name": "Planting alternate cormorant roosting sites", "page": 58, "quote": "Planting alternate cormorant roosting sites; and", "kind": "main" },
+    { "category": "implementation", "name": "Repair the outlet structure", "page": 60, "quote": "Repair the Outlet Structure", "kind": "main" },
+    { "category": "implementation", "name": "Establish a minimum lake level", "aliases": ["Establish Minimum Lake Level"], "page": 60, "quote": "to repair the outlet structure and to establish a", "kind": "main" },
+    { "category": "implementation", "name": "Eliminate fish processing waste from Lake Washington", "page": 61, "quote": "Eliminate fish processing waste from Lake Washington; and", "kind": "main" },
+    { "category": "implementation", "name": "Alligator management plan", "page": 61, "quote": "Alligator management plan.", "kind": "main" },
+
+    { "category": "monitoring", "name": "largemouth bass catch per unit effort (CPUE)", "aliases": ["catch per unit effort", "CPUE"], "page": 49, "quote": "largemouth bass catch per unit effort (CPUE) at", "kind": "main", "quantities": [{ "raw": "around 20 fish per hour", "value": 20 }] },
+    { "category": "monitoring", "name": "field monitoring", "aliases": ["loading estimates will be verified through field monitoring"], "page": 55, "quote": "these loading estimates will be verified through field monitoring", "kind": "main" },
+
+    { "category": "outreach", "name": "Sewage Summit", "aliases": ["Conduct a Sewage Summit to inform residents about decentralized and onsite septic systems"], "page": 50, "quote": "Conduct a Sewage Summit to inform residents about decentralized and onsite", "kind": "main" },
+    { "category": "outreach", "name": "Educating landowners on the benefits and increased property value associated with cypress forests", "aliases": ["Educating Landowners"], "page": 58, "quote": "Educating landowners on the benefits and increased property value associated", "kind": "main" },
+
+    { "category": "geographicAreas", "name": "Lake Washington", "page": 49, "quote": "used for watershed management in the Lake Washington watershed", "kind": "main" },
+    { "category": "geographicAreas", "name": "Lake Washington watershed", "page": 49, "quote": "An ecosystem-based approach is being used for watershed management in the Lake Washington watershed", "kind": "main" },
+    { "category": "geographicAreas", "name": "Lake Jackson", "page": 51, "quote": "two of its tributaries, and Lake Jackson have been assessed as not meeting applicable water quality", "kind": "main" },
+    { "category": "geographicAreas", "name": "Washington County", "page": 51, "quote": "Repair failing culverts under Washington County roads", "kind": "main" },
+    { "category": "geographicAreas", "name": "Glen Allan", "page": 50, "quote": "regional sewer system around Lake Washington to connect with the Glen Allan wastewater", "kind": "main" },
+    { "category": "geographicAreas", "name": "MS404M1", "aliases": ["tributary MS404M1"], "page": 55, "quote": "tributary MS404M1", "kind": "main" },
+    { "category": "geographicAreas", "name": "Mississippi", "page": 55, "quote": "Lake Washington has been selected as a nutrient reduction showcase for Mississippi", "kind": "main" }
+  ]
+}

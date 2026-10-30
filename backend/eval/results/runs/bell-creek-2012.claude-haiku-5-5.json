@@ -7,9 +7,9 @@
   },
   "goals": [
    {
-    "id": "f92dc3e9",
-    "name": "Reduce nutrient and sediment loading, achieve standards for Low DO/Organic enrichment ands narrative standards for nutrient loading, and Fish and Wildlife Support designated use",
-    "text": "Table 1.1 goal to reduce nutrient and sediment loading and achieve water quality standards and designated use support.",
+    "id": "f2b38184",
+    "name": "Reduce nutrient and sediment loading, achieve standards for Low DO/Organic enrichment and narrative standards for nutrient loading, and Fish and Wildlife Support designated use",
+    "text": "Table 1.1 goal to reduce nutrient and sediment loading and achieve listed water quality standards and designated use support.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -27,15 +27,15 @@
     "deadline": "2012-2014"
    },
    {
-    "id": "9d1e9926",
-    "name": "Reduce nutrients and sediment entering the streams and creeks in the watershed",
-    "text": "Plan goal of reducing nutrients and sediment entering streams and creeks in the watershed.",
+    "id": "f015d52f",
+    "name": "The Watershed Implementation Plan has the goals of reducing the nutrients and sediment entering the streams and creeks in the watershed, and meeting TMDL load allocations",
+    "text": "Plan goal of reducing nutrients and sediment entering streams and meeting TMDL load allocations.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 6,
-      "quote": "The Watershed Implementation Plan has the goals of reducing the nutrients and sediment entering the streams and creeks in the watershed"
+      "quote": "The Watershed Implementation Plan has the goals of reducing the nutrients and sediment entering the streams and creeks in the watershed, and meeting TMDL load allocations"
      }
     ],
     "verified": true,
@@ -43,13 +43,13 @@
     "needsReview": null,
     "confidence": "high",
     "targets": [],
-    "pollutant": null,
+    "pollutant": "Nutrients and sediment",
     "deadline": null
    },
    {
-    "id": "7fe93353",
-    "name": "To improve water quality and protect high quality waters",
-    "text": "Objective to improve water quality and protect high quality waters through implementation of selected BMPs in targeted areas.",
+    "id": "c07e2416",
+    "name": "To improve water quality and protect high quality waters through the implementation of selected BMPs in targeted areas.",
+    "text": "Objective to improve water quality and protect high quality waters through selected BMPs in targeted areas.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -67,9 +67,9 @@
     "deadline": null
    },
    {
-    "id": "31018cd5",
-    "name": "reduced nutrient loads entering streams in the watershed",
-    "text": "Apply BMPs to agricultural lands to reach the desired outcome of reduced nutrient loads entering streams.",
+    "id": "58d26af0",
+    "name": "To apply Best Management Practices (BMPs) to agricultural lands in the project area so as to reach the desired outcome of reduced nutrient loads entering streams in the watershed.",
+    "text": "Objective to apply BMPs to agricultural lands to reduce nutrient loads entering streams in the watershed.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -87,9 +87,38 @@
     "deadline": null
    },
    {
-    "id": "e24e2394",
-    "name": "Reduce soil loss on pasture land",
-    "text": "Another objective of this project is to reduce soil loss on pasture land in the watershed.",
+    "id": "edce949a",
+    "name": "TMDL nutrient reduction target for Muddy Creek",
+    "text": "The TMDL recommends a reduction in nutrients from nonpoint sources entering Muddy Creek to attain a preliminary target range.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 38,
+      "quote": "The TMDL recommends a 45 to 70% reduction in the amount of nutrients from nonpoint sources entering Muddy Creek"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "targets": [
+     {
+      "raw": "45 to 70% reduction in the amount of nutrients",
+      "scope": "TMDL",
+      "value": 45,
+      "valueMax": 70,
+      "unit": "%",
+      "comparator": "range"
+     }
+    ],
+    "pollutant": "nutrients",
+    "deadline": null
+   },
+   {
+    "id": "fb86f08d",
+    "name": "Reduce soil loss on pasture land in the watershed",
+    "text": "Another objective is to reduce soil loss on pasture land, reducing sediment entering Muddy Creek.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -107,56 +136,15 @@
     "deadline": null
    },
    {
-    "id": "907d089b",
-    "name": "TMDL nutrient reduction",
-    "text": "TMDL recommends a reduction in nutrients from nonpoint sources entering Muddy Creek to attain a preliminary target range.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 17,
-      "quote": "includes a 45 to 70% reduction of the nutrient loads entering Muddy Creek from nonpoint sources."
-     },
-     {
-      "page": 38,
-      "quote": "The TMDL recommends a 45 to 70% reduction in the amount of nutrients from nonpoint sources entering Muddy Creek"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "targets": [
-     {
-      "raw": "45 to 70% reduction in the amount of nutrients",
-      "scope": null,
-      "value": 45,
-      "valueMax": 70,
-      "unit": "%",
-      "comparator": "range"
-     },
-     {
-      "raw": "45 to 70% reduction of the nutrient loads entering Muddy Creek from nonpoint sources",
-      "scope": "E. TMDLs",
-      "value": 45,
-      "valueMax": 70,
-      "unit": "%",
-      "comparator": "range"
-     }
-    ],
-    "pollutant": "nutrients",
-    "deadline": null
-   },
-   {
-    "id": "8af2b76b",
-    "name": "The goal and objective is to reduce the nutrient and sediment loading coming from agricultural lands and bring the creeks back from unstable stream levels to stable stream levels.",
-    "text": "Reduce nutrient and sediment loading from agricultural lands and restore stable stream levels so the creeks could meet Water Quality Standards.",
+    "id": "f4e77394",
+    "name": "reduce the nutrient and sediment loading coming from agricultural lands and bring the creeks back from unstable stream levels to stable stream levels",
+    "text": "Reduce nutrient and sediment loading from agricultural lands and return the creeks from unstable to stable stream levels so they could meet Water Quality Standards.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 18,
-      "quote": "The goal and objective is to reduce the nutrient and sediment loading coming from agricultural lands and bring the creeks back from unstable stream levels"
+      "quote": "The goal and objective is to reduce the nutrient and sediment loading coming from agricultural lands and bring the creeks back from unstable stream levels to stable stream levels."
      }
     ],
     "verified": true,
@@ -164,23 +152,23 @@
     "needsReview": null,
     "confidence": "high",
     "targets": [],
-    "pollutant": null,
+    "pollutant": "Nutrients and sediment",
     "deadline": null
    },
    {
-    "id": "d57b01e1",
-    "name": "remove the impaired segments of Muddy Creek from Mississippi's 303(d) list",
-    "text": "Reduce nutrient loading to acceptable levels and remove the impaired segments of Muddy Creek from the 303(d) list.",
+    "id": "367b54f1",
+    "name": "Dissolve Oxygen",
+    "text": "DO concentrations shall be maintained at a daily average of not less than 5.0mg/l with an instantaneous minimum of not less than 4.0mg/l.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
-      "page": 20,
-      "quote": "reduction of nutrient loading to levels that are considered to be acceptable and remove the impaired segments of Muddy Creek from Mississippi’s 303(d) list."
+      "page": 16,
+      "quote": "DO concentrations shall be maintained at a daily average of not less than 5.0mg/l with an instantaneous minimum of not less than 4.0mg/l."
      }
     ],
     "verified": true,
-    "source": "text",
+    "source": "table",
     "needsReview": null,
     "confidence": "high",
     "targets": [],
@@ -192,7 +180,7 @@
    {
     "id": "22e837eb",
     "name": "Streambank and Shoreline Protection",
-    "text": "Streambank and shoreline protection practice in the Table 8.1 funded 319 project budget.",
+    "text": "Streambank and shoreline protection practice listed in the 319 project BMP budget.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -210,7 +198,7 @@
      },
      {
       "page": 40,
-      "quote": "5 Tank/Troughs 2,500 feet Streambank and Shoreline protection"
+      "quote": "2,500 feet Streambank and Shoreline protection"
      }
     ],
     "verified": true,
@@ -227,11 +215,11 @@
       "comparator": "="
      },
      {
-      "raw": "2,500 feet Streambank and Shoreline protection",
-      "scope": null,
+      "raw": "2,500 feet",
+      "scope": "Potential BMPs to be installed",
       "value": 2500,
       "valueMax": null,
-      "unit": "feet Streambank",
+      "unit": "ft",
       "comparator": "="
      }
     ],
@@ -251,12 +239,15 @@
      "unit": "USD",
      "comparator": "="
     },
-    "pollutants": []
+    "pollutants": [
+     "Nutrients",
+     "Sediment"
+    ]
    },
    {
     "id": "3db1fe99",
     "name": "Grade Stabilization Structure",
-    "text": "Grade stabilization structure practice in the Table 8.1 funded 319 project budget.",
+    "text": "Grade stabilization structure practice listed in the 319 project BMP budget.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -274,7 +265,7 @@
      },
      {
       "page": 40,
-      "quote": "Potential BMPs to be installed include but are not limited to: 12 grade stabilization structures"
+      "quote": "12 grade stabilization structures"
      }
     ],
     "verified": true,
@@ -292,7 +283,7 @@
      },
      {
       "raw": "12 grade stabilization structures",
-      "scope": null,
+      "scope": "Potential BMPs to be installed",
       "value": 12,
       "valueMax": null,
       "unit": "grade stabilization structures",
@@ -315,12 +306,15 @@
      "unit": "USD",
      "comparator": "="
     },
-    "pollutants": []
+    "pollutants": [
+     "Nutrients",
+     "Sediment"
+    ]
    },
    {
     "id": "a9a49439",
     "name": "Pasture and Hay Land Planting",
-    "text": "Pasture and hay land planting practice in the Table 8.1 funded 319 project budget.",
+    "text": "Pasture and hay land planting practice listed in the 319 project BMP budget.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -338,7 +332,7 @@
      },
      {
       "page": 40,
-      "quote": "12 grade stabilization structures 100 acres of Pasture & Hay land Planting"
+      "quote": "100 acres of Pasture & Hay land Planting"
      }
     ],
     "verified": true,
@@ -355,8 +349,8 @@
       "comparator": "="
      },
      {
-      "raw": "100 acres of Pasture & Hay land Planting",
-      "scope": null,
+      "raw": "100 acres",
+      "scope": "Potential BMPs to be installed",
       "value": 100,
       "valueMax": null,
       "unit": "ac",
@@ -379,12 +373,15 @@
      "unit": "USD",
      "comparator": "="
     },
-    "pollutants": []
+    "pollutants": [
+     "Nutrients",
+     "Sediment"
+    ]
    },
    {
     "id": "013d76eb",
     "name": "Water and Sediment Control Basin",
-    "text": "Water and sediment control basin practice in the Table 8.1 funded 319 project budget.",
+    "text": "Water and sediment control basin practice listed in the 319 project BMP budget.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -402,7 +399,7 @@
      },
      {
       "page": 40,
-      "quote": "100 acres of Pasture & Hay land Planting 4 Water and Sediment Control Basins"
+      "quote": "4 Water and Sediment Control Basins"
      }
     ],
     "verified": true,
@@ -420,7 +417,7 @@
      },
      {
       "raw": "4 Water and Sediment Control Basins",
-      "scope": null,
+      "scope": "Potential BMPs to be installed",
       "value": 4,
       "valueMax": null,
       "unit": "Water",
@@ -443,18 +440,20 @@
      "unit": "USD",
      "comparator": "="
     },
-    "pollutants": []
+    "pollutants": [
+     "Sediment"
+    ]
    },
    {
     "id": "8ecfff4c",
     "name": "Nutrient Management",
-    "text": "Nutrient management practice in the Table 8.1 funded 319 project budget.",
+    "text": "Nutrient management practice listed in the 319 project BMP budget.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 7,
-      "quote": "Heavy Use Area Protection Nutrient Management Stream Crossings Tank/Trough"
+      "quote": "Nutrient Management Stream Crossings Tank/Trough Diversions Fencing"
      },
      {
       "page": 18,
@@ -466,7 +465,7 @@
      },
      {
       "page": 40,
-      "quote": "4 Water and Sediment Control Basins 700 acres of Nutrient Management"
+      "quote": "700 acres of Nutrient Management"
      }
     ],
     "verified": true,
@@ -483,8 +482,8 @@
       "comparator": "="
      },
      {
-      "raw": "700 acres of Nutrient Management",
-      "scope": null,
+      "raw": "700 acres",
+      "scope": "Potential BMPs to be installed",
       "value": 700,
       "valueMax": null,
       "unit": "ac",
@@ -507,12 +506,14 @@
      "unit": "USD",
      "comparator": "="
     },
-    "pollutants": []
+    "pollutants": [
+     "Nutrients"
+    ]
    },
    {
     "id": "1588db5e",
     "name": "Tank/Trough",
-    "text": "Tank/trough practice in the Table 8.1 funded 319 project budget.",
+    "text": "Tank/trough practice listed in the 319 project BMP budget.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -530,7 +531,7 @@
      },
      {
       "page": 40,
-      "quote": "700 acres of Nutrient Management 5 Tank/Troughs"
+      "quote": "5 Tank/Troughs"
      }
     ],
     "verified": true,
@@ -548,7 +549,7 @@
      },
      {
       "raw": "5 Tank/Troughs",
-      "scope": null,
+      "scope": "Potential BMPs to be installed",
       "value": 5,
       "valueMax": null,
       "unit": "Tank/Troughs",
@@ -571,12 +572,15 @@
      "unit": "USD",
      "comparator": "="
     },
-    "pollutants": []
+    "pollutants": [
+     "Nutrients",
+     "Sediment"
+    ]
    },
    {
     "id": "5a850476",
     "name": "Diversions",
-    "text": "Diversions practice in the Table 8.1 funded 319 project budget.",
+    "text": "Diversions practice listed in the 319 project BMP budget.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -594,7 +598,7 @@
      },
      {
       "page": 40,
-      "quote": "100 acres Critical Area Planting 1,200 feet of Diversions"
+      "quote": "1,200 feet of Diversions"
      }
     ],
     "verified": true,
@@ -611,8 +615,8 @@
       "comparator": "="
      },
      {
-      "raw": "1,200 feet of Diversions",
-      "scope": null,
+      "raw": "1,200 feet",
+      "scope": "Potential BMPs to be installed",
       "value": 1200,
       "valueMax": null,
       "unit": "ft",
@@ -635,18 +639,21 @@
      "unit": "USD",
      "comparator": "="
     },
-    "pollutants": []
+    "pollutants": [
+     "Nutrients",
+     "Sediment"
+    ]
    },
    {
     "id": "4d23e6ea",
     "name": "Heavy Use Area Protection",
-    "text": "Heavy use area protection practice in the Table 8.1 funded 319 project budget.",
+    "text": "Heavy use area protection practice listed in the 319 project BMP budget.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 7,
-      "quote": "Heavy Use Area Protection Nutrient Management Stream Crossings Tank/Trough"
+      "quote": "Heavy Use Area Protection Nutrient Management Stream Crossings"
      },
      {
       "page": 18,
@@ -658,7 +665,7 @@
      },
      {
       "page": 40,
-      "quote": "2,500 feet Streambank and Shoreline protection 4 Heavy Use Area Protection"
+      "quote": "4 Heavy Use Area Protection"
      }
     ],
     "verified": true,
@@ -676,7 +683,7 @@
      },
      {
       "raw": "4 Heavy Use Area Protection",
-      "scope": null,
+      "scope": "Potential BMPs to be installed",
       "value": 4,
       "valueMax": null,
       "unit": "Heavy Use Area",
@@ -699,12 +706,15 @@
      "unit": "USD",
      "comparator": "="
     },
-    "pollutants": []
+    "pollutants": [
+     "Nutrients",
+     "Sediment"
+    ]
    },
    {
     "id": "0298569c",
     "name": "Fencing",
-    "text": "Fencing practice in the Table 8.1 funded 319 project budget.",
+    "text": "Fencing practice listed in the 319 project BMP budget.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -722,7 +732,7 @@
      },
      {
       "page": 40,
-      "quote": "1,200 feet of Diversions 10,000 feet of Fencing"
+      "quote": "10,000 feet of Fencing"
      }
     ],
     "verified": true,
@@ -739,8 +749,8 @@
       "comparator": "="
      },
      {
-      "raw": "10,000 feet of Fencing",
-      "scope": null,
+      "raw": "10,000 feet",
+      "scope": "Potential BMPs to be installed",
       "value": 10000,
       "valueMax": null,
       "unit": "ft",
@@ -763,18 +773,21 @@
      "unit": "USD",
      "comparator": "="
     },
-    "pollutants": []
+    "pollutants": [
+     "Nutrients",
+     "Sediment"
+    ]
    },
    {
     "id": "5abbf057",
     "name": "Critical Area Planting",
-    "text": "Critical area planting practice in the Table 8.1 funded 319 project budget.",
+    "text": "Critical area planting practice listed in the 319 project BMP budget.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 7,
-      "quote": "Critical Area Planting Heavy Use Area Protection Nutrient Management Stream Crossings"
+      "quote": "Critical Area Planting Heavy Use Area Protection Nutrient Management"
      },
      {
       "page": 18,
@@ -786,7 +799,7 @@
      },
      {
       "page": 40,
-      "quote": "4 Heavy Use Area Protection 100 acres Critical Area Planting"
+      "quote": "100 acres Critical Area Planting"
      }
     ],
     "verified": true,
@@ -803,11 +816,11 @@
       "comparator": "="
      },
      {
-      "raw": "100 acres Critical Area Planting",
-      "scope": null,
+      "raw": "100 acres",
+      "scope": "Potential BMPs to be installed",
       "value": 100,
       "valueMax": null,
-      "unit": "acres Critical Area",
+      "unit": "ac",
       "comparator": "="
      }
     ],
@@ -827,12 +840,15 @@
      "unit": "USD",
      "comparator": "="
     },
-    "pollutants": []
+    "pollutants": [
+     "Nutrients",
+     "Sediment"
+    ]
    },
    {
     "id": "84e7daef",
     "name": "Stream Crossings",
-    "text": "Listed practice in the Canal Management Action Plan for local landowners.",
+    "text": "Listed agricultural BMP for the canal management action plan.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -853,15 +869,175 @@
   ],
   "implementation": [
    {
-    "id": "3e2b015a",
-    "name": "This watershed implementation plan will be evaluated and revised every three to five years",
-    "text": "The watershed implementation plan will be evaluated and revised on a set cycle or as needed, organized by the Muddy Creek Watershed Implementation Team.",
+    "id": "0819e0d5",
+    "name": "Presentations relating to water quality will be made to civic organizations",
+    "text": "Presentations will inform individuals about ways they can improve water quality and nonpoint source pollution.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 27,
+      "quote": "Presentations relating to water quality will be made to civic organizations."
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "Mississippi Soil and Water Conservation Commission",
+     "Mississippi Department of Environmental Quality",
+     "Tippah County Soil and Water Conservation District"
+    ],
+    "timeframe": "before August 2014",
+    "start": 2014,
+    "end": 2014,
+    "timeUnit": "year",
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "d651c72e",
+    "name": "Landowners implement BMPs in the project area",
+    "text": "Landowners have the responsibility of implementation of BMPs in the project area.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 21,
+      "quote": "The landowners have the responsibility of implementation of BMPs in the project area."
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "landowners"
+    ],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "2fb92d43",
+    "name": "Administer the 319 project",
+    "text": "MSWCC has the responsibility and role of administering the 319 project.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 21,
+      "quote": "MSWCC has the responsibility and role of administering the 319 project."
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "MSWCC"
+    ],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "1a3f19de",
+    "name": "Compile information and write the initial plan for the watershed",
+    "text": "MSWCC has the responsibility of compiling all the information and writing the initial plan for the watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 21,
+      "quote": "MSWCC also has the responsibility of compiling all the information and writing the initial plan for the watershed."
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "MSWCC"
+    ],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "18eadf32",
+    "name": "Help gather information needed to write the Watershed Implementation Plan",
+    "text": "The Muddy Creek Watershed Implementation Team has the role of helping gather all the information needed to write the Watershed Implementation Plan.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 21,
+      "quote": "The Muddy Creek Watershed Implementation Team has the role of helping gather all the information needed to write the Watershed Implementation Plan."
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "Muddy Creek Watershed Implementation Team"
+    ],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "6f0581c1",
+    "name": "Provide technical assistance (Table 8.2)",
+    "text": "Technical Assistance budget line of $41,667.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 21,
+      "quote": "Technical Assistance $41,667"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "83cd23aa",
+    "name": "Evaluate and revise the watershed implementation plan",
+    "text": "The plan will be evaluated and revised every three to five years or on an as needed basis, organized by the Muddy Creek Watershed Implementation Team.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 31,
       "quote": "This watershed implementation plan will be evaluated and revised every three to five years or on an as needed basis."
+     },
+     {
+      "page": 31,
+      "quote": "The evaluation of this plan will be organized by the Muddy Creek Watershed Implementation Team."
      }
     ],
     "verified": true,
@@ -871,7 +1047,7 @@
     "responsible": [
      "Muddy Creek Watershed Implementation Team"
     ],
-    "timeframe": "every three to five years or on an as needed basis",
+    "timeframe": "every three to five years",
     "start": null,
     "end": null,
     "timeUnit": null,
@@ -879,15 +1055,41 @@
     "milestone": false
    },
    {
-    "id": "66277fae",
-    "name": "MDEQ will prepare a revised watershed implementation plan incorporating the changes requested by the reviewers",
-    "text": "After evaluation, MDEQ will prepare a revised plan that incorporates the reviewers' requested changes.",
+    "id": "f90ec20d",
+    "name": "Monitoring at the conclusion of the project to determine pollutant reductions",
+    "text": "Determine the pollutant reductions achieved by the application of Best Management Practices in the watershed.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 32,
-      "quote": "After evaluation, MDEQ will prepare a revised watershed implementation plan incorporating the changes requested by the reviewers."
+      "quote": "MDEQ will be responsible for any monitoring at the conclusion of the project to determine the pollutant reductions achieved"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "MDEQ"
+    ],
+    "timeframe": "at the conclusion of the project",
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "3a24d0f0",
+    "name": "Prepare a revised watershed implementation plan",
+    "text": "After evaluation, MDEQ will prepare a revised watershed implementation plan incorporating the changes requested by the reviewers.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 32,
+      "quote": "After evaluation, MDEQ will prepare a revised watershed implementation plan incorporating"
      }
     ],
     "verified": true,
@@ -901,109 +1103,6 @@
     "start": null,
     "end": null,
     "timeUnit": null,
-    "status": null,
-    "milestone": false
-   },
-   {
-    "id": "e1539bfd",
-    "name": "The draft watershed implementation plan will be submitted to the Implementation Team, and all others who submitted comments.",
-    "text": "The draft plan will be submitted to the Implementation Team and to everyone who submitted comments.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 32,
-      "quote": "The draft watershed implementation plan will be submitted to the Implementation Team, and all others who submitted comments."
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "responsible": [],
-    "timeframe": null,
-    "start": null,
-    "end": null,
-    "timeUnit": null,
-    "status": null,
-    "milestone": false
-   },
-   {
-    "id": "bb9617df",
-    "name": "Within a month after the comments on the draft watershed implementation plan are received, the DRAFT watershed implementation plan will be submitted to the Implementation Team for review and approval.",
-    "text": "The DRAFT plan will be submitted to the Implementation Team for review and approval after comments are received.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 32,
-      "quote": "Within a month after the comments on the draft watershed implementation plan are received, the DRAFT watershed implementation plan will be submitted to the Implementation Team for review and approval."
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "responsible": [],
-    "timeframe": "Within a month after the comments on the draft watershed implementation plan are received",
-    "start": null,
-    "end": null,
-    "timeUnit": null,
-    "status": null,
-    "milestone": false
-   },
-   {
-    "id": "4aa8136b",
-    "name": "Continue existing programs and projects related to farmer education, BMP implementation, and habitat conservation",
-    "text": "Continue existing programs and projects related to farmer education, BMP implementation, and habitat conservation.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 7,
-      "quote": "Continue existing programs and projects related to farmer education, BMP implementation, and habitat conservation"
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "responsible": [
-     "MSWCC",
-     "USDA NRCS"
-    ],
-    "timeframe": "2012-2014",
-    "start": 2012,
-    "end": 2014,
-    "timeUnit": "year",
-    "status": null,
-    "milestone": false
-   },
-   {
-    "id": "172a5e79",
-    "name": "Implement a 319 water quality project on the agricultural lands within the watershed",
-    "text": "Management action to implement a 319 water quality project on cropland and pastureland in Tippah County within the watershed.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 6,
-      "quote": "one of the management actions is to implement a 319 water quality project on the agricultural lands within the watershed"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "responsible": [
-     "Tippah County Soil and Water Conservation District",
-     "Natural Resources Conservation Service",
-     "Mississippi Soil and Water Conservation Commission"
-    ],
-    "timeframe": "began in 2011 and will end in September 2014",
-    "start": 2011,
-    "end": 2014,
-    "timeUnit": "year",
     "status": null,
     "milestone": false
    },
@@ -1040,7 +1139,7 @@
     "evidence": [
      {
       "page": 19,
-      "quote": "5. Determine through intensive surveys, priority areas that are contributing significant pollutant"
+      "quote": "Determine through intensive surveys, priority areas that are contributing significant pollutant"
      },
      {
       "page": 41,
@@ -1086,7 +1185,7 @@
    {
     "id": "81c5560f",
     "name": "Meet with the board of SWCD commissioners to get their understanding of their responsibilities and participation.",
-    "text": "Meet with the SWCD board of commissioners to get their understanding of responsibilities and participation.",
+    "text": "Meet with the SWCD board of commissioners to confirm their understanding of responsibilities and participation.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1140,7 +1239,7 @@
     "evidence": [
      {
       "page": 41,
-      "quote": "Assist in establishing an evaluation system in conjunction with the MS Department of Environmental Quality"
+      "quote": "Assist in establishing an evaluation system in conjunction with the MS Department of"
      }
     ],
     "verified": true,
@@ -1156,15 +1255,39 @@
     "milestone": true
    },
    {
-    "id": "99c19dc2",
-    "name": "Secure commitments from several landowners and operators who are willing to participate in the project.",
-    "text": "Secure commitments from several landowners and operators willing to participate in the project.",
+    "id": "3548679b",
+    "name": "Conduct a landowner meeting to inform potential participants about the project.",
+    "text": "Conduct a landowner meeting to inform potential participants about the project.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 41,
-      "quote": "Secure commitments from several landowners and operators who are willing to participate in the project. (Month 3-4)"
+      "quote": "Conduct a landowner meeting to inform potential participants about the project. (Month 3)"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [],
+    "timeframe": "Month 3",
+    "start": 3,
+    "end": 3,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": true
+   },
+   {
+    "id": "99c19dc2",
+    "name": "Secure commitments from several landowners and operators who are willing to participate in the project.",
+    "text": "Secure commitments from landowners and operators willing to participate.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 41,
+      "quote": "Secure commitments from several landowners and operators who are willing to participate in the"
      }
     ],
     "verified": true,
@@ -1182,7 +1305,7 @@
    {
     "id": "b8cbf32e",
     "name": "Assist participants in developing a conservation plan and applying best management practices",
-    "text": "Assist participants in developing a conservation plan and applying best management practices.",
+    "text": "Assist participants in developing conservation plans and applying BMPs.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1212,7 +1335,7 @@
     "evidence": [
      {
       "page": 20,
-      "quote": "15. Document pre-existing site conditions and improvements by conducting before and after"
+      "quote": "Document pre-existing site conditions and improvements by conducting before and after"
      },
      {
       "page": 41,
@@ -1228,7 +1351,7 @@
     "start": 2,
     "end": 12,
     "timeUnit": "month",
-    "status": null,
+    "status": "planned",
     "milestone": true
    },
    {
@@ -1240,7 +1363,7 @@
     "evidence": [
      {
       "page": 41,
-      "quote": "Accelerate conservation planning and application assistance. Special effort will be made to complete conservation plans during this time frame. (Month 13-24)"
+      "quote": "Accelerate conservation planning and application assistance. Special effort will be made to"
      }
     ],
     "verified": true,
@@ -1252,7 +1375,7 @@
     "start": 13,
     "end": 24,
     "timeUnit": "month",
-    "status": null,
+    "status": "planned",
     "milestone": true
    },
    {
@@ -1328,6 +1451,30 @@
     "milestone": true
    },
    {
+    "id": "69872977",
+    "name": "Erect project roadside signs which designate where water quality practices are in progress or have been completed.",
+    "text": "Erect project roadside signs designating where water quality practices are in progress or completed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 41,
+      "quote": "Erect project roadside signs which designate where water quality practices are in progress or"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [],
+    "timeframe": "Month 4-36",
+    "start": 4,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": true
+   },
+   {
     "id": "5cfc060c",
     "name": "Provide continued conservation planning and application assistance to participants.",
     "text": "Provide continued conservation planning and application assistance to participants.",
@@ -1354,7 +1501,7 @@
    {
     "id": "127e0a3b",
     "name": "Review the status of applying best management practices to reach the objectives of the project.",
-    "text": "Review the status of applying best management practices to reach project objectives.",
+    "text": "Review the status of applying BMPs to reach project objectives.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1378,13 +1525,13 @@
    {
     "id": "6f1f3468",
     "name": "Based upon the needs and finding of milestone 18, assistance in planning and/or application will be redirected and/or accelerated.",
-    "text": "Redirect or accelerate planning and application assistance based on the needs and findings of milestone 18.",
+    "text": "Based on needs and findings of milestone 18, redirect and/or accelerate planning or application assistance.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 41,
-      "quote": "Based upon the needs and finding of milestone 18, assistance in planning and/or application will be redirected"
+      "quote": "Based upon the needs and finding of milestone 18, assistance in planning and/or application will"
      }
     ],
     "verified": true,
@@ -1396,13 +1543,13 @@
     "start": 25,
     "end": 36,
     "timeUnit": "month",
-    "status": null,
+    "status": "planned",
     "milestone": true
    },
    {
     "id": "0b93b643",
     "name": "Bi-annual reports will be made to MSDEQ.",
-    "text": "Bi-annual reports will be made to MSDEQ.",
+    "text": "Make bi-annual reports to MSDEQ.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1420,13 +1567,13 @@
     "start": 0,
     "end": 36,
     "timeUnit": "month",
-    "status": null,
+    "status": "planned",
     "milestone": true
    },
    {
     "id": "dc145383",
     "name": "Make Final report to MSDEQ.",
-    "text": "Make final report to MSDEQ.",
+    "text": "Make the final report to MSDEQ.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1448,22 +1595,82 @@
     "milestone": true
    },
    {
-    "id": "a413b434",
-    "name": "Assist Natural Resources Conservation Service (NRCS), United States Geological Survey (USGS), and the Tippah County Soil and Water Conservation District (SWCD), with assistance from Mississippi Department of Environmental Quality (MDEQ), in the development of a Watershed Implementation Team (WIT).",
-    "text": "Assist in developing a Watershed Implementation Team.",
+    "id": "4aa8136b",
+    "name": "Continue existing programs and projects related to farmer education, BMP implementation, and habitat conservation",
+    "text": "MSWCC, USDA NRCS and Tippah County SWCD continue existing programs and projects.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
-      "page": 19,
-      "quote": "1. Assist Natural Resources Conservation Service (NRCS), United States Geological Survey"
+      "page": 7,
+      "quote": "Continue existing programs and projects related to farmer education, BMP implementation, and habitat conservation"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [
+     "MSWCC",
+     "USDA NRCS"
+    ],
+    "timeframe": "2012-2014",
+    "start": 2012,
+    "end": 2014,
+    "timeUnit": "year",
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "172a5e79",
+    "name": "Implement a 319 water quality project on the agricultural lands within the watershed",
+    "text": "Management action to implement a 319 water quality project on cropland and pastureland in Tippah County within the watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 6,
+      "quote": "one of the management actions is to implement a 319 water quality project on the agricultural lands within the watershed"
      }
     ],
     "verified": true,
     "source": "text",
     "needsReview": null,
     "confidence": "high",
-    "responsible": [],
+    "responsible": [
+     "Tippah County Soil and Water Conservation District",
+     "Natural Resources Conservation Service",
+     "Mississippi Soil and Water Conservation Commission"
+    ],
+    "timeframe": "began in 2011 and will end in September 2014",
+    "start": 2011,
+    "end": 2014,
+    "timeUnit": "year",
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "a413b434",
+    "name": "Assist Natural Resources Conservation Service (NRCS), United States Geological Survey (USGS), and the Tippah County Soil and Water Conservation District (SWCD), with assistance from Mississippi Department of Environmental Quality (MDEQ), in the development of a Watershed Implementation Team (WIT).",
+    "text": "Development of a Watershed Implementation Team (WIT).",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 19,
+      "quote": "Assist Natural Resources Conservation Service (NRCS), United States Geological Survey (USGS), and the Tippah County Soil and Water Conservation District (SWCD)"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "NRCS",
+     "USGS",
+     "Tippah County Soil and Water Conservation District (SWCD)",
+     "MDEQ"
+    ],
     "timeframe": null,
     "start": null,
     "end": null,
@@ -1474,13 +1681,13 @@
    {
     "id": "97cedca3",
     "name": "Develop a Watershed Implementation Plan (WIP) consistent with MDEQ guidance and assistance from the WIT.",
-    "text": "Develop a Watershed Implementation Plan.",
+    "text": "Development of a Watershed Implementation Plan consistent with MDEQ guidance.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 19,
-      "quote": "2. Develop a Watershed Implementation Plan (WIP) consistent with MDEQ guidance"
+      "quote": "Develop a Watershed Implementation Plan (WIP) consistent with MDEQ guidance and assistance from the WIT."
      }
     ],
     "verified": true,
@@ -1498,13 +1705,13 @@
    {
     "id": "1a9d2ab3",
     "name": "Assist in the development and implementation of a watershed monitoring plan for the project.",
-    "text": "Assist in developing and implementing a watershed monitoring plan.",
+    "text": "Development and implementation of a watershed monitoring plan.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 19,
-      "quote": "3. Assist in the development and implementation of a watershed monitoring plan"
+      "quote": "Assist in the development and implementation of a watershed monitoring plan for the project."
      }
     ],
     "verified": true,
@@ -1522,20 +1729,23 @@
    {
     "id": "8df134a7",
     "name": "Present a draft WIP to MDEQ and the Muddy Creek Watershed Implementation Team for review and comments.",
-    "text": "Present a draft WIP for review and comments.",
+    "text": "Draft WIP presented for review and comments.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 19,
-      "quote": "4. Present a draft WIP to MDEQ and the Muddy Creek Watershed Implementation Team"
+      "quote": "Present a draft WIP to MDEQ and the Muddy Creek Watershed Implementation Team for review and comments."
      }
     ],
     "verified": true,
     "source": "text",
     "needsReview": null,
     "confidence": "high",
-    "responsible": [],
+    "responsible": [
+     "MDEQ",
+     "Muddy Creek Watershed Implementation Team"
+    ],
     "timeframe": null,
     "start": null,
     "end": null,
@@ -1546,13 +1756,13 @@
    {
     "id": "da0ac06d",
     "name": "Inform the public, landowners, and other stakeholders within the project area about the project and secure commitments from priority landowners and others willing to participate in the project.",
-    "text": "Secure commitments from priority landowners and others willing to participate.",
+    "text": "Inform stakeholders and secure landowner commitments.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 19,
-      "quote": "6. Inform the public, landowners, and other stakeholders within the project area"
+      "quote": "Inform the public, landowners, and other stakeholders within the project area about the project"
      }
     ],
     "verified": true,
@@ -1570,20 +1780,22 @@
    {
     "id": "c115e56a",
     "name": "Notify MDEQ project officer, in a timely manner, of all project visits/ inspections/ field days/ and any other public meetings so that the project officer may have an opportunity to attend.",
-    "text": "Notify the MDEQ project officer of project visits, inspections and meetings.",
+    "text": "Notify MDEQ project officer of project visits and meetings.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 19,
-      "quote": "7. Notify MDEQ project officer, in a timely manner, of all project visits/ inspections/ field days/"
+      "quote": "Notify MDEQ project officer, in a timely manner, of all project visits/ inspections/ field days/"
      }
     ],
     "verified": true,
     "source": "text",
     "needsReview": null,
     "confidence": "high",
-    "responsible": [],
+    "responsible": [
+     "MDEQ project officer"
+    ],
     "timeframe": null,
     "start": null,
     "end": null,
@@ -1600,7 +1812,7 @@
     "evidence": [
      {
       "page": 19,
-      "quote": "8. Develop plans for Best Management Practices (BMPs) in accordance with approved WIP."
+      "quote": "Develop plans for Best Management Practices (BMPs) in accordance with approved WIP."
      }
     ],
     "verified": true,
@@ -1618,13 +1830,13 @@
    {
     "id": "5ce90b0e",
     "name": "Assist landowners and operators in the installation of appropriate BMPs and collect before and after soil loss and GPS coordinates each installed BMP and incorporate into a GIS format.",
-    "text": "Assist in installing BMPs and collect before and after soil loss and GPS data in GIS format.",
+    "text": "Assist installation of BMPs and collect before/after soil loss and GPS data.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 20,
-      "quote": "9. Assist landowners and operators in the installation of appropriate BMPs and collect"
+      "quote": "Assist landowners and operators in the installation of appropriate BMPs and collect"
      }
     ],
     "verified": true,
@@ -1642,13 +1854,39 @@
    {
     "id": "7ff3c343",
     "name": "Assist the MDEQ project officer in conducting inspections during construction.",
-    "text": "Assist MDEQ in conducting construction inspections.",
+    "text": "Assist MDEQ project officer with construction inspections.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 20,
-      "quote": "16. Assist the MDEQ project officer in conducting inspections during construction."
+      "quote": "Assist the MDEQ project officer in conducting inspections during construction."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "MDEQ project officer"
+    ],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": true
+   },
+   {
+    "id": "ea9905fd",
+    "name": "Make project presentations as requested by MDEQ.",
+    "text": "Project presentations as requested by MDEQ.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 20,
+      "quote": "Make project presentations as requested by MDEQ."
      }
     ],
     "verified": true,
@@ -1666,13 +1904,13 @@
    {
     "id": "16461efd",
     "name": "Secure maintenance agreements from cooperators/landowners in accordance with MSWCC state cost-share guidelines.",
-    "text": "Secure BMP maintenance agreements from cooperators and landowners.",
+    "text": "Secure maintenance agreements per MSWCC cost-share guidelines.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 20,
-      "quote": "18. Secure maintenance agreements from cooperators/landowners in accordance with"
+      "quote": "Secure maintenance agreements from cooperators/landowners in accordance with"
      }
     ],
     "verified": true,
@@ -1690,13 +1928,13 @@
    {
     "id": "feb6cff3",
     "name": "Submit bi-annual reports by every September 25th and March 25th of each year showing status of tasks and start/completion dates of each task.",
-    "text": "Submit bi-annual status reports.",
+    "text": "Bi-annual status reports.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 20,
-      "quote": "19. Submit bi-annual reports by every September 25th and March 25th of each year"
+      "quote": "Submit bi-annual reports by every September 25th and March 25th of each year"
      }
     ],
     "verified": true,
@@ -1714,20 +1952,22 @@
    {
     "id": "50988ea4",
     "name": "Submit a final report to MDEQ.",
-    "text": "Submit a final report to MDEQ.",
+    "text": "Submit final project report to MDEQ.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 20,
-      "quote": "20. Submit a final report to MDEQ."
+      "quote": "Submit a final report to MDEQ."
      }
     ],
     "verified": true,
     "source": "text",
     "needsReview": null,
     "confidence": "high",
-    "responsible": [],
+    "responsible": [
+     "MDEQ"
+    ],
     "timeframe": null,
     "start": null,
     "end": null,
@@ -1738,36 +1978,15 @@
   ],
   "monitoring": [
    {
-    "id": "e069f321",
-    "name": "Number of people in attendance",
-    "text": "Indicator for presentations: the number of people in attendance will be documented.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 27,
-      "quote": "The number of people in attendance will be documented."
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "high",
-    "parameter": "Number of people in attendance",
-    "threshold": null,
-    "location": null,
-    "frequency": null
-   },
-   {
-    "id": "b04800ce",
-    "name": "Before and after photo documentation on a representative sample of the BMPs installed",
-    "text": "Before and after photo documentation of a representative sample of installed BMPs, used to track progress.",
+    "id": "0c55d7e9",
+    "name": "Before and after photo documentation",
+    "text": "Before and after photo documentation on a representative sample of the BMPs installed, used to track plan success by MSWCC.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 31,
-      "quote": "Before and after photo documentation on a representative sample of the BMPs installed,"
+      "quote": "Before and after photo documentation on a representative sample of the BMPs installed"
      }
     ],
     "verified": true,
@@ -1780,19 +1999,15 @@
     "frequency": null
    },
    {
-    "id": "e7248126",
-    "name": "Before and after soil loss collection on each BMP installed",
-    "text": "Before and after soil loss collection on each installed BMP, used to track progress.",
+    "id": "d9076797",
+    "name": "Before and after soil loss collection",
+    "text": "Before and after soil loss collection on each BMP installed, used to track plan success by MSWCC.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 31,
-      "quote": "Before and after soil loss collection on each BMP installed, and"
-     },
-     {
-      "page": 39,
-      "quote": "the amount of soil loss from the area to be treated with a particular BMP will be determined and recorded."
+      "quote": "Before and after soil loss collection on each BMP installed"
      }
     ],
     "verified": true,
@@ -1807,13 +2022,13 @@
    {
     "id": "0da91a83",
     "name": "R5 Load estimation Model Field Data Entry Sheet",
-    "text": "An R5 Load estimation Model Field Data Entry Sheet completed on each BMP installed.",
+    "text": "An R5 Load estimation Model Field Data Entry Sheet completed on each BMP installed, used to track plan success by MSWCC.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 31,
-      "quote": "An R5 Load estimation Model Field Data Entry Sheet completed on each BMP"
+      "quote": "An R5 Load estimation Model Field Data Entry Sheet completed on each BMP installed"
      }
     ],
     "verified": true,
@@ -1826,15 +2041,15 @@
     "frequency": null
    },
    {
-    "id": "07e6aa43",
-    "name": "Pollutant reductions achieved by BMPs",
-    "text": "MDEQ monitoring at the conclusion of the project to determine pollutant reductions achieved by BMPs in the watershed.",
+    "id": "e28228bc",
+    "name": "Pollutant reduction monitoring",
+    "text": "MDEQ monitoring at the conclusion of the project to determine the pollutant reductions achieved by the application of BMPs.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 32,
-      "quote": "MDEQ will be responsible for any monitoring at the conclusion of the project to"
+      "quote": "MDEQ will be responsible for any monitoring at the conclusion of the project to determine the pollutant reductions achieved"
      }
     ],
     "verified": true,
@@ -1849,17 +2064,17 @@
    {
     "id": "3ea69b1f",
     "name": "Nutrients",
-    "text": "Nutrients identified as the most probable primary stressor of the water body in the stressor identification study.",
+    "text": "Stressor identified for the Nutrient Loading From Agricultural Lands concern; stressor identification study found nutrients and organic enrichment as the most probable primary stressor.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 16,
-      "quote": "Waters shall be free from materials attributable to municipal, industrial,"
+      "quote": "Waters shall be free from materials attributable to municipal, industrial, agricultural, or other dischargers producing color, odor, taste"
      },
      {
       "page": 38,
-      "quote": "The TMDL recommends a 45 to 70% reduction in the amount of nutrients from nonpoint sources entering Muddy Creek"
+      "quote": "attain the preliminary target range of 0.6mg/l to 0.11mg/l"
      },
      {
       "page": 51,
@@ -1871,14 +2086,21 @@
     "needsReview": null,
     "confidence": "medium",
     "parameter": "Nutrients",
-    "threshold": null,
+    "threshold": {
+     "raw": "0.6mg/l to 0.11mg/l",
+     "scope": null,
+     "value": 0.6,
+     "valueMax": null,
+     "unit": "mg/L",
+     "comparator": "="
+    },
     "location": "Muddy Creek Watershed",
     "frequency": null
    },
    {
-    "id": "c301fb79",
-    "name": "Organic enrichment/low dissolved oxygen",
-    "text": "Water samples at selected sites on the main tributaries are analyzed for organic enrichment and low dissolved oxygen.",
+    "id": "751e6de5",
+    "name": "Water sampling for organic enrichment and nutrients",
+    "text": "Water samples taken at selected sites on the main tributaries and analyzed for organic enrichment, low dissolved oxygen and nutrient content.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -1891,154 +2113,49 @@
     "source": "text",
     "needsReview": null,
     "confidence": "high",
-    "parameter": "Organic enrichment/low dissolved oxygen",
+    "parameter": "organic enrichment/low dissolved oxygen and nutrient content",
     "threshold": null,
-    "location": "main tributaries of the watershed",
-    "frequency": null
-   },
-   {
-    "id": "57188d93",
-    "name": "Nutrient content",
-    "text": "Water samples at selected sites on the main tributaries are analyzed for nutrient content.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 42,
-      "quote": "water samples will be taken and analyzed for organic enrichment/low dissolved oxygen and nutrient content"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "parameter": "Nutrient content",
-    "threshold": null,
-    "location": "main tributaries of the watershed",
+    "location": "selected site or sites on the main tributaries of the watershed",
     "frequency": null
    },
    {
     "id": "dd3af76f",
     "name": "Post-BMP load reduction sampling",
-    "text": "Additional samples are taken after BMPs are installed to determine the actual load reduction from the BMPs.",
+    "text": "Additional samples taken after BMPs are installed to determine the actual load reduction.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 42,
-      "quote": "After BMPs are installed at the site or sites, additional samples will be taken and analyzed to determine the actual load reduction"
+      "quote": "additional samples will be taken and analyzed to determine the actual load reduction resulting from the implementation of the BMPs"
      }
     ],
     "verified": true,
     "source": "text",
     "needsReview": null,
     "confidence": "high",
-    "parameter": "Actual load reduction",
+    "parameter": "actual load reduction",
     "threshold": null,
-    "location": "selected site or sites on the main tributaries",
+    "location": "selected site or sites on the main tributaries of the watershed",
     "frequency": null
    },
    {
-    "id": "5aa116ce",
-    "name": "Biological sampling of Muddy Creek",
-    "text": "Biological sampling in 2001 showed Muddy Creek failing minimum water quality criteria for biological use support.",
+    "id": "89425714",
+    "name": "NPS Pollutant Load Reduction",
+    "text": "Amount of soil saved from BMP installation is a direct indicator of sediment load reduction.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
-      "page": 38,
-      "quote": "Muddy Creeks failure to meet minimum water quality criteria for biological use support based on biological sampling conducted in 2001"
+      "page": 42,
+      "quote": "the amount of soil saved as a result of the installation of best management practices (BMPs) in this project will be a direct indicator"
      }
     ],
     "verified": true,
     "source": "text",
     "needsReview": null,
     "confidence": "high",
-    "parameter": "Biological use support",
-    "threshold": null,
-    "location": "Muddy Creek",
-    "frequency": "2001"
-   },
-   {
-    "id": "689fd1f8",
-    "name": "Pollutant load reductions",
-    "text": "Post-BMP monitoring to determine the pollutant load reductions achieved by the BMPs.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 40,
-      "quote": "Phase 3 will consist of post BMP monitoring to determine the pollutant load reductions achieved by the application of Best Management Practices."
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "parameter": "Pollutant load reductions",
-    "threshold": null,
-    "location": null,
-    "frequency": null
-   },
-   {
-    "id": "56d33b2a",
-    "name": "Soil saved recording",
-    "text": "The amount of soil saved by applying each BMP is determined and recorded.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 39,
-      "quote": "The amount of soil saved as a result of applying the BMP will also be determined and recorded."
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "parameter": "Soil saved",
-    "threshold": null,
-    "location": null,
-    "frequency": null
-   },
-   {
-    "id": "75d1c0d7",
-    "name": "Pre-existing site condition documentation",
-    "text": "Pre-existing site conditions are documented, with before and after photo documentation.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 41,
-      "quote": "Document pre-existing site conditions. (Month 2-12) (Before and after photo documentation will be conducted)."
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "parameter": "Site conditions",
-    "threshold": null,
-    "location": null,
-    "frequency": "Month 2-12"
-   },
-   {
-    "id": "eabeb95f",
-    "name": "Sediment",
-    "text": "Stressor identified for Muddy Creek Watershed in the stressor summary table.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 50,
-      "quote": "A stressor identification study was completed for Muddy Creek Watershed. This analysis identified sediment as the a probable stressor of the water body."
-     }
-    ],
-    "verified": true,
-    "source": "table",
-    "needsReview": null,
-    "confidence": "medium",
-    "parameter": "Sediment",
+    "parameter": "amount of soil saved",
     "threshold": null,
     "location": null,
     "frequency": null
@@ -2046,7 +2163,7 @@
    {
     "id": "15fc1656",
     "name": "Litter",
-    "text": "Stressor from people dumping garbage into creeks and streams from bridges.",
+    "text": "Stressor identified for littering, with people dumping garbage into creeks and streams from bridges.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2067,13 +2184,17 @@
    {
     "id": "a4254d1a",
     "name": "Fecal Coliform",
-    "text": "Water quality standard for fecal coliform colony counts, with a geometric mean limit for May-October and November-April.",
+    "text": "Water quality standard for fecal coliform colony counts in the secondary contact use, with May-October and November-April criteria.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 16,
-      "quote": "geometric mean of 2,000 per 100ml based on a minimum of 5 samples"
+      "quote": "May-October: Fecal coliform colony counts not to exceed a geometric mean of 200 per 100ml"
+     },
+     {
+      "page": 16,
+      "quote": "November-April: Fecal coliform colony counts not to exceed a geometric mean of 2,000 per 100ml"
      }
     ],
     "verified": true,
@@ -2088,17 +2209,13 @@
    {
     "id": "60737419",
     "name": "Dissolve Oxygen",
-    "text": "Water quality standard for dissolved oxygen concentrations under Aquatic Life Support.",
+    "text": "Water quality standard for dissolved oxygen concentrations under aquatic life support.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 16,
-      "quote": "DO concentrations shall be maintained at a daily average of not less than"
-     },
-     {
-      "page": 16,
-      "quote": "5.0mg/l with an instantaneous minimum of not less than 4.0mg/l."
+      "quote": "DO concentrations shall be maintained at a daily average of not less than 5.0mg/l with an instantaneous minimum of not less than 4.0mg/l."
      }
     ],
     "verified": true,
@@ -2106,14 +2223,7 @@
     "needsReview": null,
     "confidence": "high",
     "parameter": "Dissolve Oxygen",
-    "threshold": {
-     "raw": "daily average of not less than 5.0mg/l with an instantaneous minimum of not less than 4.0mg/l",
-     "scope": null,
-     "value": 5,
-     "valueMax": null,
-     "unit": "mg/L",
-     "comparator": "<="
-    },
+    "threshold": null,
     "location": null,
     "frequency": null
    }
@@ -2122,7 +2232,7 @@
    {
     "id": "a21a869e",
     "name": "Watershed Harmony Puppet Show",
-    "text": "Outreach activity listed as item 4 in the table of contents for the education and outreach section.",
+    "text": "Outreach activity listed as item 4 in the education and outreach table of contents, with indicators, schedule and budget.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2132,7 +2242,11 @@
      },
      {
       "page": 25,
-      "quote": "Watershed Harmony will be presented before August 2014."
+      "quote": "Watershed Harmony is a musical puppet performance aligning with the fourth and fifth grade"
+     },
+     {
+      "page": 29,
+      "quote": "Watershed Harmony Puppet Show 1 $1000.00"
      }
     ],
     "verified": true,
@@ -2140,13 +2254,20 @@
     "needsReview": null,
     "confidence": "high",
     "audience": null,
-    "quantity": null,
+    "quantity": {
+     "raw": "1",
+     "scope": null,
+     "value": 1,
+     "valueMax": null,
+     "unit": null,
+     "comparator": "="
+    },
     "timeframe": "before August 2014"
    },
    {
     "id": "9ddff228",
     "name": "Tippah County Fair",
-    "text": "Outreach activity listed as item 5 in the education and outreach section.",
+    "text": "Outreach activity listed as item 5, with indicators, schedule and budget.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2157,6 +2278,10 @@
      {
       "page": 25,
       "quote": "A booth will be set up at the fair with information about the project"
+     },
+     {
+      "page": 29,
+      "quote": "Tippah County Fair 3 $1,760.00"
      }
     ],
     "verified": true,
@@ -2164,13 +2289,20 @@
     "needsReview": null,
     "confidence": "high",
     "audience": null,
-    "quantity": null,
+    "quantity": {
+     "raw": "3",
+     "scope": null,
+     "value": 3,
+     "valueMax": null,
+     "unit": null,
+     "comparator": "="
+    },
     "timeframe": null
    },
    {
     "id": "17c1191b",
     "name": "Water Bill Mailers",
-    "text": "Outreach activity listed as item 6 in the education and outreach section.",
+    "text": "Outreach activity listed as item 6, with indicators, schedule and budget.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2184,11 +2316,7 @@
      },
      {
       "page": 27,
-      "quote": "Mailing 500 .44/each $225.00"
-     },
-     {
-      "page": 27,
-      "quote": "Flyer 500 .65/each $325.00"
+      "quote": "Table 9.6 Projected Costs for Water Bill Mailers."
      }
     ],
     "verified": true,
@@ -2196,20 +2324,13 @@
     "needsReview": null,
     "confidence": "high",
     "audience": null,
-    "quantity": {
-     "raw": "500",
-     "scope": null,
-     "value": 500,
-     "valueMax": null,
-     "unit": null,
-     "comparator": "="
-    },
+    "quantity": null,
     "timeframe": "before August 2014"
    },
    {
     "id": "049bb69b",
     "name": "Presentations",
-    "text": "Outreach activity listed as item 7 in the education and outreach section.",
+    "text": "Outreach activity listed as item 7, with indicators, schedule and budget.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2220,10 +2341,6 @@
      {
       "page": 27,
       "quote": "Presentations relating to water quality will be made to civic organizations."
-     },
-     {
-      "page": 27,
-      "quote": "Miscellaneous 3 $50.00/each $150.00"
      }
     ],
     "verified": true,
@@ -2231,20 +2348,13 @@
     "needsReview": null,
     "confidence": "medium",
     "audience": null,
-    "quantity": {
-     "raw": "3",
-     "scope": null,
-     "value": 3,
-     "valueMax": null,
-     "unit": null,
-     "comparator": "="
-    },
+    "quantity": null,
     "timeframe": "before August 2014"
    },
    {
     "id": "b43cb905",
     "name": "Radio Advertisements",
-    "text": "Outreach activity listed as item 8 in the education and outreach section.",
+    "text": "Outreach activity listed as item 8, with indicators, schedule and budget.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2264,7 +2374,7 @@
    {
     "id": "49f55d0d",
     "name": "Adopt-A-Stream",
-    "text": "Outreach activity listed as item 9 in the education and outreach section.",
+    "text": "Outreach activity listed as item 9, with indicators, schedule and budget.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2273,12 +2383,16 @@
       "quote": "9. Adopt-A-Stream"
      },
      {
-      "page": 28,
-      "quote": "Adopt-A-Stream is a program that promotes environmental stewardship through training"
+      "page": 29,
+      "quote": "At least one event will take place before September 30, 2014."
      },
      {
       "page": 29,
-      "quote": "Adopt A Stream 1 day workshop $1,000.00"
+      "quote": "Adopt-A-Stream 1 $1,000.00 $1,000.00"
+     },
+     {
+      "page": 29,
+      "quote": "Table 9.9 Projected Costs for Adopt-A-Stream Workshop."
      }
     ],
     "verified": true,
@@ -2287,72 +2401,72 @@
     "confidence": "medium",
     "audience": null,
     "quantity": {
-     "raw": "1 day workshop",
+     "raw": "1",
      "scope": null,
      "value": 1,
      "valueMax": null,
-     "unit": "day workshop",
+     "unit": null,
      "comparator": "="
     },
-    "timeframe": null
+    "timeframe": "before September 30, 2014"
    },
    {
-    "id": "16e6e882",
-    "name": "Establishment of two demonstration farms",
-    "text": "Establishment of two demonstration farms to inform the public about best management practice systems.",
+    "id": "e12cf076",
+    "name": "Landowner Meeting and Field Days",
+    "text": "Landowner meetings and field days listed in the education budget.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
-      "page": 20,
-      "quote": "Establish at least two (2) demonstration farms to inform the public about BMPs."
+      "page": 23,
+      "quote": "There will be a landowner meeting held to inform landowners in the watershed about the project and what BMPs will be available"
      },
      {
-      "page": 31,
-      "quote": "Establishment of two demonstration farms that will be used to inform the public"
-     },
-     {
-      "page": 39,
-      "quote": "Establish at least 2 demonstration farms to inform the public about best management systems."
-     },
-     {
-      "page": 42,
-      "quote": "this project will include the establishment of at least 2"
-     },
-     {
-      "page": 42,
-      "quote": "demonstration farms that will be used to inform the public about best management systems"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "audience": "The public",
-    "quantity": {
-     "raw": "two demonstration farms",
-     "scope": null,
-     "value": 2,
-     "valueMax": null,
-     "unit": "demonstration farms",
-     "comparator": "="
-    },
-    "timeframe": null
-   },
-   {
-    "id": "ec9e5c75",
-    "name": "Informational fact sheets",
-    "text": "Informational fact sheets distributed highlighting the benefits derived through installation of BMPs.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 20,
-      "quote": "Develop and distribute no fewer than 1,000 informational fact sheets highlighting the benefits derived from the project."
+      "page": 23,
+      "quote": "there will be at least two field days held to highlight the BMPs that have been installed during the project period."
      },
      {
       "page": 24,
-      "quote": "1,000 fact sheets will be designed and distributed. These fact sheets will be handed out at the final field day"
+      "quote": "Table 9.2 Projected Costs for Landowner Meeting and Field Days."
+     },
+     {
+      "page": 29,
+      "quote": "Landowner Meeting and Field Days 3 $2,435.67"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": "Landowners and the interested public",
+    "quantity": {
+     "raw": "3",
+     "scope": null,
+     "value": 3,
+     "valueMax": null,
+     "unit": null,
+     "comparator": "="
+    },
+    "timeframe": "Field days in the watershed will take place in 2012-2014."
+   },
+   {
+    "id": "d6e80e8d",
+    "name": "Fact Sheets",
+    "text": "Fact sheets listed in the education budget.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 20,
+      "quote": "Develop and distribute no fewer than 1,000 informational fact sheets highlighting the"
+     },
+     {
+      "page": 24,
+      "quote": "A fact sheet will be developed at the end of the project."
+     },
+     {
+      "page": 29,
+      "quote": "Fact Sheets 1,000 $1.00"
      },
      {
       "page": 31,
@@ -2368,85 +2482,65 @@
      }
     ],
     "verified": true,
-    "source": "text",
+    "source": "table",
     "needsReview": null,
     "confidence": "high",
     "audience": "public",
     "quantity": {
-     "raw": "1,000 fact sheets",
+     "raw": "1,000",
      "scope": null,
      "value": 1000,
      "valueMax": null,
-     "unit": "fact sheets",
+     "unit": null,
      "comparator": "="
     },
-    "timeframe": "at the end of the project"
+    "timeframe": "End of the project"
    },
    {
-    "id": "20bf7a4e",
+    "id": "2017fc1f",
+    "name": "Radio Ads",
+    "text": "Radio advertisements on the local radio station to inform people about water quality and nonpoint source pollution.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 28,
+      "quote": "Radio advertisements will be run on the local radio station to inform people about water quality"
+     },
+     {
+      "page": 29,
+      "quote": "Radio Ads 3 $200.00"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": null,
+    "quantity": {
+     "raw": "3",
+     "scope": null,
+     "value": 3,
+     "valueMax": null,
+     "unit": null,
+     "comparator": "="
+    },
+    "timeframe": "before August 2014"
+   },
+   {
+    "id": "17bf6c23",
     "name": "Signage",
-    "text": "Signs identifying the BMPs that have been installed will be erected throughout the watershed upon permission of landowners.",
+    "text": "Signage listed in the education budget.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 22,
       "quote": "Signs identifying the BMPs that have been installed will be erected throughout the watershed upon permission of landowners."
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "audience": null,
-    "quantity": null,
-    "timeframe": null
-   },
-   {
-    "id": "e72cf9e8",
-    "name": "Landowner Meeting and Field Days",
-    "text": "A landowner meeting to inform landowners about the project and available BMPs, plus at least two field days highlighting installed BMPs.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 23,
-      "quote": "there will be at least two field days held to highlight the BMPs that have been installed during the project period."
      },
      {
-      "page": 23,
-      "quote": "There will be a landowner meeting held to inform landowners in the watershed about the project"
-     },
-     {
-      "page": 24,
-      "quote": "Table 9.2 Projected Costs for Landowner Meeting and Field Days."
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "audience": null,
-    "quantity": {
-     "raw": "at least two field days",
-     "scope": null,
-     "value": 2,
-     "valueMax": null,
-     "unit": "field days",
-     "comparator": ">="
-    },
-    "timeframe": "Field days in the watershed will take place in 2012-2014."
-   },
-   {
-    "id": "8e8c43aa",
-    "name": "Farmer education",
-    "text": "Continuing existing programs and projects related to farmer education.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 7,
-      "quote": "Continue existing programs and projects related to farmer education, BMP implementation, and habitat conservation"
+      "page": 29,
+      "quote": "Signage 20 $100.00"
      }
     ],
     "verified": true,
@@ -2454,33 +2548,59 @@
     "needsReview": null,
     "confidence": "medium",
     "audience": null,
-    "quantity": null,
-    "timeframe": "2012-2014"
+    "quantity": {
+     "raw": "20",
+     "scope": null,
+     "value": 20,
+     "valueMax": null,
+     "unit": null,
+     "comparator": "="
+    },
+    "timeframe": null
    },
    {
-    "id": "a246124e",
-    "name": "Watershed Implementation Team",
-    "text": "Assemble a Watershed Implementation Team to address issues and concerns within the watershed.",
+    "id": "570bcefc",
+    "name": "Demonstration farms",
+    "text": "Establishment of two demonstration farms that will be used to inform the public about best management practice systems.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
-      "page": 6,
-      "quote": "MSWCC is required to assemble a Watershed Implementation Team to address other issues and concerns within the watershed"
+      "page": 20,
+      "quote": "Establish at least two (2) demonstration farms to inform the public about BMPs."
+     },
+     {
+      "page": 31,
+      "quote": "Establishment of two demonstration farms that will be used to inform the public about best management practice systems"
+     },
+     {
+      "page": 39,
+      "quote": "Establish at least 2 demonstration farms to inform the public about best management systems."
+     },
+     {
+      "page": 42,
+      "quote": "this project will include the establishment of at least 2 demonstration farms that will be used to inform the public about best management systems"
      }
     ],
     "verified": true,
     "source": "text",
     "needsReview": null,
     "confidence": "high",
-    "audience": null,
-    "quantity": null,
+    "audience": "public",
+    "quantity": {
+     "raw": "two",
+     "scope": null,
+     "value": 2,
+     "valueMax": null,
+     "unit": null,
+     "comparator": "="
+    },
     "timeframe": null
    },
    {
-    "id": "580241aa",
+    "id": "46ffe850",
     "name": "Field day/tours",
-    "text": "Field day/tours to be conducted in the project, using the demonstration farms.",
+    "text": "Conduct at least 2 field day/tours during the life of the project.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2490,7 +2610,7 @@
      },
      {
       "page": 42,
-      "quote": "during the 2 field day/tours that will be conducted in the project"
+      "quote": "These will be utilized during the 2 field day/tours that will be conducted in the project."
      }
     ],
     "verified": true,
@@ -2499,63 +2619,103 @@
     "confidence": "high",
     "audience": "public",
     "quantity": {
-     "raw": "2 field day/tours",
+     "raw": "at least 2 field day/tours",
      "scope": null,
      "value": 2,
      "valueMax": null,
      "unit": "field day/tours",
-     "comparator": "="
+     "comparator": ">="
     },
     "timeframe": "during the life of the project"
    },
    {
     "id": "2b0c132a",
     "name": "Project roadside signs",
-    "text": "Project roadside signs designating where water quality practices are in progress or completed.",
+    "text": "Erect at least 20 project roadside signs that designate where water quality practices are in progress or have been completed.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 20,
-      "quote": "Erect no fewer than 20 project roadside signs where water quality practices are installed in the project."
+      "quote": "Erect no fewer than 20 project roadside signs where water quality practices are installed"
      },
      {
       "page": 39,
-      "quote": "Erect at least 20 project roadside signs that designate where water quality practices are in progress or have been completed."
+      "quote": "Erect at least 20 project roadside signs that designate where water quality practices are in progress or"
      }
     ],
     "verified": true,
     "source": "text",
     "needsReview": null,
     "confidence": "high",
-    "audience": "the public",
+    "audience": "public",
     "quantity": {
-     "raw": "at least 20",
+     "raw": "at least 20 project roadside signs",
      "scope": null,
      "value": 20,
      "valueMax": null,
-     "unit": null,
+     "unit": "project roadside signs",
      "comparator": ">="
     },
     "timeframe": null
    },
    {
-    "id": "a4395342",
-    "name": "informational field days/tours",
-    "text": "Informational field days or tours to inform the public about the benefits of the project.",
+    "id": "5a157de3",
+    "name": "Publicity of the project",
+    "text": "Publicity of the project will be increased; at least 1 field day/tour will be conducted and at least 1,000 fact sheets will be developed and distributed.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
-      "page": 20,
-      "quote": "Provide a least two (2) informational field days/tours to inform the public about the benefits of the project."
+      "page": 41,
+      "quote": "at least 1 field day/tour will be conducted and at least"
      }
     ],
     "verified": true,
     "source": "text",
     "needsReview": null,
     "confidence": "high",
-    "audience": "the public",
+    "audience": "public",
+    "quantity": null,
+    "timeframe": "Month 25-36"
+   },
+   {
+    "id": "4b46940b",
+    "name": "Conduct a landowner meeting",
+    "text": "Conduct a landowner meeting to inform potential participants about the project.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 41,
+      "quote": "Conduct a landowner meeting to inform potential participants about the project. (Month 3)"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": "potential participants",
+    "quantity": null,
+    "timeframe": "Month 3"
+   },
+   {
+    "id": "a4395342",
+    "name": "Informational field days/tours",
+    "text": "Informational field days and tours to inform the public about the benefits of the project.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 20,
+      "quote": "Provide a least two (2) informational field days/tours to inform the public about the"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": "public",
     "quantity": {
      "raw": "a least two (2)",
      "scope": null,
@@ -2567,36 +2727,9 @@
     "timeframe": null
    },
    {
-    "id": "a919e4dc",
-    "name": "articles about the project",
-    "text": "Articles about the project published in newsletters and local newspapers.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 20,
-      "quote": "Publish no fewer than 4 articles about the project in newsletters and local newspapers."
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "audience": "the public",
-    "quantity": {
-     "raw": "no fewer than 4 articles",
-     "scope": null,
-     "value": 4,
-     "valueMax": null,
-     "unit": "articles",
-     "comparator": ">="
-    },
-    "timeframe": null
-   },
-   {
     "id": "93a962b4",
-    "name": "project presentations",
-    "text": "Project presentations made as requested by MDEQ.",
+    "name": "Project presentations",
+    "text": "Make project presentations as requested by MDEQ.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2611,14 +2744,14 @@
     "confidence": "high",
     "audience": null,
     "quantity": null,
-    "timeframe": "as requested by MDEQ"
+    "timeframe": null
    }
   ],
   "geographicAreas": [
    {
     "id": "8a8bfb54",
     "name": "Tippah County",
-    "text": "County named in the checklist pattern and the outreach activity Tippah County Fair; the page text does not state the county as a covered area.",
+    "text": "County named in the document's checklist pattern; the county is referred to in the outreach list as the Tippah County Fair.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2628,35 +2761,35 @@
      },
      {
       "page": 6,
-      "quote": "The targeted area for this project is the cropland and pastureland in Tippah County that lie within the watershed boundaries."
+      "quote": "The targeted area for this project is the cropland and pastureland in Tippah"
      },
      {
       "page": 10,
-      "quote": "Bell Creek-West Prong Muddy Creek is located in the northwestern portion of Tippah County, Mississippi"
+      "quote": "located in the northwestern portion of Tippah County, Mississippi (Figure 5.3)."
      },
      {
       "page": 17,
-      "quote": "Tippah County, Mississippi. The watershed ID number is 0601, and the Hydrologic Unit Code (HUC)"
+      "quote": "is located in Tippah County, Mississippi"
      },
      {
       "page": 19,
-      "quote": "NRCS and Tippah County Soil and Water District employees identified landowners"
+      "quote": "Tippah County Soil and Water District employees identified landowners"
      },
      {
       "page": 21,
-      "quote": "include EQIP, CRP, and WHIP. Under these three programs, there has been $375,506.20 spent over the last three years with another $150,000 projected to be spent over the next three years in Tippah County."
+      "quote": "over the next three years in Tippah County."
      },
      {
-      "page": 24,
-      "quote": "Primary Partners- Mississippi Soil and Water Conservation Commission, Tippah County Soil"
+      "page": 25,
+      "quote": "Tippah County Fair"
      },
      {
       "page": 27,
-      "quote": "Primary partners- Mississippi Soil and Water Conservation Commission, Mississippi Department of Environmental Quality, and Tippah County Soil and Water Conservation District."
+      "quote": "Tippah County Soil and Water Conservation District."
      },
      {
       "page": 33,
-      "quote": "Basin Tippah County, Mississippi. Mississippi Department of Environmental Quality."
+      "quote": "North Independent Streams Basin Tippah County, Mississippi."
      },
      {
       "page": 35,
@@ -2664,33 +2797,29 @@
      },
      {
       "page": 37,
-      "quote": "This project will be located in the north central portion of Tippah County in Mississippi."
+      "quote": "located in the north central portion of Tippah County in Mississippi."
      },
      {
       "page": 39,
-      "quote": "cooperate with the Tippah County Soil and Water Conservation Districts in identifying the appropriate Best Management Practices"
+      "quote": "will cooperate with the Tippah County Soil and Water"
      }
     ],
     "verified": true,
     "source": "text",
     "needsReview": null,
-    "confidence": "high",
+    "confidence": "medium",
     "type": "county",
     "code": null,
     "areaAcres": null,
     "role": "primary"
    },
    {
-    "id": "dcdb8678",
-    "name": "Bell Creek-West Prong Muddy Creek",
-    "text": "Watershed named in the plan title, covered by the implementation plan.",
+    "id": "6d8e9355",
+    "name": "Bell Creek-West Prong Muddy Creek watershed",
+    "text": "The watershed that the education and outreach plan covers.",
     "kind": "main",
     "parentId": null,
     "evidence": [
-     {
-      "page": 2,
-      "quote": "Bell Creek-West Prong Muddy Creek Watershed Implementation Plan"
-     },
      {
       "page": 6,
       "quote": "Bell Creek-West Prong Muddy Creek Watershed was identified as a priority watershed"
@@ -2700,49 +2829,32 @@
       "quote": "The Muddy Creek watershed is approximately 63,682 acres."
      },
      {
-      "page": 16,
-      "quote": "The designated beneficial uses for the Bell Creek and West Prong Muddy Creek and the"
+      "page": 17,
+      "quote": "The watershed ID number is 0601, and the Hydrologic Unit Code (HUC) code for the watershed is 08010207."
      },
      {
       "page": 17,
-      "quote": "code for the watershed is 08010207."
+      "quote": "The Bell Creek- West Prong Muddy Creek Watershed is located within the Muddy Creek Watershed"
      },
      {
       "page": 19,
       "quote": "The Bell Creek- West Prong Muddy Creek 319 project began in 2011 and is scheduled to end"
      },
      {
+      "page": 22,
+      "quote": "community education in the Bell Creek-West Prong Muddy Creek watershed is to develop an atmosphere"
+     },
+     {
+      "page": 26,
+      "quote": "mailed out to the homes in the Bell/Muddy watershed."
+     },
+     {
       "page": 30,
-      "quote": "Total Budget for Bell Creek-West Prong Muddy Creek Watershed"
+      "quote": "11. Total Budget for Bell Creek-West Prong Muddy Creek Watershed Implementation Plan"
      },
      {
-      "page": 38,
-      "quote": "The targeted area within this watershed will be an area in the Bell Creek-West Prong Muddy Creek Watershed."
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "watershed",
-    "code": "08010207",
-    "areaAcres": 63682,
-    "role": "primary"
-   },
-   {
-    "id": "1e504138",
-    "name": "Muddy Creek Watershed",
-    "text": "Watershed whose Implementation Team organizes the plan evaluation.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 17,
-      "quote": "Waterbodies in the Muddy Creek watershed that have TMDLs written for them"
-     },
-     {
-      "page": 31,
-      "quote": "The evaluation of this plan will be organized by the Muddy Creek Watershed"
+      "page": 37,
+      "quote": "Bell Creek- West Prong Muddy Creek Watershed Nonpoint Source Pollution Project."
      },
      {
       "page": 38,
@@ -2751,10 +2863,6 @@
      {
       "page": 39,
       "quote": "The Muddy Creek Watershed is approximately 63,682 acres."
-     },
-     {
-      "page": 45,
-      "quote": "Muddy Creek Watershed 303(d) Listing Muddy Creek Watershed 0 1 2 3 4 5 Miles"
      },
      {
       "page": 50,
@@ -2777,7 +2885,7 @@
    {
     "id": "2ee6336a",
     "name": "HUC 08010207",
-    "text": "Hydrologic unit in which all the agricultural lands referred to are located.",
+    "text": "Hydrologic unit containing the agricultural lands referred to in the concern table.",
     "kind": "main",
     "parentId": null,
     "evidence": [
@@ -2800,64 +2908,68 @@
     "role": "mentioned"
    },
    {
-    "id": "37d2328a",
-    "name": "Bell/Muddy watershed",
-    "text": "Watershed where water bill flyers are mailed to homes.",
+    "id": "a9644d27",
+    "name": "Bell Creek-West Prong Muddy Creek Subwatershed",
+    "text": "Project target area, approximately 3,940 acres within the Muddy Creek Watershed.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
-      "page": 26,
-      "quote": "mailed out to the homes in the Bell/Muddy watershed."
+      "page": 10,
+      "quote": "There are 19,277 acres located within the watershed boundaries."
+     },
+     {
+      "page": 10,
+      "quote": "The targeted area of this watershed is the Bell Creek-West Prong Muddy Creek Subwatershed (Figure 5.2)."
+     },
+     {
+      "page": 39,
+      "quote": "This project will target an area in the Bell Creek-West Prong Muddy Creek Subwatershed which is approximately 3,940 acres"
+     },
+     {
+      "page": 47,
+      "quote": "Subset of Muddy Creek Subwatershed"
      }
     ],
     "verified": true,
-    "source": "table",
+    "source": "text",
     "needsReview": null,
-    "confidence": "high",
-    "type": "watershed",
+    "confidence": "medium",
+    "type": "subwatershed",
     "code": null,
-    "areaAcres": null,
-    "role": "mentioned"
+    "areaAcres": 3940,
+    "role": "primary"
    },
    {
     "id": "970e3abf",
     "name": "Muddy Creek",
-    "text": "Stream with two TMDL documents addressing nutrients, low DO and fecal coliform.",
+    "text": "A creek with two TMDL documents addressing nutrients, low DO and fecal coliform.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
       "page": 6,
-      "quote": "Muddy Creek has 2 Total Maximum Daily Load (TMDL) documents"
+      "quote": "Muddy Creek has 2 Total Maximum"
      },
      {
       "page": 6,
-      "quote": "West Prong Muddy Creek is on the 2012 303(d) List of Impaired Waters for Biological Impairment"
+      "quote": "West Prong Muddy Creek is on the 2012"
      },
      {
       "page": 16,
-      "quote": "The designated beneficial uses for the Bell Creek and West Prong Muddy Creek and the"
+      "quote": "classification for the listed segments of Bell Creek and West Prong Muddy Creek is fish and wildlife"
      },
      {
       "page": 17,
-      "quote": "Muddy Creek flows in a northern direction from its headwaters in central Tippah county across"
+      "quote": "Muddy Creek- Low DO/Organic Enrichment, and Nutrients, Muddy Creek-Fecal Coliform."
      },
      {
-      "page": 18,
-      "quote": "loadings to Bell Creek and Muddy Creek in the watershed."
-     },
-     {
-      "page": 33,
-      "quote": "Phase One Fecal Coliform TMDL for Muddy Creek. North Independent Streams"
-     },
-     {
-      "page": 38,
-      "quote": "A Stressor Identification Report was developed due to Muddy Creeks failure to meet minimum water quality criteria"
+      "page": 20,
+      "quote": "remove the impaired segments of Muddy Creek from Mississippi’s"
      },
      {
       "page": 42,
-      "quote": "Muddy Creek along with its tributaries. Since nutrients and animal waste are transported to the waters"
+      "quote": "sediment load reduction to Muddy Creek along with its tributaries"
      }
     ],
     "verified": true,
@@ -2865,24 +2977,36 @@
     "needsReview": null,
     "confidence": "high",
     "type": "waterbody",
-    "code": null,
+    "code": "MS206E",
     "areaAcres": null,
     "role": "primary"
    },
    {
-    "id": "6c6be6a3",
+    "id": "9debf865",
     "name": "Mississippi",
-    "text": "State where the project is located.",
+    "text": "The state in which the watershed and agencies are located.",
     "kind": "main",
     "parentId": null,
     "evidence": [
      {
+      "page": 6,
+      "quote": "The Mississippi Soil and Water"
+     },
+     {
+      "page": 10,
+      "quote": "located in the northwestern portion of Tippah County, Mississippi (Figure 5.3)."
+     },
+     {
+      "page": 17,
+      "quote": "is located in Tippah County, Mississippi"
+     },
+     {
       "page": 20,
-      "quote": "remove the impaired segments of Muddy Creek from Mississippi’s 303(d) list."
+      "quote": "remove the impaired segments of Muddy Creek from Mississippi’s"
      },
      {
       "page": 37,
-      "quote": "This project will be located in the north central portion of Tippah County in Mississippi."
+      "quote": "located in the north central portion of Tippah County in Mississippi."
      },
      {
       "page": 45,
@@ -2896,36 +3020,78 @@
     "type": "state",
     "code": null,
     "areaAcres": null,
-    "role": "mentioned"
+    "role": "primary"
    },
    {
-    "id": "a9644d27",
-    "name": "Bell Creek-West Prong Muddy Creek Subwatershed",
-    "text": "The targeted subwatershed of about 3,940 acres within the Muddy Creek Watershed.",
+    "id": "8add13e6",
+    "name": "Bell Creek",
+    "text": "Creek in the watershed with nutrient and sediment loadings addressed by the plan.",
     "kind": "main",
-    "parentId": "1e504138",
+    "parentId": null,
     "evidence": [
      {
       "page": 10,
-      "quote": "The targeted area of this watershed is the Bell Creek-West Prong Muddy Creek Subwatershed (Figure 5.2)."
+      "quote": "Named water bodies in the watershed include Fourmile Branch, Bell Creek, West Prong and North Prong creeks."
      },
      {
-      "page": 39,
-      "quote": "This project will target an area in the Bell Creek-West Prong Muddy Creek Subwatershed which is approximately 3,940 acres within the watershed"
+      "page": 16,
+      "quote": "The designated beneficial uses for the Bell Creek and West Prong Muddy Creek"
      },
      {
-      "page": 47,
-      "quote": "2008 Cropland and 2001 Landuse Subset of Muddy Creek Subwatershed"
+      "page": 18,
+      "quote": "the nutrient and sediment loadings to Bell Creek and"
      }
     ],
     "verified": true,
     "source": "text",
     "needsReview": null,
-    "confidence": "medium",
-    "type": "subwatershed",
+    "confidence": "high",
+    "type": "waterbody",
     "code": null,
-    "areaAcres": 3940,
+    "areaAcres": null,
     "role": "primary"
+   },
+   {
+    "id": "2b4338be",
+    "name": "Hatchie River",
+    "text": "River to which Muddy Creek flows at its confluence.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 17,
+      "quote": "to the confluence with the Hatchie River"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "waterbody",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "c42a40da",
+    "name": "Tennessee",
+    "text": "State crossed by Muddy Creek after leaving Mississippi.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 17,
+      "quote": "across the Tennessee state line"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "state",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
    },
    {
     "id": "cc1eb7f8",
@@ -2936,7 +3102,7 @@
     "evidence": [
      {
       "page": 10,
-      "quote": "Named water bodies in the watershed include Fourmile Branch, Bell Creek, West Prong and"
+      "quote": "Named water bodies in the watershed include Fourmile Branch, Bell Creek, West Prong and North Prong creeks."
      }
     ],
     "verified": true,
@@ -2949,54 +3115,8 @@
     "role": "mentioned"
    },
    {
-    "id": "92dd207e",
-    "name": "Bell Creek",
-    "text": "Named water body in the watershed.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 10,
-      "quote": "Named water bodies in the watershed include Fourmile Branch, Bell Creek, West Prong and"
-     },
-     {
-      "page": 16,
-      "quote": "The designated beneficial uses for the Bell Creek and West Prong Muddy Creek and the"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "waterbody",
-    "code": null,
-    "areaAcres": null,
-    "role": "mentioned"
-   },
-   {
-    "id": "d10d5c04",
-    "name": "West Prong",
-    "text": "Named water body in the watershed.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 10,
-      "quote": "Named water bodies in the watershed include Fourmile Branch, Bell Creek, West Prong and"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "waterbody",
-    "code": null,
-    "areaAcres": null,
-    "role": "mentioned"
-   },
-   {
-    "id": "586c76f1",
-    "name": "North Prong creeks",
+    "id": "64466f58",
+    "name": "North Prong creek",
     "text": "Named water body in the watershed.",
     "kind": "main",
     "parentId": null,
@@ -3024,7 +3144,7 @@
     "evidence": [
      {
       "page": 10,
-      "quote": "The Holly Springs National Forest and Tippah Lake are the environmental"
+      "quote": "The Holly Springs National Forest and Tippah Lake are the environmental management areas located within this watershed."
      }
     ],
     "verified": true,
@@ -3045,119 +3165,14 @@
     "evidence": [
      {
       "page": 10,
-      "quote": "The Holly Springs National Forest and Tippah Lake are the environmental"
+      "quote": "The Holly Springs National Forest and Tippah Lake are the environmental management areas located within this watershed."
      }
     ],
     "verified": true,
     "source": "text",
     "needsReview": null,
     "confidence": "high",
-    "type": "waterbody",
-    "code": null,
-    "areaAcres": null,
-    "role": "mentioned"
-   },
-   {
-    "id": "c3833fd2",
-    "name": "MS206E",
-    "text": "Map title for the Muddy Creek assessment area shown on the first page of these maps.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 45,
-      "quote": "MS206E Muddy Creek Wolf River Benton Tippah Hatchie River Alcorn"
-     }
-    ],
-    "verified": true,
-    "source": "ocr",
-    "needsReview": null,
-    "confidence": "medium",
     "type": "other",
-    "code": "MS206E",
-    "areaAcres": null,
-    "role": "primary"
-   },
-   {
-    "id": "6100a412",
-    "name": "Tombigbee River",
-    "text": "Water body named on the landuse map.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 46,
-      "quote": "Wolf River Benton Tippah Muddy Creek Tombigbee River Alcorn"
-     }
-    ],
-    "verified": true,
-    "source": "ocr",
-    "needsReview": null,
-    "confidence": "medium",
-    "type": "waterbody",
-    "code": null,
-    "areaAcres": null,
-    "role": "mentioned"
-   },
-   {
-    "id": "518adb21",
-    "name": "MS206E",
-    "text": "Evaluated water body segment of Muddy Creek on the 303(d) list.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 17,
-      "quote": "Creek, MS206E, on the Mississippi 2002 Section 303(d) List of Impaired Water Bodies."
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "waterbody",
-    "code": "MS206E",
-    "areaAcres": null,
-    "role": "mentioned"
-   },
-   {
-    "id": "2b4338be",
-    "name": "Hatchie River",
-    "text": "River to which Muddy Creek flows.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 17,
-      "quote": "to the confluence with the Hatchie River."
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "waterbody",
-    "code": null,
-    "areaAcres": null,
-    "role": "mentioned"
-   },
-   {
-    "id": "c42a40da",
-    "name": "Tennessee",
-    "text": "State whose border Muddy Creek crosses.",
-    "kind": "main",
-    "parentId": null,
-    "evidence": [
-     {
-      "page": 17,
-      "quote": "across the Tennessee state line to the confluence with the Hatchie River"
-     }
-    ],
-    "verified": true,
-    "source": "text",
-    "needsReview": null,
-    "confidence": "high",
-    "type": "state",
     "code": null,
     "areaAcres": null,
     "role": "mentioned"
@@ -3172,13 +3187,25 @@
   "year": 2012
  },
  "quality": {
-  "verifiedRate": 0.7346938775510204,
+  "verifiedRate": 0.6011560693641619,
   "rejected": [
+   {
+    "category": "outreach",
+    "name": "Water Bill Mailers: 500",
+    "page": 27,
+    "reason": "number-not-in-quote"
+   },
    {
     "category": "outreach",
     "name": "Water Bill Mailers: audience \"Homeowners in the Bell/Muddy watershed\"",
     "page": 27,
     "reason": "detail-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Presentations: 3",
+    "page": 27,
+    "reason": "number-not-in-quote"
    },
    {
     "category": "outreach",
@@ -3189,49 +3216,61 @@
    {
     "category": "outreach",
     "name": "Adopt-A-Stream: audience \"Workshop participants\"",
-    "page": 28,
+    "page": 29,
     "reason": "detail-not-in-source"
    },
    {
     "category": "outreach",
-    "name": "Adopt-A-Stream: timeframe \"at least one event before September 30, 2014\"",
-    "page": 28,
+    "name": "Adopt A Stream Workshop: audience \"Workshop participants\"",
+    "page": 29,
     "reason": "detail-not-in-source"
    },
    {
     "category": "outreach",
-    "name": "Adopt A Stream Workshop",
-    "page": 28,
-    "reason": "name-not-in-source"
+    "name": "Adopt A Stream Workshop: timeframe \"at least one event before September 30, 2014\"",
+    "page": 29,
+    "reason": "detail-not-in-source"
    },
    {
     "category": "outreach",
-    "name": "Water Bill Mailers Budget Items",
-    "page": 27,
-    "reason": "name-not-in-source"
+    "name": "Landowner Meeting and Field Days: audience \"Landowners\"",
+    "page": 29,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Radio Ads: audience \"Local radio listeners\"",
+    "page": 28,
+    "reason": "detail-not-in-source"
    },
    {
     "category": "geographicAreas",
     "name": "Bell/Muddy watershed",
     "page": 27,
+    "reason": "quote-not-found"
+   },
+   {
+    "category": "implementation",
+    "name": "Provide technical assistance",
+    "page": 21,
     "reason": "name-not-in-source"
    },
    {
     "category": "outreach",
-    "name": "Signage: Signs 20",
+    "name": "Signage: 20",
     "page": 22,
     "reason": "number-not-in-quote"
    },
    {
     "category": "outreach",
-    "name": "Signage: timeframe \"as practices are completed and/or requested by the landowners throughout the life of the project\"",
+    "name": "Signage: audience \"Landowners and the public\"",
     "page": 22,
     "reason": "detail-not-in-source"
    },
    {
     "category": "outreach",
-    "name": "Landowner Meeting and Field Days: audience \"landowners and interested public\"",
-    "page": 23,
+    "name": "Signage: timeframe \"As practices are completed and/or requested by landowners throughout the life of the project\"",
+    "page": 22,
     "reason": "detail-not-in-source"
    },
    {
@@ -3242,7 +3281,7 @@
    },
    {
     "category": "outreach",
-    "name": "Landowner Meeting and Field Days: audience \"landowners and interested public\"",
+    "name": "Landowner Meeting and Field Days: audience \"Landowners and the interested public\"",
     "page": 24,
     "reason": "detail-not-in-source"
    },
@@ -3266,7 +3305,13 @@
    },
    {
     "category": "outreach",
-    "name": "Fact Sheets: audience \"landowners and public\"",
+    "name": "Fact Sheets: 1,000 fact sheets",
+    "page": 24,
+    "reason": "number-not-in-quote"
+   },
+   {
+    "category": "outreach",
+    "name": "Fact Sheets: audience \"Public\"",
     "page": 24,
     "reason": "detail-not-in-source"
    },
@@ -3278,7 +3323,7 @@
    },
    {
     "category": "outreach",
-    "name": "Watershed Harmony Puppet Show: audience \"school groups, adults, civic clubs\"",
+    "name": "Watershed Harmony Puppet Show: audience \"Students, adults, civic clubs, conferences\"",
     "page": 25,
     "reason": "detail-not-in-source"
    },
@@ -3290,13 +3335,13 @@
    },
    {
     "category": "outreach",
-    "name": "Tippah County Fair: audience \"fair patrons, adults, children\"",
+    "name": "Tippah County Fair: audience \"Fair patrons and children\"",
     "page": 25,
     "reason": "detail-not-in-source"
    },
    {
     "category": "outreach",
-    "name": "Tippah County Fair: timeframe \"3 consecutive years\"",
+    "name": "Tippah County Fair: timeframe \"at the fair for 3 consecutive years\"",
     "page": 25,
     "reason": "detail-not-in-source"
    },
@@ -3320,9 +3365,141 @@
    },
    {
     "category": "outreach",
-    "name": "Water Bill Mailers: audience \"homeowners in the Bell/Muddy watershed\"",
+    "name": "Water Bill Mailers: audience \"Homeowners in the Bell/Muddy watershed\"",
     "page": 26,
     "reason": "detail-not-in-source"
+   },
+   {
+    "category": "implementation",
+    "name": "Sign grant contract with MS Department of Environmental Quality.: status \"planned\"",
+    "page": 41,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "implementation",
+    "name": "Determine priority areas that are contributing significant loads in the watershed.: status \"planned\"",
+    "page": 41,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "implementation",
+    "name": "Issue policies and procedures for implementing the project to the SWCD office.: status \"planned\"",
+    "page": 41,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "implementation",
+    "name": "Meet with the board of SWCD commissioners to get their understanding of their responsibilities and participation.: status \"planned\"",
+    "page": 41,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "implementation",
+    "name": "Provide training to district staff.: status \"planned\"",
+    "page": 41,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "implementation",
+    "name": "Assist in establishing an evaluation system in conjunction with the MS Department of Environmental Quality to indicate the benefits of the project.: status \"planned\"",
+    "page": 41,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "implementation",
+    "name": "Conduct a landowner meeting to inform potential participants about the project.: status \"planned\"",
+    "page": 41,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "implementation",
+    "name": "Secure commitments from several landowners and operators who are willing to participate in the project.: status \"planned\"",
+    "page": 41,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "implementation",
+    "name": "Assist participants in developing a conservation plan and applying best management practices: status \"planned\"",
+    "page": 41,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "implementation",
+    "name": "As requested, assist DEQ with evaluations.: status \"planned\"",
+    "page": 41,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "implementation",
+    "name": "Collect GPS coordinates and other data required by MDEQ on all BMPs installed in the project.: status \"planned\"",
+    "page": 41,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "implementation",
+    "name": "Assemble data on the amount of soil saved.: status \"planned\"",
+    "page": 41,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "implementation",
+    "name": "Erect project roadside signs which designate where water quality practices are in progress or have been completed.: status \"planned\"",
+    "page": 41,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "implementation",
+    "name": "Provide continued conservation planning and application assistance to participants.: status \"planned\"",
+    "page": 41,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "implementation",
+    "name": "Review the status of applying best management practices to reach the objectives of the project.: status \"planned\"",
+    "page": 41,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "implementation",
+    "name": "Make Final report to MSDEQ.: status \"planned\"",
+    "page": 41,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Newspaper articles",
+    "page": 39,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Establish demonstration farm (Month 4-12)",
+    "page": 41,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Informational field day/tour (Month 13-24)",
+    "page": 41,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Establish demonstration farm (Month 13-24)",
+    "page": 41,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Publish articles about the project",
+    "page": 41,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Publicity of the project: at least 1 field day/tour; at least 1,000 fact sheets",
+    "page": 41,
+    "reason": "number-not-in-quote"
    },
    {
     "category": "implementation",
@@ -3332,21 +3509,15 @@
    },
    {
     "category": "implementation",
-    "name": "Implement a 319 water quality project on the agricultural lands within the watershed: status \"in-progress\"",
-    "page": 6,
-    "reason": "detail-not-in-source"
-   },
-   {
-    "category": "outreach",
-    "name": "Farmer education: audience \"Farmers and landowners\"",
+    "name": "Continue existing programs and projects related to farmer education, BMP implementation, and habitat conservation: status \"planned\"",
     "page": 7,
     "reason": "detail-not-in-source"
    },
    {
-    "category": "outreach",
-    "name": "mission education of landowners",
-    "page": 8,
-    "reason": "name-not-in-source"
+    "category": "implementation",
+    "name": "Implement a 319 water quality project on the agricultural lands within the watershed: status \"in-progress\"",
+    "page": 6,
+    "reason": "detail-not-in-source"
    },
    {
     "category": "outreach",
@@ -3362,44 +3533,56 @@
    },
    {
     "category": "goals",
-    "name": "reduced nutrient loads entering streams in the watershed: pollutant \"nutrients\"",
+    "name": "To apply Best Management Practices (BMPs) to agricultural lands in the project area so as to reach the desired outcome of reduced nutrient loads entering streams in the watershed.: pollutant \"nutrients\"",
     "page": 37,
     "reason": "detail-not-in-source"
    },
    {
     "category": "goals",
-    "name": "TMDL nutrient reduction: preliminary target range of 0.6mg/l to 0.11mg/l",
+    "name": "TMDL nutrient reduction target for Muddy Creek: 0.6mg/l to 0.11mg/l",
     "page": 38,
     "reason": "number-not-in-quote"
    },
    {
-    "category": "bmps",
-    "name": "Best Management Practices (BMPs)",
-    "page": 38,
+    "category": "outreach",
+    "name": "Public education about Best Management Practices",
+    "page": 37,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "goals",
+    "name": "Desired Results/Benefits",
+    "page": 20,
     "reason": "not-an-item"
    },
    {
-    "category": "monitoring",
-    "name": "TMDL nutrient reduction target: preliminary target range of 0.6mg/l to 0.11mg/l",
-    "page": 38,
-    "reason": "number-not-in-quote"
-   },
-   {
-    "category": "monitoring",
-    "name": "GPS coordinates and BMP data",
-    "page": 41,
+    "category": "outreach",
+    "name": "Newsletter and newspaper articles",
+    "page": 20,
     "reason": "name-not-in-source"
    },
    {
     "category": "outreach",
-    "name": "Articles in newsletters and local newspapers",
-    "page": 39,
+    "name": "Landowner and stakeholder information",
+    "page": 19,
     "reason": "name-not-in-source"
    },
    {
+    "category": "monitoring",
+    "name": "Sediment Loading From Agricultural Lands",
+    "page": 50,
+    "reason": "quote-not-found"
+   },
+   {
+    "category": "monitoring",
+    "name": "Litter: location \"throughout the watershed at most bridge sites in rural areas\"",
+    "page": 50,
+    "reason": "detail-not-in-source"
+   },
+   {
     "category": "geographicAreas",
-    "name": "Bell Creek-West Prong Muddy Creek Subwatershed: 19,277 acres",
-    "page": 10,
+    "name": "Muddy Creek Watershed: approximately 20,416 acres of agriculture land",
+    "page": 50,
     "reason": "number-not-in-quote"
    },
    {
@@ -3407,6 +3590,18 @@
     "name": "Fecal Coliform: geometric mean of 200 per 100ml (May-October); geometric mean of 2,000 per 100ml (November-April)",
     "page": 16,
     "reason": "number-not-in-quote"
+   },
+   {
+    "category": "monitoring",
+    "name": "Dissolve Oxygen: daily average of not less than 5.0mg/l; instantaneous minimum of not less than 4.0mg/l",
+    "page": 16,
+    "reason": "number-not-in-quote"
+   },
+   {
+    "category": "geographicAreas",
+    "name": "West Prong creek",
+    "page": 10,
+    "reason": "name-not-in-source"
    }
   ],
   "conflicts": [],
@@ -3441,6 +3636,7 @@
   ],
   "emptyPages": [
    1,
+   2,
    8,
    9,
    14,
@@ -3449,6 +3645,7 @@
    36,
    43,
    44,
+   46,
    48,
    49,
    52,
@@ -3457,13 +3654,13 @@
   "failedUnits": [],
   "provider": "anthropic",
   "model": "claude-haiku-5-5",
-  "durationMs": 61503,
+  "durationMs": 48723,
   "usage": {
-   "inputTokens": 349835,
-   "outputTokens": 54929,
-   "costUsd": 0.04841951999999999
+   "inputTokens": 352355,
+   "outputTokens": 45981,
+   "costUsd": 0.04387208000000001
   },
-  "completionBasis": "No completion status reported in this document",
+  "completionBasis": "0 of 44 activities reported completed",
   "structure": [
    {
     "page": 1,
@@ -9865,90 +10062,6 @@
     "page": 44,
     "kind": "para",
     "level": 0,
-    "text": "N"
-   },
-   {
-    "page": 44,
-    "kind": "para",
-    "level": 0,
-    "text": "W E"
-   },
-   {
-    "page": 44,
-    "kind": "para",
-    "level": 0,
-    "text": "S"
-   },
-   {
-    "page": 44,
-    "kind": "para",
-    "level": 0,
-    "text": "72"
-   },
-   {
-    "page": 44,
-    "kind": "para",
-    "level": 0,
-    "text": "Wolf River"
-   },
-   {
-    "page": 44,
-    "kind": "para",
-    "level": 0,
-    "text": "Benton"
-   },
-   {
-    "page": 44,
-    "kind": "para",
-    "level": 0,
-    "text": "Ashland"
-   },
-   {
-    "page": 44,
-    "kind": "para",
-    "level": 0,
-    "text": "Walnut"
-   },
-   {
-    "page": 44,
-    "kind": "para",
-    "level": 0,
-    "text": "Muddy Creek"
-   },
-   {
-    "page": 44,
-    "kind": "para",
-    "level": 0,
-    "text": "Tippah"
-   },
-   {
-    "page": 44,
-    "kind": "para",
-    "level": 0,
-    "text": "Falkner"
-   },
-   {
-    "page": 44,
-    "kind": "para",
-    "level": 0,
-    "text": "Alcorn"
-   },
-   {
-    "page": 44,
-    "kind": "para",
-    "level": 0,
-    "text": "Hatchie River"
-   },
-   {
-    "page": 44,
-    "kind": "para",
-    "level": 0,
-    "text": "Ripley"
-   },
-   {
-    "page": 44,
-    "kind": "para",
-    "level": 0,
     "text": "This map produced by the Department of Environmental Quality (MDEQ), Office of Pollution Control, Surface Water Division, Water Quality Assessment Branch, Data Management Section on 22 February 2005."
    },
    {
@@ -9968,18 +10081,6 @@
     "kind": "para",
     "level": 0,
     "text": "The Mississippi Department of Environmental Quality makes no warranties, expressed or implied, as to the accuracy, completeness, currentness, reliability, or suitability for any particular purpose, of the data contained on this map."
-   },
-   {
-    "page": 44,
-    "kind": "heading",
-    "level": 0,
-    "text": "MDEQ"
-   },
-   {
-    "page": 44,
-    "kind": "para",
-    "level": 0,
-    "text": "Mississippi"
    },
    {
     "page": 44,
@@ -10033,97 +10134,25 @@
     "page": 44,
     "kind": "para",
     "level": 0,
-    "text": "Muddy Creek"
+    "text": "Muddy Creek Watershed"
    },
    {
     "page": 44,
     "kind": "para",
     "level": 0,
-    "text": "Watershed"
+    "text": "Mississippi"
    },
    {
     "page": 44,
-    "kind": "para",
+    "kind": "heading",
     "level": 0,
-    "text": "0 1 2 3 4 5 Miles"
+    "text": "MDEQ"
    },
    {
     "page": 44,
     "kind": "admin",
     "level": 0,
     "text": "44"
-   },
-   {
-    "page": 45,
-    "kind": "para",
-    "level": 0,
-    "text": "Tennessee"
-   },
-   {
-    "page": 45,
-    "kind": "para",
-    "level": 0,
-    "text": "Mississippi"
-   },
-   {
-    "page": 45,
-    "kind": "para",
-    "level": 0,
-    "text": "N"
-   },
-   {
-    "page": 45,
-    "kind": "para",
-    "level": 0,
-    "text": "W E"
-   },
-   {
-    "page": 45,
-    "kind": "para",
-    "level": 0,
-    "text": "S"
-   },
-   {
-    "page": 45,
-    "kind": "heading",
-    "level": 0,
-    "text": "MS206E"
-   },
-   {
-    "page": 45,
-    "kind": "para",
-    "level": 0,
-    "text": "Muddy Creek"
-   },
-   {
-    "page": 45,
-    "kind": "para",
-    "level": 0,
-    "text": "Wolf River"
-   },
-   {
-    "page": 45,
-    "kind": "para",
-    "level": 0,
-    "text": "Benton"
-   },
-   {
-    "page": 45,
-    "kind": "para",
-    "level": 0,
-    "text": "Tippah"
-   },
-   {
-    "page": 45,
-    "kind": "para",
-    "level": 0,
-    "text": "Hatchie River"
-   },
-   {
-    "page": 45,
-    "kind": "para",
-    "level": 0,
-    "text": "Alcorn"
    },
    {
     "page": 45,
@@ -10148,18 +10177,6 @@
     "kind": "para",
     "level": 0,
     "text": "The Mississippi Department of Environmental Quality makes no warranties, expressed or implied, as to the accuracy, completeness, currentness, reliability, or suitability for any particular purpose, of the data contained on this map."
-   },
-   {
-    "page": 45,
-    "kind": "heading",
-    "level": 0,
-    "text": "MDEQ"
-   },
-   {
-    "page": 45,
-    "kind": "para",
-    "level": 0,
-    "text": "Mississippi"
    },
    {
     "page": 45,
@@ -10225,7 +10242,13 @@
     "page": 45,
     "kind": "para",
     "level": 0,
-    "text": "0 1 2 3 4 5 Miles"
+    "text": "Mississippi"
+   },
+   {
+    "page": 45,
+    "kind": "heading",
+    "level": 0,
+    "text": "MDEQ"
    },
    {
     "page": 45,
@@ -10432,12 +10455,6 @@
     "text": "0 1 2 3 4 5 Miles"
    },
    {
-    "page": 46,
-    "kind": "admin",
-    "level": 0,
-    "text": "46"
-   },
-   {
     "page": 47,
     "kind": "para",
     "level": 0,
@@ -10519,7 +10536,7 @@
     "page": 47,
     "kind": "para",
     "level": 0,
-    "text": "Hydrologic Unit"
+    "text": "303(d) Listed"
    },
    {
     "page": 47,
@@ -10591,7 +10608,13 @@
     "page": 47,
     "kind": "para",
     "level": 0,
-    "text": "303d 2010"
+    "text": "Hydrologic Unit"
+   },
+   {
+    "page": 47,
+    "kind": "heading",
+    "level": 0,
+    "text": "HUC 2010"
    },
    {
     "page": 47,
@@ -10690,12 +10713,6 @@
     "text": "City"
    },
    {
-    "page": 47,
-    "kind": "admin",
-    "level": 0,
-    "text": "47"
-   },
-   {
     "page": 48,
     "kind": "para",
     "level": 0,
@@ -10733,15 +10750,9 @@
    },
    {
     "page": 48,
-    "kind": "heading",
-    "level": 0,
-    "text": "MISSISSIPPI"
-   },
-   {
-    "page": 48,
     "kind": "para",
     "level": 0,
-    "text": "Department of Environmental Quality"
+    "text": "MISSISSIPPI Department of Environmental Quality"
    },
    {
     "page": 48,
@@ -10751,9 +10762,9 @@
    },
    {
     "page": 48,
-    "kind": "para",
+    "kind": "table",
     "level": 0,
-    "text": "Hydrologic Unit"
+    "text": "Hydrologic Unit | 303(d) Listing"
    },
    {
     "page": 48,
@@ -10823,15 +10834,9 @@
    },
    {
     "page": 48,
-    "kind": "heading",
-    "level": 0,
-    "text": "HUC 2030"
-   },
-   {
-    "page": 48,
     "kind": "para",
     "level": 0,
-    "text": "Unimpaired"
+    "text": "Unassessed"
    },
    {
     "page": 48,
@@ -10843,13 +10848,13 @@
     "page": 48,
     "kind": "para",
     "level": 0,
-    "text": "Impaired"
+    "text": "No Storm"
    },
    {
     "page": 48,
     "kind": "para",
     "level": 0,
-    "text": "No Assmt"
+    "text": "Impaired"
    },
    {
     "page": 48,
@@ -10879,7 +10884,7 @@
     "page": 48,
     "kind": "para",
     "level": 0,
-    "text": "Water MS4"
+    "text": "Water MSI"
    },
    {
     "page": 48,

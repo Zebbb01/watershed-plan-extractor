@@ -75,16 +75,21 @@ export function nameSimilarity(a: string, b: string): number {
 /**
  * The scorer's own verbatim test, independent of the verifier's matching: the name's words in
  * order, as whole words, with any punctuation or spacing between them and an optional plural
- * ending. Numbers keep their decimal points, so "25 acres" is not "2.5 acres".
+ * ending. Numbers keep their decimal points, so "25 acres" is not "2.5 acres". A hyphen at a line
+ * end may split a word ("manage-ment") or be part of a compound ("re-vegetating"), so both readings
+ * count, and a name may follow a list number printed without a space ("11.Develop").
  */
 export function writtenIn(text: string, name: string): boolean {
   const norm = (s: string) =>
-    s.normalize('NFKC').toLowerCase().replace(/[‐-―−]/g, '-').replace(/[“”„‟″]/g, '"').replace(/[‘’‚‛′]/g, "'").replace(/(\w)-\s*\n\s*(\w)/g, '$1$2');
-  const words = norm(name).match(/[\p{L}\p{N}]+(?:[.,]\d+)*/gu);
+    s.normalize('NFKC').toLowerCase().replace(/[‐-―−]/g, '-').replace(/[“”„‟″]/g, '"').replace(/[‘’‚‛′]/g, "'");
+  const words = norm(name).replace(/(\w)-\s*\n\s*(\w)/g, '$1$2').match(/[\p{L}\p{N}]+(?:[.,]\d+)*/gu);
   if (!words) return false;
   const escape = (w: string) => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const pattern = `(?<![\\p{L}\\p{N}.])${words.map(escape).join('[^\\p{L}\\p{N}]+')}(?:e?s)?(?![\\p{L}\\p{N}]|[.,]\\d)`;
-  return new RegExp(pattern, 'u').test(norm(text));
+  // only a number must not follow a decimal point
+  const before = /^\p{N}/u.test(words[0]) ? '(?<![\\p{L}\\p{N}.])' : '(?<![\\p{L}\\p{N}])';
+  const pattern = new RegExp(`${before}${words.map(escape).join('[^\\p{L}\\p{N}]+')}(?:e?s)?(?![\\p{L}\\p{N}]|[.,]\\d)`, 'u');
+  const t = norm(text);
+  return pattern.test(t.replace(/(\w)-\s*\n\s*(\w)/g, '$1$2')) || pattern.test(t.replace(/(\w)-\s*\n\s*(\w)/g, '$1-$2'));
 }
 
 const prf = (gt: number, predicted: number, matched: number): Prf => {
@@ -114,6 +119,22 @@ function valuesOf(category: CategoryKey, item: AnyItem): { value: number; unit: 
   if (category === 'outreach') push(i.quantity);
   if (category === 'geographicAreas' && typeof i.areaAcres === 'number') out.push({ value: i.areaAcres, unit: 'ac' });
   return out.filter((v): v is { value: number; unit: string | null } => v.value !== null);
+}
+
+/**
+ * Names that must be verbatim but are not written in the PDF text: a monitoring item's parameter,
+ * every BMP, outreach and area name. Items read only from scanned pages are skipped: the PDF has no
+ * text there to check them against. Needs no answer key.
+ */
+export function findVerbatimViolations(result: ExtractionResult, pdfText: Map<number, string>): string[] {
+  const docText = [...pdfText.values()].join('\n');
+  if (!docText.trim()) return [];
+  const verbatimOf = (c: CategoryKey, i: AnyItem) => (c === 'monitoring' ? (i as unknown as { parameter: string }).parameter : i.name);
+  const ocr = new Set(result.quality.ocrPages);
+  const checkable = (i: AnyItem) => i.evidence.some((e) => !ocr.has(e.page) && (pdfText.get(e.page) ?? '').trim());
+  return CATEGORY_KEYS.filter((c) => c !== 'goals' && c !== 'implementation').flatMap((c) =>
+    (result.report[c] as AnyItem[]).filter((i) => checkable(i) && !writtenIn(docText, verbatimOf(c, i))).map((i) => `${c}: ${verbatimOf(c, i)}`),
+  );
 }
 
 export function score(result: ExtractionResult, gt: GroundTruth, pdfText: Map<number, string>): DocScore {
@@ -189,17 +210,7 @@ export function score(result: ExtractionResult, gt: GroundTruth, pdfText: Map<nu
   const core = sum(CORE);
   const all = sum([...CATEGORY_KEYS]);
 
-  const docText = [...pdfText.values()].join('\n');
-  // The verbatim field: a monitoring item's parameter, every other item's name. Items read only
-  // from scanned pages are skipped: the PDF has no text there to check them against.
-  const verbatimOf = (c: CategoryKey, i: AnyItem) => (c === 'monitoring' ? (i as unknown as { parameter: string }).parameter : i.name);
-  const ocr = new Set(result.quality.ocrPages);
-  const checkable = (i: AnyItem) => i.evidence.some((e) => !ocr.has(e.page) && (pdfText.get(e.page) ?? '').trim());
-  const verbatimViolations = docText.trim()
-    ? CATEGORY_KEYS.filter((c) => c !== 'goals' && c !== 'implementation').flatMap((c) =>
-        (result.report[c] as AnyItem[]).filter((i) => checkable(i) && !writtenIn(docText, verbatimOf(c, i))).map((i) => `${c}: ${verbatimOf(c, i)}`),
-      )
-    : [];
+  const verbatimViolations = findVerbatimViolations(result, pdfText);
 
   return {
     doc: gt.doc,

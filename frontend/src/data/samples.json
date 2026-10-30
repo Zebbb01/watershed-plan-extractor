@@ -5,16 +5,17 @@
     "year": 2019,
     "pages": 11,
     "format": "9-element plan",
+    "heldOut": false,
     "source": "MDEQ",
     "pdf": "/samples/broken-pumpkin-2019.pdf",
     "sourceUrl": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_I/TB/Nine_Key_Element_Plans/Broken_Pumpkin_9_Key_Element_Plan_2019.pdf",
     "counts": {
       "goals": 1,
-      "bmps": 33,
+      "bmps": 34,
       "implementation": 18,
-      "monitoring": 13,
-      "outreach": 9,
-      "geographicAreas": 10
+      "monitoring": 14,
+      "outreach": 8,
+      "geographicAreas": 9
     }
   },
   {
@@ -23,34 +24,17 @@
     "year": 2012,
     "pages": 53,
     "format": "Narrative plan",
+    "heldOut": false,
     "source": "MDEQ",
     "pdf": "/samples/bell-creek-2012.pdf",
     "sourceUrl": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_I/NI/Watershed_Plans/Bell_Creek_Muddy_Creek_Watershed_Plan_2012.pdf",
     "counts": {
       "goals": 8,
       "bmps": 11,
-      "implementation": 36,
-      "monitoring": 17,
-      "outreach": 17,
-      "geographicAreas": 19
-    }
-  },
-  {
-    "slug": "fuller-creek-2022",
-    "title": "Fuller Creek - Town Creek 9 Key Element Plan",
-    "year": 2022,
-    "pages": 13,
-    "format": "9-element plan",
-    "source": "MDEQ",
-    "pdf": "/samples/fuller-creek-2022.pdf",
-    "sourceUrl": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_I/TB/Nine_Key_Element_Plans/Fuller_Creek_Town_Creek_9_Key_Element_Plan_2022.pdf",
-    "counts": {
-      "goals": 3,
-      "bmps": 11,
-      "implementation": 19,
+      "implementation": 44,
       "monitoring": 11,
-      "outreach": 6,
-      "geographicAreas": 12
+      "outreach": 17,
+      "geographicAreas": 13
     }
   },
   {
@@ -59,16 +43,74 @@
     "year": 2004,
     "pages": 108,
     "format": "Scanned plan",
+    "heldOut": false,
     "source": "MDEQ",
     "pdf": "/samples/buttahatchee-2004.pdf",
     "sourceUrl": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_I/TB/Watershed_Plans/Buttahatchee_River_Watershed_Plan_2004.pdf",
     "counts": {
-      "goals": 23,
-      "bmps": 25,
-      "implementation": 110,
-      "monitoring": 24,
-      "outreach": 39,
-      "geographicAreas": 62
+      "goals": 17,
+      "bmps": 26,
+      "implementation": 115,
+      "monitoring": 26,
+      "outreach": 50,
+      "geographicAreas": 73
+    }
+  },
+  {
+    "slug": "yazoo-pass-2021",
+    "title": "Yazoo Pass 9 Key Element Plan",
+    "year": 2021,
+    "pages": 14,
+    "format": "9-element plan",
+    "heldOut": true,
+    "source": "MDEQ",
+    "pdf": "/samples/yazoo-pass-2021.pdf",
+    "sourceUrl": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_II/YZ/Nine_Key_Element_Plans/Yazoo_Pass_9_Key_Element_Plan_2021.pdf",
+    "counts": {
+      "goals": 3,
+      "bmps": 5,
+      "implementation": 24,
+      "monitoring": 11,
+      "outreach": 11,
+      "geographicAreas": 12
+    }
+  },
+  {
+    "slug": "lake-washington-2007",
+    "title": "Lake Washington Watershed Plan",
+    "year": 2007,
+    "pages": 98,
+    "format": "Narrative plan",
+    "heldOut": true,
+    "source": "MDEQ",
+    "pdf": "/samples/lake-washington-2007.pdf",
+    "sourceUrl": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_II/YZ/Watershed_Plans/Lake_Washington_Watershed_Plan_2007.pdf",
+    "counts": {
+      "goals": 33,
+      "bmps": 20,
+      "implementation": 181,
+      "monitoring": 59,
+      "outreach": 32,
+      "geographicAreas": 19
+    }
+  },
+  {
+    "slug": "west-boley-2007",
+    "title": "West Boley Creek Watershed Action Plan",
+    "year": 2007,
+    "pages": 40,
+    "format": "Scanned plan",
+    "heldOut": true,
+    "source": "MDEQ",
+    "pdf": "/samples/west-boley-2007.pdf",
+    "sourceUrl": "https://www.mdeq.ms.gov/wp-content/uploads/SurfaceWaterBasinMgtNonPointSourceBranch/Watershed_Plans/Group_IV/LPL/Watershed_Plans/West_Boley_Creek_Watershed_Action_Plan_2007.pdf",
+    "counts": {
+      "goals": 4,
+      "bmps": 8,
+      "implementation": 33,
+      "monitoring": 3,
+      "outreach": 31,
+      "geographicAreas": 35
     }
   }
 ]

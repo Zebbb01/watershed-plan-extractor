@@ -12,10 +12,13 @@ import { runDoc } from './run-doc';
 import { score, type DocScore, type GroundTruth } from './score';
 
 /*
- * npm run eval -w backend -- --set dev|heldout|all|smoke|<doc id> [--model id] [--ocr-model id]
+ * npm run eval -w backend -- --set dev|heldout|all|smoke|<doc id>[,<doc id>...] [--model id] [--ocr-model id]
  *   [--provider anthropic|openai] [--effort low|medium|high] [--concurrency 4] [--repeat 3] [--latest]
+ *   [--merge <result file>]
  * Runs the production pipeline on the eval PDFs, scores it against ground truth, and writes
- * eval/results/<date>-<model>.json (and latest.json with --latest or --set all).
+ * eval/results/<date>-<model>.json (and latest.json with --latest or --set all). --merge takes the
+ * plans not run now from a saved result file, so a change that alters only some plans' input can be
+ * measured on those plans alone; the output lists which plans came from where.
  */
 
 const { values: args } = parseArgs({
@@ -29,6 +32,7 @@ const { values: args } = parseArgs({
     label: { type: 'string' },
     repeat: { type: 'string', default: '1' },
     latest: { type: 'boolean', default: false },
+    merge: { type: 'string' },
   },
 });
 
@@ -48,7 +52,7 @@ const docs: EvalDoc[] = ['dev', 'heldout', 'smoke'].includes(set)
   ? DOCS.filter((d) => d.role === set)
   : set === 'all'
     ? DOCS.filter((d) => d.role !== 'smoke')
-    : DOCS.filter((d) => d.id === set);
+    : DOCS.filter((d) => set.split(',').includes(d.id));
 if (!docs.length) {
   console.error(`No documents match --set ${set}.`);
   process.exit(1);
@@ -99,7 +103,8 @@ function meanScore(scores: DocScore[]): DocScore {
   };
 }
 
-// The model is not deterministic: --repeat runs each plan several times and reports the mean, with each run's F1.
+// The model is not deterministic: --repeat runs each labelled plan several times and reports the mean, with
+// each run's F1. A plan without an answer key runs once: it has no score to average.
 const repeat = Math.max(1, Number(args.repeat) || 1);
 for (const doc of docs) {
   const path = pdfPath(doc.id);
@@ -110,8 +115,9 @@ for (const doc of docs) {
   const gtFile = join(EVAL_DIR, 'ground-truth', `${doc.id}.json`);
   const gt: GroundTruth | null = existsSync(gtFile) ? JSON.parse(readFileSync(gtFile, 'utf8')) : null;
   const runs: { result: ExtractionResult; pages: number; s: DocScore | null }[] = [];
-  for (let i = 0; i < repeat; i++) {
-    process.stdout.write(`${doc.id}${repeat > 1 ? ` (run ${i + 1})` : ''} ... `);
+  const times = gt ? repeat : 1;
+  for (let i = 0; i < times; i++) {
+    process.stdout.write(`${doc.id}${times > 1 ? ` (run ${i + 1})` : ''} ... `);
     const { result, pages } = await runDoc(doc, client, Number(args.concurrency));
     // The last run's output is kept for the samples, not the best one.
     writeFileSync(join(RESULTS, 'runs', `${doc.id}.${client.model}.json`), JSON.stringify(result, null, 1));
@@ -156,6 +162,14 @@ function aggregate(role: string) {
   };
 }
 
+const merged: string[] = [];
+if (args.merge) {
+  const saved: { date: string; docs: DocRow[] } = JSON.parse(readFileSync(args.merge, 'utf8'));
+  for (const r of saved.docs) if (!rows.some((x) => x.id === r.id)) rows.push(r), merged.push(r.id);
+  const order = DOCS.map((d) => d.id);
+  rows.sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
+}
+
 const date = new Date().toISOString().slice(0, 10);
 const out = {
   date,
@@ -165,10 +179,11 @@ const out = {
   effort: effortFor(client.model, cfg.effort) ?? 'none',
   set,
   repeat,
+  ...(args.merge ? { mergedFrom: { file: args.merge.split(/[\\/]/).pop(), docs: merged } } : {}),
   docs: rows,
   aggregate: { dev: aggregate('dev'), heldout: aggregate('heldout'), all: aggregate('all') },
 };
-const name = `${date}-${client.model}${args.label ? `-${args.label}` : ''}-${set}.json`;
+const name = `${date}-${client.model}${args.label ? `-${args.label}` : ''}-${set.includes(',') ? 'some' : set}.json`;
 writeFileSync(join(RESULTS, name), JSON.stringify(out, null, 1));
 if (args.latest || set === 'all') {
   writeFileSync(join(RESULTS, 'latest.json'), JSON.stringify(out, null, 1));

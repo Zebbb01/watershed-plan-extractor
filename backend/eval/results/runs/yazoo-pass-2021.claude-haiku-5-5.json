@@ -1,0 +1,4559 @@
+{
+ "report": {
+  "summary": {
+   "totalGoals": 3,
+   "totalBMPs": 5,
+   "completionRate": 0
+  },
+  "goals": [
+   {
+    "id": "0ff34f44",
+    "name": "Expected Load Reduction",
+    "text": "The TMDL for sedimentation/siltation on Moon Lake called for a 35% to 56% reduction in the sediment loading to the waterbodies within the watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 6,
+      "quote": "The TMDL for sedimentation/siltation on Moon Lake called for a 35% to 56% reduction in the"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "targets": [],
+    "pollutant": "sediment",
+    "deadline": null
+   },
+   {
+    "id": "25fe9dcd",
+    "name": "reduction in sediment of 35% to 56%",
+    "text": "TMDL target for sediment reduction needed in the Yazoo Pass watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "a reduction in sediment of 35% to 56% is needed in the Yazoo Pass watershed"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "targets": [
+     {
+      "raw": "a reduction in sediment of 35% to 56%",
+      "scope": null,
+      "value": 35,
+      "valueMax": 56,
+      "unit": "%",
+      "comparator": "range"
+     }
+    ],
+    "pollutant": "sediment",
+    "deadline": null
+   },
+   {
+    "id": "4ff51777",
+    "name": "Elimination of all open pipes and inadequate individual wastewater treatment systems",
+    "text": "MDEQ recommended that the reduction in observed potential pollutant load be achieved through elimination of open pipes and inadequate individual wastewater treatment systems.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "achieved through the elimination of all open pipes and inadequate individual wastewater treatment systems"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "targets": [],
+    "pollutant": "fecal coliform",
+    "deadline": null
+   }
+  ],
+  "bmps": [
+   {
+    "id": "03cb366b",
+    "name": "Water Control Structure",
+    "text": "Water control structure proposed to address sediment issues in the Yazoo Pass Watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 7,
+      "quote": "installation of the following BMPs would mitigate the sediment issues in the Yazoo Pass Watershed"
+     },
+     {
+      "page": 7,
+      "quote": "Grade Stabilization Structure (#) 32 @ $6,480 $207,360"
+     },
+     {
+      "page": 8,
+      "quote": "Water Control Structure (#) 40 @ $2,400 $96,000"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [
+     {
+      "raw": "82 @ $2,400",
+      "scope": "Estimated Quantity and Cost of Project Implementation for the Yazoo Pass Watershed.",
+      "value": 82,
+      "valueMax": null,
+      "unit": null,
+      "comparator": "="
+     },
+     {
+      "raw": "32 @ $6,480",
+      "scope": "Estimated Quantity and Cost of Project Implementation for the Yazoo Pass Watershed.",
+      "value": 32,
+      "valueMax": null,
+      "unit": null,
+      "comparator": "="
+     },
+     {
+      "raw": "40 @ $2,400",
+      "scope": "Phase 1: Estimated Quantity and Cost of Project Implementation for the Yazoo Pass Watershed.",
+      "value": 40,
+      "valueMax": null,
+      "unit": null,
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$2,400",
+     "scope": null,
+     "value": 2400,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$196,800",
+     "scope": null,
+     "value": 196800,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": [
+     "sediment"
+    ]
+   },
+   {
+    "id": "fbd64568",
+    "name": "Grade Stabilization Structures",
+    "text": "Grade stabilization structures proposed to mitigate sediment issues in the Yazoo Pass Watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 7,
+      "quote": "Grade Stabilization Structures"
+     },
+     {
+      "page": 7,
+      "quote": "Grade Stabilization Structure (#) 32 @ $6,480 $207,360"
+     },
+     {
+      "page": 8,
+      "quote": "Grade Stabilization Structure (#) 5 @ $6,480 $32,400"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [
+     {
+      "raw": "32 @ $6,480",
+      "scope": "Estimated Quantity and Cost of Project Implementation for the Yazoo Pass Watershed.",
+      "value": 32,
+      "valueMax": null,
+      "unit": null,
+      "comparator": "="
+     },
+     {
+      "raw": "5 @ $6,480",
+      "scope": "Phase 1: Estimated Quantity and Cost of Project Implementation for the Yazoo Pass Watershed.",
+      "value": 5,
+      "valueMax": null,
+      "unit": null,
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$6,480",
+     "scope": null,
+     "value": 6480,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$207,360",
+     "scope": null,
+     "value": 207360,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": [
+     "sediment"
+    ]
+   },
+   {
+    "id": "2d308115",
+    "name": "Vegetated Ditches",
+    "text": "Vegetated ditches proposed to mitigate sediment issues in the Yazoo Pass Watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 7,
+      "quote": "Vegetated Ditch (in ft) 20,898 @ $10 $208,980"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "quantities": [
+     {
+      "raw": "20,898 @ $10",
+      "scope": "Estimated Quantity and Cost of Project Implementation for the Yazoo Pass Watershed.",
+      "value": 20898,
+      "valueMax": null,
+      "unit": null,
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$10",
+     "scope": null,
+     "value": 10,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$208,980",
+     "scope": null,
+     "value": 208980,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": [
+     "sediment"
+    ]
+   },
+   {
+    "id": "7874dca4",
+    "name": "Cover Crops",
+    "text": "Cover crops proposed to mitigate sediment issues in the Yazoo Pass Watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 7,
+      "quote": "Cover Crop (ac) 17,727 @ $73 $1,294,071"
+     },
+     {
+      "page": 8,
+      "quote": "Cover Crop (3 80 ac sites - 2 yr.) $73 $35,040"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": "Quantity × unit cost does not match the estimated cost.",
+    "confidence": "high",
+    "quantities": [
+     {
+      "raw": "17,727 @ $73",
+      "scope": "Estimated Quantity and Cost of Project Implementation for the Yazoo Pass Watershed.",
+      "value": 17727,
+      "valueMax": null,
+      "unit": null,
+      "comparator": "="
+     },
+     {
+      "raw": "$73",
+      "scope": "Phase 1: Estimated Quantity and Cost of Project Implementation for the Yazoo Pass Watershed.",
+      "value": 73,
+      "valueMax": null,
+      "unit": "USD",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$73",
+     "scope": null,
+     "value": 73,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$1,294,071",
+     "scope": null,
+     "value": 1294071,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": [
+     "sediment"
+    ]
+   },
+   {
+    "id": "010fbb56",
+    "name": "Nutrient Management",
+    "text": "Nutrient management proposed as a BMP to mitigate sediment issues in the Yazoo Pass Watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 7,
+      "quote": "installation of the following BMPs would mitigate the sediment issues in the Yazoo Pass Watershed"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "quantities": [],
+    "unitCost": null,
+    "estimatedCost": null,
+    "pollutants": [
+     "sediment"
+    ]
+   }
+  ],
+  "implementation": [
+   {
+    "id": "e72fe7fb",
+    "name": "Provide assistance to producers throughout the application and implementation process",
+    "text": "Delta F.A.R.M. will identify opportunities for BMP implementation through NRCS covered programs and provide assistance to producers.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 7,
+      "quote": "Delta F.A.R.M. will also identify opportunities for BMP implementation through NRCS"
+     },
+     {
+      "page": 7,
+      "quote": "provide assistance to producers throughout the application and"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "Delta F.A.R.M."
+    ],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "44eadb29",
+    "name": "Work with the MS Department of Health and the lake landowner association to address pathogen issues in Moon Lake",
+    "text": "MDEQ will work with the MS Department of Health and the established lake landowner association to address potential pathogen issues in Moon Lake.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 7,
+      "quote": "In order to address any potential pathogen issues in Moon Lake, MDEQ will work with the MS"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "MDEQ",
+     "MS Department of Health",
+     "lake landowner association"
+    ],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "ae6016a6",
+    "name": "Work with landowners to identify potential funding sources for septic system maintenance needs",
+    "text": "MDEQ will work with landowners to identify potential funding sources to support any maintenance needs.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 7,
+      "quote": "possible, MDEQ will work with landowners to identify potential funding sources to support any"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "MDEQ"
+    ],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "d6dc2f10",
+    "name": "Coordinate with the MDEQ, NRCS, USGS, and partners to determine priority areas that are contributing significant pollutant loads to Moon Lake",
+    "text": "Target priority areas for BMPs",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "shall determine priority areas that are contributing significant pollutant loading to the watershed"
+     },
+     {
+      "page": 11,
+      "quote": "Coordinate with the MDEQ, NRCS, USGS, and partners to determine priority areas that are contributing significant pollutant loads to Moon Lake"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [
+     "grantee",
+     "MDEQ"
+    ],
+    "timeframe": "Month 1-6",
+    "start": 1,
+    "end": 6,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": true
+   },
+   {
+    "id": "62d2e5ee",
+    "name": "Establish Watershed Implementation Team to begin refinement of Watershed Based Plan for Yazoo Pass watershed",
+    "text": "Establish WIT",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 11,
+      "quote": "Establish Watershed Implementation Team to begin refinement of Watershed Based Plan for Yazoo Pass watershed"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": "Month 1-2",
+    "start": 1,
+    "end": 2,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": true
+   },
+   {
+    "id": "024f61c6",
+    "name": "Meet with landowners and cooperators to secure commitments to install BMPs in priority areas",
+    "text": "Landowner Commitment",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 11,
+      "quote": "Meet with landowners and cooperators to secure commitments to install BMPs in priority areas"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": "Months 1-6",
+    "start": 1,
+    "end": 6,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": true
+   },
+   {
+    "id": "2ab2029c",
+    "name": "Implement BMPs",
+    "text": "BMP installation",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 11,
+      "quote": "Implement BMPs BMP installation Months 12-36"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [],
+    "timeframe": "Months 12-36",
+    "start": 12,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": true
+   },
+   {
+    "id": "df8fd3e0",
+    "name": "Coordinate with Delta F.A.R.M. to inspect BMPs that were installed using Section 319 funds",
+    "text": "BMP Inspection",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 11,
+      "quote": "Coordinate with Delta F.A.R.M. to inspect BMPs that were installed using Section 319 funds"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": "Months 24-36",
+    "start": 24,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": true
+   },
+   {
+    "id": "a81db33a",
+    "name": "Begin monitoring to collect data on post-BMP water quality",
+    "text": "Post-BMP Monitoring",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 11,
+      "quote": "Begin monitoring to collect data on post-BMP water quality"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": "Months 30-42",
+    "start": 30,
+    "end": 42,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": true
+   },
+   {
+    "id": "e08e526a",
+    "name": "Finalize revised WBP",
+    "text": "Final Revised WBP",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 11,
+      "quote": "Finalize revised WBP Final Revised WBP Months 28-36"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [],
+    "timeframe": "Months 28-36",
+    "start": 28,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": true
+   },
+   {
+    "id": "d415ccba",
+    "name": "develop, execute, and implement a Sub-Grant Agreement",
+    "text": "Grantee works with MDEQ to develop, execute, and implement a Sub-Grant Agreement defining roles, tasks, requirements and milestones.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "the grantee shall work with MDEQ to develop, execute, and implement a Sub-Grant Agreement"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "grantee",
+     "MDEQ"
+    ],
+    "timeframe": "Month 1",
+    "start": 1,
+    "end": 1,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "020e6d61",
+    "name": "identification of members and development of a Watershed Implementation Team (WIT)",
+    "text": "Grantee, with MDEQ assistance, assists in identifying members and developing a Watershed Implementation Team.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "shall assist in the identification of members and development of a Watershed Implementation Team (WIT)"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "grantee",
+     "MDEQ"
+    ],
+    "timeframe": "Months 1-2",
+    "start": 1,
+    "end": 2,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "593fae47",
+    "name": "develop a Watershed Based Plan (WBP)",
+    "text": "Grantee, with WIT assistance, develops a Watershed Based Plan including tasks for reducing sediment and pathogen loadings.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "develop a Watershed Based Plan (WBP) for the watershed that includes the tasks for achieving a reduction in sediment and"
+     },
+     {
+      "page": 10,
+      "quote": "This WBP will include the 9 Key Element Plan as an attachment. (Months 24-36)"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "grantee",
+     "WIT"
+    ],
+    "timeframe": "Months 24-36",
+    "start": 24,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "b8cbcc24",
+    "name": "development and implementation of a watershed monitoring plan",
+    "text": "Grantee assists in developing and implementing a watershed monitoring plan for the project.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "shall assist in the development and implementation of a watershed monitoring plan for the project"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "grantee",
+     "WIT",
+     "MDEQ"
+    ],
+    "timeframe": "Months 1-36",
+    "start": 1,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "e79f451b",
+    "name": "inform landowners and operators within the identified priority areas",
+    "text": "Grantee informs priority-area landowners and operators about the project and secures their commitments to participate.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "shall inform landowners and operators within the identified priority areas about the project"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "grantee"
+    ],
+    "timeframe": "Months 1-12",
+    "start": 1,
+    "end": 12,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "d05d6125",
+    "name": "develop plans for the installation of BMPs on priority lands",
+    "text": "Grantee develops plans for installing BMPs on priority lands within the watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "shall develop plans for the installation of BMPs on priority lands within the watershed."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "grantee"
+    ],
+    "timeframe": "Months 2-36",
+    "start": 2,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "1fd94dd6",
+    "name": "assist participants in installing approved BMPs",
+    "text": "Grantee assists participants in installing approved BMPs under NRCS or other approved guidelines.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "shall assist participants in installing approved BMPs"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "grantee"
+    ],
+    "timeframe": "Months 2-36",
+    "start": 2,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "4dc5823c",
+    "name": "notify MDEQ project officer of all project-site locations/inspections/public meetings",
+    "text": "Grantee notifies the MDEQ project officer in a timely manner of project-site locations, inspections and public meetings.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "notify MDEQ project officer of all project-site locations/inspections/public meetings"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "grantee"
+    ],
+    "timeframe": "Months 2-36",
+    "start": 2,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "2d2dec70",
+    "name": "collect relevant GPS coordinates of all implemented practices",
+    "text": "Grantee collects GPS coordinates of implemented practices and incorporates them into GIS format.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "shall collect relevant GPS coordinates of all implemented practices and incorporate into GIS format"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "grantee"
+    ],
+    "timeframe": "Months 1-36",
+    "start": 1,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "eba24333",
+    "name": "photo documentation before, during, and after the installation of the implemented practice",
+    "text": "Grantee takes adequate photo documentation before, during and after installation of practices.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "take adequate photo documentation before, during, and after the installation of the implemented practice"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "grantee"
+    ],
+    "timeframe": "Months 1-36",
+    "start": 1,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "4e24c9d2",
+    "name": "submit quarterly reports",
+    "text": "Grantee submits quarterly reports showing status of tasks and start/completion dates of each task.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "submit quarterly reports not later than the 25th of April, July, October, and January of each year"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "grantee"
+    ],
+    "timeframe": "Months 1-36",
+    "start": 1,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "02d9358a",
+    "name": "make project presentations as requested by MDEQ",
+    "text": "Grantee makes project presentations as requested by MDEQ.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "make project presentations as requested by MDEQ"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "grantee"
+    ],
+    "timeframe": "Month 1-36",
+    "start": 1,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "eab80c04",
+    "name": "assist the MDEQ project officer in conducting inspections during construction",
+    "text": "Grantee assists the MDEQ project officer in conducting construction inspections.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "assist the MDEQ project officer in conducting inspections during construction"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "grantee",
+     "MDEQ project officer"
+    ],
+    "timeframe": "Months 3-36",
+    "start": 3,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "7acf7291",
+    "name": "submit a final report to MDEQ",
+    "text": "Grantee submits a final report to MDEQ with measured or estimated non-point source pollutant reductions, acreage affected, pre- and post-site conditions, and GIS data.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "submit a final report to MDEQ to include measured, or estimated, non-point source pollutant reductions"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "grantee",
+     "MDEQ"
+    ],
+    "timeframe": "Month 36",
+    "start": 36,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": false
+   }
+  ],
+  "monitoring": [
+   {
+    "id": "6367dd23",
+    "name": "Post-BMP monitoring",
+    "text": "Post-implementation monitoring at locations downstream of BMP activity, compared with pre-implementation data, starting once BMP installation is complete and streams have stabilized.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 11,
+      "quote": "Begin monitoring to collect data on post-BMP water quality"
+     },
+     {
+      "page": 13,
+      "quote": "Post BMP monitoring will be conducted in a way that allows for comparison with the pre-implementation data."
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "parameter": "Post BMP monitoring",
+    "threshold": null,
+    "location": null,
+    "frequency": "Months 30-42"
+   },
+   {
+    "id": "d58b39d5",
+    "name": "Dissolved Oxygen",
+    "text": "Water quality threshold for dissolved oxygen: daily average of 5.0 mg/L with instantaneous threshold of 4.0 mg/L.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 12,
+      "quote": "Daily Average of 5.0 mg/L; Instantaneous threshold of 4.0 mg/L"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "parameter": "Dissolved Oxygen",
+    "threshold": {
+     "raw": "Daily Average of 5.0 mg/L; Instantaneous threshold of 4.0 mg/L",
+     "scope": null,
+     "value": 5,
+     "valueMax": null,
+     "unit": "mg/L",
+     "comparator": "="
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "c375ca84",
+    "name": "Dissolved Oxygen % Sat.",
+    "text": "Threshold for dissolved oxygen percent saturation.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 12,
+      "quote": "Dissolved Oxygen % Sat. > 70% - < 125%"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Dissolved Oxygen % Sat.",
+    "threshold": {
+     "raw": "> 70% - < 125%",
+     "scope": null,
+     "value": 70,
+     "valueMax": null,
+     "unit": "%",
+     "comparator": "="
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "86a87e40",
+    "name": "pH",
+    "text": "Threshold for pH.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 12,
+      "quote": "pH 6.0-9.0"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "parameter": "pH",
+    "threshold": {
+     "raw": "6.0-9.0",
+     "scope": null,
+     "value": 6,
+     "valueMax": 9,
+     "unit": null,
+     "comparator": "range"
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "88240050",
+    "name": "Temperature",
+    "text": "Threshold for water temperature.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 12,
+      "quote": "Temperature Not to exceed 90°F"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Temperature",
+    "threshold": {
+     "raw": "Not to exceed 90°F",
+     "scope": null,
+     "value": 90,
+     "valueMax": null,
+     "unit": "°F",
+     "comparator": "<="
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "2968777d",
+    "name": "Specific Conductance",
+    "text": "Threshold for specific conductance.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 12,
+      "quote": "Specific Conductance Less Than 1000 micromhos/cm"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Specific Conductance",
+    "threshold": {
+     "raw": "Less Than 1000 micromhos/cm",
+     "scope": null,
+     "value": 1000,
+     "valueMax": null,
+     "unit": "micromhos/cm",
+     "comparator": "<="
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "736c4ee1",
+    "name": "Dissolved Solids",
+    "text": "Threshold for dissolved solids: monthly average and instantaneous limits.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 12,
+      "quote": "Monthly average less than 750 mg/L; instantaneous threshold less than 1500 mg/L"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "parameter": "Dissolved Solids",
+    "threshold": {
+     "raw": "Monthly average less than 750 mg/L; instantaneous threshold less than 1500 mg/L",
+     "scope": null,
+     "value": 750,
+     "valueMax": null,
+     "unit": "mg/L",
+     "comparator": "<="
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "25756b7d",
+    "name": "Chemical Oxygen Demand",
+    "text": "Threshold for chemical oxygen demand.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 12,
+      "quote": "Chemical Oxygen Demand <50 mg/l"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Chemical Oxygen Demand",
+    "threshold": {
+     "raw": "<50 mg/l",
+     "scope": null,
+     "value": 50,
+     "valueMax": null,
+     "unit": "mg/L",
+     "comparator": "="
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "a84a8fe0",
+    "name": "Turbidity",
+    "text": "Threshold for turbidity.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 12,
+      "quote": "Turbidity <100 NTU"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "parameter": "Turbidity",
+    "threshold": {
+     "raw": "<100 NTU",
+     "scope": null,
+     "value": 100,
+     "valueMax": null,
+     "unit": "NTU",
+     "comparator": "="
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "9207257b",
+    "name": "Total Suspended Solids",
+    "text": "Threshold for total suspended solids.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 12,
+      "quote": "Total Suspended Solids <80 mg/l"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Total Suspended Solids",
+    "threshold": {
+     "raw": "<80 mg/l",
+     "scope": null,
+     "value": 80,
+     "valueMax": null,
+     "unit": "mg/L",
+     "comparator": "="
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "a4d78ff2",
+    "name": "E. coli",
+    "text": "Pathogen threshold: 30-day geometric mean and sample limit.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 12,
+      "quote": "30-day geometric mean of 126 per 100 ml; samples during 30-day period should not exceed 410 per 100 ml more than 10% of the time"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "parameter": "E. coli",
+    "threshold": {
+     "raw": "30-day geometric mean of 126 per 100 ml; samples during 30-day period should not exceed 410 per 100 ml more than 10% of the time",
+     "scope": null,
+     "value": 30,
+     "valueMax": null,
+     "unit": null,
+     "comparator": ">="
+    },
+    "location": null,
+    "frequency": null
+   }
+  ],
+  "outreach": [
+   {
+    "id": "a40dcd8c",
+    "name": "Education and outreach materials to landowners around the lake",
+    "text": "MDEQ will provide education and outreach materials to landowners around the lake regarding proper operation and maintenance of septic systems.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 7,
+      "quote": "MDEQ will provide education and outreach materials to landowners around the lake regarding the proper operation and maintenance requirements for septic systems"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": null,
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "d6cb0eff",
+    "name": "Full Watershed",
+    "text": "Education/Outreach budget line for the full watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 7,
+      "quote": "Full Watershed $30,000"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": "Full watershed",
+    "quantity": {
+     "raw": "$30,000",
+     "scope": null,
+     "value": 30000,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "timeframe": null
+   },
+   {
+    "id": "147b8c91",
+    "name": "Lake Landowners (OSDS)",
+    "text": "Education/Outreach budget line for lake landowners with onsite septic systems.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 7,
+      "quote": "Lake Landowners (OSDS) $50,000"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": "Lake landowners (OSDS)",
+    "quantity": {
+     "raw": "$50,000",
+     "scope": null,
+     "value": 50000,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "timeframe": null
+   },
+   {
+    "id": "2a9ad01e",
+    "name": "WIT meetings",
+    "text": "Establish a routine meeting schedule for the Watershed Implementation Team.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 11,
+      "quote": "Establish routine meeting schedule for WIT to support WBP implementation/ revision"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": null,
+    "quantity": null,
+    "timeframe": "Months 1-36"
+   },
+   {
+    "id": "b3bccbd2",
+    "name": "Water Model Presentations",
+    "text": "Enviroscapes and groundwater aquifer models distributed statewide with training and related interactive lesson plans.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "Water Model Presentations - Enviroscapes and groundwater aquifer models distributed"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": null,
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "284ac39d",
+    "name": "Teacher Workshops",
+    "text": "Train educators in proximity to the watershed about NPS pollution and provide materials and information for classrooms.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "Teacher Workshops – train educators in proximity to the watershed about NPS pollution"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": "educators",
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "80b968d2",
+    "name": "Adopt A Stream",
+    "text": "Workshops and training venues for citizens, teachers, and students in the Yazoo Pass Watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "Adopt A Stream - workshops and training venues for citizens, teachers, and students in"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": "citizens, teachers, and students",
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "e8007329",
+    "name": "Watershed Harmony Mobile Classroom",
+    "text": "Mobile classroom for ages kindergarten to adults with state and federal public education objectives tailored for 4th and 5th grade students.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "Watershed Harmony Mobile Classroom - for ages kindergarten – adults with state"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": null,
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "b2a6b299",
+    "name": "Train the Trainer",
+    "text": "Workshops and materials for Soil and Water districts, Extension Service, etc.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "Train the Trainer - workshops and materials for Soil and Water districts, Extension"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": "Soil and Water districts, Extension Service",
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "f56f7888",
+    "name": "Waste Pesticide Disposal Event",
+    "text": "Helps Mississippi farmers and property owners minimize environmental risks from disposal of waste-pesticide products.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "Waste Pesticide Disposal Event - The primary goal of this program is to help Mississippi"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": "Mississippi farmers and property owners",
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "652f2c3a",
+    "name": "On-Site Disposal System",
+    "text": "Provides education on the proper operation and maintenance of on-site septic systems and information on resources for failing systems.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "On-Site Disposal System – Provides education on the proper operation and maintenance of"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": null,
+    "quantity": null,
+    "timeframe": null
+   }
+  ],
+  "geographicAreas": [
+   {
+    "id": "d4c0aba5",
+    "name": "Moon Lake",
+    "text": "Lake with a fecal coliform and pathogen concern addressed under the plan.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "The surface area of Moon Lake is approximately 2,308 acres"
+     },
+     {
+      "page": 7,
+      "quote": "In order to address any potential pathogen issues in Moon Lake, MDEQ will work with the MS"
+     },
+     {
+      "page": 9,
+      "quote": "staff will meet with the subset of landowners with property adjacent to Moon Lake to discuss issues related to bacteria"
+     },
+     {
+      "page": 11,
+      "quote": "pollutant loads to Moon Lake"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "waterbody",
+    "code": null,
+    "areaAcres": 2308,
+    "role": "primary"
+   },
+   {
+    "id": "b77a85a3",
+    "name": "Mississippi River",
+    "text": "River the Yazoo Pass watershed is situated near.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 6,
+      "quote": "Being in close proximity to the Mississippi River, the Yazoo Pass"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "waterbody",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "4b5b813d",
+    "name": "Yazoo Pass watershed",
+    "text": "The watershed covered by the plan, which contains Moon Lake.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "Yazoo Pass Watershed (080302040903) is located predominately in northeastern Coahoma"
+     },
+     {
+      "page": 8,
+      "quote": "can be used in the Yazoo Pass watershed project by tailoring them to address the"
+     },
+     {
+      "page": 12,
+      "quote": "Yazoo Pass Watershed (which contains Moon Lake)"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "watershed",
+    "code": "080302040903",
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "d36b4333",
+    "name": "Coahoma County",
+    "text": "County where the Yazoo Pass Watershed is located predominately.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "located predominately in northeastern Coahoma"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "county",
+    "code": null,
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "4f1e0786",
+    "name": "Quitman County",
+    "text": "County with a small part of the Yazoo Pass Watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "with a small amount in northwestern Quitman County"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "county",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "2803343e",
+    "name": "HUC 080302040903",
+    "text": "Twelve-digit HUC for the Yazoo Pass sub-watershed that contains Moon Lake.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "HUC 080302040903"
+     },
+     {
+      "page": 4,
+      "quote": "The lake itself lies in the Yazoo Pass sub- watershed (HUC 080302040903)."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "huc",
+    "code": "080302040903",
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "667dfdec",
+    "name": "MWS 9317",
+    "text": "Watershed identifier for the Yazoo Pass plan area.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "MWS 9317"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "other",
+    "code": "9317",
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "66a00a01",
+    "name": "Coldwater River Watershed",
+    "text": "Larger HUC 8 watershed that includes Moon Lake, referred to in the history of the plan.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "although $1,025,000 had been spent on conservation practices in the Coldwater River (HUC 8)"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "huc",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "3a2af2e2",
+    "name": "Phillip’s Bayou watershed",
+    "text": "Watershed (HUC 10) within Moon Lake watershed where one site had been documented.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "particularly in the Phillip’s Bayou watershed (HUC 10) where only one site had been documented"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "huc",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "40af7963",
+    "name": "Tunica County",
+    "text": "County named as partner district area in the 2003 agreement.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "the Tunica County Soil and Water Conservation District (TCSWCD)"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "county",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "38653739",
+    "name": "Wetlands",
+    "text": "Land use category covering 2,715 acres of the watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "Wetlands 10.5% (2,715 acres)"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "other",
+    "code": null,
+    "areaAcres": 2715,
+    "role": "mentioned"
+   },
+   {
+    "id": "3df058dc",
+    "name": "Cropland",
+    "text": "Land use category making up 75% of the watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "cropland comprises 75% (19,185acres)"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "other",
+    "code": null,
+    "areaAcres": 19185,
+    "role": "mentioned"
+   }
+  ]
+ },
+ "document": {
+  "id": "yazoo-pass-2021",
+  "fileName": "Yazoo_Pass_9_Key_Element_Plan_2021.pdf",
+  "pages": 14,
+  "title": "Yazoo Pass 9 Key Element Plan",
+  "year": 2021
+ },
+ "quality": {
+  "verifiedRate": 0.7415730337078652,
+  "rejected": [
+   {
+    "category": "goals",
+    "name": "Expected Load Reduction: 35% to 56% reduction in the sediment loading",
+    "page": 6,
+    "reason": "number-not-in-quote"
+   },
+   {
+    "category": "outreach",
+    "name": "Education and outreach materials to landowners around the lake: audience \"Landowners around Moon Lake\"",
+    "page": 7,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "geographicAreas",
+    "name": "Yazoo Pass Watershed",
+    "page": 6,
+    "reason": "quote-not-found"
+   },
+   {
+    "category": "monitoring",
+    "name": "Station A0270015",
+    "page": 13,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "monitoring",
+    "name": "Station YZ291",
+    "page": 13,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "monitoring",
+    "name": "Station YZ292",
+    "page": 13,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "monitoring",
+    "name": "Station YZ431",
+    "page": 13,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "monitoring",
+    "name": "Post-BMP monitoring: frequency \"More than 1 year of post BMP data; may take 5 or more years\"",
+    "page": 13,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "geographicAreas",
+    "name": "Moon Lake",
+    "page": 13,
+    "reason": "quote-not-found"
+   },
+   {
+    "category": "geographicAreas",
+    "name": "Yazoo Pass",
+    "page": 13,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "implementation",
+    "name": "Initiate watershed monitoring",
+    "page": 11,
+    "reason": "quote-not-found"
+   },
+   {
+    "category": "monitoring",
+    "name": "Baseline condition monitoring",
+    "page": 11,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "monitoring",
+    "name": "Moon Lake ambient monitoring",
+    "page": 12,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "WIT meetings: audience \"Watershed Implementation Team\"",
+    "page": 11,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Education/Outreach events scheduled",
+    "page": 11,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "goals",
+    "name": "reduction in sediment of 35% to 56%: scope \"Element a: Identification of Causes and Sources of Impairment\"",
+    "page": 4,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "geographicAreas",
+    "name": "Yazoo Pass Watershed: 25,662-acre",
+    "page": 1,
+    "reason": "number-not-in-quote"
+   },
+   {
+    "category": "geographicAreas",
+    "name": "MS320MLM",
+    "page": 1,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "geographicAreas",
+    "name": "Phillips Bayou-Yazoo Pass watershed",
+    "page": 1,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "geographicAreas",
+    "name": "Water land use",
+    "page": 1,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Watershed Harmony Mobile Classroom: audience \"kindergarten to adults, 4th and 5th grade students\"",
+    "page": 9,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "On-Site Disposal System: audience \"septic system owners\"",
+    "page": 9,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Watershed Implementation Team (WIT) meetings",
+    "page": 9,
+    "reason": "name-not-in-source"
+   }
+  ],
+  "conflicts": [],
+  "ocrPages": [],
+  "skippedPages": [
+   {
+    "page": 3,
+    "reason": "Figure or map page"
+   },
+   {
+    "page": 5,
+    "reason": "Figure or map page"
+   },
+   {
+    "page": 14,
+    "reason": "Figure or map page"
+   }
+  ],
+  "emptyPages": [
+   2
+  ],
+  "failedUnits": [],
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "durationMs": 27762,
+  "usage": {
+   "inputTokens": 97983,
+   "outputTokens": 21431,
+   "costUsd": 0.0160282
+  },
+  "completionBasis": "No completion status reported in this document",
+  "structure": [
+   {
+    "page": 1,
+    "kind": "admin",
+    "level": 0,
+    "text": "Yazoo Pass Watershed GY 21"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "Yazoo Pass Watershed"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "9 Key Element Plan"
+   },
+   {
+    "page": 1,
+    "kind": "heading",
+    "level": 0,
+    "text": "HUC 080302040903"
+   },
+   {
+    "page": 1,
+    "kind": "heading",
+    "level": 0,
+    "text": "MWS 9317"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "GY21 Project Area"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "September 27, 2021"
+   },
+   {
+    "page": 1,
+    "kind": "heading",
+    "level": 0,
+    "text": "Element a: Identification of Causes and Sources of Impairment"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "Yazoo Pass Watershed (080302040903) is located predominately in northeastern Coahoma"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "County with a small amount in northwestern Quitman County. Yazoo Pass Watershed is a"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "25,662-acre watershed where cropland comprises 75% (19,185acres) of the land use within the"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "watershed. Wetlands 10.5% (2,715 acres) and 10% water (2,557 acres) make up another"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "20.5% of the landuse. Urban, pasture-grassland, forest, and scrub-barren are the remaining"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "land uses (about 4.5%) according to the 2016 National Land Cover Database (NLCD) (Figure"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "1)."
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "Beginning in 1998, the Yazoo-Mississippi Delta Water Management District (YMD) began to"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "organize watershed level meetings throughout the Coldwater River Watershed, which included"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "Moon Lake. In 2003, the U.S. Army Corp of Engineers signed an agreement with YMD and"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "the Tunica County Soil and Water Conservation District (TCSWCD) to develop a watershed-"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "scale plan to further identify watershed problems and solutions. Subsequently, YMD and"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "TCSWCD entered into multi-year agreement whereas funds were provided for monitoring and"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "conservation practice implementation. According to the 2008 report by YMD, although"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "$1,025,000 had been spent on conservation practices in the Coldwater River (HUC 8)"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "Watershed, very little work had been completed within the Moon Lake watershed, particularly"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "in the Phillip’s Bayou watershed (HUC 10) where only one site had been documented as an"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "installed conservation practice."
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "Moon Lake is also included in a Coldwater River Watershed-Based Plan developed by Delta"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "F.A.R.M. in 2012. While the plan covered the entire HUC 8 watershed, BMP implementation"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "and evaluation focused on specific sites where funding from the NRCS Mississippi River Basin"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "Initiative was leveraged."
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "Yazoo Pass Watershed is a sub-watershed of the Phillips Bayou-Yazoo Pass larger HUC 10"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "watershed and is the watershed that contains Moon Lake. The surface area of Moon Lake is"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "approximately 2,308 acres, and the mean depth is 5.5 meters (FTN, 1991). Inflow to Moon"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "Lake enters from Phillips Bayou to the north. Moon Lake drains through the Yazoo Pass to the"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "east. The Moon Lake Watershed is a small part of an immense flood plain that is nearly level."
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "Moon Lake is a popular destination for recreational users enjoying activities such as boating"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "and fishing. Due to this, the east bank of the lake is highly developed, with houses lining much"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "of the perimeter. A portion of the western bank has also been subject to development. With"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "high public use comes interest and concern for maintaining optimal conditions for fishing and"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "boating. Historical declines in lake conditions have prompted several studies and investigations"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "of the lake and surrounding watershed. One of the first was An Environmental Assessment of"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "Moon Lake, Mississippi and its Watershed in 1989 by the USDA- ARS National Sedimentation"
+   },
+   {
+    "page": 1,
+    "kind": "admin",
+    "level": 0,
+    "text": "1"
+   },
+   {
+    "page": 2,
+    "kind": "admin",
+    "level": 0,
+    "text": "Yazoo Pass Watershed GY 21"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "Laboratory. Following this, a Phase I Diagnostic/Feasibility study was conducted by FTN"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "Associates in 1991. These studies were conducted in response to concerns of reduction in"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "depth, water clarity, and the possible presence of pesticides. Results of the studies indicated"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "that while pesticides weren’t an issue elevated turbidity levels following storms were"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "preventing the lake from achieving its recreational and fishery potential. ."
+   },
+   {
+    "page": 2,
+    "kind": "admin",
+    "level": 0,
+    "text": "2"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "Yazoo Pass Watershed GY 21"
+   },
+   {
+    "page": 3,
+    "kind": "aside",
+    "level": 0,
+    "text": "Figure 1: Yazoo Pass Watershed Landuse Map"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "3"
+   },
+   {
+    "page": 4,
+    "kind": "admin",
+    "level": 0,
+    "text": "Yazoo Pass Watershed GY 21"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "In 1996, Moon Lake (MS320MLM) was included on MS’s Section 303(d) List of Impaired"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "Water Bodies for siltation, nutrients, and pesticides. A Total Maximum Daily Load"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "(TMDL) was developed for sediment/siltation for Moon Lake in 2003. With the"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "advancement of technology and data since this TMDL was written, the watershed area"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "included in the TMDL has now been divided into three 12-digit HUCs (Figure 2). The lake"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "itself lies in the Yazoo Pass sub- watershed (HUC 080302040903)."
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "There are no facilities in the Yazoo Pass Watershed with NPDES permits that include limits for"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "Total Suspended Solids (TSS) which is used as an indicator of sediment contributions from"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "permitted activities. The pollutant of concern for the Moon Lake TMDL is sediment from land-"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "use runoff. Certain contaminants may be associated with sediment such as pesticides and"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "nutrients. These contaminants were not addressed directly within this TMDL. However, these"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "contaminants would also be controlled by the same best management practices (BMPs) that"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "control the sediment from nonpoint sources of pollution. The target for the TMDL was based"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "on reference sediment yields developed by the Channel and Watershed Processes Research Unit"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "(CWPRU) at the National Sedimentation Laboratory (NSL). Based on the ranges of stable and"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "unstable yield values, a reduction in sediment of 35% to 56% is needed in the Yazoo Pass"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "watershed."
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "Nonpoint loading of sediment in a water body results from the transport of material into"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "receiving waters by the processes of mass wasting, head cutting, gullying, and sheet and rill"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "erosion. Sources of sediment include agriculture, silviculture, rangeland, construction sites,"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "roads, urban areas, mass wasting areas, gullies, surface mining, in-channel and instream"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "sources, and historical landuse activities and channel alterations."
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "In 1998, Moon Lake was placed on the Section 303(d) list for fecal coliform. Although there the"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "limited data available did not indicate an impairment, Moon Lake was included on the impaired"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "waters list and classified as “evaluated” based on information that was included in the Phase I"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "Diagnostic/Feasibility study for Moon Lake conducted by FTN Associates in 1991. Moon Lake"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "was listed because the potential to exceed the standard was observed based on a septic survey"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "that identified direct pipes and failing septic tanks (FTN, 1991). Subsequently in 2003, the Phase"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "One Fecal Coliform TMDL for Moon Lake was developed by MDEQ to address the fecal"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "coliform listing."
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "There are no permitted discharges in Moon Lake for pathogens. The potential nonpoint sources"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "of fecal coliform bacteria for Moon Lake include failing septic systems, wildlife, and direct"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "inputs, such as direct pipes. Human contributions from failing septic systems and direct pipes"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "were identified as the primary source of bacteria in Moon Lake. As a part of the Phase One"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "TMDL, MDEQ recommended that a reduction in the observed potential pollutant load be"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "achieved through the elimination of all open pipes and inadequate individual wastewater"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "treatment systems."
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "."
+   },
+   {
+    "page": 4,
+    "kind": "admin",
+    "level": 0,
+    "text": "4"
+   },
+   {
+    "page": 5,
+    "kind": "admin",
+    "level": 0,
+    "text": "Yazoo Pass Watershed GY 21"
+   },
+   {
+    "page": 5,
+    "kind": "aside",
+    "level": 0,
+    "text": "Figure 2: HUC 10 changed to HUC12"
+   },
+   {
+    "page": 5,
+    "kind": "admin",
+    "level": 0,
+    "text": "5"
+   },
+   {
+    "page": 6,
+    "kind": "admin",
+    "level": 0,
+    "text": "Yazoo Pass Watershed GY 21"
+   },
+   {
+    "page": 6,
+    "kind": "heading",
+    "level": 0,
+    "text": "Element b: Expected Load Reduction"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "The TMDL for sedimentation/siltation on Moon Lake called for a 35% to 56% reduction in the"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "sediment loading to the waterbodies within the watershed. Nonpoint loading of sediment in a water"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "body results from the transport of material into receiving waters by the processes of mass wasting,"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "head cutting, gullying, and sheet and rill erosion. Sources of sediment include agriculture,"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "silviculture, rangeland, construction sites, roads, urban areas, mass wasting areas, gullies, surface"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "mining, in-channel and instream sources, and historical landuse activities and channel alterations."
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "The Natural Resources Conservation Service (NRCS) has a list of approved BMPs that address"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "sedimentation issues and this list will be used to identify BMPs that are candidates to be used in the"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "Yazoo Pass Watershed."
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "According to the Phase One TMDL for fecal coliform that was developed in 2003 for Moon Lake,"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "there are no permitted discharges in Moon Lake for pathogens. The potential nonpoint sources of"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "fecal coliform bacteria include failing septic systems, wildlife, and direct inputs, such as direct"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "pipes. MDEQ recommended that a reduction in the observed potential pollutant load be achieved"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "through the elimination of all open pipes and inadequate individual wastewater treatment systems."
+   },
+   {
+    "page": 6,
+    "kind": "heading",
+    "level": 0,
+    "text": "Element c: Proposed Management Measures"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "In the Yazoo Pass Watershed, MDEQ will be working with the non-profit group Delta Farmers"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "Advocating Resource Management (better known as Delta F.A.R.M), a long-time partner in this"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "region of the state. As a local resource to farmers, Delta F.A.R.M. staff communicate regularly"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "with the local landowners and operators within the watershed as they work to support sign-ups for"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "Farm Bill and other conservation initiatives. Delta F.A.R.M. staff understand conservation needs"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "at the local level and are aware of needs not funded through NRCS programs which meet Section"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "319 eligibility requirements. Under this watershed plan, Delta F.A.R.M. will implement"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "conservation strategies for the Yazoo Pass Watershed. Stakeholder committees representing lake"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "and farm interests have been established and preliminary discussions are underway regarding"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "priority areas for conservation practice implementation."
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "Preliminary surveys of the Yazoo Pass watershed have been conducted to estimate the type and"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "quantity of conservation practices needed on the landscape. Delta F.A.R.M. used this as a"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "starting point to initiate surveys to prioritize sites for implementation so that the greatest"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "environmental gain may be achieved with the available resources. Farm stakeholders in the"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "watershed have expressed interest in working cooperatively to implement and maintain"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "conservation practices. Being in close proximity to the Mississippi River, the Yazoo Pass"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "watershed is characterized by ridge and swale topography, which is prone to sedimentation loss"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "due to sheet, rill, and gully erosion. Gully erosion will be addressed with water control"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "structures, both slotted and riser pipes. Sheet and rill erosion will be addressed through structural"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "conservation practices as well as non-structural agricultural management practices. Structural"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "measures include low-grade weirs and two-stage vegetated ditches. Non-structural practices such"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "as cover crops and reduced tillage are proven to be the best method of addressing sheet and rill"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "erosion. However, this requires farmers to alter their crop production practices, thus introducing"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "risk of financial loss. Overcoming these hurdles to the adoption of cover crops, reduced tillage,"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "and other practices that improve soil health while providing environmental benefits has been a"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "large part of Delta F.A.R.M.’s work over the past several years. This work will be transitioned"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "into the Yazoo Pass watershed by working with farmers to implement these practices, with"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "technical and financial assistance, in priority areas prone to high rates of sediment and nutrient"
+   },
+   {
+    "page": 6,
+    "kind": "admin",
+    "level": 0,
+    "text": "6"
+   },
+   {
+    "page": 7,
+    "kind": "admin",
+    "level": 0,
+    "text": "Yazoo Pass Watershed | GY 21"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "loss. Delta F.A.R.M. will also identify opportunities for BMP implementation through NRCS"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "covered programs and provide assistance to producers throughout the application and"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "implementation process. Based on their analysis, installation of the following BMPs would"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "mitigate the sediment issues in the Yazoo Pass Watershed:"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Water Control Structure"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Vegetated Ditches"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Grade Stabilization Structures"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Cover Crops"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Nutrient Management"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "In order to address any potential pathogen issues in Moon Lake, MDEQ will work with the MS"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Department of Health and the established lake landowner association. Along with the MS"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Department of Health, MDEQ will provide education and outreach materials to landowners around"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "the lake regarding the proper operation and maintenance requirements for septic systems. Where"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "possible, MDEQ will work with landowners to identify potential funding sources to support any"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "maintenance needs."
+   },
+   {
+    "page": 7,
+    "kind": "heading",
+    "level": 0,
+    "text": "Element d: Technical and Financial Assistance"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "As part of any Section 319 funded project, MDEQ requires a 40% match in project areas. This"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "match may be in the form of actual dollars or may be provided as “in-kind” to project activities."
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Partners in this project that may contribute match include Delta F.A.R.M., USGS (monitoring),"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "project partners, and/or local landowners. Delta F.A.R.M. provided the following numbers used"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "to estimate costs for BMP installation. Funding was also estimated to support education and"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "outreach activities for the operation and maintenance of onsite septic systems. Provided below is"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "a summary of estimated project costs for full-scale watershed restoration:"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Estimated Quantity and Cost of Project Implementation for the Yazoo Pass Watershed."
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "BMPs | Size/Amount | Estimated Cost"
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "Grade Stabilization Structure (#) | 32 @ $6,480 | $207,360"
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "Water Control Structure (#) | 82 @ $2,400 | $196,800"
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "Vegetated Ditch (in ft) | 20,898 @ $10 | $208,980"
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "Cover Crop (ac) | 17,727 @ $73 | $1,294,071"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Education/Outreach"
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "Full Watershed | $30,000"
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "Lake Landowners (OSDS) | $50,000"
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "Monitoring | $58,500"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Project Management, Implementation,"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "$109,320"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Coordination, Plan Revision"
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "Total Estimated Project Cost | $2,155,031"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Given the large financial burden of full watershed-scale conservation practice implementation,"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "an incremental approach focusing on building producer partnerships and leveraging other"
+   },
+   {
+    "page": 7,
+    "kind": "admin",
+    "level": 0,
+    "text": "7"
+   },
+   {
+    "page": 8,
+    "kind": "admin",
+    "level": 0,
+    "text": "Yazoo Pass Watershed | GY 21"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "federal, state, and private investment in conservation should be considered. The following table"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "summarizes the quantity and costs of project implementation that could occur through an initial"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "implementation phase."
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "Phase 1: Estimated Quantity and Cost of Project Implementation for the Yazoo Pass"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "Watershed."
+   },
+   {
+    "page": 8,
+    "kind": "table",
+    "level": 0,
+    "text": "BMPs | Size/Amount | Estimated Cost"
+   },
+   {
+    "page": 8,
+    "kind": "table",
+    "level": 0,
+    "text": "Grade Stabilization Structure (#) | 5 @ $6,480 | $32,400"
+   },
+   {
+    "page": 8,
+    "kind": "table",
+    "level": 0,
+    "text": "Water Control Structure (#) | 40 @ $2,400 | $96,000"
+   },
+   {
+    "page": 8,
+    "kind": "table",
+    "level": 0,
+    "text": "Cover Crop (3 80 ac sites - 2 yr.) | $73 | $35,040"
+   },
+   {
+    "page": 8,
+    "kind": "table",
+    "level": 0,
+    "text": "Education/Outreach | N/A | $24,900"
+   },
+   {
+    "page": 8,
+    "kind": "table",
+    "level": 0,
+    "text": "Full Watershed | $15,000"
+   },
+   {
+    "page": 8,
+    "kind": "table",
+    "level": 0,
+    "text": "Lake Landowners (OSDS) | $25,000"
+   },
+   {
+    "page": 8,
+    "kind": "table",
+    "level": 0,
+    "text": "Monitoring | N/A | $29,250"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "Project Management,"
+   },
+   {
+    "page": 8,
+    "kind": "table",
+    "level": 0,
+    "text": "Implementation, Coordination, | $54,660"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "Plan Revision"
+   },
+   {
+    "page": 8,
+    "kind": "table",
+    "level": 0,
+    "text": "Total Estimated Project Cost | $312,250"
+   },
+   {
+    "page": 8,
+    "kind": "heading",
+    "level": 0,
+    "text": "Element e: Information and Education"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "The MDEQ, in cooperation with numerous federal, state, and local stakeholders has developed"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "diversified information/education programs, best management practices manuals, literature,"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "books, videos, and public service announcements that address pollutants from the seven (7)"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "major land-use categories of Nonpoint Source Pollution: agriculture, construction, forestry, on-"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "site waste-water disposal, surface mining, urban storm water runoff, and hydrologic"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "modification. Audiences from pre-school to adults throughout the state are reached with a"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "variety of mature, well-designed programs each year. These programs, events, manuals, and"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "literature can be used in the Yazoo Pass watershed project by tailoring them to address the"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "sedimentation and bacteria issues in the watershed. A positive approach is used to reach the full"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "diversity of people in the community with projects that foster a “sense of place”, a “sense of"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "pride in community”, and a sense of the native plants, animals, and general ecology of their"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "region, as well as the history of the community and a sense of economics. Stakeholders and"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "coordinators join together to participate in problem-solving brainstorming, plan development,"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "training workshops, festival event planning, soil and water conservation field days, tree boards,"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "poster, art and writing projects and other activities that promote collaboration and ownership of"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "the watershed, as well as solutions to its problems. The ultimate goal is to bring about behavior"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "changes and the use of “best management practices” that will improve water quality and the"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "overall quality of life in the watershed. Evaluation forms, pre-test/post-test, surveys, and"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "reporting of the number of people who attend workshops, trainings and events are among the"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "methods used to measure the success of education/information programs. A partial list of"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "MDEQ’s programs that could be used in the Yazoo Pass watershed are listed below:"
+   },
+   {
+    "page": 8,
+    "kind": "admin",
+    "level": 0,
+    "text": "8"
+   },
+   {
+    "page": 9,
+    "kind": "admin",
+    "level": 0,
+    "text": "Yazoo Pass Watershed GY 21"
+   },
+   {
+    "page": 9,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Water Model Presentations - Enviroscapes and groundwater aquifer models distributed"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "statewide with training and related interactive lesson plans."
+   },
+   {
+    "page": 9,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Teacher Workshops – train educators in proximity to the watershed about NPS pollution"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "and provide materials and information that can be used in their classrooms."
+   },
+   {
+    "page": 9,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Adopt A Stream - workshops and training venues for citizens, teachers, and students in"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "the Yazoo Pass Watershed."
+   },
+   {
+    "page": 9,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Watershed Harmony Mobile Classroom - for ages kindergarten – adults with state"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "and federal public education objectives tailored for 4th and 5th grade students."
+   },
+   {
+    "page": 9,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Train the Trainer - workshops and materials for Soil and Water districts, Extension"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "Service, etc."
+   },
+   {
+    "page": 9,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Waste Pesticide Disposal Event - The primary goal of this program is to help Mississippi"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "farmers and property owners minimize the environmental risks associated with the disposal"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "of waste-pesticide products by disposing of products in a safe and efficient manner."
+   },
+   {
+    "page": 9,
+    "kind": "bullet",
+    "level": 1,
+    "text": "On-Site Disposal System – Provides education on the proper operation and maintenance of"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "on-site septic systems and provides information on available resources to address failing"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "systems in the watershed."
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "As part of the education outreach efforts, the stakeholder group forming the Yazoo Pass"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "Watershed Implementation Team (WIT) will participate in a minimum of 3 face-to-face"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "meetings. In addition, staff will meet with the subset of landowners with property adjacent to"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "Moon Lake to discuss issues related to bacteria in the lake and potential inputs from septic"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "systems. The purpose of these meetings is to provide updates on implementation activities,"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "education materials, and review and modify the watershed plan. In concert with these WIT"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "meetings, and to incentivize stakeholder participation, project funding will be used to purchase"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "food and other refreshments for the WIT along with providing support for renting facilities in"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "which to host those events."
+   },
+   {
+    "page": 9,
+    "kind": "heading",
+    "level": 0,
+    "text": "Element f: Implementation Schedule"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "The following work plan describes the approaches and tasks that the grantee shall collaboratively"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "perform with project partners to advance and implement this watershed-based plan. During this"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "effort, the grantee will work with the MDEQ Basin Team and will put forth its best effort to"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "perform the tasks identified below within the given timetable."
+   },
+   {
+    "page": 9,
+    "kind": "numbered",
+    "level": 1,
+    "text": "1. Upon approval of 9 Key Element Watershed Plan, the grantee shall work with MDEQ to"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "develop, execute, and implement a Sub-Grant Agreement that defines the roles, tasks,"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "requirements, and milestones of the grantee. (Month 1)"
+   },
+   {
+    "page": 9,
+    "kind": "numbered",
+    "level": 1,
+    "text": "2. The grantee, with assistance from MDEQ, shall determine priority areas that are"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "contributing significant pollutant loading to the watershed. (Months 1-2)"
+   },
+   {
+    "page": 9,
+    "kind": "numbered",
+    "level": 1,
+    "text": "3. The grantee, with assistance from MDEQ, shall assist in the identification of members"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "and development of a Watershed Implementation Team (WIT). (Months 1-2)"
+   },
+   {
+    "page": 9,
+    "kind": "numbered",
+    "level": 1,
+    "text": "4. The grantee, with assistance from the WIT, shall develop a Watershed Based Plan (WBP)"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "for the watershed that includes the tasks for achieving a reduction in sediment and"
+   },
+   {
+    "page": 9,
+    "kind": "admin",
+    "level": 0,
+    "text": "9"
+   },
+   {
+    "page": 10,
+    "kind": "admin",
+    "level": 0,
+    "text": "Yazoo Pass Watershed GY 21"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "pathogen loadings to waterbodies within the watershed. This WBP will include the 9 Key"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "Element Plan as an attachment. (Months 24-36)"
+   },
+   {
+    "page": 10,
+    "kind": "numbered",
+    "level": 1,
+    "text": "5. The grantee, in cooperation with the WIT, MDEQ, and others, shall assist in the"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "development and implementation of a watershed monitoring plan for the project (Months 1-"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "36)."
+   },
+   {
+    "page": 10,
+    "kind": "numbered",
+    "level": 1,
+    "text": "6. The grantee shall inform landowners and operators within the identified priority areas"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "about the project and secure commitments from these priority-area landowners and"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "operators who are willing to participate in the project. (Months 1-12)"
+   },
+   {
+    "page": 10,
+    "kind": "numbered",
+    "level": 1,
+    "text": "7. The grantee, in accordance with the previously submitted and approved WBP, shall"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "develop plans for the installation of BMPs on priority lands within the watershed."
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "(Months 2-36)"
+   },
+   {
+    "page": 10,
+    "kind": "numbered",
+    "level": 1,
+    "text": "8. The grantee shall assist participants in installing approved BMPs. All BMPs shall be"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "installed in accordance with the guidelines developed in the latest edition of the NRCS"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "Technical Field Manual, or other approved guidelines. (Months 2-36)"
+   },
+   {
+    "page": 10,
+    "kind": "numbered",
+    "level": 1,
+    "text": "9. The grantee shall, in a timely manner, notify MDEQ project officer of all project-site"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "locations/inspections/public meetings so that MDEQ project officer may have the"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "opportunity to attend. (Months 2-36)"
+   },
+   {
+    "page": 10,
+    "kind": "numbered",
+    "level": 1,
+    "text": "10. The grantee shall collect relevant GPS coordinates of all implemented practices and"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "incorporate into GIS format. All geospatial data shall be collected in a manner consistent"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "with the Federal Geographic Data Committee endorsed standards. (Months 1-36)"
+   },
+   {
+    "page": 10,
+    "kind": "numbered",
+    "level": 1,
+    "text": "11. The grantee shall take adequate photo documentation before, during, and after the"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "installation of the implemented practice. (Months 1-36)"
+   },
+   {
+    "page": 10,
+    "kind": "numbered",
+    "level": 1,
+    "text": "12. The grantee shall submit quarterly reports not later than the 25th of April, July,"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "October, and January of each year showing the status of tasks and start/completion"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "dates of each task. (Months 1-36)"
+   },
+   {
+    "page": 10,
+    "kind": "numbered",
+    "level": 1,
+    "text": "13. The grantee shall make project presentations as requested by MDEQ. (Month 1-36)"
+   },
+   {
+    "page": 10,
+    "kind": "numbered",
+    "level": 1,
+    "text": "14. The grantee shall assist the MDEQ project officer in conducting inspections during"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "construction. (Months 3-36)"
+   },
+   {
+    "page": 10,
+    "kind": "numbered",
+    "level": 1,
+    "text": "15. The grantee shall submit a final report to MDEQ to include measured, or estimated, non-"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "point source pollutant reductions or water quality improvements, acreage affected, pre-"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "and post- site conditions, and GIS data. The grantee shall make revisions, if necessary,"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "upon the request of MDEQ. (Month 36)"
+   },
+   {
+    "page": 10,
+    "kind": "admin",
+    "level": 0,
+    "text": "10"
+   },
+   {
+    "page": 11,
+    "kind": "admin",
+    "level": 0,
+    "text": "Yazoo Pass Watershed | GY 21"
+   },
+   {
+    "page": 11,
+    "kind": "heading",
+    "level": 0,
+    "text": "Element g: Milestones and Outcomes"
+   },
+   {
+    "page": 11,
+    "kind": "table",
+    "level": 0,
+    "text": "Milestone | Outcome | Probable Completion"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "Date"
+   },
+   {
+    "page": 11,
+    "kind": "table",
+    "level": 0,
+    "text": "Coordinate with the MDEQ, NRCS, | Target priority areas | Month 1-6"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "USGS, and partners to determine priority for BMPs"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "areas that are contributing significant"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "pollutant loads to Moon Lake"
+   },
+   {
+    "page": 11,
+    "kind": "table",
+    "level": 0,
+    "text": "Establish Watershed Implementation | Establish WIT | Month 1-2"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "Team to begin refinement of Watershed"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "Based Plan for Yazoo Pass watershed"
+   },
+   {
+    "page": 11,
+    "kind": "table",
+    "level": 0,
+    "text": "Initiate watershed monitoring | Baseline condition | Month 3-12"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "monitoring"
+   },
+   {
+    "page": 11,
+    "kind": "table",
+    "level": 0,
+    "text": "Meet with landowners and cooperators | Landowner | Months 1-6"
+   },
+   {
+    "page": 11,
+    "kind": "table",
+    "level": 0,
+    "text": "to secure commitments to install BMPs | Commitment"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "in priority areas"
+   },
+   {
+    "page": 11,
+    "kind": "table",
+    "level": 0,
+    "text": "Establish routine meeting schedule for | WIT meetings | Months 1-36"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "WIT to support WBP implementation/"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "revision"
+   },
+   {
+    "page": 11,
+    "kind": "table",
+    "level": 0,
+    "text": "Implement BMPs | BMP installation | Months 12-36"
+   },
+   {
+    "page": 11,
+    "kind": "table",
+    "level": 0,
+    "text": "Coordinate with Delta F.A.R.M. to | BMP Inspection | Months 24-36"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "inspect BMPs that were installed using"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "Section 319 funds"
+   },
+   {
+    "page": 11,
+    "kind": "table",
+    "level": 0,
+    "text": "Begin monitoring to collect data on | Post-BMP Monitoring Months 30-42"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "post-BMP water quality"
+   },
+   {
+    "page": 11,
+    "kind": "table",
+    "level": 0,
+    "text": "Finalize education and outreach plan | Education/Outreach | Months 8-36"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "events scheduled"
+   },
+   {
+    "page": 11,
+    "kind": "table",
+    "level": 0,
+    "text": "Finalize revised WBP | Final Revised WBP | Months 28-36"
+   },
+   {
+    "page": 11,
+    "kind": "heading",
+    "level": 0,
+    "text": "Element h: Load Reduction Evaluation"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "The State of Mississippi Water Quality Criteria for Intrastate, Interstate, and Coastal Waters do"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "not include a water quality standard applicable to aquatic life protection due to sediment."
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "However, a narrative standard for the protection of aquatic life was interpreted to determine an"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "applicable target for the Moon Lake TMDL. The narrative standard is that waters shall be free"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "from materials attributable to municipal, industrial, agricultural, or other dischargers producing"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "color, odor, taste, total suspended solids, or other conditions in such degree as to create a"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "nuisance, render the waters injurious to public health, recreation, or to aquatic life and wildlife,"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "or adversely affect the palatability of fish, aesthetic quality, or impair the waters for any"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "designated uses. In lieu of numeric criteria for sediment, the monitoring plan will be designed to"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "collect data on parameters that are considered surrogates for sediment concentrations and may"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "include measurements for total suspended solids, total suspended sediment, and turbidity along"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "with conventional parameters generally measured to determine aquatic health (e.g., dissolved"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "oxygen, pH, temperature, conductivity). For pathogens, waters must meet a 30-day geometric"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "mean of 126 per 100 ml, nor should the samples examined during the 30-day period exceed 410"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "per 100 ml more than 10% of the time for E. coli. The following thresholds will be used to"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "measure compliance with water quality criteria:"
+   },
+   {
+    "page": 11,
+    "kind": "admin",
+    "level": 0,
+    "text": "11"
+   },
+   {
+    "page": 12,
+    "kind": "admin",
+    "level": 0,
+    "text": "Yazoo Pass Watershed | GY 21"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Parameter | Threshold"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Daily Average of 5.0 mg/L; Instantaneous threshold of 4.0"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Dissolved Oxygen | mg/L"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Dissolved Oxygen %"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Sat. | > 70% - < 125%"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "pH | 6.0-9.0"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Temperature | Not to exceed 90°F"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Specific Conductance | Less Than 1000 micromhos/cm"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Monthly average less than 750 mg/L; instantaneous"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Dissolved Solids | threshold less than 1500 mg/L"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Chemical Oxygen"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Demand | <50 mg/l"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Turbidity | <100 NTU"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Total Suspended Solids | <80 mg/l"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "30-day geometric mean of 126 per 100 ml; samples during"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "30-day period should not exceed 410 per 100 ml more"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "E. coli | than 10% of the time"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "In addition to chemical data, biological community data and in stream habitat surveys will be"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "collected over the course of the project. These data are extremely helpful in identifying positive"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "trends in water quality and should provide information to help determine if the implementation"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "activities are resulting in water quality improvements. As has been done in other watersheds in"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "this region, MDEQ and Delta F.A.R.M. will work with other watershed partners to identify"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "opportunities to establish edge of field monitoring. MDEQ will continue to monitor Moon Lake"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "as part of the state’s Ambient Lake Monitoring Program. In addition to ambient monitoring,"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "MDEQ will collect E. coli in the lake to monitor for pathogens."
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "It should be noted that recovery time of a stream is variable and may extend beyond the timeframe"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "identified in the work plan. At the end of the project, data will be analyzed to determine if they"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "indicate improvements to water quality. In the event data indicate little or no positive change, a"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Stressor Analysis will be conducted to determine if any new or additional stressors are preventing"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "improvements to water quality. If any new stressors are identified, the Watershed Implementation"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Team will identify future actions/activities to address those stressors."
+   },
+   {
+    "page": 12,
+    "kind": "heading",
+    "level": 0,
+    "text": "Element i: Monitoring"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Prior to BMP installation, pre-implementation chemical and biological monitoring have been"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "compiled to serve as a baseline for the project along with any historical data available in the"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Yazoo Pass Watershed (which contains Moon Lake). This varied water quality monitoring"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "included water chemistry data (nutrients, suspended solids, oxygen demand, chlorides, etc.), in-"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "situ field measurements for such parameters as dissolved oxygen, pH, temperature, specific"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "conductance, turbidity and secchi depth (lakes), datalogger (sonde) deployment for continuous in-"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "situ field measurement data as well as biological community monitoring for benthic"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "macroinvertebrates in streams and algal chlorophyll-a in lakes for trophic index determination. A"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "summary of this historical water quality monitoring in the Yazoo Pass watershed is provided in the"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "table below and their locations are shown in Figure 3."
+   },
+   {
+    "page": 12,
+    "kind": "admin",
+    "level": 0,
+    "text": "12"
+   },
+   {
+    "page": 13,
+    "kind": "admin",
+    "level": 0,
+    "text": "Yazoo Pass Watershed | GY 21"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "Water | Sample | Collecting | Water | In-"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "Station ID | Project | Sonde Benthics"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "Body | Year(s) | Agency | Chem | Situ"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "Yazoo | 2009, | USGS, | Delta"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "A0270015 | X | X"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "Pass | 2013 | MDEQ | BISQ"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "2002- | Nutrient"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "2004, | Criteria,"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "Moon | 2009, | Ambient"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "YZ291 | MDEQ | X | X"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "Lake | 2011, | Lakes"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "2015 - | Status &"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "2020 | Trends"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "2002- | Nutrient"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "2004, | Criteria,"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "Moon | 2009, | Ambient"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "YZ292 | MDEQ | X | X"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "Lake | 2011, | Lakes"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "2015 - | Status &"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "2020 | Trends"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "2002- | Nutrient"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "2004, | Criteria,"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "Moon | 2009, | Ambient"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "YZ431 | MDEQ | X | X"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "Lake | 2011, | Lakes"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "2015 - | Status &"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "2020 | Trends"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Post-implementation monitoring locations will be selected using best professional judgment and"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "will be targeted to reflect water quality downstream of BMP activity. Once BMP installation is"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "complete, and there has been sufficient time for the stream to stabilize, post BMP monitoring will"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "be initiated. Post BMP monitoring will be conducted in a way that allows for comparison with"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "the pre-implementation data. Because recovery periods of streams can be dependent on type and"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "amount of BMPs installed, more than 1 year of post BMP data may be needed to observe a"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "change in water quality. In some cases, it may take 5 or more years to see full benefits of BMPs."
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "All data collection efforts will be conducted using trained personnel following established"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Standard Operating Procedures and adhering to agency Quality Assurance protocols."
+   },
+   {
+    "page": 13,
+    "kind": "admin",
+    "level": 0,
+    "text": "13"
+   },
+   {
+    "page": 14,
+    "kind": "admin",
+    "level": 0,
+    "text": "Yazoo Pass Watershed GY 21"
+   },
+   {
+    "page": 14,
+    "kind": "aside",
+    "level": 0,
+    "text": "Figure 3: Monitoring Locations: Yazoo Pass Watershed"
+   },
+   {
+    "page": 14,
+    "kind": "admin",
+    "level": 0,
+    "text": "14"
+   }
+  ]
+ }
+}

@@ -1,0 +1,6911 @@
+{
+ "report": {
+  "summary": {
+   "totalGoals": 12,
+   "totalBMPs": 8,
+   "completionRate": 0
+  },
+  "goals": [
+   {
+    "id": "78095f59",
+    "name": "The goal of this plan",
+    "text": "Provide guidance for implementing and evaluating conservation practices on select sites within the watershed in support of DNRS, MRBI and WRTF.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 6,
+      "quote": "The goal of this plan is to provide guidance for implementing and evaluating conservation practices on select sites within the watershed"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "targets": [],
+    "pollutant": null,
+    "deadline": null
+   },
+   {
+    "id": "f51e5a9e",
+    "name": "Improve water quality in local water bodies",
+    "text": "Goal to improve water quality in local water bodies.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 24,
+      "quote": "1. Improve water quality in local water bodies"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "targets": [],
+    "pollutant": null,
+    "deadline": null
+   },
+   {
+    "id": "0d973d30",
+    "name": "Improve water quality in downstream receiving waters",
+    "text": "Goal to improve water quality in downstream receiving waters.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 24,
+      "quote": "2. Improve water quality in downstream receiving waters"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "targets": [],
+    "pollutant": null,
+    "deadline": null
+   },
+   {
+    "id": "fa6b47e0",
+    "name": "Through monitoring and evaluation, provide answers to questions outlined in the Delta Nutrient Reduction Strategy.",
+    "text": "Goal to answer questions outlined in the Delta Nutrient Reduction Strategy through monitoring and evaluation.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 24,
+      "quote": "Through monitoring and evaluation, provide answers to questions outlined in the Delta Nutrient Reduction Strategy."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "targets": [],
+    "pollutant": null,
+    "deadline": null
+   },
+   {
+    "id": "59c3c392",
+    "name": "Sediment/Siltation",
+    "text": "Narrative water quality standard for sediment/siltation under the Aquatic Life Support use, stated in the water quality standard table.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 20,
+      "quote": "Waters shall be free from materials attributable to municipal, industrial, agricultural, or other dischargers producing color"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "targets": [],
+    "pollutant": "Sediment",
+    "deadline": null
+   },
+   {
+    "id": "6b5ab5ec",
+    "name": "Total Maximum Daily Load for Sediment/Siltation",
+    "text": "TMDL for segments MSCOLDR2M2 and MSCOLDR2E stated in the total maximum daily load table.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 20,
+      "quote": "Table 7. Total Maximum Daily Load"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "targets": [],
+    "pollutant": "Sediment",
+    "deadline": null
+   },
+   {
+    "id": "d9056771",
+    "name": "Reduce sediment yields",
+    "text": "The target measure of sediment retention is to reduce sediment yields to a range of 8.8E-02 to 2.4E-01 tons per acre per day.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 21,
+      "quote": "The target measure of sediment retention would reduce sediment yields to a range of 8.8E-02 to 2.4E-01 tons per acre per day."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "targets": [
+     {
+      "raw": "8.8E-02 to 2.4E-01 tons per acre per day",
+      "scope": "4.3 TMDLs",
+      "value": 2,
+      "valueMax": 2.4,
+      "unit": "E-01 tons",
+      "comparator": "range"
+     }
+    ],
+    "pollutant": "sediment",
+    "deadline": null
+   },
+   {
+    "id": "e80fe648",
+    "name": "Reduce phosphorus loads",
+    "text": "The TMDL calls for a reduction of the phosphorus loads entering these waterbodies to meet the preliminary target of 0.16mg/l.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 21,
+      "quote": "The TMDL calls for a 95.0% reduction of the phosphorus loads entering these waterbodies to meet the preliminary target of 0.16mg/l."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "targets": [
+     {
+      "raw": "95.0% reduction",
+      "scope": "4.3 TMDLs",
+      "value": 95,
+      "valueMax": null,
+      "unit": "%",
+      "comparator": "="
+     },
+     {
+      "raw": "0.16mg/l",
+      "scope": "4.3 TMDLs",
+      "value": 0.16,
+      "valueMax": null,
+      "unit": "mg/L",
+      "comparator": "="
+     }
+    ],
+    "pollutant": "phosphorus",
+    "deadline": null
+   },
+   {
+    "id": "7a024f0f",
+    "name": "Reduce nitrogen loads",
+    "text": "The TMDL recommends a reduction of the nitrogen loads entering these water bodies to meet the preliminary target of 1.05mg/l.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 21,
+      "quote": "this TMDL recommends an 83.5% reduction of the nitrogen loads entering these water bodies to meet the preliminary target of 1.05mg/l"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "targets": [
+     {
+      "raw": "83.5% reduction",
+      "scope": "4.3 TMDLs",
+      "value": 83.5,
+      "valueMax": null,
+      "unit": "%",
+      "comparator": "="
+     },
+     {
+      "raw": "1.05mg/l",
+      "scope": "4.3 TMDLs",
+      "value": 1.05,
+      "valueMax": null,
+      "unit": "mg/L",
+      "comparator": "="
+     }
+    ],
+    "pollutant": "nitrogen",
+    "deadline": null
+   },
+   {
+    "id": "4d8d11b1",
+    "name": "Sediment loads",
+    "text": "Reduce sediment loads entering the water bodies to the TMDL range",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 13,
+      "quote": "sediment loads to these water bodies be reduced to the range of 8.8E-02 to 2.4E-01 tons per acre per day"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "targets": [
+     {
+      "raw": "8.8E-02 to 2.4E-01 tons per acre per day",
+      "scope": "3.2 Sediment",
+      "value": 2,
+      "valueMax": 2.4,
+      "unit": "E-01 tons",
+      "comparator": "range"
+     }
+    ],
+    "pollutant": "Sediment",
+    "deadline": null
+   },
+   {
+    "id": "2775e8db",
+    "name": "Phosphorous loads",
+    "text": "Reduce phosphorous loads entering these water bodies by 95.0% to meet the preliminary target",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 14,
+      "quote": "recommended for reductions of 95.0% phosphorous loads entering these water bodies to meet the preliminary target of 0.16mg/l"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "targets": [
+     {
+      "raw": "reductions of 95.0% phosphorous loads",
+      "scope": "3.3 Nutrients",
+      "value": 95,
+      "valueMax": null,
+      "unit": "%",
+      "comparator": "="
+     },
+     {
+      "raw": "preliminary target of 0.16mg/l",
+      "scope": "3.3 Nutrients",
+      "value": 0.16,
+      "valueMax": null,
+      "unit": "mg/L",
+      "comparator": "="
+     }
+    ],
+    "pollutant": "Phosphorus",
+    "deadline": null
+   },
+   {
+    "id": "11102013",
+    "name": "Nitrogen loads",
+    "text": "Reduce nitrogen loads entering these water bodies by 83.5% to meet the preliminary target",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 14,
+      "quote": "this TMDL recommends a 83.5% reduction of the nitrogen loads entering these water bodies to meet the preliminary target of 1.05 mg/l"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "targets": [
+     {
+      "raw": "83.5% reduction of the nitrogen loads",
+      "scope": "3.3 Nutrients",
+      "value": 83.5,
+      "valueMax": null,
+      "unit": "%",
+      "comparator": "="
+     },
+     {
+      "raw": "preliminary target of 1.05 mg/l",
+      "scope": "3.3 Nutrients",
+      "value": 1.05,
+      "valueMax": null,
+      "unit": "mg/L",
+      "comparator": "="
+     }
+    ],
+    "pollutant": "Nitrogen",
+    "deadline": null
+   }
+  ],
+  "bmps": [
+   {
+    "id": "4aceb8bb",
+    "name": "tailwater recovery systems",
+    "text": "Surface water conservation management strategies including tailwater recovery systems and/or reservoirs are structures evaluated for reducing nutrient concentrations and documenting water management benefits.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 31,
+      "quote": "surface water conservation management strategies including tailwater recovery systems and/ or reservoirs"
+     },
+     {
+      "page": 32,
+      "quote": "Interested to identify sediment deposition and accumulation in behind slotted pipes, low-grade weirs and tailwater recovery systems."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "quantities": [],
+    "unitCost": null,
+    "estimatedCost": null,
+    "pollutants": []
+   },
+   {
+    "id": "94b1c9c8",
+    "name": "low grade weirs",
+    "text": "Low grade weirs are BMP structures within the Coldwater watershed that are evaluated for their ability to reduce nutrient concentrations.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 24,
+      "quote": "low grade weirs (2)"
+     },
+     {
+      "page": 28,
+      "quote": "Low Grade Weirs $ 26,250"
+     },
+     {
+      "page": 31,
+      "quote": "low grade weirs, and surface water conservation management strategies including tailwater recovery systems"
+     },
+     {
+      "page": 32,
+      "quote": "Interested to identify sediment deposition and accumulation in behind slotted pipes, low-grade weirs and tailwater recovery systems."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "quantities": [
+     {
+      "raw": "2",
+      "scope": null,
+      "value": 2,
+      "valueMax": null,
+      "unit": null,
+      "comparator": "="
+     }
+    ],
+    "unitCost": null,
+    "estimatedCost": null,
+    "pollutants": []
+   },
+   {
+    "id": "dc6b1ec2",
+    "name": "tail-water recovery systems",
+    "text": "Tail-water recovery systems to be implemented on the project sites.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 24,
+      "quote": "tail-water recovery systems (two systems)"
+     },
+     {
+      "page": 28,
+      "quote": "Tail-water Recovery Systems $ 112,500 $ 501,090 $ 110,850"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "quantities": [
+     {
+      "raw": "two systems",
+      "scope": null,
+      "value": 2,
+      "valueMax": null,
+      "unit": "systems",
+      "comparator": "="
+     }
+    ],
+    "unitCost": null,
+    "estimatedCost": null,
+    "pollutants": []
+   },
+   {
+    "id": "59bc3c66",
+    "name": "land leveling",
+    "text": "Land leveling to be implemented on the project sites.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 24,
+      "quote": "land leveling (905 acres)"
+     },
+     {
+      "page": 28,
+      "quote": "Land Leveling with Pads $ 262,500 $ 378,750"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "quantities": [
+     {
+      "raw": "905 acres",
+      "scope": null,
+      "value": 905,
+      "valueMax": null,
+      "unit": "ac",
+      "comparator": "="
+     }
+    ],
+    "unitCost": null,
+    "estimatedCost": null,
+    "pollutants": []
+   },
+   {
+    "id": "5f78291f",
+    "name": "water control structures",
+    "text": "Water control structures to be implemented on the project sites.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 24,
+      "quote": "water control structures (30)"
+     },
+     {
+      "page": 28,
+      "quote": "Water Control Structures $ 117,300 $ 67,300"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "quantities": [
+     {
+      "raw": "30",
+      "scope": null,
+      "value": 30,
+      "valueMax": null,
+      "unit": null,
+      "comparator": "="
+     }
+    ],
+    "unitCost": null,
+    "estimatedCost": null,
+    "pollutants": []
+   },
+   {
+    "id": "51c2336c",
+    "name": "two-stage ditch",
+    "text": "Two-stage ditch to be implemented on the project sites.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 24,
+      "quote": "two-stage ditch (3,850 linear feet)"
+     },
+     {
+      "page": 28,
+      "quote": "Two-Stage Ditch $ 11,400"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "quantities": [
+     {
+      "raw": "3,850 linear feet",
+      "scope": null,
+      "value": 3850,
+      "valueMax": null,
+      "unit": "ft",
+      "comparator": "="
+     }
+    ],
+    "unitCost": null,
+    "estimatedCost": null,
+    "pollutants": []
+   },
+   {
+    "id": "2e458dd2",
+    "name": "slotted pipes",
+    "text": "Structures evaluated for sediment deposition and for effects on water volumes, levels and flow rates.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 32,
+      "quote": "Interested to identify sediment deposition and accumulation in behind slotted pipes, low-grade weirs and tailwater recovery systems."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "quantities": [],
+    "unitCost": null,
+    "estimatedCost": null,
+    "pollutants": []
+   },
+   {
+    "id": "3747fe30",
+    "name": "on-farm storage reservoirs",
+    "text": "Storage reservoirs evaluated for how much surface water they capture.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 33,
+      "quote": "how much water is being captured throughout the year within tailwater recovery and on-farm storage reservoirs"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "quantities": [],
+    "unitCost": null,
+    "estimatedCost": null,
+    "pollutants": []
+   }
+  ],
+  "implementation": [
+   {
+    "id": "341f6932",
+    "name": "Conservation practices are to be implemented on three project sites as identified in Figures 7-9",
+    "text": "Conservation practices will be implemented on three project sites identified in Figures 7-9.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 24,
+      "quote": "Conservation practices are to be implemented on three project sites as identified in Figures 7-"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "67278141",
+    "name": "MDEQ will prepare a revised watershed implementation plan incorporating the changes requested by the reviewers",
+    "text": "Revise the watershed implementation plan after evaluation based on reviewer comments.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 33,
+      "quote": "Through the evaluation process, MDEQ will prepare a revised watershed implementation plan incorporating the changes requested by the reviewers."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "MDEQ"
+    ],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "c97d173d",
+    "name": "Within two weeks of receiving the draft watershed implementation plan, the Implementation Team will notify their stakeholders",
+    "text": "Notify stakeholders of the availability of the revised plan for review.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 34,
+      "quote": "Within two weeks of receiving the draft watershed implementation plan, the Implementation Team will notify their stakeholders"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "Implementation Team"
+    ],
+    "timeframe": "Within two weeks of receiving the draft watershed implementation plan",
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "3125288e",
+    "name": "Within a month after the comments on the draft watershed implementation plan are received, MDEQ will prepare a final watershed implementation plan",
+    "text": "Prepare the final watershed implementation plan after comments are received.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 34,
+      "quote": "Within a month after the comments on the draft watershed implementation plan are received, MDEQ will prepare a final watershed implementation plan."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "MDEQ"
+    ],
+    "timeframe": "Within a month after the comments on the draft watershed implementation plan are received",
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "f6888149",
+    "name": "The final watershed implementation plan will be submitted to the Implementation Team for review and approval",
+    "text": "Submit the final plan to the Implementation Team for review and approval.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 34,
+      "quote": "The final watershed implementation plan will be submitted to the Implementation Team for review and approval."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "Implementation Team"
+    ],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   }
+  ],
+  "monitoring": [
+   {
+    "id": "8fca64cf",
+    "name": "Nutrients (inorganic and total)",
+    "text": "Monitoring parameter for nutrient reductions evaluated in the project.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 31,
+      "quote": "1. Nutrients (inorganic and total)"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Nutrients (inorganic and total)",
+    "threshold": null,
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "7d476006",
+    "name": "Sediments (tied to turbidity/TSS in water)",
+    "text": "Monitoring parameter for sediments, tied to turbidity and TSS in water.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 31,
+      "quote": "2. Sediments (tied to turbidity/TSS in water)"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Sediments (tied to turbidity/TSS in water)",
+    "threshold": null,
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "2da83564",
+    "name": "Water HRT / volume and water levels",
+    "text": "Monitoring parameter for water hydraulic residence time, volume and water levels.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 31,
+      "quote": "3. Water HRT / volume and water levels"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Water HRT / volume and water levels",
+    "threshold": null,
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "95c307fa",
+    "name": "Reduction efficiency estimates for individual BMPs",
+    "text": "Monitoring of reduction efficiency for individual BMPs based on above and below BMP sampling.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 31,
+      "quote": "Reduction efficiency estimates for individual BMPs based on above and below BMP sampling"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Reduction efficiency estimates for individual BMPs",
+    "threshold": null,
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "ca807954",
+    "name": "Load reductions and hydrological modifications",
+    "text": "Monitoring of load reductions and hydrological modifications as a result of BMP implementation.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 31,
+      "quote": "Load reductions, and hydrological modifications as a result of BMP implementation"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Load reductions and hydrological modifications",
+    "threshold": null,
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "d0cfe2fe",
+    "name": "Nutrient reductions within primary, channelized headwater streams",
+    "text": "Monitoring of nutrient reductions within primary, channelized headwater streams in identified watersheds (<200ac).",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 31,
+      "quote": "Nutrient reductions within primary, channelized headwater streams in identified watersheds (<200ac)"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Nutrient reductions within primary, channelized headwater streams",
+    "threshold": {
+     "raw": "<200ac",
+     "scope": null,
+     "value": 200,
+     "valueMax": null,
+     "unit": "ac",
+     "comparator": "="
+    },
+    "location": "Coldwater Watershed",
+    "frequency": null
+   },
+   {
+    "id": "b24a9f9e",
+    "name": "Turbidity",
+    "text": "Surface waters are generally high in turbidity from December through April.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 18,
+      "quote": "Surface waters in the Coldwater watershed are generally, high in turbidity December through April from the high sediment runoff"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Turbidity",
+    "threshold": null,
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "fb7afa4b",
+    "name": "Sediment/Siltation Water Quality Criteria",
+    "text": "Narrative water quality criterion for sediment, applying to Aquatic Life Support beneficial use.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 20,
+      "quote": "Waters shall be free from materials attributable to municipal, industrial, agricultural, or other dischargers producing color"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Sediment/Siltation",
+    "threshold": null,
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "2829593a",
+    "name": "TN target concentration",
+    "text": "Annual total nitrogen target concentration for water bodies on the west side of the Delta.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 21,
+      "quote": "An annual concentration of 1.05mg/l is an applicable targe for TN and 0.16mg/l for TP"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "TN",
+    "threshold": {
+     "raw": "1.05 mg/l",
+     "scope": null,
+     "value": 1.05,
+     "valueMax": null,
+     "unit": "mg/L",
+     "comparator": "="
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "ea822648",
+    "name": "TP target concentration",
+    "text": "Annual total phosphorus target concentration for water bodies on the west side of the Delta.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 21,
+      "quote": "An annual concentration of 1.05mg/l is an applicable targe for TN and 0.16mg/l for TP"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "TP",
+    "threshold": {
+     "raw": "0.16 mg/l",
+     "scope": null,
+     "value": 0.16,
+     "valueMax": null,
+     "unit": "mg/L",
+     "comparator": "="
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "e683f016",
+    "name": "Non-stormflow / Grab",
+    "text": "Non-stormflow grab sampling every 3 weeks during the growing season and every 6 weeks over winter.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 32,
+      "quote": "Non-stormflow / Grab – every 3 weeks during a 8 month growing season (March-"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Non-stormflow / Grab",
+    "threshold": null,
+    "location": null,
+    "frequency": "every 3 weeks during a 8 month growing season (March-October); every 6 weeks over 3 months (November – February)"
+   },
+   {
+    "id": "1a687467",
+    "name": "Stormflow",
+    "text": "Stormflow sampling driven by storm events.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 32,
+      "quote": "2. Stormflow – storm event driven (typically between 8-17 per year)"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Stormflow",
+    "threshold": null,
+    "location": null,
+    "frequency": "storm event driven (typically between 8-17 per year)"
+   },
+   {
+    "id": "fcdd9696",
+    "name": "Physicochemical parameters (In Situ parameters – DO, pH, ORP, specific conductivity, temperature)",
+    "text": "In situ physicochemical measurements taken during non-stormflow sampling.",
+    "kind": "sub",
+    "parentId": "e683f016",
+    "evidence": [
+     {
+      "page": 32,
+      "quote": "c. Physicochemical parameters (In Situ parameters – DO, pH, ORP, specific"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Physicochemical parameters (In Situ parameters – DO, pH, ORP, specific conductivity, temperature)",
+    "threshold": null,
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "b432439a",
+    "name": "Sediment accumulation",
+    "text": "Measurement of sediment accumulation during non-stormflow sampling.",
+    "kind": "sub",
+    "parentId": "e683f016",
+    "evidence": [
+     {
+      "page": 32,
+      "quote": "a. Sediment accumulation b. Water level"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Sediment accumulation",
+    "threshold": null,
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "ea205d0c",
+    "name": "Water samples",
+    "text": "Water samples collected within 24-48 hours of storm events and analyzed within 48 hours in the MDEQ lab.",
+    "kind": "sub",
+    "parentId": "1a687467",
+    "evidence": [
+     {
+      "page": 32,
+      "quote": "Water samples will be collected with 24-48 hours of storm events"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Water samples",
+    "threshold": null,
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "6f40164e",
+    "name": "Turbidity and total suspended solids",
+    "text": "Expected decrease in turbidity and total suspended solids in downstream aquatic systems from improved sedimentation.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 32,
+      "quote": "Improved sedimentation will result in a decrease in turbidity and total suspended solids in downstream aquatic systems"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Turbidity and total suspended solids",
+    "threshold": null,
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "76716087",
+    "name": "Phosphorus load",
+    "text": "Evaluation of phosphorus load accumulated with sediment accumulation.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 32,
+      "quote": "Interested to evaluate phosphorus load accumulated with sediment accumulation."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Phosphorus load",
+    "threshold": null,
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "0f093893",
+    "name": "Water levels",
+    "text": "Water levels measured with real time data loggers and level loggers.",
+    "kind": "sub",
+    "parentId": "2da83564",
+    "evidence": [
+     {
+      "page": 33,
+      "quote": "Water levels = real time data loggers, as well as level loggers"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Water levels",
+    "threshold": null,
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "fc736eab",
+    "name": "HRT and Volumes",
+    "text": "HRT and volumes measured by survey and geometry.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 33,
+      "quote": "HRT and Volumes = survey and geometry"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "HRT and Volumes",
+    "threshold": null,
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "d4a23beb",
+    "name": "Phosphorus TMDL target",
+    "text": "Preliminary phosphorus target for the stream section from Yazoo Pass to Pompey Ditch.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 14,
+      "quote": "recommended for reductions of 95.0% phosphorous loads entering these water bodies to meet the preliminary target of 0.16mg/l"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Total phosphorus",
+    "threshold": {
+     "raw": "0.16mg/l",
+     "scope": null,
+     "value": 0.16,
+     "valueMax": null,
+     "unit": "mg/L",
+     "comparator": "="
+    },
+    "location": "Yazoo Pass to Pompey Ditch",
+    "frequency": null
+   },
+   {
+    "id": "d02de364",
+    "name": "Nitrogen TMDL target",
+    "text": "Preliminary total nitrogen target for the stream section from Yazoo Pass to Pompey Ditch.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 14,
+      "quote": "recommends a 83.5% reduction of the nitrogen loads entering these water bodies to meet the preliminary target of 1.05 mg/l"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Total nitrogen",
+    "threshold": {
+     "raw": "1.05 mg/l",
+     "scope": null,
+     "value": 1.05,
+     "valueMax": null,
+     "unit": "mg/L",
+     "comparator": "="
+    },
+    "location": "Yazoo Pass to Pompey Ditch",
+    "frequency": null
+   },
+   {
+    "id": "d08b31f6",
+    "name": "Dissolved Oxygen",
+    "text": "Water quality criterion for dissolved oxygen in the Coldwater River watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 17,
+      "quote": "Dissolved Oxygen 5.0 mg/L daily average, 4.0 mg/L instantaneous"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Dissolved Oxygen",
+    "threshold": {
+     "raw": "5.0 mg/L daily average, 4.0 mg/L instantaneous",
+     "scope": null,
+     "value": 5,
+     "valueMax": null,
+     "unit": "mg/L daily average",
+     "comparator": "="
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "8ba8861f",
+    "name": "PH",
+    "text": "Water quality criterion for pH in the Coldwater River watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 17,
+      "quote": "PH Between 6.0 and 9.0 su"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "PH",
+    "threshold": {
+     "raw": "Between 6.0 and 9.0 su",
+     "scope": null,
+     "value": 6,
+     "valueMax": null,
+     "unit": null,
+     "comparator": "="
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "8d24082f",
+    "name": "Temperature",
+    "text": "Water quality criterion for temperature in the Coldwater River watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 17,
+      "quote": "Temperature 32.2 deg C"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Temperature",
+    "threshold": {
+     "raw": "32.2 deg C",
+     "scope": null,
+     "value": 32.2,
+     "valueMax": null,
+     "unit": "deg C",
+     "comparator": "="
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "a5254ead",
+    "name": "Fecal coliform",
+    "text": "Water quality criterion for fecal coliform in the Coldwater River watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 17,
+      "quote": "May – October: geometric mean of 200 per 100 mL, 400 per 100 mL less than ten percent (10%) of the time during a 30 day period."
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Fecal coliform",
+    "threshold": null,
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "24686f9e",
+    "name": "Specific conductance",
+    "text": "Water quality criterion for specific conductance in the Coldwater River watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 17,
+      "quote": "Specific conductance 1000 uohms/cm"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Specific conductance",
+    "threshold": {
+     "raw": "1000 uohms/cm",
+     "scope": null,
+     "value": 1000,
+     "valueMax": null,
+     "unit": "uohms/cm",
+     "comparator": "="
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "766c539a",
+    "name": "Dissolved Solids",
+    "text": "Water quality criterion for dissolved solids in the Coldwater River watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 17,
+      "quote": "Dissolved Solids 750 mg/L monthly average, 1500 mg/L instantaneous"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Dissolved Solids",
+    "threshold": {
+     "raw": "750 mg/L monthly average, 1500 mg/L instantaneous",
+     "scope": null,
+     "value": 750,
+     "valueMax": null,
+     "unit": "mg/L monthly average",
+     "comparator": "="
+    },
+    "location": null,
+    "frequency": null
+   }
+  ],
+  "outreach": [
+   {
+    "id": "73f90d26",
+    "name": "Education and outreach activities",
+    "text": "Education and outreach activities carried out through the Delta Nutrient Reduction Strategy and Delta Sustainable Water Resources Task Force.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 29,
+      "quote": "Education and outreach activities have been outlined through ongoing efforts with the Delta"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": null,
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "28fd378b",
+    "name": "Education and Outreach Strategy for the WRTF",
+    "text": "Strategy under development guiding future recommended education and outreach activities.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 30,
+      "quote": "are currently guiding the development of an Education and Outreach Strategy for the WRTF."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": null,
+    "quantity": null,
+    "timeframe": null
+   }
+  ],
+  "geographicAreas": [
+   {
+    "id": "83505600",
+    "name": "Coldwater River",
+    "text": "Watershed covered by the plan, referred to as the Coldwater River MRBI watersheds.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 6,
+      "quote": "The mission of this Coldwater River Watershed Implementation Plan (WIP) is to develop a more sustainable future"
+     },
+     {
+      "page": 9,
+      "quote": "The Coldwater River MRBI watersheds drain approximately 415,000 acres of the Yazoo"
+     },
+     {
+      "page": 13,
+      "quote": "The reduction of sediment load in the Coldwater River watershed to equal that of a relatively stable stream"
+     },
+     {
+      "page": 17,
+      "quote": "Table 3. Water quality criteria for Coldwater River watershed."
+     },
+     {
+      "page": 20,
+      "quote": "The Coldwater River watershed has been evaluated as impaired and is included on the"
+     },
+     {
+      "page": 29,
+      "quote": "the Coldwater River MRBI watersheds"
+     },
+     {
+      "page": 33,
+      "quote": "approach for water quality improvements in the Coldwater River watershed will be revised"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "watershed",
+    "code": null,
+    "areaAcres": 415000,
+    "role": "primary"
+   },
+   {
+    "id": "363e53dd",
+    "name": "Tunica County",
+    "text": "County where the Tunica County Soil and Water Conservation District operates, named as a participant.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 18,
+      "quote": "chosen by the Tunica County Soil and Water Conservation District at locations they felt"
+     },
+     {
+      "page": 24,
+      "quote": "Tunica County Soil and Water Conservation District, USDA- NRCS,"
+     },
+     {
+      "page": 29,
+      "quote": "Tunica County Soil and Water Conservation District, USDA- NRCS"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "county",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "2f71dd7a",
+    "name": "Yazoo River basin",
+    "text": "The river basin in which the Coldwater River MRBI watersheds drain.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "drain approximately 415,000 acres of the Yazoo River basin in portions of Desoto"
+     },
+     {
+      "page": 21,
+      "quote": "TMDL for Yazoo River Basin Tunica and Coahoma Counties 2008"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "other",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "8c86cf79",
+    "name": "Mississippi River alluvium",
+    "text": "Geologic formation underlying the watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "The watershed is underlain by Mississippi River alluvium."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "other",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "b6a026b6",
+    "name": "Southaven",
+    "text": "Community near the watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "just minute’s from Southaven, one of that fastest growing communities in Mississippi"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "other",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "78afb130",
+    "name": "Phillips Bayou",
+    "text": "12-digit HUC watershed unit in the Coldwater River MRBI watersheds.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "Phillips Bayou (HUC#080302040900)"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "huc",
+    "code": "080302040900",
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "9fded423",
+    "name": "Buck Island Bayou",
+    "text": "12-digit HUC watershed unit in the Coldwater River MRBI watersheds.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "Buck Island Bayou (HUC#080302040704)"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "huc",
+    "code": "080302040704",
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "ffe86280",
+    "name": "Lower Lake Cormorant Bayou",
+    "text": "12-digit HUC watershed unit in the Coldwater River MRBI watersheds.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "Lower Lake Cormorant Bayou (HUC#080302040705)"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "huc",
+    "code": "080302040705",
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "90d00332",
+    "name": "Muddy Bayou",
+    "text": "12-digit HUC watershed unit in the Coldwater River MRBI watersheds.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "Muddy Bayou (HUC# 080302041000)"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "huc",
+    "code": "080302041000",
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "7a84e447",
+    "name": "White Oak Bayou",
+    "text": "12-digit HUC watershed unit in the Coldwater River MRBI watersheds.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "White Oak Bayou (HUC#080302040800)"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "huc",
+    "code": "080302040800",
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "1d6cfd17",
+    "name": "David Bayou",
+    "text": "",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "David Bayou (HUC#080302041101)"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "huc",
+    "code": "080302041101",
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "40f14c19",
+    "name": "Burrell Bayou",
+    "text": "",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "Burrell Bayou (HUC#080302041103)"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "huc",
+    "code": "080302041103",
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "3c1fc563",
+    "name": "Lower Coldwater River",
+    "text": "",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "Lower Coldwater River (HUC#080302041104)"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "huc",
+    "code": "080302041104",
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "457c1a18",
+    "name": "Coldwater River",
+    "text": "River flowing about 220 miles through Northwestern Mississippi into Arkabutla Lake.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "The Coldwater River flows for about 220 miles through Northwestern Mississippi."
+     },
+     {
+      "page": 21,
+      "quote": "The Coldwater River on the Mississippi 2006 Section 303(d) List of Impaired Water Bodies"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "waterbody",
+    "code": null,
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "57821df3",
+    "name": "Arkabutla Lake",
+    "text": "Lake into which the Coldwater River flows.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "It flows in a Southward direction from its headwaters near Hudsonville, Mississippi into Arkabutla Lake."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "waterbody",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "b2708d47",
+    "name": "Little Tallahatchie River",
+    "text": "River to which the Coldwater River flows from Arkabutla Lake.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "The River then flows from Arkabutla Lake to the Little Tallahatchie River."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "waterbody",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "034354e5",
+    "name": "Mississippi Alluvial Plain ecoregion",
+    "text": "Ecoregion in which the watershed is located.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "The watershed is located in the Mississippi Alluvial Plain ecoregion."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "other",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "f578bf1e",
+    "name": "Desoto",
+    "text": "County listed for the Coldwater River segments on the 303(d) list.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 20,
+      "quote": "Desoto, Tate, Tunica"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "county",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "c6761f7e",
+    "name": "Tate",
+    "text": "County listed for the Coldwater River segments on the 303(d) list.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 20,
+      "quote": "Desoto, Tate, Tunica"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "county",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "27da4390",
+    "name": "Tunica",
+    "text": "County listed for the Coldwater River segments on the 303(d) list.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 20,
+      "quote": "Desoto, Tate, Tunica"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "county",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "ef92962d",
+    "name": "Cub Lake Bayou",
+    "text": "Water body named as start point of the Pritchard segment.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 13,
+      "quote": "flows from the confluence of Cub Lake Bayou to the split with Pompey Ditch"
+     },
+     {
+      "page": 20,
+      "quote": "From confluence with Cub Lake Bayou to split with Pompey Ditch above Sara"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "waterbody",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "7e59454a",
+    "name": "Pompey Ditch",
+    "text": "Water body named as endpoint of the Coldwater River segments.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 14,
+      "quote": "the stream section from Yazoo Pass to Pompey Ditch has a high probability"
+     },
+     {
+      "page": 20,
+      "quote": "confluence with Pompey Ditch"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "waterbody",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "c5db6ca6",
+    "name": "Buck Island Bayou",
+    "text": "Water body where water quality sample sites were located.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 19,
+      "quote": "Sites were located on Buck Island Bayou, Walnut Lake, Phillip’s"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "waterbody",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "9921c93c",
+    "name": "Walnut Lake",
+    "text": "Water body where water quality sample sites were located.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 19,
+      "quote": "Sites were located on Buck Island Bayou, Walnut Lake, Phillip’s"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "waterbody",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "e1612326",
+    "name": "Phillip's Bayou",
+    "text": "Water body where water quality sample sites were located.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 19,
+      "quote": "Walnut Lake, Phillip’s Bayou, McKinney Bayou"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "waterbody",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "adc55f30",
+    "name": "McKinney Bayou",
+    "text": "Water body where water quality sample sites were located.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 19,
+      "quote": "Phillip’s Bayou, McKinney Bayou, Six Mile Lake, and Yazoo Pass"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "waterbody",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "abb79ffa",
+    "name": "Six Mile Lake",
+    "text": "Water body where water quality sample sites were located.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 19,
+      "quote": "McKinney Bayou, Six Mile Lake, and Yazoo Pass."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "waterbody",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "43303257",
+    "name": "Yazoo Pass",
+    "text": "Water body where water quality sample sites were located.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 14,
+      "quote": "the stream section from Yazoo Pass to Pompey Ditch has a high probability"
+     },
+     {
+      "page": 19,
+      "quote": "Six Mile Lake, and Yazoo Pass."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "waterbody",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "776e368b",
+    "name": "Mississippi",
+    "text": "State whose 303(d) List and water quality standard apply to the watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 17,
+      "quote": "stated in the Mississippi water quality regulations is Fish and Wildlife Support"
+     },
+     {
+      "page": 20,
+      "quote": "Mississippi 303 (d) List (MDEQ 2004a)"
+     },
+     {
+      "page": 21,
+      "quote": "There are currently no numerical criteria for nutrient concentrations in Mississippi surface waters."
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "state",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "01421aaf",
+    "name": "Moon Lake",
+    "text": "Recreational lake within the watershed, impaired by sedimentation.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 23,
+      "quote": "Moon Lake is a popular recreational lake within the watershed."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "waterbody",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "da4243f1",
+    "name": "Delta",
+    "text": "Delta water bodies that nutrient reductions aim to protect.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 12,
+      "quote": "will protect Delta water bodies and benefit the Gulf of Mexico"
+     },
+     {
+      "page": 15,
+      "quote": "Delta, so phosphorus in surface waters can also come from groundwater seepage or discharge."
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "other",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   }
+  ]
+ },
+ "document": {
+  "id": "coldwater-2013",
+  "fileName": "Coldwater_River_Watershed_Plan_2013.pdf",
+  "pages": 35,
+  "title": "Coldwater River Watershed Plan",
+  "year": 2013
+ },
+ "quality": {
+  "verifiedRate": 0.8173076923076923,
+  "rejected": [
+   {
+    "category": "outreach",
+    "name": "Surveys of regional stakeholders and the general public",
+    "page": 29,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "geographicAreas",
+    "name": "Desoto County",
+    "page": 9,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "geographicAreas",
+    "name": "Tunica County",
+    "page": 9,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "geographicAreas",
+    "name": "Coahoma County",
+    "page": 9,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "geographicAreas",
+    "name": "Panola County",
+    "page": 9,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "geographicAreas",
+    "name": "Quitman County",
+    "page": 9,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "goals",
+    "name": "Total Maximum Daily Load for Sediment/Siltation: 8.8E-02 to 2.4E-01",
+    "page": 20,
+    "reason": "number-not-in-quote"
+   },
+   {
+    "category": "goals",
+    "name": "Total Maximum Daily Load for Sediment/Siltation: 8.8E-02 to 2.4E-02",
+    "page": 20,
+    "reason": "number-not-in-quote"
+   },
+   {
+    "category": "monitoring",
+    "name": "Dissolved Oxygen",
+    "page": null,
+    "reason": "invalid"
+   },
+   {
+    "category": "monitoring",
+    "name": "Sediment/Siltation Water Quality Criteria: Waters shall be free from materials attributable to municipal, industrial, agricultural, or other dischargers producing color, odor, taste, TSS, or other conditions in such a degree as to create a nuisance",
+    "page": 20,
+    "reason": "number-not-in-quote"
+   },
+   {
+    "category": "monitoring",
+    "name": "Fecal coliform",
+    "page": null,
+    "reason": "invalid"
+   },
+   {
+    "category": "outreach",
+    "name": "Water quality monitoring by Tunica County Soil and Water Conservation District",
+    "page": 18,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "geographicAreas",
+    "name": "Coldwater River MSCOLDR2M2",
+    "page": 20,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "geographicAreas",
+    "name": "Coldwater River MSCOLDR2E",
+    "page": 20,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "geographicAreas",
+    "name": "Tunica County",
+    "page": 21,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "geographicAreas",
+    "name": "Coahoma County",
+    "page": 21,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "monitoring",
+    "name": "Sediment TMDL target",
+    "page": 13,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Watershed Implementation Team",
+    "page": 14,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "monitoring",
+    "name": "Fecal coliform: May – October: geometric mean of 200 per 100 mL, 400 per 100 mL less than ten percent (10%) of the time during a 30 day period. November – April: geometric mean of 2000 per 100 mL, 4000 per 100 mL less than ten percent of the time during a 30 day period.",
+    "page": 17,
+    "reason": "number-not-in-quote"
+   }
+  ],
+  "conflicts": [],
+  "ocrPages": [],
+  "skippedPages": [
+   {
+    "page": 3,
+    "reason": "Blank page"
+   },
+   {
+    "page": 4,
+    "reason": "Blank page"
+   },
+   {
+    "page": 5,
+    "reason": "Blank page"
+   },
+   {
+    "page": 7,
+    "reason": "Figure or map page"
+   },
+   {
+    "page": 8,
+    "reason": "Figure or map page"
+   },
+   {
+    "page": 26,
+    "reason": "Figure or map page"
+   },
+   {
+    "page": 27,
+    "reason": "Figure or map page"
+   }
+  ],
+  "emptyPages": [
+   1,
+   2,
+   11,
+   16,
+   22,
+   25,
+   35
+  ],
+  "failedUnits": [],
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "durationMs": 54338,
+  "usage": {
+   "inputTokens": 177842,
+   "outputTokens": 31441,
+   "costUsd": 0.024736900000000003
+  },
+  "completionBasis": "No completion status reported in this document",
+  "structure": [
+   {
+    "page": 1,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 1,
+    "kind": "heading",
+    "level": 0,
+    "text": "COLDWATER RIVER"
+   },
+   {
+    "page": 1,
+    "kind": "heading",
+    "level": 0,
+    "text": "WATERSHED IMPLEMENTATION PLAN"
+   },
+   {
+    "page": 1,
+    "kind": "heading",
+    "level": 0,
+    "text": "DRAFT"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "April 11, 2013"
+   },
+   {
+    "page": 1,
+    "kind": "admin",
+    "level": 0,
+    "text": "1"
+   },
+   {
+    "page": 2,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 2,
+    "kind": "heading",
+    "level": 0,
+    "text": "COLDWATER RIVER"
+   },
+   {
+    "page": 2,
+    "kind": "heading",
+    "level": 0,
+    "text": "WATERSHED IMPLEMENTATION PLAN"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "Prepared for:"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "Mississippi Department of Environmental Quality"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "Prepared by:"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "Delta F.A.R.M."
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "P.O. Box 257"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "Stoneville, MS 38776"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "With additional technical assistance from:"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Team"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "P.O. Box 276"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "Stoneville, MS 38776"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "Mississippi Department of Environmental Quality"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "Office of Pollution Control"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "P.O. Box 20385"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "Jackson, MS 39289"
+   },
+   {
+    "page": 2,
+    "kind": "admin",
+    "level": 0,
+    "text": "2"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "Table of Contents"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "List of Tables .................................................................................................................. 4"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "List of Figures................................................................................................................. 5"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "1.0 Introduction............................................................................................................... 6"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "1.1 Mission and Goals ........................................................................................... 6"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "1.2 Watershed Implementation Team.................................................................. 6"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "2.0 Watershed Description .............................................................................................. 9"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "2.1 Geography ....................................................................................................... 9"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "2.2 Hydrology ........................................................................................................ 9"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "2.3 Land use ........................................................................................................ 10"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "2.4 Socioeconomics.............................................................................................. 11"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "2.5 Demographics................................................................................................ 11"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "3.0 Interests and Concerns............................................................................................. 12"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "3.1 Identifying Interests and Concerns .............................................................. 12"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "3.2 Sediment ........................................................................................................ 13"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "3.2.1 Locations Where Sediment is an Issue............................................................. 13"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "3.2.2 Cause .............................................................................................................. 13"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "3.2.3 Sources ........................................................................................................... 13"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "3.3 Nutrients........................................................................................................ 14"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "3.3.1 Cause ................................................................................................................... 14"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "3.3.2 Sources................................................................................................................. 14"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "3.3.3 Nonpoint Sources ................................................................................................. 14"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "3.3.4 Point Sources........................................................................................................ 15"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "3.4 Alluvial Aquifer Declines .............................................................................. 16"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "3.4.1 Cause ................................................................................................................... 16"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "3.4.2 Source............................................................................................................. 16"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "4.0 Coldwater River MRBI Watershed Resources ......................................................... 17"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "4.1 Water Quality Standards.............................................................................. 17"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "4.2 Surface Water Quality .................................................................................. 18"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "4.3 TMDLs .......................................................................................................... 21"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "4.4 Groundwater Resources ............................................................................... 23"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "4.5 Fisheries, Plant, and Wildlife Resources ...................................................... 23"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "5.0 Conservation Practice Implementation..................................................................... 24"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "5.1 Goal ............................................................................................................... 24"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "5.2 Participants ................................................................................................... 24"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "5.3 Implementation ............................................................................................. 24"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "5.4 Implementation Budget ................................................................................ 28"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "6.0 Education Strategy .................................................................................................. 29"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "6.1 Goal ............................................................................................................... 29"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "6.2 Participants ................................................................................................... 29"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "6.3 Activities ........................................................................................................ 29"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "7.0 Evaluation ............................................................................................................... 31"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "7.1 Monitoring..................................................................................................... 31"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "7.2 Plan Evaluation & Revision Procedure ......................................................... 33"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "8.0 References............................................................................................................... 35"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "3"
+   },
+   {
+    "page": 4,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 4,
+    "kind": "admin",
+    "level": 0,
+    "text": "List of Tables"
+   },
+   {
+    "page": 4,
+    "kind": "admin",
+    "level": 0,
+    "text": "Table 1. Priority Interests and Concerns in Coldwater River MRBI Watersheds"
+   },
+   {
+    "page": 4,
+    "kind": "admin",
+    "level": 0,
+    "text": "Table 2. Permitted point sources in the project area"
+   },
+   {
+    "page": 4,
+    "kind": "admin",
+    "level": 0,
+    "text": "Table 3. Water quality criteria for the Coldwater River Watershed"
+   },
+   {
+    "page": 4,
+    "kind": "admin",
+    "level": 0,
+    "text": "Table 4. Reported impairments from the EPA for the Coldwater Watershed"
+   },
+   {
+    "page": 4,
+    "kind": "admin",
+    "level": 0,
+    "text": "Table 5. 2002 303(d) listings for the Coldwater River Watershed"
+   },
+   {
+    "page": 4,
+    "kind": "admin",
+    "level": 0,
+    "text": "Table 6. Water Quality Standard"
+   },
+   {
+    "page": 4,
+    "kind": "admin",
+    "level": 0,
+    "text": "Table 7. Total Maximum Daily Load"
+   },
+   {
+    "page": 4,
+    "kind": "admin",
+    "level": 0,
+    "text": "Table 8. TMDL targets and land use calculations"
+   },
+   {
+    "page": 4,
+    "kind": "admin",
+    "level": 0,
+    "text": "Table 9. Projected Costs for Practice Implementation by Funding Source"
+   },
+   {
+    "page": 4,
+    "kind": "admin",
+    "level": 0,
+    "text": "12"
+   },
+   {
+    "page": 4,
+    "kind": "admin",
+    "level": 0,
+    "text": "15"
+   },
+   {
+    "page": 4,
+    "kind": "admin",
+    "level": 0,
+    "text": "16"
+   },
+   {
+    "page": 4,
+    "kind": "admin",
+    "level": 0,
+    "text": "17"
+   },
+   {
+    "page": 4,
+    "kind": "admin",
+    "level": 0,
+    "text": "19"
+   },
+   {
+    "page": 4,
+    "kind": "admin",
+    "level": 0,
+    "text": "19"
+   },
+   {
+    "page": 4,
+    "kind": "admin",
+    "level": 0,
+    "text": "19"
+   },
+   {
+    "page": 4,
+    "kind": "admin",
+    "level": 0,
+    "text": "21"
+   },
+   {
+    "page": 4,
+    "kind": "admin",
+    "level": 0,
+    "text": "27"
+   },
+   {
+    "page": 4,
+    "kind": "admin",
+    "level": 0,
+    "text": "4"
+   },
+   {
+    "page": 5,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 5,
+    "kind": "admin",
+    "level": 0,
+    "text": "List of Figures"
+   },
+   {
+    "page": 5,
+    "kind": "admin",
+    "level": 0,
+    "text": "Figure 1. Location of Coldwater River MRBI Watersheds within the State of MS"
+   },
+   {
+    "page": 5,
+    "kind": "admin",
+    "level": 0,
+    "text": "Figure 2. Impaired Segments of MRBI Coldwater River Watersheds"
+   },
+   {
+    "page": 5,
+    "kind": "admin",
+    "level": 0,
+    "text": "Figure 3. Coldwater River MRBI Watershed Land Use Map"
+   },
+   {
+    "page": 5,
+    "kind": "admin",
+    "level": 0,
+    "text": "Figure 4. Coldwater River Watershed Sample Sites (USDA NRCS 2012)"
+   },
+   {
+    "page": 5,
+    "kind": "admin",
+    "level": 0,
+    "text": "Figure 5. Coldwater River MRBI Watershed Project – Allen Site Map"
+   },
+   {
+    "page": 5,
+    "kind": "admin",
+    "level": 0,
+    "text": "Figure 6. Coldwater River MRBI Watershed Project – Shannon Site Map"
+   },
+   {
+    "page": 5,
+    "kind": "admin",
+    "level": 0,
+    "text": "Figure 7. Coldwater River MRBI Watershed Project – Boyd Site Map"
+   },
+   {
+    "page": 5,
+    "kind": "admin",
+    "level": 0,
+    "text": "7"
+   },
+   {
+    "page": 5,
+    "kind": "admin",
+    "level": 0,
+    "text": "8"
+   },
+   {
+    "page": 5,
+    "kind": "admin",
+    "level": 0,
+    "text": "10"
+   },
+   {
+    "page": 5,
+    "kind": "admin",
+    "level": 0,
+    "text": "18"
+   },
+   {
+    "page": 5,
+    "kind": "admin",
+    "level": 0,
+    "text": "24"
+   },
+   {
+    "page": 5,
+    "kind": "admin",
+    "level": 0,
+    "text": "25"
+   },
+   {
+    "page": 5,
+    "kind": "admin",
+    "level": 0,
+    "text": "26"
+   },
+   {
+    "page": 5,
+    "kind": "admin",
+    "level": 0,
+    "text": "5"
+   },
+   {
+    "page": 6,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 6,
+    "kind": "heading",
+    "level": 0,
+    "text": "1.0 Introduction"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "1.1 Mission and Goals"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "The mission of this Coldwater River Watershed Implementation Plan (WIP) is to develop a"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "more sustainable future for the resources, residences, and businesses located within selected"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "HUC 12 watersheds by advancing on-the-ground conservation measures that address resource"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "concerns and ultimately achieve or exceed water quality parameters set forth by TMDLs."
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "The goal of this plan is to provide guidance for implementing and evaluating conservation"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "practices on select sites within the watershed in support of the Delta Nutrient Reduction Strategy"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "(DNRS), the Mississippi River Basin Initiative (MRBI), and Delta Sustainable Water Resources"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "Task Force (WRTF)."
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "1.2 Watershed Implementation Team"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "Members of the Coldwater River Watershed Implementation Team are listed below. They"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "represent various professional resource agencies and stakeholders that have been involved with"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "project activities in the MRBI watersheds."
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "Agency/Organization Members - Delta F.A.R.M., Delta Wildlife, FTN Associates, MS"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "Department of Environmental Quality, MS Department of Wildlife, Fisheries, and Parks, MS"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "Farm Bureau Federation, MS Soil and Water Conservation Commission, Mississippi State"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "University, The Nature Conservancy, Tunica County Soil and Water Conservation District,"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "USDA- NRCS, USDA-ARS National Sedimentation Laboratory, U.S. Army Corp of Engineers,"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "U.S. Environmental Protection Agency, U.S. Geological Survey, and the Yazoo-Mississippi"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "Delta Joint Water Management District"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "Stakeholder Members – Mike Boyd, Buddy Allen, Daniel Shannon"
+   },
+   {
+    "page": 6,
+    "kind": "admin",
+    "level": 0,
+    "text": "6"
+   },
+   {
+    "page": 7,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 7,
+    "kind": "aside",
+    "level": 0,
+    "text": "Figure 1. Location of Coldwater River MRBI Watersheds within the State of Mississippi"
+   },
+   {
+    "page": 7,
+    "kind": "admin",
+    "level": 0,
+    "text": "7"
+   },
+   {
+    "page": 8,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 8,
+    "kind": "aside",
+    "level": 0,
+    "text": "Figure 2. Impaired Segments of MRBI Coldwater River Watersheds"
+   },
+   {
+    "page": 8,
+    "kind": "admin",
+    "level": 0,
+    "text": "8"
+   },
+   {
+    "page": 9,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 9,
+    "kind": "heading",
+    "level": 0,
+    "text": "2.0 Watershed Description"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "2.1 Geography"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "The Coldwater River MRBI watersheds drain approximately 415,000 acres of the Yazoo"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "River basin in portions of Desoto, Tunica, Coahoma, Panola and Quitman counties in North"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "West Mississippi. Located in the northern most part of Mississippi the watershed is just minute’s"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "from Southaven, one of that fastest growing communities in Mississippi. Several smaller"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "communities in the watershed include; Walls, Robinsonville, Tunica, Jonestown, and Sledge."
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "The watershed is underlain by Mississippi River alluvium. The topography of the watershed"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "is primarily flat, with some ridge and swell topography provided by river terraces (MDEQ 2000)."
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "Soils in the Mississippi River Alluvial Plain physiographic region are primarily young soils"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "(inceptisols) formed on alluvium, and range from mildly acidic to mildly alkaline. Soils in the"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "watershed (headwaters) are of Dundee (moderately to somewhat poorly drained fine sandy loam"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "to silty clay loam) and Forestdale (somewhat poorly to poorly drained silty clay loam) series."
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "There are also heavier soils, predominately of Alligator and Sharkey series. These are poorly"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "drained clay soils. The watershed is located in the Mississippi Alluvial Plain ecoregion. Native"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "vegetation would consist of bottomland hardwood forests."
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "2.2 Hydrology"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "The Coldwater River flows for about 220 miles through Northwestern Mississippi. It flows in"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "a Southward direction from its headwaters near Hudsonville, Mississippi into Arkabutla Lake."
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "The River then flows from Arkabutla Lake to the Little Tallahatchie River."
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "The MRBI Coldwater River Watersheds consist of the following 12 digit HUCs:"
+   },
+   {
+    "page": 9,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Phillips Bayou (HUC#080302040900)"
+   },
+   {
+    "page": 9,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Buck Island Bayou (HUC#080302040704)"
+   },
+   {
+    "page": 9,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Lower Lake Cormorant Bayou (HUC#080302040705)"
+   },
+   {
+    "page": 9,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Muddy Bayou (HUC# 080302041000)"
+   },
+   {
+    "page": 9,
+    "kind": "bullet",
+    "level": 1,
+    "text": "White Oak Bayou (HUC#080302040800)"
+   },
+   {
+    "page": 9,
+    "kind": "admin",
+    "level": 0,
+    "text": "9"
+   },
+   {
+    "page": 10,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 10,
+    "kind": "bullet",
+    "level": 1,
+    "text": "David Bayou (HUC#080302041101)"
+   },
+   {
+    "page": 10,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Burrell Bayou (HUC#080302041103)"
+   },
+   {
+    "page": 10,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Lower Coldwater River (HUC#080302041104)"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "Surface water levels in the watershed are maintained by rainwater, the Mississippi River"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "alluvial aquifer, and the Coldwater River and Arkabutla Lake. The advent of irrigation in the"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "1970’s has lowered the water levels in the Mississippi River Alluvial Aquifer to the point that it"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "does not maintain base flows even in the largest area rivers. Ground water withdrawals for"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "agricultural use, primarily irrigation, are made from the alluvial aquifer and surface water, with a"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "majority coming from the alluvial aquifer. (USDA NRCS 2012)."
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "2.3 Land use"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "Historically, the area consisted largely of ridge and swale topography. However many of the"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "agriculture fields in the area have been developed and improved by land forming and installing"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "drainage infrastructure. According to 2011 NAIP data, the pre-dominate land use is agriculture"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "and crops include corn (7,000 ac), soybeans (21,475 ac), cotton (6,348 ac), milo (11,792 ac),"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "catfish (240 ac), and rice (9,060 ac). Other land uses in the watershed are characterized by"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "wetlands, small urban areas, water, and forest land."
+   },
+   {
+    "page": 10,
+    "kind": "admin",
+    "level": 0,
+    "text": "10"
+   },
+   {
+    "page": 11,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 11,
+    "kind": "aside",
+    "level": 0,
+    "text": "Figure 3. Coldwater River MRBI Watershed Land Use map."
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "2.4 Socioeconomics"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "Many of the landowners and farmers of this watershed have demonstrated a progressive"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "mindset. Producers in the watershed have a history of recognizing environmental concerns and"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "voluntarily addressing them through assistance programs such as EQIP, CRP, and WRP."
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "Stakeholders are informed and receptive of innovative conservation practices, such as those"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "required to successfully reduce sediment and nutrient loading as well as those used for water"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "quantity stewardship."
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "2.5 Demographics"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "Based on 2010 Census data for Desoto, Coahoma, Panola and Quitman Counties, it is"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "estimated that 24,000 people live in the watershed. Desoto County has seen population growth"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "while the other counties have remained steady or declined in population."
+   },
+   {
+    "page": 11,
+    "kind": "admin",
+    "level": 0,
+    "text": "11"
+   },
+   {
+    "page": 12,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 12,
+    "kind": "heading",
+    "level": 0,
+    "text": "3.0 Interests and Concerns"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "3.1 | Identifying Interests and Concerns"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "For the purposes of this project and the guiding WIP, interests and concerns were formulated"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "through development of the Delta Nutrient Reduction Strategy. Implementation of DNRS"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "watershed projects (such as this Coldwater MRBI Watershed Project) identified four questions to"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "address:"
+   },
+   {
+    "page": 12,
+    "kind": "numbered",
+    "level": 1,
+    "text": "1. What levels of nutrient reductions are achievable?"
+   },
+   {
+    "page": 12,
+    "kind": "numbered",
+    "level": 1,
+    "text": "2. What will they cost?"
+   },
+   {
+    "page": 12,
+    "kind": "numbered",
+    "level": 1,
+    "text": "3. What is the value to each stakeholder from these nutrient reductions?"
+   },
+   {
+    "page": 12,
+    "kind": "numbered",
+    "level": 1,
+    "text": "4. What levels of nutrient reductions will protect Delta water bodies and benefit the Gulf"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "of Mexico?"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Given this, reducing nutrient and sediment runoff from agricultural sources are the primary"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "concerns to be addressed. These concerns are directly reflected in the MS Soil and Water"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Conservation Commissions proposed MRBI work plan for the watershed area. Realizing the"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "connectivity between water quality and water quantity and the overlapping solutions, the Delta"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Sustainable Water Resources Task Force was developed to address water resource concerns"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "using an integrated approach. Therefore, declines in the alluvial aquifer are considered of"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "interest and in the scope of this WIP."
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Table 1. Priority Interests and Concerns in Coldwater River MRBI Watersheds"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Status | Description"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Concern: | Sediment"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Cause: | Nonpoint source agricultural runoff due to erosion"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Location: | Impairment occurs in streams and lakes"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Extent: | Entire watershed"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Concern: | Nutrients"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Cause: | Nonpoint source agricultural runoff"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Location: | Impairment occurs in streams and lakes"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Extent: | Entire Watershed"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Concern: | Alluvial Aquifer"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Cause: | Declining alluvial aquifer"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Location: | Impairment occurs in alluvial aquifer"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Extent: | Entire Watershed"
+   },
+   {
+    "page": 12,
+    "kind": "admin",
+    "level": 0,
+    "text": "12"
+   },
+   {
+    "page": 13,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "3.2 Sediment"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Stakeholders noted that sedimentation in ditches and streams helps contribute to flooding."
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "They also expressed concern that the presence of glyphosate resistant weeds in the watershed my"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "result in increased cultivation, which could increase erosion and sediment loads. The sediment"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "TMDLs for these water bodies recommend that sediment loads to these water bodies be reduced"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "to the range of 8.8E-02 to 2.4E-01 tons per acre per day at the effective discharge. The reduction"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "of sediment load in the Coldwater River watershed to equal that of a relatively stable stream will"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "allow the river to approach stable conditions (MDEQ. 2003a).This reduction will provide"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "improved habitat for the support of aquatic life in the river and will result in the attainment of the"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "applicable water quality standards."
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "3.2.1 Locations Where Sediment is an Issue"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Stakeholders identified drainage ditches and streams as places where sedimentation is an"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "issue. MDEQ identified the segment that flows from the confluence of Cub Lake Bayou to the"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "split with Pompey Ditch as areas where sediment was expected to be a water quality issue."
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "3.2.2 Cause"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Sediment is the pollutant causing sedimentation and turbidity in these water bodies."
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Sedimentation is created by erosion of soil particles in the watershed. Soils in the area tend to be"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "fine grained which makes them more susceptible to erosion."
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "3.2.3 Sources"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "There are National Pollutant Discharge Elimination System (NPDES) permits for Total"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Suspended Solids for the Coldwater River watershed. These sources however provide negligible"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "loadings of sediment when compared to wet weather sources such as, Municipal Separate Storm"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Sewer Systems and nonpoint sources. The TSS component of the permitted discharges is"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "generally composed more of organic material, and therefore, provides less direct impact on the"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "biologic integrity of a stream than would stream sedimentation due to soil erosion during wet"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "weather events. Nonpoint loading of sediment in a water body results from the transport of the"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "material into receiving waters by the process of mass wasting, head cutting, gullying, and sheet"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "and rill erosion (MDEQ. 2003a)."
+   },
+   {
+    "page": 13,
+    "kind": "admin",
+    "level": 0,
+    "text": "13"
+   },
+   {
+    "page": 14,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "3.3 Nutrients"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "The WIT identified nutrients in runoff as a priority concern. MDEQ has determined that the"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "stream section from Yazoo Pass to Pompey Ditch has a high probability of containing nutrients"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "levels detrimental to fish and other wildlife. High nutrient concentrations can support high"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "growth of algae or other aquatic plants. When the algae die, their decomposition uses oxygen in"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "the water, which can result in low oxygen levels that are harmful to fish and other aquatic life."
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "The TMDLs for this stream section has been recommended for reductions of 95.0% phosphorous"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "loads entering these water bodies to meet the preliminary target of 0.16mg/l. Based on the"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "estimated existing and target total nitrogen concentrations, this TMDL recommends a 83.5%"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "reduction of the nitrogen loads entering these water bodies to meet the preliminary target of 1.05"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "mg/l. (MDEQ 2008)"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "3.3.1 Cause"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "Nitrogen and phosphorus are the pollutants that are suspected of causing eutrophic"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "conditions in these water bodies with high productivity and low dissolved oxygen levels. Total"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "nitrogen and total phosphorus are the species of these nutrients that were addressed in the"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "TMDLs. (MDEQ 2008)"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "3.3.2 Sources"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "Nutrient loads are primarily contributed by nonpoint sources in the watershed. However,"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "there are also 22 NPDES sources permitted to discharge into Coldwater River."
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "3.3.3 Nonpoint Sources"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "Total nitrogen is a combination of the many forms of nitrogen found in the environment."
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "Inorganic nitrogen can be transported in particulate and dissolved phases in surface runoff."
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "Dissolved inorganic nitrogen can enter groundwater through infiltration, and may enter a water"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "body through groundwater seepage or discharge. Finally, atmospheric gaseous nitrogen may"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "enter a water body through diffusion, and dissolved and particulate nitrogen species can enter"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "through atmospheric deposition."
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "Phosphorus is primarily transported in surface runoff when it has been sorbed to eroding"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "sediment. Phosphorus may also be associated with fine-grained particulate matter in the"
+   },
+   {
+    "page": 14,
+    "kind": "admin",
+    "level": 0,
+    "text": "14"
+   },
+   {
+    "page": 15,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 15,
+    "kind": "para",
+    "level": 0,
+    "text": "atmosphere and can enter stereos as a result of dry fallout and rainfall. Phosphorus may also be"
+   },
+   {
+    "page": 15,
+    "kind": "para",
+    "level": 0,
+    "text": "contained in the surface runoff due to fertilizers and animal excrement or watersheds with"
+   },
+   {
+    "page": 15,
+    "kind": "para",
+    "level": 0,
+    "text": "naturally occurring soils that are rich in phosphorus (Thomann and Mueller, 1987)."
+   },
+   {
+    "page": 15,
+    "kind": "para",
+    "level": 0,
+    "text": "Watersheds with a large number of failing septic tanks may also deliver significant"
+   },
+   {
+    "page": 15,
+    "kind": "para",
+    "level": 0,
+    "text": "loadings of phosphorus to a water body. Phosphorus levels are also high in groundwater in the"
+   },
+   {
+    "page": 15,
+    "kind": "para",
+    "level": 0,
+    "text": "Delta, so phosphorus in surface waters can also come from groundwater seepage or discharge."
+   },
+   {
+    "page": 15,
+    "kind": "para",
+    "level": 0,
+    "text": "USGS has an ongoing sampling program to quantify the cause of phosphorus in ground water."
+   },
+   {
+    "page": 15,
+    "kind": "para",
+    "level": 0,
+    "text": "3.3.4 Point Sources"
+   },
+   {
+    "page": 15,
+    "kind": "para",
+    "level": 0,
+    "text": "These point sources provide negligible impacts to the watershed and no changes are"
+   },
+   {
+    "page": 15,
+    "kind": "para",
+    "level": 0,
+    "text": "required in their permits due to the current TMDL (MDEQ 2008)."
+   },
+   {
+    "page": 15,
+    "kind": "para",
+    "level": 0,
+    "text": "Table 2. Permitted point sources in the project area."
+   },
+   {
+    "page": 15,
+    "kind": "para",
+    "level": 0,
+    "text": "Permitted"
+   },
+   {
+    "page": 15,
+    "kind": "table",
+    "level": 0,
+    "text": "NPDES | Discharge | Actual Average | Actual Average | Permitted"
+   },
+   {
+    "page": 15,
+    "kind": "table",
+    "level": 0,
+    "text": "Name | Permit | (cfs) | Discharge (cfs) | BOD mg/L | BOD mg/L"
+   },
+   {
+    "page": 15,
+    "kind": "para",
+    "level": 0,
+    "text": "Buck Island Bayou"
+   },
+   {
+    "page": 15,
+    "kind": "table",
+    "level": 0,
+    "text": "MGP | MS0049123 | 0.063 | 0.29 | 5.33 | 30"
+   },
+   {
+    "page": 15,
+    "kind": "para",
+    "level": 0,
+    "text": "USACOE Arkabutla"
+   },
+   {
+    "page": 15,
+    "kind": "table",
+    "level": 0,
+    "text": "N Abutment | MS0020656 | 0.021 | 0.002 | 2 | 30"
+   },
+   {
+    "page": 15,
+    "kind": "table",
+    "level": 0,
+    "text": "Austin Trailer Park | MS0051934 | 0.009 | 0.009 | 2.8 | 30"
+   },
+   {
+    "page": 15,
+    "kind": "table",
+    "level": 0,
+    "text": "Lake Forest S/D | MS0034188 | 1.547 | 0.147 | 6.07 | 30"
+   },
+   {
+    "page": 15,
+    "kind": "table",
+    "level": 0,
+    "text": "Skylane Trailer Park MS0037925 | 0.034 | 0.027 | 17.3 | 30"
+   },
+   {
+    "page": 15,
+    "kind": "table",
+    "level": 0,
+    "text": "Twin Lakes #1 | MS0022543 | 0.232 | 0.151 | 7.07 | 30"
+   },
+   {
+    "page": 15,
+    "kind": "table",
+    "level": 0,
+    "text": "Twin Lakes #2 | MS0029467 | 0.201 | 0.169 | 5.61 | 30"
+   },
+   {
+    "page": 15,
+    "kind": "para",
+    "level": 0,
+    "text": "Wilson Mill"
+   },
+   {
+    "page": 15,
+    "kind": "table",
+    "level": 0,
+    "text": "Subdivision | MS0053830 | 0.019 | 0.002 | 5 | 30"
+   },
+   {
+    "page": 15,
+    "kind": "table",
+    "level": 0,
+    "text": "Como POTW | MS0030104 | 0.387 | 0.165 | 2.4 | 10"
+   },
+   {
+    "page": 15,
+    "kind": "para",
+    "level": 0,
+    "text": "Sam Minor"
+   },
+   {
+    "page": 15,
+    "kind": "table",
+    "level": 0,
+    "text": "Headstart | MS0045055 | 0.002 | 0.003 | 34.5 | 30"
+   },
+   {
+    "page": 15,
+    "kind": "para",
+    "level": 0,
+    "text": "Strayhorn"
+   },
+   {
+    "page": 15,
+    "kind": "table",
+    "level": 0,
+    "text": "Elementary | MS0035181 | 0.012 | 0.005 | 8 | 30"
+   },
+   {
+    "page": 15,
+    "kind": "para",
+    "level": 0,
+    "text": "Pride of the Pond,"
+   },
+   {
+    "page": 15,
+    "kind": "table",
+    "level": 0,
+    "text": "001 | MS0039802 | 1.076 | 0.185 | 34.14 | 75"
+   },
+   {
+    "page": 15,
+    "kind": "para",
+    "level": 0,
+    "text": "Pride of the Pond,"
+   },
+   {
+    "page": 15,
+    "kind": "table",
+    "level": 0,
+    "text": "002 | MS0039802 | 1.076 | 0.63 | 9.81 | 30"
+   },
+   {
+    "page": 15,
+    "kind": "para",
+    "level": 0,
+    "text": "Tunica Inudstrial"
+   },
+   {
+    "page": 15,
+    "kind": "table",
+    "level": 0,
+    "text": "Park | MS0032786 | 0.093 | 0.211 | 11.7 | 30"
+   },
+   {
+    "page": 15,
+    "kind": "table",
+    "level": 0,
+    "text": "Tunica POTW | MS0042323 | 0.68 | 0.33 | 26.4 | 30"
+   },
+   {
+    "page": 15,
+    "kind": "table",
+    "level": 0,
+    "text": "Westgate Utilities | MS0024261 | 0.081 | 0.074 | 33.56 | 30"
+   },
+   {
+    "page": 15,
+    "kind": "table",
+    "level": 0,
+    "text": "Dundee School | MS0054798 | 0.015 | 0.211 | 8.06 | 10"
+   },
+   {
+    "page": 15,
+    "kind": "table",
+    "level": 0,
+    "text": "Crenshaw POTW | MS0026930 | 0.32 | 0.131 | 26.4 | 30"
+   },
+   {
+    "page": 15,
+    "kind": "table",
+    "level": 0,
+    "text": "Sledge POTW | MS0021016 | 0.34 | 0.4 | 22 | 30"
+   },
+   {
+    "page": 15,
+    "kind": "table",
+    "level": 0,
+    "text": "Marks POTW | MS0024660 | 1.02 | 0.297 | 27.2 | 30"
+   },
+   {
+    "page": 15,
+    "kind": "table",
+    "level": 0,
+    "text": "Lula POTW | MS0025151 | 0.068 | 0.046 | 23.3 | 30"
+   },
+   {
+    "page": 15,
+    "kind": "table",
+    "level": 0,
+    "text": "Falcon POTW | MS0036731 | 0.35 | 0.012 | 11.7 | 30"
+   },
+   {
+    "page": 15,
+    "kind": "aside",
+    "level": 0,
+    "text": "Actual"
+   },
+   {
+    "page": 15,
+    "kind": "aside",
+    "level": 0,
+    "text": "NH3-N Permitted"
+   },
+   {
+    "page": 15,
+    "kind": "aside",
+    "level": 0,
+    "text": "mg/L NH3-N mg/L"
+   },
+   {
+    "page": 15,
+    "kind": "aside",
+    "level": 0,
+    "text": "NA NR"
+   },
+   {
+    "page": 15,
+    "kind": "aside",
+    "level": 0,
+    "text": "NA NR"
+   },
+   {
+    "page": 15,
+    "kind": "aside",
+    "level": 0,
+    "text": "NA NR"
+   },
+   {
+    "page": 15,
+    "kind": "aside",
+    "level": 0,
+    "text": "NA NR"
+   },
+   {
+    "page": 15,
+    "kind": "aside",
+    "level": 0,
+    "text": "NA NR"
+   },
+   {
+    "page": 15,
+    "kind": "aside",
+    "level": 0,
+    "text": "NA NR"
+   },
+   {
+    "page": 15,
+    "kind": "aside",
+    "level": 0,
+    "text": "NA NR"
+   },
+   {
+    "page": 15,
+    "kind": "aside",
+    "level": 0,
+    "text": "NA NR"
+   },
+   {
+    "page": 15,
+    "kind": "aside",
+    "level": 0,
+    "text": "0.15 NR"
+   },
+   {
+    "page": 15,
+    "kind": "aside",
+    "level": 0,
+    "text": "NR"
+   },
+   {
+    "page": 15,
+    "kind": "aside",
+    "level": 0,
+    "text": "NA NR"
+   },
+   {
+    "page": 15,
+    "kind": "aside",
+    "level": 0,
+    "text": "NA NR"
+   },
+   {
+    "page": 15,
+    "kind": "aside",
+    "level": 0,
+    "text": "NA NR"
+   },
+   {
+    "page": 15,
+    "kind": "aside",
+    "level": 0,
+    "text": "2.3 2"
+   },
+   {
+    "page": 15,
+    "kind": "aside",
+    "level": 0,
+    "text": "NA NR"
+   },
+   {
+    "page": 15,
+    "kind": "aside",
+    "level": 0,
+    "text": "NA NR"
+   },
+   {
+    "page": 15,
+    "kind": "aside",
+    "level": 0,
+    "text": "NA NR"
+   },
+   {
+    "page": 15,
+    "kind": "aside",
+    "level": 0,
+    "text": "NA NR"
+   },
+   {
+    "page": 15,
+    "kind": "aside",
+    "level": 0,
+    "text": "NA NR"
+   },
+   {
+    "page": 15,
+    "kind": "aside",
+    "level": 0,
+    "text": "NA NR"
+   },
+   {
+    "page": 15,
+    "kind": "aside",
+    "level": 0,
+    "text": "2.54 2"
+   },
+   {
+    "page": 15,
+    "kind": "aside",
+    "level": 0,
+    "text": "NA NR"
+   },
+   {
+    "page": 15,
+    "kind": "admin",
+    "level": 0,
+    "text": "15"
+   },
+   {
+    "page": 16,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 16,
+    "kind": "para",
+    "level": 0,
+    "text": "3.4 Alluvial Aquifer Declines"
+   },
+   {
+    "page": 16,
+    "kind": "para",
+    "level": 0,
+    "text": "Groundwater levels in the Coldwater River watershed have declined causing producers to"
+   },
+   {
+    "page": 16,
+    "kind": "para",
+    "level": 0,
+    "text": "drill deeper wells to reach water. Deeper wells are less efficient to operate and thereby more"
+   },
+   {
+    "page": 16,
+    "kind": "para",
+    "level": 0,
+    "text": "expensive. More efficient use of ground water supplies has become an important topic among"
+   },
+   {
+    "page": 16,
+    "kind": "para",
+    "level": 0,
+    "text": "stakeholders, along with water holding capacity and level Coldwater River and associated"
+   },
+   {
+    "page": 16,
+    "kind": "para",
+    "level": 0,
+    "text": "waters."
+   },
+   {
+    "page": 16,
+    "kind": "para",
+    "level": 0,
+    "text": "3.4.1 Cause"
+   },
+   {
+    "page": 16,
+    "kind": "para",
+    "level": 0,
+    "text": "Water is being withdrawn from the aquifer faster than it is being recharged."
+   },
+   {
+    "page": 16,
+    "kind": "para",
+    "level": 0,
+    "text": "3.4.2 Source"
+   },
+   {
+    "page": 16,
+    "kind": "para",
+    "level": 0,
+    "text": "Irrigation accounts for the majority of the ground water withdrawals."
+   },
+   {
+    "page": 16,
+    "kind": "admin",
+    "level": 0,
+    "text": "16"
+   },
+   {
+    "page": 17,
+    "kind": "heading",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft"
+   },
+   {
+    "page": 17,
+    "kind": "heading",
+    "level": 0,
+    "text": "4/11/13"
+   },
+   {
+    "page": 17,
+    "kind": "heading",
+    "level": 0,
+    "text": "4.0 Coldwater River MRBI Watershed Resources"
+   },
+   {
+    "page": 17,
+    "kind": "table",
+    "level": 0,
+    "text": "4.1 | Water Quality Standards"
+   },
+   {
+    "page": 17,
+    "kind": "para",
+    "level": 0,
+    "text": "The water use classification for all perennial surface waters of this watershed stated in"
+   },
+   {
+    "page": 17,
+    "kind": "para",
+    "level": 0,
+    "text": "the Mississippi water quality regulations is Fish and Wildlife Support. The designated"
+   },
+   {
+    "page": 17,
+    "kind": "para",
+    "level": 0,
+    "text": "beneficial uses for these waters are Aquatic Life Support (MDEQ 2003a). Table 2 lists"
+   },
+   {
+    "page": 17,
+    "kind": "para",
+    "level": 0,
+    "text": "the numeric water quality criteria applicable to the Coldwater River watershed perennial"
+   },
+   {
+    "page": 17,
+    "kind": "para",
+    "level": 0,
+    "text": "surface waters (MDEQ 2002)."
+   },
+   {
+    "page": 17,
+    "kind": "para",
+    "level": 0,
+    "text": "Table 3. Water quality criteria for Coldwater River watershed."
+   },
+   {
+    "page": 17,
+    "kind": "table",
+    "level": 0,
+    "text": "Parameter | Criteria"
+   },
+   {
+    "page": 17,
+    "kind": "table",
+    "level": 0,
+    "text": "Dissolved Oxygen | 5.0 mg/L daily average, 4.0 mg/L instantaneous"
+   },
+   {
+    "page": 17,
+    "kind": "table",
+    "level": 0,
+    "text": "PH | Between 6.0 and 9.0 su"
+   },
+   {
+    "page": 17,
+    "kind": "table",
+    "level": 0,
+    "text": "Temperature | 32.2 deg C"
+   },
+   {
+    "page": 17,
+    "kind": "table",
+    "level": 0,
+    "text": "Fecal coliform | May – October: geometric mean of 200 per 100 mL, 400 per"
+   },
+   {
+    "page": 17,
+    "kind": "para",
+    "level": 0,
+    "text": "100 mL less than ten percent (10%) of the time during a 30"
+   },
+   {
+    "page": 17,
+    "kind": "para",
+    "level": 0,
+    "text": "day period."
+   },
+   {
+    "page": 17,
+    "kind": "para",
+    "level": 0,
+    "text": "November – April: geometric mean of 2000 per 100 mL,"
+   },
+   {
+    "page": 17,
+    "kind": "para",
+    "level": 0,
+    "text": "4000 per 100 mL less than ten percent of the time during a"
+   },
+   {
+    "page": 17,
+    "kind": "para",
+    "level": 0,
+    "text": "30 day period."
+   },
+   {
+    "page": 17,
+    "kind": "table",
+    "level": 0,
+    "text": "Specific conductance | 1000 uohms/cm"
+   },
+   {
+    "page": 17,
+    "kind": "table",
+    "level": 0,
+    "text": "Dissolved Solids | 750 mg/L monthly average, 1500 mg/L instantaneous"
+   },
+   {
+    "page": 17,
+    "kind": "para",
+    "level": 0,
+    "text": "Mississippi’s water quality standard for sediment is a narrative and reads as follows:"
+   },
+   {
+    "page": 17,
+    "kind": "para",
+    "level": 0,
+    "text": "“Waters shall be free from materials attributed to municipal, industrial, agricultural or"
+   },
+   {
+    "page": 17,
+    "kind": "para",
+    "level": 0,
+    "text": "other discharges producing color, odor, taste, total suspended or dissolved solids,"
+   },
+   {
+    "page": 17,
+    "kind": "para",
+    "level": 0,
+    "text": "sediment, turbidity, or other conditions in such degree as to create a nuisance, render the"
+   },
+   {
+    "page": 17,
+    "kind": "para",
+    "level": 0,
+    "text": "waters injurious to public health, recreation or to aquatic life and wildlife or adversely"
+   },
+   {
+    "page": 17,
+    "kind": "para",
+    "level": 0,
+    "text": "affect the palatability of fish, aesthetic quality, or impair the waters for any designated"
+   },
+   {
+    "page": 17,
+    "kind": "para",
+    "level": 0,
+    "text": "use” (MDEQ 2002)."
+   },
+   {
+    "page": 17,
+    "kind": "admin",
+    "level": 0,
+    "text": "17"
+   },
+   {
+    "page": 18,
+    "kind": "heading",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft"
+   },
+   {
+    "page": 18,
+    "kind": "heading",
+    "level": 0,
+    "text": "4/11/13"
+   },
+   {
+    "page": 18,
+    "kind": "table",
+    "level": 0,
+    "text": "4.2 | Surface Water Quality"
+   },
+   {
+    "page": 18,
+    "kind": "para",
+    "level": 0,
+    "text": "Surface waters in the Coldwater watershed are generally, high in turbidity December"
+   },
+   {
+    "page": 18,
+    "kind": "para",
+    "level": 0,
+    "text": "through April from the high sediment runoff leaving agricultural fields. It is common"
+   },
+   {
+    "page": 18,
+    "kind": "para",
+    "level": 0,
+    "text": "practice to work land in the fall and in dry Februaries in anticipation of a wet spring."
+   },
+   {
+    "page": 18,
+    "kind": "para",
+    "level": 0,
+    "text": "Turbidity usually declines in the summer and fall due to decreased erosion as crops cover"
+   },
+   {
+    "page": 18,
+    "kind": "para",
+    "level": 0,
+    "text": "the fields and due to lower fall rainfall (USDA NRCS 2012)."
+   },
+   {
+    "page": 18,
+    "kind": "para",
+    "level": 0,
+    "text": "Pesticides are found in surface waters during the agricultural season. There are no"
+   },
+   {
+    "page": 18,
+    "kind": "para",
+    "level": 0,
+    "text": "current use pesticides that are at levels of concern. However; DDT was used extensively"
+   },
+   {
+    "page": 18,
+    "kind": "para",
+    "level": 0,
+    "text": "in this area both on crops and for mosquito control and can be found in sediments and in"
+   },
+   {
+    "page": 18,
+    "kind": "para",
+    "level": 0,
+    "text": "large, older fish, especially gar, buffalo, and carp.(USDA NRCS 2012) As stated before"
+   },
+   {
+    "page": 18,
+    "kind": "para",
+    "level": 0,
+    "text": "All surface waters in the Coldwater Watershed are under fish consumption advisories due"
+   },
+   {
+    "page": 18,
+    "kind": "para",
+    "level": 0,
+    "text": "to the continued presence of DDT and Toxaphene in fish tissues."
+   },
+   {
+    "page": 18,
+    "kind": "para",
+    "level": 0,
+    "text": "Table 4. Reported impairments from the EPA for the Coldwater Watershed"
+   },
+   {
+    "page": 18,
+    "kind": "heading",
+    "level": 0,
+    "text": "Impairment Reported"
+   },
+   {
+    "page": 18,
+    "kind": "table",
+    "level": 0,
+    "text": "Salinity/TDS/Chlorides | Sedimentation"
+   },
+   {
+    "page": 18,
+    "kind": "table",
+    "level": 0,
+    "text": "Cause Unknown | Pesticides"
+   },
+   {
+    "page": 18,
+    "kind": "table",
+    "level": 0,
+    "text": "Biological Impairment | Nutrients"
+   },
+   {
+    "page": 18,
+    "kind": "table",
+    "level": 0,
+    "text": "Organic Enrichment/Low Do | Organic Enrichment/Low Do"
+   },
+   {
+    "page": 18,
+    "kind": "para",
+    "level": 0,
+    "text": "Nutrients"
+   },
+   {
+    "page": 18,
+    "kind": "para",
+    "level": 0,
+    "text": "Biological Impairment"
+   },
+   {
+    "page": 18,
+    "kind": "para",
+    "level": 0,
+    "text": "Pesticides"
+   },
+   {
+    "page": 18,
+    "kind": "para",
+    "level": 0,
+    "text": "Cause Unknown"
+   },
+   {
+    "page": 18,
+    "kind": "para",
+    "level": 0,
+    "text": "Sedimentation"
+   },
+   {
+    "page": 18,
+    "kind": "para",
+    "level": 0,
+    "text": "Salinity/TDS/Chlorides"
+   },
+   {
+    "page": 18,
+    "kind": "para",
+    "level": 0,
+    "text": "0 1 2 3 4 5 6 7 8 9 10 11"
+   },
+   {
+    "page": 18,
+    "kind": "para",
+    "level": 0,
+    "text": "(USDA NRCS 2012)"
+   },
+   {
+    "page": 18,
+    "kind": "para",
+    "level": 0,
+    "text": "Total Number of Impairments Reported: 48"
+   },
+   {
+    "page": 18,
+    "kind": "para",
+    "level": 0,
+    "text": "Water quality monitoring has been going on since the early 2000’s. Sites were first"
+   },
+   {
+    "page": 18,
+    "kind": "para",
+    "level": 0,
+    "text": "chosen by the Tunica County Soil and Water Conservation District at locations they felt"
+   },
+   {
+    "page": 18,
+    "kind": "para",
+    "level": 0,
+    "text": "would be most influenced by their implementation of conservation and water quality"
+   },
+   {
+    "page": 18,
+    "kind": "admin",
+    "level": 0,
+    "text": "18"
+   },
+   {
+    "page": 19,
+    "kind": "heading",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft"
+   },
+   {
+    "page": 19,
+    "kind": "heading",
+    "level": 0,
+    "text": "4/11/13"
+   },
+   {
+    "page": 19,
+    "kind": "para",
+    "level": 0,
+    "text": "BMPs (YMD 2008). Sites were located on Buck Island Bayou, Walnut Lake, Phillip’s"
+   },
+   {
+    "page": 19,
+    "kind": "para",
+    "level": 0,
+    "text": "Bayou, McKinney Bayou, Six Mile Lake, and Yazoo Pass. Later, data were taken at the"
+   },
+   {
+    "page": 19,
+    "kind": "para",
+    "level": 0,
+    "text": "same locations as Jack Kilgor and Jan Hoover’s ERDC Fish IBI sampling sites to help"
+   },
+   {
+    "page": 19,
+    "kind": "para",
+    "level": 0,
+    "text": "better characterize seasonal water quality (Hoover & Kilgore 2003). These samples"
+   },
+   {
+    "page": 19,
+    "kind": "para",
+    "level": 0,
+    "text": "included laboratory and insitu measurements."
+   },
+   {
+    "page": 19,
+    "kind": "aside",
+    "level": 0,
+    "text": "Figure 4. Coldwater River Watershed Sample Sites (USDA NRCS 2012)"
+   },
+   {
+    "page": 19,
+    "kind": "admin",
+    "level": 0,
+    "text": "19"
+   },
+   {
+    "page": 20,
+    "kind": "heading",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft"
+   },
+   {
+    "page": 20,
+    "kind": "heading",
+    "level": 0,
+    "text": "4/11/13"
+   },
+   {
+    "page": 20,
+    "kind": "para",
+    "level": 0,
+    "text": "The Coldwater River watershed has been evaluated as impaired and is included on the"
+   },
+   {
+    "page": 20,
+    "kind": "para",
+    "level": 0,
+    "text": "Mississippi 303 (d) List (MDEQ 2004a). Table 4-6 summarizes the listings from the 2002"
+   },
+   {
+    "page": 20,
+    "kind": "para",
+    "level": 0,
+    "text": "303(d) List."
+   },
+   {
+    "page": 20,
+    "kind": "para",
+    "level": 0,
+    "text": "Table 5. 2002 303(d) listings for the Coldwater River Watershed"
+   },
+   {
+    "page": 20,
+    "kind": "table",
+    "level": 0,
+    "text": "Name | ID | County | HUC | Cause | Mon/Eval"
+   },
+   {
+    "page": 20,
+    "kind": "table",
+    "level": 0,
+    "text": "Coldwater | Desoto, Tate,"
+   },
+   {
+    "page": 20,
+    "kind": "table",
+    "level": 0,
+    "text": "River | MSCOLDR2M2 Tunica | 8030210 Sediment/Siltation | Monitored"
+   },
+   {
+    "page": 20,
+    "kind": "para",
+    "level": 0,
+    "text": "At Pritchard: From confluence with Cub Lake Bayou to split with Pompey Ditch above Sara"
+   },
+   {
+    "page": 20,
+    "kind": "table",
+    "level": 0,
+    "text": "Coldwater | Desoto, Tate,"
+   },
+   {
+    "page": 20,
+    "kind": "table",
+    "level": 0,
+    "text": "River | MSCOLDR2E | Tunica | 8030204 Sediment/Siltation | Evaluated"
+   },
+   {
+    "page": 20,
+    "kind": "para",
+    "level": 0,
+    "text": "At Coldwater River: From Spillway Arkabutla Reservoir to confluence with Pompey Ditch"
+   },
+   {
+    "page": 20,
+    "kind": "heading",
+    "level": 0,
+    "text": "Table 6. Water Quality Standard"
+   },
+   {
+    "page": 20,
+    "kind": "table",
+    "level": 0,
+    "text": "Parameter | Beneficial Use Narrative Water Quality Criteria"
+   },
+   {
+    "page": 20,
+    "kind": "para",
+    "level": 0,
+    "text": "Waters shall be free from materials attributable to municipal,"
+   },
+   {
+    "page": 20,
+    "kind": "para",
+    "level": 0,
+    "text": "industrial, agricultural, or other dischargers producing color,"
+   },
+   {
+    "page": 20,
+    "kind": "para",
+    "level": 0,
+    "text": "odor, taste, TSS, or other conditions in such a degree as to create"
+   },
+   {
+    "page": 20,
+    "kind": "para",
+    "level": 0,
+    "text": "a nuisance, render the waters injurious to public health,"
+   },
+   {
+    "page": 20,
+    "kind": "para",
+    "level": 0,
+    "text": "recreation, or to aquatic life and wildlife, or adversely affect the"
+   },
+   {
+    "page": 20,
+    "kind": "table",
+    "level": 0,
+    "text": "Aquatic Life | palatability of fish, aesthetic quality, or impair the waters for any"
+   },
+   {
+    "page": 20,
+    "kind": "table",
+    "level": 0,
+    "text": "Sediment/Siltation | Support | designated uses."
+   },
+   {
+    "page": 20,
+    "kind": "heading",
+    "level": 0,
+    "text": "Table 7. Total Maximum Daily Load"
+   },
+   {
+    "page": 20,
+    "kind": "table",
+    "level": 0,
+    "text": "Segment | WLA | LA | MOS | TMDL"
+   },
+   {
+    "page": 20,
+    "kind": "para",
+    "level": 0,
+    "text": "8.8E-02 to"
+   },
+   {
+    "page": 20,
+    "kind": "table",
+    "level": 0,
+    "text": "MSCOLDR2M2 2.4E-01* | 8.8-02 to 2.4E-01* implicit | 8.8E-02 to 2.4E-01"
+   },
+   {
+    "page": 20,
+    "kind": "para",
+    "level": 0,
+    "text": "8.8E-02 to"
+   },
+   {
+    "page": 20,
+    "kind": "table",
+    "level": 0,
+    "text": "MSCOLDR2E | 2.4E-02* | 8.8-02 to 2.4E-02* implicit | 8.8E-02 to 2.4E-02"
+   },
+   {
+    "page": 20,
+    "kind": "bullet",
+    "level": 1,
+    "text": "tons per acre per day at the effective"
+   },
+   {
+    "page": 20,
+    "kind": "para",
+    "level": 0,
+    "text": "discharge"
+   },
+   {
+    "page": 20,
+    "kind": "admin",
+    "level": 0,
+    "text": "20"
+   },
+   {
+    "page": 21,
+    "kind": "heading",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft"
+   },
+   {
+    "page": 21,
+    "kind": "heading",
+    "level": 0,
+    "text": "4/11/13"
+   },
+   {
+    "page": 21,
+    "kind": "para",
+    "level": 0,
+    "text": "4.3 TMDLs"
+   },
+   {
+    "page": 21,
+    "kind": "para",
+    "level": 0,
+    "text": "Nonpoint sources of sediment (due to erosion) are the primary sources of concern."
+   },
+   {
+    "page": 21,
+    "kind": "para",
+    "level": 0,
+    "text": "Sources identified in the TMDL include agriculture, aquaculture, and the natural"
+   },
+   {
+    "page": 21,
+    "kind": "para",
+    "level": 0,
+    "text": "landscape of which ridge and swell topography is common. Wet weather conditions are"
+   },
+   {
+    "page": 21,
+    "kind": "para",
+    "level": 0,
+    "text": "critical for sediment loading to the water bodies. The target measure of sediment"
+   },
+   {
+    "page": 21,
+    "kind": "para",
+    "level": 0,
+    "text": "retention would reduce sediment yields to a range of 8.8E-02 to 2.4E-01 tons per acre per"
+   },
+   {
+    "page": 21,
+    "kind": "para",
+    "level": 0,
+    "text": "day."
+   },
+   {
+    "page": 21,
+    "kind": "para",
+    "level": 0,
+    "text": "The TMDL also addresses organic enrichment and low dissolved oxygen listings for"
+   },
+   {
+    "page": 21,
+    "kind": "para",
+    "level": 0,
+    "text": "The Coldwater River on the Mississippi 2006 Section 303(d) List of Impaired Water"
+   },
+   {
+    "page": 21,
+    "kind": "para",
+    "level": 0,
+    "text": "Bodies. There are currently no numerical criteria for nutrient concentrations in"
+   },
+   {
+    "page": 21,
+    "kind": "para",
+    "level": 0,
+    "text": "Mississippi surface waters. MDEQ currently has a Nutrient Task Force working on the"
+   },
+   {
+    "page": 21,
+    "kind": "para",
+    "level": 0,
+    "text": "development of nutrient criteria. An annual concentration of 1.05mg/l is an applicable"
+   },
+   {
+    "page": 21,
+    "kind": "para",
+    "level": 0,
+    "text": "targe for TN and 0.16mg/l for TP for water bodies located on the west side of the Delta"
+   },
+   {
+    "page": 21,
+    "kind": "para",
+    "level": 0,
+    "text": "(TMDL for Yazoo River Basin Tunica and Coahoma Counties 2008). These numbers"
+   },
+   {
+    "page": 21,
+    "kind": "para",
+    "level": 0,
+    "text": "may be revised after the development of nutrient criteria by the NTF. Nonpoint organic"
+   },
+   {
+    "page": 21,
+    "kind": "para",
+    "level": 0,
+    "text": "sources are considered to be the primary source of oxygen demand in the Coldwater"
+   },
+   {
+    "page": 21,
+    "kind": "para",
+    "level": 0,
+    "text": "system. The TMDL calls for a 95.0% reduction of the phosphorus loads entering these"
+   },
+   {
+    "page": 21,
+    "kind": "para",
+    "level": 0,
+    "text": "waterbodies to meet the preliminary target of 0.16mg/l. Based on the estimated existing"
+   },
+   {
+    "page": 21,
+    "kind": "para",
+    "level": 0,
+    "text": "and target total nitrogen concentrations, this TMDL recommends an 83.5% reduction of"
+   },
+   {
+    "page": 21,
+    "kind": "para",
+    "level": 0,
+    "text": "the nitrogen loads entering these water bodies to meet the preliminary target of 1.05mg/l"
+   },
+   {
+    "page": 21,
+    "kind": "admin",
+    "level": 0,
+    "text": "21"
+   },
+   {
+    "page": 22,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 22,
+    "kind": "para",
+    "level": 0,
+    "text": "Table 8. TMDL targets and land use calculations."
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "Water | Coldwater"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "Body | River | Water | Urban | Barren Forest Pasture/Grass Cropland Wetland Total"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "Acres | 260.9 | 641.8 | 0 | 45.1 | 0 | 14618.5 | 3787.6 | 19353.9"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "Landuse | TN KG/Mile² | Percent | 1.30% | 3.30% | 0.00% 2.00% | 0.00% | 75.50% | 5.90% | 100.00%"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "Forest | 111.3 | Miles² in watershed | 0.41 | 1 | 0 | 0.07 | 0 | 22.8 | 5.9 | 30.2"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "Pasture | 777 | Flow cfs based on area | 44.2 cfs"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "Cropland | 10956.2"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "Urban | 287.8 | TN Load kg/mi² annual avg | 259.0 | 287.8 | 111.3 | 777.0 | 10956.2 | 259.0"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "Water | 259 | TP Load kg/mi² annual avg | 259.0 | 4.3 | 61.3 | 61.3 | 1295.0 | 5490.9 | 259.0"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "Weltand | 259"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "Aquaculture | 2590 | TN Load kg/day | 29.00 | 0.79 | 0.00 | 0.02 | 0.00 | 684.39 | 4.19 | 689.70"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "TP Load kg/day | 0.29 | 0.01 | 0.00 | 0.01 | 0.00 | 342.99 | 4.19 | 347.50"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "Landuse | TP kg/Mile²"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "Forest | 60.3 | TN target concentration | 1.05 mg/l"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "Pasture | 1295 | TP target concentration | 0.16 mg/l"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "Cropland | 5490.9"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "Urban | 4.3 | TN target load | 250.3 lbs/day"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "Water | 259 | TP target load | 38.2 lbs/day"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "Wetland | 259"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "Aquaculture | 2590 | TN estimated load per day | 1517.3 lbs/day"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "TP estimated load per day | 764.5 lbs/day"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "TN estimated concenteration | 6.36 mg/l"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "TP estimated concenteration | 3.21 mg/l"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "TN reduction needed | 83.50% | The land use calculations are based on 2004 data."
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "TP reduction needed | 95.00% | The nutrient estimates are based USDA ARS. The TMDL"
+   },
+   {
+    "page": 22,
+    "kind": "para",
+    "level": 0,
+    "text": "targets are based on EPA guidance for calculations"
+   },
+   {
+    "page": 22,
+    "kind": "para",
+    "level": 0,
+    "text": "of targets when considering all available data."
+   },
+   {
+    "page": 22,
+    "kind": "admin",
+    "level": 0,
+    "text": "22"
+   },
+   {
+    "page": 23,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 23,
+    "kind": "para",
+    "level": 0,
+    "text": "4.4 Groundwater Resources"
+   },
+   {
+    "page": 23,
+    "kind": "para",
+    "level": 0,
+    "text": "The majority of drinking water use in this watershed is supplied by groundwater from the"
+   },
+   {
+    "page": 23,
+    "kind": "para",
+    "level": 0,
+    "text": "deep aquifer. The majority of agricultural water use in this watershed is supplied by groundwater"
+   },
+   {
+    "page": 23,
+    "kind": "para",
+    "level": 0,
+    "text": "from the shallow alluvial aquifer. No issues have yet been raised with regard to the quality of"
+   },
+   {
+    "page": 23,
+    "kind": "para",
+    "level": 0,
+    "text": "groundwater in this watershed. Declining groundwater levels in the alluvial aquifer are an issue"
+   },
+   {
+    "page": 23,
+    "kind": "para",
+    "level": 0,
+    "text": "in the watershed (MDEQ 2000)."
+   },
+   {
+    "page": 23,
+    "kind": "para",
+    "level": 0,
+    "text": "4.5 Fisheries, Plant, and Wildlife Resources"
+   },
+   {
+    "page": 23,
+    "kind": "para",
+    "level": 0,
+    "text": "A few federally threatened species may occur within the watershed. These are Least tern"
+   },
+   {
+    "page": 23,
+    "kind": "para",
+    "level": 0,
+    "text": "(Sterna antillarum), Pallid sturgeon (Scaphirhynchus albus), Fat pocketbook (Potamilus capax),"
+   },
+   {
+    "page": 23,
+    "kind": "para",
+    "level": 0,
+    "text": "and although not federally the state of Mississippi has listed the Bald Eagle (Haliaeetus"
+   },
+   {
+    "page": 23,
+    "kind": "para",
+    "level": 0,
+    "text": "leucocphalus). All water bodies in the Delta, including those in the Coldwater River watershed,"
+   },
+   {
+    "page": 23,
+    "kind": "para",
+    "level": 0,
+    "text": "were placed under fish consumption advisory in 2001 for the legacy pesticides DDT and"
+   },
+   {
+    "page": 23,
+    "kind": "para",
+    "level": 0,
+    "text": "Toxaphene. As previously listed the fish covered by the advisory were carp, buffalo, gar, and"
+   },
+   {
+    "page": 23,
+    "kind": "para",
+    "level": 0,
+    "text": "non-farm raised catfish over 22 inches (MDEQ 2001)."
+   },
+   {
+    "page": 23,
+    "kind": "para",
+    "level": 0,
+    "text": "Since 1985, bottomland wetland and forest habitats have been restored in the watershed"
+   },
+   {
+    "page": 23,
+    "kind": "para",
+    "level": 0,
+    "text": "through USDA Farm Bill Programs such as CRP and WRP. A small percentage of the"
+   },
+   {
+    "page": 23,
+    "kind": "para",
+    "level": 0,
+    "text": "watershed has been restored to bottomland hardwood forests in the past 25 years using these"
+   },
+   {
+    "page": 23,
+    "kind": "para",
+    "level": 0,
+    "text": "federal cost-share programs. Because of increased forest lands and a moderate amount of natural"
+   },
+   {
+    "page": 23,
+    "kind": "para",
+    "level": 0,
+    "text": "wetlands, the Coldwater River watershed has fair populations of numerous consumptive wildlife"
+   },
+   {
+    "page": 23,
+    "kind": "para",
+    "level": 0,
+    "text": "species such as white-tailed deer, migratory waterfowl, and small game."
+   },
+   {
+    "page": 23,
+    "kind": "para",
+    "level": 0,
+    "text": "Fishing and hunting both take place in the watershed. Hunting primarily takes place on"
+   },
+   {
+    "page": 23,
+    "kind": "para",
+    "level": 0,
+    "text": "private land and includes deer, waterfowl and small game hunting. Moon Lake is a popular"
+   },
+   {
+    "page": 23,
+    "kind": "para",
+    "level": 0,
+    "text": "recreational lake within the watershed. The lake has experience reduced fishing opportunity due"
+   },
+   {
+    "page": 23,
+    "kind": "para",
+    "level": 0,
+    "text": "to its impairment from sedimentation. Several projects have been proposed or completed"
+   },
+   {
+    "page": 23,
+    "kind": "para",
+    "level": 0,
+    "text": "adjacent to Moon Lake in order to stabilize and improve the fisheries and overall health and"
+   },
+   {
+    "page": 23,
+    "kind": "para",
+    "level": 0,
+    "text": "recreational value of the lake."
+   },
+   {
+    "page": 23,
+    "kind": "admin",
+    "level": 0,
+    "text": "23"
+   },
+   {
+    "page": 24,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 24,
+    "kind": "heading",
+    "level": 0,
+    "text": "5.0 Conservation Practice Implementation"
+   },
+   {
+    "page": 24,
+    "kind": "para",
+    "level": 0,
+    "text": "5.1 Goal"
+   },
+   {
+    "page": 24,
+    "kind": "para",
+    "level": 0,
+    "text": "The goals of the following implementation actions are to:"
+   },
+   {
+    "page": 24,
+    "kind": "numbered",
+    "level": 1,
+    "text": "1. Improve water quality in local water bodies"
+   },
+   {
+    "page": 24,
+    "kind": "numbered",
+    "level": 1,
+    "text": "2. Improve water quality in downstream receiving waters"
+   },
+   {
+    "page": 24,
+    "kind": "numbered",
+    "level": 1,
+    "text": "3. Through monitoring and evaluation, provide answers to questions outlined in the"
+   },
+   {
+    "page": 24,
+    "kind": "para",
+    "level": 0,
+    "text": "Delta Nutrient Reduction Strategy."
+   },
+   {
+    "page": 24,
+    "kind": "para",
+    "level": 0,
+    "text": "5.2 Participants"
+   },
+   {
+    "page": 24,
+    "kind": "para",
+    "level": 0,
+    "text": "Agencies/Organizations - Delta F.A.R.M., Delta Wildlife, FTN Associates, MS Department of"
+   },
+   {
+    "page": 24,
+    "kind": "para",
+    "level": 0,
+    "text": "Environmental Quality, MS Department of Wildlife, Fisheries, and Parks, MS Farm Bureau"
+   },
+   {
+    "page": 24,
+    "kind": "para",
+    "level": 0,
+    "text": "Federation, MS Soil and Water Conservation Commission, Mississippi State University, The"
+   },
+   {
+    "page": 24,
+    "kind": "para",
+    "level": 0,
+    "text": "Nature Conservancy, Tunica County Soil and Water Conservation District, USDA- NRCS,"
+   },
+   {
+    "page": 24,
+    "kind": "para",
+    "level": 0,
+    "text": "USDA-ARS National Sedimentation Laboratory, U.S. Army Corp of Engineers, U.S."
+   },
+   {
+    "page": 24,
+    "kind": "para",
+    "level": 0,
+    "text": "Environmental Protection Agency, U.S. Geological Survey, and the Yazoo-Mississippi Delta"
+   },
+   {
+    "page": 24,
+    "kind": "para",
+    "level": 0,
+    "text": "Joint Water Management District"
+   },
+   {
+    "page": 24,
+    "kind": "para",
+    "level": 0,
+    "text": "Producers – Buddy Allen, Mike Boyd, Daniel Shannon"
+   },
+   {
+    "page": 24,
+    "kind": "para",
+    "level": 0,
+    "text": "5.3 Implementation"
+   },
+   {
+    "page": 24,
+    "kind": "para",
+    "level": 0,
+    "text": "Conservation practices are to be implemented on three project sites as identified in Figures 7-"
+   },
+   {
+    "page": 24,
+    "kind": "numbered",
+    "level": 1,
+    "text": "9. Practices to be implemented include:"
+   },
+   {
+    "page": 24,
+    "kind": "bullet",
+    "level": 1,
+    "text": "tail-water recovery systems (two systems)"
+   },
+   {
+    "page": 24,
+    "kind": "bullet",
+    "level": 1,
+    "text": "land leveling (905 acres)"
+   },
+   {
+    "page": 24,
+    "kind": "bullet",
+    "level": 1,
+    "text": "water control structures (30)"
+   },
+   {
+    "page": 24,
+    "kind": "bullet",
+    "level": 1,
+    "text": "low grade weirs (2)"
+   },
+   {
+    "page": 24,
+    "kind": "bullet",
+    "level": 1,
+    "text": "two-stage ditch (3,850 linear feet)"
+   },
+   {
+    "page": 24,
+    "kind": "admin",
+    "level": 0,
+    "text": "24"
+   },
+   {
+    "page": 25,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "These practices address the three primary resource concerns of sediment/nutrient runoff and"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "the declining alluvial aquifer."
+   },
+   {
+    "page": 25,
+    "kind": "aside",
+    "level": 0,
+    "text": "Figure 5. Coldwater River MRBI Watershed Project - Allen Site Map"
+   },
+   {
+    "page": 25,
+    "kind": "admin",
+    "level": 0,
+    "text": "25"
+   },
+   {
+    "page": 26,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 26,
+    "kind": "aside",
+    "level": 0,
+    "text": "Figure 6. Coldwater River MRBI Watershed Project – Shannon Site Map"
+   },
+   {
+    "page": 26,
+    "kind": "admin",
+    "level": 0,
+    "text": "26"
+   },
+   {
+    "page": 27,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 27,
+    "kind": "aside",
+    "level": 0,
+    "text": "Figure 7. Coldwater River MRBI Watershed Project – Boyd Site Map"
+   },
+   {
+    "page": 27,
+    "kind": "admin",
+    "level": 0,
+    "text": "27"
+   },
+   {
+    "page": 28,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 28,
+    "kind": "table",
+    "level": 0,
+    "text": "5.4 | Implementation Budget"
+   },
+   {
+    "page": 28,
+    "kind": "para",
+    "level": 0,
+    "text": "Funding for implementation of these conservation practices is provided by:"
+   },
+   {
+    "page": 28,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Producers – Buddy Allen, Mike Boyd, Daniel Shannon"
+   },
+   {
+    "page": 28,
+    "kind": "bullet",
+    "level": 1,
+    "text": "USDA Natural Resource Conservation Service – Mississippi River Basin Initiative,"
+   },
+   {
+    "page": 28,
+    "kind": "para",
+    "level": 0,
+    "text": "Cooperative Conservation Partnership Initiative, Agricultural Watershed"
+   },
+   {
+    "page": 28,
+    "kind": "para",
+    "level": 0,
+    "text": "Enhancement Program, and the Environmental Quality Incentives Program"
+   },
+   {
+    "page": 28,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Mississippi Department of Environmental Quality – U.S. Environmental Protection"
+   },
+   {
+    "page": 28,
+    "kind": "para",
+    "level": 0,
+    "text": "Agency 319 program."
+   },
+   {
+    "page": 28,
+    "kind": "para",
+    "level": 0,
+    "text": "Table 9. Projected Costs for Practice Implementation by Funding Source"
+   },
+   {
+    "page": 28,
+    "kind": "table",
+    "level": 0,
+    "text": "Practice | Producer | NRCS | EPA-MDEQ | Total"
+   },
+   {
+    "page": 28,
+    "kind": "table",
+    "level": 0,
+    "text": "Tail-water Recovery Systems | $ 112,500 | $ 501,090 | $ 110,850"
+   },
+   {
+    "page": 28,
+    "kind": "table",
+    "level": 0,
+    "text": "Land Leveling with Pads | $ 262,500 | $ 378,750 | $ | -"
+   },
+   {
+    "page": 28,
+    "kind": "table",
+    "level": 0,
+    "text": "Water Control Structures | $ 117,300 | $ 67,300 | $ 55,000"
+   },
+   {
+    "page": 28,
+    "kind": "table",
+    "level": 0,
+    "text": "Low Grade Weirs | $ 26,250 | $ | - | $ 10,000"
+   },
+   {
+    "page": 28,
+    "kind": "table",
+    "level": 0,
+    "text": "Two-Stage Ditch | $ 11,400 | $ | - | $ 39,150"
+   },
+   {
+    "page": 28,
+    "kind": "table",
+    "level": 0,
+    "text": "Totals | $ 529,950 | $ 947,140 | $ 215,000 | $ 1,692,090"
+   },
+   {
+    "page": 28,
+    "kind": "admin",
+    "level": 0,
+    "text": "28"
+   },
+   {
+    "page": 29,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 29,
+    "kind": "heading",
+    "level": 0,
+    "text": "6.0 Education Strategy"
+   },
+   {
+    "page": 29,
+    "kind": "para",
+    "level": 0,
+    "text": "6.1 Goal"
+   },
+   {
+    "page": 29,
+    "kind": "para",
+    "level": 0,
+    "text": "The overall objective of the education strategy in the Coldwater River MRBI watersheds is to"
+   },
+   {
+    "page": 29,
+    "kind": "para",
+    "level": 0,
+    "text": "develop an atmosphere that promotes sustained, long-term protection and improvement of"
+   },
+   {
+    "page": 29,
+    "kind": "para",
+    "level": 0,
+    "text": "natural resources in the watershed. Specific objectives of education efforts in the watershed"
+   },
+   {
+    "page": 29,
+    "kind": "para",
+    "level": 0,
+    "text": "include the following:"
+   },
+   {
+    "page": 29,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Increase farmer and landowner awareness of the value of clean water and their"
+   },
+   {
+    "page": 29,
+    "kind": "para",
+    "level": 0,
+    "text": "responsibility to insure others downstream have clean water."
+   },
+   {
+    "page": 29,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Increase farmer and landowner knowledge of programs that offer financial and/or"
+   },
+   {
+    "page": 29,
+    "kind": "para",
+    "level": 0,
+    "text": "technical assistance to plan, design, and/or install BMPs to improve water quality."
+   },
+   {
+    "page": 29,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Increase producer awareness of how BMPs can be used to reduce negative water quality"
+   },
+   {
+    "page": 29,
+    "kind": "para",
+    "level": 0,
+    "text": "and habitat affects."
+   },
+   {
+    "page": 29,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Increase producer awareness of the long term environmental and economic advantages of"
+   },
+   {
+    "page": 29,
+    "kind": "para",
+    "level": 0,
+    "text": "protecting and improving water quality and habitat."
+   },
+   {
+    "page": 29,
+    "kind": "para",
+    "level": 0,
+    "text": "6.2 Participants"
+   },
+   {
+    "page": 29,
+    "kind": "para",
+    "level": 0,
+    "text": "Agencies/Organizations - Delta F.A.R.M., Delta Wildlife, FTN Associates, MS Department of"
+   },
+   {
+    "page": 29,
+    "kind": "para",
+    "level": 0,
+    "text": "Environmental Quality, MS Department of Wildlife, Fisheries, and Parks, MS Farm Bureau"
+   },
+   {
+    "page": 29,
+    "kind": "para",
+    "level": 0,
+    "text": "Federation, MS Soil and Water Conservation Commission, Mississippi State University, The"
+   },
+   {
+    "page": 29,
+    "kind": "para",
+    "level": 0,
+    "text": "Nature Conservancy, Tunica County Soil and Water Conservation District, USDA- NRCS,"
+   },
+   {
+    "page": 29,
+    "kind": "para",
+    "level": 0,
+    "text": "USDA-ARS National Sedimentation Laboratory, U.S. Army Corp of Engineers, U.S."
+   },
+   {
+    "page": 29,
+    "kind": "para",
+    "level": 0,
+    "text": "Environmental Protection Agency, U.S. Geological Survey, and the Yazoo-Mississippi Delta"
+   },
+   {
+    "page": 29,
+    "kind": "para",
+    "level": 0,
+    "text": "Joint Water Management District"
+   },
+   {
+    "page": 29,
+    "kind": "para",
+    "level": 0,
+    "text": "Producers – Buddy Allen, Mike Boyd, Daniel Shannon"
+   },
+   {
+    "page": 29,
+    "kind": "para",
+    "level": 0,
+    "text": "6.3 Activities"
+   },
+   {
+    "page": 29,
+    "kind": "para",
+    "level": 0,
+    "text": "Education and outreach activities have been outlined through ongoing efforts with the Delta"
+   },
+   {
+    "page": 29,
+    "kind": "para",
+    "level": 0,
+    "text": "Nutrient Reduction Strategy and the Delta Sustainable Water Resources Task Force. In 2012,"
+   },
+   {
+    "page": 29,
+    "kind": "para",
+    "level": 0,
+    "text": "multiple surveys were conducted of regional stakeholders and the general public. These results"
+   },
+   {
+    "page": 29,
+    "kind": "admin",
+    "level": 0,
+    "text": "29"
+   },
+   {
+    "page": 30,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 30,
+    "kind": "para",
+    "level": 0,
+    "text": "are currently guiding the development of an Education and Outreach Strategy for the WRTF."
+   },
+   {
+    "page": 30,
+    "kind": "para",
+    "level": 0,
+    "text": "Once the strategy is complete, recommended activities will be incorporated into this WIP."
+   },
+   {
+    "page": 30,
+    "kind": "admin",
+    "level": 0,
+    "text": "30"
+   },
+   {
+    "page": 31,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 31,
+    "kind": "heading",
+    "level": 0,
+    "text": "7.0 Evaluation"
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "7.1 Monitoring"
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "The monitoring design will be implemented by Mississippi State University and MDEQ at"
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "two tiers within the Coldwater Watershed: Tier 1 is edge of field monitoring, and Tier 2 is small"
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "sub-watershed scale monitoring. The monitoring design will address:"
+   },
+   {
+    "page": 31,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Nutrient reductions within primary, channelized headwater streams in identified"
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "watersheds (<200ac)"
+   },
+   {
+    "page": 31,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Reduction efficiency estimates for individual BMPs based on above and below BMP"
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "sampling (i.e., tailwater recovery, water storage systems)"
+   },
+   {
+    "page": 31,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Load reductions, and hydrological modifications as a result of BMP implementation"
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "This data collection and evaluation effort is focused at evaluating BMP structures within the"
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "Coldwater watershed that have the ability to reduce nutrient concentrations, as well as document"
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "the conservation benefits of water management. These structures include edge of field structures"
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "(pads and pipes – slotted, flashboard), improved drainage channels fitted with 2-stages design,"
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "low grade weirs, and surface water conservation management strategies including tailwater"
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "recovery systems and/ or reservoirs. Depending on the structure and placement within the"
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "landscape evaluation will take occur for: sediments, nutrients and hydrology. The project will"
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "begin October/November 2012 and extend to September 30, 2015. Thereafter, evaluation and"
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "continuous data collection will be based on additional, as yet un-determined funding sources."
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "Listed below are the monitoring protocols for the specific parameters being evaluated within the"
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "project."
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "Monitoring Design: Parameters, treatments, assumptions, and protocols"
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "Parameters:"
+   },
+   {
+    "page": 31,
+    "kind": "numbered",
+    "level": 1,
+    "text": "1. Nutrients (inorganic and total)"
+   },
+   {
+    "page": 31,
+    "kind": "numbered",
+    "level": 1,
+    "text": "2. Sediments (tied to turbidity/TSS in water)"
+   },
+   {
+    "page": 31,
+    "kind": "numbered",
+    "level": 1,
+    "text": "3. Water HRT / volume and water levels"
+   },
+   {
+    "page": 31,
+    "kind": "admin",
+    "level": 0,
+    "text": "31"
+   },
+   {
+    "page": 32,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 32,
+    "kind": "para",
+    "level": 0,
+    "text": "Sampling Protocol for all parameters:"
+   },
+   {
+    "page": 32,
+    "kind": "numbered",
+    "level": 1,
+    "text": "1. Non-stormflow / Grab – every 3 weeks during a 8 month growing season (March-"
+   },
+   {
+    "page": 32,
+    "kind": "para",
+    "level": 0,
+    "text": "October); every 6 weeks over 3 months (November – February)"
+   },
+   {
+    "page": 32,
+    "kind": "numbered",
+    "level": 2,
+    "text": "a. Sediment accumulation"
+   },
+   {
+    "page": 32,
+    "kind": "numbered",
+    "level": 2,
+    "text": "b. Water level"
+   },
+   {
+    "page": 32,
+    "kind": "numbered",
+    "level": 2,
+    "text": "c. Physicochemical parameters (In Situ parameters – DO, pH, ORP, specific"
+   },
+   {
+    "page": 32,
+    "kind": "para",
+    "level": 0,
+    "text": "conductivity, temperature)"
+   },
+   {
+    "page": 32,
+    "kind": "numbered",
+    "level": 2,
+    "text": "d. Water samples"
+   },
+   {
+    "page": 32,
+    "kind": "numbered",
+    "level": 1,
+    "text": "2. Stormflow – storm event driven (typically between 8-17 per year)"
+   },
+   {
+    "page": 32,
+    "kind": "numbered",
+    "level": 2,
+    "text": "a. Water samples"
+   },
+   {
+    "page": 32,
+    "kind": "numbered",
+    "level": 2,
+    "text": "b. Physicochemical parameters (deployed data-sondes)"
+   },
+   {
+    "page": 32,
+    "kind": "para",
+    "level": 0,
+    "text": "Water Sample Preservation:"
+   },
+   {
+    "page": 32,
+    "kind": "para",
+    "level": 0,
+    "text": "Preservation techniques for nutrient analysis will be commensurate with QAQC procedures"
+   },
+   {
+    "page": 32,
+    "kind": "para",
+    "level": 0,
+    "text": "outlined in QAPP with MDEQ and USGS. Water samples will be collected with 24-48 hours of"
+   },
+   {
+    "page": 32,
+    "kind": "para",
+    "level": 0,
+    "text": "storm events and all samples will be analyzed within the MDEQ lab in 48 hours. If preservation"
+   },
+   {
+    "page": 32,
+    "kind": "para",
+    "level": 0,
+    "text": "is required field crews will have the ability to acid preserve. Add ratio of 2ml:1L of concentrated"
+   },
+   {
+    "page": 32,
+    "kind": "para",
+    "level": 0,
+    "text": "H2SO4 to water sample to preserve, and keep at 4°C."
+   },
+   {
+    "page": 32,
+    "kind": "para",
+    "level": 0,
+    "text": "Additional Data Collection Efforts"
+   },
+   {
+    "page": 32,
+    "kind": "heading",
+    "level": 0,
+    "text": "1. Sediments"
+   },
+   {
+    "page": 32,
+    "kind": "numbered",
+    "level": 1,
+    "text": "a. Interested to identify sediment deposition and accumulation in behind slotted pipes,"
+   },
+   {
+    "page": 32,
+    "kind": "para",
+    "level": 0,
+    "text": "low-grade weirs and tailwater recovery systems."
+   },
+   {
+    "page": 32,
+    "kind": "numbered",
+    "level": 1,
+    "text": "b. Interested to evaluate phosphorus load accumulated with sediment accumulation."
+   },
+   {
+    "page": 32,
+    "kind": "para",
+    "level": 0,
+    "text": "Assumptions:"
+   },
+   {
+    "page": 32,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Sediment accumulating within the system is sediment that is not accumulating in downstream"
+   },
+   {
+    "page": 32,
+    "kind": "para",
+    "level": 0,
+    "text": "ecosystems"
+   },
+   {
+    "page": 32,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Improved sedimentation will result in a decrease in turbidity and total suspended solids in"
+   },
+   {
+    "page": 32,
+    "kind": "para",
+    "level": 0,
+    "text": "downstream aquatic systems"
+   },
+   {
+    "page": 32,
+    "kind": "admin",
+    "level": 0,
+    "text": "32"
+   },
+   {
+    "page": 33,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 33,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Controlled drainage structures reduce the velocity and flow rate of non-storm and storm flow"
+   },
+   {
+    "page": 33,
+    "kind": "para",
+    "level": 0,
+    "text": "thus increasing sedimentation and reducing scour."
+   },
+   {
+    "page": 33,
+    "kind": "heading",
+    "level": 0,
+    "text": "2. Water Volumes, HRT, water levels"
+   },
+   {
+    "page": 33,
+    "kind": "numbered",
+    "level": 2,
+    "text": "a. Interested in determining the effects of slotted pipes and low-grade weirs on water"
+   },
+   {
+    "page": 33,
+    "kind": "para",
+    "level": 0,
+    "text": "volumes, levels and flow rates"
+   },
+   {
+    "page": 33,
+    "kind": "numbered",
+    "level": 2,
+    "text": "b. Important information for NRCS – how much water is being captured throughout"
+   },
+   {
+    "page": 33,
+    "kind": "para",
+    "level": 0,
+    "text": "the year within tailwater recovery and on-farm storage reservoirs"
+   },
+   {
+    "page": 33,
+    "kind": "numbered",
+    "level": 2,
+    "text": "c. Water levels = real time data loggers, as well as level loggers"
+   },
+   {
+    "page": 33,
+    "kind": "numbered",
+    "level": 2,
+    "text": "d. HRT and Volumes = survey and geometry"
+   },
+   {
+    "page": 33,
+    "kind": "para",
+    "level": 0,
+    "text": "Assumptions:"
+   },
+   {
+    "page": 33,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Control structures will reduce outflow volumes by increasing the volume of water that is"
+   },
+   {
+    "page": 33,
+    "kind": "para",
+    "level": 0,
+    "text": "retained within the ditch at any one time"
+   },
+   {
+    "page": 33,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Control structures will increase non-storm flow HRT, and improve first flush capture of"
+   },
+   {
+    "page": 33,
+    "kind": "para",
+    "level": 0,
+    "text": "contaminants for storm events that are intense and short in duration"
+   },
+   {
+    "page": 33,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Improved HRT will facilitate improved sedimentation"
+   },
+   {
+    "page": 33,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Weir structures will hold water according to height and volume characteristics"
+   },
+   {
+    "page": 33,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Tailwater recovery units and on-farm storage reservoirs increase the amount of surface runoff"
+   },
+   {
+    "page": 33,
+    "kind": "para",
+    "level": 0,
+    "text": "capture"
+   },
+   {
+    "page": 33,
+    "kind": "para",
+    "level": 0,
+    "text": "7.2 Plan Evaluation & Revision Procedure"
+   },
+   {
+    "page": 33,
+    "kind": "para",
+    "level": 0,
+    "text": "Through the evaluation process, MDEQ will prepare a revised watershed implementation"
+   },
+   {
+    "page": 33,
+    "kind": "para",
+    "level": 0,
+    "text": "plan incorporating the changes requested by the reviewers. At this point it may be necessary to"
+   },
+   {
+    "page": 33,
+    "kind": "para",
+    "level": 0,
+    "text": "call a meeting to reconcile any conflicting comments or requests for change."
+   },
+   {
+    "page": 33,
+    "kind": "para",
+    "level": 0,
+    "text": "If the evaluation criteria are all being met in Coldwater River surface waters, the watershed"
+   },
+   {
+    "page": 33,
+    "kind": "para",
+    "level": 0,
+    "text": "implementation plan will be revised to address a different restoration issue or issues, or to protect"
+   },
+   {
+    "page": 33,
+    "kind": "para",
+    "level": 0,
+    "text": "the quality of the watershed. If the evaluation criteria are not being met, the approach for water"
+   },
+   {
+    "page": 33,
+    "kind": "admin",
+    "level": 0,
+    "text": "33"
+   },
+   {
+    "page": 34,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 34,
+    "kind": "para",
+    "level": 0,
+    "text": "quality improvements in the Coldwater River watershed will be revised based on knowledge that"
+   },
+   {
+    "page": 34,
+    "kind": "para",
+    "level": 0,
+    "text": "has been gained since 2013."
+   },
+   {
+    "page": 34,
+    "kind": "para",
+    "level": 0,
+    "text": "The draft watershed implementation plan will be submitted to the Implementation Team, and"
+   },
+   {
+    "page": 34,
+    "kind": "para",
+    "level": 0,
+    "text": "all others who submitted comments. Within two weeks of receiving the draft watershed"
+   },
+   {
+    "page": 34,
+    "kind": "para",
+    "level": 0,
+    "text": "implementation plan, the Implementation Team will notify their stakeholders of the availability"
+   },
+   {
+    "page": 34,
+    "kind": "para",
+    "level": 0,
+    "text": "of the revised watershed implementation plan for stakeholder review. One month will be allowed"
+   },
+   {
+    "page": 34,
+    "kind": "para",
+    "level": 0,
+    "text": "for review of the draft. Comments will be due at the end of this review period."
+   },
+   {
+    "page": 34,
+    "kind": "para",
+    "level": 0,
+    "text": "Within a month after the comments on the draft watershed implementation plan are received,"
+   },
+   {
+    "page": 34,
+    "kind": "para",
+    "level": 0,
+    "text": "MDEQ will prepare a final watershed implementation plan. The final watershed implementation"
+   },
+   {
+    "page": 34,
+    "kind": "para",
+    "level": 0,
+    "text": "plan will be submitted to the Implementation Team for review and approval. After the final"
+   },
+   {
+    "page": 34,
+    "kind": "para",
+    "level": 0,
+    "text": "watershed implementation plan has been approved, the Implementation Team will notify their"
+   },
+   {
+    "page": 34,
+    "kind": "para",
+    "level": 0,
+    "text": "stakeholders of the completion and availability of the final plan for use as a guide to"
+   },
+   {
+    "page": 34,
+    "kind": "para",
+    "level": 0,
+    "text": "improvement activities."
+   },
+   {
+    "page": 34,
+    "kind": "admin",
+    "level": 0,
+    "text": "34"
+   },
+   {
+    "page": 35,
+    "kind": "admin",
+    "level": 0,
+    "text": "Coldwater River Watershed Implementation Plan - Draft 4/11/13"
+   },
+   {
+    "page": 35,
+    "kind": "heading",
+    "level": 0,
+    "text": "8.0 References"
+   },
+   {
+    "page": 35,
+    "kind": "para",
+    "level": 0,
+    "text": "Kilgor, Jack., Hoover, Jan., 2003. ERDC, Vicksburg, MS"
+   },
+   {
+    "page": 35,
+    "kind": "para",
+    "level": 0,
+    "text": "MDEQ. 2000. Yazoo Basin Status Report. Mississippi Department of Environmental Quality."
+   },
+   {
+    "page": 35,
+    "kind": "para",
+    "level": 0,
+    "text": "Jackson, Mississippi."
+   },
+   {
+    "page": 35,
+    "kind": "para",
+    "level": 0,
+    "text": "MDEQ. 2001. Mississippi’s Fish Tissue Advisories and Commercial Fishing Bans, August 2002."
+   },
+   {
+    "page": 35,
+    "kind": "para",
+    "level": 0,
+    "text": "MDEQ. 2002. State of Mississippi Water Quality Criteria for Intrastate, Interstate and Coastal"
+   },
+   {
+    "page": 35,
+    "kind": "para",
+    "level": 0,
+    "text": "Waters. Mississippi Department of Environmental Quality. Jackson, Mississippi."
+   },
+   {
+    "page": 35,
+    "kind": "para",
+    "level": 0,
+    "text": "MDEQ. 2003a. Sediment TMDL for the Coldwater River, Yazoo River Basin. Mississippi"
+   },
+   {
+    "page": 35,
+    "kind": "para",
+    "level": 0,
+    "text": "Department of Environmental Quality. Jackson, Mississippi."
+   },
+   {
+    "page": 35,
+    "kind": "para",
+    "level": 0,
+    "text": "MDEQ 2008 Total Maximum Daily Loads for Total Nitrogen, Total Phosphorus, and Organic"
+   },
+   {
+    "page": 35,
+    "kind": "para",
+    "level": 0,
+    "text": "Enrichment/Low Dissolved Oxygen for a Segment of the Coldwater River."
+   },
+   {
+    "page": 35,
+    "kind": "para",
+    "level": 0,
+    "text": "MDEQ. 2003b. Total Maximum Daily Loads for the Legacy Pesticides DDT and Toxaphene in"
+   },
+   {
+    "page": 35,
+    "kind": "para",
+    "level": 0,
+    "text": "the Yazoo River Basin. Mississippi Department of Environmental Quality. Jackson, Mississippi."
+   },
+   {
+    "page": 35,
+    "kind": "para",
+    "level": 0,
+    "text": "MDEQ 2004a. Mississippi 2002 Section 303(d) List of Water Bodies. Mississippi Department of"
+   },
+   {
+    "page": 35,
+    "kind": "para",
+    "level": 0,
+    "text": "Environmental Quality. Jackson, Mississippi."
+   },
+   {
+    "page": 35,
+    "kind": "para",
+    "level": 0,
+    "text": "Thomann, R.V. and J.A. Mueller. 1987. Principles of Surface Water Quality Modeling and"
+   },
+   {
+    "page": 35,
+    "kind": "para",
+    "level": 0,
+    "text": "Control. Row, New York."
+   },
+   {
+    "page": 35,
+    "kind": "para",
+    "level": 0,
+    "text": "USDA Natural Resources Conservation Service. 2012. Water Quality Supplement to the"
+   },
+   {
+    "page": 35,
+    "kind": "para",
+    "level": 0,
+    "text": "Coldwater Watershed Feasibility Study. Jackson, MS."
+   },
+   {
+    "page": 35,
+    "kind": "para",
+    "level": 0,
+    "text": "Yazoo Mississippi Joint Water Management District. 2008. Coldwater River Watershed Project"
+   },
+   {
+    "page": 35,
+    "kind": "para",
+    "level": 0,
+    "text": "History and Status: February 2008. Stoneville, MS."
+   },
+   {
+    "page": 35,
+    "kind": "admin",
+    "level": 0,
+    "text": "35"
+   }
+  ]
+ }
+}

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { UnitExtraction } from './schema';
-import { verifyUnit } from './verify';
+import { tidyName, verifyUnit } from './verify';
 
 const pages = [
   {
@@ -165,17 +165,39 @@ describe('verifyUnit', () => {
     expect(verifyUnit(data, pages, []).rejected[0].reason).toBe('invalid');
   });
 
+  it('names items by the thing itself: no "Goal:" label in front, and a goal named by its lead-in takes what follows "is to"', () => {
+    expect(tidyName('Goal: Reduce sediment loads entering waters', [], true)).toBe('Reduce sediment loads entering waters');
+    expect(tidyName('Implementation/Action: address sedimentation through Farm Bill programs', [], false)).toBe('address sedimentation through Farm Bill programs');
+    expect(tidyName('1b. 70% reduction of total nitrogen load', [], true)).toBe('70% reduction of total nitrogen load');
+    expect(tidyName('ii) Develop Boat Ramps on Deer Creek', [], false)).toBe('Develop Boat Ramps on Deer Creek');
+    expect(tidyName('Long-term goal of the Pickwick Reservoir watershed plan', ['The long-term goal of the Pickwick Reservoir watershed plan is to restore water quality in Caney Creek. It will'], true))
+      .toBe('restore water quality in Caney Creek');
+    expect(tidyName('ultimate goal is to bring about behavior changes and the use of best management practices', [], true)).toBe('bring about behavior changes and the use of best management practices');
+    expect(tidyName('The goal of this plan', ['The goal of this plan is to meet the target of 0.16 mg/l for TP.'], true)).toBe('meet the target of 0.16 mg/l for TP');
+    // Left alone: a goal that names its outcome, a label without punctuation, and non-goals with lead-in words.
+    expect(tidyName('Meet TMDL goals for sediment', ['The goal is to meet TMDL goals for sediment'], true)).toBe('Meet TMDL goals for sediment');
+    expect(tidyName('Goal setting workshop', [], false)).toBe('Goal setting workshop');
+    expect(tidyName('2,000 ft. of fencing', [], false)).toBe('2,000 ft. of fencing');
+    expect(tidyName('U.S. Army Corps of Engineers', [], false)).toBe('U.S. Army Corps of Engineers');
+    expect(tidyName('E. coli', [], false)).toBe('E. coli');
+    expect(tidyName('The goal of this plan', ['The goal of this plan is stated below'], true)).toBe('The goal of this plan');
+  });
+
   it('rejects a section label as a name, and an outreach "activity" that is a line of its cost table', () => {
     const budget = [{
       n: 24, source: 'text' as const,
-      markup: '## 3. Fact Sheets\nA fact sheet will be developed at the end of the project.\n## c. Budget\nTable 9.3 Projected Costs for Fact Sheets.\n| Item | Unit | Cost | Total Cost |\n| Printing | 1,000 | 1.00/each | $1,000.00 |',
+      markup: '## 3. Fact Sheets\nA fact sheet will be developed at the end of the project.\n## c. Budget\nTable 9.3 Projected Costs for Fact Sheets.\n| Item | Unit | Cost | Total Cost |\n| Printing | 1,000 | 1.00/each | $1,000.00 |\n| Education and Outreach | $15,000 |',
     }];
     const outreach = (name: string, quote: string) => ({ ...base(name, 24, quote), audience: null, quantity: null, timeframe: null });
-    const data = { ...empty(), bmps: [bmp('BMPs', 3, 'installation of the following BMPs would help to mitigate')], outreach: [outreach('Printing', 'Printing | 1,000 | 1.00/each | $1,000.00'), outreach('Fact Sheets', 'A fact sheet will be developed at the end of the project')] };
+    const data = {
+      ...empty(),
+      bmps: [bmp('BMPs', 3, 'installation of the following BMPs would help to mitigate')],
+      outreach: [outreach('Printing', 'Printing | 1,000 | 1.00/each | $1,000.00'), outreach('Fact Sheets', 'A fact sheet will be developed at the end of the project'), outreach('Education and Outreach', 'Education and Outreach | $15,000')],
+    };
     const { items, rejected } = verifyUnit(data, [...pages, ...budget], []);
     expect(items.bmps).toEqual([]);
     expect(items.outreach.map((o) => o.name)).toEqual(['Fact Sheets']);
-    expect(rejected.map((r) => [r.name, r.reason])).toEqual([['BMPs', 'not-an-item'], ['Printing', 'not-an-item']]);
+    expect(rejected.map((r) => [r.name, r.reason])).toEqual([['BMPs', 'not-an-item'], ['Printing', 'not-an-item'], ['Education and Outreach', 'not-an-item']]);
   });
 });
 

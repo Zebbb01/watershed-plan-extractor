@@ -71,3 +71,21 @@ Final settings (changes 6, 10, 11), three runs per plan (`--repeat 3`), `2026-10
 | Buttahatchee | 87.2% | 85.7%, 86.3%, 89.8% |
 | Owl Creek (held out) | 82.2% | 81.0%, 87.2%, 78.5% |
 | All four | 83.7% (numbers 88.3%, 0 verbatim violations) | |
+
+Generalisation (2026-10-29, Haiku 5.5, effort low). Five held-out plans labelled from their PDFs
+before any run (Yazoo Pass, Coldwater, Lake Washington, West Boley, Luxapallila) and ten unlabelled
+tuning plans added.
+
+| # | Change | Plan | Core F1 | Result file |
+| --- | --- | --- | --- | --- |
+| 12 | Baseline: the code of 2026-10-23, one run per held-out plan | Yazoo Pass, Coldwater, Lake Washington, West Boley, Luxapallila | 81.7%, 58.5%, 80.0%, 80.3%, 53.3% | outputs in `baseline-2026-10-29/` (`npm run eval:rescore -w backend -- claude-haiku-5-5 eval/results/baseline-2026-10-29`) |
+| 13–16 | Short running heads and draft stamps; diamond bullets on transcribed pages; names tidied (labels, lead-ins); category exclusions and generic examples | BP, Bell Creek, Buttahatchee (+ ten unlabelled, read) | 94.2%, 79.2%, 86.8% | `2026-10-29-claude-haiku-5-5-gen1-dev.json` |
+| 17 | Monitoring exclusion reworded ("the names of programs" made one Ellison Creek run drop the MDEQ education programme list from outreach); problems listed with their causes are not goals | Ellison Creek (twice), Bee Lake, BP | programme list found in both Ellison runs; Bee Lake's problem table no longer filed as goals; BP 93.4% | `2026-10-29-claude-haiku-5-5-gen2-*.json` |
+| 18 | Changes 13–17 plus list numbers cut from names, all plans, three runs each (labelled) | all | tuning 81.8% (BP 94.5, Bell Creek 72.4, Buttahatchee 79.7), held out 79.0% (six plans; 76.2% before) | `2026-10-29-claude-haiku-5-5-all.json` |
+| 19 | Units: a page that ends with a list or its lead-in opens the next unit when the next page goes on with the list. On Buttahatchee pages 20–22, a unit starting at page 21 (lead-in only as context) returned at most one of the list's eight sub-items in 6 of 11 trials; with page 20 in the same unit, all eight in 5 of 5. In change 18's runs the old grouping had page 21 open a unit | Buttahatchee, Owl Creek, Yazoo Pass, Luxapallila (the plans whose units it changes; the others merged from change 18) | 85.1%, 91.9%, 78.2%, 66.2% | `2026-10-30-claude-haiku-5-5-lists-some.json` |
+| 20 | The same, but all the pages a list runs through move back to its lead-in: moving only the last page cut Luxapallila's page 18 from its lead-in on page 17. Changes only Luxapallila's units | Luxapallila | 66.2% → 78.0% (63.4%, 86.3%, 81.6%) | `2026-10-30-claude-haiku-5-5-chain-luxapallila-2004.json` |
+
+Final settings (changes 13–17, 19, 20), three runs per labelled plan, merged (`latest.json` =
+`2026-10-30-claude-haiku-5-5-chain-luxapallila-2004.json`; see `mergedFrom` in it and in
+`2026-10-30-claude-haiku-5-5-lists-some.json`): tuning 82.6%, held out 78.6% (six plans; 76.2%
+before this round), all nine 80.3%, numbers 83.7%, 0 names not in the PDF.
