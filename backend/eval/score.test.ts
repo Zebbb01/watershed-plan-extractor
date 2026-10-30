@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { BmpItem, ExtractionResult, Quantity } from '../src/schema';
-import { score, type GroundTruth } from './score';
+import { score, writtenIn, type GroundTruth } from './score';
 
 const q = (value: number, unit: string): Quantity => ({ raw: `${value} ${unit}`, value, valueMax: null, unit, comparator: '=', scope: null });
 const bmp = (name: string, page: number, quantities: Quantity[] = []): BmpItem => ({
@@ -89,5 +89,13 @@ describe('score is not lenient with names', () => {
     const page = new Map([[5, 'Crews will plant terrain gardens on 2.5 acres']]);
     const s = score(result([bmp('Rain Garden', 5), bmp('25 acres', 5), bmp('2.5 acres', 5)]), { doc: 'toy', scope: 'all', items: [] }, page);
     expect(s.verbatimViolations).toEqual(['bmps: Rain Garden', 'bmps: 25 acres']);
+  });
+
+  it('reads a list number glued to its text and a hyphen at a line end the way the page prints them', () => {
+    expect(writtenIn('11.Develop and implement watershed signage program', 'Develop and implement watershed signage program')).toBe(true);
+    expect(writtenIn('protecting and re-\nvegetating landscape areas', 're-vegetating landscape areas')).toBe(true);
+    expect(writtenIn('the larger Catalpa Creek-\nTibbee Creek (HUC 10)', 'Catalpa Creek-Tibbee Creek')).toBe(true);
+    expect(writtenIn('best manage-\nment practices', 'management practices')).toBe(true);
+    expect(writtenIn('on 2.5 acres', '5 acres')).toBe(false);
   });
 });

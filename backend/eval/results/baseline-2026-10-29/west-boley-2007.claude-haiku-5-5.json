@@ -1,0 +1,5924 @@
+{
+ "report": {
+  "summary": {
+   "totalGoals": 5,
+   "totalBMPs": 8,
+   "completionRate": 0
+  },
+  "goals": [
+   {
+    "id": "b280109c",
+    "name": "Research, identify and implement watershed protection and associated education strategies for the West Boley Creek",
+    "text": "Objective to research, identify and implement watershed protection and associated education strategies for West Boley Creek.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "We have two primary objectives: (1) Research, identify and implement watershed protection and associated education strategies for the West Boley Creek"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "targets": [],
+    "pollutant": null,
+    "deadline": null
+   },
+   {
+    "id": "86986918",
+    "name": "Research, design and implement watershed restoration and associated education strategies for West Boley Creek",
+    "text": "Objective to research, design and implement watershed restoration and associated education strategies for West Boley Creek.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "(2) Research, design and implement watershed restoration and associated education strategies for West Boley Creek."
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "targets": [],
+    "pollutant": null,
+    "deadline": null
+   },
+   {
+    "id": "10666724",
+    "name": "Lower West Hobolochitto River TMDL",
+    "text": "A TMDL is expected for the impaired stream section listed on the 303d list for pathogens.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 8,
+      "quote": "This section of stream is impaired by pathogens for the designated use of secondary contact. Monitoring data exists for this determination and a TMDL is expected by the end of 2007."
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "targets": [],
+    "pollutant": "pathogens",
+    "deadline": "by the end of 2007"
+   },
+   {
+    "id": "8ef7c5c0",
+    "name": "Restoration",
+    "text": "Actively initiating or accelerating the recovery of the ecological and cultural health, integrity and sustainability of the watershed that has been degraded, damaged or destroyed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 5,
+      "quote": "Restoration is defined as actively initiating or accelerating the recovery of the ecological and cultural health, integrity and sustainability of the watershed"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "targets": [],
+    "pollutant": null,
+    "deadline": null
+   },
+   {
+    "id": "eae0414a",
+    "name": "Priority #1: The headcuts need to be located and arrested from advancing any further upstream.",
+    "text": "Locate and arrest headcuts so they do not advance further upstream.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 37,
+      "quote": "Priority #1: The headcuts need to be located and arrested from advancing any further upstream."
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "targets": [],
+    "pollutant": null,
+    "deadline": null
+   }
+  ],
+  "bmps": [
+   {
+    "id": "5f5d7355",
+    "name": "critical area plantings",
+    "text": "Critical area plantings on private lands, specifically streamside buffers and wetlands.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 17,
+      "quote": "Identify private landowners interested in critical area plantings, specifically streamside buffers and wetlands."
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [],
+    "unitCost": null,
+    "estimatedCost": null,
+    "pollutants": []
+   },
+   {
+    "id": "76d6ed32",
+    "name": "passive stream restoration structures",
+    "text": "Passive stream restoration structures installed on private lands.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 17,
+      "quote": "Identify private landowners and funding programs to install passive stream restoration structures"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [],
+    "unitCost": null,
+    "estimatedCost": null,
+    "pollutants": []
+   },
+   {
+    "id": "7749d33a",
+    "name": "model passive stream restoration project",
+    "text": "A model passive stream restoration project using natural log materials to build bankfull benches and log riffles.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 17,
+      "quote": "Design and fund a model passive stream restoration project."
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [],
+    "unitCost": null,
+    "estimatedCost": null,
+    "pollutants": []
+   },
+   {
+    "id": "9b90cabf",
+    "name": "passive restoration actions",
+    "text": "Passive restoration using natural log materials, such as interlocked damaged logs from Katrina, to seed sediment deposition and nudge the channel evolution.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 37,
+      "quote": "The passive restoration actions would most likely involving using some of the damaged logs from Katrina."
+     },
+     {
+      "page": 37,
+      "quote": "Concept typicals for the passive restoration actions using natural log materials to construct bankfull benches and log riffles"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [],
+    "unitCost": null,
+    "estimatedCost": null,
+    "pollutants": []
+   },
+   {
+    "id": "ce7156d8",
+    "name": "Bioengineering",
+    "text": "Establishing native vegetation on destabilized banks and newly forming bars to reduce shear and induce sediment deposition.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 37,
+      "quote": "These processes are called Bioengineering and have been used in the field of river engineering/ restoration for over 200 years."
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [],
+    "unitCost": null,
+    "estimatedCost": null,
+    "pollutants": []
+   },
+   {
+    "id": "10e7841b",
+    "name": "stream-side management zones (SMZs)",
+    "text": "Stream-side management zones to be used in combination with bioengineering practices.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 37,
+      "quote": "like stream-side management zones (SMZs), riparian buffer creation, wetland restoration/ preservation"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [],
+    "unitCost": null,
+    "estimatedCost": null,
+    "pollutants": []
+   },
+   {
+    "id": "e37b298a",
+    "name": "riparian buffer creation",
+    "text": "Creation of riparian buffers to be used in combination with bioengineering practices.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 37,
+      "quote": "like stream-side management zones (SMZs), riparian buffer creation, wetland restoration/ preservation"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [],
+    "unitCost": null,
+    "estimatedCost": null,
+    "pollutants": []
+   },
+   {
+    "id": "d8c40971",
+    "name": "wetland restoration/ preservation",
+    "text": "Wetland restoration or preservation to be used in combination with bioengineering practices.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 37,
+      "quote": "riparian buffer creation, wetland restoration/ preservation, conservation easements programs"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [],
+    "unitCost": null,
+    "estimatedCost": null,
+    "pollutants": []
+   }
+  ],
+  "implementation": [
+   {
+    "id": "545f1fa2",
+    "name": "assessment at the watershed scale",
+    "text": "Recommended assessment at the watershed scale to determine the full extent of geomorphic changes causing accelerated erosion and impaired water quality, identifying priority areas for restoration, protection and landuse planning.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 15,
+      "quote": "we recommend an assessment at the watershed scale to determine the full extent of geomorphic changes causing accelerated erosion and impaired water quality"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "93ca28ac",
+    "name": "Kick-off a litter campaigns and create annual clean-up days",
+    "text": "Start a litter campaign and hold annual clean-up days.",
+    "kind": "sub",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 16,
+      "quote": "Kick-off a litter campaigns and create annual clean-up days"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "05a53301",
+    "name": "Need dumpsters and county-wide garbage pickup",
+    "text": "Provide dumpsters and county-wide garbage pickup.",
+    "kind": "sub",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 16,
+      "quote": "Need dumpsters and county-wide garbage pickup"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "643dfb28",
+    "name": "Advocate for sterner fines and more enforcement",
+    "text": "Advocate for stronger fines and more litter enforcement.",
+    "kind": "sub",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 16,
+      "quote": "Advocate for sterner fines and more enforcement"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "4ef08ee8",
+    "name": "Make it convenient for disposal",
+    "text": "Make litter disposal convenient.",
+    "kind": "sub",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 16,
+      "quote": "Make it convenient for disposal"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "e9114c90",
+    "name": "Consider a deposit on bottles",
+    "text": "Consider a deposit on bottles.",
+    "kind": "sub",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 16,
+      "quote": "Consider a deposit on bottles"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "bb812b33",
+    "name": "Stop the mowers from shredding litter (clean up litter before mowing)",
+    "text": "Clean up litter before mowing to stop mowers shredding it.",
+    "kind": "sub",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 16,
+      "quote": "Stop the mowers from shredding litter (clean up litter before mowing)"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "6d8da74d",
+    "name": "Focus on developing Adopt a highway programs",
+    "text": "Focus on developing Adopt a highway programs.",
+    "kind": "sub",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 16,
+      "quote": "Focus on developing Adopt a highway programs"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "854bdc78",
+    "name": "Focus on designing and creating gateways to cities",
+    "text": "Design and create gateways to cities.",
+    "kind": "sub",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 16,
+      "quote": "Focus on designing and creating gateways to cities"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "bba12ccd",
+    "name": "Identify actions to reduce impairment on the lower West Boley (MS185E1)",
+    "text": "Identify actions to reduce the pathogen impairment on the lower West Boley stream section.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 17,
+      "quote": "Identify actions to reduce impairment on the lower West Boley (MS185E1)"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "019d27b6",
+    "name": "Identify private landowners interested in critical area plantings, specifically streamside buffers and wetlands.",
+    "text": "Identify private landowners interested in critical area plantings.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 17,
+      "quote": "Identify private landowners interested in critical area plantings, specifically streamside buffers and wetlands."
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "638e10bf",
+    "name": "Identify private landowners and funding programs to install passive stream restoration structures",
+    "text": "Identify private landowners and funding programs for passive stream restoration structures.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 17,
+      "quote": "Identify private landowners and funding programs to install passive stream restoration structures"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "46b345a4",
+    "name": "Work with area developers to promote green design residential developments",
+    "text": "Work with developers on green design residential developments that protect wetlands with conservation easements, and change zoning to require greener practices.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 17,
+      "quote": "Work with area developers to promote green design residential developments that protect wetlands and water features with conservation easements in perpetuity."
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "a016d8eb",
+    "name": "Work with the new Pearl River County Utility Authority to install sewer service or alternative waste water management systems",
+    "text": "Work with the utility authority to install sewer service or alternative wastewater systems that reduce fecal coliform from failing septic systems.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 17,
+      "quote": "Work with the new Pearl River County Utility Authority to install sewer service or alternative waste water management systems"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [
+     "Pearl River County Utility Authority"
+    ],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "1213b66b",
+    "name": "Design landowner contact program and questionnaire about septic tank maintenance",
+    "text": "Design a landowner contact program and questionnaire on septic tank maintenance.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 17,
+      "quote": "Design landowner contact program and questionnaire about septic tank maintenance"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "2febb1da",
+    "name": "Identify landowners along the stream bank",
+    "text": "Identify stream bank landowners, distribute West Boley Creek Streamside Management Handbooks, and establish conservation option programs.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 17,
+      "quote": "Identify landowners along the stream bank. Distribute West Boley Creek Streamside Management Handbooks."
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "79ede2f8",
+    "name": "Identify stream sections most desirable for developing public access to the Creek",
+    "text": "Identify stream sections for public access and develop a low-impact use and floodplain management plan.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 17,
+      "quote": "Identify stream sections most desirable for developing public access to the Creek."
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "29ef1948",
+    "name": "Develop a partnership with PRCUA and Land Trust to develop a greenway in West Boley Creek floodplain",
+    "text": "Develop a partnership with PRCUA and Land Trust for a floodplain greenway to reduce storm-water run-off.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 17,
+      "quote": "Develop a partnership with PRCUA and Land Trust to develop a greenway in West Boley Creek floodplain"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [
+     "PRCUA",
+     "Land Trust"
+    ],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "93d5612e",
+    "name": "Provide opportunities to recycle and dispose hazardous waste",
+    "text": "Provide opportunities to recycle and dispose of hazardous waste, including household wastes.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 17,
+      "quote": "Provide opportunities to recycle and dispose hazardous waste"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "49d624d1",
+    "name": "Design and fund a model passive stream restoration project",
+    "text": "Design and fund a model passive stream restoration project.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 17,
+      "quote": "Design and fund a model passive stream restoration project."
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "5b566e86",
+    "name": "Identify a local champion(s) for the watershed",
+    "text": "Identify a local champion(s) for the watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 18,
+      "quote": "Identify a local champion(s) for the watershed"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "c80ef76d",
+    "name": "Ask the Land Trust for Mississippi Coastal Plain Board of Directors to establish a West Boley Creek Partnership Committee (steering committee)",
+    "text": "Ask the Land Trust for Mississippi Coastal Plain Board of Directors to establish a steering committee that will function as a special action committee to implement the action plan.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 18,
+      "quote": "Ask the Land Trust for Mississippi Coastal Plain Board of Directors to establish a West Boley Creek Partnership Committee (steering committee)"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [
+     "Land Trust for Mississippi Coastal Plain Board of Directors"
+    ],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "393a9bff",
+    "name": "Categorizing and prioritizing the Action Plan",
+    "text": "Committee task: categorize and prioritize the Action Plan.",
+    "kind": "sub",
+    "parentId": "c80ef76d",
+    "evidence": [
+     {
+      "page": 18,
+      "quote": "Categorizing and prioritizing the Action Plan;"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [
+     "West Boley Creek Partnership Committee"
+    ],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "4a27c57a",
+    "name": "Creating a timeline for the Action Plan",
+    "text": "Committee task: create a timeline for the Action Plan.",
+    "kind": "sub",
+    "parentId": "c80ef76d",
+    "evidence": [
+     {
+      "page": 18,
+      "quote": "Creating a timeline for the Action Plan;"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [
+     "West Boley Creek Partnership Committee"
+    ],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "61df7c0a",
+    "name": "Developing an estimated budget and volunteer staffing program to implement the timeline",
+    "text": "Committee task: develop an estimated budget and volunteer staffing program to implement the timeline.",
+    "kind": "sub",
+    "parentId": "c80ef76d",
+    "evidence": [
+     {
+      "page": 18,
+      "quote": "Developing an estimated budget and volunteer staffing program to implement the timeline;"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [
+     "West Boley Creek Partnership Committee"
+    ],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "e79d8bb6",
+    "name": "Conducting an annual review of the watershed Action Plan",
+    "text": "Committee task: conduct an annual review of the watershed Action Plan.",
+    "kind": "main",
+    "parentId": "c80ef76d",
+    "evidence": [
+     {
+      "page": 18,
+      "quote": "Conducting an annual review of the watershed Action Plan."
+     },
+     {
+      "page": 19,
+      "quote": "LTMCP advisory team shall appoint a small working group to review the action plan annually."
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [
+     "West Boley Creek Partnership Committee",
+     "LTMCP advisory team"
+    ],
+    "timeframe": "annual",
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "70241e3f",
+    "name": "Formalize the technical advisory committee",
+    "text": "Formalize the technical advisory committee and send each person a copy of the action plan.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 18,
+      "quote": "Formalize the technical advisory committee and send each person a copy of the action plan"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "076d621a",
+    "name": "Formalize the education, recreation resources team",
+    "text": "Formalize the education, recreation resources team and send each person a copy of the action plan.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 18,
+      "quote": "Formalize the education, recreation resources team and send each person a copy of the action plan"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "9e3d4567",
+    "name": "Locate and arrest the areas of active headcutting on the West Boley and its tributaries",
+    "text": "Actions need to be taken to locate and arrest the areas of active headcutting on the West Boley and its tributaries.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 36,
+      "quote": "Actions need to be taken to locate and arrest the areas of active headcutting on the West Boley and its tributaries."
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   }
+  ],
+  "monitoring": [
+   {
+    "id": "044eae34",
+    "name": "Pathogens impairment monitoring data",
+    "text": "Monitoring data exists for the pathogen impairment determination on the Lower West Hobolochitto River section.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 8,
+      "quote": "This section of stream is impaired by pathogens for the designated use of secondary contact. Monitoring data exists for this determination"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "parameter": "Pathogens",
+    "threshold": null,
+    "location": "Lower West Hobolochitto River near Picayune from Kennedy Creek to the confluence with the East Boley",
+    "frequency": null
+   },
+   {
+    "id": "05f35d23",
+    "name": "Upper West Boley Creek mainstem channel field investigation",
+    "text": "Field team survey of the mainstem channel reach from Highway 26 to the headwater area, used to classify channel type.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 32,
+      "quote": "The Field Team started their investigation of the Upper West Boley Creek mainstem channel and covered the stream reach from the Highway 26"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "parameter": "Channel type",
+    "threshold": null,
+    "location": "from the Highway 26 to the West Boley Creek headwater area near the Weyerhauser landholdings on Burge & Reyer Road",
+    "frequency": null
+   },
+   {
+    "id": "5bafc11c",
+    "name": "Point-bar/sandbar angle",
+    "text": "Reference slope angle for sandbars on stable healthy rivers, used to judge channel condition.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 33,
+      "quote": "The point-bar/ sandbar angles on stable healthy rivers should average about 18 degrees of slope from horizontal."
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "parameter": "Point-bar/ sandbar angle",
+    "threshold": {
+     "raw": "about 18 degrees of slope from horizontal",
+     "scope": null,
+     "value": 18,
+     "valueMax": null,
+     "unit": "degrees",
+     "comparator": "~"
+    },
+    "location": null,
+    "frequency": null
+   }
+  ],
+  "outreach": [
+   {
+    "id": "f589fa44",
+    "name": "Create a webpage for the Upper Bay of St. Louis",
+    "text": "A webpage giving answers to questions asked by local stakeholders about the watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 15,
+      "quote": "Create a webpage for the Upper Bay of St. Louis that can provide answers to questions asked by local stakeholders"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": "local stakeholders",
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "4c1980cb",
+    "name": "Design and implement environmental education programs specific to the West Boley Creek",
+    "text": "Environmental education programs specific to the West Boley Creek.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 15,
+      "quote": "Design and implement environmental education programs specific to the West Boley Creek"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": null,
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "cde583eb",
+    "name": "Print and distribute watershed education coloring books for children",
+    "text": "Printed and distributed watershed education coloring books focused on litter reduction and recycling for Grades K-3.",
+    "kind": "sub",
+    "parentId": "4c1980cb",
+    "evidence": [
+     {
+      "page": 15,
+      "quote": "Print and distribute watershed education coloring books for children: focus on litter reduction, recycling - Keeping the environment clean, Grades K-3"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": null,
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "74555f50",
+    "name": "Find the animal in the swamp activity page",
+    "text": "An activity page for Grades 3-5.",
+    "kind": "sub",
+    "parentId": "4c1980cb",
+    "evidence": [
+     {
+      "page": 15,
+      "quote": "Design Find the animal in the swamp activity page for Grades 3-5"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": "Grades 3-5",
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "56cdfb58",
+    "name": "Watershed Harmony Puppet Show",
+    "text": "A puppet show performed during the 2007-2008 school year, used with the educational materials.",
+    "kind": "sub",
+    "parentId": "4c1980cb",
+    "evidence": [
+     {
+      "page": 15,
+      "quote": "Host Watershed Harmony Puppet Show during 2007-2008 school year, use above educational materials in conjunction with performance"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": null,
+    "quantity": null,
+    "timeframe": "2007-2008 school year"
+   },
+   {
+    "id": "2d41323f",
+    "name": "Educate the public about watersheds and streamside management",
+    "text": "Public education on watersheds and streamside management.",
+    "kind": "sub",
+    "parentId": "4c1980cb",
+    "evidence": [
+     {
+      "page": 15,
+      "quote": "Educate the public about watersheds and streamside management:"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": "public",
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "602432b7",
+    "name": "Design and install roadside and streamside signage on private lands",
+    "text": "Roadside and streamside signage installed on private lands.",
+    "kind": "sub",
+    "parentId": "2d41323f",
+    "evidence": [
+     {
+      "page": 15,
+      "quote": "Design and install roadside and streamside signage on private lands"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": null,
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "49b14ca5",
+    "name": "West Boley Creek Watershed Forums",
+    "text": "Two facilitated forums for invited residents and landowners of the watershed, held in fall 2006 to discuss the watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 13,
+      "quote": "In fall 2006, the Land Trust together with the West Boley Creek Steering Committee hosted two facilitated forums for invited residents and landowners"
+     },
+     {
+      "page": 13,
+      "quote": "October 24, 2006 - Pearl River Community College, Poplarville"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": "Invited residents and landowners of the watershed",
+    "quantity": {
+     "raw": "two facilitated forums",
+     "scope": null,
+     "value": 2,
+     "valueMax": null,
+     "unit": "facilitated forums",
+     "comparator": "="
+    },
+    "timeframe": "fall 2006"
+   },
+   {
+    "id": "51de83dd",
+    "name": "Print and distribute streamside management handbooks to landowners",
+    "text": "Print and distribute streamside management handbooks to landowners for streamside management education.",
+    "kind": "sub",
+    "parentId": "2d41323f",
+    "evidence": [
+     {
+      "page": 16,
+      "quote": "Print and distribute streamside management handbooks to landowners"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": "landowners",
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "b260b086",
+    "name": "Provide information about woody debris in streams (Appendix B)",
+    "text": "Provide information about woody debris in streams.",
+    "kind": "sub",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 16,
+      "quote": "Provide information about woody debris in streams (Appendix B)"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": null,
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "36e344ea",
+    "name": "Host an annual Aqua Fair or other educational celebration, such as Soil and Water Conservation Fair",
+    "text": "Host an annual Aqua Fair or other educational celebration.",
+    "kind": "sub",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 16,
+      "quote": "Host an annual Aqua Fair or other educational celebration, such as Soil and Water Conservation Fair"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": "general public",
+    "quantity": null,
+    "timeframe": "annual"
+   },
+   {
+    "id": "02bb49c7",
+    "name": "Provide education venues to tie the water quality to economic development, property values and quality of life",
+    "text": "Provide education venues linking water quality to economic development, property values and quality of life.",
+    "kind": "sub",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 16,
+      "quote": "Provide education venues to tie the water quality to economic development, property values and quality of life"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": null,
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "c5863b0c",
+    "name": "Develop a speakers bureau to educate general public about watershed issues",
+    "text": "Develop a speakers bureau to educate the general public about watershed issues.",
+    "kind": "sub",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 16,
+      "quote": "Develop a speakers bureau to educate general public about watershed issues"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": "general public",
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "b65a282e",
+    "name": "Identify and develop programs to get the MDEQ Enviroscape watershed education into local classrooms",
+    "text": "Develop programs to bring MDEQ Enviroscape watershed education into local classrooms.",
+    "kind": "sub",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 16,
+      "quote": "Identify and develop programs to get the MDEQ Enviroscape watershed education into local classrooms"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": "local classrooms",
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "86d6054c",
+    "name": "Find meaningful ways to engage civic groups: Farm Bureau, Cattleman's Association, Pearl River Forestry Association, Rotary, Kiwanis, Master Gardeners, Leadership Program",
+    "text": "Find meaningful ways to engage civic groups.",
+    "kind": "sub",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 16,
+      "quote": "Find meaningful ways to engage civic groups: Farm Bureau, Cattleman's Association, Pearl River Forestry Association"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": "civic groups",
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "32a10550",
+    "name": "Work with MDOT and other partners to implement a watershed signage along major federal, state and county roads",
+    "text": "Implement watershed signage along major federal, state and county roads.",
+    "kind": "sub",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 16,
+      "quote": "Work with MDOT and other partners to implement a watershed signage along major federal, state and county roads"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": null,
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "d20fe2b9",
+    "name": "Design education campaign about septic tank maintenance for landowners",
+    "text": "Design an education campaign about septic tank maintenance for landowners.",
+    "kind": "sub",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 16,
+      "quote": "Design education campaign about septic tank maintenance for landowners"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": "landowners",
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "3ad4cdf9",
+    "name": "Design and provide more education about erosion and sediment control (construction BMPS) for contractors, city and county decision-makers, public works employees and MDOT",
+    "text": "Provide more education about erosion and sediment control and a public education campaign about sedimentation.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 16,
+      "quote": "Design and provide more education about erosion and sediment control (construction BMPS) for contractors"
+     },
+     {
+      "page": 16,
+      "quote": "Provide public education campaign about water quality problems caused by sedimentation."
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": "contractors, city and county decision-makers, public works employees and MDOT",
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "0d6a2773",
+    "name": "Kick-off a litter campaigns and create annual clean-up days",
+    "text": "Kick off litter campaigns and create annual clean-up days.",
+    "kind": "sub",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 16,
+      "quote": "Kick-off a litter campaigns and create annual clean-up days"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": "general public",
+    "quantity": null,
+    "timeframe": "annual"
+   },
+   {
+    "id": "22071fb4",
+    "name": "Focus on developing Adopt a highway programs",
+    "text": "Focus on developing Adopt a highway programs.",
+    "kind": "sub",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 16,
+      "quote": "Focus on developing Adopt a highway programs"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": null,
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "6c9eb5ca",
+    "name": "Design landowner contact program and questionnaire about septic tank maintenance",
+    "text": "Design a landowner contact program and questionnaire about septic tank maintenance.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 17,
+      "quote": "Design landowner contact program and questionnaire about septic tank maintenance"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": "landowners",
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "3dbbc218",
+    "name": "Distribute West Boley Creek Streamside Management Handbooks",
+    "text": "Distribute West Boley Creek Streamside Management Handbooks to landowners along the stream bank.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 17,
+      "quote": "Identify landowners along the stream bank. Distribute West Boley Creek Streamside Management Handbooks."
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": "landowners along the stream bank",
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "01883ea2",
+    "name": "Steering Committee meeting",
+    "text": "First steering committee meeting was held in June 2006, followed by field trip investigations with steering committee members and Dr. Michael Hanley.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 5,
+      "quote": "The first steering committee meeting was held in June 2006 followed by field trip investigations with steering committee members"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": "Steering committee members",
+    "quantity": null,
+    "timeframe": "June 2006"
+   },
+   {
+    "id": "71e92667",
+    "name": "First community forum",
+    "text": "Community forum held at the Pearl River Community College.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 5,
+      "quote": "The first community forum was held at the Pearl River Community College on October 24, 2006."
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": null,
+    "quantity": null,
+    "timeframe": "October 24, 2006"
+   },
+   {
+    "id": "36aeff7d",
+    "name": "Second community forum",
+    "text": "Community forum held at the Picayune Sr. Citizen's Center.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 5,
+      "quote": "The second community forum was held at the Picayune Sr. Citizen's Center on November 16, 2006."
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": null,
+    "quantity": null,
+    "timeframe": "November 16, 2006"
+   },
+   {
+    "id": "891b31ca",
+    "name": "West Boley Creek Steering Committee",
+    "text": "Steering committee listed in the partnership teams, chaired by David Spector at the start.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 6,
+      "quote": "West Boley Creek Steering Committee, June 2005"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": null,
+    "quantity": null,
+    "timeframe": "June 2005"
+   },
+   {
+    "id": "f35c09fe",
+    "name": "Education and Recreation Advisory Team",
+    "text": "Advisory team of partner organizations for education and recreation.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 7,
+      "quote": "Education and Recreation Advisory Team"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": null,
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "d63c6b75",
+    "name": "citizen watershed forums",
+    "text": "Two public forums for landowners and stakeholders in Poplarville and Picayune to discuss woody debris and watershed planning.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 39,
+      "quote": "we will present two forums designed for landowners and stakeholders in the watershed: Poplarville (October 24) and Picayune (November 16)."
+     },
+     {
+      "page": 40,
+      "quote": "Please join us for citizen watershed forums on October 24 and November 16."
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": "landowners and stakeholders",
+    "quantity": {
+     "raw": "two forums",
+     "scope": null,
+     "value": 2,
+     "valueMax": null,
+     "unit": "forums",
+     "comparator": "="
+    },
+    "timeframe": "October 24 and November 16"
+   }
+  ],
+  "geographicAreas": [
+   {
+    "id": "9833a433",
+    "name": "West Boley Creek",
+    "text": "The watershed the action plan is written for, named in the title and background.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "Building a Partnership for West Boley Creek Watershed 2007 Action Plan Pearl River County, Mississippi"
+     },
+     {
+      "page": 6,
+      "quote": "residents and businesses located within the West Boley Creek Watershed"
+     },
+     {
+      "page": 13,
+      "quote": "Results from West Boley Creek Watershed Forums"
+     },
+     {
+      "page": 15,
+      "quote": "to address the health of the West Boley Creek."
+     },
+     {
+      "page": 19,
+      "quote": "understanding of the West Boley Creek Watershed"
+     },
+     {
+      "page": 26,
+      "quote": "the physical conditions of the West Boley Creek mainstem channel"
+     },
+     {
+      "page": 37,
+      "quote": "could provide the West Boley Creek watershed with even greater water-quality benefits"
+     },
+     {
+      "page": 39,
+      "quote": "Building a Watershed Partnership for West Boley Creek"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "watershed",
+    "code": null,
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "f9d8f233",
+    "name": "Pearl River County",
+    "text": "County where the West Boley Creek watershed plan applies.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "Pearl River County, Mississippi"
+     },
+     {
+      "page": 7,
+      "quote": "MS Soil and Water Conservation, Pearl River County SWCD"
+     },
+     {
+      "page": 8,
+      "quote": "It runs south through Pearl River County just west of Poplarville to Picayune"
+     },
+     {
+      "page": 11,
+      "quote": "2010 Pearl River County Buildout Projection – Land Use"
+     },
+     {
+      "page": 21,
+      "quote": "PLANTS AND ANIMALS FOUND IN PEARL RIVER COUNTY"
+     },
+     {
+      "page": 23,
+      "quote": "ANIMALS - Pearl River County"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "county",
+    "code": null,
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "7537cea2",
+    "name": "Turkey Creek",
+    "text": "One of six watersheds chosen for partnership building, in Harrison County.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "The six watersheds that were chosen included Turkey Creek in Harrison County"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "watershed",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "5c2fcea0",
+    "name": "Harrison County",
+    "text": "County containing Turkey Creek and Tchoutacabouffa River stream sections.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Turkey Creek in Harrison County, Red Creek"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "county",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "9e06cbcb",
+    "name": "Red Creek",
+    "text": "One of six watersheds chosen, with stream sections in Stone County.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Red Creek (stream sections flowing through Stone County)"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "watershed",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "8c9c7a31",
+    "name": "Stone County",
+    "text": "County containing Red Creek stream sections.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Red Creek (stream sections flowing through Stone County)"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "county",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "1a31264a",
+    "name": "Old Fort Bayou",
+    "text": "One of six watersheds chosen, in Jackson County.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Old Fort Bayou in Jackson County"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "watershed",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "51ddfa3d",
+    "name": "Jackson County",
+    "text": "County containing Old Fort Bayou.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Old Fort Bayou in Jackson County"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "county",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "0b652e41",
+    "name": "West Hobolochitto Creek",
+    "text": "One of six watersheds chosen, in Pearl River County.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "West Hobolochitto Creek in Pearl River County"
+     },
+     {
+      "page": 8,
+      "quote": "The West Hobolochitto Creek is located in the East Gulf Coastal Plain Ecoregion, in the Pearl River Basin"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "watershed",
+    "code": null,
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "51ca7a07",
+    "name": "Tchoutacabouffa River",
+    "text": "One of six watersheds chosen, with stream sections in Harrison County.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Tchoutacabouffa River (stream sections flowing through Harrison County)"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "watershed",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "ffead77e",
+    "name": "Upper Bay of St. Louis",
+    "text": "One of six watersheds chosen, with identified streams in Hancock County.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Upper Bay of St. Louis (identified streams in Hancock County)"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "watershed",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "090cb88b",
+    "name": "Hancock County",
+    "text": "County containing identified streams of the Upper Bay of St. Louis watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 4,
+      "quote": "Upper Bay of St. Louis (identified streams in Hancock County)"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "county",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "25bdb0b8",
+    "name": "Upper Bay of St. Louis",
+    "text": "A water body named in the education strategy for the webpage.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 15,
+      "quote": "Create a webpage for the Upper Bay of St. Louis that can provide answers to questions asked by local stakeholders"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "waterbody",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "7a517397",
+    "name": "031800040801",
+    "text": "HUC unit covering part of the West Boley Creek watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 8,
+      "quote": "Hydrologic Unit Codes (HUC) 031800040801, 031800040802"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "huc",
+    "code": "031800040801",
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "e8d538da",
+    "name": "031800040802",
+    "text": "HUC unit covering part of the West Boley Creek watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 8,
+      "quote": "Hydrologic Unit Codes (HUC) 031800040801, 031800040802"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "huc",
+    "code": "031800040802",
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "d758349d",
+    "name": "031800040803",
+    "text": "HUC unit covering part of the West Boley Creek watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 8,
+      "quote": "031800040803, 031800040804, 031800040805 and 031800040806"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "huc",
+    "code": "031800040803",
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "35dbe0b0",
+    "name": "031800040804",
+    "text": "HUC unit covering part of the West Boley Creek watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 8,
+      "quote": "031800040803, 031800040804, 031800040805 and 031800040806"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "huc",
+    "code": "031800040804",
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "a4732dab",
+    "name": "031800040805",
+    "text": "HUC unit covering part of the West Boley Creek watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 8,
+      "quote": "031800040803, 031800040804, 031800040805 and 031800040806"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "huc",
+    "code": "031800040805",
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "12f6f2ee",
+    "name": "031800040806",
+    "text": "HUC unit covering part of the West Boley Creek watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 8,
+      "quote": "031800040803, 031800040804, 031800040805 and 031800040806"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "huc",
+    "code": "031800040806",
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "f715b1d6",
+    "name": "Lower West Hobolochitto River",
+    "text": "Impaired stream section on MDEQ's 303d list, from Kennedy Creek to the East Boley confluence.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 8,
+      "quote": "The Lower West Hobolochitto River near Picayune from Kennedy Creek to the confluence with the East Boley"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "waterbody",
+    "code": "MWS185E1",
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "39c0822a",
+    "name": "Poplarville",
+    "text": "County seat near the upper watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 8,
+      "quote": "outside of Poplarville, the county seat, the primary land uses are timber production and pastureland"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "other",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "d61ccd80",
+    "name": "Picayune",
+    "text": "City where the West Boley joins the East Hobolochitto before flowing to the Pearl River.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 8,
+      "quote": "It runs south through Pearl River County just west of Poplarville to Picayune where it joins with the East Hobolochitto"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "other",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "70eca04e",
+    "name": "Pearl River",
+    "text": "River into which the West Boley flows.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 8,
+      "quote": "before flowing to the Pearl River."
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "waterbody",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "7fbaeb86",
+    "name": "East Boley",
+    "text": "Stream with which the West Boley has its confluence.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 8,
+      "quote": "from Sones Chapel Road to its confluence with East Boley"
+     },
+     {
+      "page": 25,
+      "quote": "Hwy 11 and East Boley Creek (inside City of Picayune"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "waterbody",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "dd183b66",
+    "name": "Mill Creek",
+    "text": "Tributary of the West Boley Creek.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 8,
+      "quote": "Its tributaries include Mill Creek, Long Branch, Kennedy Creek"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "waterbody",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "27ff4b78",
+    "name": "Kennedy Creek",
+    "text": "Tributary of the West Boley Creek.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 8,
+      "quote": "Long Branch, Kennedy Creek, Price Creek, White Sands Creek and Little Hell Creek"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "waterbody",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "9d4b324c",
+    "name": "West Boley Creek",
+    "text": "Creek that the watershed action plan covers.",
+    "kind": "main",
+    "parentId": "9833a433",
+    "evidence": [
+     {
+      "page": 17,
+      "quote": "Distribute West Boley Creek Streamside Management Handbooks."
+     },
+     {
+      "page": 24,
+      "quote": "West Boley Creek Trip Report"
+     },
+     {
+      "page": 29,
+      "quote": "This left West Boley Creek trapped in an incised channel that kept more of the flood waters"
+     },
+     {
+      "page": 32,
+      "quote": "covered the stream reach from the Highway 26 to the West Boley Creek headwater area"
+     },
+     {
+      "page": 35,
+      "quote": "The photo in Figure 10. is of a reach of West Boley Creek just north of HWY 26 crossing."
+     },
+     {
+      "page": 36,
+      "quote": "The overall geomorphic trend of the Lower West Boley Creek an F-5 channel type"
+     },
+     {
+      "page": 36,
+      "quote": "The overall geomorphic trend of the Middle West Boley Creek is a G-5 channel type"
+     },
+     {
+      "page": 36,
+      "quote": "The overall geomorphic trend of the Upper West Boley Creek is a currently an E-5"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "waterbody",
+    "code": null,
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "74c79efd",
+    "name": "lower West Boley",
+    "text": "Stream section listed for secondary contact with the impairment of pathogens.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 17,
+      "quote": "Identify actions to reduce impairment on the lower West Boley (MS185E1), the stream section is listed"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "waterbody",
+    "code": "MS185E1",
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "ee66a31b",
+    "name": "Mississippi",
+    "text": "The state whose on-line mapping and resources are listed for the watershed description.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 19,
+      "quote": "MARIS on-line mapping for Mississippi at www.maris.state.ms.us/HTM/maps.htm"
+     },
+     {
+      "page": 21,
+      "quote": "rare plant and animal species and representative natural communities in Mississippi."
+     },
+     {
+      "page": 33,
+      "quote": "children of the great State of Mississippi enjoying a refreshing dip"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "state",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "7ae8f53a",
+    "name": "Mississippi Coastal Plain",
+    "text": "Coastal plain region of Mississippi where the Land Trust works and where the LTMCP mission applies.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 6,
+      "quote": "in the counties of the Mississippi Coastal Plain"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "other",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "33eca6e0",
+    "name": "Gulf of Mexico",
+    "text": "The downstream water body into which the watershed's flows are routed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 37,
+      "quote": "and then on to the Gulf of Mexico."
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "waterbody",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "57830ab8",
+    "name": "Boley Creek watershed",
+    "text": "The wider Boley Creek watershed, where landscape-level deforestation is said to have increased runoff.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 28,
+      "quote": "landscape level deforestation within the entire Boley Creek watershed"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "watershed",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "50f2c606",
+    "name": "Picayune, MS",
+    "text": "City where West Boley Creek flows under Highway 43.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 33,
+      "quote": "This is where the West Boley Creek flows under Highway 43 in Picayune, MS."
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "other",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "694ca5a9",
+    "name": "West Hobolochitto Creek",
+    "text": "Creek named on the trip report cover as part of the field trip area.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 24,
+      "quote": "West Hobolochitto Creek Respectfully Submitted to The Land Trust"
+     }
+    ],
+    "verified": true,
+    "source": "ocr",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "waterbody",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   }
+  ]
+ },
+ "document": {
+  "id": "west-boley-2007",
+  "fileName": "West_Boley_Creek_Watershed_Action_Plan_2007.pdf",
+  "pages": 40,
+  "title": "West Boley Creek Watershed Action Plan",
+  "year": 2007
+ },
+ "quality": {
+  "verifiedRate": 0.8842975206611571,
+  "rejected": [
+   {
+    "category": "outreach",
+    "name": "Print and distribute watershed education coloring books for children: audience \"children, Grades K-3\"",
+    "page": 15,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Design and install roadside and streamside signage on private lands: audience \"private landowners\"",
+    "page": 15,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "geographicAreas",
+    "name": "West Hobolochitto Creek: 231 square miles",
+    "page": 8,
+    "reason": "number-not-in-quote"
+   },
+   {
+    "category": "outreach",
+    "name": "newspaper articles about the West Boley Creek forums",
+    "page": 13,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Work with MDOT and other partners to implement a watershed signage along major federal, state and county roads: audience \"road users\"",
+    "page": 16,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "goals",
+    "name": "Protection",
+    "page": 5,
+    "reason": "quote-not-found"
+   },
+   {
+    "category": "implementation",
+    "name": "Research, identify and implement watershed protection and associated education strategies for the West Boley Creek",
+    "page": 5,
+    "reason": "quote-not-found"
+   },
+   {
+    "category": "implementation",
+    "name": "Research, design and implement watershed restoration and associated education strategies for West Boley Creek",
+    "page": 5,
+    "reason": "quote-not-found"
+   },
+   {
+    "category": "outreach",
+    "name": "First community forum: audience \"Community participants\"",
+    "page": 5,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Second community forum: audience \"Community participants\"",
+    "page": 5,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "West Boley Creek Steering Committee: audience \"Local steering committee\"",
+    "page": 6,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Education and Recreation Advisory Team: audience \"Partner organizations\"",
+    "page": 7,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "bmps",
+    "name": "Priority #3 active geomorphic restoration",
+    "page": 37,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "bmps",
+    "name": "Concept typicals for the passive restoration actions: Typical log sizes would be 16-20 feet long or greater and a minimum of 10 inches on the small end.",
+    "page": 37,
+    "reason": "number-not-in-quote"
+   }
+  ],
+  "conflicts": [],
+  "ocrPages": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   34,
+   35,
+   36,
+   37,
+   38,
+   39,
+   40
+  ],
+  "skippedPages": [
+   {
+    "page": 3,
+    "reason": "Blank page"
+   }
+  ],
+  "emptyPages": [
+   2,
+   9,
+   10,
+   12,
+   14,
+   20,
+   22,
+   27,
+   30,
+   31,
+   34,
+   38
+  ],
+  "failedUnits": [],
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "durationMs": 107354,
+  "usage": {
+   "inputTokens": 320833,
+   "outputTokens": 60158,
+   "costUsd": 0.0490106
+  },
+  "completionBasis": "No completion status reported in this document",
+  "structure": [
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "Building a Partnership"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "for West Boley Creek Watershed"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "2007 Action Plan"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "Pearl River County, Mississippi"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "West Boley Creek Watershed Action Plan"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "sponsored by the Land Trust for the Mississippi Coastal Plain"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "Funding assistance from EPA, Region IV"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "Technical Assistance from MDEQ"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "Pascagoula River Basin Team"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "Mississippi Department of Environmental Quality"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "Office of Pollution Control"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "Prepared by Eco-Logic Restoration Services, LLC"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "www.ecologic-restoration.com"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "Submitted to Land Trust for Mississippi Coastal Plain"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "Spring 2007"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "Building a Watershed Partnership"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "for West Boley Creek"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "2007 Action Plan"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "Table of Contents"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 1,
+    "text": "I. Background.................................................................Page 4"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "II. Purpose.....................................................................Page 6"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "III. West Boley Creek Watershed Teams ...................................Page 7"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 1,
+    "text": "a. Steering committee"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 1,
+    "text": "b. Technical advisory team"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 1,
+    "text": "c. Education and Recreation advisory team"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "IV. Description of West Boley Creek Watershed ..............................Page 8"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 1,
+    "text": "a. Map: West Boley Creek Watershed"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 1,
+    "text": "b. Land use maps: 2005 and projections for 2010 and 2025"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 1,
+    "text": "V. Stakeholder interests: results from watershed forums......................Page 13"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "VI. Watershed Action Plan ...................................................Page 15"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "VII. Evaluation of progress and plan revision.................................Page 19"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "VIII. Resources..............................................................................Page 19"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "IX. Appendices"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "Appendix A. Natural Heritage Data, Pearl River County..........................Page 21"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "Appendix B. Report on Field Investigation, Dr. Michael Hanley..............Page 24"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "Appendix C. Removal of Woody Debris from Streams..........................Page 39"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "Background"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "Before Hurricane Katrina, the Land Trust for the Mississippi Coastal Plain (Land Trust) was awarded a grant from EPA Region IV to build watershed partnerships in six watersheds in south Mississippi. Criteria for selecting watershed partnership areas included: (1) watersheds that represented south Mississippi both geographically and ecologically; (2) watersheds where the Land Trust owned and managed lands; and (3) watersheds where there was a demonstrated need for restoration and protection. The six watersheds that were chosen included Turkey Creek in Harrison County, Red Creek (stream sections flowing through Stone County), Old Fort Bayou in Jackson County, West Hobolochitto Creek in Pearl River County, Tchoutacabouffa River (stream sections flowing through Harrison County) and Upper Bay of St. Louis (identified streams in Hancock County)."
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "[Map: Building Watershed Partnerships, South Mississippi Project Areas, August 2006. Labeled areas: W. Boley Creek, Red Creek, Tuxachanie - Tchoutacabouffa, Upper Bay Saint Louis, Turkey Creek, Old Fort Bayou. Prepared by Eco-Logic Restoration Services, LLC, Ocean Springs, Mississippi, August 2006. Scale bar in Miles.]"
+   },
+   {
+    "page": 4,
+    "kind": "para",
+    "level": 0,
+    "text": "One of the goals of the watershed partnership was to develop and implement a solution-oriented, action plan. We have two primary objectives: (1) Research, identify and implement watershed protection and associated education strategies for the West Boley Creek; (2) Research, design and implement watershed restoration and associated education strategies for West Boley Creek. Protection is defined as defending the existing natural and"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "cultural resources of the Watershed from further degradation caused by encroachment, abuse or neglect. Restoration is defined as actively initiating or accelerating the recovery of the ecological and cultural health, integrity and sustainability of the watershed that has been degraded, damaged or destroyed."
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "The Land Trust's efforts to build a partnership West Boley Creek began in May of 2006 with David Spector agreeing to chair and develop a steering committee. The first steering committee meeting was held in June 2006 followed by field trip investigations with steering committee members and Dr. Michael Hanley (See report, Appendix B, page 22). The first community forum was held at the Pearl River Community College on October 24, 2006. The second community forum was held at the Picayune Sr. Citizen's Center on November 16, 2006. We have learned much from the participants and are very appreciative of their participation; we especially thank J.B. Hodge, Darrin Harris and Julia Anderson who spent hours in the field and on the phone helping shape our direction."
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "This document is written to provide a strategic approach to watershed planning with particular focus on private sector participation in the process. We want to provide context and a brief overview of the ecological, cultural and scenic significance of the West Boley. This is a record of our planning efforts and an accounting of actions identified to address watershed concerns. The hope of participants is to foster better stewardship of the natural resources of the watershed."
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "Forum participants were asked, \"What are the qualities and resources that we want to protect for future generations?\" They responded with consensus:"
+   },
+   {
+    "page": 5,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Diverse, native hardwood forests"
+   },
+   {
+    "page": 5,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Fish habitat (woody debris and cool-water refugia)"
+   },
+   {
+    "page": 5,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Clear, clean running streams"
+   },
+   {
+    "page": 5,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Quiet, shady places along the creek"
+   },
+   {
+    "page": 5,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Swimming holes"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "From the impacts of storm debris and tree loss to the threats of failing septic tanks and accelerated erosion in streams, participants clearly want to see their watershed restored and protected and the community educated about watershed issued and \"connected\" to the Creek. Forum participants are concerned about fragmentation, out-of-town landowners, loss of rural character, motorized vehicles on stream banks and in stream beds. There is a great need to educate the local citizenry and to develop pride in place so that littering and dumping can be minimized, streamside management can be better understood and implemented, and appropriate public policy can be implemented as the population grows."
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "Purpose"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "We will create a unique, engaged partnership dedicated to developing a more sustainable future for the natural resources, residents and businesses located within the West Boley Creek Watershed. We will accomplish this by addressing natural and cultural resource concerns in a locally-driven, comprehensive planning process. We will identify the desired future condition of West Boley Creek, developing an action plan and building partnerships to achieve success."
+   },
+   {
+    "page": 6,
+    "kind": "bullet",
+    "level": 2,
+    "text": "West Boley Creek Steering Committee, June 2005"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "The mission of the LTMCP is to conserve, promote and protect the open spaces and green places that have ecological, cultural or scenic significance in the counties of the Mississippi Coastal Plain. Riparian corridors, or streamside management zones, have great ecological, cultural and scenic significance and are a primary focus of the LTMCP. Healthy riparian corridors are essential elements for maintaining clean water. The mission of EPA is to protect human health and to safeguard the natural environment - air, water, and land - upon which life depends. The foundation for building a West Boley Creek watershed partnership is funded through a grant from EPA Region IV to the LTMCP."
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "LTMCP is committed to achieving its mission in the West Boley Creek Watershed and is grateful for the EPA watershed grant that funded the exploration and initiation of this watershed partnership. LTMCP is committed to working with stakeholders -private landowners, local governments and natural resource agencies, to implement the following education, protection and restoration strategies for the West Boley Creek Watershed"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "West Boley Creek Watershed Partnership Teams"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Local Steering Committee"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Judy Steckler, Land Trust for Mississippi Coastal Plain"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Julia Anderson"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Dan Beavers"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Darrin Harris"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "J.B. Hodge"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Suzanne Shean"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "David Spector (relocated)"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Matt Warstler (relocated)"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Technical Advisory Team"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "MDEQ, Pearl River Basin Team Coordinator, Janet Chapman"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "South Mississippi RC&D Council, Patty Rogers"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "MS Department of Wildlife Fisheries & Parks, Scenic Streams Program, Andrew Whitehurst"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "MS Department of Marine Resources, CRMP"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Mississippi Gulf Coast Heritage Program"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "MS Soil and Water Conservation, Pearl River County SWCD"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Natural Resource Conservation Service"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Pearl River County Utility Authority"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "EPA, Gulf of Mexico Program (Habitat restoration team)"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "EPA, Region 4, Watershed program"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Education and Recreation Advisory Team"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Land Trust for Mississippi Coastal Plain"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "MSU Extension Service"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "South MS Environment and Agricultural Coordination Organization (SMEACO)"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Watershed Harmony Puppet Show"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Pearl River, Picayune and Poplarville School Districts"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Pearl River Community College"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "City of Picayune, Planning and recreation"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "City of Poplarville, Planning and recreation"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Rivers, Trails, Conservation Assistance Program - National Park Service"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Pearl River County Planning Department"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "Brief Description of the West Boley Creek Watershed"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "The West Hobolochitto Creek is located in the East Gulf Coastal Plain Ecoregion, in the Pearl River Basin: Hydrologic Unit Codes (HUC) 031800040801, 031800040802, 031800040803, 031800040804, 031800040805 and 031800040806. The West Boley Creek has a reach of approximately 39.7 miles, while the watershed covers about 231 square miles."
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "\"The West Boley\" is what the locals call the West Hobolochitto Creek. It runs south through Pearl River County just west of Poplarville to Picayune where it joins with the East Hobolochitto before flowing to the Pearl River. The West Boley is navigable most of the year from Sones Chapel Road to its confluence with East Boley. Its tributaries include Mill Creek, Long Branch, Kennedy Creek, Price Creek, White Sands Creek and Little Hell Creek. The upper watershed remains rural in nature; outside of Poplarville, the county seat, the primary land uses are timber production and pastureland. In the lower watershed, new housing demands are acute since many people from New Orleans and coastal Mississippi are relocating in order to escape storm surges as well as \"city pressures\"."
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "Accelerated population growth in a traditionally rural landscape has the potential to create many environmental and social problems. Population changes and projected growth provided by Pearl River County Planning Department in summer 2006:"
+   },
+   {
+    "page": 8,
+    "kind": "table",
+    "level": 0,
+    "text": "1990 | 36,500"
+   },
+   {
+    "page": 8,
+    "kind": "table",
+    "level": 0,
+    "text": "2000 | 48,621"
+   },
+   {
+    "page": 8,
+    "kind": "table",
+    "level": 0,
+    "text": "2005 | 52,000 | Pre-Katrina"
+   },
+   {
+    "page": 8,
+    "kind": "table",
+    "level": 0,
+    "text": "2006 | 75,000 | (Post-Katrina Estimated)"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "According to the Southeast Watershed Forum, excess sediment is the single greatest contributor to poor water quality. After a general field investigation in July 2006, Dr. Michael Hanley made this observation: \"The actively degrading channels and headwater channels of the Upper West Boley have the potential to yield enormously large loads of sediment into the downstream inchannel environs...\". A watershed approach to stream restoration and land use planning is critical to restoring and maintaining clean water and a healthy ecosystem. Increased sediment into downstream environs can \"cause downstream flooding problems and lower the water table levels at the watershed scale. (Reference: Field Trip Report from Dr. Michael Hanley, Sustainable Watershed Technologies, Appendix B)"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "The Lower West Hobolochitto River near Picayune from Kennedy Creek to the confluence with the East Boley is on the Mississippi Department of Environmental Quality's 303d list. This section of stream is impaired by pathogens for the designated use of secondary contact. Monitoring data exists for this determination and a TMDL is expected by the end of 2007. The Mississippi watershed number for the impaired stream section is MWS185E1."
+   },
+   {
+    "page": 9,
+    "kind": "heading",
+    "level": 0,
+    "text": "BUILDING WATERSHED PARTNERSHIPS"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "South Mississippi Project Areas"
+   },
+   {
+    "page": 9,
+    "kind": "numbered",
+    "level": 1,
+    "text": "W. Boley Creek, Pearl River County"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "September 2006"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "Little Hell Cr."
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "White Sand Cr."
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "Poplarville"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "Long Br."
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "Kennedy Cr."
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "Price Cr."
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "Long Br."
+   },
+   {
+    "page": 9,
+    "kind": "numbered",
+    "level": 1,
+    "text": "W. Boley Creek"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "Hoopapenna Creek"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "Mill Cr."
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "26"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "11"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "53"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "43"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "59"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "Pearl River County"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "Picayune"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "0 2 4 8 12 16 Miles"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "N"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "W E"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "S"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "MDEQ 12-digit HUC"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "031800040801"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "031800040802"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "031800040803"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "031800040804"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "031800040805"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "031800040806"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "Perennial Streams"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "Open Water"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "Prepared by: Eco-Logic Restoration Services, LLC Ocean Springs, Mississippi September 2006"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "West Boley Creek Watershed Partnership"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "Action Plan"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "Spring 2007"
+   },
+   {
+    "page": 9,
+    "kind": "admin",
+    "level": 0,
+    "text": "Page 9 of 40"
+   },
+   {
+    "page": 10,
+    "kind": "admin",
+    "level": 0,
+    "text": "2005"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "Land Use"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "Pearl River County"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "Legend"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "High Density Residential"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "Low Density Residential"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "Rural Residential"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "Commercial Industrial Institutional"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "Infrastructure"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "Open Space"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "Agricultural"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "Forest"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "Water"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "Land Use maps: Pearl River County Smart Growth Plan"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "West Boley Creek Watershed Partnership"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "Action Plan"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "Spring 2007"
+   },
+   {
+    "page": 10,
+    "kind": "admin",
+    "level": 0,
+    "text": "Page 10 of 40"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "2010 Pearl River County"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "Buildout Projection – Land Use"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "Legend"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "High Density Residential"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "Low Density Residential"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "Rural Residential"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "Commercial/Industrial/Institutional"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "Infrastructure"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "Open Space"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "Agricultural"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "Forest"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "Water"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "Land Use maps: Pearl River"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "County Smart Growth Plan"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "West Pearl River Watershed Restoration"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "Action Plan"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "September 2007"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "2025 Pearl River County"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Buildout Projection – Land Use"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Legend"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "High Density Residential"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Low Density Residential"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Rural Residential"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Commercial/Industrial/Institutional"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Infrastructure"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Open Space"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Agricultural"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Forest"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Water"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Land Use maps: Pearl River"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "County Smart Growth Plan"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "West Pearl River Watershed Restoration"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Action Plan"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "September 2007"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Stakeholder interests:"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Results from West Boley Creek Watershed Forums"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "October 24, 2006 - Pearl River Community College, Poplarville"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "November 16, 2006 - Senior Citizen Center, Picayune"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "In fall 2006, the Land Trust together with the West Boley Creek Steering Committee hosted two facilitated forums for invited residents and landowners of the watershed. Participants were encouraged to discuss the following questions within the group as well as by filling out survey forms. While not attended by large numbers, the forums included lively, frank discussions and helped identify those persons who have a passion to restore and protect ecosystem functions within the watershed."
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "The Poplarville Democrat and the Picayune Item, two local newspapers, printed several articles about the West Boley Creek forums. With Hurricane Katrina's devastation still before residents in Pearl River County, there were many questions about woody debris in streams and what actions to take. (See Appendix C)"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Below is a summary of findings from the forums:"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Is there anything about the West Boley that you want to protect?"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Timber species diversity"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Native hardwood canopy"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Fish habitat"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Water Park"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Identify healthy areas and protect them"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Water quality and water quantity"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Quiet places on the creek"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "What is the current condition for West Boley?"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Fair to Poor (indicating a need for restoration)"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "What would you like to see for your watershed's future?"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Public access (for education and recreation)"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Trash picked up - stop the dumping and littering"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Restoration projects"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Deeper water - better fishing and boating"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "More habitat for wildlife"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Better water quality"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "What are the concerns and challenges we face?"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Lack of participation by public"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Woody debris in stream"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Projected increase in human population"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Protecting resources enhances economic growth"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Water use tax"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "Education"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "Clean Water Revolving loans"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "Identify and educate headwater and wetland landowners"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "Landowners have a fear of regulation"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "What are the qualities and resources that we want to protect for future generations?"
+   },
+   {
+    "page": 14,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Diverse, native hardwood forests"
+   },
+   {
+    "page": 14,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Fish habitat (woody debris and cool-water refugia)"
+   },
+   {
+    "page": 14,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Clear, clean running streams"
+   },
+   {
+    "page": 14,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Quiet, shady places along the creek"
+   },
+   {
+    "page": 14,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Swimming holes"
+   },
+   {
+    "page": 14,
+    "kind": "para",
+    "level": 0,
+    "text": "--Consensus from watershed forums, fall 2006"
+   },
+   {
+    "page": 15,
+    "kind": "heading",
+    "level": 0,
+    "text": "WEST BOLEY CREEK PARTNERSHIP"
+   },
+   {
+    "page": 15,
+    "kind": "heading",
+    "level": 0,
+    "text": "WATERSHED ACTION PLAN"
+   },
+   {
+    "page": 15,
+    "kind": "para",
+    "level": 0,
+    "text": "After reviewing literature about the watershed and developing maps for use in community discussions, the Land Trust for the Mississippi Coastal Plain (LTMCP) hosted two community watershed forums, one in Poplarville and one in Picayune. These meetings, held in fall of 2007, were the first formal discussions with landowners and the foundation of building a long-term partnership to address the health of the West Boley Creek."
+   },
+   {
+    "page": 15,
+    "kind": "para",
+    "level": 0,
+    "text": "First, we recommend an assessment at the watershed scale to determine the full extent of geomorphic changes causing accelerated erosion and impaired water quality. Such an assessment will identify priority areas for restoration, protection and landuse planning at the watershed scale, particularly in the flood plain. Based on July field investigations, meetings with steering committee and the community forums, the following management practices and actions should be prioritized and implemented. Further study and partnership efforts may ultimately result in the development of a watershed implementation plan that will include prioritized action, timelines, budget estimates and measures of success. We recommend continued strategic planning efforts to improve the scope of the West Boley Creek Watershed Action Plan."
+   },
+   {
+    "page": 15,
+    "kind": "heading",
+    "level": 0,
+    "text": "EDUCATION STRATEGIES"
+   },
+   {
+    "page": 15,
+    "kind": "numbered",
+    "level": 1,
+    "text": "1. Create a webpage for the Upper Bay of St. Louis that can provide answers to questions asked by local stakeholders:"
+   },
+   {
+    "page": 15,
+    "kind": "numbered",
+    "level": 1,
+    "text": "a. General information and map of the watershed"
+   },
+   {
+    "page": 15,
+    "kind": "numbered",
+    "level": 1,
+    "text": "b. Watershed Action Plan"
+   },
+   {
+    "page": 15,
+    "kind": "numbered",
+    "level": 1,
+    "text": "c. Information about natural services of wetlands"
+   },
+   {
+    "page": 15,
+    "kind": "numbered",
+    "level": 1,
+    "text": "d. Information about economic value of blueways and greenways"
+   },
+   {
+    "page": 15,
+    "kind": "numbered",
+    "level": 1,
+    "text": "e. Streamside Management and Best Management Practices (BMPs)"
+   },
+   {
+    "page": 15,
+    "kind": "numbered",
+    "level": 1,
+    "text": "f. Links to county and city zoning maps"
+   },
+   {
+    "page": 15,
+    "kind": "numbered",
+    "level": 1,
+    "text": "g. Links to primary collaborators and partners in the watershed and pertinent watershed information"
+   },
+   {
+    "page": 15,
+    "kind": "numbered",
+    "level": 1,
+    "text": "2. Design and implement environmental education programs specific to the West Boley Creek"
+   },
+   {
+    "page": 15,
+    "kind": "numbered",
+    "level": 1,
+    "text": "a. Print and distribute watershed education coloring books for children: focus on litter reduction, recycling - Keeping the environment clean, Grades K-3"
+   },
+   {
+    "page": 15,
+    "kind": "numbered",
+    "level": 1,
+    "text": "b. Design Find the animal in the swamp activity page for Grades 3-5"
+   },
+   {
+    "page": 15,
+    "kind": "numbered",
+    "level": 1,
+    "text": "c. Host Watershed Harmony Puppet Show during 2007-2008 school year, use above educational materials in conjunction with performance"
+   },
+   {
+    "page": 15,
+    "kind": "numbered",
+    "level": 1,
+    "text": "d. Educate the public about watersheds and streamside management:"
+   },
+   {
+    "page": 15,
+    "kind": "numbered",
+    "level": 1,
+    "text": "i. Design and install roadside and streamside signage on private lands"
+   },
+   {
+    "page": 16,
+    "kind": "para",
+    "level": 0,
+    "text": "ii. Print and distribute streamside management handbooks to landowners"
+   },
+   {
+    "page": 16,
+    "kind": "numbered",
+    "level": 1,
+    "text": "3. Prioritize other watershed education projects proposed for the watershed"
+   },
+   {
+    "page": 16,
+    "kind": "numbered",
+    "level": 1,
+    "text": "a. Provide information about woody debris in streams (Appendix B)"
+   },
+   {
+    "page": 16,
+    "kind": "numbered",
+    "level": 1,
+    "text": "b. Host an annual Aqua Fair or other educational celebration, such as Soil and Water Conservation Fair"
+   },
+   {
+    "page": 16,
+    "kind": "numbered",
+    "level": 1,
+    "text": "c. Provide education venues to tie the water quality to economic development, property values and quality of life"
+   },
+   {
+    "page": 16,
+    "kind": "numbered",
+    "level": 1,
+    "text": "d. Develop a speakers bureau to educate general public about watershed issues"
+   },
+   {
+    "page": 16,
+    "kind": "numbered",
+    "level": 1,
+    "text": "e. Identify and develop programs to get the MDEQ Enviroscape watershed education into local classrooms"
+   },
+   {
+    "page": 16,
+    "kind": "numbered",
+    "level": 1,
+    "text": "f. Find meaningful ways to engage civic groups: Farm Bureau, Cattleman's Association, Pearl River Forestry Association, Rotary, Kiwanis, Master Gardeners, Leadership Program"
+   },
+   {
+    "page": 16,
+    "kind": "numbered",
+    "level": 1,
+    "text": "g. Work with MDOT and other partners to implement a watershed signage along major federal, state and county roads"
+   },
+   {
+    "page": 16,
+    "kind": "numbered",
+    "level": 1,
+    "text": "h. Design education campaign about septic tank maintenance for landowners"
+   },
+   {
+    "page": 16,
+    "kind": "numbered",
+    "level": 1,
+    "text": "4. Design and provide more education about erosion and sediment control (construction BMPS) for contractors, city and county decision-makers, public works employees and MDOT. Provide public education campaign about water quality problems caused by sedimentation. Establish the political will to require MDOT to follow and take a leadership role in storm-water management and compliance. ( Look to examples in Georgia, especially river keepers. We need enforcement along with education.) Identify the means to be a catalyst for change, especially in changing the mindset that taking care of our resources is \"whacko\"! Demonstrate and communicate the economic advantages of clean, sediment-free water. Suggestions: write monthly articles for local newspapers, place contests in local newspapers, etc."
+   },
+   {
+    "page": 16,
+    "kind": "heading",
+    "level": 0,
+    "text": "PROTECTION AND RESTORATION STRATEGIES"
+   },
+   {
+    "page": 16,
+    "kind": "numbered",
+    "level": 1,
+    "text": "1. Develop litter and dumping education/reduction campaigns:"
+   },
+   {
+    "page": 16,
+    "kind": "numbered",
+    "level": 1,
+    "text": "a. Kick-off a litter campaigns and create annual clean-up days"
+   },
+   {
+    "page": 16,
+    "kind": "numbered",
+    "level": 1,
+    "text": "b. Need dumpsters and county-wide garbage pickup"
+   },
+   {
+    "page": 16,
+    "kind": "numbered",
+    "level": 1,
+    "text": "c. Identify rewards"
+   },
+   {
+    "page": 16,
+    "kind": "numbered",
+    "level": 1,
+    "text": "d. Advocate for sterner fines and more enforcement"
+   },
+   {
+    "page": 16,
+    "kind": "numbered",
+    "level": 1,
+    "text": "e. Educate the children"
+   },
+   {
+    "page": 16,
+    "kind": "numbered",
+    "level": 1,
+    "text": "f. Provide recycling opportunities"
+   },
+   {
+    "page": 16,
+    "kind": "numbered",
+    "level": 1,
+    "text": "g. Make it convenient for disposal"
+   },
+   {
+    "page": 16,
+    "kind": "numbered",
+    "level": 1,
+    "text": "h. Consider a deposit on bottles"
+   },
+   {
+    "page": 16,
+    "kind": "numbered",
+    "level": 1,
+    "text": "i. Stop the mowers from shredding litter (clean up litter before mowing)"
+   },
+   {
+    "page": 16,
+    "kind": "numbered",
+    "level": 1,
+    "text": "j. Focus on developing Adopt a highway programs"
+   },
+   {
+    "page": 16,
+    "kind": "numbered",
+    "level": 1,
+    "text": "k. Focus on designing and creating gateways to cities"
+   },
+   {
+    "page": 17,
+    "kind": "numbered",
+    "level": 1,
+    "text": "2. Identify actions to reduce impairment on the lower West Boley (MS185E1), the stream section is listed for secondary contact with the impairment of pathogens."
+   },
+   {
+    "page": 17,
+    "kind": "numbered",
+    "level": 1,
+    "text": "3. Identify private landowners interested in critical area plantings, specifically streamside buffers and wetlands."
+   },
+   {
+    "page": 17,
+    "kind": "numbered",
+    "level": 1,
+    "text": "4. Identify private landowners and funding programs to install passive stream restoration structures (Reference: Hanley's Field Trip Report from July 18, 2007, Appendix C)"
+   },
+   {
+    "page": 17,
+    "kind": "numbered",
+    "level": 1,
+    "text": "5. Work with area developers to promote green design residential developments that protect wetlands and water features with conservation easements in perpetuity. Work with supervisors, city board and planning commissions to identify and change zoning to require 'greener' practices."
+   },
+   {
+    "page": 17,
+    "kind": "numbered",
+    "level": 1,
+    "text": "6. Work with the new Pearl River County Utility Authority to install sewer service or alternative waste water management systems reducing fecal coli-form contamination from failing septic systems"
+   },
+   {
+    "page": 17,
+    "kind": "numbered",
+    "level": 1,
+    "text": "7. Design landowner contact program and questionnaire about septic tank maintenance (reference: Strong River, Bogan Ridge Water Association)"
+   },
+   {
+    "page": 17,
+    "kind": "numbered",
+    "level": 1,
+    "text": "8. Identify landowners along the stream bank. Distribute West Boley Creek Streamside Management Handbooks. Provide other information about conservation easements and other conservation options for private landowners. Establish programs for West Boley Creek landowners to encourage the implementation of conservation options and installation of BMPs"
+   },
+   {
+    "page": 17,
+    "kind": "numbered",
+    "level": 1,
+    "text": "9. Identify stream sections most desirable for developing public access to the Creek. Develop a plan for low-impact public use and long-term floodplain management. Identify funding and implement the plan. Specifically, work in public/private partnership to develop public access at Hwy 43 N where the road crosses the creek: provide low-impact access to the river, restore creek levees where they have been breached, clean-up trash, and develop public use and education plans."
+   },
+   {
+    "page": 17,
+    "kind": "numbered",
+    "level": 1,
+    "text": "10. Develop a partnership with PRCUA and Land Trust to develop a greenway in West Boley Creek floodplain for the purpose of reducing storm-water run-off, providing green infrastructure for the county. Develop a plan and identify funding."
+   },
+   {
+    "page": 17,
+    "kind": "numbered",
+    "level": 1,
+    "text": "11. Provide opportunities to recycle and dispose hazardous waste: see if MSU sponsored program to pick up farm chemicals can be expanded to include household wastes. Maybe once a quarter in Picayune and Poplarville. MDEQ has a grant program that some cities have used in the past to accomplish this goal; it is a one-time funding source for hazardous waste cleanup."
+   },
+   {
+    "page": 17,
+    "kind": "numbered",
+    "level": 1,
+    "text": "12. Design and fund a model passive stream restoration project. Typical passive stream restoration uses natural log materials to construct bankfull benches and log riffles (grade control) with logs and native earth materials. Post construction these littoral areas and"
+   },
+   {
+    "page": 18,
+    "kind": "para",
+    "level": 0,
+    "text": "riparian areas would be reestablished with native vegetation using native trees, shrubs, and grasses (bioengineering materials) to hold the sediments in place and to reduce the boundary velocities. Develop a public/private partnership to implement this strategy."
+   },
+   {
+    "page": 18,
+    "kind": "heading",
+    "level": 0,
+    "text": "ORGANIZATIONAL STRATEGIES"
+   },
+   {
+    "page": 18,
+    "kind": "heading",
+    "level": 0,
+    "text": "TO ENSURE IMPLEMENTATION AND SUPPORT OF ACTION PLAN"
+   },
+   {
+    "page": 18,
+    "kind": "numbered",
+    "level": 1,
+    "text": "1. Identify a local champion(s) for the watershed"
+   },
+   {
+    "page": 18,
+    "kind": "numbered",
+    "level": 1,
+    "text": "2. Ask the Land Trust for Mississippi Coastal Plain Board of Directors to establish a West Boley Creek Partnership Committee (steering committee) that will function as a special action committee under the Land Trust's auspices until which time the partnership desires to create an independent organization. The primary purpose of the committee will be to implement the action plan. This committee will be tasked with:"
+   },
+   {
+    "page": 18,
+    "kind": "numbered",
+    "level": 1,
+    "text": "a. Categorizing and prioritizing the Action Plan;"
+   },
+   {
+    "page": 18,
+    "kind": "numbered",
+    "level": 1,
+    "text": "b. Creating a timeline for the Action Plan;"
+   },
+   {
+    "page": 18,
+    "kind": "numbered",
+    "level": 1,
+    "text": "c. Developing an estimated budget and volunteer staffing program to implement the timeline;"
+   },
+   {
+    "page": 18,
+    "kind": "numbered",
+    "level": 1,
+    "text": "d. Conducting an annual review of the watershed Action Plan."
+   },
+   {
+    "page": 18,
+    "kind": "numbered",
+    "level": 1,
+    "text": "3. Formalize the technical advisory committee and send each person a copy of the action plan so that they are better prepared to participate and provide information and assistance as needed."
+   },
+   {
+    "page": 18,
+    "kind": "numbered",
+    "level": 1,
+    "text": "4. Formalize the education, recreation resources team and send each person a copy of the action plan so that they are better prepared to participate and provide information and assistance as needed."
+   },
+   {
+    "page": 19,
+    "kind": "heading",
+    "level": 0,
+    "text": "EVALUATION OF PROGRESS AND PLAN REVISION"
+   },
+   {
+    "page": 19,
+    "kind": "para",
+    "level": 0,
+    "text": "Regular evaluation of the watershed action plan will ensure that the plan remains a vital tool for developing a strong watershed partnership and to guide future management efforts in the watershed. LTMCP advisory team shall appoint a small working group to review the action plan annually. Watershed plans are living documents that must be adapted to changing conditions within the watershed. The annual review shall include consideration of tasks completed as well as reviewing changes in the watershed, in stakeholder interests and in understanding of the West Boley Creek Watershed."
+   },
+   {
+    "page": 19,
+    "kind": "heading",
+    "level": 0,
+    "text": "RESOURCES"
+   },
+   {
+    "page": 19,
+    "kind": "para",
+    "level": 0,
+    "text": "Watershed Description:"
+   },
+   {
+    "page": 19,
+    "kind": "para",
+    "level": 0,
+    "text": "MARIS on-line mapping for Mississippi at www.maris.state.ms.us/HTM/maps.htm"
+   },
+   {
+    "page": 19,
+    "kind": "para",
+    "level": 0,
+    "text": "Wildlife Resources:"
+   },
+   {
+    "page": 19,
+    "kind": "para",
+    "level": 0,
+    "text": "Mississippi Natural Heritage Inventory on-line at www.mdwfp.com/museum/html/research/general_info.asp, NatureServe Explorer database of species information on-line at www.natureserve.org/explorer/"
+   },
+   {
+    "page": 19,
+    "kind": "para",
+    "level": 0,
+    "text": "Water Quality Standards:"
+   },
+   {
+    "page": 19,
+    "kind": "para",
+    "level": 0,
+    "text": "Through MDEQ Basin Management water quality standards website at www.deq.state.ms.us/MDEQ.nsf/page/WMB_Water_Quality_Standards?OpenDocument"
+   },
+   {
+    "page": 19,
+    "kind": "para",
+    "level": 0,
+    "text": "Designated Beneficial Uses: through the MDEQ Basin Management website at www.deq.state.ms.us/MDEQ.nsf/page/WMB_Basin_Management_Approach?OpenDocument"
+   },
+   {
+    "page": 19,
+    "kind": "para",
+    "level": 0,
+    "text": "Biological Ratings: Contact MDEQ."
+   },
+   {
+    "page": 19,
+    "kind": "para",
+    "level": 0,
+    "text": "303(d) List and 305(b) report: MDEQ on-line at www.deq.state.ms.us/MDEQ.nsf/page/TWB_Total_Maximum_Daily_Load_Section?OpenDocument"
+   },
+   {
+    "page": 19,
+    "kind": "para",
+    "level": 0,
+    "text": "Approved TMDLS: MDEQ TMDL website at www.deq.state.ms.us/MDEQ.nsf/page/TWB_Total_Maximum_Daily_Load_Section?OpenDocument"
+   },
+   {
+    "page": 19,
+    "kind": "para",
+    "level": 0,
+    "text": "or through Basin Management website at www.deq.state.ms.us/MDEQ.nsf/page/WMB_Basin_Management_Approach?OpenDocument"
+   },
+   {
+    "page": 19,
+    "kind": "para",
+    "level": 0,
+    "text": "Potential management actions:"
+   },
+   {
+    "page": 19,
+    "kind": "para",
+    "level": 0,
+    "text": "Mississippi NRCS program website at www.ms.nrcs.usda.gov/programs/, particularly the EQIP program conservation practice, sign up, and ranking documents"
+   },
+   {
+    "page": 20,
+    "kind": "para",
+    "level": 0,
+    "text": "Mississippi Streamside Landowner's Handbook. By Andrew Whitehurst, Scenic Streams Stewardship Program, Mississippi Museum of Natural Science, Mississippi Dept of Wildlife, Fisheries and Parks"
+   },
+   {
+    "page": 20,
+    "kind": "para",
+    "level": 0,
+    "text": "Handbook for Developing Watershed Plans to Restore and Protect Our Waters, U.S. Environmental Protection Agency, Office of Water, Nonpoint Source Control Branch, Oct. 2005"
+   },
+   {
+    "page": 20,
+    "kind": "para",
+    "level": 0,
+    "text": "Economic values (Natural Capital):"
+   },
+   {
+    "page": 20,
+    "kind": "para",
+    "level": 0,
+    "text": "From Open Spaces to Wild Places, The Economic Value of Habitat protection to Your Community, a publication of the Southeast Watershed Forum."
+   },
+   {
+    "page": 20,
+    "kind": "para",
+    "level": 0,
+    "text": "www.southeastwaterforum.org"
+   },
+   {
+    "page": 21,
+    "kind": "heading",
+    "level": 0,
+    "text": "APPENDIX A"
+   },
+   {
+    "page": 21,
+    "kind": "heading",
+    "level": 0,
+    "text": "MISSISSIPPI NATURAL HERITAGE DATA"
+   },
+   {
+    "page": 21,
+    "kind": "heading",
+    "level": 0,
+    "text": "PLANTS AND ANIMALS FOUND IN PEARL RIVER COUNTY"
+   },
+   {
+    "page": 21,
+    "kind": "para",
+    "level": 0,
+    "text": "Source: Mississippi Naturage Heritage Program, located in the Mississippi Museum of Natural Science, Mississippi Department of Wildlife Fisheries and Parks:"
+   },
+   {
+    "page": 21,
+    "kind": "para",
+    "level": 0,
+    "text": "www.mdwfp.com/museum/html/research/"
+   },
+   {
+    "page": 21,
+    "kind": "para",
+    "level": 0,
+    "text": "The Mississippi Natural Heritage Program identifies the state's most significant natural areas through a comprehensive inventory of rare plant and animal species, exemplary natural communities, special geological features, and significant natural areas. From the inventory, the Natural Heritage Database compiles information on the distribution, biology, status, and preservation needs of these species and communities. The database is updated continuously and is used to set state, national and global priorities for the preservation of natural diversity."
+   },
+   {
+    "page": 21,
+    "kind": "para",
+    "level": 0,
+    "text": "The Natural Heritage Database"
+   },
+   {
+    "page": 21,
+    "kind": "para",
+    "level": 0,
+    "text": "The Natural Heritage Database is a continuously updated inventory of rare plant and animal species and representative natural communities in Mississippi. Today current information on the statewide status and locations of special animals, plants, and natural communities is available in a central location. By utilizing the Heritage Program, resource planners are able to save time and money. The information contained within the Program's database was compiled from a broad range of sources, including museum and herbarium collection records, publications, unpublished reports, and experts throughout the southeast."
+   },
+   {
+    "page": 21,
+    "kind": "para",
+    "level": 0,
+    "text": "Specific Information Available:"
+   },
+   {
+    "page": 21,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Tracks the status of more than 700 species of plants and animals that are rare or imperiled at the state or global level."
+   },
+   {
+    "page": 21,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Contains more than 9,400 records of locations for rare plants, animals, and natural communities."
+   },
+   {
+    "page": 21,
+    "kind": "bullet",
+    "level": 1,
+    "text": "State and Federal protection status of select species."
+   },
+   {
+    "page": 21,
+    "kind": "bullet",
+    "level": 1,
+    "text": "State and global ranking of species and communities."
+   },
+   {
+    "page": 21,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Protection and management priorities and urgency."
+   },
+   {
+    "page": 21,
+    "kind": "para",
+    "level": 0,
+    "text": "PLANTS - Pearl River County"
+   },
+   {
+    "page": 21,
+    "kind": "table",
+    "level": 0,
+    "text": "Scientific Name | Common Name | Global Rank | State Rank"
+   },
+   {
+    "page": 21,
+    "kind": "table",
+    "level": 0,
+    "text": "AGALINIS PSEUDAPHYLLA | SHINNERS' FALSE-FOXGLOVE | G1G2Q | S2"
+   },
+   {
+    "page": 21,
+    "kind": "table",
+    "level": 0,
+    "text": "ANDROPOGON CAPILLIPES | CHALKY BLUESTEM | G4Q | S1?"
+   },
+   {
+    "page": 21,
+    "kind": "table",
+    "level": 0,
+    "text": "ANDROPOGON PERANGUSTATUS | ELLIOTT'S BLUESTEM (VAR.2) | G5T3T4 | S1?"
+   },
+   {
+    "page": 21,
+    "kind": "table",
+    "level": 0,
+    "text": "ARISTIDA SIMPLICIFLORA | SOUTHERN THREE-AWNED GRASS | G3 | S1"
+   },
+   {
+    "page": 21,
+    "kind": "table",
+    "level": 0,
+    "text": "CALOPOGON BARBATUS | BEARDED GRASS-PINK | G4? | S2S3"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "CAREX EXILIS | COAST SEDGE | G5 | S2"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "CAREX PICTA | PAINTED SEDGE | G4G5 | S2S3"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "CHAMAECYPARIS THYOIDES | ATLANTIC WHITE CEDAR | G4 | S2"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "COREOPSIS BASALIS | GOLDEN-MANE TICKSEED | G5 | S1?"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "CORNUS ALTERNIFOLIA | ALTERNATE-LEAF DOGWOOD | G5 | S2"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "CRATAEGUS BRACHYACANTHA | BLUEBERRY HAWTHORN | G4 | S1?"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "EPIDENDRUM CONOPSEUM | GREEN-FLY ORCHID | G4 | S2"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "EULOPHIA ECRISTATA | SMOOTH-LIPPED EULOPHIA | G2 | S1S2"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "EUPATORIUM IVIFOLIUM | IVY-LEAF THROUGHWORT | G5 | S2?"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "HERBERTIA LAHUE SSP CAERULEA | HERBERTIA | G4G5T4 | S2"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "HIBISCUS COCCINEUS | BRILLANT HIBISCUS | G4? | S2"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "ILEX AMELANCHIER | JUNEBERRY HOLLY | G4 | S3"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "ILEX CASSINE | DAHOON HOLLY | G5 | S2"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "ILEX MONTANA | MOUNTAIN HOLLY | G5 | S3?"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "LACHNOCAULON DIGYNUM | PINELAND BOGBUTTON | G3 | S2"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "LINDERA SUBCORIACEA | BOG SPICE BUSH | G2 | S2"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "LINUM MACROCARPUM | LARGE FRUITED FLAX | G2? | S2"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "MARSHALLIA TRINERVIA | BROAD-LEAF BARBARA'S BUTTON | G3 | S3"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "MIKANIA CORDIFOLIA | FLORIDA KEYS HEMPVINE | G5 | S3S4"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "PARNASSIA GRANDIFOLIA | LARGE-LEAVED GRASS-OF-PARNASSUS | G3 | S2"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "PELTANDRA SAGITTIFOLIA | WHITE ARUM | G3G4 | S2S3"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "PINGUICULA PRIMULIFLORA | SOUTHERN BUTTERWORT | G3G4 | S3"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "PLATANTHERA CRISTATA | CRESTED FRINGED ORCHID | G5 | S3"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "PLATANTHERA INTEGRA | YELLOW FRINGELESS ORCHID | G3G4 | S3S4"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "PYCNANTHEMUM SETOSUM | AWNED MOUNTAIN-MINT | G3? | S1"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "RHYNCHOSPORA DECURRENS | SWAMP-FOREST BEAKRUSH | G3G4 | S1"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "RHYNCHOSPORA MACRA | LARGE BEAKRUSH | G3 | S3"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "RUELLIA PEDUNCULATA SSP PINETORUM | PINE BARREN RUELLIA | G5T3? | S3"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "SPIRANTHES LONGILABRIS | GIANT SPIRAL LADIES'-TRESSES | G3 | S2S3"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "STEWARTIA MALACODENDRON | SILKY CAMELLIA | G4 | S3S4"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "TRIDENS CAROLINIANUS | CAROLINA FLUFF GRASS | G3 | S3S4"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "TRIDENS FLAVUS VAR CHAPMANII | CHAPMAN'S REDTOP | G5T? | SR"
+   },
+   {
+    "page": 22,
+    "kind": "table",
+    "level": 0,
+    "text": "VACCINIUM ASHEI | HIGHBUSH BLUEBERRY | G5 | S1S2"
+   },
+   {
+    "page": 23,
+    "kind": "para",
+    "level": 0,
+    "text": "ANIMALS - Pearl River County"
+   },
+   {
+    "page": 23,
+    "kind": "table",
+    "level": 0,
+    "text": "Scientific Name | Common Name | Global Rank | State Rank"
+   },
+   {
+    "page": 23,
+    "kind": "table",
+    "level": 0,
+    "text": "ALOSA ALABAMAE | ALABAMA SHAD | G3 | S1"
+   },
+   {
+    "page": 23,
+    "kind": "table",
+    "level": 0,
+    "text": "CRYSTALLARIA ASPRELLA | CRYSTAL DARTER | G3 | S1"
+   },
+   {
+    "page": 23,
+    "kind": "table",
+    "level": 0,
+    "text": "ELANOIDES FORFICATUS | SWALLOW-TAILED KITE | G5 | S2B"
+   },
+   {
+    "page": 23,
+    "kind": "table",
+    "level": 0,
+    "text": "EUDOCIMUS ALBUS | WHITE IBIS | G5 | S3B,SZN"
+   },
+   {
+    "page": 23,
+    "kind": "table",
+    "level": 0,
+    "text": "FARANCIA ERYTROGRAMMA | RAINBOW SNAKE | G5 | S2"
+   },
+   {
+    "page": 23,
+    "kind": "table",
+    "level": 0,
+    "text": "GOPHERUS POLYPHEMUS | GOPHER TORTOISE | G3 | S2"
+   },
+   {
+    "page": 23,
+    "kind": "table",
+    "level": 0,
+    "text": "GRAPTEMYS OCULIFERA | RINGED MAP TURTLE | G2 | S2"
+   },
+   {
+    "page": 23,
+    "kind": "table",
+    "level": 0,
+    "text": "HALIAEETUS LEUCOCEPHALUS | BALD EAGLE | G4 | S1B,S2N"
+   },
+   {
+    "page": 23,
+    "kind": "table",
+    "level": 0,
+    "text": "HETERODON SIMUS | SOUTHERN HOGNOSE SNAKE | G2 | SH"
+   },
+   {
+    "page": 23,
+    "kind": "table",
+    "level": 0,
+    "text": "LAMPROPELTIS CALLIGASTER RHOMBOMACULAT | MOLE KINGSNAKE | G5T5 | S3?"
+   },
+   {
+    "page": 23,
+    "kind": "table",
+    "level": 0,
+    "text": "MICRURUS FULVIUS | EASTERN CORAL SNAKE | G5 | S3S4"
+   },
+   {
+    "page": 23,
+    "kind": "table",
+    "level": 0,
+    "text": "NOTROPIS CHALYBAEUS | IRONCOLOR SHINER | G4 | S2"
+   },
+   {
+    "page": 23,
+    "kind": "table",
+    "level": 0,
+    "text": "NOTORUS MUNITUS | FRECKLEBELLY MADTOM | G3 | S2"
+   },
+   {
+    "page": 23,
+    "kind": "table",
+    "level": 0,
+    "text": "PERCINA LENTICULA | FRECKLED DARTER | G2 | S2"
+   },
+   {
+    "page": 23,
+    "kind": "table",
+    "level": 0,
+    "text": "PITUOPHIS MELANOLEUCUS LODINGI | BLACK PINE SNAKE | G4T3 | S2"
+   },
+   {
+    "page": 23,
+    "kind": "table",
+    "level": 0,
+    "text": "PLEUROBEMA BEADLEIANUM | MISSISSIPPI PIGTOE | G2G3 | S3?"
+   },
+   {
+    "page": 23,
+    "kind": "table",
+    "level": 0,
+    "text": "POLYODON SPATHULA | PADDLEFISH | G4 | S3"
+   },
+   {
+    "page": 23,
+    "kind": "table",
+    "level": 0,
+    "text": "PROCAMBARUS BIVITTATUS | RIBBON CRAYFISH | G4 | S3"
+   },
+   {
+    "page": 23,
+    "kind": "table",
+    "level": 0,
+    "text": "PTERONOTROPIS WELAKA | BLUENOSE SHINER | G3G4 | S3"
+   },
+   {
+    "page": 23,
+    "kind": "table",
+    "level": 0,
+    "text": "RHADINAEA FLAVILATA | PINE WOODS SNAKE | G4 | S3?"
+   },
+   {
+    "page": 23,
+    "kind": "table",
+    "level": 0,
+    "text": "UNIOMERUS DECLIVIS | TAPERED PONDHORN | G5 | S2"
+   },
+   {
+    "page": 24,
+    "kind": "heading",
+    "level": 0,
+    "text": "APPENDIX B"
+   },
+   {
+    "page": 24,
+    "kind": "para",
+    "level": 0,
+    "text": "West Boley Creek Trip Report"
+   },
+   {
+    "page": 24,
+    "kind": "para",
+    "level": 0,
+    "text": "[map image]"
+   },
+   {
+    "page": 24,
+    "kind": "para",
+    "level": 0,
+    "text": "Upper and Lower West Boley Creek"
+   },
+   {
+    "page": 24,
+    "kind": "para",
+    "level": 0,
+    "text": "West Hobolochitto Creek"
+   },
+   {
+    "page": 24,
+    "kind": "para",
+    "level": 0,
+    "text": "Respectfully Submitted to"
+   },
+   {
+    "page": 24,
+    "kind": "para",
+    "level": 0,
+    "text": "The Land Trust for the Mississippi Coastal Plain"
+   },
+   {
+    "page": 24,
+    "kind": "para",
+    "level": 0,
+    "text": "Prepared by"
+   },
+   {
+    "page": 24,
+    "kind": "para",
+    "level": 0,
+    "text": "Sustainable Watershed Technologies"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "WEST BOLEY FIELD TRIP LOG: (Thanks to Mrs. Cynthia Ramseur)"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "Tuesday, July 18 - Upper West Boley"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "Participants:"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "Dr. Mike Hanley"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "Darren Harris"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "JB Hodge"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "Janet Chapman"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "Julia Anderson"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "Jim Kelly"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "Cynthia Ramseur"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "Visit & Photo points: Cabin on Creek, north of 26"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "White Sands area - Red Holden Road and West Boley Creek"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "Burge & Reyer Road and West Boley Creek (Weyerhauser property)"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "Hwy 26 and West Boley Creek"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "Thursday, July 20 - Lower West Boley"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "Participants:"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "Dr. Mike Hanley"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "Darren Harris"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "JB Hodge"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "Janet Chapman"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "Julia Anderson"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "Suzanne Shean"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "Judy Steckler"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "Jim Kelly"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "Cynthia Ramseur"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "Visit & Photo points: John Amacker Road and West Boley Creek"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "Private farm off Sones Chapel Road"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "Hwy 11 and East Boley Creek (inside City of Picayune"
+   },
+   {
+    "page": 25,
+    "kind": "para",
+    "level": 0,
+    "text": "Hwy 43 and West Boley Creek"
+   },
+   {
+    "page": 26,
+    "kind": "para",
+    "level": 0,
+    "text": "On Tuesday July 18th and Thursday July 20th of 2006 the West Boley Creek Watershed Field-Team conducted a general investigation of the physical conditions of the West Boley Creek mainstem channel. The Field-Team as seen in Figure 1. was aptly staffed by (from left to right) Mr. Darren Harris; Mr. Jim Kelly; Mrs. Cynthia Ramseur; Mrs. Julia Anderson; Mr. JB Hodge; Mrs. Janet Chapman; and the invisible Mike Hanley (taking the picture)."
+   },
+   {
+    "page": 26,
+    "kind": "para",
+    "level": 0,
+    "text": "I would like to extend special thanks to Mr. JB and Darren for leading us all around the West Boley Creek watershed. The field trip would not have been as productive or as much fun without Mr. JB's and Darren's knowledge of the area and their perspectives on the historical conditions of West Boley Creek."
+   },
+   {
+    "page": 26,
+    "kind": "para",
+    "level": 0,
+    "text": "Figure 1. West Boley Creek - Field Team"
+   },
+   {
+    "page": 26,
+    "kind": "para",
+    "level": 0,
+    "text": "[photo]"
+   },
+   {
+    "page": 26,
+    "kind": "numbered",
+    "level": 1,
+    "text": "1. PURPOSE OF INVESTIGATION:"
+   },
+   {
+    "page": 26,
+    "kind": "para",
+    "level": 0,
+    "text": "The purpose of the West Boley Creek investigation was to determine the geomorphic trend of the West Boley Creek mainstem channel and then to explore the relevant issues and concerns as identified by the Field Team. The topics of concern are as follows:"
+   },
+   {
+    "page": 26,
+    "kind": "para",
+    "level": 0,
+    "text": "a.) Where is the West Boley Creek channel heading in geomorphic trend?"
+   },
+   {
+    "page": 26,
+    "kind": "para",
+    "level": 0,
+    "text": "b.) What are the potential water quality threats (increased fluvial sediment supply/ alluvium) that might result from channel instability? (Source Water Protection)"
+   },
+   {
+    "page": 27,
+    "kind": "table",
+    "level": 0,
+    "text": "c.) What are the potential water quantity threats that might result from channel instability due to West Boley Creek's historical incision and the degree of entrenchment from its floodplain? (Source Water Protection)? d.) What are some possible solutions that might ameliorate the threats to the channel instability, water quality, and water quantity? ***Section 2 is a five page brief overview of geomorphic concepts and graphics that are referenced in Section 3. ***Section .3 on page 7. begins the West Boley Creek field report information. 2. BRIEF OVERVIEW OF FLUVIAL GEOMORPHIC CONCEPTS: a.) The Master Scale (Watershed Scale) Fluvial Geomorphic Considerations The Definition of River Stability: the ability to maintain, over time, its dimension, pattern, and profile in such as manner that it is neither aggrading nor degrading and its ability to transport the flows and sediment generated by its watershed without adverse consequences. Also termed as dynamic equilibrium. The Concept of Lanes Balance to River Stability and Adjustment: Figure 2. Stream Balance Equation (Lane, 1955) 500 COARSE | FINE 0.01 millimeters | 0.25 FLAT feet/mile | STEEP 500 Sediment Size | Stream Slope | Qs • D50 ∝ Qw • S | Sediment Load (Qs) Sediment Particle Size (D50) | Stream Flow (Qw) Stream Slope (S) A river's sediment budget (both particle size, particle geology, and load of particles) are delicately balanced with a river's water budget (water power) in such a manor that the river's"
+   },
+   {
+    "page": 28,
+    "kind": "para",
+    "level": 0,
+    "text": "geomorphic characteristics (hydraulic slope, channel cross-sectional area, and channel shape) have evolved collectively to form a stable relationship called dynamic equilibrium. If one of the master parameters (sediment size, sediment type, sediment load, water flows, riparian vegetation, channel slope, channel shape, channel area) are changed then the result is a corresponding change from one or more (usually more than one) of the other master geomorphic variables that will serve as the input to null out the original change. This is best described as being a natural auto-catalytic feedback mechanism. This process will take the disturbed river through long periods of degradation (eroding and down-cutting) and aggradation (filling in and building new point-bars) but the end result is that the river is seeking to null or balance out excess or deficient forces so the river (West Boley Creek) can do the watershed's work (water and sediment throughput). b.) Stream Channel Classification Systems - The stream channel classification system that we used during this field visit was the Rosgen classification system. Figure 3. [Figure: Stream TYPE A, B, C, D, DA, E, F, G classification chart with Dominate Bed Material and Gravel rows, and table rows Entrenchment, W/D Ratio, Sinuosity, H/S Slope] This is one of the most easily understood stream channel classification systems that I have found and I use it often when communicating with watershed groups and municipalities. It is as easy as 1-2-3 and A-B-C. For instance, consider West Boley Creek as our example: Our West Boley Creek started out as an E-5 channel (E channel with sand sized bed material dominant) type about 150 years ago now. But then the E-Channel (West Boley Creek) under went episodes of head-cutting and degraded into a G-5 channel that resulted from channel incision due to dramatic increases in water runoff that was caused most likely from the landscape level deforestation within the entire Boley Creek watershed. Darren Harris would skin me alive if I didn't mention the damaging inchannel and floodplain hydraulic changes caused by inadequate bridges that fill most of the active floodplain due to the road-bed-prisms acting as dams. Now back to my sick-river story. Then the G-5 (West Boley Creek) channel cut down to the heavily bedded/ very cohesive blue-grey clay of Miocene age that underlies the surficial deposits of sands and gravels. That tough old grey clay was very"
+   },
+   {
+    "page": 29,
+    "kind": "para",
+    "level": 0,
+    "text": "heavily bedded and the West Boley Creek could not cut-down any further. This left West Boley Creek trapped in an incised channel that kept more of the flood waters (and their erosive hydraulic power) within the sandy & more easily erodible channel banks. This condition then transitioned into an F-5 channel type that was keeping even more of the flood flows and stream power within the active channel banks. Overtime the land began to heal in again. Trees were planted and they grew tall on the floodplains. The forests that grew back were now managed in smaller timber harvest operations and were owned by different landowners such that the watershed was not completely deforested at any time period since the original disturbances. The F-5 channel kept on eroding its banks and also reworked & deposited the valuable sediments supplied from the healing landscape. The F-5 channel began to build proto-pointbars (little alternating sand & gravel bars) that were low in elevation. And the F-5 channel began to cut/erode its outside banks such as to add length to it's self and thusly reduce its hydraulic gradient (channel slope). The sick old F-5 channel began to increase its belt-width and was then trending to becoming a poor example of a C-5 channel. Enter the West Boley Creek Watershed Partnership and their field team. Here we are today with an F-5 channel type that is transitioning into a C-5 channel type."
+   },
+   {
+    "page": 29,
+    "kind": "para",
+    "level": 0,
+    "text": "c.) Stream Channel Planform Descriptions"
+   },
+   {
+    "page": 29,
+    "kind": "para",
+    "level": 0,
+    "text": "Figure 4."
+   },
+   {
+    "page": 29,
+    "kind": "para",
+    "level": 0,
+    "text": "[Figure 4 diagram: Belt Width 2 to 40 w; Radius of Curvature Rc ≅ 2.3w; Point Bar; Thalweg; W ∝ Q^0.5; Wavelength λ ≅ 10 to 14 x channel width (w). Modified from Simons and Senturk, 1973; and Leopold, et. al., 1964]"
+   },
+   {
+    "page": 30,
+    "kind": "para",
+    "level": 0,
+    "text": "d.) Stream Channel Cross-Section and Geomorphic Descriptions"
+   },
+   {
+    "page": 30,
+    "kind": "para",
+    "level": 0,
+    "text": "Figure 5."
+   },
+   {
+    "page": 30,
+    "kind": "para",
+    "level": 0,
+    "text": "[Figure 5 diagram labels: flood prone elevation; flood prone width (Wfpa); bankfull width (Wbkf); bankfull elevation; width / depth ratio = Wbkf / dbkf; entrenchment ratio = Wfpa / Wbkf; dmax; 2 x dmax]"
+   },
+   {
+    "page": 30,
+    "kind": "para",
+    "level": 0,
+    "text": "e.) The Stream Channel Geometry in Planform and Longitudinal Profile View"
+   },
+   {
+    "page": 30,
+    "kind": "para",
+    "level": 0,
+    "text": "Figure 6."
+   },
+   {
+    "page": 30,
+    "kind": "para",
+    "level": 0,
+    "text": "[Figure 6 diagram labels: Flow; Average Bankfull Slope; Water Surface Slope; Riffle; Run; Glide; Pool]"
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "The dark blue colored areas in Figure 6. are the deeper pools that the river needs for energy dissipation during flood events. The pools are also deep water refugia for aquatic species. The waters of the pool are cool, shaded, well oxygenated and that's why the best fishing is usually in the pools. The pool area is where a river mixes surface waters with cooler spring/ground water that discharges into the depths of the pool. The Glide surface (the purple line) is the most stable part of the river. This is where most fishes choose to spawn due to the relative quality of the sediments and the high oxygen levels of water coming up from the pool. Glides and Riffles are important because they set a river's channel slope or to the Engineer, they set the rivers hydraulic gradient (this is important for the streams power). You will notice how the water surface slopes of the pool are more flat than the average bankfull water surface slope. But notice how the Riffle slope is approximately the same as the average bankfull water surface slope. These differences in slopes are extremely important to the river for stability and sediment transport competence."
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "f.) The Five Phases of Gross Scale Channel Evolution"
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "Figure 7."
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "Channel Evolution Model (Schumm, Harvey, & Watson, 1984)"
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "I STABLE Floodplain Terrace h < h_c"
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "II INCISION (Headcutting) h > h_c"
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "III WIDENING (Bank Failure) h > h_c"
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "IV STABILIZING h > h_c"
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "V STABLE Terrace Terrace New Floodplain Terrace h < h_c"
+   },
+   {
+    "page": 31,
+    "kind": "heading",
+    "level": 0,
+    "text": "Q100 Q10 Q2"
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "h = Streambank Height"
+   },
+   {
+    "page": 31,
+    "kind": "para",
+    "level": 0,
+    "text": "h_c = Critical Streambank Height"
+   },
+   {
+    "page": 32,
+    "kind": "para",
+    "level": 0,
+    "text": "g.) The Fine Scale Stream Channel Type Evolution Scenarios"
+   },
+   {
+    "page": 32,
+    "kind": "para",
+    "level": 0,
+    "text": "Figure 8."
+   },
+   {
+    "page": 32,
+    "kind": "numbered",
+    "level": 1,
+    "text": "1. C → D → C"
+   },
+   {
+    "page": 32,
+    "kind": "numbered",
+    "level": 1,
+    "text": "2. E → G → F → C → E"
+   },
+   {
+    "page": 32,
+    "kind": "numbered",
+    "level": 1,
+    "text": "3. Eb → G → B"
+   },
+   {
+    "page": 32,
+    "kind": "numbered",
+    "level": 1,
+    "text": "4. C → G → F → C"
+   },
+   {
+    "page": 32,
+    "kind": "para",
+    "level": 0,
+    "text": "3.) WEST BOLEY CREEK FIELD REPORT:"
+   },
+   {
+    "page": 32,
+    "kind": "para",
+    "level": 0,
+    "text": "The Field Team started their investigation of the Upper West Boley Creek mainstem channel and covered the stream reach from the Highway 26 to the West Boley Creek headwater area near the Weyerhauser landholdings on Burge & Reyer Road. The photo in Figure 9. is of the West Boley Creek channel near the Weyerhauser landholdings. One should notice that in this stream reach the West Boley Creek is still a rather healthy and functioning E-5 channel type and has not undergone down-cutting or incision yet. The headcut is somewhere downstream between this point and the reach of West Boley Creek by the little river-cabin (North of the HWY 26 crossing). Although Weyerhauser's inappropriate forestry practices in the land upslope to the riparian areas are yielding a great deal of sediments to the inchannel environs of the headwater reaches and their wetlands. **Darrin Harris has some really good insights on how to greatly reduce this problem with sedimentation from pine forestry operations."
+   },
+   {
+    "page": 32,
+    "kind": "para",
+    "level": 0,
+    "text": "Now lets travel on downstream a ways to the reach of West Boley Creek that flows by the little river-cabin north of Highway 26. Refer to Figure 10. This point is near the midpoint of West Boley Creek mainstem channel. One should notice the incised & over-widening G-5 channel type that is transitioning to an F-5 stream channel type that is relict of historical & ongoing head-cutting and beginning the severe over-widening phase. Refer to Figure 7. in Section 2.f. for a description of the gross scale channel evolutionary adjustments. Also refer to Figure 8. and see Scenario # 2. This graphic depicts the most likely stream channel"
+   },
+   {
+    "page": 33,
+    "kind": "para",
+    "level": 0,
+    "text": "evolution for West Boley Creek. Again at this point in time and at this location the channel is a G-5 channel type that is further degrading/ transitioning into an over-widening F-5 channel type."
+   },
+   {
+    "page": 33,
+    "kind": "para",
+    "level": 0,
+    "text": "Now let us travel on downstream to a position of approximately 75% of the West Boley Creek mainstem channel length. Refer to Figure 11. One will notice a small sandbar as seen looking over Mrs. Cynthia's left shoulder. Cynthia's little toes on her feet are standing on another low elevation sandbar. These alternating sandbars are just now starting to build up their vertical elevations and to steepen up the sandbar slope angles. The point-bar/ sandbar angles on stable healthy rivers should average about 18 degrees of slope from horizontal. This is how I know that the West Boley Creek's bars are too short and have too low of a slope angle. This tells me that the stream channel at this point in time and at this location is a type F-5 channel form trending towards a type C-5 channel form. One can determine this by the presence of alternating low elevation proto-bars as evidenced in figure 11. Refer to Figure 3. in Section 2.b. for a detailed description of the channel classification system used during the field visit."
+   },
+   {
+    "page": 33,
+    "kind": "para",
+    "level": 0,
+    "text": "Now let us travel on downstream to a position of approximately 95% of the West Boley mainstem channel length. This is where the West Boley Creek flows under Highway 43 in Picayune, MS. Please refer to Figure 12. One will see some of the children of the great State of Mississippi enjoying a refreshing dip in the West Boley Creek. I swam at this location when I was a boy. I would cool off at this particular location after finishing hot summer days working on my Uncle Howard's cattle farm up on the West Boley. The creek looked a lot different back then. The present day West Boley Creek along this reach is an F-5 channel type transitioning into a C-5 channel type."
+   },
+   {
+    "page": 33,
+    "kind": "para",
+    "level": 0,
+    "text": "The Synopsis (I saved it until the end)"
+   },
+   {
+    "page": 33,
+    "kind": "para",
+    "level": 0,
+    "text": "The West Boley Creek was historically a very stable E-5 channel type that supported an extensive bottomland hardwood floodplain wetland system. Refer to Figure 8. in Section 2.g. for West Boley Creek's most provable stream channel evolution scenario. Scenario # 2 in Figure 8. depicts how a stream channel, once degraded/disturbed would then devolve from a stable E channel type into an incising G channel type then further devolve into a very unstable F channel type (that lowers the water table and increases sediment supply) and then begins to evolve/ stabilize slightly to an over widened C channel type and possibly in the distant future would evolve back into a quasi-stable E channel type with a lowered water table and a decreased connection with the floodplain wetland system. The gross scale channel adjustment phase is between Phases three and four as depicted in Figure 7. in Section 2.f."
+   },
+   {
+    "page": 34,
+    "kind": "para",
+    "level": 0,
+    "text": "Figure 9."
+   },
+   {
+    "page": 34,
+    "kind": "para",
+    "level": 0,
+    "text": "[illegible]"
+   },
+   {
+    "page": 34,
+    "kind": "para",
+    "level": 0,
+    "text": "The photo in Figure 9. is of a reach of West Boley Creek in its headwater area. Here the channel is in good geomorphic condition and is currently an E-5 channel type."
+   },
+   {
+    "page": 34,
+    "kind": "para",
+    "level": 0,
+    "text": "Figure 10."
+   },
+   {
+    "page": 34,
+    "kind": "para",
+    "level": 0,
+    "text": "[photo of a creek reach with trees on both banks]"
+   },
+   {
+    "page": 34,
+    "kind": "para",
+    "level": 0,
+    "text": "West Boley Creek Stream Watershed Restoration Plan"
+   },
+   {
+    "page": 34,
+    "kind": "para",
+    "level": 0,
+    "text": "Action Plan"
+   },
+   {
+    "page": 34,
+    "kind": "para",
+    "level": 0,
+    "text": "January 2011"
+   },
+   {
+    "page": 34,
+    "kind": "admin",
+    "level": 0,
+    "text": "Page 34 of 40"
+   },
+   {
+    "page": 35,
+    "kind": "para",
+    "level": 0,
+    "text": "The photo in Figure 10. is of a reach of West Boley Creek just north of HWY 26 crossing. This reach is exhibiting unstable/ eroding stream banks. At this location the West Boley Creek is a G-5 channel type transitioning to an F-5 channel type. Some where upstream of the location in Figure 10. there is a headcut or maybe a couple of headcuts. In sand bed channels the headcuts might show up only as over steepened channel slopes. They will keep on migrating head ward/ upstream all the while lowering/incising the channel bottom and the water table. The sediments eroding from the upstream degrading/incising stream channel will serve to form the future sandbars that rebuild within the reach of West Boley Creek shown in Figure 10. The future does not look good for the upstream reaches of the West Boley Creek and its headwater wetlands unless actions are taken to locate and arrest the channel headcuts from advancing any further upstream."
+   },
+   {
+    "page": 35,
+    "kind": "table",
+    "level": 0,
+    "text": "Figure 11. | Figure 12."
+   },
+   {
+    "page": 35,
+    "kind": "table",
+    "level": 0,
+    "text": "[Photo] | [Photo]"
+   },
+   {
+    "page": 35,
+    "kind": "para",
+    "level": 0,
+    "text": "In Figure 11. the West Boley Creek channel needs to (and is going to) increase its belt width and thusly reduce the degree of slope for the stream's hydraulic gradient/ channel slope by lateral extension of the meander bends and also enlarging its point-bar facets (building sandbars bigger, taller, steeper). The lateral extension is accomplished by the stream channel actively eroding its outside cut-banks and depositing sediments in point-bars such as to increase the channel's planform & belt width as described in Figure 4. of Section 2.c."
+   },
+   {
+    "page": 35,
+    "kind": "para",
+    "level": 0,
+    "text": "One should notice in Figure 11. that the stream's point bars are rebuilding in and decreasing the width to depth ratio of the active hydraulic channel. This process is an important aggradational phase as the channel is trending from an F-5 channel type to a C-5 channel type. The channel needs to narrow its width, deepen its pools, and raise the elevations of its riffles in such a way that it will have developed the longitudinal facets (geomorphic facets such as: riffle, run, pool, and glide/tail-out sequences) depicted in Figure 6. in Section 2.e.."
+   },
+   {
+    "page": 35,
+    "kind": "para",
+    "level": 0,
+    "text": "At this stage of channel evolution/adjustment, if the correct passive restoration actions are taken carefully then it could serve the river to greatly hasten the channel evolution process and lead to a more stable and functionally interactive river, riparian, and floodplain ecosystem."
+   },
+   {
+    "page": 36,
+    "kind": "para",
+    "level": 0,
+    "text": "Our Original Questions Revisited:"
+   },
+   {
+    "page": 36,
+    "kind": "para",
+    "level": 0,
+    "text": "a.) Where is the West Boley Creek channel heading in geomorphic trend?"
+   },
+   {
+    "page": 36,
+    "kind": "para",
+    "level": 0,
+    "text": "The overall geomorphic trend of the Lower West Boley Creek an F-5 channel type trending/ aggrading into a proto C-5 channel type as depicted in Scenario # 2 of Figure 8. The gross geomorphic evolutionary adjustment phase is currently between Phases three and four as depicted in Figure 7. Lower West Boley Creek's condition is trending towards a more stable form."
+   },
+   {
+    "page": 36,
+    "kind": "para",
+    "level": 0,
+    "text": "The overall geomorphic trend of the Middle West Boley Creek is a G-5 channel type transitioning into an F-5 channel type. This is a highly degradational phase and so I would say the evidence is that the Middle West Boley Creek is trending towards instability and excessive sediment production."
+   },
+   {
+    "page": 36,
+    "kind": "para",
+    "level": 0,
+    "text": "The overall geomorphic trend of the Upper West Boley Creek is a currently an E-5 channel type that will most likely undergo channel incision (headcutting) and devolve into a G-5 channel type and then further devolve into an F-5 channel type."
+   },
+   {
+    "page": 36,
+    "kind": "para",
+    "level": 0,
+    "text": "b.) What are the potential water quality threats (increased fluvial sediment supply/ alluvium) that might result from channel instability? (Source Water Protection Issues)"
+   },
+   {
+    "page": 36,
+    "kind": "para",
+    "level": 0,
+    "text": "The actively degrading channels and headwater channels of the Upper West Boley have the potential to yield enormously large loads of sediment into the downstream inchannel environs. Actions need to be taken to locate and arrest the areas of active headcutting on the West Boley and its tributaries. This headcutting can increase downstream flooding problems and lower water table levels at the watershed scale."
+   },
+   {
+    "page": 36,
+    "kind": "para",
+    "level": 0,
+    "text": "The newly reforming channel of Lower West Boley Creek will erode its banks and riparian vegetation in order to rebuild a stream channel planform; longitudinal profile (hydraulic slope/gradient); and channel cross-sectional area & shape that will allow it to process the water-budget and sediment-budget that its watershed provides to it as depicted in Figure 2.(Lane's Balance). However, during this channel adjustment process the regional sedimentation will most likely increase and remain elevated on trend for as much a two to four decades if left to evolve/ heal in alone under its own hydraulic power."
+   },
+   {
+    "page": 36,
+    "kind": "para",
+    "level": 0,
+    "text": "c.) What are the potential water quantity threats that might result from channel instability due to West Boley Creek historical incision and the degree of entrenchment from its floodplain. (Source Water Protection)?"
+   },
+   {
+    "page": 36,
+    "kind": "para",
+    "level": 0,
+    "text": "The present day condition of the West Boley Creek is moderately incised but it still attains interaction with its historical floodplain during higher flows. This condition leads to a more flashy discharge character. This exhibits frequent pulses in hydraulic discharge record with a hasty return to near base-flow/ low-flow conditions for much of the year. This is commonly thought to be natural by local residents but it is a symptom of basin scale impairments to"
+   },
+   {
+    "page": 37,
+    "kind": "para",
+    "level": 0,
+    "text": "the water budget and stream. The more frequent but lower floods do not attain the floodplain elevation and are not allowed to be absorbed into the floodplain wetland systems. The flows are not hydraulically attenuated by the wetlands on the floodplains and thusly the rainfall/ stream discharge contributions are more quickly processed through the riverine system and then on to the Gulf of Mexico. Some major results of this impairment are lowed watershed hydraulic storage (storativity); degraded water quality, severely lower aquifer levels during annual drought seasons (water quantify losses)."
+   },
+   {
+    "page": 37,
+    "kind": "para",
+    "level": 0,
+    "text": "d.) What are some possible solutions that might ameliorate the threats to the channel instability, water quality, and water quantity?"
+   },
+   {
+    "page": 37,
+    "kind": "para",
+    "level": 0,
+    "text": "Priority #1: The headcuts need to be located and arrested from advancing any further upstream."
+   },
+   {
+    "page": 37,
+    "kind": "para",
+    "level": 0,
+    "text": "Priority #2: The time is right to take passive restoration actions and work with the reforming stream channel to seed the sediment deposition in the correct locations and form such as to nudge the channel ahead in the evolutionary process. The passive restoration actions would most likely involving using some of the damaged logs from Katrina. Logs are a natural material and have always been part of the riverine ecosystems healing mechanisms. The logs would need to be interlocked so they would stay in place during flood events. Also I would suggest establishing native vegetation on destabilized banks in order to reduce near boundary shear and velocity. We would also suggest establishing native vegetation on newly forming bars to induce further deposition of sediments during higher flows. These processes are called Bioengineering and have been used in the field of river engineering/ restoration for over 200 years. These practices could provide the West Boley Creek watershed with even greater water-quality benefits when used in combinations with other conservation practices like stream-side management zones (SMZs), riparian buffer creation, wetland restoration/ preservation, conservation easements programs, and floodplain management planning."
+   },
+   {
+    "page": 37,
+    "kind": "para",
+    "level": 0,
+    "text": "Priority #3. In some cases active geomorphic restoration could be needed to address the headcutting and severely incised channels."
+   },
+   {
+    "page": 37,
+    "kind": "numbered",
+    "level": 1,
+    "text": "4. Concept typicals for the passive restoration actions using natural log materials to construct bankfull benches and log riffles (grade control) with logs and native earth materials. Post construction these littoral areas and riparian areas would be reestablished with native vegetation using native trees, shrubs, and grasses (bioengineering materials) to hold the sediments in place and to reduce the boundary velocities."
+   },
+   {
+    "page": 37,
+    "kind": "para",
+    "level": 0,
+    "text": "Typical log sizes would be 16-20 feet long or greater and a minimum of 10 inches on the small end."
+   },
+   {
+    "page": 38,
+    "kind": "para",
+    "level": 0,
+    "text": "Design Typicals by R. Michael Hanley"
+   },
+   {
+    "page": 38,
+    "kind": "para",
+    "level": 0,
+    "text": "Sustainable Watershed Technologies"
+   },
+   {
+    "page": 38,
+    "kind": "para",
+    "level": 0,
+    "text": "[illegible]"
+   },
+   {
+    "page": 38,
+    "kind": "para",
+    "level": 0,
+    "text": "[illegible]"
+   },
+   {
+    "page": 38,
+    "kind": "heading",
+    "level": 0,
+    "text": "LOG SILL"
+   },
+   {
+    "page": 38,
+    "kind": "para",
+    "level": 0,
+    "text": "[illegible]"
+   },
+   {
+    "page": 38,
+    "kind": "heading",
+    "level": 0,
+    "text": "ROOT WAD"
+   },
+   {
+    "page": 38,
+    "kind": "para",
+    "level": 0,
+    "text": "[illegible]"
+   },
+   {
+    "page": 38,
+    "kind": "para",
+    "level": 0,
+    "text": "[illegible]"
+   },
+   {
+    "page": 39,
+    "kind": "heading",
+    "level": 0,
+    "text": "APPENDIX C"
+   },
+   {
+    "page": 39,
+    "kind": "para",
+    "level": 0,
+    "text": "REMOVAL OF WOODY DEBRIS FROM STREAMS:"
+   },
+   {
+    "page": 39,
+    "kind": "para",
+    "level": 0,
+    "text": "A post Katrina issue of concern"
+   },
+   {
+    "page": 39,
+    "kind": "para",
+    "level": 0,
+    "text": "for the West Boley Creek and other south Mississippi streams"
+   },
+   {
+    "page": 39,
+    "kind": "para",
+    "level": 0,
+    "text": "Last spring, the Land Trust for the Mississippi Coastal Plain began a series of discussions with a small group of citizen for the purpose of Building a Watershed Partnership for West Boley Creek. Soon, we will present two forums designed for landowners and stakeholders in the watershed: Poplarville (October 24) and Picayune (November 16)."
+   },
+   {
+    "page": 39,
+    "kind": "para",
+    "level": 0,
+    "text": "As we plan these forums and seek to learn more about the natural and cultural heritage of West Boley Creek, one subject keeps surfacing: what needs to be done about the storm debris in the Creek? Should we remove the woody debris? And if so, what methodology should be used?"
+   },
+   {
+    "page": 39,
+    "kind": "para",
+    "level": 0,
+    "text": "[photo]"
+   },
+   {
+    "page": 39,
+    "kind": "para",
+    "level": 0,
+    "text": "Photo of upper West Boley Creek. September 2006. Eco-Logic Restoration Services"
+   },
+   {
+    "page": 39,
+    "kind": "para",
+    "level": 0,
+    "text": "After conversations with experts and a literature review, let us say - there is no simple answer! Storms are a natural part of the evolution of our coastal environment and therefore play a critical role in the ecology. Woody debris is an ecologically important resource in our forests and stream ecosystems. On the other hand, large amounts of woody debris may result in localized problems for landowners. An open dialogue and balanced approach appears to be the best answer."
+   },
+   {
+    "page": 39,
+    "kind": "para",
+    "level": 0,
+    "text": "Well-established concepts in stream ecology emphasize the importance of organic and inorganic materials for aquatic ecosystems. Research shows that woody debris is a 'hot spot' for invertebrates (aquatic insects, worms and crayfish). In other words, woody debris is an important part of the food chain, providing nourishment for fish and wildlife."
+   },
+   {
+    "page": 39,
+    "kind": "para",
+    "level": 0,
+    "text": "Research has demonstrated that forest harvesting to the stream edge and removal of woody debris from the stream channel results in (1) increased light levels, (2) increased stream temperature and (3) decreased levels of dissolved oxygen. These results are of great concern for aquatic species. Research also shows that stream sections with woody debris in the channel store twice as much organic matter as stream sections without woody debris; more organic matter equals better fishing."
+   },
+   {
+    "page": 40,
+    "kind": "para",
+    "level": 0,
+    "text": "Furthermore, the average water velocities are lower in stream sections with woody debris than in stream sections without resulting in less bank and channel erosion. There is a demonstrated link between the presence of woody debris in streams and geomorphic processes that may in some cases reduce flooding concerns."
+   },
+   {
+    "page": 40,
+    "kind": "para",
+    "level": 0,
+    "text": "While there is well-documented ecological reasoning for leaving woody debris in the stream, this same debris may cause concerns to landowners (human use) that would indicate a need to remove the wood: (1) fear of localized flooding, (2) inability to navigate streams, (3) scenic and aesthetic concerns."
+   },
+   {
+    "page": 40,
+    "kind": "para",
+    "level": 0,
+    "text": "Rather than advocating for cleaning the entire stream of woody debris, perhaps we could plan at the watershed scale: identify those areas that create particular concerns for public land use and identify those methods that cause the least harm to the environment. Woody debris in our streams post-Katrina offers yet another opportunity to work with foresters, fishery biologists, wildlife managers, geomorphologists, recreation specialists and policy personnel to coordinate watershed planning, cooperatively utilize natural patterns and processes, and improve socio-ecological systems. Past and present management of riparian debris on the West Boley and other south Mississippi streams has been inconsistent. A growing body of biophysical evidence, coupled with growing acceptance of ecosystem management on public and private lands, gives hope that together we can restore and sustain ecosystem integrity on West Boley Creek."
+   },
+   {
+    "page": 40,
+    "kind": "para",
+    "level": 0,
+    "text": "Perhaps the best advice that we can give in regards to natural resource management along West Boley Creek: seek an informed and balanced approach! Please join us for citizen watershed forums on October 24 and November 16. For more information, contact Judy Steckler, Land Trust for Mississippi Coastal Plain. 228.435.9191. judysteckler@aol.com. www.ltmcp.org."
+   },
+   {
+    "page": 40,
+    "kind": "para",
+    "level": 0,
+    "text": "Respectfully submitted, October 10, 2006"
+   },
+   {
+    "page": 40,
+    "kind": "para",
+    "level": 0,
+    "text": "Cynthia Ramseur"
+   },
+   {
+    "page": 40,
+    "kind": "para",
+    "level": 0,
+    "text": "on behalf of the West Boley Creek Watershed Partnership"
+   },
+   {
+    "page": 40,
+    "kind": "para",
+    "level": 0,
+    "text": "Compatible Development Specialist"
+   },
+   {
+    "page": 40,
+    "kind": "para",
+    "level": 0,
+    "text": "Eco-Logic Restoration Services"
+   },
+   {
+    "page": 40,
+    "kind": "para",
+    "level": 0,
+    "text": "228.872.2769"
+   },
+   {
+    "page": 40,
+    "kind": "para",
+    "level": 0,
+    "text": "www.ecologic-restoration.com"
+   },
+   {
+    "page": 40,
+    "kind": "para",
+    "level": 0,
+    "text": "References:"
+   },
+   {
+    "page": 40,
+    "kind": "numbered",
+    "level": 1,
+    "text": "S. Gregory, F. Swanson, W. McKee and K. Cummins, An Ecosystem Perspective of Riparian Zones: focus on links between land and water"
+   },
+   {
+    "page": 40,
+    "kind": "numbered",
+    "level": 1,
+    "text": "E. Trotter. Woody debris, forest-stream succession, and catchment geomorphology"
+   },
+   {
+    "page": 40,
+    "kind": "para",
+    "level": 0,
+    "text": "JSTOR: Journal of the North American Benthological society; Vol 9, No. 2, 1990."
+   },
+   {
+    "page": 40,
+    "kind": "numbered",
+    "level": 1,
+    "text": "A. Gurnell, H. Piegay, F. Swanson, S. Gregroy. Large wood and fluvial processes, from Freshwater Biology, volume 47, 2002."
+   },
+   {
+    "page": 40,
+    "kind": "numbered",
+    "level": 1,
+    "text": "A. Braccia and D. Batzer, University of Georgia, Invertebrates associated with woody debris in a southeastern U.S. forested floodplain wetland"
+   },
+   {
+    "page": 40,
+    "kind": "numbered",
+    "level": 1,
+    "text": "B. Baillie, K Collier and J. Nagels, New Zealand journal of marine and freshwater, ISSN 0028-8330"
+   },
+   {
+    "page": 40,
+    "kind": "para",
+    "level": 0,
+    "text": "North Carolina Department of Water Quality, Hurricane Storm Debris Stream Clearing Research, 1999"
+   }
+  ]
+ }
+}
