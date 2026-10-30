@@ -34,6 +34,13 @@ export const UNREADABLE_SCAN = 'Scanned page that could not be read';
 
 const LEAD_CHARS = 1_200;
 const INTRO = /:\s*$/;
+const LIST_ITEM = /^(?:• )?\[L\d\] /;
+
+/** The next page opens with list items that go on from a list, or its lead-in, at the end of the page before. */
+const continuesList = (before: string, next: string) => {
+  const last = before.trimEnd().split('\n').at(-1) ?? '';
+  return LIST_ITEM.test(next.trimStart()) && (LIST_ITEM.test(last) || INTRO.test(last));
+};
 
 /**
  * The end of a page, sent with the unit that starts after it: its last lines up to LEAD_CHARS,
@@ -88,10 +95,27 @@ export function buildUnits(
   let rows = 0;
   for (const page of usable) {
     if (current.length && (current.length >= maxPages || chars + page.markup.length > maxChars || rows + page.rows > maxRows)) {
+      // A list cut here would reach the model with its lead-in only as context, and the model then
+      // often skips its items (Buttahatchee page 21: in 6 of 11 trials, against 0 of 5 with the
+      // lead-in on a page of the same unit). The pages the list runs through open the next unit
+      // instead: all of them back to its lead-in, since moving only the last would cut it there.
+      const carried: typeof usable = [];
+      let next = page;
+      while (current.length > 1) {
+        const last = current[current.length - 1];
+        const moved = [last, ...carried, page];
+        const fits =
+          moved.length <= maxPages &&
+          moved.reduce((s, p) => s + p.markup.length, 0) <= maxChars &&
+          moved.reduce((s, p) => s + p.rows, 0) <= maxRows;
+        if (!fits || next.n !== last.n + 1 || !continuesList(last.markup, next.markup)) break;
+        carried.unshift(current.pop()!);
+        next = last;
+      }
       groups.push(current);
-      current = [];
-      chars = 0;
-      rows = 0;
+      current = carried;
+      chars = carried.reduce((s, p) => s + p.markup.length, 0);
+      rows = carried.reduce((s, p) => s + p.rows, 0);
     }
     current.push(page);
     chars += page.markup.length;

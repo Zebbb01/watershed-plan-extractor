@@ -36,6 +36,32 @@ describe('buildUnits', () => {
     expect(units.map((u) => u.pages.length)).toEqual([1, 1, 1]);
   });
 
+  it('keeps a list cut by a unit boundary with its lead-in: the page that ends with it opens the next unit', () => {
+    const bullet = (text: string, level = 1): Line => ({ ...line(text, 'bullet'), level });
+    const pages = [
+      page(1, [filler(800)]),
+      page(2, [filler(800)]),
+      page(3, [filler(600), line('The following actions will need to be taken to meet these goals:'), bullet('Develop interstate stream alliance,')]),
+      page(4, [bullet('Reduce sediment loads to streams,'), bullet('Agricultural BMPs', 2), filler(400)]),
+      page(5, [filler(800)]),
+    ];
+    const groups = (u: ReturnType<typeof buildUnits>['units']) => u.map((x) => x.pages.map((p) => p.n)).sort((a, b) => a[0] - b[0]);
+    expect(groups(buildUnits(pages).units)).toEqual([[1, 2], [3, 4, 5]]);
+    // Not when the next page starts with prose, or a skipped page sits between.
+    const prose = [...pages.slice(0, 3), page(4, [filler(800)]), pages[4]];
+    expect(groups(buildUnits(prose).units)).toEqual([[1, 2, 3], [4, 5]]);
+    // A list that runs from a lead-in over two page breaks moves as a whole: moving only its last
+    // page would cut it from its lead-in instead (Luxapallila pages 17-19).
+    const chain = [
+      page(1, [filler(800)]),
+      page(2, [filler(600), line('The following actions will need to be taken to meet these goals:')]),
+      page(3, [bullet('Reduce sediment loads to streams'), bullet('Cropland BMPs', 2), bullet('Map 90% of new IOWS')]),
+      page(4, [bullet('Develop a GIS layer'), filler(400)]),
+      page(5, [filler(800)]),
+    ];
+    expect(groups(buildUnits(chain).units)).toEqual([[1], [2, 3, 4], [5]]);
+  });
+
   it('skips admin-only, blank and figure-only pages with a reason', () => {
     const { units, skipped } = buildUnits([
       page(1, [filler(800, 'goal')]),
@@ -74,14 +100,18 @@ describe('buildUnits', () => {
     expect(buildUnits(pages).units.map((u) => u.index)).toEqual([0, 1, 2]);
   });
 
-  it('gives each unit the end of the page before it, so a list cut by the boundary keeps its lead-in', () => {
+  it('gives each unit the end of the page before it, so a list cut by a boundary that cannot move keeps its lead-in', () => {
     const bullet = (text: string): Line => ({ ...line(text, 'bullet'), level: 1 });
-    const { units } = buildUnits([
-      page(18, [filler(3000)]),
-      page(19, [filler(3000)]),
-      page(20, [line('3.2 Goals', 'heading'), line('The following actions will need to be taken to meet these goals:'), filler(1500), bullet('Develop interstate stream alliance,')]),
-      page(21, [bullet('Reduce sediment loads to streams,')]),
-    ]);
+    // One page per unit: no page can move to the next unit, so page 21 starts one.
+    const { units } = buildUnits(
+      [
+        page(18, [filler(3000)]),
+        page(19, [filler(3000)]),
+        page(20, [line('3.2 Goals', 'heading'), line('The following actions will need to be taken to meet these goals:'), filler(1500), bullet('Develop interstate stream alliance,')]),
+        page(21, [bullet('Reduce sediment loads to streams,')]),
+      ],
+      { maxPages: 1 },
+    );
     const byFirst = new Map(units.map((u) => [u.pages[0].n, u]));
     expect(byFirst.get(18)!.lead).toBe('');
     expect(byFirst.get(21)!.lead).toMatch(/^The following actions will need to be taken to meet these goals:\n…\n/);

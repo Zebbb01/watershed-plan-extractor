@@ -22,6 +22,28 @@ describe('pageFromText (transcribed scanned pages)', () => {
     expect(p.lines.find((l) => l.text === '3-1')!.kind).toBe('admin');
   });
 
+  it('removes a header that runs over one chapter only, and a DRAFT stamp anywhere on the page', () => {
+    // 30 pages; the chapter header tops pages 11-15 (a sixth of the plan), the stamp sits mid-page.
+    const pages = Array.from({ length: 30 }, (_, i) => {
+      const n = i + 1;
+      const head = n > 10 && n <= 15 ? 'Coldwater River Watershed Implementation Plan - Draft\n' : '';
+      return pageFromText(n, `${head}Body text of page ${n} explains the watershed.\nDRAFT\nMore text about the plan.\nAnd a last line.`);
+    });
+    const out = annotateDocument(pages);
+    expect(out[11].lines.find((l) => l.text.startsWith('Coldwater River'))!.kind).toBe('admin');
+    expect(out.every((p) => p.lines.find((l) => l.text === 'DRAFT')!.kind === 'admin')).toBe(true);
+    expect(out[11].lines.find((l) => l.text.startsWith('Body text'))!.kind).not.toBe('admin');
+  });
+
+  it('reads diamond bullets as sub-items under a bullet, and as a list of their own when no bullet comes before', () => {
+    const nested = pageFromText(18, '• Reduce sediment loads to streams\n♦ Cropland BMPs\n♦ Pasture BMPs\n• Manage point source discharges');
+    expect(nested.lines.map((l) => [l.text, l.level])).toEqual([
+      ['Reduce sediment loads to streams', 1], ['Cropland BMPs', 2], ['Pasture BMPs', 2], ['Manage point source discharges', 1],
+    ]);
+    const own = pageFromText(5, 'The practices are:\n◆ Fencing\n◆ Cover crops');
+    expect(own.lines.slice(1).map((l) => [l.kind, l.level])).toEqual([['bullet', 1], ['bullet', 1]]);
+  });
+
   it('treats a numbered section title as a heading', () => {
     expect(pageFromText(21, transcript(2)).lines.find((l) => l.text === '3.2 Goals')!.kind).toBe('heading');
   });
