@@ -24,21 +24,38 @@ The PDFs are pinned by SHA-256 in `backend/eval/docs.json`;
 | Bell Creek – West Prong Muddy Creek 2012 | Narrative, Wingdings bullets | 53 | Tuning | 97 |
 | Buttahatchee River 2004 | Scanned, no text layer | 108 | Tuning | 33 (pages 3, 4, 20, 21) |
 | Owl Creek – Little Hatchie River 2020 | Nine key elements | 12 | Held out | 64 |
+| Yazoo Pass 2021 | Nine key elements | 14 | Held out (added 2026-10-29) | 74 |
+| Coldwater River 2013 | Narrative (MRBI implementation plan), draft chapter headers | 35 | Held out (added 2026-10-29) | 45 (pages 6, 12–14, 17, 21, 24, 28–32) |
+| Lake Washington 2007 | Narrative, organised by management action, DRAFT stamp | 98 | Held out (added 2026-10-29) | 46 (pages 49–52, 55, 56, 58–61) |
+| West Boley Creek 2007 | Scanned (JPEG 2000) community action plan, numbered strategy lists | 40 | Held out (added 2026-10-29) | 73 (pages 6, 15–18) |
+| Luxapallila Creek 2004 | Scanned basin plan, diamond sub-bullets | 112 | Held out (added 2026-10-29) | 34 (pages 3, 17, 18) |
+| Bear Creek 2007, Bee Lake 2006, Deer Creek 2008, Ellison Creek 2021, Hickahala Creek 2009, Jasper Creek 2019, Pickwick Reservoir 2009, Red Bud – Catalpa Creek 2016 and 2017, Tarebreeches Creek 2012 | Narrative and nine key elements | 13 to 137 | Tuning, not labelled (added 2026-10-29) | none |
 | Fuller Creek – Town Creek 2022 | Nine key elements | 13 | Unseen, not labelled | none |
 | Tchoutacabouffa River 2007 | Community action plan | 22 | Unseen, not labelled | none |
 | Ross Barnett Reservoir 2011 | Two-column consultant report, 61 MB | 647 | Smoke test (size) | none |
 | Columbia County, Washington, VSP Work Plan 2018 | Voluntary Stewardship Program work plan: goals, benchmarks, practices by county | 212 | Smoke test (another state's format) | none |
 
-Prompts and rules were tuned only on the tuning plans. The held-out plan was labelled after
-tuning ended and scored once, on the final settings, so its numbers estimate performance on
-a plan the tool has not seen. Fuller Creek and Tchoutacabouffa were planned as further
-held-out plans; there was not time to label them, so they were run as unseen plans and
-checked for failures, counts and violations only.
+The first round (2026-10-21 to 10-23) tuned on three plans and held out one. Its best number,
+87% on the scanned Buttahatchee plan, came from one plan that had been tuned on, so it said
+little about another plan. On 2026-10-29 the set was widened to test whether the tool
+generalises:
 
-The four formats cover the variations found in the MDEQ collection: nine-key-element plans
-(elements a–i, cost tables, numbered schedules), 2012 narratives (bulleted practice lists,
-quantity lists, milestones repeated in an appended grant proposal), 2006–2007 action plans
-(action items with indicators and budgets), and scans.
+- **Five more held-out plans** with answer keys, chosen to differ from the tuning plans:
+  another nine-key-element plan, a 2013 MRBI implementation plan, a 98-page plan organised by
+  management action, a JPEG 2000 scan written as strategy lists, and a second 112-page scan
+  from the Buttahatchee series. Their answer keys were written from the PDFs before the tool
+  ran on them. The code as it stood was then scored on them once (the baseline), and they
+  were not used to choose any later change; the exceptions are disclosed under "What tuning
+  changed".
+- **Ten unlabelled tuning plans** (13 to 137 pages), run before and after each change and read
+  for wrong, missing and badly named items. Changes were chosen from these and the three
+  labelled tuning plans only.
+
+The plans cover the variations found in the MDEQ collection: nine-key-element plans
+(elements a–i, cost tables, numbered schedules), narratives from 2006 to 2019 (bulleted
+practice lists, quantity lists, milestones repeated in an appended grant proposal, action
+items with indicators and budgets), and scans. Six of the nine plans with answer keys are
+held out: two of each format.
 
 ## How the ground truth was made
 
@@ -52,9 +69,11 @@ quantity lists, milestones repeated in an appended grant proposal), 2006–2007 
   verification, and no item was changed after seeing an extraction's output.
 - Names that legitimately vary within a plan (a plural in one section, an abbreviation in
   a table) carry aliases, so a correct extraction is not scored as a miss.
-- The scanned plan is labelled on four pages (its goals, BMP and schedule sections), because
-  hand-transcribing 108 pages was not feasible. Extracted items from other pages of that
-  plan are not scored.
+- Long and scanned plans are labelled on the pages that state their goals, practices and
+  actions (listed in the table above), because transcribing 100 pages by hand was not
+  feasible. Extracted items cited on other pages of those plans are not scored.
+- The two held-out scans have no text layer, so their quotes were transcribed from the page
+  images by eye and the script check does not apply to them.
 
 ## How items are scored
 
@@ -78,7 +97,8 @@ quantity lists, milestones repeated in an appended grant proposal), 2006–2007 
 - **Verbatim violations** are extracted BMP, outreach and area names and monitoring
   parameters that are not written in the PDF's text. The scorer checks this with its own
   test, not the verifier's matcher: the words in order, as whole words, with decimal points
-  kept. Goal and activity names are short labels the model may phrase, so they are not
+  kept. A hyphen at a line end counts both as a split word and as part of a compound, and a
+  name may follow a list number printed without a space. Goal and activity names are short labels the model may phrase, so they are not
   counted. Items read only from scanned pages are not counted either, because the PDF has
   no text there to check against (this covers the whole scanned plan).
 - **Time and cost** come from the run itself: wall-clock time with four parallel calls, and
@@ -93,58 +113,104 @@ The eval runs the production pipeline and passes every request through the API r
 schema and size checks before calling the same handlers, so a request the live site would
 refuse fails in the eval too. Run it with `npm run eval -- --set dev`, `--set heldout` or
 `--set all`, `--repeat 3` to run each plan three times, and `--model <id>` to compare models. Each run writes
-`backend/eval/results/<date>-<model>-<set>.json` and the per-plan outputs.
+`backend/eval/results/<date>-<model>-<set>.json` and the per-plan outputs. `--set` also takes a list of
+plan ids, and `--merge <result file>` takes the plans not run from a saved result, so a change that
+alters only some plans' input is measured on those plans alone; the result file records which plans
+came from where (`mergedFrom`). `npm run eval:rescore -w backend -- <model> [folder]` scores saved
+outputs again without calling the model.
 
 ## Results
 
-Final settings: Claude Haiku 5.5 for extraction and OCR, run on 2026-10-23 (the result file
-carries the UTC date, 2026-10-22). Each plan was run three times on these settings
-(`--repeat 3`): the table gives the mean, with each run's core F1 beside it. The scores are in
-`backend/eval/results/2026-10-22-claude-haiku-5-5-all.json` and each plan's last run in
+Final settings: Claude Haiku 5.5 for extraction and OCR, with the changes listed under "What
+tuning changed" (final settings at the end of that section). Each labelled plan runs three
+times (`--repeat 3`); the table gives the mean, with each run's core F1 beside it. The scores
+are in `backend/eval/results/latest.json` (a copy of
+`2026-10-30-claude-haiku-5-5-chain-luxapallila-2004.json`) and each plan's last run in
 `backend/eval/results/runs/`.
+
+That file was built with `--merge`, because changes 19 and 20 alter the work units of only some
+plans and the credits for a full run were limited. Luxapallila ran on the final code;
+Buttahatchee, Owl Creek and Yazoo Pass ran with change 19 (`2026-10-30-…-lists-some.json`),
+which gives them the same units as change 20; the other five labelled plans ran on 2026-10-29
+with change 18 (`2026-10-29-claude-haiku-5-5-all.json`), whose units changes 19 and 20 leave
+as they are. For the text plans that is checked exactly; for the scans it was checked on each
+plan's saved transcript, and another transcript could be grouped differently.
 
 | Plan | Role | Core F1 (mean) | Each run | Precision | Recall | Numbers | Names not in the PDF | Time | Cost |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Broken Pumpkin Creek 2019 | Tuning | 93.4% | 93.4%, 92.6%, 94.3% | 95.0% | 91.9% | 88.0% | 0 | 21 s | $0.016 |
-| Bell Creek 2012 | Tuning | 75.4% | 74.0%, 72.2%, 80.6% | 71.7% | 79.6% | 83.5% | 0 | 54 s | $0.049 |
-| Buttahatchee River 2004 (scanned) | Tuning | 87.2% | 85.7%, 86.3%, 89.8% | 84.0% | 90.7% | 2 of 3 runs (1 number) | not checkable | 187 s | $0.168 |
-| **Owl Creek 2020** | **Held out** | **82.2%** | 81.0%, 87.2%, 78.5% | 79.5% | 85.1% | **97.2%** | **0** | 31 s | $0.017 |
-| **All four plans** (micro-average) | | **83.7%** | | 81.5% | 86.0% | **88.3%** | **0** | | $0.250 |
+| Broken Pumpkin Creek 2019 | Tuning | 94.5% | 96.7%, 92.6%, 94.3% | 96.1% | 93.0% | 87.7% | 0 | 26 s | $0.017 |
+| Bell Creek 2012 | Tuning | 72.4% | 72.0%, 72.7%, 72.4% | 67.3% | 78.2% | 80.8% | 0 | 50 s | $0.045 |
+| Buttahatchee River 2004 (scanned) | Tuning | 85.1% | 79.1%, 90.9%, 84.0% | 86.3% | 84.0% | 0 of 1 | not checkable | 220 s | $0.170 |
+| **Owl Creek 2020** | **Held out** | **91.9%** | 89.2%, 94.4%, 92.1% | 94.4% | 89.5% | 91.8% | 0 | 21 s | $0.015 |
+| **Yazoo Pass 2021** | **Held out** | **78.2%** | 73.9%, 77.8%, 83.1% | 79.7% | 76.8% | 73.1% | 0 | 20 s | $0.015 |
+| **Coldwater River 2013** | **Held out** | **76.7%** | 75.0%, 76.2%, 79.1% | 72.9% | 81.0% | 71.8% | 0 | 38 s | $0.024 |
+| **Lake Washington 2007** | **Held out** | **67.0%** | 71.4%, 73.2%, 55.9% | 71.4% | 63.1% | 100% (2.7 of 2.7) | 0 | 168 s | $0.137 |
+| **West Boley Creek 2007 (scanned)** | **Held out** | **78.3%** | 77.0%, 80.7%, 77.4% | 83.9% | 73.4% | none in key | not checkable | 76 s | $0.049 |
+| **Luxapallila Creek 2004 (scanned)** | **Held out** | **78.0%** | 63.4%, 86.3%, 81.6% | 83.3% | 73.3% | none in key | not checkable | 302 s | $0.222 |
+| Tuning plans (micro-average) | | 82.6% | | 80.4% | 84.9% | 85.2% | 0 | | $0.232 |
+| **Held-out plans (micro-average)** | | **78.6%** | | 81.6% | 75.8% | **80.8%** | **0** | | $0.462 |
+| **All nine plans** | | **80.3%** | | 81.1% | 79.5% | **83.7%** | **0** | | $0.694 |
 
-Against the previous final run (2026-10-21, one run per plan): Buttahatchee 68.1% → 87.2%,
-all four plans 81.4% → 83.7%, the held-out plan 81.0% → 82.2%; Broken Pumpkin (93.3%) and Bell
-Creek (76.3%) are unchanged within their run-to-run spread, and numbers moved from 89.3% to
-88.3%. The changes are in "What tuning changed" (6 to 11).
+### Generalisation: the held-out plans before and after
+
+"Before" is the code of 2026-10-23: one run on each new held-out plan, made after its answer key
+was written and before any change of this round (outputs in
+`backend/eval/results/baseline-2026-10-29/`), and Owl Creek's three-run mean of 2026-10-22.
+
+| Plan | Before | After |
+| --- | --- | --- |
+| Owl Creek 2020 | 82.2% | 91.9% |
+| Yazoo Pass 2021 | 81.7% | 78.2% |
+| West Boley Creek 2007 (scanned) | 80.3% | 78.3% |
+| Coldwater River 2013 | 58.5% | 76.7% |
+| Lake Washington 2007 | 80.0% | 67.0% |
+| Luxapallila Creek 2004 (scanned) | 53.3% | 78.0% |
+| **Six held-out plans** | **76.2%** | **78.6%** |
+| Fully blind: Owl Creek, Yazoo Pass, West Boley | 81.3% | 81.8% |
+| Format seen while labelling: Coldwater, Lake Washington, Luxapallila | 66.7% | 72.9% |
+
+Read this with the run-to-run spread in mind: single runs of one plan differ by up to 17 points
+here (Lake Washington 55.9% to 73.2%, Luxapallila 63.4% to 86.3%), and the "before" of five
+plans is one run each, so a per-plan difference under about 10 points says little. The totals
+are steadier. The clear gains are where a format rule applied: Luxapallila's diamond-bulleted
+action list (change 14) and Coldwater's chapter headers (change 13), both seen while labelling
+those plans. On the fully blind plans the tool is as good as before, not better. Lake
+Washington lost most of its stated targets in the final runs (see Known misses). The four plans
+of the 2026-10-22 report score 84.3% together, against 83.7% then.
 
 Against the bars:
 
-- **Goals, BMPs and activities, ≥ 75%:** met. 83.7% F1 over the four plans and 82.2% on the
-  held-out plan, and every plan's mean is above the bar. Single runs are not: Bell Creek's
-  lowest run is 72.2%.
-- **Quantitative metrics, ≥ 75%:** met. 88.3% of numbers exact over the four plans (133 of 151
-  per run on average), 97.2% on the held-out plan. Number precision is lower (67% to 76% on the
-  text plans): the tool also reports numbers the answer key does not list (see Known misses).
+- **Goals, BMPs and activities, ≥ 75%:** met over all nine plans (80.3%), the tuning plans
+  (82.6%) and the held-out plans (78.6%). Not by every plan: Bell Creek (72.4%) and Lake
+  Washington (67.0%) are below, and single runs go as low as 55.9%.
+- **Quantitative metrics, ≥ 75%:** met. 83.7% of numbers exact over the nine plans (161 of 192
+  per run on average) and 80.8% on the held-out plans; Yazoo Pass (73.1%) and Coldwater (71.8%)
+  are just below. Number precision is 65% to 89% on the text plans: the tool also reports
+  numbers the answer key does not list.
 - **No false positives for copied content:** 0 extracted BMP, outreach, area or parameter names
-  that are not written in the PDF, in every run of the five text plans that were checked (the
-  four above without the scan, plus Fuller Creek and Tchoutacabouffa). Before display, the
-  verifier rejected 17 to 77 items per plan; they are listed under Quality with their reasons.
-- **Categorisation:** 98% to 100% of found items are in the answer key's category, and 92% to
+  that are not written in the PDF, in every run of the six labelled text plans, and in the saved
+  output of each of the twelve unlabelled text plans and the two smoke tests
+  (`npm run eval:rescore -w backend -- claude-haiku-5-5`). The scorer's own check first had to be
+  fixed: it read a list number printed without a space ("11.Develop") and a hyphen at a line end
+  ("re-" then "vegetating") as other words, and so flagged 5 names on two unlabelled plans that
+  are written in the PDF. Before display, the verifier rejected 11 to 328 items per plan; they
+  are listed under Quality with their reasons.
+- **Categorisation:** 95% to 99% of found items are in the answer key's category, and 84% to
   100% have its kind (main, sub-item or example).
 
-By category, over the four plans (per run, averaged over the three):
+By category, over the nine plans (per run, averaged over the three):
 
 | Category | In answer key | Extracted | Matched | Precision | Recall | F1 |
 | --- | --- | --- | --- | --- | --- | --- |
-| Goals | 28 | 18.7 | 13.0 | 69.6% | 46.4% | 55.7% |
-| BMPs | 51 | 51 | 50 | 98.0% | 98.0% | 98.0% |
-| Implementation activities | 90 | 100 | 80 | 80.0% | 88.9% | 84.2% |
-| Outreach activities | 28 | 38 | 26.3 | 69.3% | 94.0% | 79.8% |
-| Monitoring metrics (not in core) | 42 | 44 | 33 | 75.0% | 78.6% | 76.7% |
-| Geographic areas (not in core) | 45 | 47 | 36.3 | 77.3% | 80.7% | 79.0% |
+| Goals | 62 | 46.7 | 36.3 | 77.9% | 58.6% | 66.9% |
+| BMPs | 72 | 72.0 | 65.7 | 91.2% | 91.2% | 91.2% |
+| Implementation activities | 191 | 188.3 | 151.7 | 80.5% | 79.4% | 80.0% |
+| Outreach activities | 65 | 75.3 | 56.3 | 74.8% | 86.7% | 80.3% |
+| Monitoring metrics (not in core) | 81 | 78.3 | 59.7 | 76.2% | 73.7% | 74.9% |
+| Geographic areas (not in core) | 85 | 87.7 | 67.0 | 76.4% | 78.8% | 77.6% |
 
-The two unlabelled plans ran without a failed section in all three runs: Fuller Creek (13
-pages) in 17 s for $0.014, Tchoutacabouffa (22 pages) in 19 s for $0.019. The six plans together
-cost $0.28 a run.
+The twelve unlabelled plans (13 to 137 pages) ran without a failed section; one run of all
+twelve cost $0.62. One run of all nine labelled plans costs $0.69.
 
 ## Model comparison
 
@@ -186,9 +252,32 @@ Each change was measured on the tuning plans before it was kept. The log with ev
 | 10 | In code: the items of a list whose lead-in calls them actions, and the items nested under them, move to implementation; running heads are lines repeated on 40% of pages, not half | Buttahatchee | — | rescoring the saved runs: 55.6% → 82.4%; 88.9% unchanged. On the saved runs of all eight plans the rule moves the ten page-21 items and nothing else | |
 | 11 | In code: a name made only of section words ("Goals/Objectives", "BMPs"), and an outreach "activity" that is a cost row priced per piece, are rejected as not-an-item | Bell Creek | — | such items were in 4 of 6 earlier Bell Creek runs (labels) and 3 of 6 (cost rows) | |
 
-The final settings are changes 1–4, 6, 10 and 11; their scores, three runs per plan, are under
-Results. Change 9 is why the plans now run three times: a single run can land far from the
-next, and change 6 on its own fixed the scanned plan in some runs only.
+Generalisation round (2026-10-29). Each change was checked on the three labelled tuning plans and
+read on the ten unlabelled ones, before and after:
+
+| # | Change | Plan | Model | Core F1 | Numbers |
+| --- | --- | --- | --- | --- | --- |
+| 12 | Baseline: the settings above, one run on each new held-out plan, before any change of this round | Yazoo Pass, Coldwater, Lake Washington, West Boley, Luxapallila | Haiku 5.5 | 81.7%, 58.5%, 80.0%, 80.3%, 53.3% | |
+| 13 | Layout: a short line in the header band repeated on a tenth of the pages (at least five) is a running head too, and a "DRAFT" or "CONFIDENTIAL" stamp is removed wherever it sits | all | — | of the 20 text plans, changes the pages of Coldwater, Lake Washington, Deer Creek and Ross Barnett only | |
+| 14 | Transcribed pages: diamonds, arrows and ticks (♦ ◆ ► ✓) are list markers, sub-items when they follow a bullet | scanned plans | — | | |
+| 15 | In code: a label or list number in front of a name is cut ("Goal 2: ", "1b. "), and a goal named by its lead-in ("The long-term goal of the plan") takes the outcome after "is to" | all | — | on the unlabelled plans, goals such as "Long-term goal of the Pickwick Reservoir watershed plan" became "restore water quality in Caney Creek" | |
+| 16 | Definitions: rows of a water-quality criteria table and problems listed with their causes are not goals; a role or organisation named alone is not an activity or an outreach activity; concerns, and an agency, programme or report named without a parameter, are not monitoring; examples made generic instead of one tuning plan's names and codes | all | Haiku 5.5 | BP 94.2%, Bell Creek 79.2%, Buttahatchee 86.8% (one run each, changes 13–16) | 90.2%, 85.3%, — |
+| 17 | The first wording of change 16 said "the names of programs" are not monitoring; on one Ellison Creek run the model then left the plan's list of MDEQ education programmes out of outreach. Reworded; two more runs found the list | Ellison Creek, Bee Lake, BP | Haiku 5.5 | BP 93.4% | 89.1% |
+| 18 | Changes 13–17, all plans, three runs each. Buttahatchee fell to 79.7%: in two of its runs the model skipped most of the page-21 action list. The cause: with this round's page text, the units shifted and page 21 opened a unit, so the list's lead-in on page 20 reached the model only as context | all | Haiku 5.5 | tuning 81.8% (BP 94.5%, Bell Creek 72.4%, Buttahatchee 79.7%), held out 79.0% | 85.8%, 82.4% |
+| 19 | Units: a page that ends with a list or its lead-in opens the next unit when the next page goes on with the list. Replaying the page-21 request: a unit starting at page 21 returned at most one of the list's eight sub-items in 6 of 11 trials; with page 20 in it, all eight in 5 of 5. The category definitions were ruled out the same way (6 trials each, old and new: 5 of 6 full lists both) | Buttahatchee, Owl Creek, Yazoo Pass, Luxapallila (the labelled plans whose units it changes) | Haiku 5.5 | 85.1%, 91.9%, 78.2%, and Luxapallila 84.4% → 66.2% | |
+| 20 | The same, but every page the list runs through moves back to its lead-in: moving only the last page had cut Luxapallila's page 18 from its lead-in on page 17. Changes only Luxapallila's units among the labelled plans | Luxapallila | Haiku 5.5 | 66.2% → 78.0% | |
+
+Three of these changes come from reading held-out plans while writing their answer keys, before
+any extraction of them: the chapter header and the draft stamp (change 13) were seen in Coldwater
+and Lake Washington, and the diamond bullets (change 14) in Luxapallila. They are format rules,
+not content, and they apply to any plan, but those three plans are not fully blind to them. Owl
+Creek, Yazoo Pass and West Boley are; Results gives both groups.
+
+The final settings are changes 1–4, 6, 10, 11, 13–17, 19 and 20; their scores, three runs per
+plan, are under Results. Change 9 is why the plans run three times: a single run can land far
+from the next, and change 6 on its own fixed the scanned plan in some runs only. Changes 18 to
+20 also show how fragile one list can be: the same page-21 list was found or skipped depending
+on where a unit boundary fell, which moved with small changes to the page text.
 
 Change 5 was tried after the final run. In the same run the held-out and scanned plans lost
 sections to API timeouts, so it says nothing about them; their reported scores are still the
@@ -199,31 +288,41 @@ dropped connections, and every item in a lost section counts as a miss.
 
 ## Known misses
 
-Where the tool loses points, from reading the tuning runs item by item:
+Where the tool loses points, from reading the final runs item by item against the answer keys
+(after scoring; nothing here was used to change the held-out plans' settings):
 
-- **Goals** are the weakest category (13 of 28 found per run). In narrative plans (Bell Creek,
-  6 of 17) objectives written inside paragraphs, or split between a goal and its
-  sub-objectives, are often merged or missed. Prompt changes that found more of them broke
-  other categories (change 7).
-- **Activities in narrative plans:** evaluation procedures, reporting duties and the schedule
-  lines of outreach activities are listed as activities the answer key does not count, so
-  precision there is 66% (29 of 44 per run). This is most of Bell Creek's spread from run to run.
-- **Actions worded like outcomes** (Buttahatchee pages 20–21: "Reduce sediment loads to
-  streams" under "The following actions will need to be taken") were filed as goals, 10 of 19
-  activities found. Fixed by changes 6 and 10: 17.7 of 19 per run now.
-- **Outreach the plan describes in general terms** is extracted item by item. Page 6 of the
-  held-out plan lists training workshops, festival planning, field days, tree boards and
-  poster projects as ways stakeholders take part; the answer key counts only the outreach the
-  plan schedules, so outreach precision there is 57% (8 of 14). Whether those count is a
-  judgement call, and the answer key was not changed after seeing the output.
-- **Geographic areas mentioned in passing** (tributaries, neighbouring watersheds) are
-  extracted beyond the ones the answer key lists (25 for 15 on Bell Creek), which lowers area
-  precision; areas are not part of the core score.
-- **Numbers** on found items are right 88% of the time (133 of 151 per run). Most misses on
+- **Goals** are the weakest category: 36 of 62 found per run (59% recall). Goals stated in prose
+  are missed most: Bell Creek's "remove the impaired segments of Muddy Creek from Mississippi's
+  303(d) list", the nine-key-element plans' education goal "bring about behavior changes and the
+  use of best management practices" (Owl Creek, Yazoo Pass), Lake Washington's "reduce
+  sediments/siltation by about 55%" and "100% elimination of all sewage discharge". In Lake
+  Washington's worst run 2 of its 10 goals were found, against 8 in its baseline run, which is
+  most of that plan's drop. Prompt changes that found more goals broke other categories
+  (changes 5 and 7).
+- **Run-to-run spread on long plans.** Single runs range from 55.9% to 73.2% on Lake Washington,
+  63.4% to 86.3% on Luxapallila and 79.1% to 90.9% on Buttahatchee. Most of it is one list found
+  in one run and skipped in another, more often when the list's lead-in is not on a page of the
+  same unit (changes 18 to 20 removed the common case; 2 such boundaries remain on the text plans).
+- **Activities in narrative plans:** reporting duties, evaluation steps and the schedule lines of
+  outreach are listed as activities the answer key does not count. Bell Creek extracts 48 for
+  the key's 32 (precision 62%), most of its spread from run to run.
+- **Long names on schedule rows.** A row named by its whole sentence ("Establish Watershed
+  Implementation Team to begin refinement of Watershed Based Plan for Yazoo Pass watershed")
+  does not match the key's short name ("Establish Watershed Implementation Team"): the scorer
+  allows three extra words. Several Yazoo Pass and Owl Creek misses are this.
+- **Outreach the plan describes in general terms** is extracted item by item: the ways
+  stakeholders take part on page 6 of the nine-key-element plans, and West Boley's list of what
+  its website will hold ("General information and map of the watershed"). Outreach precision is
+  75% over the nine plans. Whether those count is a judgement call; the answer keys were not
+  changed after seeing the output.
+- **Practices named inside a sentence on scans:** West Boley's "streamside buffers, bankfull
+  benches, log riffles" (2 of 5 BMPs found).
+- **Geographic areas mentioned in passing** (tributaries, neighbouring watersheds) are extracted
+  beyond the ones the answer key lists; areas are not part of the core score.
+- **Numbers** on found items are right 84% of the time (161 of 192 per run). Most misses on
   Broken Pumpkin are one cost of two: a BMP has one estimated-cost field, so when a plan prices
   the same practice in a full-project table and a Phase 1 table, one of the two costs is not
-  kept. In one run, 8 of its 11 missed numbers were estimated costs, 7 of them one of the two
-  costs of a practice priced in both tables. Both quantities are kept.
+  kept. Both quantities are kept.
 
 ## Smoke tests
 
@@ -280,6 +379,20 @@ From reading the output (not scored):
 
 `npm run typecheck` checks both workspaces.
 
+`npm run test:e2e` runs the Playwright tests in `e2e/` against a production build in Chromium.
+They need no API key: the samples open from saved results, and the upload test answers the two
+API routes itself. They cover:
+
+- the home page: the sample list (held-out samples marked) opens a report;
+- a scanned sample's overview: the plan diagram, the page map with its table view, and the
+  reduction-target, responsibility and timeline charts;
+- a step of the plan diagram opens its tab, a row opens its evidence, and "Show on page"
+  opens the PDF page with the quote;
+- the Quality tab lists what the checks rejected;
+- the accuracy page (scores per plan, held-out plans) and the how-it-works page;
+- a PDF dropped on the home page is read in the browser, split into units, sent to the
+  extract route, merged and opened as a report.
+
 ## What was not measured
 
 - Scanned plans end to end through a browser on the live site, with timing. A JPEG 2000 scan
@@ -288,7 +401,7 @@ From reading the output (not scored):
   section, 108 items. The same plan uploaded in a browser took 29 minutes while the eval was
   using the account's output-token limit at the same time (see "Running a whole document" in
   EXTRACTION_LOGIC.md); the browser's own share of the time (drawing the pages) was not
-  measured. Its answers are not scored: the plan has no answer key.
+  measured. The plan has had an answer key since 2026-10-29; its scores are under Results.
 - The OpenAI path (`gpt-6.1-sol` through the Responses API with a strict JSON schema). It is
   built and unit-tested with mocked responses, but no OpenAI key was used, so it was never run
   against the live API.

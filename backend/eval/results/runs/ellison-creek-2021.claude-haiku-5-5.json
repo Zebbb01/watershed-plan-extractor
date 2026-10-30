@@ -1,0 +1,4460 @@
+{
+ "report": {
+  "summary": {
+   "totalGoals": 3,
+   "totalBMPs": 14,
+   "completionRate": 0
+  },
+  "goals": [
+   {
+    "id": "c6f291c6",
+    "name": "Reduce sediment loads entering waters in the Ellison Creek Watershed",
+    "text": "Goal to reduce sediment loads entering waters in the Ellison Creek Watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 11,
+      "quote": "Goal: Reduce sediment loads entering waters in the Ellison Creek Watershed."
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "targets": [],
+    "pollutant": "sediment",
+    "deadline": null
+   },
+   {
+    "id": "64c71a15",
+    "name": "Sediment yield reduction TMDL target",
+    "text": "Sediment yields would need to be reduced by 99% in the watershed, per the sediment TMDL for Ellison Creek (MS430E).",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 5,
+      "quote": "concluded that sediment yields would need to be reduced by"
+     },
+     {
+      "page": 5,
+      "quote": "reduced by 99% in the watershed"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "targets": [
+     {
+      "raw": "99%",
+      "scope": "Element b: Expected Load Reduction",
+      "value": 99,
+      "valueMax": null,
+      "unit": "%",
+      "comparator": "="
+     }
+    ],
+    "pollutant": "Sediment",
+    "deadline": null
+   },
+   {
+    "id": "7940ed1b",
+    "name": "Target for this TMDL",
+    "text": "The TMDL target is based on reference sediment yields developed by CWPRU at NSL.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "The target for this TMDL is based on reference sediment yields developed by the Channel and Watershed Processes Research Unit (CWPRU)"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "targets": [],
+    "pollutant": "Sediment",
+    "deadline": null
+   }
+  ],
+  "bmps": [
+   {
+    "id": "154dd540",
+    "name": "Fencing",
+    "text": "BMP recommended to mitigate sediment issues in the Ellison Creek watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 5,
+      "quote": "installation of the following BMPs would mitigate sediment issues in the Ellison Creek"
+     },
+     {
+      "page": 7,
+      "quote": "Fencing 7,500 ft. @ $4.50 $33,750"
+     },
+     {
+      "page": 8,
+      "quote": "Fencing 2,100 ft. @ $4.50 $9,450"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [
+     {
+      "raw": "7,500 ft.",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 7500,
+      "valueMax": null,
+      "unit": "ft",
+      "comparator": "="
+     },
+     {
+      "raw": "2,100 ft. @ $4.50",
+      "scope": "Cost Estimate: Phase 1 Implementation",
+      "value": 2100,
+      "valueMax": null,
+      "unit": "ft",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$4.50",
+     "scope": null,
+     "value": 4.5,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$33,750",
+     "scope": null,
+     "value": 33750,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": [
+     "Sediment"
+    ]
+   },
+   {
+    "id": "71a1c5d9",
+    "name": "Grade Stabilization Structure",
+    "text": "BMP recommended to mitigate sediment issues in the Ellison Creek watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 7,
+      "quote": "Grade Stabilization Structure 80 each @ $6,500 $520,000"
+     },
+     {
+      "page": 8,
+      "quote": "Grade Stabilization Structure 20 each @ $6,500 $130,000"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "quantities": [
+     {
+      "raw": "80 each",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 80,
+      "valueMax": null,
+      "unit": "ea",
+      "comparator": "="
+     },
+     {
+      "raw": "20 each @ $6,500",
+      "scope": "Cost Estimate: Phase 1 Implementation",
+      "value": 20,
+      "valueMax": null,
+      "unit": "ea",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$6,500",
+     "scope": null,
+     "value": 6500,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$520,000",
+     "scope": null,
+     "value": 520000,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": [
+     "Sediment"
+    ]
+   },
+   {
+    "id": "464fdd5c",
+    "name": "Sediment Basin",
+    "text": "BMP recommended to mitigate sediment issues in the Ellison Creek watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 7,
+      "quote": "Sediment Basin 2 each @ $6,250 $12,500"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "quantities": [
+     {
+      "raw": "2 each",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 2,
+      "valueMax": null,
+      "unit": "ea",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$6,250",
+     "scope": null,
+     "value": 6250,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$12,500",
+     "scope": null,
+     "value": 12500,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": [
+     "Sediment"
+    ]
+   },
+   {
+    "id": "9a381279",
+    "name": "Grassed Waterway",
+    "text": "BMP in the cost estimate for full project implementation.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 7,
+      "quote": "Grassed Waterway 5 each @ $1,408 $7,040"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "quantities": [
+     {
+      "raw": "5 each",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 5,
+      "valueMax": null,
+      "unit": "ea",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$1,408",
+     "scope": null,
+     "value": 1408,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$7,040",
+     "scope": null,
+     "value": 7040,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": []
+   },
+   {
+    "id": "63aaf2e6",
+    "name": "Heavy Use Area Protection",
+    "text": "BMP recommended to mitigate sediment issues in the Ellison Creek watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 5,
+      "quote": "installation of the following BMPs would mitigate sediment issues in the Ellison Creek"
+     },
+     {
+      "page": 7,
+      "quote": "Heavy Use Area Protection 9,000 sq.ft. @ $3.93 $35,370"
+     },
+     {
+      "page": 8,
+      "quote": "Heavy Use Area Protection 2,700 sq.ft. @ $3.93 $10,611"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [
+     {
+      "raw": "9,000 sq.ft.",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 9000,
+      "valueMax": null,
+      "unit": null,
+      "comparator": "="
+     },
+     {
+      "raw": "2,700 sq.ft. @ $3.93",
+      "scope": "Cost Estimate: Phase 1 Implementation",
+      "value": 2700,
+      "valueMax": null,
+      "unit": null,
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$3.93",
+     "scope": null,
+     "value": 3.93,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$35,370",
+     "scope": null,
+     "value": 35370,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": [
+     "Sediment"
+    ]
+   },
+   {
+    "id": "2a0d0d6c",
+    "name": "Stream Crossing",
+    "text": "BMP recommended to mitigate sediment issues in the Ellison Creek watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 7,
+      "quote": "Stream Crossing 4 each @ $5,000 $20,000"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "quantities": [
+     {
+      "raw": "4 each",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 4,
+      "valueMax": null,
+      "unit": "ea",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$5,000",
+     "scope": null,
+     "value": 5000,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$20,000",
+     "scope": null,
+     "value": 20000,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": [
+     "Sediment"
+    ]
+   },
+   {
+    "id": "8a69ce94",
+    "name": "Tank/Trough",
+    "text": "BMP in the cost estimate for full project implementation (watering facilities).",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 7,
+      "quote": "Tank/Trough 17 each @ $6,000 $102,000"
+     },
+     {
+      "page": 8,
+      "quote": "Tank/Trough 5 each @ $6,000 $30,000"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "quantities": [
+     {
+      "raw": "17 each",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 17,
+      "valueMax": null,
+      "unit": "ea",
+      "comparator": "="
+     },
+     {
+      "raw": "5 each @ $6,000",
+      "scope": "Cost Estimate: Phase 1 Implementation",
+      "value": 5,
+      "valueMax": null,
+      "unit": "ea",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$6,000",
+     "scope": null,
+     "value": 6000,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$102,000",
+     "scope": null,
+     "value": 102000,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": []
+   },
+   {
+    "id": "7874dca4",
+    "name": "Cover Crops",
+    "text": "BMP in the cost estimate for full project implementation.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 7,
+      "quote": "Cover Crops 800 ac @ $73 $58,400"
+     },
+     {
+      "page": 8,
+      "quote": "Cover Crops 235 ac @ $73 $17,155"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "quantities": [
+     {
+      "raw": "800 ac",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 800,
+      "valueMax": null,
+      "unit": "ac",
+      "comparator": "="
+     },
+     {
+      "raw": "235 ac @ $73",
+      "scope": "Cost Estimate: Phase 1 Implementation",
+      "value": 235,
+      "valueMax": null,
+      "unit": "ac",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$73",
+     "scope": null,
+     "value": 73,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$58,400",
+     "scope": null,
+     "value": 58400,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": []
+   },
+   {
+    "id": "783fc56c",
+    "name": "Dikes",
+    "text": "BMP in the cost estimate for full project implementation.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 7,
+      "quote": "Dikes 20,000 ft. @ $1.90 $38,000"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "quantities": [
+     {
+      "raw": "20,000 ft.",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 20000,
+      "valueMax": null,
+      "unit": "ft",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$1.90",
+     "scope": null,
+     "value": 1.9,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$38,000",
+     "scope": null,
+     "value": 38000,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": []
+   },
+   {
+    "id": "4ca10ffc",
+    "name": "Diversions",
+    "text": "BMP in the cost estimate for full project implementation.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 7,
+      "quote": "Diversions 10,000 ft @ $2.50 $25,000"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "quantities": [
+     {
+      "raw": "10,000 ft",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 10000,
+      "valueMax": null,
+      "unit": "ft",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$2.50",
+     "scope": null,
+     "value": 2.5,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$25,000",
+     "scope": null,
+     "value": 25000,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": []
+   },
+   {
+    "id": "d92e4aaf",
+    "name": "Pond",
+    "text": "BMP recommended to mitigate sediment issues in the Ellison Creek watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 5,
+      "quote": "installation of the following BMPs would mitigate sediment issues in the Ellison Creek"
+     },
+     {
+      "page": 7,
+      "quote": "Pond 5 @ $6,250 $31,250"
+     },
+     {
+      "page": 8,
+      "quote": "Pond 3 each @ $6,250 $18,750"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "quantities": [
+     {
+      "raw": "5",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 5,
+      "valueMax": null,
+      "unit": null,
+      "comparator": "="
+     },
+     {
+      "raw": "3 each @ $6,250",
+      "scope": "Cost Estimate: Phase 1 Implementation",
+      "value": 3,
+      "valueMax": null,
+      "unit": "ea",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$6,250",
+     "scope": null,
+     "value": 6250,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$31,250",
+     "scope": null,
+     "value": 31250,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": [
+     "Sediment"
+    ]
+   },
+   {
+    "id": "18e0ce3d",
+    "name": "Terraces",
+    "text": "BMP in the cost estimate for full project implementation.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 7,
+      "quote": "Terraces 35,000 ft. @ $1.86 $65,100"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "quantities": [
+     {
+      "raw": "35,000 ft.",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 35000,
+      "valueMax": null,
+      "unit": "ft",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$1.86",
+     "scope": null,
+     "value": 1.86,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$65,100",
+     "scope": null,
+     "value": 65100,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": []
+   },
+   {
+    "id": "55be996b",
+    "name": "Forage and Biomass Planting",
+    "text": "BMP recommended to mitigate sediment issues in the Ellison Creek watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 6,
+      "quote": "streambank and shoreline protection, stream crossings, forage and biomass planting"
+     },
+     {
+      "page": 7,
+      "quote": "Forage and Biomass Planting 300 ac. @ $211 $63,300"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "quantities": [
+     {
+      "raw": "300 ac.",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 300,
+      "valueMax": null,
+      "unit": "ac",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$211",
+     "scope": null,
+     "value": 211,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$63,300",
+     "scope": null,
+     "value": 63300,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": [
+     "Sediment"
+    ]
+   },
+   {
+    "id": "8fa84dc4",
+    "name": "Streambank and Shoreline Protection",
+    "text": "BMP recommended to mitigate sediment issues in the Ellison Creek watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 6,
+      "quote": "streambank and shoreline protection, stream crossings, forage and biomass planting"
+     },
+     {
+      "page": 7,
+      "quote": "Streambank and Shoreline Protection 4,000 ft. @ $183.55 $734,200"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "quantities": [
+     {
+      "raw": "4,000 ft.",
+      "scope": "Cost Estimate: Full Project Implementation",
+      "value": 4000,
+      "valueMax": null,
+      "unit": "ft",
+      "comparator": "="
+     }
+    ],
+    "unitCost": {
+     "raw": "$183.55",
+     "scope": null,
+     "value": 183.55,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "estimatedCost": {
+     "raw": "$734,200",
+     "scope": null,
+     "value": 734200,
+     "valueMax": null,
+     "unit": "USD",
+     "comparator": "="
+    },
+    "pollutants": [
+     "Sediment"
+    ]
+   }
+  ],
+  "implementation": [
+   {
+    "id": "024f61c6",
+    "name": "Meet with landowners and cooperators to secure commitments to install BMPs in priority areas",
+    "text": "Secure landowner commitments to install BMPs in priority areas.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 11,
+      "quote": "Meet with landowners and cooperators to secure commitments to install BMPs in priority areas"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": "Months 1-36",
+    "start": 1,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": true
+   },
+   {
+    "id": "d6a5cbd3",
+    "name": "Establish routine meeting schedule for WIT to support WBP revision",
+    "text": "Establish a routine meeting schedule for the WIT to support WBP revision.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 11,
+      "quote": "Establish routine meeting schedule for WIT to support WBP revision"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": "Months 1-36",
+    "start": 1,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": true
+   },
+   {
+    "id": "2ab2029c",
+    "name": "Implement BMPs",
+    "text": "Implement BMPs (BMP Instillation).",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 11,
+      "quote": "Implement BMPs BMP Instillation Months 1-36"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [],
+    "timeframe": "Months 1-36",
+    "start": 1,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": true
+   },
+   {
+    "id": "cae7a5b5",
+    "name": "Coordinate with Landowners to inspect BMPs that were installed using Section 319 funds",
+    "text": "Coordinate with landowners to inspect BMPs installed using Section 319 funds (BMP Inspection).",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 11,
+      "quote": "Coordinate with Landowners to inspect BMP Inspection BMPs that were installed using Section 319 funds"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": "Months 1-36",
+    "start": 1,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": true
+   },
+   {
+    "id": "a81db33a",
+    "name": "Begin monitoring to collect data on post-BMP water quality",
+    "text": "Begin post-BMP water quality monitoring.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 11,
+      "quote": "Begin monitoring to collect data on post-BMP water quality"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": "Months 40-48",
+    "start": 40,
+    "end": 48,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": true
+   },
+   {
+    "id": "e08e526a",
+    "name": "Finalize revised WBP",
+    "text": "Finalize the revised WBP (Final Revised WBP).",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 11,
+      "quote": "Finalize revised WBP Final Revised WBP Months 30-36"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [],
+    "timeframe": "Months 30-36",
+    "start": 30,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": true
+   },
+   {
+    "id": "48c78c17",
+    "name": "Project implementation, administration, management, and watershed plan revision under MOA with MSWCC",
+    "text": "MDEQ plans to work under a memorandum of agreement with the MSWCC for project implementation, administration, management, and watershed plan revision.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 6,
+      "quote": "MDEQ plans to work under a memorandum of agreement (MOA)"
+     },
+     {
+      "page": 6,
+      "quote": "with the MSWCC to implement this project"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "MDEQ",
+     "MSWCC"
+    ],
+    "timeframe": null,
+    "start": null,
+    "end": null,
+    "timeUnit": null,
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "a06fc3d5",
+    "name": "Work to develop, execute, and implement a Subgrant Agreement",
+    "text": "Develop, execute and implement a Subgrant Agreement specifying roles, tasks, requirements and milestones.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "Work to develop, execute, and implement a Subgrant Agreement that specifies the roles, tasks, requirements, and milestones"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [],
+    "timeframe": "Month 1",
+    "start": 1,
+    "end": 1,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "0555b8ee",
+    "name": "Facilitate meetings, media and social media promotion of the project",
+    "text": "Facilitate, in coordination with MDEQ and other partners, meetings, media and social media promotion and coordinate activities to implement the plan.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "Facilitate, in coordination with MDEQ and other partners, meetings, media and social media promotion of the project"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "MDEQ"
+    ],
+    "timeframe": "Months 1-36",
+    "start": 1,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "a815c124",
+    "name": "Inform landowners and operators and secure commitments",
+    "text": "Work with the Yazoo County SWCD, MSWCC, NRCS and MDEQ to inform landowners and operators and secure commitments from priority area landowners.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "Work with the Yazoo County SWCD, MSWCC, NRCS, and MDEQ to inform"
+     },
+     {
+      "page": 10,
+      "quote": "commitments from priority area landowners and operators who are willing to participate in the project. (Months 1-6)"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "Yazoo County SWCD",
+     "MSWCC",
+     "NRCS",
+     "MDEQ"
+    ],
+    "timeframe": "Months 1-6",
+    "start": 1,
+    "end": 6,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "a2b5b07c",
+    "name": "Determine priority areas through GIS applications and intensive site surveys",
+    "text": "Determine through GIS applications and intensive site surveys the priority areas contributing significant pollutant loads; install BMPs per NRCS guidelines.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "Work with the local SWCD, MSWCC, NRCS, and MDEQ to determine through GIS applications and intensive site surveys the priority areas"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "local SWCD",
+     "MSWCC",
+     "NRCS",
+     "MDEQ"
+    ],
+    "timeframe": "Months 1-36",
+    "start": 1,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "6fc26358",
+    "name": "Monitor baseline water quality conditions and track changes",
+    "text": "Complete and implement a plan to monitor baseline water quality and track water quality changes from the BMPs.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "Facilitate, in cooperation with MDEQ and other monitoring partners, the completion and implementation of an effective and efficient plan to monitor baseline water"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "MDEQ",
+     "monitoring partners"
+    ],
+    "timeframe": "Plan Completion: Months 1-2; Implementation: Months 3-36",
+    "start": 1,
+    "end": 2,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "e8ef5e2b",
+    "name": "Submit blank copies of standard maintenance agreements to MDEQ",
+    "text": "Submit blank copies of standard maintenance agreements to MDEQ.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "Submit blank copies of standard maintenance agreements to MDEQ. (Months 13-36)"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "MDEQ"
+    ],
+    "timeframe": "Months 13-36",
+    "start": 13,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "5e26d116",
+    "name": "Conduct inspections of BMPs during construction",
+    "text": "Conduct inspections of BMPs during construction.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "Conduct inspections of BMPs during construction (Months 3-36)"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [],
+    "timeframe": "Months 3-36",
+    "start": 3,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "732bfed4",
+    "name": "Collect GPS coordinates of installed BMPs and incorporate into GIS",
+    "text": "Coordinate with and support the local SWCD, MSWCC and NRCS in collecting GPS coordinates of installed BMPs and incorporating them into GIS format.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "Coordinate with and support the local SWCD, MSWCC and NRCS in the collection of relevant GPS coordinates of all installed BMPs"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [
+     "local SWCD",
+     "MSWCC",
+     "NRCS"
+    ],
+    "timeframe": "Months 3-36",
+    "start": 3,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "aec2c444",
+    "name": "Collect photo documentation before, during, and after BMP installation",
+    "text": "Collect adequate photo documentation before, during, and after installation of approved BMPs.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "Collect adequate photo documentation before, during, and after installation of the approved BMPs. (Months 3-36)"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [],
+    "timeframe": "Months 3-36",
+    "start": 3,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "4730d846",
+    "name": "Report nonpoint source pollutant load reduction and site conditions",
+    "text": "Report measured or estimated nonpoint source pollutant load reduction, acreage affected, pre- and post-site conditions, and GIS data.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "Report measured, or estimated, nonpoint source pollutant load reduction, acreage affected, pre-and post- site conditions, and GIS data. (1-36)"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "responsible": [],
+    "timeframe": "1-36",
+    "start": 1,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": false
+   },
+   {
+    "id": "b0ef1fe9",
+    "name": "Coordinate with the MDEQ, NRCS, MSWCC, and the Yazoo Co. Soil and Water Conservation District to determine priority areas",
+    "text": "Target priority areas for BMPs by determining priority areas contributing significant pollutant loads to Ellison Creek.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "Coordinate with the MDEQ, NRCS, MSWCC, and the Yazoo Co. Soil and Water Conservation District to determine priority areas"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [
+     "MDEQ",
+     "NRCS",
+     "MSWCC"
+    ],
+    "timeframe": "Month 1-36",
+    "start": 1,
+    "end": 36,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": true
+   },
+   {
+    "id": "7886d32d",
+    "name": "Establish Watershed Implementation Team.",
+    "text": "Outcome: Establish WIT.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "Establish Watershed Implementation Team."
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "responsible": [],
+    "timeframe": "Month 1-2",
+    "start": 1,
+    "end": 2,
+    "timeUnit": "month",
+    "status": null,
+    "milestone": true
+   }
+  ],
+  "monitoring": [
+   {
+    "id": "d58b39d5",
+    "name": "Dissolved Oxygen",
+    "text": "Dissolved oxygen compliance threshold for success measurement.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 12,
+      "quote": "Daily Average of 5.0 mg/L; Instantaneous threshold of 4.0 mg/L"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "parameter": "Dissolved Oxygen",
+    "threshold": {
+     "raw": "Daily Average of 5.0 mg/L; Instantaneous threshold of 4.0 mg/L",
+     "scope": null,
+     "value": 5,
+     "valueMax": null,
+     "unit": "mg/L",
+     "comparator": "="
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "c375ca84",
+    "name": "Dissolved Oxygen % Sat.",
+    "text": "Dissolved oxygen percent saturation threshold.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 12,
+      "quote": "Dissolved Oxygen % Sat. > 70% - < 125%"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Dissolved Oxygen % Sat.",
+    "threshold": {
+     "raw": "> 70% - < 125%",
+     "scope": null,
+     "value": 70,
+     "valueMax": null,
+     "unit": "%",
+     "comparator": "="
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "86a87e40",
+    "name": "pH",
+    "text": "pH compliance threshold.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 12,
+      "quote": "pH 6.0-9.0"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "parameter": "pH",
+    "threshold": {
+     "raw": "6.0-9.0",
+     "scope": null,
+     "value": 6,
+     "valueMax": 9,
+     "unit": null,
+     "comparator": "range"
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "88240050",
+    "name": "Temperature",
+    "text": "Water temperature compliance threshold.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 12,
+      "quote": "Temperature Not to exceed 90°F"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Temperature",
+    "threshold": {
+     "raw": "Not to exceed 90°F",
+     "scope": null,
+     "value": 90,
+     "valueMax": null,
+     "unit": "°F",
+     "comparator": "<="
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "2968777d",
+    "name": "Specific Conductance",
+    "text": "Specific conductance compliance threshold.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 12,
+      "quote": "Specific Conductance Less Than 1000 micromhos/cm"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Specific Conductance",
+    "threshold": {
+     "raw": "Less Than 1000 micromhos/cm",
+     "scope": null,
+     "value": 1000,
+     "valueMax": null,
+     "unit": "micromhos/cm",
+     "comparator": "<="
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "736c4ee1",
+    "name": "Dissolved Solids",
+    "text": "Dissolved solids compliance thresholds.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 12,
+      "quote": "Monthly average less than 750 mg/L; instantaneous threshold less than 1500 mg/L"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "parameter": "Dissolved Solids",
+    "threshold": {
+     "raw": "Monthly average less than 750 mg/L; instantaneous threshold less than 1500 mg/L",
+     "scope": null,
+     "value": 750,
+     "valueMax": null,
+     "unit": "mg/L",
+     "comparator": "<="
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "25756b7d",
+    "name": "Chemical Oxygen Demand",
+    "text": "Chemical oxygen demand compliance threshold.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 12,
+      "quote": "Chemical Oxygen Demand <50 mg/l"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Chemical Oxygen Demand",
+    "threshold": {
+     "raw": "<50 mg/l",
+     "scope": null,
+     "value": 50,
+     "valueMax": null,
+     "unit": "mg/L",
+     "comparator": "="
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "a84a8fe0",
+    "name": "Turbidity",
+    "text": "Turbidity compliance threshold, also a surrogate for sediment.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 12,
+      "quote": "Turbidity <100 NTU"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "parameter": "Turbidity",
+    "threshold": {
+     "raw": "<100 NTU",
+     "scope": null,
+     "value": 100,
+     "valueMax": null,
+     "unit": "NTU",
+     "comparator": "="
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "9207257b",
+    "name": "Total Suspended Solids",
+    "text": "Total suspended solids compliance threshold.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 12,
+      "quote": "Total Suspended Solids <80 mg/l"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Total Suspended Solids",
+    "threshold": {
+     "raw": "<80 mg/l",
+     "scope": null,
+     "value": 80,
+     "valueMax": null,
+     "unit": "mg/L",
+     "comparator": "="
+    },
+    "location": null,
+    "frequency": null
+   },
+   {
+    "id": "c305b86e",
+    "name": "M-BISQ West Bioregion",
+    "text": "Biological index assessment threshold for the West bioregion.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 12,
+      "quote": "Assessment threshold 43.7 (25th percentile of reference condition)"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "parameter": "M-BISQ West Bioregion",
+    "threshold": {
+     "raw": "Assessment threshold 43.7 (25th percentile of reference condition)",
+     "scope": null,
+     "value": 43.7,
+     "valueMax": null,
+     "unit": null,
+     "comparator": "="
+    },
+    "location": "Ellison Creek",
+    "frequency": null
+   },
+   {
+    "id": "5df39aa1",
+    "name": "Monitor baseline water quality conditions",
+    "text": "Plan to monitor baseline water quality conditions and track changes in water quality over time from BMPs.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 10,
+      "quote": "monitor baseline water quality conditions in the watershed and track changes in water quality over time"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "Baseline water quality conditions",
+    "threshold": null,
+    "location": "Watershed",
+    "frequency": "Plan Completion: Months 1-2; Implementation: Months 3-36"
+   },
+   {
+    "id": "05dd9d56",
+    "name": "Biological community data (2001)",
+    "text": "MDEQ collected biological community data on Ellison Creek in 2001, producing an index of biological integrity score used to assess impairment.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "In 2001, MDEQ collected biological community data on Ellison Creek."
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "parameter": "biological community data",
+    "threshold": null,
+    "location": "Ellison Creek",
+    "frequency": null
+   }
+  ],
+  "outreach": [
+   {
+    "id": "2a9ad01e",
+    "name": "WIT Meetings",
+    "text": "Routine Watershed Implementation Team meetings to support WBP revision.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 11,
+      "quote": "Establish routine meeting schedule for WIT to support WBP revision"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "medium",
+    "audience": null,
+    "quantity": null,
+    "timeframe": "Months 1-36"
+   },
+   {
+    "id": "b3bccbd2",
+    "name": "Water Model Presentations",
+    "text": "Enviroscapes and groundwater aquifer models distributed statewide with training and related interactive lesson plans.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "Water Model Presentations - Enviroscapes and groundwater aquifer models distributed"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": "Statewide",
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "284ac39d",
+    "name": "Teacher workshops",
+    "text": "Train educators about NPS pollution and provide materials for classrooms.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "Teacher workshops – train educators in proximity to the watershed about NPS pollution"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": "Educators",
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "80b968d2",
+    "name": "Adopt A Stream",
+    "text": "Workshops and training venues for citizens, teachers, and students in the Dry Creek Watershed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "Adopt A Stream - workshops and training venues for citizens, teachers, and students in"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": null,
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "e8007329",
+    "name": "Watershed Harmony Mobile Classroom",
+    "text": "Public education program for kindergarten through adults tailored for 4th and 5th grade students.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "Watershed Harmony Mobile Classroom - for ages kindergarten – adults"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": null,
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "b2a6b299",
+    "name": "Train the trainer",
+    "text": "Workshops and materials for Soil and Water districts, Extension Service, etc.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "“Train the trainer” - workshops and materials for Soil and Water districts, Extension"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": "Soil and Water districts, Extension Service",
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "f56f7888",
+    "name": "Waste Pesticide Disposal Event",
+    "text": "Program helping Mississippi farmers and property owners dispose of waste-pesticide products safely.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "“Waste Pesticide Disposal Event” - The primary goal of this program is to help"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": "Mississippi farmers and property owners",
+    "quantity": null,
+    "timeframe": null
+   },
+   {
+    "id": "afa515e6",
+    "name": "Field days",
+    "text": "Field days to showcase implemented BMPs for the public.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "hosting field days to showcase the implemented BMPs for the public"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "audience": "Public",
+    "quantity": null,
+    "timeframe": null
+   }
+  ],
+  "geographicAreas": [
+   {
+    "id": "8c1de7db",
+    "name": "Ellison Creek Watershed",
+    "text": "Watershed covered by the plan with a stated sediment reduction goal.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "The Ellison Creek Watershed is located just north of Mississippi’s capital in Jackson, MS"
+     },
+     {
+      "page": 5,
+      "quote": "to identify and implement BMPs to address sediment concerns in the Ellison Creek Watershed"
+     },
+     {
+      "page": 8,
+      "quote": "can be used in the Ellison Creek Watershed project by tailoring them"
+     },
+     {
+      "page": 11,
+      "quote": "Reduce sediment loads entering waters in the Ellison Creek Watershed."
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "watershed",
+    "code": null,
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "4875088c",
+    "name": "Ellison Creek",
+    "text": "Water body impaired by sediment, subject to the Ellison Creek TMDL.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "Ellison Creek (segment MS430E) was included as an “evaluated” assessment"
+     },
+     {
+      "page": 11,
+      "quote": "determine an applicable target for the Ellison Creek TMDL"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "waterbody",
+    "code": "MS430E",
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "d769cb14",
+    "name": "West bioregion",
+    "text": "Mississippi bioregion in which Ellison Creek lies.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 12,
+      "quote": "Ellison Creek is in the West bioregion and the attainment threshold is 43.7."
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "other",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "57d84071",
+    "name": "State of Mississippi",
+    "text": "State whose water quality criteria are referenced.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 11,
+      "quote": "The State of Mississippi Water Quality Criteria for Intrastate, Interstate, and Coastal Waters"
+     }
+    ],
+    "verified": true,
+    "source": "table",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "state",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "45a25606",
+    "name": "Yazoo County",
+    "text": "County whose Soil and Water Conservation District is named as a match partner.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "along the banks of the Big Black River in Yazoo County and covers an area of 10,957"
+     },
+     {
+      "page": 6,
+      "quote": "Yazoo County Soil and Water Conservation District, NRCS, and/or local landowners and operators"
+     },
+     {
+      "page": 9,
+      "quote": "Work with the Yazoo County SWCD, MSWCC, NRCS, and MDEQ to inform"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "county",
+    "code": null,
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "2be5d9ef",
+    "name": "Dry Creek Watershed",
+    "text": "Watershed where the Adopt A Stream program workshops are held.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "workshops and training venues for citizens, teachers, and students in"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "watershed",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "9eebf9f8",
+    "name": "Mississippi",
+    "text": "State where the waste pesticide program helps farmers and property owners.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 9,
+      "quote": "help Mississippi farmers and property owners minimize the environmental risks"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "state",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "6ed1ddf1",
+    "name": "HUC 080602020404",
+    "text": "The hydrologic unit code identifying the plan's project area.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "HUC 080602020404"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "huc",
+    "code": "080602020404",
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "c9d3590d",
+    "name": "MWS 1044",
+    "text": "The watershed identifier shown with the plan's project area.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "MWS 1044"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "medium",
+    "type": "other",
+    "code": "1044",
+    "areaAcres": null,
+    "role": "primary"
+   },
+   {
+    "id": "61e8fc50",
+    "name": "Big Black River",
+    "text": "A river along whose banks the watershed lies.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "along the banks of the Big Black River in Yazoo County"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "waterbody",
+    "code": null,
+    "areaAcres": null,
+    "role": "mentioned"
+   },
+   {
+    "id": "bf568d51",
+    "name": "HUC 08060202",
+    "text": "The larger hydrologic unit in which the sediment TMDL was developed.",
+    "kind": "main",
+    "parentId": null,
+    "evidence": [
+     {
+      "page": 1,
+      "quote": "Designated Streams in HUC 08060202 for Impairment Due to Sediment"
+     }
+    ],
+    "verified": true,
+    "source": "text",
+    "needsReview": null,
+    "confidence": "high",
+    "type": "huc",
+    "code": "08060202",
+    "areaAcres": null,
+    "role": "mentioned"
+   }
+  ]
+ },
+ "document": {
+  "id": "ellison-creek-2021",
+  "fileName": "Ellison_Creek_9_Key_Element_Plan_2021.pdf",
+  "pages": 13,
+  "title": "Ellison Creek 9 Key Element Plan",
+  "year": 2021
+ },
+ "quality": {
+  "verifiedRate": 0.8072289156626506,
+  "rejected": [
+   {
+    "category": "monitoring",
+    "name": "Dissolved Solids: frequency \"Monthly average; instantaneous\"",
+    "page": 12,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "monitoring",
+    "name": "Station BB071",
+    "page": 13,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "monitoring",
+    "name": "Post-BMP water quality",
+    "page": 13,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Education/Outreach events scheduled",
+    "page": 11,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "WIT Meetings: audience \"Watershed Implementation Team\"",
+    "page": 11,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Education and Outreach",
+    "page": 7,
+    "reason": "not-an-item"
+   },
+   {
+    "category": "implementation",
+    "name": "Yazoo Co. Soil and Water Conservation District",
+    "page": 10,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "implementation",
+    "name": "Initiate watershed monitoring",
+    "page": 10,
+    "reason": "quote-not-found"
+   },
+   {
+    "category": "monitoring",
+    "name": "Monitoring",
+    "page": 8,
+    "reason": "not-an-item"
+   },
+   {
+    "category": "monitoring",
+    "name": "Baseline Condition Monitoring",
+    "page": 10,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Adopt A Stream: audience \"Citizens, teachers, students\"",
+    "page": 9,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Watershed Harmony Mobile Classroom: audience \"Kindergarten to adults\"",
+    "page": 9,
+    "reason": "detail-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Watershed Implementation Team meetings",
+    "page": 9,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "outreach",
+    "name": "Establish Watershed Implementation Team",
+    "page": 10,
+    "reason": "name-not-in-source"
+   },
+   {
+    "category": "goals",
+    "name": "Target for this TMDL: 99% reduction in sediment",
+    "page": 1,
+    "reason": "number-not-in-quote"
+   },
+   {
+    "category": "geographicAreas",
+    "name": "Ellison Creek Watershed: 10,957 acres",
+    "page": 1,
+    "reason": "number-not-in-quote"
+   }
+  ],
+  "conflicts": [],
+  "ocrPages": [],
+  "skippedPages": [
+   {
+    "page": 4,
+    "reason": "Figure or map page"
+   }
+  ],
+  "emptyPages": [
+   2,
+   3,
+   13
+  ],
+  "failedUnits": [],
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "durationMs": 18426,
+  "usage": {
+   "inputTokens": 88680,
+   "outputTokens": 14981,
+   "costUsd": 0.012770020000000002
+  },
+  "completionBasis": "No completion status reported in this document",
+  "structure": [
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "Ellison Creek Watershed GY 2021"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "Ellison Creek Watershed Plan"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "9 Key Element Plan"
+   },
+   {
+    "page": 1,
+    "kind": "heading",
+    "level": 0,
+    "text": "HUC 080602020404"
+   },
+   {
+    "page": 1,
+    "kind": "heading",
+    "level": 0,
+    "text": "MWS 1044"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "GY 21 Project Area"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "September 29, 2021"
+   },
+   {
+    "page": 1,
+    "kind": "heading",
+    "level": 0,
+    "text": "Element a: Identification of Causes and Sources of Impairment"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "The Ellison Creek Watershed is located just north of Mississippi’s capital in Jackson, MS, along"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "the banks of the Big Black River in Yazoo County and covers an area of 10,957"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "acres. According to the 2019 National Land Cover Database (NLCD), the landuse within this"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "watershed is comprised of approximately 16% cropland, 22% pasture, 55% forestland, and 7%"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "other (water, scrub/barren, wetland and urban) as depicted in Figure 1."
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "The water-use classification for all water bodies in this watershed, as established by Regulations"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "for Water Quality Criteria for Intrastate, Interstate, and Coastal Waters (MDEQ, 2021), is Fish"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "and Wildlife. Waters with this classification are intended for fishing and propagation of fish,"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "aquatic life, and wildlife. Waters that are classified as Fish and Wildlife should also be suitable"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "for secondary contact recreation, which is defined as incidental contact with water including"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "wading and occasional swimming."
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "Ellison Creek (segment MS430E) was included as an “evaluated” assessment in Mississippi’s"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "Section 303(d) List in 1998. Assessments designated as “evaluated” were performed using"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "anecdotal data and information from the watershed, but there was no actual monitoring data to"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "support the determine. Based on the evaluated information provided, Ellison Creek was listed"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "for a suite of causes: pesticides, nutrients, siltation, and organic enrichment/low dissolved"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "oxygen. In 2001, MDEQ collected biological community data on Ellison Creek. The biological"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "community data and resulting index of biological integrity score developed from those data"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "indicated the stream was impaired. Using biological community data along with habitat surveys,"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "and physical/chemical data, a stressor identification analysis was performed. The result of this"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "stressor analysis indicated that sedimentation in the watershed was the primary pollutant"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "contributing to the impairment in Ellison Creek. Based on this information, MDEQ included"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "Ellison Creek (MS430E) in the Total Maximum Daily Load in the Big Black River Basin for"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "Designated Streams in HUC 08060202 for Impairment Due to Sediment (MDEQ, 2007)that was"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "developed by MDEQ in 2007. This TMDL calls for a 99% reduction in sediment."
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "The State of Mississippi Water Quality Criteria for Intrastate, Interstate, and Coastal Waters"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "regulation does not include a numeric water quality standard for aquatic life protection due to"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "sediment. The narrative standard for the protection of aquatic life is sufficient for justification of"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "TMDL development but does not provide a quantifiable TMDL target. The target for this TMDL"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "is based on reference sediment yields developed by the Channel and Watershed Processes"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "Research Unit (CWPRU) at the National Sedimentation Laboratory (NSL). Ellison Creek is"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "located within level III ecoregions (74) Mississippi Valley Loess Plains and level IV (74b) Loess"
+   },
+   {
+    "page": 1,
+    "kind": "para",
+    "level": 0,
+    "text": "Plains."
+   },
+   {
+    "page": 1,
+    "kind": "admin",
+    "level": 0,
+    "text": "1"
+   },
+   {
+    "page": 2,
+    "kind": "para",
+    "level": 0,
+    "text": "Ellison Creek Watershed GY 2021"
+   },
+   {
+    "page": 2,
+    "kind": "aside",
+    "level": 0,
+    "text": "Figure 1: Landuse Distribution in the Ellison Creek Watershed"
+   },
+   {
+    "page": 2,
+    "kind": "admin",
+    "level": 0,
+    "text": "2"
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "Ellison Creek Watershed Plan GY2021"
+   },
+   {
+    "page": 3,
+    "kind": "para",
+    "level": 0,
+    "text": "There are no facilities in the Ellison Creek Watershed with NPDES permits that include limits"
+   },
+   {
+    "page": 3,
+    "kind": "para",
+    "level": 0,
+    "text": "for Total Suspended Solids (TSS) which is used as an indicator of sediment contributions from"
+   },
+   {
+    "page": 3,
+    "kind": "para",
+    "level": 0,
+    "text": "permitted activities. Certain contaminants may be associated with sediment such as pesticides"
+   },
+   {
+    "page": 3,
+    "kind": "para",
+    "level": 0,
+    "text": "and nutrients. These contaminants were not addressed directly within the TMDL. However, these"
+   },
+   {
+    "page": 3,
+    "kind": "para",
+    "level": 0,
+    "text": "contaminants would also be controlled by the same best management practices (BMPs) that"
+   },
+   {
+    "page": 3,
+    "kind": "para",
+    "level": 0,
+    "text": "control the sediment from nonpoint sources of pollution. Non-point loading of nutrients and"
+   },
+   {
+    "page": 3,
+    "kind": "para",
+    "level": 0,
+    "text": "organic material in a water body results from the transport of the pollutants into receiving waters"
+   },
+   {
+    "page": 3,
+    "kind": "para",
+    "level": 0,
+    "text": "by overland surface runoff, groundwater infiltration, and atmospheric deposition. Unlike"
+   },
+   {
+    "page": 3,
+    "kind": "para",
+    "level": 0,
+    "text": "nitrogen, phosphorus is primarily transported in surface runoff when it has been sorbed by"
+   },
+   {
+    "page": 3,
+    "kind": "para",
+    "level": 0,
+    "text": "eroding sediment."
+   },
+   {
+    "page": 3,
+    "kind": "para",
+    "level": 0,
+    "text": "Figure 2 shows the location of the impaired segment along with the monitoring locations in the"
+   },
+   {
+    "page": 3,
+    "kind": "para",
+    "level": 0,
+    "text": "Ellison Creek Watershed."
+   },
+   {
+    "page": 3,
+    "kind": "admin",
+    "level": 0,
+    "text": "3"
+   },
+   {
+    "page": 4,
+    "kind": "admin",
+    "level": 0,
+    "text": "Ellison Creek Watershed Plan GY2021"
+   },
+   {
+    "page": 4,
+    "kind": "aside",
+    "level": 0,
+    "text": "Figure 2: Impaired Segment and Monitoring Sites in the Ellison Creek Watershed"
+   },
+   {
+    "page": 4,
+    "kind": "admin",
+    "level": 0,
+    "text": "4"
+   },
+   {
+    "page": 5,
+    "kind": "admin",
+    "level": 0,
+    "text": "Ellison Creek Watershed Plan GY2021"
+   },
+   {
+    "page": 5,
+    "kind": "heading",
+    "level": 0,
+    "text": "Element b: Expected Load Reduction"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "The State of Mississippi Water Quality Criteria for Intrastate, Interstate, and Coastal Waters"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "(MDEQ, 2021) regulation does not include a numerical water quality standard for aquatic life"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "protection due to sediment; however, a narrative standard for the protection of aquatic life was"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "interpreted to determine an applicable target for the sediment TMDL in the Ellison Creek"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "Watershed. The narrative standard states waters shall be free from materials attributable to"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "municipal, industrial, agricultural, or other dischargers producing color, odor, taste, total"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "suspended solids, or other conditions in such degree as to create a nuisance, render the waters"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "injurious to public health, recreation, or to aquatic life and wildlife, or adversely affect the"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "palatability of fish, aesthetic quality, or impair the waters for any designated uses. The sediment"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "TMDL for Ellison Creek (MS430E) concluded that sediment yields would need to be reduced by"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "99% in the watershed. All sediment yield reductions were developed from suspended sediment"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "concentration data measured at stable streams in the same ecoregion(s). The targets were"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "developed to reflect stable stream conditions using reference sediment yields. These reference"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "conditions were established by the USDA’s Channel and Watershed Processes Research Unit"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "(CWPRU) at the National Sedimentation Laboratory (NSL)."
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "Nonpoint loading of sediment in a water body results from the transport of material into"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "receiving waters by the processes of mass wasting, head cutting, gullying, and sheet and rill"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "erosion. Sources of sediment include agriculture, silviculture, rangeland, construction sites,"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "roads, urban areas, mass wasting areas, gullies, surface mining, in-channel and instream sources,"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "and historical landuse activities and channel alterations."
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "The MDEQ will work with agency resource partners to identify and implement BMPs to address"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "sediment concerns in the Ellison Creek Watershed. The United States Department of Agriculture"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "(USDA) Natural Resource Conservation Service (NRCS) has a list of approved BMPs to address"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "sedimentation and this list will be used to identify candidate BMPs in the Ellison Creek"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "watershed. While these are for sedimentation, there is an additional benefit in the reduction of"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "nutrients as they attach to sediment particles in run-off. Practices approved by NRCS will be"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "used to identify candidate BMPs in the Ellison Creek watershed."
+   },
+   {
+    "page": 5,
+    "kind": "heading",
+    "level": 0,
+    "text": "Element c: Proposed Management Measures"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "Coordinating partners with MDEQ include the Mississippi Soil and Water Conservation"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "Commission (MSWCC), the Natural Resource Conservation Service (NRCS), and the local Soil"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "and Water Conservation Districts (SWCDs) throughout the state. These SWCDs are typically"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "housed within USDA Service Centers co-located with NRCS offices. These USDA Service"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "Centers handle federal assistance programs offered through the Farm Bill. As part of these"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "services, SWCD staff communicate regularly with the local landowners and operators within the"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "watershed as they work to support sign-ups for Farm Bill initiatives Staff from MSWCC and"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "the SWCD depend upon assistance from their NRCS partners in determining landowner interest"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "in the watershed because they are on the farms and in the fields with the landowners, understand"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "the needs at the local level, and have knowledge of the amount of unfunded applications for"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "federal program assistance which meet Section 319 eligibility requirements. Based on their"
+   },
+   {
+    "page": 5,
+    "kind": "para",
+    "level": 0,
+    "text": "analysis, installation of the following BMPs would mitigate sediment issues in the Ellison Creek"
+   },
+   {
+    "page": 5,
+    "kind": "admin",
+    "level": 0,
+    "text": "5"
+   },
+   {
+    "page": 6,
+    "kind": "admin",
+    "level": 0,
+    "text": "Ellison Creek Watershed Plan GY2021"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "watershed helping the stream recover: fencing, watering facilities, heavy use areas, stream"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "crossings, ponds, sediment basins, grade stabilization structures, streambank and shoreline"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "protection, stream crossings, forage and biomass planting. Factors considered for determining"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "specific locations for the placement of BMPs included the following attributes based upon best"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "professional judgement of trained NRCS, SWCD and MDEQ Staff:"
+   },
+   {
+    "page": 6,
+    "kind": "numbered",
+    "level": 2,
+    "text": "1. Likely water quality benefit;"
+   },
+   {
+    "page": 6,
+    "kind": "numbered",
+    "level": 2,
+    "text": "2. Willing landowners;"
+   },
+   {
+    "page": 6,
+    "kind": "numbered",
+    "level": 2,
+    "text": "3. Implementation of the recommendations of the TMDL (i.e., “It is recommended that"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "water bodies within [the watershed] be considered a priority for streambank and"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "riparian buffer zone restoration and any sediment reduction BMPs, especially for road"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "crossings, agricultural activities, and construction activities);"
+   },
+   {
+    "page": 6,
+    "kind": "numbered",
+    "level": 2,
+    "text": "4. Ease of showing effectiveness of the BMP(s) through monitoring;"
+   },
+   {
+    "page": 6,
+    "kind": "numbered",
+    "level": 2,
+    "text": "5. Shorter length of time for anticipated results (i.e., within the grant period);"
+   },
+   {
+    "page": 6,
+    "kind": "heading",
+    "level": 0,
+    "text": "Element d: Technical and Financial Assistance"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "As part of any Section 319 funded project, MDEQ requires a 40% match in project areas. This"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "match may be in the form of actual dollars or may be provided as “in-kind” to project activities."
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "Partners in this project who may contribute match include MSWCC, Yazoo County Soil and"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "Water Conservation District, NRCS, and/or local landowners and operators. For project"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "implementation, administration, management, and watershed plan revision, as well as hosting"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "and facilitating team meetings, MDEQ plans to work under a memorandum of agreement (MOA)"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "with the MSWCC to implement this project. Project partners provided the funding amounts used"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "to estimate costs for BMP installation. Provided below is summary of estimated costs for"
+   },
+   {
+    "page": 6,
+    "kind": "para",
+    "level": 0,
+    "text": "potential BMPs and overall project implementation:"
+   },
+   {
+    "page": 6,
+    "kind": "admin",
+    "level": 0,
+    "text": "6"
+   },
+   {
+    "page": 7,
+    "kind": "admin",
+    "level": 0,
+    "text": "Ellison Creek Watershed Plan | GY2021"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Cost Estimate: Full Project Implementation"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Estimated"
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "BMPs* | Size/Amount | Cost"
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "Grade Stabilization Structure | 80 each @ $6,500 | $520,000"
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "Sediment Basin | 2 each @ $6,250 | $12,500"
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "Grassed Waterway | 5 each @ $1,408 | $7,040"
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "Heavy Use Area Protection | 9,000 sq.ft. @ $3.93 | $35,370"
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "Stream Crossing | 4 each @ $5,000 | $20,000"
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "Tank/Trough | 17 each @ $6,000 | $102,000"
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "Cover Crops | 800 ac @ $73 | $58,400"
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "Fencing | 7,500 ft. @ $4.50 | $33,750"
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "Dikes | 20,000 ft. @ $1.90 | $38,000"
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "Diversions | 10,000 ft @ $2.50 | $25,000"
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "Pond | 5 @ $6,250 | $31,250"
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "Terraces | 35,000 ft. @ $1.86 | $65,100"
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "Forage and Biomass Planting | 300 ac. @ $211 | $63,300"
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "Streambank and Shoreline Protection | 4,000 ft. @ $183.55 | $734,200"
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "Technical Assistance** | N/A | $45,000"
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "Education and Outreach** | N/A | $28,000"
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "Monitoring** | N/A | $20,000"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Project Management, Implementation,"
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "Coordination, Plan Revision** | $135,000"
+   },
+   {
+    "page": 7,
+    "kind": "table",
+    "level": 0,
+    "text": "Total Estimated Cost | $1,973,910"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "*Conservation Best Management Practices provide a 40% match at a minimum"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "** Denotes fields that are estimated upon three incremental funding cycles of the project"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "Due to the magnitude of BMP needs, this project will need to be funded incrementally using"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "multiply sources of funds. To fully address all suggested conservation needs in the watershed,"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "this plan recommends funding be provided in 3 increments. To maximize education and outreach"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "activities and monitoring efforts, MDEQ plans to leverage with existing programs already"
+   },
+   {
+    "page": 7,
+    "kind": "para",
+    "level": 0,
+    "text": "allocated for funding where possible."
+   },
+   {
+    "page": 7,
+    "kind": "admin",
+    "level": 0,
+    "text": "7"
+   },
+   {
+    "page": 8,
+    "kind": "admin",
+    "level": 0,
+    "text": "Ellison Creek Watershed Plan | GY2021"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "Below is the estimated budget for the first incremental funding (Phase 1) of this project:"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "Cost Estimate: Phase 1 Implementation:"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "Estimated"
+   },
+   {
+    "page": 8,
+    "kind": "table",
+    "level": 0,
+    "text": "BMPs* | Size/Amount | Cost"
+   },
+   {
+    "page": 8,
+    "kind": "table",
+    "level": 0,
+    "text": "Grade Stabilization Structure | 20 each @ $6,500 | $130,000"
+   },
+   {
+    "page": 8,
+    "kind": "table",
+    "level": 0,
+    "text": "Heavy Use Area Protection 2,700 sq.ft. @ $3.93 | $10,611"
+   },
+   {
+    "page": 8,
+    "kind": "table",
+    "level": 0,
+    "text": "Tank/Trough | 5 each @ $6,000 | $30,000"
+   },
+   {
+    "page": 8,
+    "kind": "table",
+    "level": 0,
+    "text": "Cover Crops | 235 ac @ $73 | $17,155"
+   },
+   {
+    "page": 8,
+    "kind": "table",
+    "level": 0,
+    "text": "Fencing | 2,100 ft. @ $4.50 | $9,450"
+   },
+   {
+    "page": 8,
+    "kind": "table",
+    "level": 0,
+    "text": "Pond | 3 each @ $6,250 | $18,750"
+   },
+   {
+    "page": 8,
+    "kind": "table",
+    "level": 0,
+    "text": "Technical Assistance | N/A | $15,000"
+   },
+   {
+    "page": 8,
+    "kind": "table",
+    "level": 0,
+    "text": "Education and Outreach | N/A | $14,000"
+   },
+   {
+    "page": 8,
+    "kind": "table",
+    "level": 0,
+    "text": "Monitoring | N/A | $10,000"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "Project Management, Implementation,"
+   },
+   {
+    "page": 8,
+    "kind": "table",
+    "level": 0,
+    "text": "Coordination, Plan Revision | $45,000"
+   },
+   {
+    "page": 8,
+    "kind": "table",
+    "level": 0,
+    "text": "Total Estimated Phase 1 Cost | $299,966"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "*Conservation Best Management Practices provide a 40% match at a minimum."
+   },
+   {
+    "page": 8,
+    "kind": "heading",
+    "level": 0,
+    "text": "Element e: Information and Education"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "The MDEQ, in cooperation with numerous federal, state, and local stakeholders has developed"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "diversified information/education programs, best management practices manuals, literature,"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "books, videos, and public service announcements that address pollutants from the seven (7)"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "major landuse categories of Nonpoint Source Pollution: agriculture, construction, forestry, on-"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "site waste water disposal, surface mining, urban storm water runoff, and hydrologic"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "modification. Audiences from pre-school to adults throughout the state are reached with a"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "variety of mature, well-designed programs each year. These programs, events, manuals and"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "literature can be used in the Ellison Creek Watershed project by tailoring them to address"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "nonpoint sources of sedimentation and nutrients. A positive approach is used to reach the full"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "diversity of people in the community with projects that foster a “sense of place”, a “sense of"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "pride in community”, and a sense of the native plants, animals, and general ecology of their"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "region, as well as the history of the community and a sense of economics. Stakeholders and"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "coordinators join together to participate in problem-solving, brainstorming, plan development,"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "training workshops, festival event planning, soil and water conservation field days, tree boards,"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "poster, art and writing projects and other activities that promote collaboration and ownership of"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "the watershed, as well as solutions to its problems. The ultimate goal is to bring about behavior"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "changes and the use of “best management practices” that will improve water quality and the"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "overall quality of life in the watershed. Evaluation forms, pre-test/ post-test, surveys, and"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "reporting of the number of people who attend workshops, trainings and events are among the"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "methods used to measure the success of education/information programs. A partial list of"
+   },
+   {
+    "page": 8,
+    "kind": "para",
+    "level": 0,
+    "text": "MDEQ’s programs that could be used in the Ellison Creek watershed are listed below:"
+   },
+   {
+    "page": 8,
+    "kind": "admin",
+    "level": 0,
+    "text": "8"
+   },
+   {
+    "page": 9,
+    "kind": "admin",
+    "level": 0,
+    "text": "Ellison Creek Watershed Plan GY2021"
+   },
+   {
+    "page": 9,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Water Model Presentations - Enviroscapes and groundwater aquifer models distributed"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "statewide with training and related interactive lesson plans."
+   },
+   {
+    "page": 9,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Teacher workshops – train educators in proximity to the watershed about NPS pollution"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "and provide materials and information that can be used in their classrooms."
+   },
+   {
+    "page": 9,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Adopt A Stream - workshops and training venues for citizens, teachers, and students in"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "the Dry Creek Watershed."
+   },
+   {
+    "page": 9,
+    "kind": "bullet",
+    "level": 1,
+    "text": "Watershed Harmony Mobile Classroom - for ages kindergarten – adults with state and"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "federal public education objectives tailored for 4th and 5th grade students."
+   },
+   {
+    "page": 9,
+    "kind": "bullet",
+    "level": 1,
+    "text": "“Train the trainer” - workshops and materials for Soil and Water districts, Extension"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "Service, etc."
+   },
+   {
+    "page": 9,
+    "kind": "bullet",
+    "level": 1,
+    "text": "“Waste Pesticide Disposal Event” - The primary goal of this program is to help"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "Mississippi farmers and property owners minimize the environmental risks associated"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "with the disposal of waste-pesticide products by disposing of products in a safe and"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "efficient manner."
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "As part of the education outreach efforts, the stakeholder group forming the Ellison Creek"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "Watershed Implementation Team (WIT) will participate in a minimum of 3 face-to-face"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "meetings. The purpose of these meetings is to provide updates on implementation activities,"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "education events and review and modify the watershed plan. In concert with these WIT"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "meetings, and to incentivize stakeholder participation, project funding will be used to purchase"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "food and other refreshments for the WIT along with providing support for renting facilities in"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "which to host those events. In accordance with 41 CFR § 301-74.11, light refreshments, meals,"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "and/or beverages are an allowable expense under CWA Section 319, provided a description of"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "the agenda, purpose, location, costs, etc., are outlined in an approved 319 grant workplan. The"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "purpose of the meetings will be for updating the watershed plan, and hosting field days to"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "showcase the implemented BMPs for the public. At this time the exact number of participants"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "and locations are not known therefore costs have been estimated for the purposes of this plan and"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "will be updated."
+   },
+   {
+    "page": 9,
+    "kind": "heading",
+    "level": 0,
+    "text": "Element f: Implementation Schedule"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "The following schedule describes the approaches and tasks that the grantee shall collaboratively"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "perform with project partners to advance and implement this watershed-based plan. During this"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "effort, resource agency partners will work with the Watershed Implementation Team and MDEQ"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "Project Manager (where applicable), to perform the tasks identified below:"
+   },
+   {
+    "page": 9,
+    "kind": "numbered",
+    "level": 1,
+    "text": "1. Work to develop, execute, and implement a Subgrant Agreement that specifies the"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "roles, tasks, requirements, and milestones for project implementation. (Month 1)"
+   },
+   {
+    "page": 9,
+    "kind": "numbered",
+    "level": 1,
+    "text": "2. Facilitate, in coordination with MDEQ and other partners, meetings, media and social"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "media promotion of the project, and coordinate activities to fully implement this plan."
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "(Months 1-36)"
+   },
+   {
+    "page": 9,
+    "kind": "numbered",
+    "level": 1,
+    "text": "3. Work with the Yazoo County SWCD, MSWCC, NRCS, and MDEQ to inform"
+   },
+   {
+    "page": 9,
+    "kind": "para",
+    "level": 0,
+    "text": "landowners and operators within the watershed about the project and work to secure"
+   },
+   {
+    "page": 9,
+    "kind": "admin",
+    "level": 0,
+    "text": "9"
+   },
+   {
+    "page": 10,
+    "kind": "admin",
+    "level": 0,
+    "text": "Ellison Creek Watershed Plan | GY2021"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "commitments from priority area landowners and operators who are willing to"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "participate in the project. (Months 1-6)"
+   },
+   {
+    "page": 10,
+    "kind": "numbered",
+    "level": 1,
+    "text": "4. Work with the local SWCD, MSWCC, NRCS, and MDEQ to determine through GIS"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "applications and intensive site surveys the priority areas within the sub-watershed that"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "are contributing significant pollutant loads. All BMPs shall be installed in"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "accordance with the guidelines developed in the latest edition of the NRCS Technical"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "Field Manual, or other approved guidelines. (Months 1-36)"
+   },
+   {
+    "page": 10,
+    "kind": "numbered",
+    "level": 1,
+    "text": "5. Facilitate, in cooperation with MDEQ and other monitoring partners, the completion"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "and implementation of an effective and efficient plan to monitor baseline water"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "quality conditions in the watershed and track changes in water quality over time"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "resulting from the BMPs implemented through this project. (Plan Completion:"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "Months 1-2); Implementation: Months 3-36)"
+   },
+   {
+    "page": 10,
+    "kind": "numbered",
+    "level": 1,
+    "text": "6. Submit blank copies of standard maintenance agreements to MDEQ. (Months 13-36)"
+   },
+   {
+    "page": 10,
+    "kind": "numbered",
+    "level": 1,
+    "text": "7. Conduct inspections of BMPs during construction (Months 3-36)"
+   },
+   {
+    "page": 10,
+    "kind": "numbered",
+    "level": 1,
+    "text": "8. Coordinate with and support the local SWCD, MSWCC and NRCS in the collection"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "of relevant GPS coordinates of all installed BMPs and incorporate this information"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "into a GIS format. All geospatial data shall be collected in a manner consistent with"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "the Federal Geographic Data committee-endorsed standards. (Months 3-36)"
+   },
+   {
+    "page": 10,
+    "kind": "numbered",
+    "level": 1,
+    "text": "9. Collect adequate photo documentation before, during, and after installation of the"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "approved BMPs. (Months 3-36)"
+   },
+   {
+    "page": 10,
+    "kind": "numbered",
+    "level": 1,
+    "text": "10. Report measured, or estimated, nonpoint source pollutant load reduction, acreage"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "affected, pre-and post- site conditions, and GIS data. (1-36)"
+   },
+   {
+    "page": 10,
+    "kind": "heading",
+    "level": 0,
+    "text": "Element g: Milestones and Outcomes"
+   },
+   {
+    "page": 10,
+    "kind": "table",
+    "level": 0,
+    "text": "Milestone | Outcome | Probable Completion"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "Date"
+   },
+   {
+    "page": 10,
+    "kind": "table",
+    "level": 0,
+    "text": "Coordinate with the MDEQ, NRCS, | Target priority areas | Month 1-36"
+   },
+   {
+    "page": 10,
+    "kind": "table",
+    "level": 0,
+    "text": "MSWCC, and the Yazoo Co. Soil and | for BMPs"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "Water Conservation District to"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "determine priority areas that are"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "contributing significant pollutant loads"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "to Ellison Creek"
+   },
+   {
+    "page": 10,
+    "kind": "table",
+    "level": 0,
+    "text": "Establish Watershed Implementation | Establish WIT | Month 1-2"
+   },
+   {
+    "page": 10,
+    "kind": "para",
+    "level": 0,
+    "text": "Team."
+   },
+   {
+    "page": 10,
+    "kind": "table",
+    "level": 0,
+    "text": "Initiate watershed monitoring | Baseline Condition | Completed using historical"
+   },
+   {
+    "page": 10,
+    "kind": "table",
+    "level": 0,
+    "text": "Monitoring | data"
+   },
+   {
+    "page": 10,
+    "kind": "admin",
+    "level": 0,
+    "text": "10"
+   },
+   {
+    "page": 11,
+    "kind": "admin",
+    "level": 0,
+    "text": "Ellison Creek Watershed Plan | GY2021"
+   },
+   {
+    "page": 11,
+    "kind": "table",
+    "level": 0,
+    "text": "Meet with landowners and cooperators | Landowner | Months 1-36"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "to secure commitments to install BMPs Commitment"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "in priority areas"
+   },
+   {
+    "page": 11,
+    "kind": "table",
+    "level": 0,
+    "text": "Establish routine meeting schedule for | WIT Meetings | Months 1-36"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "WIT to support WBP revision"
+   },
+   {
+    "page": 11,
+    "kind": "table",
+    "level": 0,
+    "text": "Implement BMPs | BMP Instillation | Months 1-36"
+   },
+   {
+    "page": 11,
+    "kind": "table",
+    "level": 0,
+    "text": "Coordinate with Landowners to inspect BMP Inspection | Months 1-36"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "BMPs that were installed using Section"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "319 funds"
+   },
+   {
+    "page": 11,
+    "kind": "table",
+    "level": 0,
+    "text": "Begin monitoring to collect data on | Post-BMP Monitoring Months 40-48"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "post-BMP water quality"
+   },
+   {
+    "page": 11,
+    "kind": "table",
+    "level": 0,
+    "text": "Implement education and outreach plan Education/Outreach | Months 8-36"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "events scheduled"
+   },
+   {
+    "page": 11,
+    "kind": "table",
+    "level": 0,
+    "text": "Finalize revised WBP | Final Revised WBP | Months 30-36"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "Goal: Reduce sediment loads entering waters in the Ellison Creek Watershed."
+   },
+   {
+    "page": 11,
+    "kind": "heading",
+    "level": 0,
+    "text": "Element h: Load Reduction Evaluation"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "The State of Mississippi Water Quality Criteria for Intrastate, Interstate, and Coastal Waters"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "(MDEQ, 2021) do not include a water quality standard applicable to aquatic life protection due"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "to sediment. However, a narrative standard for the protection of aquatic life was interpreted to"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "determine an applicable target for the Ellison Creek TMDL. The narrative standard is that waters"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "shall be free from materials attributable to municipal, industrial, agricultural, or other dischargers"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "producing color, odor, taste, total suspended solids, or other conditions in such degree as to"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "create a nuisance, render the waters injurious to public health, recreation, or to aquatic life and"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "wildlife, or adversely affect the palatability of fish, aesthetic quality, or impair the waters for any"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "designated uses. In lieu of numeric criteria for sediment, monitoring will be conducted to collect"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "data on parameters that are considered surrogates for sediment concentrations and may include"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "measurements for Total Suspend Solids, Total Suspended Sediment, and turbidity along with"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "conventional parameters generally measured to determine aquatic health (e.g. Dissolved Oxygen,"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "pH, Temperature, Conductivity). The following thresholds will be used to measure compliance"
+   },
+   {
+    "page": 11,
+    "kind": "para",
+    "level": 0,
+    "text": "with water quality criteria and/or target thresholds:"
+   },
+   {
+    "page": 11,
+    "kind": "admin",
+    "level": 0,
+    "text": "11"
+   },
+   {
+    "page": 12,
+    "kind": "admin",
+    "level": 0,
+    "text": "Ellison Creek Watershed Plan | GY2021"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Success Measurement Thresholds:"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Parameter | Threshold"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Daily Average of 5.0 mg/L; Instantaneous"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Dissolved Oxygen | threshold of 4.0 mg/L"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Dissolved Oxygen % Sat. | > 70% - < 125%"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "pH | 6.0-9.0"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Temperature | Not to exceed 90°F"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Specific Conductance | Less Than 1000 micromhos/cm"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Monthly average less than 750 mg/L;"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "instantaneous threshold less than 1500"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Dissolved Solids | mg/L"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Chemical Oxygen Demand <50 mg/l"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Turbidity | <100 NTU"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "Total Suspended Solids | <80 mg/l"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Assessment threshold 43.7 (25th percentile"
+   },
+   {
+    "page": 12,
+    "kind": "table",
+    "level": 0,
+    "text": "M-BISQ West Bioregion | of reference condition)"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "In addition to chemical data, biological community data and in stream habitat surveys will be"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "collected over the course of the project to determine attainment of the Aquatic Life Designated"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Use. These data are extremely helpful in identifying positive trends in water quality and should"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "provide information to help determine if the implementation activities are resulting in water"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "quality improvements. Mississippi uses a calibrated and verified index of biotic integrity to"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "make water quality assessment decisions. This index, the Mississippi Benthic Index of Stream"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "Quality (M-BISQ) was originally developed in 2000 and has undergone three recalibration"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "efforts to refine the sensitivity of the index. As part of the index development process, the state"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "was divided into unique bioregions. Within each bioregion, the index has a defined attainment"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "threshold that is used to determine if the biological community measures collected at a site are"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "representative of good water quality that can support a balanced benthic macroinvertebrate"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "community. If the score is above the attainment threshold for the bioregion, the site is assessed"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "as attaining the aquatic life use designation. Ellison Creek is in the West bioregion and the"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "attainment threshold is 43.7. Along with overall MBISQ scores, the in-stream habitat surveys"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "will also be used to determine change over time."
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "It should be noted that recovery time of a stream is variable and may extend beyond the"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "timeframe identified in the workplan. At the end of the project, data will be analyzed to"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "determine if the data indicate improvements to water quality in Ellison Creek. In the event data"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "indicate little or no positive change, a Stressor Analysis will be conducted to determine if any"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "new or additional stressors are preventing improvements to water quality. If any new stressors"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "are identified, the Watershed Implementation Team will identify future actions/activities to"
+   },
+   {
+    "page": 12,
+    "kind": "para",
+    "level": 0,
+    "text": "address those stressors."
+   },
+   {
+    "page": 12,
+    "kind": "admin",
+    "level": 0,
+    "text": "12"
+   },
+   {
+    "page": 13,
+    "kind": "admin",
+    "level": 0,
+    "text": "Ellison Creek Watershed Plan | GY2021"
+   },
+   {
+    "page": 13,
+    "kind": "heading",
+    "level": 0,
+    "text": "Element i: Monitoring"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Prior to BMP installation, pre-implementation water quality chemical and biological monitoring"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "will be collected to serve as baseline data for the project along with any historical data available"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "in Ellison Creek. Water quality monitoring will include water chemistry data (nutrients,"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "suspended solids, oxygen demand, chlorides, etc.), in-situ field measurements for such"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "parameters as dissolved oxygen, pH, temperature, specific conductance, and turbidity, datalogger"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "(sonde) deployment for continuous in-situ field measurement data as well as biological"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "community monitoring for benthic macroinvertebrates. A list of this historical water quality"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "monitoring in the Ellison Creek Watershed is provided in the table below and their sample"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "locations are shown in Figures 1 and 2."
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "Station | Water Sample Collecting | Water | In-"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "Project | Sonde Benthics"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "ID | Body | Year(s) Agency | Chem | Situ"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Ellison"
+   },
+   {
+    "page": 13,
+    "kind": "table",
+    "level": 0,
+    "text": "BB071 | 2001 MDEQ | M-BISQ | X | X | X"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Creek"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Monitoring locations will be selected using best professional judgment and will be targeted to"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "reflect water quality downstream of BMP activity. Once BMP installation is complete, and there"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "has been sufficient time for the stream to stabilize, post BMP monitoring will be initiated. Post"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "BMP monitoring will be conducted in a way that allows for comparison with the pre-"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "implementation data. Because recovery periods of streams can be dependent on type and amount"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "of BMPs installed, more than 1 year of post BMP data may be needed to observe a change in"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "water quality. In some cases, it may take 5 or more years to see full benefits of BMPs. All data"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "collection efforts will be conducted using trained personnel following established Standard"
+   },
+   {
+    "page": 13,
+    "kind": "para",
+    "level": 0,
+    "text": "Operating Procedures and adhering to agency Quality Assurance protocols."
+   },
+   {
+    "page": 13,
+    "kind": "admin",
+    "level": 0,
+    "text": "13"
+   }
+  ]
+ }
+}

@@ -80,7 +80,11 @@ of words, and administrative text never reaches it.
 - **Running headers and footers:** lines in the top or bottom 12% of the page that repeat
   on at least 40% of the pages (digits ignored, so "Page 18 of 22" matches "Page 19 of 22"; not
   half, because appendices often carry their own headers),
-  and bare page numbers, chapter-page numbers ("3-1") included.
+  and bare page numbers, chapter-page numbers ("3-1") included. A short line in that band
+  (80 characters or less, not a table row) needs only a tenth of the pages and at least five,
+  because some plans head only one chapter with it ("Coldwater River Watershed
+  Implementation Plan - Draft"). A stamp such as "DRAFT" or "CONFIDENTIAL" on a line of its
+  own is removed wherever it sits.
 - **Contents pages:** dot leaders, a "Contents" title, or a column of page numbers.
 - **Administrative sections:** acknowledgements, references, literature cited,
   bibliography, lists of figures and tables, abbreviations, glossary, distribution lists
@@ -125,7 +129,9 @@ that times out is read one page at a time. The model writes the text exactly as 
 line breaks kept, bullets as "• ", table rows with " | " between cells, `[illegible]` where
 it cannot read, and no corrections. The transcript becomes that page's text, marked `ocr`,
 and goes through the same layout reading. Hollow-circle sub-bullets often come back as the
-letter "o" ("o Fix failing septic systems"); those lines are read as sub-items, not prose. Items from OCR pages are never better than medium
+letter "o" ("o Fix failing septic systems"); those lines are read as sub-items, not prose.
+Diamonds, arrows and ticks (♦ ◆ ► ✓) are list markers too: sub-items when they follow a
+bullet, a list of their own otherwise. Items from OCR pages are never better than medium
 confidence, and their quotes are matched with a small tolerance (section 6). Pages that
 still cannot be read are reported as a failed section, not as an empty category.
 
@@ -148,6 +154,14 @@ still cannot be read are reported as a failed section, not as an empty category.
   in particular; with it they are activities. This is the chunk-overlap idea of long-document
   extraction, kept small, because an item quoted from the overlap would fail verification
   (its quote is not on the unit's pages) instead of becoming a duplicate.
+- **A list stays with its lead-in where it can.** When a unit would end on a page whose last
+  line is a list item or a lead-in ("...to meet these goals:") and the next page goes on with
+  list items, the pages the list runs through, back to its lead-in, open the next unit
+  instead, if they fit its limits. With the lead-in only as context, the model often skipped
+  the list: on Buttahatchee page 21, in 6 of 11 trials, against 0 of 5 with the lead-in on a
+  page of the same unit. Moving only the last page is not enough: on Luxapallila it kept
+  pages 18–19 together but cut page 18 from its lead-in on page 17. On the text plans 2 lists
+  are still cut at a unit boundary, from 8.
 - **Two calls per unit.** The six categories are asked for in two calls that run side by
   side (goals, BMPs and activities; monitoring, outreach and areas): one schema for all six
   compiles to a structured-output grammar the API refuses as too large.
@@ -162,19 +176,21 @@ still cannot be read are reported as a failed section, not as an empty category.
 `backend/src/llm/prompt.ts`, `backend/src/categories.ts`, `backend/src/schema.ts`,
 `backend/src/llm/anthropic.ts`, `backend/src/llm/openai.ts`
 
-One call per unit. The instructions are fixed text, so the provider caches them across a
-document's calls; only the pages change.
+Two calls per unit (section 4). The instructions are fixed text, so the provider caches them
+across a document's calls; only the pages change.
 
 **Categories.** Each has a definition with what it excludes, kept in one registry
-(`categories.ts`) that also drives the table columns and CSV columns:
+(`categories.ts`) that also drives the table columns and CSV columns. The examples in the
+definitions are generic ("a biological index score threshold", "HUC numbers (8 to 12
+digits)") rather than names and codes copied from one tuning plan:
 
 | Category | Includes | Excludes |
 | --- | --- | --- |
-| Goals | Outcomes the plan commits to: load reductions, meeting standards, delisting; "Goal:" and "Goals/Objectives" lines | Tasks and milestones, BMP lists, background on the impairment |
+| Goals | Outcomes the plan commits to: load reductions, meeting standards, delisting; "Goal:" and "Goals/Objectives" lines | Tasks and milestones, BMP lists, background on the impairment, problems listed with their causes, rows of a water-quality criteria table |
 | BMPs | Conservation and structural practices, one item per practice, with amounts and costs from tables or text | Species, funding programmes (EQIP, CRP, Section 319), monitoring parameters, partner agencies, education events, budget lines |
-| Implementation | Actions the plan will carry out; every row of a schedule or milestone table; responsible organisations; a status only when stated | The BMPs themselves, education events |
-| Monitoring | Water-quality parameters with thresholds, stations, baseline and post-BMP monitoring | — |
-| Outreach | Workshops, team meetings, field days, demonstration farms, fact sheets, signs, articles, presentations | Acknowledgements, contact and author lists, success measures such as surveys |
+| Implementation | Actions the plan will carry out; every row of a schedule or milestone table; responsible organisations; a status only when stated | The BMPs themselves, education events, a role or organisation named alone |
+| Monitoring | Water-quality parameters with thresholds, stations, baseline and post-BMP monitoring | Concerns and impairments listed as problems; an agency, programme or report named without a parameter it measures |
+| Outreach | Workshops, team meetings, field days, demonstration farms, fact sheets, signs, articles, presentations | Acknowledgements, contact and author lists, an organisation named alone, success measures such as surveys |
 | Geographic areas | Watersheds, sub-watersheds, HUCs, counties, water bodies, states, WRIAs, each marked primary or mentioned | — |
 
 **Kind.** `main` is a top-level bullet or numbered item, a table row or a stated goal;
@@ -212,7 +228,12 @@ recorded with its reason (`quote-not-found`, `name-not-in-source`, `number-not-i
 `detail-not-in-source`, `not-an-item`, `invalid`) and shown under Quality, never as data. A
 failed quote or name drops the item; a failed amount or detail drops only that field.
 
-First, one category rule is applied in code, because the prompt states it but the model
+First, names are tidied. A label or list number in front of a name ("Goal 2: ", "1b. ") is
+not part of it. A goal the model names by its lead-in ("Long-term goal of the Pickwick
+Reservoir watershed plan") takes the outcome that follows "is to" in its name or quote
+("restore water quality in Caney Creek"), when that outcome has at least three words.
+
+Then one category rule is applied in code, because the prompt states it but the model
 follows it on some runs and not on others: the items of a list whose lead-in calls them
 actions, tasks or activities ("The following actions will need to be taken to meet these
 goals:") are activities, even when worded like outcomes ("Reduce sediment loads to
@@ -220,7 +241,7 @@ streams"), and so are the items nested under them. The lead-in is looked for dir
 the list, across the page break through the end of the page before. Such items filed as
 goals, and nested ones filed as BMPs, move to implementation. A BMP right under the lead-in
 stays a BMP, since "Install fencing" may be a practice the plan counts. On the saved runs of
-all eight evaluation plans this moves exactly the ten items of Buttahatchee page 21 and
+the eight evaluation plans of the time this moved exactly the ten items of Buttahatchee page 21 and
 nothing else.
 
 1. **The quote is on the page.** Both sides are normalised (Unicode NFKC, bullet and
@@ -298,6 +319,11 @@ parent by name, the nearest one when several share it.
   activities with a stated status would show 100% for Broken Pumpkin, which reports one
   status among 19 milestones.
 - The overview sentence is a template filled from the counts, not model prose.
+- The overview's diagrams and charts are computed in the browser from the verified items,
+  with no model call: the plan at a glance (goals, practices, activities and monitoring in
+  order, with the outreach that supports them and the pollutants named), where each category
+  is found page by page (scanned and skipped pages marked), the reduction targets parsed from
+  the goals, and the organisations named as responsible for activities. Each has a table view.
 
 ## 9. Running a whole document
 
@@ -331,5 +357,5 @@ One policy covers extraction units and OCR batches alike:
 | Categorisation | Step 5 definitions with exclusions; step 7 keeps categories apart |
 | Numerical targets and metrics | Step 5 copies amounts as written; step 6 checks every number and parses it in code |
 | Zero false positives for copied names | Step 6: verbatim name checks, fail closed |
-| Format variations | Steps 2–3 handle columns, sidebars, Wingdings bullets, scrambled tables and scans; [TESTING.md](TESTING.md) covers four formats |
+| Format variations | Steps 2–3 handle columns, sidebars, Wingdings and diamond bullets, chapter headers, draft stamps, scrambled tables and scans; [TESTING.md](TESTING.md) scores nine plans in three formats, six of them held out from tuning |
 | Large files | Step 1 reads in the browser; steps 4 and 9 keep every call small |
